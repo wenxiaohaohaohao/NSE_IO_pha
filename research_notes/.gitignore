@@ -1,0 +1,54 @@
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor and local environment
+.idea/
+.vscode/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Stata
+*.smcl
+*.stpr
+*.trk
+*.tmp
+
+# MATLAB
+*.asv
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+
+# Office temporary files
+~$*.docx
+~$*.doc
+~$*.pptx
+~$*.ppt
+
+# Generic backups and temporary files
+*.bak
+*.temp
