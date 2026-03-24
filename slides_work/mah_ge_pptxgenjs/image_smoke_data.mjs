@@ -1,0 +1,12 @@
+﻿import PptxGenJS from "npm:pptxgenjs";
+const bytes = await Deno.readFile('./extracted_media_white/image3.png');
+const b64 = btoa(String.fromCharCode(...bytes));
+const data = `data:image/png;base64,${b64}`;
+const pptx = new PptxGenJS();
+pptx.defineLayout({ name: "C", width: 10, height: 7.5 });
+pptx.layout = "C";
+const slide = pptx.addSlide();
+slide.addText("data image smoke", { x: 0.6, y: 0.6, w: 3, h: 0.4, fontFace: "Microsoft YaHei", fontSize: 24, bold: true });
+slide.addImage({ data, x: 1, y: 1.5, w: 5, h: 3.5 });
+await pptx.writeFile({ fileName: "image_smoke_data.pptx" });
+console.log("data_ok");
