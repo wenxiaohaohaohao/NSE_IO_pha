@@ -1,0 +1,775 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,array,multirow,longtable}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{natbib}
+
+\setcitestyle{authoryear,round,semicolon}
+\doublespacing
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\titleformat{\section}[block]
+  {\centering\normalsize\bfseries}
+  {\thesection.}
+  {0.5em}
+  {\MakeUppercase}
+\titlespacing*{\section}{0pt}{2.0ex plus .5ex minus .2ex}{1.2ex}
+\titleformat{\subsection}[block]
+  {\normalsize\bfseries}
+  {\thesubsection.}
+  {0.5em}
+  {}
+\titlespacing*{\subsection}{0pt}{1.5ex plus .4ex minus .2ex}{0.7ex}
+
+\setlength{\emergencystretch}{3em}
+\hbadness=10000
+\vbadness=10000
+\hfuzz=100pt
+\vfuzz=100pt
+\raggedbottom
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\argmax}{\operatorname*{arg\,max}}
+\newcommand{\Tset}{\mathcal{T}}
+\newcommand{\Inew}{\mathcal{N}}
+\newcommand{\ShareO}{\mathcal{S}^O}
+\newcommand{\Surp}{\mathcal{S}}
+\newcommand{\Lbar}{\bar L}
+
+\title{Institutional Reform and Pharmaceutical Innovation\\
+An Analysis Based on the MAH System}
+\author{Danni Yangchen, Wenxiao Dong, Xinhao Wang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We develop a dynamic industry model to study how China's Marketing Authorization Holder (MAH) reform changes firm boundaries, organizational transitions, and pharmaceutical innovation. We model two medicine categories, generic drugs and original drugs. Integrated firms can produce both medicines and conduct original-drug research. Manufacturing-specialized firms can produce both medicines but do not originate new original-drug ideas. Research-specialized firms generate original-drug ideas only. Before MAH, research-specialized firms cannot independently commercialize original-drug ideas through external production while retaining marketing authorization; after MAH, they can commercialize through qualified external manufacturers. We build the model on a Hopenhayn-style stationary industry shell with endogenous entry and exit, convex research effort for original-drug discovery, and a qualified contract-manufacturing market for MAH-enabled commercialization. We define innovation using both the number of new original-drug products commercialized and the share of original drugs in all commercialized products. The equilibrium delivers predictions for incumbent transition matrices, entry composition, producer-side outcomes, and innovation structure in China's pharmaceutical industry.
+\end{abstract}
+
+\section{Introduction and literature strategy}
+
+We study whether MAH relaxes the institutional bundle between original-drug research and production capacity, thereby changing organizational boundaries and increasing original-drug commercialization in China's pharmaceutical industry. We focus on the pharmaceutical industry rather than the whole economy. Accordingly, the surplus object below is a pharmaceutical-industry surplus object rather than an economy-wide welfare object.
+
+We organize the model around five literature blocks. First, we use the stationary heterogeneous-firm shell in \citet{Hopenhayn1992}. That shell also connects to the selection logic in \citet{Jovanovic1982}, the dynamic-control language in \citet{EricsonPakes1995}, and the composition perspective in \citet{Luttmer2007}. Second, we use \citet{KletteKortum2004} and \citet{AkcigitKerr2018} to motivate convex original-drug research effort and composition effects on industry outcomes. Third, we use \citet{AroraFosfuriGambardella2001}, \citet{AroraMerges2004}, \citet{GansStern2000}, \citet{GansStern2003}, and \citet{GansHsuStern2008} to motivate why innovative firms need not be vertically integrated in order to create value. Fourth, we use pharmaceutical-policy references such as \citet{Lakdawalla2018}, \citet{ChandraEtAl2026}, and \citet{JiaMaYangZhang2023} to motivate why regulatory design can change commercialization and innovation without acting only through prices. Fifth, we borrow only the distinction between invention and implementation from \citet{FonsRosenRoldanBlancoSchmitz2026}; we do not borrow their acquisition, search, or bargaining layers.
+
+This modeling strategy matches our empirical question. MAH is not a merger policy, and our data do not identify bargaining primitives. We therefore need an upstream original-drug idea-generation margin, a downstream commercialization margin, a qualified contract-manufacturing market, and organizational switching across integrated, research-specialized, and manufacturing-specialized firms. We do not need an acquisition block or a full incomplete-contract model.
+
+\subsection{What we borrow and what we change}
+
+We borrow the incumbent value-function logic, free-entry condition, and stationary distribution from \citet{Hopenhayn1992}, but we replace a single firm type with three organizational states because our question is about firm boundaries. We borrow convex research effort from \citet{KletteKortum2004}, but we apply it only to original-drug idea generation rather than to generic expansion. We borrow the composition logic from \citet{AkcigitKerr2018}, but we apply it to sectoral reorganization rather than long-run growth accounting. We borrow commercialization and specialization logic from \citet{AroraMerges2004} and \citet{GansStern2003}, but we translate them into an MAH-specific outsourcing environment. Finally, we borrow the invention-versus-implementation distinction from \citet{FonsRosenRoldanBlancoSchmitz2026}, but we replace startup acquisition with MAH-enabled commercialization through qualified external manufacturing.
+
+These changes are substantive rather than cosmetic. They make the model fit China's pharmaceutical industry and the MAH institution while preserving the literature's core mechanisms.
+
+\section{Institutional background and identification boundary}
+
+We model China's pharmaceutical industry as an environment with two medicine categories,
+\[
+k \in \{G,O\},
+\]
+where $G$ denotes generic drugs and $O$ denotes original drugs. We use this distinction because our policy question is about the commercialization of \emph{new original-drug products}, not total pharmaceutical output. Generic production provides cash flow and manufacturing demand, but MAH mainly changes the commercialization environment for original-drug ideas.
+
+Let $M\in\{0,1\}$ denote the regulatory regime. We interpret $M=0$ as the pre-MAH regime and $M=1$ as the post-MAH regime. We model MAH through two reduced-form channels,
+\begin{align}
+\tau_M(1) &< \tau_M(0), \label{eq:tauM}\\
+\kappa_{sj}(1) &\le \kappa_{sj}(0)
+\qquad \text{for } s,j\in\{A,B,C\},\ s\neq j.
+\label{eq:kappaM}
+\end{align}
+Here $\tau_M(M)$ is the commercialization friction faced especially by research-specialized firms and $\kappa_{sj}(M)$ is the cost of reorganizing from organizational type $s$ to organizational type $j$.
+
+Our key MAH restriction is not that all firms suddenly invent more after reform. Rather, MAH changes whether a research-specialized firm can retain authorization and commercialize an original-drug idea through external production. In the benchmark below, this restriction appears as a pre-MAH collapse of the commercialization-success rate for type-$B$ firms. This is how we encode the institutional point that before MAH, only firms with both research and production capability could independently bring new original drugs to market.
+
+We also keep the identification boundary explicit. With outcome data alone, we can identify whether MAH raises the number and share of original-drug products. We cannot directly estimate a primitive commercialization probability from those outcomes alone. We therefore use the commercialization block as a structural interpretation and reinforce it with transition evidence, entry evidence, and commercialization proxies.
+
+\section{Environment, dimensions, and notation}
+
+Time is discrete, $t=0,1,2,\dots$. There are three active firm types,
+\[
+\Tset = \{A,B,C\},
+\]
+where:
+\begin{itemize}[leftmargin=2em]
+    \item $A$ denotes integrated firms that can produce generic drugs, produce original drugs, and conduct original-drug research;
+    \item $B$ denotes research-specialized firms that generate ideas for new original drugs only;
+    \item $C$ denotes manufacturing-specialized firms that can produce generic and original drugs but do not originate new original-drug ideas.
+\end{itemize}
+There is also a pool of potential entrants.
+
+Each active firm has a one-dimensional idiosyncratic capability state $z\in Z\subset\R_+$, where $Z$ is compact. We adopt a one-state benchmark because this is the safest baseline relative to \citet{Hopenhayn1992} and \citet{Jovanovic1982}. We interpret $z$ broadly as the capability state that affects research productivity, commercialization ability, organizational adaptation, and manufacturing efficiency. We let the three organizational forms load differently on the same state rather than introducing multiple latent capability processes that our current empirical design does not separately identify.
+
+There are two endogenous prices,
+\[
+\begin{aligned}
+w &\quad \text{(industry wage or composite factor price)},\\
+p_m &\quad \text{(price of qualified contract-manufacturing services)}.
+\end{aligned}
+\]
+We determine both in stationary equilibrium. The price $p_m$ summarizes the scarcity of qualified external production and therefore directly affects MAH-enabled commercialization.
+
+\subsection{Modeling \texorpdfstring{$\lambda_B$}{lambda B}}
+
+The object $\lambda_B(z,p_m,M)$ is the reduced-form commercialization-success rate for an original-drug idea generated by a type-$B$ firm. The literature does not give a single canonical MAH-specific formula for this object, so we follow the logic of \citet{GansStern2003} and \citet{FonsRosenRoldanBlancoSchmitz2026}: invention and commercialization are distinct, and the commercialization margin depends on the external environment. We therefore model $\lambda_B$ as a bounded reduced-form probability, not as a control variable chosen directly by the research firm.
+
+A convenient benchmark specification is the logistic form
+\begin{equation}
+\lambda_B(z,p_m,M)
+=
+\Lambda\!\left(\alpha_0+\alpha_z z-\alpha_p p_m+\alpha_M M+\alpha_{zM} zM\right),
+\qquad
+\Lambda(u)\equiv \frac{e^u}{1+e^u},
+\label{eq:lambda_logit}
+\end{equation}
+with $\alpha_z>0$, $\alpha_p>0$, $\alpha_M\ge 0$, and $\alpha_{zM}\ge 0$.
+
+Equation \eqref{eq:lambda_logit} is useful for four reasons. First, it keeps $\lambda_B\in(0,1)$ automatically. Second, it makes commercialization easier for more capable research firms. Third, it makes commercialization harder when qualified manufacturing is scarce or expensive. Fourth, it lets MAH shift the level of commercialization success directly, and it also lets MAH have a larger effect for more capable firms through the interaction term $\alpha_{zM}$.
+
+To encode the institutional restriction that before MAH a research-specialized firm could not independently commercialize a new original-drug idea through external production while retaining authorization, we impose the stronger benchmark restriction
+\begin{equation}
+\lambda_B(z,p_m,0)=0
+\qquad \text{for all } z\in Z.
+\label{eq:premah_zero}
+\end{equation}
+After MAH, that restriction is relaxed, so for a nondegenerate subset of states,
+\begin{equation}
+\lambda_B(z,p_m,1)>0.
+\label{eq:postmah_positive}
+\end{equation}
+In practice, one can implement \eqref{eq:premah_zero} either literally, or by using a very negative pre-MAH intercept in \eqref{eq:lambda_logit}. We prefer the literal benchmark in the theory because it matches the institutional narrative more cleanly.
+
+\subsection{Why we use optimized flow payoffs rather than explicit capital and labor in every Bellman equation}
+
+This is standard in the literature we borrow from. \citet{Hopenhayn1992} writes firm values in terms of optimized current profit rather than a separate capital and labor block inside every Bellman equation. \citet{EricsonPakes1995} also write the dynamic problem around firm values and controlled state transitions rather than around a full static cost-minimization problem in every period. \citet{KletteKortum2004} similarly summarize production-side detail inside firm-level value and innovation objects. We follow that practice. When we need labor-market closure, we recover labor demand from type-specific optimized flow payoffs rather than solving a separate static factor-allocation problem inside every type block.
+
+\subsection{Main notation}
+
+\begin{longtable}{p{0.24\textwidth}p{0.68\textwidth}}
+\caption{Main notation}\label{tab:notation}\\
+\toprule
+Symbol & Definition \\
+\midrule
+\endfirsthead
+\toprule
+Symbol & Definition \\
+\midrule
+\endhead
+$M$ & Policy regime: $M=0$ pre-MAH, $M=1$ post-MAH. \\
+$k\in\{G,O\}$ & Product category: generic $(G)$ or original $(O)$. \\
+$z$ & Firm capability state. \\
+$w$ & Industry wage or composite factor price. \\
+$p_m$ & Price of qualified contract-manufacturing services. \\
+$\tau_M(M)$ & Commercialization friction faced by type-$B$ firms. \\
+$\kappa_{sj}(M)$ & Switching cost from organizational type $s$ to organizational type $j$. \\
+$V_s(z;M)$ & Value of operating as type $s\in\{A,B,C\}$ at state $z$. \\
+$\Pi_A(z;w,M)$ & Optimized current operating payoff of an integrated firm. \\
+$\Pi_B(z;p_m,M)$ & Optimized current operating payoff of a research-specialized firm. \\
+$\Pi_C(z;p_m,w,M)$ & Optimized current operating payoff of a manufacturing-specialized firm. \\
+$x_A$ & Original-drug idea-generation intensity chosen by type-$A$ firms. \\
+$x_B$ & Original-drug idea-generation intensity chosen by type-$B$ firms. \\
+$m$ & Qualified contract-manufacturing output chosen by type-$C$ firms for MAH-enabled original drugs. \\
+$\pi_A^G,\pi_C^G$ & Generic-drug operating profits for types $A$ and $C$. \\
+$\pi_A^{O,\mathrm{inc}},\pi_C^{O,\mathrm{inc}}$ & Incumbent operating profits from already commercialized original drugs for types $A$ and $C$. \\
+$R_A(z)$ & Gross private value of one successfully commercialized original-drug idea inside type $A$. \\
+$R_B(z)$ & Gross private value of one successfully commercialized original-drug idea for type $B$. \\
+$\lambda_A(z)$ & Commercialization-success rate of an original-drug idea inside type $A$. \\
+$\lambda_B(z,p_m,M)$ & Commercialization-success rate of an original-drug idea generated by type $B$ and commercialized through qualified external manufacturing. \\
+$Q_j(\cdot\mid z,M)$ & Transition kernel for next period's capability state when the current-period organizational choice is $j$. \\
+$G$ & Distribution of entrants' initial capability draws. \\
+$c_{Ej}$ & Entry cost for entering as type $j$. \\
+$\mu_j$ & Stationary measure of incumbent firms of type $j$. \\
+$P_{sj}(M)$ & Model-implied transition probability from current type $s$ to chosen type $j$ in the stationary distribution. \\
+$\mathbf P(M)$ & Stationary incumbent transition matrix under regime $M$. \\
+$\mathbf e(M)$ & Entry-composition vector under regime $M$. \\
+$\Inew(M)$ & Number of new original-drug products commercialized in the industry. \\
+$\ShareO(M)$ & Share of original drugs in all commercialized products. \\
+$\Surp(M)$ & Pharmaceutical-industry surplus under regime $M$. \\
+\bottomrule
+\end{longtable}
+
+\section{Timing within a period}
+
+We adapt the timing from dynamic industry models such as \citet{EricsonPakes1995}, while keeping the stationary entry-and-exit shell of \citet{Hopenhayn1992}. We choose current-period organization before current-period operating choices because MAH changes the same-period feasibility of outsourcing versus internal commercialization.
+
+Within each period, events occur in the following order.
+\begin{enumerate}[leftmargin=2em]
+    \item A firm enters the period with current organizational type $s\in\{A,B,C\}$ and current capability $z$.
+    \item The firm chooses its current-period organizational form $j\in\mathcal J(s)$, where the feasible set allows it to remain in its current form, switch to either of the other two forms, or exit. If $j\neq s$, the firm pays switching cost $\kappa_{sj}(M)$ immediately.
+    \item Conditional on the chosen current-period organizational form $j$, the firm chooses current operating controls and earns current operating payoff $\Pi_j$.
+    \item If the firm does not exit, next period's capability state is drawn from $Q_j(\dd z'\mid z,M)$.
+    \item Potential entrants draw initial capability from $G$ and choose whether to enter as type $A$, $B$, or $C$.
+\end{enumerate}
+
+This timing is the cleanest way to keep the MAH outsourcing margin and the organizational-boundary margin inside the same-period problem. It also lets us write the value functions in the standard current-flow-plus-continuation form.
+
+\section{Static operating payoffs with two medicines}
+
+\subsection{Integrated firms}
+
+Following \citet{KletteKortum2004}, adapted to a two-medicine pharmaceutical environment, we let an integrated firm choose original-drug idea-generation intensity $x_A\ge 0$. Type $A$ earns cash flow from producing generic drugs, cash flow from already commercialized original drugs, and option value from generating new original-drug ideas. Its current-period payoff is
+\begin{equation}
+\pi_A(z;w,M)
+=
+\pi_A^G(z;w)
++\pi_A^{O,\mathrm{inc}}(z;w,M)
+-f_A
++x_A\Omega_A(z)-\frac{\chi_A}{\eta}x_A^{\eta},
+\qquad \eta>1,
+\label{eq:piA}
+\end{equation}
+where $\Omega_A(z)\equiv \lambda_A(z)R_A(z)$ is the expected marginal value of a new original-drug idea inside an integrated firm.
+
+The first-order condition gives
+\begin{equation}
+x_A^*(z)=\left(\frac{\Omega_A(z)}{\chi_A}\right)^{\frac{1}{\eta-1}},
+\label{eq:xA}
+\end{equation}
+and the optimized current payoff is
+\begin{equation}
+\Pi_A(z;w,M)
+=
+\pi_A^G(z;w)
++\pi_A^{O,\mathrm{inc}}(z;w,M)
+-f_A
++
+\frac{\eta-1}{\eta}\chi_A^{-\frac{1}{\eta-1}}\Omega_A(z)^{\frac{\eta}{\eta-1}}.
+\label{eq:PiA}
+\end{equation}
+
+Equation \eqref{eq:PiA} adapts the innovation-intensity block in \citet{KletteKortum2004} to the MAH setting. The main change is that integrated firms earn profits from both medicine categories, while their research effort is directed only to new original drugs.
+
+\subsection{Research-specialized firms}
+
+Following \citet{KletteKortum2004} for convex research effort and adapting the commercialization block using the market-for-ideas logic of \citet{GansStern2003} and the invention-versus-implementation distinction emphasized by \citet{FonsRosenRoldanBlancoSchmitz2026}, we let a research-specialized firm choose original-drug idea-generation intensity $x_B\ge 0$. We do not let the research firm choose a separate implementation intensity as a top-level control. Instead, commercialization through qualified external manufacturing is summarized by the reduced-form success rate $\lambda_B$.
+
+The expected payoff from one original-drug idea is
+\begin{equation}
+H_B(z;p_m,M)=\lambda_B(z,p_m,M)\bigl(R_B(z)-p_m\bigr)-\tau_M(M).
+\label{eq:HB}
+\end{equation}
+The current-period payoff of a type-$B$ firm is
+\begin{equation}
+\pi_B(z;p_m,M)
+=
+-f_B+x_B H_B(z;p_m,M)-\frac{\chi_B}{\eta}x_B^{\eta}.
+\label{eq:piB}
+\end{equation}
+Define $[a]_+=\max\{a,0\}$. Then
+\begin{equation}
+x_B^*(z;p_m,M)=\left(\frac{[H_B(z;p_m,M)]_+}{\chi_B}\right)^{\frac{1}{\eta-1}},
+\label{eq:xB}
+\end{equation}
+and the optimized current payoff is
+\begin{equation}
+\Pi_B(z;p_m,M)
+=
+-f_B+
+\frac{\eta-1}{\eta}\chi_B^{-\frac{1}{\eta-1}}[H_B(z;p_m,M)]_+^{\frac{\eta}{\eta-1}}.
+\label{eq:PiB}
+\end{equation}
+
+Equations \eqref{eq:HB}--\eqref{eq:PiB} are the key MAH adaptation. We preserve the invention-versus-implementation distinction, but we implement it in a way that fits China's pharmaceutical industry: research-specialized firms generate original-drug ideas, while commercialization depends on whether MAH lets them access qualified external manufacturing.
+
+\subsection{Manufacturing-specialized firms}
+
+Following the static-profit logic in \citet{Hopenhayn1992}, we let a manufacturing-specialized firm earn profits from producing generic drugs and from producing already commercialized original drugs, while also choosing the amount of qualified contract manufacturing dedicated to MAH-enabled original-drug commercialization. Its current-period payoff is
+\begin{equation}
+\pi_C(z;p_m,w,M)
+=
+\pi_C^G(z;w)
++\pi_C^{O,\mathrm{inc}}(z;w,M)
+-f_C
++\max_{m\ge 0}\left\{p_m m-c(m,z;w)\right\},
+\label{eq:piC}
+\end{equation}
+where $c_m>0$, $c_{mm}>0$, and $c_z<0$. The optimized current payoff is
+\begin{equation}
+\Pi_C(z;p_m,w,M)
+=
+\pi_C^G(z;w)
++\pi_C^{O,\mathrm{inc}}(z;w,M)
+-f_C
++\max_{m\ge 0}\left\{p_m m-c(m,z;w)\right\}.
+\label{eq:PiC}
+\end{equation}
+
+The important modeling point is that type $C$ can produce both medicines, but it does not originate new original-drug ideas. That is exactly why MAH changes the interaction between type $B$ and type $C$ without making type $C$ itself an innovator.
+
+\section{Dynamic organizational choice and value functions}
+
+Following \citet{Hopenhayn1992}, we write firm values as current flow payoff plus discounted continuation value. Following \citet{EricsonPakes1995}, we let organizational form be a dynamic control. The feasible current-period choice sets are
+\begin{align}
+\mathcal J(A)&=\{A,B,C,\text{exit}\}, \\
+\mathcal J(B)&=\{A,B,C,\text{exit}\}, \\
+\mathcal J(C)&=\{A,B,C,\text{exit}\}.
+\end{align}
+We set $\kappa_{ss}(M)=0$ for $s\in\{A,B,C\}$.
+
+For each current type $s$ and chosen current-period type $j$, we define the choice-specific value as
+\begin{equation}
+W_{sj}(z;M)=\Pi_j(z;w,p_m,M)-\kappa_{sj}(M)+\beta\int V_j(z';M)Q_j(\dd z'\mid z,M),
+\label{eq:choice_specific_value}
+\end{equation}
+with the convention $W_{s,\text{exit}}(z;M)=0$.
+
+Equation \eqref{eq:choice_specific_value} is our direct adaptation of the incumbent value-function logic in \citet{Hopenhayn1992} and the dynamic-control logic in \citet{EricsonPakes1995}. The substantive change is that we let the firm choose among three organizational forms and let current-period organization determine current-period commercialization possibilities.
+
+The incumbent Bellman equations are then
+\begin{align}
+V_A(z;M) &= \max\bigl\{W_{AA}(z;M),W_{AB}(z;M),W_{AC}(z;M),0\bigr\}, \label{eq:VA}\\
+V_B(z;M) &= \max\bigl\{W_{BA}(z;M),W_{BB}(z;M),W_{BC}(z;M),0\bigr\}, \label{eq:VB}\\
+V_C(z;M) &= \max\bigl\{W_{CA}(z;M),W_{CB}(z;M),W_{CC}(z;M),0\bigr\}. \label{eq:VC}
+\end{align}
+
+We keep all six pairwise organizational switches in the baseline because the transition matrix is a first-order empirical object in the paper. At the same time, we expect some direct switches --- especially $B\rightarrow C$ and $C\rightarrow B$ --- to be empirically rare. In calibration, the corresponding switching costs can become large if the data say these moves almost never happen.
+
+\subsection{Choice regions and the transition matrix}
+
+Because the organizational choice is deterministic in the benchmark, the model generates a transition matrix through stationary choice regions rather than through exogenous logit shocks. For each current type $s$ and chosen type $j\in\{A,B,C,\text{exit}\}$, define
+\begin{equation}
+\mathcal Z_{sj}(M)=\left\{z\in Z: j \text{ solves the Bellman problem for a current type-}s\text{ firm at state } z\right\}.
+\label{eq:choice_region}
+\end{equation}
+
+Let $\mu_s$ denote the stationary measure of firms whose current type is $s$. Then the model-implied incumbent transition probability from $s$ to $j$ is
+\begin{equation}
+P_{sj}(M)=\frac{\mu_s\bigl(\mathcal Z_{sj}(M)\bigr)}{\mu_s(Z)}.
+\label{eq:transition_prob}
+\end{equation}
+The incumbent transition matrix is therefore
+\begin{equation}
+\mathbf P(M)=
+\begin{pmatrix}
+P_{AA}(M) & P_{AB}(M) & P_{AC}(M) & P_{A,\mathrm{exit}}(M) \\
+P_{BA}(M) & P_{BB}(M) & P_{BC}(M) & P_{B,\mathrm{exit}}(M) \\
+P_{CA}(M) & P_{CB}(M) & P_{CC}(M) & P_{C,\mathrm{exit}}(M)
+\end{pmatrix},
+\label{eq:transition_matrix}
+\end{equation}
+where each row sums to one. Equation \eqref{eq:transition_matrix} is the exact theoretical counterpart of the pre/post transition matrix that we plan to estimate from the firm-level panel.
+
+\section{Entry}
+
+Following the free-entry logic of \citet{Hopenhayn1992}, we let potential entrants draw an initial capability $z_0$ from distribution $G$ and choose whether to enter as type $A$, $B$, or $C$. We define entrant values as
+\begin{align}
+\bar V_E^A(M)&=\int V_A(z_0;M)G(\dd z_0)-c_{EA}, \\
+\bar V_E^B(M)&=\int V_B(z_0;M)G(\dd z_0)-c_{EB}, \\
+\bar V_E^C(M)&=\int V_C(z_0;M)G(\dd z_0)-c_{EC}.
+\end{align}
+
+Let $n_E^A(M),n_E^B(M),n_E^C(M)$ denote entrant masses. Free entry implies
+\begin{align}
+\bar V_E^A(M) &\le 0, & n_E^A(M)>0 &\implies \bar V_E^A(M)=0, \\
+\bar V_E^B(M) &\le 0, & n_E^B(M)>0 &\implies \bar V_E^B(M)=0, \\
+\bar V_E^C(M) &\le 0, & n_E^C(M)>0 &\implies \bar V_E^C(M)=0.
+\end{align}
+
+This entry block separates entrant composition from incumbent reorganization. The entrant-composition vector is
+\begin{equation}
+\mathbf e(M)=\bigl(e_A(M),e_B(M),e_C(M)\bigr),
+\qquad
+e_j(M)=\frac{n_E^j(M)}{n_E^A(M)+n_E^B(M)+n_E^C(M)}.
+\label{eq:entry_vector}
+\end{equation}
+
+Equations \eqref{eq:transition_matrix} and \eqref{eq:entry_vector} are different empirical objects. The first describes incumbent reorganization and exit. The second describes which organizational forms new firms choose at entry. We must measure both in the data.
+
+\paragraph{Optional extension.}
+If later evidence strongly supports an external-finance or entry-support channel, we can introduce a reduced-form term $\phi_B(M)$ and write
+\begin{equation}
+\bar V_E^B(M)=\int V_B(z_0;M)G(\dd z_0)-c_{EB}+\phi_B(M),
+\qquad
+\phi_B(1)\ge \phi_B(0).
+\end{equation}
+We do not include this block in the benchmark because the current empirical design does not require it.
+
+\section{Market clearing and stationary equilibrium}
+
+\subsection{Qualified contract-manufacturing market}
+
+The qualified contract-manufacturing market is the minimal extra equilibrium block needed for the MAH mechanism. Total demand is
+\begin{equation}
+D_m(p_m,M)=\int x_B^*(z;p_m,M)\,\lambda_B(z,p_m,M)\,\mu_B(\dd z),
+\label{eq:Dm}
+\end{equation}
+while total supply is
+\begin{equation}
+S_m(p_m,w)=\int m^*(z;p_m,w)\,\mu_C(\dd z),
+\label{eq:Sm}
+\end{equation}
+where $m^*(z;p_m,w)$ is the optimizer in equation \eqref{eq:PiC}. Market clearing requires
+\begin{equation}
+D_m(p_m,M)=S_m(p_m,w).
+\label{eq:pm_clear}
+\end{equation}
+
+\subsection{Labor market}
+
+We close the pharmaceutical-industry equilibrium with a simple labor market. Let labor demand by each type be $\ell_A(z;w)$, $\ell_B(z;p_m,M)$, and $\ell_C(z;p_m,w)$. Then aggregate labor demand is
+\begin{equation}
+\begin{aligned}
+L_D(M)={}&\int \ell_A(z;w)\mu_A(\dd z)+\int \ell_B(z;p_m,M)\mu_B(\dd z)\\
+&+\int \ell_C(z;p_m,w)\mu_C(\dd z)+\sum_{j\in\{A,B,C\}}\ell_E^j n_E^j(M),
+\end{aligned}
+\label{eq:labor_demand}
+\end{equation}
+where $\ell_E^j$ is setup labor for entrants of type $j$. Market clearing requires
+\begin{equation}
+L_D(M)=\Lbar.
+\label{eq:labor_clear}
+\end{equation}
+
+\subsection{Stationary distribution}
+
+For any measurable set $B\subseteq Z$, the next-period measure of type $j$ firms is
+\begin{equation}
+\mu'_j(B)
+=
+\sum_{s\in\{A,B,C\}}\int \1\{g_s(z;M)=j\}\,Q_j(B\mid z,M)\,\mu_s(\dd z)
++n_E^j(M)G(B),
+\qquad j\in\{A,B,C\},
+\label{eq:stationary_measure}
+\end{equation}
+where $g_s(z;M)$ is the optimal organizational policy. A stationary equilibrium requires $\mu'_j=\mu_j$ for each $j$.
+
+\begin{definition}[Stationary competitive equilibrium]
+For a given regime $M$, a stationary equilibrium consists of value functions $\{V_A,V_B,V_C\}$, operating policy rules $\{x_A^*,x_B^*,m^*\}$, organizational policy rules $\{g_A,g_B,g_C\}$, stationary measures $\{\mu_A,\mu_B,\mu_C\}$, entrant masses $\{n_E^A,n_E^B,n_E^C\}$, and prices $(w,p_m)$ such that:
+\begin{enumerate}[leftmargin=2em]
+    \item incumbent firms solve the Bellman system in equations \eqref{eq:VA}--\eqref{eq:VC},
+    \item entrants satisfy the free-entry conditions,
+    \item the qualified contract-manufacturing market clears,
+    \item the labor market clears,
+    \item the stationary measures are invariant under the optimal policy rules and entrant masses.
+\end{enumerate}
+\end{definition}
+
+\section{Innovation quantity and innovation structure}
+
+The policy question is not only whether the number of new original-drug products rises. We also care about whether the composition of commercialized medicines shifts toward original drugs. We therefore define two innovation objects.
+
+First, the number of new original-drug products commercialized is
+\begin{equation}
+\Inew(M)=
+\int \lambda_A(z)x_A^*(z)\mu_A(\dd z)
++
+\int \lambda_B(z,p_m,M)x_B^*(z;p_m,M)\mu_B(\dd z).
+\label{eq:Inew}
+\end{equation}
+Equation \eqref{eq:Inew} says that new original-drug products come from two sources: integrated firms' in-house research and commercialization, and research-specialized firms' MAH-enabled commercialization through qualified external production.
+
+Second, we define the share of original drugs in all commercialized products as
+\begin{equation}
+\ShareO(M)=
+\frac{Q_O(M)}{Q_O(M)+Q_G(M)},
+\label{eq:shareO}
+\end{equation}
+where
+\begin{align}
+Q_O(M)
+&=
+\underbrace{\int q_A^{O,\mathrm{inc}}(z;M)\mu_A(\dd z)+\int q_C^{O,\mathrm{inc}}(z;M)\mu_C(\dd z)}_{\text{incumbent original-drug products}}
++\Inew(M),
+\label{eq:QO}\\
+Q_G(M)
+&=
+\int q_A^G(z)\mu_A(\dd z)+\int q_C^G(z)\mu_C(\dd z).
+\label{eq:QG}
+\end{align}
+Thus $\ShareO(M)$ measures innovation structure. If MAH raises commercialization of original-drug ideas, then the share of original drugs in all commercialized products should rise even if generic production remains important.
+
+This definition is the right bridge from the model to your empirical outcome. In data, we can proxy $\ShareO(M)$ with the share of original-drug applications, original-drug approvals, or original-drug sales in all drug products, depending on which product-level data are available.
+
+\subsection{Producer-side outcomes and industry surplus}
+
+To connect the model more closely to producer-side evidence in China's pharmaceutical industry, we define the average current payoff of manufacturing-specialized firms as
+\begin{equation}
+\bar\Pi_C(M)=\frac{\int \Pi_C(z;p_m,w,M)\mu_C(\dd z)}{\int \mu_C(\dd z)}.
+\end{equation}
+
+We define a pharmaceutical-industry surplus object,
+\begin{equation}
+\begin{aligned}
+\Surp(M)={}&CS^{\mathrm{pharma}}(M)+\int \Pi_A(z;w,M)\mu_A(\dd z)\\
+&+\int \Pi_B(z;p_m,M)\mu_B(\dd z)+\int \Pi_C(z;p_m,w,M)\mu_C(\dd z)-SC(M),
+\end{aligned}
+\label{eq:industry_surplus}
+\end{equation}
+where $CS^{\mathrm{pharma}}(M)$ is consumer surplus in the pharmaceutical industry and $SC(M)$ collects organizational switching and reorganization costs.
+
+\section{Calibration and estimation strategy}
+
+We calibrate or estimate the model with moments from the pre- and post-MAH firm-level panel and product-level innovation data. The transition matrix and the original-drug share are the key moments.
+
+\subsection{Parameter blocks}
+
+We group parameters into seven blocks.
+\begin{enumerate}[leftmargin=2em]
+    \item \textbf{Discounting and curvature:} $\beta$, $\eta$, and parameters of the manufacturing cost function.
+    \item \textbf{Flow-payoff parameters for type $A$:} parameters in $\pi_A^G(z;w)$, $\pi_A^{O,\mathrm{inc}}(z;w,M)$, $R_A(z)$, $\lambda_A(z)$, and $f_A$.
+    \item \textbf{Flow-payoff parameters for type $B$:} parameters in $R_B(z)$, $\lambda_B(z,p_m,M)$, $\chi_B$, $\tau_M(M)$, and $f_B$.
+    \item \textbf{Flow-payoff parameters for type $C$:} parameters in $\pi_C^G(z;w)$, $\pi_C^{O,\mathrm{inc}}(z;w,M)$, $c(m,z;w)$, and $f_C$.
+    \item \textbf{Switching costs:} the matrix $\{\kappa_{sj}(0),\kappa_{sj}(1)\}_{s,j\in\{A,B,C\},s\neq j}$.
+    \item \textbf{State dynamics:} the transition kernels $Q_A,Q_B,Q_C$ and entrant distribution $G$.
+    \item \textbf{Entry costs:} $c_{EA},c_{EB},c_{EC}$.
+\end{enumerate}
+
+\subsection{Moment selection}
+
+We use the following moments.
+\begin{enumerate}[leftmargin=2em]
+    \item pre-MAH type shares $\mu_A,\mu_B,\mu_C$;
+    \item the pre-MAH incumbent transition matrix $\mathbf P(0)$;
+    \item the post-MAH incumbent transition matrix $\mathbf P(1)$;
+    \item entry composition before and after MAH, $\mathbf e(0)$ and $\mathbf e(1)$;
+    \item new original-drug product counts before and after MAH;
+    \item the share of original drugs in all commercialized products before and after MAH;
+    \item commercialization proxies for type-$B$ firms, such as entrusted-production mentions, commissioned-manufacturing text, and related disclosures;
+    \item producer-side outcomes for type-$C$ firms, such as revenue growth, gross margin, and operating margin.
+\end{enumerate}
+
+\subsection{Moment-parameter mapping}
+
+\begin{longtable}{p{0.28\textwidth}p{0.30\textwidth}p{0.32\textwidth}}
+\caption{Illustrative calibration and estimation map}\label{tab:calibration}\\
+\toprule
+Parameter block & Main moments & Interpretation \\
+\midrule
+\endfirsthead
+\toprule
+Parameter block & Main moments & Interpretation \\
+\midrule
+\endhead
+$\beta$ & Standard annual calibration & Discounting. \\
+$\eta,\chi_A,\chi_B$ & Dispersion in original-drug outcomes and type-specific research levels & Curvature and cost of original-drug research. \\
+$f_A,f_B,f_C$ & Pre-MAH type shares and entry composition & Fixed cost of each organization. \\
+$Q_A,Q_B,Q_C,G$ & Pre-MAH transition matrix and persistence of firm status & Capability dynamics and entrant heterogeneity. \\
+$\kappa_{sj}(0)$ & Pre-MAH transition matrix $\mathbf P(0)$ & Baseline switching frictions. \\
+$\kappa_{sj}(1)-\kappa_{sj}(0)$ & Post-MAH change in transition matrix & MAH-induced reorganization effect. \\
+$\tau_M(1)-\tau_M(0)$ and shift in $\lambda_B$ & Post-MAH change in original-drug counts, original-drug share, and commercialization proxies & MAH-induced commercialization effect. \\
+Manufacturing cost parameters & Type-$C$ revenue, margin, and contract-manufacturing moments & Producer-side technology. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Identification logic}
+
+We discipline $\beta$ using a standard annual discount factor. We pin down the innovation-curvature parameters using the dispersion of original-drug research effort and original-drug outcomes across firms, following the spirit of \citet{KletteKortum2004}. We choose the state-dynamics parameters and pre-MAH switching costs to match the pre-MAH transition matrix and type shares. We choose the flow-payoff parameters to match pre-MAH generic and original-drug outcomes, producer-side outcomes, and entry composition. We choose the MAH shifts in commercialization friction and the commercialization-success function $\lambda_B$ to match post-MAH changes in the transition matrix, the number of new original-drug products, the share of original drugs, commercialization proxies, and entry composition.
+
+The key point is that the transition matrix and the original-drug share are not auxiliary outputs. They are two of the main identifying objects of the model.
+
+\subsection{Practical estimation}
+
+A practical strategy is simulated method of moments or indirect inference. We discretize the capability state using a standard Markov approximation, solve the stationary equilibrium under $M=0$ and $M=1$, simulate firm histories, compute model-implied type shares, transition matrices, entrant composition, new original-drug counts, and original-drug shares, and choose the parameter vector to minimize the weighted distance between model and data.
+
+\section{Empirical mapping and data requirements}
+
+The theory is useful only if we can map its objects to data. We keep the empirical mapping consistent with the notes:
+\begin{itemize}[leftmargin=2em]
+    \item empirical R\&D type $\leftrightarrow$ model type $B$,
+    \item empirical production type $\leftrightarrow$ model type $C$,
+    \item empirical mixed type $\leftrightarrow$ model type $A$,
+    \item empirical transitional type $\leftrightarrow$ observed transitory state used to validate switching, not a fourth steady-state type.
+\end{itemize}
+
+We need at least the following data blocks:
+\begin{enumerate}[leftmargin=2em]
+    \item a firm-level panel that lets us classify firms into $A$, $B$, $C$, and transitional states;
+    \item pre/post incumbent transition matrices across types;
+    \item entry and exit by type, with entry separated from incumbent switching;
+    \item original-drug applications, approvals, or closely related new-product counts;
+    \item original-drug shares in all products, all applications, or all approvals;
+    \item generic-product sales or production measures by type;
+    \item commercialization proxies such as entrusted-production mentions and commissioned-manufacturing text;
+    \item producer-side outcomes for manufacturing specialists;
+    \item policy timing and exposure measures that help distinguish MAH from the 2015 review-speed reform.
+\end{enumerate}
+
+\begin{longtable}{p{0.24\textwidth}p{0.30\textwidth}p{0.36\textwidth}}
+\caption{Mapping model objects to empirical counterparts}\label{tab:mapping}\\
+\toprule
+Model object & Empirical proxy & Comment \\
+\midrule
+\endfirsthead
+\toprule
+Model object & Empirical proxy & Comment \\
+\midrule
+\endhead
+$\mu_A,\mu_B,\mu_C$ & Number or share of mixed, R\&D, and production firms & Type masses by organization. \\
+$\mathbf P(M)$ & Pre/post transition matrix across types & Key incumbent-reorganization object. \\
+$\mathbf e(M)$ & Entry composition by first observed type & Must be separated from incumbent switching. \\
+$\Inew(M)$ & Original-drug applications, approvals, or closely related new-product counts & Main policy outcome in levels. \\
+$\ShareO(M)$ & Share of original drugs in all products, applications, or approvals & Main policy outcome in structure. \\
+Generic cash-flow block & Generic sales, generic approvals, or generic-product production by type & Needed because the model has two medicines. \\
+Commercialization block & Entrusted-production text, commissioned-manufacturing text, selling expenses & Indirect evidence on MAH-enabled commercialization. \\
+$\bar\Pi_C(M)$ & Gross margin, operating margin, revenue growth for production firms & Needed for the producer-side equilibrium discussion. \\
+\bottomrule
+\end{longtable}
+
+\section{Assumptions and comparative statics}
+
+\begin{assumption}[Regularity]
+$Z$ is compact. The transition kernels $Q_j(\cdot\mid z,M)$ are weakly continuous in $z$. Operating payoff functions are bounded and continuous in their state and price arguments.
+\end{assumption}
+
+\begin{assumption}[Convexity]
+$\eta>1$. The cost function $c(m,z;w)$ is convex in $m$ and continuous.
+\end{assumption}
+
+\begin{assumption}[Policy effect]
+MAH strictly reduces the commercialization friction and weakly improves the commercialization-success rate of type-$B$ firms:
+\[
+\tau_M(1)<\tau_M(0),
+\qquad
+\lambda_B(z,p_m,1)\ge \lambda_B(z,p_m,0)
+\text{ for all } z,p_m,
+\]
+with strict inequality on a nondegenerate subset of states. MAH also weakly lowers selected switching costs.
+\end{assumption}
+
+\begin{proposition}[MAH raises the value of research specialization]
+Suppose Assumptions 1--3 hold. Then for any state $z$ such that commercialization after MAH is feasible, MAH raises $H_B(z;p_m,M)$ weakly, raises $x_B^*(z;p_m,M)$ weakly, raises $\Pi_B(z;p_m,M)$ weakly, and raises $V_B(z;M)$ weakly.
+\end{proposition}
+
+\begin{proof}
+A fall in $\tau_M$ or a rise in $\lambda_B$ raises the one-idea value in equation \eqref{eq:HB}. Because $x_B^*$ is increasing in $[H_B]_+$, optimized type-$B$ current payoff rises weakly. The Bellman equation for $V_B$ then implies that the value of operating as a research-specialized firm also rises weakly.
+\end{proof}
+
+\begin{proposition}[MAH raises original-drug counts and the original-drug share]
+Suppose MAH raises the mass of commercially viable type-$B$ ideas and that qualified contract-manufacturing supply is sufficiently elastic near the stationary equilibrium. Then the number of new original-drug products $\Inew(M)$ rises weakly. Moreover, the original-drug share $\ShareO(M)$ rises weakly if the increase in $Q_O(M)$ dominates any contemporaneous increase in generic output $Q_G(M)$.
+\end{proposition}
+
+\begin{proof}
+A rise in commercially viable type-$B$ ideas raises the second term in equation \eqref{eq:Inew}. If integrated-firm original-drug research does not fall too much, total new original-drug products rise. The share $\ShareO(M)$ in equation \eqref{eq:shareO} rises whenever original-drug commercialization grows faster than total product commercialization.
+\end{proof}
+
+\begin{proposition}[MAH raises reorganization margins]
+If MAH weakly lowers the relevant switching costs $\kappa_{sj}$, then the stationary choice regions for reorganization expand weakly. Therefore the incumbent transition probabilities in equation \eqref{eq:transition_matrix} shift toward the organizational forms made more attractive by MAH, holding equilibrium prices fixed.
+\end{proposition}
+
+\begin{proof}
+Lower switching costs increase the corresponding choice-specific value in equation \eqref{eq:choice_specific_value}. Therefore the associated choice region expands weakly in equation \eqref{eq:choice_region}. Transition probabilities inherit those changes through equation \eqref{eq:transition_prob}.
+\end{proof}
+
+\begin{proposition}[Producer-side outcomes and industry surplus need not move one-for-one with innovation]
+A rise in original-drug counts or original-drug share after MAH does not mechanically imply higher producer-side profits or higher industry surplus. Manufacturing profits rise only if the increase in qualified outsourcing demand dominates the effects of wage pressure and entry by manufacturing specialists. Industry surplus rises only if the gains from added original-drug commercialization and better specialization outweigh producer-profit losses and switching costs.
+\end{proposition}
+
+\begin{proof}
+The sign of $\bar\Pi_C(M)$ depends on both the price of qualified contract manufacturing and the equilibrium cost side. The sign of $\Surp(1)-\Surp(0)$ depends on all affected margins in equation \eqref{eq:industry_surplus}, not solely on original-drug counts.
+\end{proof}
+
+\section{What we changed relative to the earlier one-product draft}
+
+\begin{enumerate}[leftmargin=2em]
+    \item We introduce \textbf{two medicine categories}, generic and original, because the policy question is about original-drug commercialization rather than total pharmaceutical output.
+    \item We let \textbf{integrated firms and manufacturing-specialized firms produce both medicines}, while research-specialized firms generate only original-drug ideas.
+    \item We model commercialization through a \textbf{bounded reduced-form success rate $\lambda_B$} instead of through a top-level implementation-intensity choice. This fits the MAH institution better.
+    \item We encode the institutional point that \textbf{before MAH research-specialized firms cannot independently commercialize new original-drug ideas} by imposing equation \eqref{eq:premah_zero} in the theory benchmark.
+    \item We define innovation using \textbf{two objects}: the number of new original-drug products and the share of original drugs in all commercialized products. This makes the model line up with the way the paper plans to quantify innovation structure.
+    \item We keep \textbf{all pairwise organizational switches} plus exit because the incumbent transition matrix is one of the key empirical objects.
+    \item We keep \textbf{beginning-of-period organizational choice} so that current-period commercialization possibilities are consistent with current-period organization.
+\end{enumerate}
+
+\begin{thebibliography}{}
+
+\bibitem[Acemoglu and Linn(2004)]{AcemogluLinn2004}
+Acemoglu, Daron, and Joshua Linn. 2004.
+\newblock Market Size in Innovation: Theory and Evidence from the Pharmaceutical Industry.
+\newblock \emph{Quarterly Journal of Economics} 119(3): 1049--1090.
+
+\bibitem[Akcigit and Kerr(2018)]{AkcigitKerr2018}
+Akcigit, Ufuk, and William R. Kerr. 2018.
+\newblock Growth through Heterogeneous Innovations.
+\newblock \emph{Journal of Political Economy} 126(4): 1374--1443.
+
+\bibitem[Arora et~al.(2001)Arora, Fosfuri, and Gambardella]{AroraFosfuriGambardella2001}
+Arora, Ashish, Andrea Fosfuri, and Alfonso Gambardella. 2001.
+\newblock \emph{Markets for Technology: The Economics of Innovation and Corporate Strategy}.
+\newblock Cambridge, MA: MIT Press.
+
+\bibitem[Arora and Merges(2004)]{AroraMerges2004}
+Arora, Ashish, and Robert P. Merges. 2004.
+\newblock Specialized Supply Firms, Property Rights and Firm Boundaries.
+\newblock \emph{Industrial and Corporate Change} 13(3): 451--475.
+
+\bibitem[Chandra et~al.(2026)Chandra, Kao, Miller, and Stern]{ChandraEtAl2026}
+Chandra, Amitabh, Jennifer Kao, Kathleen L. Miller, and Ariel D. Stern. 2026.
+\newblock Regulatory Incentives for Innovation: The FDA's Breakthrough Therapy Designation.
+\newblock \emph{Review of Economics and Statistics} 108(1): 189--207.
+
+\bibitem[Ericson and Pakes(1995)]{EricsonPakes1995}
+Ericson, Richard, and Ariel Pakes. 1995.
+\newblock Markov-Perfect Industry Dynamics: A Framework for Empirical Work.
+\newblock \emph{Review of Economic Studies} 62(1): 53--82.
+
+\bibitem[Fons-Rosen et~al.(2026)Fons-Rosen, Roldan-Blanco, and Schmitz]{FonsRosenRoldanBlancoSchmitz2026}
+Fons-Rosen, Christian, Pau Roldan-Blanco, and Tom Schmitz. 2026.
+\newblock The Effects of Startup Acquisitions on Innovation and Economic Growth.
+\newblock Working paper.
+
+\bibitem[Gans and Stern(2000)]{GansStern2000}
+Gans, Joshua S., and Scott Stern. 2000.
+\newblock Incumbency and R\&D Incentives: Licensing the Gale of Creative Destruction.
+\newblock \emph{Journal of Economics \& Management Strategy} 9(4): 485--511.
+
+\bibitem[Gans and Stern(2003)]{GansStern2003}
+Gans, Joshua S., and Scott Stern. 2003.
+\newblock The Product Market and the Market for ``Ideas'': Commercialization Strategies for Technology Entrepreneurs.
+\newblock \emph{Research Policy} 32(2): 333--350.
+
+\bibitem[Gans et~al.(2008)Gans, Hsu, and Stern]{GansHsuStern2008}
+Gans, Joshua S., David H. Hsu, and Scott Stern. 2008.
+\newblock The Impact of Uncertain Intellectual Property Rights on the Market for Ideas: Evidence from Patent Grant Delays.
+\newblock \emph{Management Science} 54(5): 982--997.
+
+\bibitem[Hopenhayn(1992)]{Hopenhayn1992}
+Hopenhayn, Hugo A. 1992.
+\newblock Entry, Exit, and Firm Dynamics in Long Run Equilibrium.
+\newblock \emph{Econometrica} 60(5): 1127--1150.
+
+\bibitem[Jia et~al.(2023)Jia, Ma, Yang, and Zhang]{JiaMaYangZhang2023}
+Jia, Ruixue, Xiao Ma, Jianan Yang, and Yiran Zhang. 2023.
+\newblock Improving Regulation for Innovation: Evidence from China's Pharmaceutical Industry.
+\newblock NBER Working Paper 31976.
+
+\bibitem[Jovanovic(1982)]{Jovanovic1982}
+Jovanovic, Boyan. 1982.
+\newblock Selection and the Evolution of Industry.
+\newblock \emph{Econometrica} 50(3): 649--670.
+
+\bibitem[Klette and Kortum(2004)]{KletteKortum2004}
+Klette, Tor Jakob, and Samuel Kortum. 2004.
+\newblock Innovating Firms and Aggregate Innovation.
+\newblock \emph{Journal of Political Economy} 112(5): 986--1018.
+
+\bibitem[Lakdawalla(2018)]{Lakdawalla2018}
+Lakdawalla, Darius. 2018.
+\newblock Economics of the Pharmaceutical Industry.
+\newblock \emph{Journal of Economic Literature} 56(2): 397--449.
+
+\bibitem[Luttmer(2007)]{Luttmer2007}
+Luttmer, Erzo G. J. 2007.
+\newblock Selection, Growth, and the Size Distribution of Firms.
+\newblock \emph{Quarterly Journal of Economics} 122(3): 1103--1144.
+
+\end{thebibliography}
+
+\end{document}
