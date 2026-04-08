@@ -1,0 +1,251 @@
+\section{Definition and Existence of Stationary Competitive Equilibrium}
+
+This phase closes the benchmark system by combining objects from Phases 1--7. The mechanism is unchanged. The contribution of this phase is to provide:
+\begin{enumerate}
+    \item a formal equilibrium definition in one place;
+    \item an explicit finite-dimensional outer map;
+    \item an existence framework with assumptions stated before theorem use.
+\end{enumerate}
+
+\subsection{Benchmark Fidelity Check}
+
+\paragraph{Step 0: inherited blocks only.}
+Phase 8 uses, without modification:
+\begin{enumerate}
+    \item Bellman block (Phase 3): $V_A,V_B,V_C$ and, conditional on the selector representation made explicit in Phase 7, organizational policy rules $g_A,g_B,g_C$;
+    \item static block (Phase 2): $x_A^*,x_B^*,m^*$ and optimized flow payoffs;
+    \item entry block (Phase 5): entrant values $\bar V_E^j$ and entrant masses $n_E^j$;
+    \item market-clearing block (Phase 6): qualified-manufacturing and labor equations;
+    \item stationary-distribution block (Phase 7): invariant measure vector $\mu^*$.
+\end{enumerate}
+No government problem, no DSGE closure, and no bargaining/acquisition layer is added.
+
+\paragraph{Step 1: notation discipline.}
+The benchmark writes objects such as $\bar V_E^j(M)$, $D_m(p_m,M)$, $S_m(p_m,w)$, and the compressed equilibrium labor-demand object $L_D(M)$. In this phase we do \emph{not} expand those benchmark objects into new argument lists such as $\bar V_E^j(y)$ or $D_m(y)$. Whenever an outer candidate tuple $y=(w,p_m,n_E)$ is needed, we introduce auxiliary residual notation and map it back immediately to the benchmark objects.
+
+\subsection{Objects and Domains (Define Before Use)}
+
+Fix regime $M\in\{0,1\}$. Define feasible sets
+\[
+\mathcal W=[\underline w,\overline w]\subset\mathbb R_+,
+\qquad
+\mathcal P_m=[\underline p_m,\overline p_m]\subset\mathbb R_+,
+\]
+\[
+\mathcal N_E:=\{n_E=(n_E^A,n_E^B,n_E^C)\in\mathbb R_+^3:0\le n_E^j\le\overline n_j\ \forall j\},
+\]
+and outer domain
+\[
+\mathcal Y:=\mathcal W\times\mathcal P_m\times\mathcal N_E,
+\qquad
+y=(w,p_m,n_E)\in\mathcal Y.
+\]
+
+Given an outer candidate $y=(w,p_m,n_E)\in\mathcal Y$, let
+\[
+\Phi_M^y:\mathcal M_+^3\to\mathcal M_+^3
+\]
+denote the Phase 7 stationary-distribution operator induced by $y$, that is, by the candidate prices $(w,p_m)$, the entrant masses $n_E$, and the associated selector-based policy representation. Let
+\[
+\mu^{*,y}=(\mu_A^{*,y},\mu_B^{*,y},\mu_C^{*,y})
+\]
+denote a stationary-measure vector satisfying
+\[
+\mu^{*,y}=\Phi_M^y(\mu^{*,y}),
+\]
+whenever such a fixed point has been selected. Let
+\[
+\bar V_E^{j,y}(M)
+\]
+denote the corresponding benchmark entrant value for type $j$. This superscript-$y$ notation is auxiliary only. It records which candidate outer tuple generated the inner solution, but it does not change the benchmark argument list of the underlying objects.
+
+Define the auxiliary market residuals
+\begin{align}
+\mathfrak D_m(y)
+&:=
+\int_Z x_B^*(z;p_m,M)\lambda_B(z,p_m,M)\,\mu_B^{*,y}(dz)
+-
+\int_Z m^*(z;p_m,w)\,\mu_C^{*,y}(dz),
+\label{eq:p8_Dm_resid}\\
+\mathfrak D_L(y)
+&:=
+\int_Z \ell_A(z;w)\,\mu_A^{*,y}(dz)
++\int_Z \ell_B(z;p_m,M)\,\mu_B^{*,y}(dz)
+\nonumber\\
+&\quad+\int_Z \ell_C(z;p_m,w)\,\mu_C^{*,y}(dz)
++\sum_{j\in\{A,B,C\}}\ell_E^j n_E^j
+-\bar L.
+\label{eq:p8_DL_resid}
+\end{align}
+These are auxiliary residual maps built from the benchmark market-clearing objects evaluated at the inner solution induced by $y$.
+
+For entry complementarity, define the auxiliary scalar pair
+\[
+\mathfrak a_j(y):=-\bar V_E^{j,y}(M),
+\qquad
+\mathfrak b_j(y):=n_E^j,
+\qquad j\in\{A,B,C\}.
+\]
+Define the auxiliary Fischer--Burmeister residual
+\begin{equation}
+\varphi_j(y):=\sqrt{\mathfrak a_j(y)^2+\mathfrak b_j(y)^2}-\mathfrak a_j(y)-\mathfrak b_j(y).
+\label{eq:p8_fb}
+\end{equation}
+
+\begin{lemma}[Fischer--Burmeister equivalence]
+For scalar pair $(a,b)$,
+\[
+\sqrt{a^2+b^2}-a-b=0
+\]
+if and only if
+\[
+a\ge0,\quad b\ge0,\quad ab=0.
+\]
+Hence $\varphi_j(y)=0$ is equivalent to
+\[
+\bar V_E^{j,y}(M)\le0,\quad n_E^j\ge0,\quad n_E^j\bar V_E^{j,y}(M)=0.
+\]
+\end{lemma}
+
+\begin{proof}
+("If") Suppose $a\ge0$, $b\ge0$, and $ab=0$.
+If $a=0$, then expression is $\sqrt{b^2}-b=0$. If $b=0$, similarly $\sqrt{a^2}-a=0$.
+
+("Only if") Suppose $\sqrt{a^2+b^2}-a-b=0$. Then
+\[
+\sqrt{a^2+b^2}=a+b.
+\]
+Left side is nonnegative, so right side must be nonnegative: $a+b\ge0$. Squaring both sides gives
+\[
+a^2+b^2=a^2+2ab+b^2 \Rightarrow ab=0.
+\]
+If $ab=0$ and $a+b\ge0$, then at least one is zero and the other is nonnegative, implying $a\ge0$, $b\ge0$.
+\end{proof}
+
+\subsection{Formal Equilibrium Definition}
+
+\begin{definition}[Stationary competitive equilibrium under regime $M$]
+A stationary competitive equilibrium is
+\[
+\mathcal E_M=\bigl(V^*,x_A^*,x_B^*,m^*,g^*,\mu^*,n_E^*,w^*,p_m^*\bigr)
+\]
+with $y^*:=(w^*,p_m^*,n_E^*)$ such that:
+\begin{enumerate}
+    \item Bellman optimality holds at $(w^*,p_m^*)$;
+    \item for each $j\in\{A,B,C\}$,
+    \[
+    \bar V_E^j\le0,\quad n_E^{j,*}\ge0,\quad n_E^{j,*}\bar V_E^j=0;
+    \]
+    \item qualified-manufacturing market clears: $D_m=S_m$;
+    \item labor market clears: $L_D(M)=\bar L$, equivalently, the auxiliary fixed-price labor residual constructed from $y^*$ is zero;
+    \item stationary consistency holds: $\mu^*=\Phi_M^{y^*}(\mu^*)$.
+\end{enumerate}
+\end{definition}
+
+\subsection{Existence Framework in Finite Dimension}
+
+\paragraph{Step 1: assumptions.}
+
+\begin{assumption}[E1: Inner block solvability]
+For every $y\in\mathcal Y$, inner blocks are well defined: the Bellman solution exists, the selector-based policy representation used in Phase 7 exists, and a stationary-measure vector $\mu^{*,y}$ satisfying $\mu^{*,y}=\Phi_M^y(\mu^{*,y})$ has been selected. Under the uniqueness result from Phase 7, this selected stationary measure is unique.
+\end{assumption}
+
+\begin{assumption}[E2: Continuity]
+Mappings
+\[
+y\mapsto\mathfrak D_m(y),\quad y\mapsto\mathfrak D_L(y),\quad y\mapsto\varphi_j(y)
+\]
+are continuous on $\mathcal Y$ for each $j\in\{A,B,C\}$.
+\end{assumption}
+
+\begin{assumption}[E3: Positive outer-map step sizes]
+The constants in the outer update map satisfy
+\[
+\kappa_w>0,
+\qquad
+\kappa_p>0,
+\qquad
+\kappa_E>0.
+\]
+\end{assumption}
+
+\paragraph{Step 2: explicit outer map.}
+For interval $I=[\underline I,\overline I]$, define projection
+\[
+\Pi_I(u):=\min\{\max\{u,\underline I\},\overline I\}.
+\]
+Define continuous map $\Psi:\mathcal Y\to\mathcal Y$:
+\begin{align}
+\Psi_w(y)&:=\Pi_{\mathcal W}\bigl(w-\kappa_w\mathfrak D_L(y)\bigr),
+\label{eq:p8_psiw}\\
+\Psi_p(y)&:=\Pi_{\mathcal P_m}\bigl(p_m-\kappa_p\mathfrak D_m(y)\bigr),
+\label{eq:p8_psip}\\
+\Psi_{n,j}(y)&:=\Pi_{[0,\overline n_j]}\bigl(n_E^j-\kappa_E\varphi_j(y)\bigr),
+\qquad j\in\{A,B,C\}.
+\label{eq:p8_psin}
+\end{align}
+Set
+\[
+\Psi(y):=\bigl(\Psi_w(y),\Psi_p(y),\Psi_{n,A}(y),\Psi_{n,B}(y),\Psi_{n,C}(y)\bigr).
+\]
+
+\paragraph{Step 3: outer fixed points and conditional conversion to equilibrium conditions.}
+
+\begin{proposition}[Existence of an outer fixed point]
+Under E1--E2, map $\Psi$ has at least one fixed point in $\mathcal Y$.
+\end{proposition}
+
+\begin{proof}
+First apply Brouwer fixed-point theorem to $\Psi$. Verify prerequisites:
+\begin{enumerate}
+    \item $\mathcal Y$ is nonempty, compact, convex (finite product of closed intervals and boxes).
+    \item $\Psi$ is continuous by E2 and continuity of projection.
+    \item $\Psi(\mathcal Y)\subseteq\mathcal Y$ by construction.
+\end{enumerate}
+\mbox{} Therefore there exists at least one fixed point $y^*\in\mathcal Y$ with $\Psi(y^*)=y^*$.
+\end{proof}
+
+\begin{proposition}[Conditional fixed-point-to-equilibrium conversion]
+Assume E1--E3. Let $y^*\in\mathcal Y$ be a fixed point of $\Psi$ that also lies in $\mathrm{int}(\mathcal Y)$. Then the inner objects induced by $y^*$ form a stationary competitive equilibrium.
+\end{proposition}
+
+\begin{proof}[Proof sketch with assumptions listed explicitly]
+Because $y^*$ lies in the interior of $\mathcal Y$, projection is locally the identity map at each coordinate. Hence the fixed-point equalities become
+\begin{align*}
+0&=\Psi_w(y^*)-w^*=-\kappa_w\mathfrak D_L(y^*)
+\Rightarrow \mathfrak D_L(y^*)=0,\\
+0&=\Psi_p(y^*)-p_m^*=-\kappa_p\mathfrak D_m(y^*)
+\Rightarrow \mathfrak D_m(y^*)=0,\\
+0&=\Psi_{n,j}(y^*)-n_E^{j,*}=-\kappa_E\varphi_j(y^*)
+\Rightarrow \varphi_j(y^*)=0\ \forall j.
+\end{align*}
+The implication on the right in each line uses E3, which guarantees that the step sizes are strictly positive. By Fischer--Burmeister equivalence, $\varphi_j(y^*)=0$ implies entry complementarity for each $j$.
+
+Finally, E1 gives well-defined inner objects at $y^*$, so Bellman optimality holds and stationary consistency can be written as
+\[
+\mu^{*,y^*}=\Phi_M^{y^*}(\mu^{*,y^*}).
+\]
+Together with $\mathfrak D_m(y^*)=0$, $\mathfrak D_L(y^*)=0$, and entry complementarity, all equilibrium conditions in the definition are satisfied.
+\end{proof}
+
+\subsection{Scope and Non-Claims}
+
+\begin{enumerate}
+    \item This is a benchmark-closure framework, not a welfare theorem.
+    \item The Brouwer argument guarantees an outer fixed point, but the conversion to a stationary competitive equilibrium is proved here only for interior fixed points. Boundary fixed points are benchmark-admissible and would require a separate complementarity or normal-cone argument.
+    \item No full-equilibrium uniqueness claim is made at Phase 8. Uniqueness requires stronger monotonicity/Jacobian conditions and is optional extension material.
+\end{enumerate}
+
+\subsection{What did we just do, and why does it matter?}
+
+This phase took the objects built separately in Phases 1--7 and assembled them into one equilibrium definition with clear logical ordering. The equilibrium definition is not merely a list of conditions. It says exactly which objects are treated as inner objects at given candidate prices and entrant masses, and which residual conditions must hold at the outer level for those inner objects to constitute a stationary competitive equilibrium. That separation matters because the benchmark model is not solved in a single undifferentiated step. Bellman optimality, stationary consistency through $\Phi_M^y$, entry complementarity, and market clearing all live at different logical levels, and Phase 8 states how they fit together without rewriting any primitive problem.
+
+The outer-map existence framework is also intentionally modest. It does not claim global uniqueness, comparative statics, or welfare properties. It now also avoids overstating what the present argument proves: Brouwer gives an outer fixed point, while the current projection argument converts only interior fixed points into equilibrium. This is exactly the level of closure that can be defended at the benchmark level without silently ruling out boundary equilibria that the benchmark itself allows.
+
+\subsection*{End-of-Section Recap}
+
+\begin{itemize}
+    \item What has been established mathematically: Phase 8 gives a complete stationary competitive-equilibrium definition, proves existence of at least one outer fixed point, and proves that any interior outer fixed point satisfying the stated assumptions converts into a stationary competitive equilibrium.
+    \item What assumptions were used: the inner-block solvability condition E1, continuity condition E2, and the positive step-size condition E3 stated explicitly in this phase.
+    \item What remains to be derived next: if the theory package continues, the remaining tasks are boundary fixed-point conversion, uniqueness under stronger conditions, and empirical or computational implementation details rather than new benchmark equilibrium objects.
+\end{itemize}

@@ -1,0 +1,249 @@
+\section{稳态竞争均衡的定义与存在性框架}
+
+本阶段在不改变 benchmark 机制边界的前提下，完成两件事：
+\begin{enumerate}
+    \item 把 Phase 1--7 的对象合并为一个正式稳态竞争均衡定义；
+    \item 给出外层有限维不动点的存在性框架。
+\end{enumerate}
+
+\subsection{Benchmark Fidelity Check}
+
+\paragraph{Step 0：仅继承既有模块，不新增机制。}
+Phase 8 直接继承：
+\begin{enumerate}
+    \item Phase 3：Bellman 值函数，以及在 Phase 7 明确写出的 selector-based policy representation 下的组织策略；
+    \item Phase 2：静态最优策略与优化后流收益；
+    \item Phase 5：entrant values 与 entrant masses；
+    \item Phase 6：受托生产与劳动力市场出清；
+    \item Phase 7：不变测度向量与稳态一致性。
+\end{enumerate}
+不引入政府最优化、DSGE 扩展或并购议价层。
+
+\paragraph{Step 1：记号纪律。}
+benchmark 把对象写成 $\bar V_E^j(M)$、$D_m(p_m,M)$、$S_m(p_m,w)$ 与压缩后的 labor-demand object $L_D(M)$。本阶段不把这些 benchmark objects 改写成 $\bar V_E^j(y)$ 或 $D_m(y)$ 一类新 argument list。只在需要 outer candidate tuple $y=(w,p_m,n_E)$ 时引入辅助 residual notation，并立即说明它与 benchmark objects 的对应关系。
+
+\subsection{对象与定义域（先定义后使用）}
+
+固定制度 $M\in\{0,1\}$。定义可行集合：
+\[
+\mathcal W=[\underline w,\overline w]\subset\mathbb R_+,
+\qquad
+\mathcal P_m=[\underline p_m,\overline p_m]\subset\mathbb R_+,
+\]
+\[
+\mathcal N_E:=\{n_E=(n_E^A,n_E^B,n_E^C)\in\mathbb R_+^3:0\le n_E^j\le\overline n_j\ \forall j\},
+\]
+外层域为
+\[
+\mathcal Y:=\mathcal W\times\mathcal P_m\times\mathcal N_E,
+\qquad
+y=(w,p_m,n_E)\in\mathcal Y.
+\]
+
+给定外层候选 $y=(w,p_m,n_E)\in\mathcal Y$，记
+\[
+\Phi_M^y:\mathcal M_+^3\to\mathcal M_+^3
+\]
+为由 $y$ 诱导出的 Phase 7 stationary-distribution operator；这里的“由 $y$ 诱导”是指：候选价格 $(w,p_m)$、entrant masses $n_E$ 与相应的 selector-based policy representation 共同决定了这一个算子。再记
+\[
+\mu^{*,y}=(\mu_A^{*,y},\mu_B^{*,y},\mu_C^{*,y})
+\]
+为满足
+\[
+\mu^{*,y}=\Phi_M^y(\mu^{*,y})
+\]
+的一个稳态测度向量（若该不动点已被选定），并记
+\[
+\bar V_E^{j,y}(M)
+\]
+为对应的 benchmark entrant value。这个上标 $y$ 只是辅助记号，用来记录是哪一个 outer candidate 诱导了内层解；它并不改变 benchmark object 本身的 argument list。
+
+定义辅助的市场残差：
+\begin{align}
+\mathfrak D_m(y)
+&:=
+\int_Z x_B^*(z;p_m,M)\lambda_B(z,p_m,M)\,\mu_B^{*,y}(dz)
+-
+\int_Z m^*(z;p_m,w)\,\mu_C^{*,y}(dz),
+\label{eq:p8zh_Dm_resid}\\
+\mathfrak D_L(y)
+&:=
+\int_Z \ell_A(z;w)\,\mu_A^{*,y}(dz)
++\int_Z \ell_B(z;p_m,M)\,\mu_B^{*,y}(dz)
+\nonumber\\
+&\quad+\int_Z \ell_C(z;p_m,w)\,\mu_C^{*,y}(dz)
++\sum_{j\in\{A,B,C\}}\ell_E^j n_E^j
+-\bar L.
+\label{eq:p8zh_DL_resid}
+\end{align}
+这些是由 $y$ 诱导出的内层解去评价 benchmark market-clearing objects 后形成的辅助 residual maps。
+
+对进入互补条件，定义辅助标量对
+\[
+\mathfrak a_j(y):=-\bar V_E^{j,y}(M),
+\qquad
+\mathfrak b_j(y):=n_E^j,
+\qquad j\in\{A,B,C\}.
+\]
+再定义辅助的 Fischer--Burmeister 残差
+\begin{equation}
+\varphi_j(y):=\sqrt{\mathfrak a_j(y)^2+\mathfrak b_j(y)^2}-\mathfrak a_j(y)-\mathfrak b_j(y).
+\label{eq:p8zh_fb}
+\end{equation}
+
+\begin{lemma}[Fischer--Burmeister 等价关系]
+对标量 $(a,b)$，有
+\[
+\sqrt{a^2+b^2}-a-b=0
+\]
+当且仅当
+\[
+a\ge0,\quad b\ge0,\quad ab=0.
+\]
+因此 $\varphi_j(y)=0$ 当且仅当
+\[
+\bar V_E^{j,y}(M)\le0,\quad n_E^j\ge0,\quad n_E^j\bar V_E^{j,y}(M)=0.
+\]
+\end{lemma}
+
+\begin{proof}
+（充分性）若 $a\ge0,b\ge0,ab=0$，则至少一个为零。若 $a=0$，表达式为 $\sqrt{b^2}-b=0$；若 $b=0$，同理成立。
+
+（必要性）若 $\sqrt{a^2+b^2}-a-b=0$，则
+\[
+\sqrt{a^2+b^2}=a+b.
+\]
+左边非负，所以 $a+b\ge0$。两边平方：
+\[
+a^2+b^2=a^2+2ab+b^2\Rightarrow ab=0.
+\]
+结合 $ab=0$ 与 $a+b\ge0$，得到至少一个为 0，另一个非负，所以 $a\ge0,b\ge0$。
+\end{proof}
+
+\subsection{稳态竞争均衡正式定义}
+
+\begin{definition}[制度 $M$ 下的稳态竞争均衡]
+稳态竞争均衡是元组
+\[
+\mathcal E_M=\bigl(V^*,x_A^*,x_B^*,m^*,g^*,\mu^*,n_E^*,w^*,p_m^*\bigr)
+\]
+其中 $y^*:=(w^*,p_m^*,n_E^*)$，并且满足：
+\begin{enumerate}
+    \item Bellman 最优性成立；
+    \item 对每个 $j\in\{A,B,C\}$，
+    \[
+    \bar V_E^j\le0,\quad n_E^{j,*}\ge0,\quad n_E^{j,*}\bar V_E^j=0;
+    \]
+    \item 受托生产市场出清：$D_m=S_m$；
+    \item 劳动力市场出清：$L_D(M)=\bar L$，等价地，由 $y^*$ 构造的辅助 fixed-price labor residual 为零；
+    \item 稳态一致性：$\mu^*=\Phi_M^{y^*}(\mu^*)$。
+\end{enumerate}
+\end{definition}
+
+\subsection{存在性框架：有限维外层不动点}
+
+\paragraph{Step 1：先列假设。}
+
+\begin{assumption}[E1：内层模块可解]
+对每个 $y\in\mathcal Y$，内层模块良定义：Bellman 解存在，Phase 7 中使用的 selector-based policy representation 存在，并且已经选定一个满足 $\mu^{*,y}=\Phi_M^y(\mu^{*,y})$ 的稳态测度向量。若调用 Phase 7 的唯一性结论，则这个被选定的稳态测度向量是唯一的。
+\end{assumption}
+
+\begin{assumption}[E2：连续性]
+映射
+\[
+y\mapsto\mathfrak D_m(y),\quad y\mapsto\mathfrak D_L(y),\quad y\mapsto\varphi_j(y)
+\]
+在 $\mathcal Y$ 上连续（每个 $j\in\{A,B,C\}$）。
+\end{assumption}
+
+\begin{assumption}[E3：外层更新步长为正]
+外层更新映射中的常数满足
+\[
+\kappa_w>0,
+\qquad
+\kappa_p>0,
+\qquad
+\kappa_E>0.
+\]
+\end{assumption}
+
+\paragraph{Step 2：显式构造外层映射。}
+对区间 $I=[\underline I,\overline I]$，定义投影
+\[
+\Pi_I(u):=\min\{\max\{u,\underline I\},\overline I\}.
+\]
+定义映射 $\Psi:\mathcal Y\to\mathcal Y$：
+\begin{align}
+\Psi_w(y)&:=\Pi_{\mathcal W}\bigl(w-\kappa_w\mathfrak D_L(y)\bigr),
+\label{eq:p8zh_psiw}\\
+\Psi_p(y)&:=\Pi_{\mathcal P_m}\bigl(p_m-\kappa_p\mathfrak D_m(y)\bigr),
+\label{eq:p8zh_psip}\\
+\Psi_{n,j}(y)&:=\Pi_{[0,\overline n_j]}\bigl(n_E^j-\kappa_E\varphi_j(y)\bigr),
+\qquad j\in\{A,B,C\}.
+\label{eq:p8zh_psin}
+\end{align}
+记
+\[
+\Psi(y):=\bigl(\Psi_w(y),\Psi_p(y),\Psi_{n,A}(y),\Psi_{n,B}(y),\Psi_{n,C}(y)\bigr).
+\]
+
+\paragraph{Step 3：先证明 outer fixed point 存在，再说明何时能转成均衡。}
+
+\begin{proposition}[outer fixed point 的存在性]
+在 E1--E2 下，映射 $\Psi$ 至少有一个不动点落在 $\mathcal Y$ 中。
+\end{proposition}
+
+\begin{proof}
+先对 $\Psi$ 应用 Brouwer 不动点定理：
+\begin{enumerate}
+    \item $\mathcal Y$ 非空、紧、凸（闭区间与闭盒的有限乘积）；
+    \item 由 E2 与投影连续性，$\Psi$ 连续；
+    \item 按定义，$\Psi(\mathcal Y)\subseteq\mathcal Y$。
+\end{enumerate}
+\mbox{} 故至少存在不动点 $y^*\in\mathcal Y$，满足 $\Psi(y^*)=y^*$。
+\end{proof}
+
+\begin{proposition}[从 interior outer fixed point 到均衡的条件性转化]
+设 E1--E3 成立。若 $y^*\in\mathcal Y$ 是 $\Psi$ 的一个不动点，并且 $y^*\in\mathrm{int}(\mathcal Y)$，则由 $y^*$ 诱导的内层对象构成一个稳态竞争均衡。
+\end{proposition}
+
+\begin{proof}[逐条前提核对的证明草图]
+由于 $y^*$ 位于 $\mathcal Y$ 的内点，投影映射在各坐标上局部等于恒等映射，因此不动点条件逐项化为
+\begin{align*}
+0&=\Psi_w(y^*)-w^*=-\kappa_w\mathfrak D_L(y^*)
+\Rightarrow \mathfrak D_L(y^*)=0,\\
+0&=\Psi_p(y^*)-p_m^*=-\kappa_p\mathfrak D_m(y^*)
+\Rightarrow \mathfrak D_m(y^*)=0,\\
+0&=\Psi_{n,j}(y^*)-n_E^{j,*}=-\kappa_E\varphi_j(y^*)
+\Rightarrow \varphi_j(y^*)=0\ \forall j.
+\end{align*}
+每一行右侧的推出都使用了 E3，因为只有在 $\kappa_w,\kappa_p,\kappa_E$ 严格为正时，才能从 $0=-\kappa\cdot r$ 推出对应残差 $r=0$。再由 Fischer--Burmeister 等价关系，$\varphi_j(y^*)=0$ 推出进入互补条件。
+
+最后由 E1，$y^*$ 处内层对象良定义，故 Bellman 最优性成立，稳态一致性可写成
+\[
+\mu^{*,y^*}=\Phi_M^{y^*}(\mu^{*,y^*}).
+\]
+结合 $\mathfrak D_m(y^*)=0$、$\mathfrak D_L(y^*)=0$ 与进入互补，定义中的全部均衡条件同时成立。
+\end{proof}
+
+\subsection{范围说明（非结论）}
+
+\begin{enumerate}
+    \item 这是 benchmark 闭合下的框架，不是福利定理；
+    \item Brouwer 论证保证 outer fixed point 存在，但当前这套投影论证只把 interior fixed point 转化为均衡。边界 fixed point 仍然是 benchmark 允许的情形，需要另行补上 complementarity 或 normal-cone 论证。
+    \item Phase 8 不主张全局唯一均衡；唯一性需更强单调性/Jacobian 条件，属于扩展议题。
+\end{enumerate}
+
+\subsection{What did we just do, and why does it matter?}
+
+本阶段把 Phase 1--7 分别建立的对象合并成一个具有清楚逻辑顺序的均衡定义。这里的均衡定义不是简单地把若干条件并列罗列出来，而是明确区分：哪些对象是在给定候选价格与 entrant masses 时由内层模块生成的，哪些残差条件必须在外层同时为零，才能把这些内层对象组成一个 stationary competitive equilibrium。这个区分很重要，因为 benchmark model 不是通过一个混合不清的单步问题解出来的。Bellman optimality、通过 $\Phi_M^y$ 表示的 stationary consistency、entry complementarity 与 market clearing 本来就处在不同逻辑层级，Phase 8 的任务就是在不改写任何 primitive problem 的前提下，把这些层级清楚地接起来。
+
+本阶段的 outer-map existence framework 也刻意保持克制。它不主张全局唯一性，不提前进入 comparative statics，也不把自己写成福利定理。更重要的是，它现在不再把“outer fixed point 存在”与“均衡存在”混成一句话。当前能严格证明的是：Brouwer 给出 outer fixed point；若该 fixed point 恰好位于 interior，则当前投影论证可以把它转化为均衡。这样写，既保留了理论闭合框架，也不会静默排除 benchmark 本来允许的边界均衡。
+
+\subsection*{End-of-Section Recap}
+
+\begin{itemize}
+    \item What has been established mathematically: Phase 8 给出了完整的 stationary competitive equilibrium 定义，证明了 outer fixed point 的存在，并证明了任一满足显式条件的 interior outer fixed point 都可以转化为稳态竞争均衡。
+    \item What assumptions were used: Phase 3--7 继承下来的内层对象良定义条件，以及本阶段显式列出的 E1--E3 条件。
+    \item What remains to be derived next: 如果继续扩展 theory package，后续任务应是边界 fixed point 的均衡转化、更强条件下的唯一性，以及 empirical/computational implementation，而不是再添加新的 benchmark equilibrium objects。
+\end{itemize}
