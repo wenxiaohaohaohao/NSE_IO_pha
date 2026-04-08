@@ -39,3 +39,12 @@
 1. 先把候选文件移动到 `research_notes/archive_candidates/`。
 2. 在 `project_plans/plan_change_log_zh.md` 记录迁移原因。
 3. 一周后若无回滚需求，再做永久删除。
+
+## F. 双语交付规则（强制）
+
+1. 从当前起，每个 phase 必须同时交付中英文两个版本。
+2. 中英文文件必须放在同一目录，采用成对命名：
+- 英文：`*_en.*`
+- 中文：`*_zh.*`
+3. 若生成 PDF，两个 PDF 必须同步放入 `output/doc/`。
+4. 任一 phase 未满足双语成对交付，视为该 phase 未完成。

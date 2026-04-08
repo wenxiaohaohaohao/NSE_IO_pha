@@ -4,6 +4,53 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+function Remove-FileWithRetry {
+    param(
+        [Parameter(Mandatory = $true)][string]$Path,
+        [int]$MaxRetries = 5,
+        [int]$DelayMs = 300
+    )
+
+    for ($i = 1; $i -le $MaxRetries; $i++) {
+        try {
+            if (Test-Path $Path) {
+                # Reset attribute flags before delete to avoid read-only surprises.
+                (Get-Item $Path -Force).Attributes = 'Archive'
+                Remove-Item -Path $Path -Force -ErrorAction Stop
+            }
+            return
+        }
+        catch {
+            if ($i -eq $MaxRetries) {
+                throw "Failed to delete file after $MaxRetries attempts: $Path`n$($_.Exception.Message)"
+            }
+            Start-Sleep -Milliseconds $DelayMs
+        }
+    }
+}
+
+function Copy-FileWithRetry {
+    param(
+        [Parameter(Mandatory = $true)][string]$Source,
+        [Parameter(Mandatory = $true)][string]$Destination,
+        [int]$MaxRetries = 5,
+        [int]$DelayMs = 300
+    )
+
+    for ($i = 1; $i -le $MaxRetries; $i++) {
+        try {
+            Copy-Item -Path $Source -Destination $Destination -Force -ErrorAction Stop
+            return
+        }
+        catch {
+            if ($i -eq $MaxRetries) {
+                throw "Failed to overwrite target file after $MaxRetries attempts: $Destination`n$($_.Exception.Message)`nTip: close PDF viewers or VS Code preview tabs that may lock this file."
+            }
+            Start-Sleep -Milliseconds $DelayMs
+        }
+    }
+}
+
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $srcDir = Join-Path $scriptDir "src"
 $buildDir = Join-Path $scriptDir "build"
@@ -35,7 +82,16 @@ if (!(Test-Path $buildDir)) {
 Push-Location $buildDir
 try {
     if ($Clean) {
-        Get-ChildItem -File | Where-Object { $_.Extension -in ".aux", ".bbl", ".blg", ".log", ".out", ".toc", ".fdb_latexmk", ".fls" } | Remove-Item -Force
+        $cleanPatterns = @(
+            "*.aux", "*.bbl", "*.bcf", "*.blg", "*.fls", "*.fdb_latexmk", "*.idx", "*.ilg", "*.ind",
+            "*.lof", "*.lot", "*.log", "*.nav", "*.out", "*.run.xml", "*.snm", "*.synctex.gz", "*.toc",
+            "*.xdv", "*.dvi", "*.ps", "*.pdf"
+        )
+
+        foreach ($pattern in $cleanPatterns) {
+            Get-ChildItem -Path $buildDir -File -Filter $pattern -ErrorAction SilentlyContinue |
+                ForEach-Object { Remove-FileWithRetry -Path $_.FullName }
+        }
     }
 
     $latexmk = Get-Command latexmk -ErrorAction SilentlyContinue
@@ -56,7 +112,7 @@ finally {
 $builtPdf = Join-Path $buildDir "main.pdf"
 if (Test-Path $builtPdf) {
     $targetPdf = "D:\working_paper\DANNI\output\doc\MAH_Policy.pdf"
-    Copy-Item -Path $builtPdf -Destination $targetPdf -Force
+    Copy-FileWithRetry -Source $builtPdf -Destination $targetPdf
     Write-Output "Build succeeded. PDF synced to: $targetPdf"
 }
 else {

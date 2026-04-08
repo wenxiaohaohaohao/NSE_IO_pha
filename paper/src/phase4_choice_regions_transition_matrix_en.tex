@@ -1,0 +1,330 @@
+\section{Choice Regions and the Incumbent Transition Matrix}
+
+This phase studies the benchmark mapping from solved value functions to measurable choice regions and, from there, to the incumbent transition matrix. Throughout this section, $(w,p_m,M)$ are taken as given, and the value-function triple $(V_A,V_B,V_C)$ is taken as the unique fixed-price solution established in Phase 3. The stationary measures $\mu_A,\mu_B,\mu_C$ are treated as given finite Borel measures for the purpose of defining transition probabilities. This is therefore not yet a proof that stationary measures exist or are invariant. That later step belongs to the stationary-distribution phase.
+
+\subsection{Benchmark Fidelity Check}
+
+\paragraph{Step 1: exact benchmark objects relevant for the present task.}
+The exact benchmark objects entering the present phase are:
+\begin{itemize}
+    \item the solved value functions $V_A(z;M)$, $V_B(z;M)$, and $V_C(z;M)$ from Phase 3;
+    \item the benchmark choice-specific values $W_{sj}(z;M)$ for $s\in\{A,B,C\}$ and $j\in\{A,B,C,\mathrm{exit}\}$;
+    \item the benchmark choice regions
+    \[
+    \mathcal Z_{sj}(M)=\left\{z\in Z: j \text{ solves the Bellman problem for a current type-}s\text{ firm at state }z\right\};
+    \]
+    \item the stationary measures $\mu_s$ for $s\in\{A,B,C\}$;
+    \item the model-implied incumbent transition probabilities
+    \[
+    P_{sj}(M)=\frac{\mu_s(\mathcal Z_{sj}(M))}{\mu_s(Z)};
+    \]
+    \item the incumbent transition matrix $\mathbf P(M)$.
+\end{itemize}
+The choice regions and the transition matrix are derived objects. They are not primitives. They are constructed from the already-solved Bellman problem plus given stationary measures.
+
+\paragraph{Step 2: exact formulas, argument lists, and interpretation.}
+The benchmark main text defines the choice regions exactly through states in which an action solves the Bellman problem:
+\[
+\mathcal Z_{sj}(M)=\left\{z\in Z: j \text{ solves the Bellman problem for a current type-}s\text{ firm at state }z\right\}.
+\]
+Using stationary measures $\mu_s$, the benchmark then defines
+\[
+P_{sj}(M)=\frac{\mu_s(\mathcal Z_{sj}(M))}{\mu_s(Z)}.
+\]
+The transition matrix is
+\[
+\mathbf P(M)=
+\begin{pmatrix}
+P_{AA}(M) & P_{AB}(M) & P_{AC}(M) & P_{A,\mathrm{exit}}(M) \\
+P_{BA}(M) & P_{BB}(M) & P_{BC}(M) & P_{B,\mathrm{exit}}(M) \\
+P_{CA}(M) & P_{CB}(M) & P_{CC}(M) & P_{C,\mathrm{exit}}(M)
+\end{pmatrix}.
+\]
+Economically, $\mathcal Z_{sj}(M)$ records where incumbent type-$s$ firms prefer action $j$, while $P_{sj}(M)$ maps those state-level regions into the model counterpart of the empirical incumbent transition matrix.
+
+\paragraph{Step 3: whether the present task can be completed faithfully from the benchmark as written.}
+The present task can be completed faithfully in two layers.
+\begin{enumerate}
+    \item We can derive measurability of the benchmark choice regions directly from Phase 3, because the Bellman indices are continuous and the action set is finite.
+    \item Given finite Borel measures $\mu_s$ with $\mu_s(Z)>0$, we can define $P_{sj}(M)$ rigorously and prove that each entry is well defined and lies in $[0,1]$.
+\end{enumerate}
+However, the statement that each row of $\mathbf P(M)$ sums to one is \emph{not} automatic from the benchmark choice-region definition alone if ties in the Bellman problem occur on sets of positive $\mu_s$ measure. That issue has to be flagged explicitly before proceeding.
+
+\paragraph{Step 4: inconsistency or ambiguity that must be flagged before proceeding.}
+There is one central benchmark ambiguity in this phase.
+
+The benchmark defines $\mathcal Z_{sj}(M)$ as the set of states where action $j$ solves the Bellman problem. Under that definition, two or more actions can solve the Bellman problem at the same state if the decision maker is indifferent. In that case, two or more benchmark choice regions overlap. But the benchmark main text also states that the rows of $\mathbf P(M)$ sum to one. Those two statements are jointly valid only under an additional condition such as:
+\begin{enumerate}
+    \item almost-sure uniqueness of the Bellman maximizer under $\mu_s$, or
+    \item an explicit deterministic tie-breaking rule that replaces overlapping benchmark solving regions by disjoint selector regions.
+\end{enumerate}
+We do \emph{not} silently impose either condition. Instead, we derive measurability and well-definedness exactly as written, and we state explicitly what extra condition is needed for row-stochasticity.
+
+\subsection{Part 1: Benchmark Choice Regions}
+
+\paragraph{Benchmark object restatement.}
+For each current type $s\in\{A,B,C\}$, define the benchmark argmax correspondence
+\[
+\Gamma_s(z;M):=\arg\max_{j\in\{A,B,C,\mathrm{exit}\}}W_{sj}(z;M).
+\]
+The benchmark choice region for current type $s$ and chosen action $j$ is
+\[
+\mathcal Z_{sj}(M):=\{z\in Z: j\in\Gamma_s(z;M)\}.
+\]
+This is a derived dynamic object. It is structural rather than directly observable. It is not itself a policy selector; it is the set of states where action $j$ solves the Bellman problem.
+
+\paragraph{Economic role.}
+The choice regions translate the solved Bellman system into observable organizational switching implications. The value functions tell us how much each organizational form is worth. The choice regions tell us where each organization is chosen. They are therefore the direct bridge from the theory of dynamic firm choice to the empirical transition matrix estimated from incumbent firm panels.
+
+\paragraph{Mathematical problem.}
+Fix $s\in\{A,B,C\}$ and $j\in\{A,B,C,\mathrm{exit}\}$. The mathematical task is to determine whether $\mathcal Z_{sj}(M)$ is a measurable subset of $Z$. Measurability matters because transition probabilities are later defined by applying the measures $\mu_s$ to these sets.
+
+\paragraph{Admissible set.}
+The feasible action set is finite:
+\[
+\mathcal A:=\{A,B,C,\mathrm{exit}\}.
+\]
+This is important for two reasons. First, the Bellman maximum is attained because the decision maker compares only finitely many real numbers. Second, the choice regions can be written as finite intersections of pairwise comparison sets.
+
+\paragraph{Assumptions used.}
+This subsection uses the following ingredients from Phase 3:
+\begin{enumerate}
+    \item the Bellman system has a unique fixed-price solution $(V_A,V_B,V_C)$;
+    \item each benchmark choice-specific value $W_{sj}(\cdot;M)$ is bounded and continuous on $Z$;
+    \item the action set $\mathcal A$ is finite.
+\end{enumerate}
+No new equilibrium assumption is needed to prove measurability of the benchmark choice regions.
+
+\paragraph{Existence argument.}
+For every fixed pair $(s,z)$, the Bellman problem compares the four real numbers
+\[
+W_{sA}(z;M),\quad W_{sB}(z;M),\quad W_{sC}(z;M),\quad 0.
+\]
+Because this set is finite and nonempty, at least one action attains the maximum. Therefore $\Gamma_s(z;M)$ is nonempty for every $z\in Z$.
+
+\paragraph{Why no first-order condition appears here.}
+There is no derivative-based first-order condition in this subsection because the current object is not an interior optimum of a smooth control problem. It is a finite-action argmax correspondence. The relevant mathematics is set construction and measurability rather than differentiation.
+
+\begin{proposition}[Choice-region measurability]
+Fix $(w,p_m,M)$ and the unique value-function triple from Phase 3. Then for every current type $s\in\{A,B,C\}$ and every action $j\in\{A,B,C,\mathrm{exit}\}$:
+\begin{enumerate}
+    \item $\Gamma_s(z;M)$ is nonempty for every $z\in Z$;
+    \item the benchmark choice region $\mathcal Z_{sj}(M)$ is a Borel subset of $Z$;
+    \item the family $\{\mathcal Z_{sj}(M)\}_{j\in\mathcal A}$ covers $Z$:
+    \[
+    Z=\bigcup_{j\in\mathcal A}\mathcal Z_{sj}(M).
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\medskip\noindent\textbf{Step 1: argmax existence.}
+Fix $s$ and $z$. Because the action set $\mathcal A$ is finite, the set of values
+\[
+\{W_{sA}(z;M),W_{sB}(z;M),W_{sC}(z;M),0\}
+\]
+is a finite nonempty subset of $\mathbb R$. A finite nonempty set of real numbers always attains its maximum. Hence $\Gamma_s(z;M)$ is nonempty.
+
+\medskip\noindent\textbf{Step 2: rewrite the choice region as a finite intersection.}
+Fix $s$ and $j$. By definition, $z\in\mathcal Z_{sj}(M)$ if and only if action $j$ yields a value at least as large as every competitor $\ell\in\mathcal A$. Therefore
+\[
+\mathcal Z_{sj}(M)
+=
+\bigcap_{\ell\in\mathcal A}
+\{z\in Z: W_{sj}(z;M)\ge W_{s\ell}(z;M)\}.
+\]
+
+\medskip\noindent\textbf{Step 3: each comparison set is closed.}
+Fix a competitor $\ell\in\mathcal A$. Consider the difference
+\[
+D_{sj\ell}(z):=W_{sj}(z;M)-W_{s\ell}(z;M).
+\]
+Each $W_{sj}(\cdot;M)$ is continuous by Phase 3, so $D_{sj\ell}$ is continuous as the difference of two continuous functions. The set
+\[
+\{z\in Z: W_{sj}(z;M)\ge W_{s\ell}(z;M)\}
+=
+D_{sj\ell}^{-1}([0,\infty))
+\]
+is therefore closed, because $[0,\infty)$ is closed in $\mathbb R$ and the preimage of a closed set under a continuous map is closed.
+
+\medskip\noindent\textbf{Step 4: conclude Borel measurability.}
+The region $\mathcal Z_{sj}(M)$ is a finite intersection of closed sets, so it is closed. Every closed subset of the metric space $Z$ is Borel measurable. Hence $\mathcal Z_{sj}(M)$ is a Borel subset of $Z$.
+
+\medskip\noindent\textbf{Step 5: show that the regions cover the state space.}
+From Step 1, for every $z\in Z$ there exists at least one maximizing action $j\in\mathcal A$ such that $j\in\Gamma_s(z;M)$. Therefore $z\in\mathcal Z_{sj}(M)$ for at least one $j$, which implies
+\[
+Z=\bigcup_{j\in\mathcal A}\mathcal Z_{sj}(M).
+\]
+\end{proof}
+
+\paragraph{What has and has not been established so far.}
+We have shown that the benchmark choice regions are measurable and cover the state space. We have \emph{not} shown that they are pairwise disjoint. If the Bellman problem has ties, overlaps are possible. That distinction is harmless for measurability, but it becomes crucial when we define transition probabilities and ask whether each row of the transition matrix sums to one.
+
+\subsection{Part 2: Transition Probabilities and the Incumbent Transition Matrix}
+
+\paragraph{Benchmark object restatement.}
+For each current type $s\in\{A,B,C\}$ and chosen action $j\in\{A,B,C,\mathrm{exit}\}$, the benchmark defines
+\[
+P_{sj}(M):=\frac{\mu_s(\mathcal Z_{sj}(M))}{\mu_s(Z)}.
+\]
+Collecting these entries yields
+\[
+\mathbf P(M)=
+\begin{pmatrix}
+P_{AA}(M) & P_{AB}(M) & P_{AC}(M) & P_{A,\mathrm{exit}}(M) \\
+P_{BA}(M) & P_{BB}(M) & P_{BC}(M) & P_{B,\mathrm{exit}}(M) \\
+P_{CA}(M) & P_{CB}(M) & P_{CC}(M) & P_{C,\mathrm{exit}}(M)
+\end{pmatrix}.
+\]
+This is a derived object, not a primitive one. It depends on the solved Bellman regions and on the stationary measures.
+
+\paragraph{Economic role.}
+The scalar $P_{sj}(M)$ is the model-implied probability that a firm currently of type $s$ chooses action $j$ in the stationary cross section. The matrix $\mathbf P(M)$ is therefore the theoretical counterpart of the incumbent transition matrix estimated from the firm-level panel. It is crucial that this matrix describes incumbent reorganization and incumbent exit only. Entry appears separately in the entrant-composition block and must not be folded into $\mathbf P(M)$.
+
+\paragraph{Mathematical problem.}
+The mathematical task is to determine under what conditions the ratio
+\[
+\frac{\mu_s(\mathcal Z_{sj}(M))}{\mu_s(Z)}
+\]
+is well defined, and under what additional conditions the resulting matrix is row-stochastic.
+
+\paragraph{Admissible set.}
+To define $P_{sj}(M)$ as a probability-like object, we need the denominator to be finite and strictly positive. Accordingly, throughout this subsection we take as given finite Borel measures $\mu_s$ satisfying
+\[
+0<\mu_s(Z)<\infty
+\qquad\text{for each }s\in\{A,B,C\}.
+\]
+This is not yet a proof that such measures exist in stationary equilibrium. It is only the admissible domain needed to define the transition ratios.
+
+\paragraph{Assumptions used.}
+This subsection uses:
+\begin{enumerate}
+    \item the measurability of $\mathcal Z_{sj}(M)$ established in Part 1;
+    \item given finite Borel measures $\mu_s$ with $0<\mu_s(Z)<\infty$;
+    \item an additional supplemental condition \emph{only if} we want row sums to equal one.
+\end{enumerate}
+We state that additional condition explicitly.
+
+\begin{assumption}[T1: $\mu_s$-almost-sure uniqueness of the Bellman maximizer]
+For each current type $s\in\{A,B,C\}$, for $\mu_s$-almost every state $z\in Z$, exactly one action in $\{A,B,C,\mathrm{exit}\}$ solves the Bellman problem.
+\end{assumption}
+
+\paragraph{Why T1 is supplemental rather than benchmark-primitive.}
+The benchmark main text defines the choice regions through states where an action solves the Bellman problem. That definition allows ties. Assumption T1 rules out ties on sets of positive $\mu_s$ measure. It is therefore an extra regularity condition used only to prove that the benchmark transition matrix is row-stochastic.
+
+\begin{proposition}[Well-definedness of transition probabilities]
+Suppose the benchmark choice regions are defined as above, and suppose $\mu_s$ is a finite Borel measure on $Z$ with $0<\mu_s(Z)<\infty$. Then for every $s\in\{A,B,C\}$ and every $j\in\{A,B,C,\mathrm{exit}\}$:
+\begin{enumerate}
+    \item $P_{sj}(M)$ is well defined;
+    \item $0\le P_{sj}(M)\le 1$;
+    \item the row sum satisfies
+    \[
+    \sum_{j\in\mathcal A}P_{sj}(M)\ge 1.
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\medskip\noindent\textbf{Step 1: the numerator is well defined.}
+By Part 1, each $\mathcal Z_{sj}(M)$ is Borel measurable. Because $\mu_s$ is a Borel measure, the quantity $\mu_s(\mathcal Z_{sj}(M))$ is well defined.
+
+\medskip\noindent\textbf{Step 2: the denominator is well defined and positive.}
+By assumption, $0<\mu_s(Z)<\infty$. Therefore division by $\mu_s(Z)$ is legitimate, and $P_{sj}(M)$ is well defined.
+
+\medskip\noindent\textbf{Step 3: show that each entry lies in $[0,1]$.}
+Because $\mathcal Z_{sj}(M)\subseteq Z$, monotonicity of measures implies
+\[
+0\le \mu_s(\mathcal Z_{sj}(M))\le \mu_s(Z).
+\]
+Dividing through by the strictly positive denominator $\mu_s(Z)$ gives
+\[
+0\le P_{sj}(M)\le 1.
+\]
+
+\medskip\noindent\textbf{Step 4: derive the unconditional row-sum lower bound.}
+Part 1 showed that
+\[
+Z=\bigcup_{j\in\mathcal A}\mathcal Z_{sj}(M).
+\]
+Therefore monotonicity of measures gives
+\[
+\mu_s(Z)
+=
+\mu_s\!\left(\bigcup_{j\in\mathcal A}\mathcal Z_{sj}(M)\right)
+\le
+\sum_{j\in\mathcal A}\mu_s(\mathcal Z_{sj}(M)),
+\]
+where the inequality uses finite subadditivity. Dividing by $\mu_s(Z)>0$ yields
+\[
+1\le \sum_{j\in\mathcal A}P_{sj}(M).
+\]
+\end{proof}
+
+\begin{proposition}[Row-stochasticity under almost-sure uniqueness]
+Under the assumptions of the previous proposition, if Assumption T1 holds for current type $s$, then
+\[
+\sum_{j\in\mathcal A}P_{sj}(M)=1.
+\]
+Consequently, if Assumption T1 holds for every $s\in\{A,B,C\}$, then every row of $\mathbf P(M)$ sums to one.
+\end{proposition}
+
+\begin{proof}
+\medskip\noindent\textbf{Step 1: the regions cover $Z$.}
+From Part 1,
+\[
+Z=\bigcup_{j\in\mathcal A}\mathcal Z_{sj}(M).
+\]
+
+\medskip\noindent\textbf{Step 2: almost-sure uniqueness implies almost-sure disjointness.}
+Take two distinct actions $j\neq \ell$. If a state $z$ belongs to both $\mathcal Z_{sj}(M)$ and $\mathcal Z_{s\ell}(M)$, then both actions solve the Bellman problem at that state. That is exactly a tie. Assumption T1 says ties can occur only on a $\mu_s$-null set. Therefore
+\[
+\mu_s\bigl(\mathcal Z_{sj}(M)\cap \mathcal Z_{s\ell}(M)\bigr)=0
+\qquad\text{for all }j\neq \ell.
+\]
+So the family $\{\mathcal Z_{sj}(M)\}_{j\in\mathcal A}$ is pairwise disjoint up to $\mu_s$-null sets.
+
+\medskip\noindent\textbf{Step 3: add the measures.}
+Because the regions cover $Z$ and are pairwise disjoint up to $\mu_s$-null sets,
+\[
+\mu_s(Z)=\sum_{j\in\mathcal A}\mu_s(\mathcal Z_{sj}(M)).
+\]
+Dividing by $\mu_s(Z)>0$ gives
+\[
+1=\sum_{j\in\mathcal A}P_{sj}(M).
+\]
+\end{proof}
+
+\paragraph{Auxiliary implementation remark: selector-based transition matrices.}
+If ties have positive measure and later numerical implementation still requires a row-stochastic transition matrix, one can impose an explicit deterministic tie-breaking convention and define disjoint selector regions
+\[
+D_{sj}(M):=\{z\in Z:g_s(z;M)=j\}
+\]
+for a measurable selector $g_s$ constructed from the argmax correspondence. Then
+\[
+\widetilde P_{sj}(M):=\frac{\mu_s(D_{sj}(M))}{\mu_s(Z)}
+\]
+defines an auxiliary row-stochastic matrix. This is an implementation device, not a replacement of the benchmark object. It coincides with the benchmark matrix only when the selector regions and the benchmark choice regions agree up to $\mu_s$-null sets.
+
+\paragraph{Empirical-interface meaning.}
+Under Assumption T1, the matrix $\mathbf P(M)$ is the exact theoretical counterpart of the empirical incumbent transition matrix in the firm-level panel. The word \emph{incumbent} matters. Entry composition belongs to the next phase, and it must remain separate from the current object.
+
+\subsection{What did we just do, and why does it matter?}
+
+Phase 3 solved the Bellman system. That still left one important step before the model could speak to transition evidence in the data. The value functions themselves are not what the empirical transition matrix records. What the data record is movement across organizational categories. To connect the theory to those observed transitions, we needed to transform the solved Bellman values into state-space regions where each action is optimal.
+
+That is why the choice regions matter. They tell us, for each incumbent type, which states lead the firm to remain where it is, switch to another organization, or exit. Once those regions are measurable, we can aggregate them with respect to stationary measures and obtain the model-implied transition probabilities.
+
+The subtle point in this phase is that \emph{measurability} and \emph{row-stochasticity} are different issues. Measurability follows directly from continuity and finite actions. Row-stochasticity requires something stronger. If ties occur on sets of positive measure, the benchmark solving regions overlap, and then the direct set-based formula for $P_{sj}(M)$ can overcount mass. That is why we had to distinguish carefully between what follows from the benchmark as written and what additionally requires either almost-sure uniqueness or explicit tie-breaking.
+
+This distinction matters for everything that follows. The entry block later has to remain separate from incumbent switching. The stationary-distribution block later has to move mass across types using a well-defined transition structure. And the stationary equilibrium block later has to combine incumbent transitions, entry, contract-manufacturing market clearing, and labor market clearing in one internally consistent system. If the transition object were left ambiguous, those later blocks would inherit that ambiguity immediately.
+
+\subsection{End-of-Section Recap}
+
+\paragraph{What has been established mathematically.}
+Holding $(w,p_m,M)$ fixed and taking the Phase 3 value functions as given, we showed that the benchmark choice regions $\mathcal Z_{sj}(M)$ are Borel measurable and cover the state space. Given finite Borel measures $\mu_s$ with positive total mass, the transition probabilities $P_{sj}(M)$ are well defined and lie in $[0,1]$. We also showed that row-stochasticity of the benchmark transition matrix requires an additional condition such as $\mu_s$-almost-sure uniqueness of the Bellman maximizer.
+
+\paragraph{What assumptions were used.}
+We used the solved Phase 3 Bellman system, continuity of the benchmark choice-specific values, finiteness of the action set, and finite Borel measures $\mu_s$ with $0<\mu_s(Z)<\infty$. To prove that rows of $\mathbf P(M)$ sum to one, we additionally introduced the supplemental condition T1 ruling out ties on sets of positive $\mu_s$ measure.
+
+\paragraph{What remains to be derived next.}
+The next phase must define entrant values, free-entry complementarity conditions, and the entrant-composition vector $\mathbf e(M)$. After that, later phases must derive market clearing, stationary-measure invariance, and the full stationary competitive equilibrium definition.

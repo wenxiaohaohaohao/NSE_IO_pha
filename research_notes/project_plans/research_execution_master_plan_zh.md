@@ -28,6 +28,12 @@
 4. 每个理论对象都要有可计算/可观测映射。
 5. 每周必须有“可验证产出物”，避免纯讨论。
 
+## 1.1 当前冲刺优先级（2026-04）
+
+1. 当前主线任务：理论推导 Phase 1-4（先完成数学闭环，再推进实证管道）。
+2. `transition/entry` 最小数据管道保留为并行次线，不作为本轮第一优先级。
+3. 所有新增写作与证明以 `output/doc/MAH_Policy.pdf` 为唯一主定义。
+
 ---
 
 ## 2. 六周推进计划（可压缩）
@@ -187,8 +193,11 @@
 1. 发布主版本声明：唯一主定义是 `output/doc/MAH_Policy.pdf`。
 2. 新建符号与对象字典文档并填充核心变量。
 3. 确认 `lambda_B` 口径并写入决策日志。
-4. 为 transition matrix 准备真实输入数据字段清单。
-5. 运行一次 `build_transition_matrices.do` 的最小流程并记录报错/缺口。
+4. 产出 Phase 1 正式推导稿：`Primitives, State Space, and Regularity Conditions`。
+5. 明确 Phase 2 所需静态优化假设清单与符号延续规则。
+
+补充说明：
+- `transition/entry` 执行建议仍有效，但顺延到理论主线进入稳定推进后再执行。
 
 ---
 

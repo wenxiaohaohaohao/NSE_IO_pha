@@ -73,3 +73,65 @@
 - 影响范围：
   - 文档导航与执行指引。
   - 不改变模型定义与实证结果。
+
+## 2026-04-07（第六次更新）
+- 修改文件：
+  - `project_plans/research_execution_master_plan_zh.md`
+  - `project_plans/transition_entry_minimum_pipeline_zh.md`
+  - `paper/src/phase1_primitives_state_space_regularity.tex`
+- 修改摘要：
+  - 明确当前冲刺优先级切换为“理论推导主线（Phase 1 起步）”。
+  - 将 transition/entry 文档标注为“保留方案，顺延执行”。
+  - 新增 Phase 1 正式推导稿（Primitives, State Space, and Regularity Conditions）。
+- 触发原因：
+  - 用户确认当前任务为模型数学推导，不优先执行实证管道。
+- 影响范围：
+  - 计划执行顺序与理论写作交付。
+  - 不改变 benchmark 定义边界。
+
+## 2026-04-07（第七次更新）
+- 修改文件：
+  - `paper/src/phase1_primitives_state_space_regularity.tex`
+  - `paper/src/phase1_primitives_state_space_regularity_zh.tex`
+- 修改摘要：
+  - 扩展英文 Phase 1 稿件，增加详细推导接口：时序映射、函数空间、正则条件的后续可证明含义。
+  - 新增中文 Phase 1 对应详细稿件，保证中英双版本并行审阅。
+- 触发原因：
+  - 用户要求先中后英，并提高推导细节密度以便外部审阅。
+- 影响范围：
+  - 理论写作质量与可审阅性提升。
+  - 不改变 benchmark 机制边界。
+
+## 2026-04-07（第八次更新）
+- 修改文件：
+  - `paper/src/phase2_static_optimization_en.tex`
+  - `paper/src/phase2_static_optimization_zh.tex`
+  - `paper/src/phase2_static_optimization_en_standalone.tex`
+  - `paper/src/phase2_static_optimization_zh_standalone.tex`
+  - `output/doc/phase2_static_optimization_en.pdf`
+  - `output/doc/phase2_static_optimization_zh.pdf`
+- 修改摘要：
+  - 完成 Phase 2 双语详细推导稿：三类企业静态最优化、FOC/KKT、角点条件、存在唯一性、连续有界性。
+  - 生成并输出中英文成对 PDF 到 `output/doc/`，满足双语并行审阅要求。
+- 触发原因：
+  - 用户确认按 phase 顺序推进并要求中英成对交付。
+- 影响范围：
+  - 理论推导阶段推进至 Phase 2。
+  - 不改变 benchmark 边界。
+
+## 2026-04-07（第九次更新）
+- 修改文件：
+  - `paper/src/phase3_bellman_existence_en.tex`
+  - `paper/src/phase3_bellman_existence_zh.tex`
+  - `paper/src/phase3_bellman_existence_en_standalone.tex`
+  - `paper/src/phase3_bellman_existence_zh_standalone.tex`
+  - `output/doc/phase3_bellman_existence_en.pdf`
+  - `output/doc/phase3_bellman_existence_zh.pdf`
+- 修改摘要：
+  - 完成 Phase 3 双语详细推导稿：Bellman 算子定义、映射与压缩性质、值函数存在唯一、最优策略可测选择。
+  - 生成并输出中英文成对 PDF 到 `output/doc/`。
+- 触发原因：
+  - 用户要求进入 Phase 3 并保持中英成对交付。
+- 影响范围：
+  - 理论推导阶段推进至 Phase 3。
+  - 不改变 benchmark 边界。

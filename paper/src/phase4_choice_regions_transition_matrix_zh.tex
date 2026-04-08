@@ -1,0 +1,392 @@
+\section{选择区域与在位企业转移矩阵}
+
+本阶段研究 Phase 3 已经解出的 Bellman 对象如何生成 benchmark 的 choice regions，以及这些 choice regions 在给定候选平稳在位企业测度时如何生成在位企业重组统计，也就是转移矩阵。本阶段仍然把 $(w,p_m,M)$ 视为给定。Phase 3 的值函数三元组在这里被当作已知对象；$\mu_A,\mu_B,\mu_C$ 也只被当作候选的 stationary incumbent measures。它们的存在性与不变性并不在本阶段证明，而是留到后面的 stationary-distribution 阶段处理。
+
+\subsection{Benchmark Fidelity Check}
+
+\paragraph{Step 1：本阶段相关的精确 benchmark 对象。}
+authoritative benchmark sources 表明，本阶段相关的对象是：
+\begin{itemize}
+    \item benchmark 的 choice regions
+    \[
+    \mathcal Z_{sj}(M)=\left\{z\in Z: j \text{ solves the Bellman problem for a current type-}s\text{ firm at state } z\right\},
+    \]
+    其中 $s\in\{A,B,C\}$，$j\in\{A,B,C,\mathrm{exit}\}$；
+    \item 候选的平稳在位企业测度 $\mu_A,\mu_B,\mu_C$；
+    \item benchmark 的转移概率
+    \[
+    P_{sj}(M)=\frac{\mu_s\bigl(\mathcal Z_{sj}(M)\bigr)}{\mu_s(Z)}
+    \]
+    \item 由这些对象堆叠而成的在位企业转移矩阵 $\mathbf P(M)$；
+    \item 之后在 stationary-measure law of motion 中出现的单值组织政策 $g_s(z;M)$。
+\end{itemize}
+这些对象并不属于同一类别。$\mathcal Z_{sj}(M)$ 是由 Bellman 问题派生出来的集合对象；$\mu_s$ 是稍后才会内生求出的 stationary objects；$P_{sj}(M)$ 则是把前两类对象组合起来得到的派生统计量。
+
+\paragraph{Step 2：精确公式、argument list 与经济解释。}
+benchmark 主稿将 choice regions 精确定义为
+\[
+\mathcal Z_{sj}(M)=\left\{z\in Z: j \text{ solves the Bellman problem for a current type-}s\text{ firm at state } z\right\}.
+\]
+随后又定义
+\[
+P_{sj}(M)=\frac{\mu_s\bigl(\mathcal Z_{sj}(M)\bigr)}{\mu_s(Z)}.
+\]
+经济上，$P_{sj}(M)$ 想要表示的是：在 stationary cross section 中，当前类型为 $s$ 的在位企业有多大比例会把当前期组织行动选为 $j$。也正因为如此，benchmark 把 $\mathbf P(M)$ 视为企业面板里 pre/post transition matrix 的理论 counterpart。与此同时，benchmark 在后面的 stationary measure law of motion 中又用到了单值 policy rule $g_s(z;M)$，也就是通过指标函数 $\mathbf 1\{g_s(z;M)=j\}$ 来更新测度。
+
+\paragraph{Step 3：这一阶段能否忠实完成？}
+答案是一部分能，一部分不能。
+\begin{enumerate}
+    \item 我们可以忠实地按 benchmark 原式定义 choice regions。
+    \item 我们可以忠实地证明这些 choice regions 是 Borel 可测的。
+    \item 在给定有限 Borel 测度 $\mu_s$ 且 $\mu_s(Z)>0$ 的条件下，我们可以忠实地定义比值 $\mu_s(\mathcal Z_{sj}(M))/\mu_s(Z)$，并证明它是良定义的。
+    \item 但是，如果不额外加入 no-ties 条件或明确的 selector，那么无法从 set-based definition 单独推出“每一行和为 1”。这个障碍必须明确写出来，不能静默跳过。
+\end{enumerate}
+
+\paragraph{Step 4：必须先标出的 benchmark 张力。}
+这里有一个会直接影响 Phase 4 推导的 benchmark 张力。
+
+benchmark 一方面用 solving regions $\mathcal Z_{sj}(M)$ 来定义 transition probabilities，另一方面又在 stationary law of motion 中使用单值政策 $g_s(z;M)$。这两种写法只有在 ties 几乎处处不存在，或者已经显式加入 tie-breaking convention 时，才会自动一致。如果 ties 在正测度集合上出现，那么 solving regions 之间就可能重叠。在这种情况下，
+\[
+P_{sj}(M)=\frac{\mu_s\bigl(\mathcal Z_{sj}(M)\bigr)}{\mu_s(Z)}
+\]
+这个 set-based 公式并不必然生成每行和为 1 的矩阵，因为重叠集合会被重复计数。所以，“each row sums to one” 这个结论不能单靠 benchmark 的 choice-region 公式推出，必须额外补一个条件。这里我不会静默补上它，而是先推导 benchmark 原式本身能推出什么，再明确说明要恢复 row-stochastic transition matrix 还需要什么。
+
+\subsection{Part 1：Benchmark Choice Regions}
+
+\paragraph{Benchmark object restatement.}
+固定当前组织类型 $s\in\{A,B,C\}$ 和行动 $j\in\{A,B,C,\mathrm{exit}\}$。benchmark 的 choice region 定义为
+\[
+\mathcal Z_{sj}(M)=\left\{z\in Z: j \text{ solves the Bellman problem for a current type-}s\text{ firm at state } z\right\}.
+\]
+这是一个 derived object。它来自 Phase 3 已经解出的 Bellman 系统，而不是 Phase 4 新引入的 primitive object。
+
+\paragraph{Economic role.}
+$\mathcal Z_{sj}(M)$ 描述的是：当前类型为 $s$ 的在位企业，在什么样的 state 下会把行动 $j$ 视为最优。换句话说，它把动态最优化问题翻译成了可在 stationary cross section 中观察和统计的重组区域。正是这些区域，把 value function 与转移矩阵连接起来。
+
+\paragraph{Mathematical problem.}
+Phase 3 已经给出对每个当前类型 $s$ 与每个可行动作 $j$ 的 choice-specific value $W_{sj}(z;M)$，并且已证明它关于 $z$ 连续。因此，“行动 $j$ solves the Bellman problem” 的精确定义就是
+\[
+W_{sj}(z;M)\ge W_{s\ell}(z;M)\qquad\text{对所有 }\ell\in\{A,B,C,\mathrm{exit}\}.
+\]
+所以 benchmark choice region 可以重写为
+\[
+\mathcal Z_{sj}(M)
+=
+\bigcap_{\ell\in\{A,B,C,\mathrm{exit}\}}
+\left\{z\in Z:W_{sj}(z;M)\ge W_{s\ell}(z;M)\right\}.
+\]
+
+\paragraph{Admissible set.}
+对每个当前类型 $s$，Bellman 问题比较的可行动作始终只有四个：
+\[
+\mathcal A=\{A,B,C,\mathrm{exit}\}.
+\]
+由于行动集合是有限集，只要四个 choice-specific values 都是有限实数，最大值就一定存在。Phase 3 已经证明了这一点。因此，对每个 $z\in Z$，至少有一个行动能解 Bellman 问题，从而有
+\[
+\bigcup_{j\in\mathcal A}\mathcal Z_{sj}(M)=Z.
+\]
+但这个并集不一定是不交并，因为 ties 会让两个或更多行动在同一个 state 上同时最优。
+
+\paragraph{Assumptions used.}
+这里需要的前提全部来自 Phase 3：
+\begin{enumerate}
+    \item 状态空间 $Z$ 是紧致 metric space；
+    \item 固定价格下的值函数三元组 $V^*$ 已经存在且唯一；
+    \item 每个 benchmark choice-specific value $W_{sj}(\cdot;M)$ 都关于 $z$ 连续。
+\end{enumerate}
+
+\begin{proposition}[benchmark choice regions 的可测性]
+对每个当前类型 $s\in\{A,B,C\}$ 与行动 $j\in\{A,B,C,\mathrm{exit}\}$，benchmark choice region $\mathcal Z_{sj}(M)$ 都是 $Z$ 的 Borel 子集。
+\end{proposition}
+
+\begin{proof}
+\medskip\noindent\textbf{Step 1：先把 choice region 改写成有限交。}
+根据“solves the Bellman problem”的定义，
+\[
+\mathcal Z_{sj}(M)
+=
+\bigcap_{\ell\in\mathcal A}
+\left\{z\in Z:W_{sj}(z;M)\ge W_{s\ell}(z;M)\right\}.
+\]
+因此，只要证明每一个比较集合都是 Borel 可测，就足够了。
+
+\medskip\noindent\textbf{Step 2：逐个比较集合处理。}
+固定一个竞争行动 $\ell\in\mathcal A$。定义差函数
+\[
+D_{sj\ell}(z):=W_{sj}(z;M)-W_{s\ell}(z;M).
+\]
+Phase 3 已经证明 $W_{sj}(\cdot;M)$ 与 $W_{s\ell}(\cdot;M)$ 都连续。两个连续函数之差仍然连续，因此 $D_{sj\ell}:Z\to\mathbb R$ 是连续函数。
+
+\medskip\noindent\textbf{Step 3：用闭集原像来证明可测性。}
+比较集合可以写成
+\[
+\left\{z\in Z:W_{sj}(z;M)\ge W_{s\ell}(z;M)\right\}
+=
+D_{sj\ell}^{-1}\bigl([0,\infty)\bigr).
+\]
+$[0,\infty)$ 是 $\mathbb R$ 中的闭集。连续映射对闭集的原像仍然是闭集。因此每一个比较集合都是 $Z$ 中的闭集。
+
+\medskip\noindent\textbf{Step 4：再取有限交。}
+$\mathcal Z_{sj}(M)$ 是有限多个闭集的交集，所以它本身也是闭集。由于 $Z$ 是 metric space，闭集一定是 Borel 集。因此 $\mathcal Z_{sj}(M)$ 是 Borel 可测的。
+\end{proof}
+
+\subsection{Part 2：在给定候选测度下定义 Benchmark Transition Probabilities}
+
+\paragraph{Benchmark object restatement.}
+现在固定当前类型 $s\in\{A,B,C\}$ 与行动 $j\in\{A,B,C,\mathrm{exit}\}$。benchmark 的转移概率定义为
+\[
+P_{sj}(M)=\frac{\mu_s\bigl(\mathcal Z_{sj}(M)\bigr)}{\mu_s(Z)}.
+\]
+这个对象由两个成分组成：
+\begin{enumerate}
+    \item choice region $\mathcal Z_{sj}(M)$，它描述当前类型为 $s$ 的企业在哪些 state 上会选择行动 $j$；
+    \item 候选平稳测度 $\mu_s$，它描述当前类型为 $s$ 的在位企业在 stationary cross section 中如何分布在状态空间上。
+\end{enumerate}
+
+\paragraph{Economic role.}
+这个比值的目标是总结：在 stationary cross section 中，当前类型为 $s$ 的在位企业中，有多大比例会把当前期行动选为 $j$。这就是为什么 benchmark 把 $\mathbf P(M)$ 当作 panel 数据中转移矩阵的理论 counterpart。
+
+\paragraph{Mathematical problem.}
+本阶段并不证明 $\mu_s$ 的存在性，因此这里只在给定有限 Borel 测度 $\mu_A,\mu_B,\mu_C$ 的条件下工作。为了让比值有定义，只需要分母满足
+\[
+\mu_s(Z)>0\qquad\text{对每个当前类型 }s.
+\]
+
+\paragraph{Assumptions used.}
+这里使用的前提是：
+\begin{enumerate}
+    \item 每个 $\mu_s$ 都是 $Z$ 上的有限 Borel 测度；
+    \item 对当前类型 $s$，有 $\mu_s(Z)>0$；
+    \item benchmark choice regions 已经在上面证明为 Borel 可测。
+\end{enumerate}
+
+\begin{proposition}[benchmark 比值的良定义性]
+固定 $s\in\{A,B,C\}$ 和 $j\in\{A,B,C,\mathrm{exit}\}$。如果 $\mu_s$ 是 $Z$ 上的有限 Borel 测度，且 $\mu_s(Z)>0$，那么 $P_{sj}(M)$ 是良定义的，并且满足
+\[
+0\le P_{sj}(M)\le 1.
+\]
+\end{proposition}
+
+\begin{proof}
+因为 $\mathcal Z_{sj}(M)$ 是 Borel 可测集，所以 $\mu_s\bigl(\mathcal Z_{sj}(M)\bigr)$ 有定义。又因为 $\mathcal Z_{sj}(M)\subseteq Z$，且 $\mu_s$ 是有限测度，所以
+\[
+0\le \mu_s\bigl(\mathcal Z_{sj}(M)\bigr)\le \mu_s(Z)<\infty.
+\]
+由于分母 $\mu_s(Z)$ 严格为正，比值
+\[
+P_{sj}(M)=\frac{\mu_s\bigl(\mathcal Z_{sj}(M)\bigr)}{\mu_s(Z)}
+\]
+就是一个良定义的实数。把前面的不等式两边同时除以 $\mu_s(Z)$，就得到
+\[
+0\le P_{sj}(M)\le 1.
+\]
+\end{proof}
+
+\subsection{Part 3：Benchmark 公式到底能推出什么，不能推出什么}
+
+\paragraph{Benchmark object restatement.}
+benchmark 主稿从 set-based 的 $P_{sj}(M)$ 定义直接写出了矩阵 $\mathbf P(M)$，并声称每一行和为 1。这里要逐步核对：这个结论到底在什么条件下才成立。
+
+\paragraph{Economic role.}
+这个问题并不是小技术细节。转移矩阵的每一行都应该描述在给定当前类型下，对下一期组织结果的一个概率分布。如果一行不等于 1，它就不是概率分布。因此，row sum 问题直接决定：benchmark 的 set-based object 是否已经是一个真正的 transition matrix，还是还只是一个中间统计量。
+
+\begin{proposition}[choice regions 重叠时的 row-sum 障碍]
+固定当前类型 $s\in\{A,B,C\}$，并设 $\mu_s$ 是有限 Borel 测度且 $\mu_s(Z)>0$。那么：
+\begin{enumerate}
+    \item benchmark 的 set-based probabilities 满足
+    \[
+    \sum_{j\in\mathcal A}P_{sj}(M)\ge 1;
+    \]
+    \item 当且仅当
+    \[
+    \sum_{j\in\mathcal A}\mathbf 1\{z\in\mathcal Z_{sj}(M)\}=1
+    \qquad\text{在 }\mu_s\text{-几乎处处成立时},
+    \]
+    才有
+    \[
+    \sum_{j\in\mathcal A}P_{sj}(M)=1;
+    \]
+    \item 如果存在正 $\mu_s$-测度的 ties，也就是存在不同的 $j,\ell\in\mathcal A$ 使得
+    \[
+    \mu_s\bigl(\mathcal Z_{sj}(M)\cap \mathcal Z_{s\ell}(M)\bigr)>0,
+    \]
+    那么
+    \[
+    \sum_{j\in\mathcal A}P_{sj}(M)>1.
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\medskip\noindent\textbf{Step 1：先把 row sum 改写成指标函数积分。}
+根据定义，
+\begin{align*}
+\sum_{j\in\mathcal A}P_{sj}(M)
+&=
+\sum_{j\in\mathcal A}\frac{\mu_s\bigl(\mathcal Z_{sj}(M)\bigr)}{\mu_s(Z)}\\
+&=
+\frac{1}{\mu_s(Z)}
+\sum_{j\in\mathcal A}\int_Z \mathbf 1\{z\in \mathcal Z_{sj}(M)\}\,\mu_s(\mathrm{d} z)\\
+&=
+\frac{1}{\mu_s(Z)}
+\int_Z \sum_{j\in\mathcal A}\mathbf 1\{z\in \mathcal Z_{sj}(M)\}\,\mu_s(\mathrm{d} z).
+\end{align*}
+
+\medskip\noindent\textbf{Step 2：利用“至少有一个行动最优”这一事实。}
+Phase 3 已经证明，因为行动集合 $\mathcal A$ 有限且四个 choice-specific values 都是有限实数，所以 Bellman 最大值在每个 state 上都能达到。因此，对每个 $z\in Z$，至少有一个指标函数等于 1，从而
+\[
+\sum_{j\in\mathcal A}\mathbf 1\{z\in \mathcal Z_{sj}(M)\}\ge 1
+\qquad\text{对所有 }z\in Z.
+\]
+对两边按 $\mu_s$ 积分得到
+\[
+\int_Z \sum_{j\in\mathcal A}\mathbf 1\{z\in \mathcal Z_{sj}(M)\}\,\mu_s(\mathrm{d} z)
+\ge
+\int_Z 1\,\mu_s(\mathrm{d} z)
+=
+\mu_s(Z).
+\]
+再除以 $\mu_s(Z)>0$，就得到
+\[
+\sum_{j\in\mathcal A}P_{sj}(M)\ge 1.
+\]
+
+\medskip\noindent\textbf{Step 3：刻画什么时候刚好等于 1。}
+上面的不等式要变成等式，当且仅当积分中的 integrand
+\[
+\sum_{j\in\mathcal A}\mathbf 1\{z\in \mathcal Z_{sj}(M)\}
+\]
+在 $\mu_s$-几乎处处都等于 1。由于每个 $z$ 至少会被一个 choice region 覆盖，这就等价于：在几乎处处的意义下，每个 state 恰好只落在一个 choice region 中。换句话说，这些 choice regions 必须在 $\mu_s$-零测集之外构成一个分割。
+
+\medskip\noindent\textbf{Step 4：解释为什么正测度 ties 会导致严格大于 1。}
+如果存在不同的 $j,\ell$ 使得
+\[
+\mu_s\bigl(\mathcal Z_{sj}(M)\cap \mathcal Z_{s\ell}(M)\bigr)>0,
+\]
+那么在这个重叠集合上，至少有两个指标函数同时等于 1，因此
+\[
+\sum_{r\in\mathcal A}\mathbf 1\{z\in\mathcal Z_{sr}(M)\}\ge 2.
+\]
+也就是说，integrand 在一个正测度集合上严格大于 1。它的积分就会严格大于 $\mu_s(Z)$，因此
+\[
+\sum_{j\in\mathcal A}P_{sj}(M)>1.
+\]
+\end{proof}
+
+\paragraph{精确障碍是什么？}
+障碍就是重叠。benchmark 对 $\mathcal Z_{sj}(M)$ 的定义记录的是“所有能够解 Bellman 问题的行动”。如果 Bellman 问题有 ties，那么同一个 state 会同时属于多个 solving regions。只在描述 Bellman 问题本身时，这没有问题；但一旦把这些集合分别测度化，再横向相加，它们就会把同一个 state 重复计数。这正是为什么单靠 benchmark 原始定义，不能自动推出 row sum 等于 1。
+
+\subsection{Part 4：恢复 Row-Stochastic Transition Matrix 所需的补充条件}
+
+\paragraph{为什么这一节必须显式标为 supplemental。}
+benchmark 主稿想要把 $\mathbf P(M)$ 当作真正的 transition matrix。上一个命题说明，要得到这个结论还需要一个额外条件。因此这里必须把这个条件明确写出来，不能把它静默塞进原定义里。
+
+\begin{assumption}[T1：几乎处处无 ties]
+对每个当前类型 $s\in\{A,B,C\}$，
+\[
+\sum_{j\in\mathcal A}\mathbf 1\{z\in\mathcal Z_{sj}(M)\}=1
+\qquad\text{在 }\mu_s\text{-几乎处处成立。}
+\]
+等价地说，Bellman maximizer 在 $\mu_s$-几乎处处都是唯一的。
+\end{assumption}
+
+\begin{proposition}[几乎处处无 ties 时的 row-stochasticity]
+在 Assumption T1 下，benchmark transition probabilities 满足
+\[
+\sum_{j\in\mathcal A}P_{sj}(M)=1
+\qquad\text{对每个当前类型 }s\in\{A,B,C\}.
+\]
+因此，benchmark 矩阵 $\mathbf P(M)$ 是 row stochastic 的。
+\end{proposition}
+
+\begin{proof}
+Assumption T1 直接给出
+\[
+\sum_{j\in\mathcal A}\mathbf 1\{z\in\mathcal Z_{sj}(M)\}=1
+\qquad\text{在 }\mu_s\text{-几乎处处成立。}
+\]
+对两边按 $\mu_s$ 积分，得到
+\[
+\int_Z\sum_{j\in\mathcal A}\mathbf 1\{z\in\mathcal Z_{sj}(M)\}\,\mu_s(\mathrm{d} z)
+=
+\int_Z 1\,\mu_s(\mathrm{d} z)
+=
+\mu_s(Z).
+\]
+再利用上一命题中的指标积分恒等式，
+\[
+\sum_{j\in\mathcal A}P_{sj}(M)
+=
+\frac{1}{\mu_s(Z)}
+\int_Z\sum_{j\in\mathcal A}\mathbf 1\{z\in\mathcal Z_{sj}(M)\}\,\mu_s(\mathrm{d} z)
+=1.
+\]
+这对每个当前类型 $s$ 都成立，所以 $\mathbf P(M)$ 的每一行都和为 1。
+\end{proof}
+
+\paragraph{一个显式 selector 的替代方案。}
+还有另一种办法得到真正的 transition matrix。不是假设 ties 几乎处处消失，而是显式加入一个 measurable selector
+\[
+g_s(z;M)\in\arg\max_{a\in\mathcal A}W_{sa}(z;M).
+\]
+这正是 benchmark 后面 stationary law of motion 中出现的单值政策对象。
+
+给定这样的 selector，定义被选中的行动区域
+\[
+D_{sj}(M):=\{z\in Z:g_s(z;M)=j\}.
+\]
+根据构造，对每个当前类型 $s$，这些集合 $\{D_{sj}(M)\}_{j\in\mathcal A}$ 两两不交，并满足
+\[
+\bigcup_{j\in\mathcal A}D_{sj}(M)=Z.
+\]
+如果 $g_s$ 是可测的，那么每个 $D_{sj}(M)$ 也都是 Borel 可测的。
+
+\begin{proposition}[selector-based transition matrix]
+如果对每个当前类型 $s$ 都存在可测 selector $g_s$，定义
+\[
+P^g_{sj}(M):=\frac{\mu_s\bigl(D_{sj}(M)\bigr)}{\mu_s(Z)}.
+\]
+那么对每个当前类型 $s$，
+\[
+\sum_{j\in\mathcal A}P^g_{sj}(M)=1.
+\]
+\end{proposition}
+
+\begin{proof}
+因为这些 selected regions 两两不交，且并起来就是 $Z$，所以
+\[
+\sum_{j\in\mathcal A}\mu_s\bigl(D_{sj}(M)\bigr)
+=
+\mu_s\!\left(\bigcup_{j\in\mathcal A}D_{sj}(M)\right)
+=
+\mu_s(Z).
+\]
+两边同时除以 $\mu_s(Z)>0$，得到
+\[
+\sum_{j\in\mathcal A}P^g_{sj}(M)=1.
+\]
+\end{proof}
+
+\paragraph{这和 benchmark 原对象如何对应？}
+benchmark 原对象仍然是 choice-region 定义 $\mathcal Z_{sj}(M)$，因为主稿就是先这样定义 transition statistics 的。selector-based 构造只是一个辅助实现装置。只有当后续 stationary-distribution 或 simulation 模块必须使用单值政策，把状态空间划成真正的不交区域时，这个辅助装置才需要被显式调用。
+
+\subsection{What did we just do, and why does it matter?}
+
+我们把 Phase 3 解出的 value functions 与 choice-specific values 进一步转化成了能够对接 transition data 的对象。关键一步是把 benchmark choice regions 定义为“在这些 states 上，每个组织行动会解 Bellman 问题”。正是这些集合，把动态最优化问题转换成了横截面上的组织重组模式。
+
+可测性证明之所以重要，是因为如果这些 choice regions 不可测，那么 $\mu_s(\mathcal Z_{sj}(M))$ 这种表达式连合法的测度论对象都不是。因此，可测性不是形式修饰，而是让 transition statistics 真正有定义的必要条件。
+
+row-sum 问题之所以重要，是因为它揭示了一个真实的 benchmark subtlety。choice regions 记录的是“所有最大化行动”。如果出现 ties，同一个 state 会同时落入多个区域。这在描述 Bellman 问题本身时没有问题，但一旦把这些区域直接当作 transition probabilities 的分子，它们就会重复计数，从而使某些行的和超过 1。
+
+因此，这里必须把两个不同层次的命题分开。第一个命题是 benchmark-faithful 且无条件的：choice regions 可测，set-based ratios 在给定候选测度时是良定义的。第二个命题则需要额外条件：如果我们要真正得到 row-stochastic transition matrix，就必须加入 no-ties almost everywhere，或者显式引入 measurable selector。把这两层区分清楚，能让后续 stationary-distribution 阶段保持逻辑干净。
+
+\subsection{End-of-Section Recap}
+
+\paragraph{What has been established mathematically.}
+在固定 $(w,p_m,M)$ 且给定候选平稳在位企业测度 $\mu_A,\mu_B,\mu_C$ 的条件下，benchmark choice regions $\mathcal Z_{sj}(M)$ 是 Borel 可测的。因此，只要 $\mu_s(Z)>0$，benchmark ratios $P_{sj}(M)=\mu_s(\mathcal Z_{sj}(M))/\mu_s(Z)$ 就是良定义的。然而，set-based 公式只有在 choice regions 在 $\mu_s$-零测集之外构成分割时，才会给出 row sum 等于 1；正测度 ties 会使原始行和严格大于 1。
+
+\paragraph{What assumptions were used.}
+这里使用了 Phase 3 已经建立的固定价格 value-function 与 choice-specific-value 对象、choice-specific values 的连续性、Phase 1 继承下来的状态空间紧致性与可测结构，以及候选平稳测度的有限性与分母正性。为了从 benchmark 公式恢复真正的 row-stochastic transition matrix，这里另外引入了补充假设 T1。作为替代，也给出了显式 measurable selector 的构造思路。
+
+\paragraph{What remains to be derived next.}
+下一阶段需要定义 entrant values、entrant masses 与 entrant-composition vector $\mathbf e(M)$。再往后，还需要把 incumbent reorganization、entry、market clearing 与 invariant measures 组合成完整的 stationary equilibrium block。

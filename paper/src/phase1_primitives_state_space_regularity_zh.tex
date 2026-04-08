@@ -1,0 +1,175 @@
+\section{原语、状态空间与正则条件}
+
+本节用于冻结 benchmark 模型在后续推导中的全部基础对象，防止符号漂移与机制替换。Phase 1 不进行模型重写，只建立可供 Phase 2（静态最优化）、Phase 3（Bellman 不动点）和 Phase 4（选择区域与转移矩阵）直接调用的数学底座。
+
+\subsection{Benchmark 原语}
+
+时间离散，$t=0,1,2,\dots$。
+
+活跃组织类型集合为
+\[
+\mathcal T=\{A,B,C\},
+\]
+其中 $A$ 为一体化企业（integrated），$B$ 为研发专门化企业（research-specialized），$C$ 为生产专门化企业（manufacturing-specialized）。
+
+药品类别为
+\[
+k\in\{G,O\},
+\]
+其中 $G$ 表示仿制药（generic），$O$ 表示原研药（original）。
+
+政策状态为
+\[
+M\in\{0,1\},
+\]
+$M=0$ 对应 MAH 前，$M=1$ 对应 MAH 后。
+
+企业个体能力状态为一维：
+\[
+z\in Z\subset\mathbb R_+.
+\]
+本 benchmark 刻意保持单一核心状态维度，以保证识别边界与计算实现性。
+
+价格向量为
+\[
+(w,p_m),
+\]
+其中 $w$ 为工资（或综合要素价格），$p_m$ 为合格受托生产服务价格。
+
+若本期选择组织形态 $j\in\{A,B,C\}$，则下一期状态由核
+\[
+Q_j(\cdot\mid z,M)
+\]
+给出。
+
+进入者初始能力由分布 $G$ 在 $Z$ 上抽样。
+
+\paragraph{MAH 的 reduced-form 进入渠道。}
+benchmark 中 MAH 仅通过两类对象进入：
+\begin{align}
+\tau_M(M) &\quad \text{商业化摩擦},\\
+\kappa_{sj}(M) &\quad \text{从当前类型 } s \text{ 切换到选择类型 } j \text{ 的成本}.
+\end{align}
+
+对类型 $B$，单个原研 idea 的商业化成功率保持 reduced-form：
+\[
+\lambda_B(z,p_m,M)\in[0,1].
+\]
+据此定义单 idea 价值对象：
+\[
+H_B(z;p_m,M)=\lambda_B(z,p_m,M)\bigl(R_B(z)-p_m\bigr)-\tau_M(M).
+\]
+
+\subsection{期内时序与价值映射}
+
+在期初，当前类型为 $s$、状态为 $z$ 的企业选择组织形态
+\[
+j\in\{A,B,C,\text{exit}\}.
+\]
+若 $j\neq s$，立即支付切换成本 $\kappa_{sj}(M)$。随后企业获得所选类型的最优流收益 $\Pi_j(z;w,p_m,M)$；若不退出，则按 $Q_j(\cdot\mid z,M)$ 演化。
+
+因此，选择特定价值函数写为
+\[
+W_{sj}(z;M)=\Pi_j(z;w,p_m,M)-\kappa_{sj}(M)+\beta\int V_j(z';M)Q_j(dz'\mid z,M),
+\]
+并约定
+\[
+W_{s,\text{exit}}(z;M)=0.
+\]
+
+Phase 3 的 Bellman 形式固定为
+\[
+V_s(z;M)=\max\{W_{sA}(z;M),W_{sB}(z;M),W_{sC}(z;M),0\},\quad s\in\{A,B,C\}.
+\]
+
+\subsection{状态空间、可测结构与函数空间}
+
+记 $\mathcal B(Z)$ 为 $Z$ 上的 Borel sigma 代数。对每个 $j$，$Q_j(\cdot\mid z,M)$ 是 $(Z,\mathcal B(Z))$ 上概率测度，且对任意 $B\in\mathcal B(Z)$，映射
+\[
+z\mapsto Q_j(B\mid z,M)
+\]
+可测。
+
+定义有界连续函数空间
+\[
+\mathcal C_b(Z)=\{f:Z\to\mathbb R\mid f \text{ 连续且有界}\},
+\qquad
+\|f\|_\infty=\sup_{z\in Z}|f(z)|.
+\]
+
+值函数定义域取积 Banach 空间
+\[
+\mathcal V=\mathcal C_b(Z)^3,
+\]
+并用范数
+\[
+\|(V_A,V_B,V_C)\|_{\infty,3}=\max\{\|V_A\|_\infty,\|V_B\|_\infty,\|V_C\|_\infty\}.
+\]
+
+该空间将在 Phase 3 中直接用于压缩映射证明。
+
+\subsection{正则性假设}
+
+\begin{assumption}[A1: 状态空间紧性]
+$Z$ 非空、紧且可度量。
+\end{assumption}
+
+\begin{assumption}[A2: 折现]
+$\beta\in(0,1)$。
+\end{assumption}
+
+\begin{assumption}[A3: 流收益正则性]
+对每个 $j\in\{A,B,C\}$，固定 $(w,p_m,M)$ 时，优化后流收益 $\Pi_j(z;w,p_m,M)$ 关于 $z$ 有界且连续。
+\end{assumption}
+
+\begin{assumption}[A4: 转移核弱连续]
+对每个 $j\in\{A,B,C\}$、固定 $M$ 以及任意 $f\in\mathcal C_b(Z)$，映射
+\[
+z\mapsto \int f(z')Q_j(dz'\mid z,M)
+\]
+在 $Z$ 上连续。
+\end{assumption}
+
+\begin{assumption}[A5: 静态技术凸性]
+类型 $A$ 与类型 $B$ 的创新成本对 effort 为凸且曲率参数严格大于 1。制造成本 $c(m,z;w)$ 对 $(m,z,w)$ 连续、对 $m$ 严格凸且具 coercive 性。
+\end{assumption}
+
+\begin{assumption}[A6: MAH 渠道有界性]
+$\tau_M(M)$ 与 $\kappa_{sj}(M)$ 对所有相关下标均有限；$\lambda_B(z,p_m,M)$ 关于 $z$ 可测且有界于 $[0,1]$。
+\end{assumption}
+
+\subsection{这些假设为何足够支撑后续推导}
+
+\paragraph{推论 1：静态问题良定义。}
+在 A3、A5、A6 下，三类静态问题均有有限值；严格凸与 coercive 条件保证最优解存在，且在内点条件成立时具有唯一性。
+
+\paragraph{推论 2：Bellman 算子保连续。}
+若 $V_j\in\mathcal C_b(Z)$，由 A3 与 A4 可得
+\[
+z\mapsto \Pi_j(z;w,p_m,M)+\beta\int V_j(z')Q_j(dz'\mid z,M)
+\]
+连续有界，因此每个 $W_{sj}(\cdot;M)$ 仍属于 $\mathcal C_b(Z)$。
+
+\paragraph{推论 3：压缩结构可用。}
+由 A2，Phase 3 中 Bellman 算子 $\mathcal T$ 满足
+\[
+\|\mathcal T(V)-\mathcal T(\tilde V)\|_{\infty,3}
+\le
+\beta\|V-\tilde V\|_{\infty,3}.
+\]
+因 $\beta<1$，可直接调用 Banach 不动点定理。
+
+\paragraph{推论 4：选择区域可测。}
+由于 $W_{sj}(\cdot;M)$ 连续且动作集合有限，argmax 对应可测，进而可定义 Phase 4 中的选择区域与转移概率对象。
+
+\subsection{Benchmark 边界声明}
+
+本阶段冻结以下四条硬约束：
+\begin{enumerate}
+    \item 活跃类型严格保持 $A/B/C$。
+    \item 核心状态严格保持一维 $z$ 与政策状态 $M\in\{0,1\}$。
+    \item 类型 $B$ 商业化严格保持 reduced-form 的 $\lambda_B(z,p_m,M)$，不引入显式 top-level implementation intensity 控制。
+    \item MAH 在 benchmark 主系统中仅通过 $\tau_M(M)$ 与 $\kappa_{sj}(M)$ 进入，不扩展到政府最优政策或 DSGE 层。
+\end{enumerate}
+
+以上对象与假设构成 Phase 2 的固定起点。

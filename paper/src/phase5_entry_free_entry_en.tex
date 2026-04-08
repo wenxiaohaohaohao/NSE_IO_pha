@@ -1,0 +1,326 @@
+\section{Entry and Free Entry Conditions}
+
+This phase studies the benchmark entry block at fixed prices. It takes the solved fixed-price incumbent value functions from Phase 3 as given and derives entrant values, free-entry conditions, entrant masses, and the entrant-composition vector. Throughout this section, $(w,p_m,M)$ are treated as fixed. Therefore the present section is not yet a proof of stationary equilibrium existence. It derives the entry objects that later phases will combine with market clearing and stationary distributions.
+
+\subsection{Benchmark Fidelity Check}
+
+\paragraph{Step 1: exact benchmark objects relevant for the present task.}
+Cross-checking the main manuscript, the benchmark PDF, and the project dictionary, the relevant benchmark objects are:
+\begin{itemize}
+    \item $V_A(z;M)$, $V_B(z;M)$, and $V_C(z;M)$: incumbent value functions imported from Phase 3. These are dynamic endogenous objects.
+    \item $G$: the distribution of entrants' initial capability draws. This is a primitive distributional object for the entry block.
+    \item $c_{EA},c_{EB},c_{EC}$: entry costs for entering as type $A$, $B$, or $C$. These are primitive cost objects for entry.
+    \item $\bar V_E^A(M)$, $\bar V_E^B(M)$, and $\bar V_E^C(M)$: entrant values for entering as type $A$, $B$, or $C$. These are derived entry-value objects.
+    \item $n_E^A(M),n_E^B(M),n_E^C(M)$: entrant masses by organizational form. These are endogenous mass objects.
+    \item $\mathbf e(M)=\bigl(e_A(M),e_B(M),e_C(M)\bigr)$: entrant-composition vector. This is a derived composition object.
+\end{itemize}
+
+\paragraph{Step 2: exact formulas, argument lists, and interpretation.}
+The benchmark manuscript defines entrant values as
+\begin{align*}
+\bar V_E^A(M)&=\int_Z V_A(z_0;M)\,G(dz_0)-c_{EA},\\
+\bar V_E^B(M)&=\int_Z V_B(z_0;M)\,G(dz_0)-c_{EB},\\
+\bar V_E^C(M)&=\int_Z V_C(z_0;M)\,G(dz_0)-c_{EC}.
+\end{align*}
+The free-entry conditions are written in the benchmark as
+\begin{align*}
+\bar V_E^A(M) &\le 0, & n_E^A(M)>0 &\implies \bar V_E^A(M)=0,\\
+\bar V_E^B(M) &\le 0, & n_E^B(M)>0 &\implies \bar V_E^B(M)=0,\\
+\bar V_E^C(M) &\le 0, & n_E^C(M)>0 &\implies \bar V_E^C(M)=0.
+\end{align*}
+The entrant-composition vector is
+\[
+\mathbf e(M)=\bigl(e_A(M),e_B(M),e_C(M)\bigr),
+\qquad
+e_j(M)=\frac{n_E^j(M)}{n_E^A(M)+n_E^B(M)+n_E^C(M)}.
+\]
+Economically, $\bar V_E^j(M)$ is the expected value of entering as type $j$ after integrating over the entrant capability draw and subtracting the corresponding entry cost. The masses $n_E^j(M)$ tell us how many entrants choose each organizational form. The vector $\mathbf e(M)$ records the composition of entry across organizational forms.
+
+\paragraph{Step 3: whether the present task can be completed faithfully from the benchmark as written.}
+Yes, with one explicit domain qualification. The benchmark contains enough structure to:
+\begin{enumerate}
+    \item define entrant values exactly from the solved incumbent value functions and the entrant distribution $G$;
+    \item state the benchmark free-entry conditions exactly as written;
+    \item represent those free-entry conditions in equivalent complementarity form once the nonnegativity of entrant masses is stated explicitly; and
+    \item define the entrant-composition vector conditionally on total entry being strictly positive.
+\end{enumerate}
+
+\paragraph{Step 4: inconsistency or ambiguity that must be flagged before proceeding.}
+There is one entry-block ambiguity that must be stated explicitly. The benchmark formula
+\[
+e_j(M)=\frac{n_E^j(M)}{n_E^A(M)+n_E^B(M)+n_E^C(M)}
+\]
+requires a strictly positive denominator. But the benchmark source does not separately state the condition
+\[
+n_E^A(M)+n_E^B(M)+n_E^C(M)>0.
+\]
+Therefore $\mathbf e(M)$ is not automatically defined in the zero-entry case. In this phase we do not silently patch that issue. We state the entrant-composition vector only under the explicit condition of positive total entry.
+
+There is also an optional extension in the benchmark manuscript:
+\[
+\bar V_E^B(M)=\int_Z V_B(z_0;M)\,G(dz_0)-c_{EB}+\phi_B(M),
+\qquad
+\phi_B(1)\ge \phi_B(0).
+\]
+The manuscript itself says that this block is \emph{not} included in the benchmark. Therefore we do not include $\phi_B(M)$ in the present derivation.
+
+\subsection{Part 1: Entrant Values}
+
+\paragraph{Benchmark object restatement.}
+For each organizational form $j\in\{A,B,C\}$, the benchmark entrant value is the expected value of beginning life as an incumbent of type $j$, net of the corresponding entry cost. Explicitly,
+\begin{align*}
+\bar V_E^A(M)&=\int_Z V_A(z_0;M)\,G(dz_0)-c_{EA},\\
+\bar V_E^B(M)&=\int_Z V_B(z_0;M)\,G(dz_0)-c_{EB},\\
+\bar V_E^C(M)&=\int_Z V_C(z_0;M)\,G(dz_0)-c_{EC}.
+\end{align*}
+These are derived dynamic objects. They are not new primitives and they are not separate Bellman equations.
+
+\paragraph{Economic role.}
+The incumbent value functions describe the continuation value of operating inside the industry after organizational choice has already been embedded in the Bellman problem. The entry block asks a different question: before a potential entrant is active, what is the expected value of paying the entry cost and entering directly as type $A$, $B$, or $C$? The answer is the corresponding expected incumbent value minus the corresponding entry cost.
+
+\paragraph{Mathematical problem.}
+A potential entrant draws an initial capability state $z_0$ from distribution $G$ and compares the three entry options. For each candidate entry type $j$, the entrant value is an expectation of $V_j(z_0;M)$ under $G$, minus the deterministic cost $c_{Ej}$.
+
+\paragraph{Admissible set.}
+The entry-type choice set is
+\[
+\{A,B,C,\mathrm{stay\ out}\}.
+\]
+The current subsection focuses only on the three active entry values. The outside option is normalized to zero inside the free-entry inequalities, because not entering means paying no entry cost and obtaining no entrant continuation value.
+
+\paragraph{Assumptions used.}
+The present derivation uses:
+\begin{enumerate}
+    \item the Phase 3 result that $V_A(\cdot;M)$, $V_B(\cdot;M)$, and $V_C(\cdot;M)$ are bounded continuous functions on $Z$;
+    \item $G$ is a probability measure on the Borel subsets of $Z$;
+    \item the entry costs $c_{EA},c_{EB},c_{EC}$ are finite real numbers.
+\end{enumerate}
+
+\begin{proposition}
+Under the assumptions above, the benchmark entrant values $\bar V_E^A(M)$, $\bar V_E^B(M)$, and $\bar V_E^C(M)$ are well defined and finite.
+\end{proposition}
+
+\begin{proof}
+\medskip\noindent\textbf{Step 1: each integrand is bounded and measurable.}
+From Phase 3, each value function $V_j(\cdot;M)$ belongs to $\mathcal C_b(Z)$. Therefore each $V_j$ is bounded and Borel measurable on $Z$.
+
+\medskip\noindent\textbf{Step 2: the expectations under $G$ are well defined.}
+Because $G$ is a probability measure and $V_j$ is bounded and measurable,
+\[
+\int_Z V_j(z_0;M)\,G(dz_0)
+\]
+is well defined and finite for each $j\in\{A,B,C\}$.
+
+\medskip\noindent\textbf{Step 3: subtract the finite entry cost.}
+Each $c_{Ej}$ is finite by assumption. Therefore
+\[
+\bar V_E^j(M)=\int_Z V_j(z_0;M)\,G(dz_0)-c_{Ej}
+\]
+is a finite real number.
+\end{proof}
+
+\paragraph{A useful bound.}
+The entrant values inherit a simple bound from the incumbent value functions. For each $j\in\{A,B,C\}$,
+\begin{align*}
+\left|\bar V_E^j(M)\right|
+&=
+\left|\int_Z V_j(z_0;M)\,G(dz_0)-c_{Ej}\right|\\
+&\le
+\int_Z |V_j(z_0;M)|\,G(dz_0)+|c_{Ej}|\\
+&\le
+\|V_j(\cdot;M)\|_\infty+|c_{Ej}|.
+\end{align*}
+This bound is useful later because it shows that the entry block remains finite whenever the incumbent Bellman block is finite.
+
+\subsection{Part 2: Free Entry Conditions}
+
+\paragraph{Benchmark object restatement.}
+The benchmark manuscript writes the free-entry conditions as
+\begin{align*}
+\bar V_E^A(M) &\le 0, & n_E^A(M)>0 &\implies \bar V_E^A(M)=0,\\
+\bar V_E^B(M) &\le 0, & n_E^B(M)>0 &\implies \bar V_E^B(M)=0,\\
+\bar V_E^C(M) &\le 0, & n_E^C(M)>0 &\implies \bar V_E^C(M)=0.
+\end{align*}
+The entrant masses $n_E^A(M),n_E^B(M),n_E^C(M)$ are endogenous nonnegative mass objects.
+
+\paragraph{Economic role.}
+These inequalities encode the Hopenhayn free-entry logic. If entering as type $j$ had strictly positive expected value, then more mass would want to enter as that type, so the benchmark stationary entry condition could not hold. Therefore active entry can occur only at zero net entrant value. Conversely, if the net entrant value of type $j$ is strictly negative, then no positive mass should enter as that type in equilibrium.
+
+\paragraph{Mathematical problem.}
+The problem is not an individual finite-dimensional maximization problem of the same kind as the Bellman step. Instead it is an equilibrium viability condition on masses. The objects to be jointly disciplined are the entrant value $\bar V_E^j(M)$ and the entrant mass $n_E^j(M)$ for each organizational type.
+
+\paragraph{Admissible set.}
+Entrant masses satisfy
+\[
+n_E^A(M)\ge 0,\qquad n_E^B(M)\ge 0,\qquad n_E^C(M)\ge 0.
+\]
+This nonnegativity is conceptually part of the meaning of a mass. We state it explicitly here because it is needed to translate the benchmark implication form into complementarity form.
+
+\begin{proposition}
+Suppose entrant masses are nonnegative. Then the benchmark free-entry condition for each $j\in\{A,B,C\}$ is equivalent to
+\[
+\bar V_E^j(M)\le 0,\qquad n_E^j(M)\ge 0,\qquad n_E^j(M)\bar V_E^j(M)=0.
+\]
+\end{proposition}
+
+\begin{proof}
+Fix one organizational type $j$.
+
+\medskip\noindent\textbf{Step 1: benchmark implication form implies complementarity.}
+Assume the benchmark conditions
+\[
+\bar V_E^j(M)\le 0
+\]
+and
+\[
+n_E^j(M)>0\implies \bar V_E^j(M)=0.
+\]
+We also impose $n_E^j(M)\ge 0$ because entrant mass cannot be negative. There are two cases.
+
+If $n_E^j(M)=0$, then automatically
+\[
+n_E^j(M)\bar V_E^j(M)=0.
+\]
+If $n_E^j(M)>0$, then the benchmark implication gives
+\[
+\bar V_E^j(M)=0,
+\]
+and therefore again
+\[
+n_E^j(M)\bar V_E^j(M)=0.
+\]
+So the complementarity product condition follows.
+
+\medskip\noindent\textbf{Step 2: complementarity implies the benchmark implication form.}
+Now assume
+\[
+\bar V_E^j(M)\le 0,\qquad n_E^j(M)\ge 0,\qquad n_E^j(M)\bar V_E^j(M)=0.
+\]
+If $n_E^j(M)>0$, then dividing the equation
+\[
+n_E^j(M)\bar V_E^j(M)=0
+\]
+by the positive number $n_E^j(M)$ yields
+\[
+\bar V_E^j(M)=0.
+\]
+This is exactly the benchmark implication
+\[
+n_E^j(M)>0\implies \bar V_E^j(M)=0.
+\]
+Therefore the two formulations are equivalent once nonnegativity of entrant mass is stated explicitly.
+\end{proof}
+
+\paragraph{What does complementarity mean economically?}
+The complementarity form says that a given organizational entry margin cannot have both strictly positive entrant mass and strictly negative entrant value at the same time. If the mass is positive, the entrant value must be zero. If the entrant value is negative, the mass must be zero. That is the exact economic content of free entry in this benchmark.
+
+\subsection{Part 3: Entrant Masses and the Entry-Composition Vector}
+
+\paragraph{Benchmark object restatement.}
+The benchmark manuscript defines entrant masses by type,
+\[
+n_E^A(M),\qquad n_E^B(M),\qquad n_E^C(M),
+\]
+and then defines the entrant-composition vector
+\[
+\mathbf e(M)=\bigl(e_A(M),e_B(M),e_C(M)\bigr),
+\qquad
+e_j(M)=\frac{n_E^j(M)}{n_E^A(M)+n_E^B(M)+n_E^C(M)}.
+\]
+
+\paragraph{Economic role.}
+The masses $n_E^j(M)$ describe the scale of entry by organizational type. The vector $\mathbf e(M)$ describes the composition of entry across types. This is conceptually different from incumbent reorganization. Incumbent reorganization tells us how existing firms switch across organizational forms or exit. Entry composition tells us how new firms choose their first observed organizational form when they enter the industry.
+
+\paragraph{Mathematical problem.}
+We want to know when $\mathbf e(M)$ is well defined and what properties it has. The answer depends entirely on the sign of the denominator
+\[
+N_E(M):=n_E^A(M)+n_E^B(M)+n_E^C(M).
+\]
+This notation $N_E(M)$ is auxiliary notation introduced only to simplify the proof. It is simply total entrant mass.
+
+\paragraph{Admissible set.}
+Because entrant masses are nonnegative,
+\[
+N_E(M)\ge 0.
+\]
+The benchmark ratio defining $e_j(M)$ requires the stronger condition
+\[
+N_E(M)>0.
+\]
+If $N_E(M)=0$, then the benchmark source does not define $\mathbf e(M)$.
+
+\begin{proposition}
+If
+\[
+N_E(M)=n_E^A(M)+n_E^B(M)+n_E^C(M)>0,
+\]
+then the entrant-composition vector is well defined and satisfies
+\[
+0\le e_j(M)\le 1
+\qquad\text{for each }j\in\{A,B,C\},
+\]
+and
+\[
+e_A(M)+e_B(M)+e_C(M)=1.
+\]
+\end{proposition}
+
+\begin{proof}
+\medskip\noindent\textbf{Step 1: the ratios are well defined.}
+If $N_E(M)>0$, then the denominator in
+\[
+e_j(M)=\frac{n_E^j(M)}{N_E(M)}
+\]
+is strictly positive, so each ratio is well defined.
+
+\medskip\noindent\textbf{Step 2: each component lies in $[0,1]$.}
+Because entrant masses are nonnegative,
+\[
+0\le n_E^j(M)\le N_E(M).
+\]
+Dividing by the positive number $N_E(M)$ gives
+\[
+0\le e_j(M)\le 1.
+\]
+
+\medskip\noindent\textbf{Step 3: the components sum to one.}
+By direct substitution,
+\begin{align*}
+e_A(M)+e_B(M)+e_C(M)
+&=
+\frac{n_E^A(M)}{N_E(M)}
++
+\frac{n_E^B(M)}{N_E(M)}
++
+\frac{n_E^C(M)}{N_E(M)}\\
+&=
+\frac{n_E^A(M)+n_E^B(M)+n_E^C(M)}{N_E(M)}\\
+&=
+\frac{N_E(M)}{N_E(M)}\\
+&=1.
+\end{align*}
+\end{proof}
+
+\paragraph{Why entry composition is conceptually distinct from incumbent reorganization.}
+The benchmark manuscript is explicit on this point, and the distinction matters for both theory and empirics. The incumbent transition matrix $\mathbf P(M)$ describes what existing firms do: remain in the same organizational form, switch to another form, or exit. The entrant-composition vector $\mathbf e(M)$ describes a different object: among firms that were not active incumbents at the start of the period and now enter, what share begins as $A$, what share begins as $B$, and what share begins as $C$? These are different margins and must not be mixed. A rise in type-$B$ entry does not by itself imply more incumbent switching into type $B$, and a rise in incumbent switching into type $B$ does not by itself imply more type-$B$ entry.
+
+\subsection{What did we just do, and why does it matter?}
+
+We took the incumbent value functions from Phase 3 and turned them into entry values. That move is conceptually simple but economically important. It says that the return to entry is not built from a separate entrant production problem. It is built from the expected continuation value of entering directly into one of the benchmark organizational forms, net of the corresponding entry cost.
+
+We then imposed free-entry logic. This step matters because entry is not pinned down by incumbent values alone. The model also needs equilibrium restrictions on how much mass can profitably enter each organizational form. The free-entry inequalities and complementarity conditions are what connect entrant profitability to entrant masses.
+
+The entrant-composition vector matters because it is not the same object as the incumbent transition matrix. The transition matrix describes reorganization of firms that are already in the market. The entry-composition vector describes the organizational mix of firms that are entering from outside. This distinction is essential in the data and equally essential in the theory. If the two objects were merged, the model would lose the ability to tell whether MAH changed organizational boundaries mainly by reallocating incumbents, mainly by shifting new entry, or by both.
+
+There is also one precise domain issue that we made explicit rather than leaving implicit. The entrant-composition vector is only defined when total entrant mass is strictly positive. The benchmark source writes the formula, but does not separately spell out that positivity condition. Making that condition explicit keeps the later stationary-distribution and equilibrium blocks mathematically clean.
+
+\subsection{End-of-Section Recap}
+
+\paragraph{What has been established mathematically.}
+For fixed $(w,p_m,M)$, the benchmark entrant values are well defined finite expectations of the solved incumbent value functions under the entrant distribution $G$, net of entry costs. The benchmark free-entry conditions can be written exactly as in the source and, once nonnegativity of entrant masses is stated explicitly, can also be written in equivalent complementarity form. If total entrant mass is strictly positive, the entrant-composition vector $\mathbf e(M)$ is well defined, has components in $[0,1]$, and sums to one.
+
+\paragraph{What assumptions were used.}
+We used the Phase 3 result that $V_A$, $V_B$, and $V_C$ are bounded continuous functions; the benchmark entrant distribution $G$; finite entry costs $c_{EA},c_{EB},c_{EC}$; and nonnegativity of entrant masses. To define $\mathbf e(M)$, we additionally required strictly positive total entrant mass.
+
+\paragraph{What remains to be derived next.}
+The next phase must use the incumbent objects and the entry objects to derive market clearing, first in the qualified contract-manufacturing market and then in the labor market. After that, the later stationary-distribution phase must combine entrant masses with optimal policy behavior to define invariant measures.
