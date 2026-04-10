@@ -1,6 +1,0 @@
-from_type,to_rd,to_prod,to_mix,to_transition,to_exit,notes
-rd,NA,NA,NA,NA,NA,"Post-policy within-window transitions; recommended origin years = 2016-2022 unless 2024 data exist"
-prod,NA,NA,NA,NA,NA,"Post-policy within-window transitions; recommended origin years = 2016-2022 unless 2024 data exist"
-mix,NA,NA,NA,NA,NA,"Post-policy within-window transitions; recommended origin years = 2016-2022 unless 2024 data exist"
-transition,NA,NA,NA,NA,NA,"Post-policy within-window transitions; recommended origin years = 2016-2022 unless 2024 data exist"
-entry,NA,NA,NA,NA,NA,"First observed firm-year distribution in the same post-policy window; report separately if needed"

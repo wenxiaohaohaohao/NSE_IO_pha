@@ -1,6 +1,0 @@
-from_type,to_rd,to_prod,to_mix,to_transition,to_exit,notes
-rd,NA,NA,NA,NA,NA,"Pre-policy within-window transitions; recommended origin years = 2011-2014"
-prod,NA,NA,NA,NA,NA,"Pre-policy within-window transitions; recommended origin years = 2011-2014"
-mix,NA,NA,NA,NA,NA,"Pre-policy within-window transitions; recommended origin years = 2011-2014"
-transition,NA,NA,NA,NA,NA,"Pre-policy within-window transitions; recommended origin years = 2011-2014"
-entry,NA,NA,NA,NA,NA,"First observed firm-year distribution in the same pre-policy window; report separately if needed"

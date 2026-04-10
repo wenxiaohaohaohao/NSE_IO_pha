@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,array,multirow,longtable}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{natbib}
+
+\setcitestyle{authoryear,round,semicolon}
+\doublespacing
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\titleformat{\section}[block]
+  {\centering\normalsize\bfseries}
+  {\thesection.}
+  {0.5em}
+  {\MakeUppercase}
+\titlespacing*{\section}{0pt}{2.0ex plus .5ex minus .2ex}{1.2ex}
+\titleformat{\subsection}[block]
+  {\normalsize\bfseries}
+  {\thesubsection.}
+  {0.5em}
+  {}
+\titlespacing*{\subsection}{0pt}{1.5ex plus .4ex minus .2ex}{0.7ex}
+
+\setlength{\emergencystretch}{3em}
+\hbadness=10000
+\vbadness=10000
+\hfuzz=100pt
+\vfuzz=100pt
+\raggedbottom
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\argmax}{\operatorname*{arg\,max}}
+\newcommand{\Tset}{\mathcal{T}}
+\newcommand{\Inew}{\mathcal{N}}
+\newcommand{\ShareO}{\mathcal{S}^O}
+\newcommand{\Surp}{\mathcal{S}}
+\newcommand{\Lbar}{\bar L}
+
+\begin{document}
+\input{section1_intro_with_explicit_cites_20260410.tex}
+\end{document}
