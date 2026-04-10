@@ -55,3 +55,15 @@ __pycache__/
 # Generic backups and temporary files
 *.bak
 *.temp
+
+# Workspace temporary directory
+tmp/
+
+# Local one-off LaTeX outputs in paper root
+paper/main.pdf
+paper/MAH_Policy_single.pdf
+paper/section1_intro_with_explicit_cites_20260410_standalone.pdf
+
+# Do not track section-level build outputs under paper/src
+paper/src/*.pdf
+paper/src/*.xdv
