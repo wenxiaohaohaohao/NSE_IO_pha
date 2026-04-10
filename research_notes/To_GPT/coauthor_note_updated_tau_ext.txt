@@ -1,0 +1,354 @@
+﻿
+\documentclass[12pt]{ctexart}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{fontspec}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\setmainfont{Latin Modern Roman}
+\setCJKmainfont{FangSong}
+
+\setstretch{1.2}
+
+\title{缁欏悎浣滆€呯殑璇存槑锛歕\
+涓轰粈涔堟垜浠浠?\texttt{A/B/C} 浼佷笟鐘舵€佽浆绉伙紝杞悜鈥滀骇鍝佸眰闈㈢殑 commercialization assignment鈥濓紝\\
+浠ュ強涓轰粈涔堟斂绛栬繘鍏ユā鍨嬬殑鏍稿績鍘熻搴旀敼鍐欎负 \texorpdfstring{$\tau_{ext}$}{tau\_ext}
+}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{璇存槑鐩殑}
+
+杩欎唤璇存槑鐢ㄤ簬瑙ｉ噴锛氫负浠€涔堟垜浠幇鍦ㄩ渶瑕佹妸璁烘枃鐨勬牳蹇冭В閲婂璞★紝浠?鈥滀紒涓氳韩浠藉浣曞湪 \texttt{A/B/C} 涔嬮棿鍙樺寲鈥濓紝鏇存柊涓衡€滀竴涓師鐮旇嵂
+idea / 浜у搧鏈€缁堢敱璋佹潵瀹炵幇鈥濓紝浠ュ強涓轰粈涔堜笌杩欎竴璋冩暣鐩稿搴旓紝
+鏀跨瓥杩涘叆妯″瀷鐨勬柟寮忎篃蹇呴』鏇存柊銆?
+杩欐鏇存柊涓嶆槸灏忎慨灏忚ˉ锛岃€屾槸瀵硅鏂囧璞°€佽瘑鍒噸蹇冨拰妯″瀷鍘熻鐨勪竴娆＄粺涓€璋冩暣銆?鏈€鏍稿績鐨勬柊鍒ゆ柇鏄細
+
+\begin{quote}
+\textbf{MAH 鐨勪綔鐢ㄤ笉搴斿啀涓昏鍐欐垚涓€涓硾娉涚殑鍒跺害 dummy 鎴?regime index锛?鑰屽簲鍐欐垚 external commercialization 杩欐潯缁勭粐璺嚎鐨?route-specific governance/compliance cost 鐨勪笅闄嶃€倉
+\end{quote}
+
+鎴戜滑鐢?\[
+\tau_{ext}
+\]
+鏉ヨ〃绀鸿繖涓璞°€傚畠鐨勫惈涔変笉鏄€滄墍鏈夋不鐞嗘垚鏈€濓紝鏇翠笉鏄€滄墍鏈夋斂绛栨晥搴旂殑鎬诲拰鈥濓紝
+鑰屾槸锛?
+\begin{quote}
+\textbf{鐮斿彂鍨嬩富浣撳湪淇濈暀 authorization / holder 韬唤鐨勫悓鏃讹紝
+閫氳繃澶栭儴鍚堟牸鐢熶骇鏉ュ畬鎴?original-drug commercialization 鎵€闇€瑕佹壙鎷呯殑棰濆娌荤悊涓庡悎瑙勬懇鎿︺€倉
+\end{quote}
+
+鍥犳锛岃繖娆¤皟鏁村疄闄呬笂鏄袱姝ュ悓鏃跺畬鎴愶細
+
+\begin{enumerate}[leftmargin=2em]
+    \item 鎶婅鏂囧璞′粠 \texttt{firm-state transition-centered} 鏀规垚
+    \texttt{product-level commercialization assignment-centered}锛?    \item 鎶婃斂绛栬繘鍏ユā鍨嬬殑鏂瑰紡锛屼粠鈥滄硾娉涚殑鍒跺害鍙樺寲鈥濇敼鎴?    鈥渆xternal commercialization route-specific governance friction 鐨勫彉鍖栤€濄€?\end{enumerate}
+
+\section{涓€銆佹棫璁惧畾鍦ㄨВ閲婁粈涔坿
+
+鏃ц瀹氱殑涓荤嚎鏄細
+
+\begin{quote}
+\texttt{MAH} 鏀瑰彉浼佷笟缁勭粐杈圭晫锛屼紒涓氬湪 \texttt{A/B/C} 涓夌缁勭粐鐘舵€佷箣闂撮噸鏂伴€夋嫨锛?杩涜€屽奖鍝嶅師鐮旇嵂鍒涙柊涓庤涓氬潎琛°€?\end{quote}
+
+杩欓噷鐨勪笁绫讳紒涓氭槸锛?
+\begin{itemize}[leftmargin=2em]
+    \item \texttt{A}锛氱爺鍙戜笌鐢熶骇涓€浣撳寲浼佷笟锛?    \item \texttt{B}锛氱爺鍙戜笓闂ㄥ寲浼佷笟锛?    \item \texttt{C}锛氱敓浜т笓闂ㄥ寲浼佷笟銆?\end{itemize}
+
+鍦ㄨ繖涓鏋堕噷锛孿texttt{MAH} 涓昏閫氳繃涓や釜 reduced-form 娓犻亾杩涘叆妯″瀷锛?
+\begin{itemize}[leftmargin=2em]
+    \item 闄嶄綆 \texttt{B} 鍨嬩紒涓氱殑 commercialization friction锛屽師鏉ラ€氬父璁颁负
+    \(\tau_M\)锛?    \item 闄嶄綆浼佷笟鍦?\texttt{A/B/C} 涔嬮棿鍒囨崲鐨勭粍缁囬噸鏋勬垚鏈紝璁颁负
+    \(\kappa_{sj}\)銆?\end{itemize}
+
+鍥犳锛屾棫璁惧畾鏈€寮鸿皟鐨勭粡楠屽璞℃槸锛?
+\begin{itemize}[leftmargin=2em]
+    \item incumbent transition matrix \(P(M)\)锛?    \item entry composition \(e(M)\)锛?    \item 绫诲瀷浠介銆侀€€鍑恒€乸roducer-side outcomes銆乧ommercialization proxies 绛夈€?\end{itemize}
+
+鎹㈠彞璇濊锛屾棫鐗堢殑璇嗗埆閫昏緫鏇存帴杩戯細
+
+\begin{quote}
+鍏堢湅浼佷笟鍦?\texttt{A/B/C} 涔嬮棿鏈夋病鏈夋槑鏄鹃噸缁勶紝鍐嶆妸杩欑缁勭粐閲嶇粍鍜屽垱鏂扮粨鏋滆仈绯昏捣鏉ャ€?\end{quote}
+
+\section{浜屻€佹柊璁惧畾鍦ㄨВ閲婁粈涔坿
+
+鏂拌瀹氫笉鍐嶆妸鈥滀紒涓氳韩浠芥槸鍚︿粠 \texttt{A} 鍙樻垚 \texttt{B/C}鈥濆綋鎴愪富璋冩暣杈归檯锛?鑰屾槸鏀规垚锛?
+\begin{quote}
+\texttt{MAH} 鏀瑰彉鐨勬槸
+\textbf{original-drug idea 浠?invention 鍒?commercialization 鐨勭粍缁囧垎閰嶆柟寮弣銆?\end{quote}
+
+鏇寸洿鐧藉湴璇达紝鏂拌瀹氬叧蹇冪殑鏄細
+
+\begin{itemize}[leftmargin=2em]
+    \item 璋佺敓鎴?original-drug idea锛?    \item 璋佹寔鏈?/ 淇濈暀涓婂競璁稿彲鎴栦骇鍝佹潈鐩婏紱
+    \item 璋佹潵鐢熶骇锛?    \item 鏄唴閮ㄤ竴浣撳寲瀹屾垚锛岃繕鏄鍖呯粰鏈夎祫璐ㄧ殑鐢熶骇鏂癸紝杩樻槸杞粰鍒殑浼佷笟瀹炵幇銆?\end{itemize}
+
+鍥犳锛屾柊璁惧畾鏈€鏍稿績鐨勭粡娴庨棶棰樹笉鍐嶆槸锛?
+\begin{quote}
+\texttt{A/B/C} 浼佷笟韬唤鏈夋病鏈夊ぇ瑙勬ā璺宠浆锛?\end{quote}
+
+鑰屾槸锛?
+\begin{quote}
+涓€涓?original-drug idea 鏈€缁堟槸鐢辫皝銆侀€氳繃浠€涔堢粍缁囪矾绾胯瀹炵幇鍑烘潵锛?\end{quote}
+
+杩欏拰鎴戜滑鏈€杩戣璁虹殑鏂瑰悜涓€鑷达細鐜板疄涓洿瀹规槗瑙傚療鍒扮殑锛屼笉鏄紒涓氬ぇ瑙勬ā浠?\texttt{A/B/C} 鏀瑰ご鎹㈤潰锛岃€屾槸鍚屼竴绫讳紒涓氬洿缁曚笉鍚屼骇鍝侀噰鍙栦笉鍚岀殑
+commercialization arrangement銆?
+\section{涓夈€佷负浠€涔?policy enters the model 涔熷繀椤昏窡鐫€鏇存柊}
+
+濡傛灉璁烘枃瀵硅薄浠庘€滀紒涓氳韩浠借穬杩佲€濇敼鎴愨€滀骇鍝佸疄鐜板叧绯烩€濓紝
+閭ｄ箞鏀跨瓥杩涘叆妯″瀷鐨勫師璇篃蹇呴』璺熺潃鏀瑰彉銆?
+鏃у啓娉曢噷锛屾斂绛栨洿瀹规槗琚鐞嗘垚锛?
+\begin{itemize}[leftmargin=2em]
+    \item 涓€涓埗搴?dummy锛歕(M\in\{0,1\}\)锛?    \item 鎴栦竴涓瘮杈冨娉涚殑鍒跺害 index锛?    \item 鎴栬€呭悓鏃惰繘鍏ュ緢澶?reduced-form 瀵硅薄锛歕(\tau_M,\kappa_{sj},\phi_B,\ldots\)
+\end{itemize}
+
+杩欑鍐欐硶鍦ㄦ渶鍒濋樁娈垫湁鐢紝浣嗙幇鍦ㄧ殑闂鏄細瀹冨お瀹姐€?濡傛灉璁烘枃鐨勬牳蹇冩満鍒跺凡缁忚鍘嬬缉鍒?鈥渞esearch-originated idea 濡備綍璺ㄤ紒涓氳竟鐣屽畬鎴?commercialization鈥濓紝
+閭ｄ箞 policy enters the model 鐨勫崟涓€鍘熻涔熷簲璇ュ搴斿埌杩欐潯璺嚎涓娿€?
+鍥犳锛屾柊鐨勫啓娉曞簲璇ユ槸锛?
+\[
+\tau_{ext}
+\]
+
+鍏朵腑 \(\tau_{ext}\) 琛ㄧず锛?
+\begin{quote}
+\textbf{research-originated original-drug idea 閫氳繃澶栭儴鍚堟牸鐢熶骇瀹屾垚 commercialization 鏃讹紝
+璇?route 鐗规湁鐨勬不鐞?鍚堣鎽╂摝銆倉
+\end{quote}
+
+杩欎釜瀵硅薄鍖呮嫭锛?
+\begin{itemize}[leftmargin=2em]
+    \item holder 鍜?manufacturer 涔嬮棿绛剧害涓庢墽琛岀殑鎴愭湰锛?    \item 璐ㄩ噺鍗忚銆佸鎵樺崗璁€佺洃鐫ｄ笌鍗忚皟鎴愭湰锛?    \item MAH 鎵挎媴璐ㄩ噺璐ｄ换鍜屼笂甯傛斁琛岃矗浠绘墍甯︽潵鐨勭粍缁囨垚鏈紱
+    \item 璺ㄤ紒涓氬畬鎴?commercialization 鐨勫埗搴︽€ф墽琛屾垚鏈€?\end{itemize}
+
+瀹冧笉鍖呮嫭锛?
+\begin{itemize}[leftmargin=2em]
+    \item 鐗╃悊鐢熶骇鎴愭湰鏈韩锛?    \item 鍘熺爺 idea generation 鐨勭爺鍙戞垚鏈紱
+    \item 琛屼笟闇€姹傛垨 market size锛?    \item 鎵€鏈変紒涓氬叡鍚岄潰瀵圭殑鍥哄畾缁忚惀鎴愭湰銆?\end{itemize}
+
+鎵€浠ユ洿鍑嗙‘鍦拌锛?
+\[
+\tau_{ext}
+=
+\text{governance/compliance cost of the external commercialization route}
+\]
+
+鑰屼笉鏄細
+
+\[
+\tau_{ext}
+=
+\text{all governance cost in the economy.}
+\]
+
+\section{鍥涖€佷负浠€涔?\texorpdfstring{$\tau_{ext}$}{tau\_ext} 鏈€璐?MAH 鐨勫埗搴︾幇瀹瀩
+
+杩欎竴姝ユ槸鏁翠釜璋冩暣閲屾渶鍏抽敭鐨勫湴鏂广€?
+MAH 鐨勫姛鍔筹紝涓嶆槸璁╀紒涓氱獊鐒舵洿浼氱爺鍙戯紝涔熶笉鏄鑽搧闇€姹傜獊鐒跺彉澶э紱
+瀹冪殑鍔熷姵鏄妸锛?
+\begin{quote}
+鈥滄病鏈夊巶鐨勭爺鍙戣€呮兂鎶婅嵂鍋氬嚭鏉モ€?\end{quote}
+
+杩欎欢浜嬶紝浠庡繀椤讳緷璧栦紒涓氬唴閮ㄥ寲瑙ｅ喅锛屾敼鎴愬彲浠ラ€氳繃娉曞緥璁ゅ彲銆佽矗浠绘竻妤氥€?鎵ц鏍囧噯鍖栫殑鍚堟牸鍚堝悓鍏崇郴鏉ヨВ鍐炽€?
+鎹㈠彞璇濊锛屾敼闈╁墠锛屼竴涓?research-originating firm 濡傛灉娌℃湁鍐呴儴鐢熶骇鑳藉姏锛?寰€寰€鍙兘锛?
+\begin{itemize}[leftmargin=2em]
+    \item 鑷繁寰€涓嬫父鏁村悎锛屽幓寤哄巶銆佹嬁鐢熶骇鑳藉姏锛?    \item 鎴栬€呮妸椤圭洰 / 浜у搧璁╃粰涓€浣撳寲浼佷笟鍘诲疄鐜般€?\end{itemize}
+
+鏀归潻鍚庯紝鏂扮殑缁勭粐璺嚎鍙樺緱鍙锛?
+\begin{itemize}[leftmargin=2em]
+    \item 鐮斿彂鑰呭彲浠ヤ繚鐣?holder / authorization锛?    \item 閫氳繃澶栭儴鍚堟牸鐢熶骇浼佷笟瀹屾垚鍒堕€狅紱
+    \item 鍚屾椂鐢辨硶寰嬪拰鐩戠瑙勫垯鏄庣‘璐ㄩ噺璐ｄ换銆佷笂甯傛斁琛屻€佽川閲忓崗璁拰濮旀墭鍏崇郴銆?\end{itemize}
+
+鍥犳锛孧AH 鐨勭粡娴庡鍐呭鏈€閫傚悎琚В閲婁负锛?
+\begin{quote}
+\textbf{瀹冮檷浣庝簡璺ㄤ紒涓氬畬鎴?commercialization 鐨勬不鐞嗘垚鏈€倉
+\end{quote}
+
+涔熷氨鏄細
+
+\[
+\tau_{ext}^{post}<\tau_{ext}^{pre}.
+\]
+
+\section{浜斻€佹棫璁惧畾鍜屾柊璁惧畾鏈€鏈川鐨勪笉鍚寎
+
+\subsection*{1. 涓昏璋冩暣鍗曚綅涓嶅悓}
+
+鏃ц瀹氱殑涓昏璋冩暣鍗曚綅鏄痋textbf{浼佷笟缁勭粐鐘舵€亇銆?瀹冨叧蹇冪殑鏄紒涓氫粠 \texttt{A/B/C} 涔嬮棿鎬庝箞鍒囨崲銆?
+鏂拌瀹氱殑涓昏璋冩暣鍗曚綅鏄痋textbf{浜у搧 / idea 鐨勫疄鐜版柟寮弣銆?瀹冨叧蹇冪殑鏄竴涓?original-drug idea 鏈€缁堬細
+
+\begin{itemize}[leftmargin=2em]
+    \item 鐢?\texttt{A} 鍐呴儴鍋氬嚭鏉ワ紱
+    \item 鐢?\texttt{B} 淇濈暀鏉冨埄銆佸鍖呯粰 \texttt{A/C} 鐢熶骇锛?    \item 鐢?\texttt{B} 杞粰 \texttt{A} 瀹炵幇锛?    \item 鎴栬€呮牴鏈病鏈夎瀹炵幇銆?\end{itemize}
+
+鎵€浠ワ細
+
+\begin{itemize}[leftmargin=2em]
+    \item 鏃ц瀹氭槸 \texttt{firm-state transition-centered}锛?    \item 鏂拌瀹氭槸 \texttt{product-level commercialization assignment-centered}銆?\end{itemize}
+
+\subsection*{2. \texttt{A/B/C} 鐨勫惈涔変笉鍚寎
+
+鏃ц瀹氶噷锛孿texttt{A/B/C} 鏇村儚鏄痋textbf{鍔ㄦ€佺姸鎬佸彉閲弣锛?閲嶇偣鏄紒涓氭槸鍚︿粠涓€涓姸鎬佽浆鍒板彟涓€涓姸鎬併€?
+鏂拌瀹氶噷锛孿texttt{A/B/C} 鏇村儚鏄痋textbf{缁勭粐瑙掕壊 / 鑳藉姏杞戒綋}銆?瀹冧滑浠嶇劧閲嶈锛屼絾瀹冧滑涓嶅啀蹇呴』琛ㄧ幇涓哄ぇ瑙勬ā韬唤璺冭縼锛屾墠鑳借В閲?MAH 鐨勪綔鐢ㄣ€?
+鎹㈠彞璇濊锛?
+\begin{itemize}[leftmargin=2em]
+    \item 鏃х増锛歕texttt{A/B/C} 鏄€滆皝鍙樻垚璋佲€濓紱
+    \item 鏂扮増锛歕texttt{A/B/C} 鏄€滆皝鍦ㄤ骇鍝佸疄鐜伴摼鏉￠噷鎵紨浠€涔堣鑹测€濄€?\end{itemize}
+
+\subsection*{3. 缁忛獙璇嗗埆鐨勯噸蹇冧笉鍚寎
+
+鏃ц瀹氭渶渚濊禆鐨勬槸锛?
+\begin{itemize}[leftmargin=2em]
+    \item pre/post transition matrix锛?    \item incumbent switching锛?    \item firm-level reorganization evidence銆?\end{itemize}
+
+鏂拌瀹氭洿渚濊禆鐨勬槸锛?
+\begin{itemize}[leftmargin=2em]
+    \item 鏂拌繘鍏ヨ€呮槸鍚︽洿鍋?\texttt{B}锛?    \item original-drug products 鏄惁鏇村父鐢扁€滅爺鍙戞柟鎸佽瘉 + 澶栭儴鍚堟牸鐢熶骇鈥濇潵瀹炵幇锛?    \item entrusted production / commissioned manufacturing / 鎸佽瘉涓庣敓浜у垎绂荤殑鏂囨湰鍜屽尮閰嶈瘉鎹紱
+    \item producer-side outcomes锛?    \item new original-drug products 鐨勫疄鐜版暟閲忋€?\end{itemize}
+
+鍥犳锛屾柊璁惧畾涓嶆槸涓嶈 transition evidence锛岃€屾槸鎶婂畠\textbf{闄嶇骇涓鸿緟鍔╄瘉鎹畗銆?鐪熸鐨勪竴绾胯瘉鎹紝鍙樻垚浜哱textbf{浜у搧瀹炵幇鍏崇郴鏈韩}銆?
+\subsection*{4. 瀵?MAH 浣滅敤鐨勭悊瑙ｄ笉鍚寎
+
+鏃ц瀹氭洿瀹规槗鍐欐垚锛?
+\begin{quote}
+\texttt{MAH} 闄嶄綆缁勭粐鍒囨崲鎴愭湰锛屽洜姝や紒涓氫粠涓€浣撳寲璧板悜涓撲笟鍖栥€?\end{quote}
+
+鏂拌瀹氭洿鍑嗙‘鍦板啓鎴愶細
+
+\begin{quote}
+\texttt{MAH} 闄嶄綆 original-drug idea 閫氳繃澶栭儴鍚堟牸鐢熶骇瀹屾垚 commercialization 鐨勬不鐞嗘懇鎿︼紝
+浣跨爺鍙戜笓闂ㄥ寲涓讳綋鍗充娇涓嶈嚜寤哄叏閮ㄤ骇鑳斤紝涔熸洿鏈夊彲鑳芥妸 idea 鍙樻垚浜у搧銆?\end{quote}
+
+杩欎釜琛ㄨ堪鏇磋创杩戝埗搴︾幇瀹烇紝涔熸洿璐磋繎褰撳墠鐨勬暟鎹潯浠躲€?鍥犱负鎴戜滑鐜板湪鏇村鏄撹瀵熷埌鈥滆皝鐮斿彂銆佽皝鎸佽瘉銆佽皝鐢熶骇銆佽皝瀹炵幇浜у搧鈥濓紝
+鑰屼笉鏄紒涓氳韩浠界殑澶ц妯¤烦杞€?
+\section{鍏€佷负浠€涔堝繀椤绘敼锛岃€屼笉鏄户缁潥鎸佹棫璁惧畾}
+
+鍘熷洜寰堢畝鍗曪細
+
+\begin{quote}
+\textbf{鏃ц瀹氭渶鏍稿績鐨?empirical anchor鈥斺€擻texttt{A/B/C} 韬唤璺冭縼鈥斺€?鐜板湪鐪嬭捣鏉ュ苟涓嶆槸鏈€寮恒€佹渶鍙娴嬨€佹渶鍙牎鍑嗙殑 MAH 浣滅敤杈归檯銆倉
+\end{quote}
+
+鐜板疄涓洿鍙兘鍙戠敓鐨勬槸锛?
+\begin{itemize}[leftmargin=2em]
+    \item 鏂拌繘鍏ヨ€呮洿鍋?\texttt{B}锛?    \item \texttt{A} 缁х画鍋氱爺鍙戯紝浣嗘煇浜涗骇鍝佸鍖呯粰鏈夎祫璐ㄧ殑鐢熶骇鏂癸紱
+    \item \texttt{B} 鍋氱爺鍙戝苟淇濈暀鏌愪簺鏉冪泭锛屼絾鎵?\texttt{A/C} 鐢熶骇锛?    \item 杩樻湁涓€浜涗骇鍝佽浆璁┿€佸鎵樼敓浜с€佸悎浣?commercialization 鐨勫畨鎺掋€?\end{itemize}
+
+杩欎簺閮借鏄庯細
+
+\begin{quote}
+MAH 鏇村儚鏄湪\textbf{閲嶇粍 original-drug idea 鐨勫疄鐜拌矾寰剗锛?鑰屼笉涓€瀹氭槸鍦ㄦ帹鍔?incumbent 浼佷笟骞挎硾鏀硅韩浠姐€?\end{quote}
+
+鎵€浠ワ紝濡傛灉缁х画鎶?transition matrix 鏀惧湪鏈€涓績鐨勪綅缃紝灏变細鍑虹幇涓€涓棶棰橈細
+
+\begin{itemize}[leftmargin=2em]
+    \item 鐞嗚涓婂緢瀹屾暣锛?    \item 浣嗙粡楠屼笂鏈€闅剧珯浣忋€?\end{itemize}
+
+杩欏氨鏄负浠€涔堣繖娆¤皟鏁存槸蹇呰鐨勩€?
+\section{涓冦€佸摢浜涗笢瑗挎病鏈夊彉}
+
+杩欐璋冩暣骞朵笉鏄帹缈诲師鏈夋ā鍨嬶紝涓嬮潰杩欎簺鏍稿績鍐呭浠嶇劧淇濈暀锛?
+\subsection*{1. \texttt{A/B/C} 涓夌被缁勭粐瑙掕壊浠嶇劧淇濈暀}
+
+鍙槸瀹冧滑浠庘€滀富瑕佽浆绉荤姸鎬佲€濇洿澶氬彉鎴愨€滀骇鍝佸疄鐜伴摼涓殑缁勭粐瑙掕壊鈥濄€?
+\subsection*{2. invention / implementation 鍒嗙浠嶇劧淇濈暀}
+
+杩欎竴鐐瑰叾瀹炴瘮浠ュ墠鏇撮噸瑕併€傛垜浠幇鍦ㄦ洿鏄庣‘鍦版槸鍦ㄨ锛?
+\begin{itemize}[leftmargin=2em]
+    \item innovation 涓嶆槸 idea generation 鑷姩绛変簬缁撴灉锛?    \item 涓棿杩樻湁涓€涓?implementation / commercialization 鐜妭銆?\end{itemize}
+
+\subsection*{3. MAH 閫氳繃 commercialization friction 璧蜂綔鐢ㄤ粛鐒朵繚鐣檥
+
+杩欎竴鐐瑰弽鑰屾瘮浠ュ墠鏇存牳蹇冦€傚彧鏄幇鍦ㄨ繖灞?friction 琚洿鍑嗙‘鍦板啓鎴愶細
+
+\[
+\tau_{ext}
+\]
+
+鍗?external commercialization route-specific governance/compliance cost銆?
+\subsection*{4. 鍘熺爺鑽垱鏂颁粛鐒舵槸鏈€缁堢粨鏋滃彉閲弣
+
+涓?outcome 浠嶇劧鏄?new original-drug products 鍙婂叾鐩稿叧 innovation outcomes銆?
+\section{鍏€佸摢浜涗笢瑗垮疄璐ㄦ€у湴鍙樹簡}
+
+\subsection*{1. 璁烘枃涓婚棶棰樺彉浜唥
+
+鏃х増鏇村儚锛?
+\begin{quote}
+MAH 鏄惁閫氳繃浼佷笟缁勭粐鐘舵€佽浆绉讳績杩涘垱鏂帮紵
+\end{quote}
+
+鏂扮増鏇村儚锛?
+\begin{quote}
+MAH 鏄惁閫氳繃閲嶇粍 original-drug idea 浠?invention 鍒?commercialization 鐨勭粍缁囧垎閰嶆柟寮忥紝
+淇冭繘鏂板師鐮旇嵂浜у搧瀹炵幇锛?\end{quote}
+
+\subsection*{2. 妯″瀷鏈€鏍稿績鐨勨€滅姸鎬佸彉鍖栤€濆彉浜唥
+
+鏃х増锛歕texttt{A/B/C} 涔嬮棿鐨勪紒涓氱姸鎬佽浆绉汇€?
+鏂扮増锛歩dea / 浜у搧鍦ㄤ笉鍚岀粍缁囪鑹蹭箣闂寸殑瀹炵幇鍒嗛厤銆?
+\subsection*{3. 鏁版嵁宸ョ▼閲嶇偣鍙樹簡}
+
+鏃х増閲嶇偣锛歵ransition matrices銆?
+鏂扮増閲嶇偣锛氭寔璇佲€旂敓浜р€斾骇鍝佸疄鐜伴摼鎺ャ€佸鎵樼敓浜ф枃鏈€佷骇鍝佸眰 commercialization evidence銆?
+\subsection*{4. 璁烘枃瑙ｉ噴鍙ｅ緞鍙樹簡}
+
+鏃х増鏇村儚 \texttt{firm reorganization}銆?
+鏂扮増鏇村儚 \texttt{organization of innovation / commercialization assignment}銆?
+\subsection*{5. policy enters the model 鐨勫啓娉曞彉浜唥
+
+鏃х増鏇村鏄撳啓鎴愶細
+\[
+M \in \{0,1\}
+\]
+骞惰 \(M\) 鍘诲奖鍝嶅緢澶?reduced-form 瀵硅薄銆?
+鏂扮増鏇寸ǔ鐨勫啓娉曟槸锛?
+\begin{quote}
+鏀跨瓥鏈€鏍稿績鍦拌繘鍏?external commercialization 杩欎竴姝ワ紝
+閫氳繃闄嶄綆 route-specific governance/compliance friction锛?\[
+\tau_{ext}^{post}<\tau_{ext}^{pre}.
+\]
+\end{quote}
+
+鐒跺悗锛屽啀閫氳繃杩欎竴鏉?route 鐨勯潤鎬?payoff 鍜屽姩鎬?continuation value锛?褰卞搷 \(x_B\)銆乗(V_B\)銆丒ntry\(_B\) 鍜?new original-drug products銆?
+\section{涔濄€佸彲浠ョ粰鍚堜綔鑰呯殑鏈€绠€娲佹鎷瑌
+
+鏈€绠€娲佺殑璇存硶鏄細
+
+\begin{quote}
+\textbf{鎴戜滑涓嶆槸鏀惧純 \texttt{A/B/C} 妗嗘灦锛岃€屾槸鎶?\texttt{A/B/C}
+浠庘€滀紒涓氳韩浠借穬杩佹ā鍨嬧€濇敼鎴愨€滀骇鍝佸疄鐜板叧绯绘ā鍨嬧€濅腑鐨勭粍缁囪鑹层€倉
+\end{quote}
+
+鎴栬€呭啀鏄庣‘涓€鐐癸細
+
+\begin{quote}
+\textbf{鏃ц瀹氭妸 MAH 鐨勪綔鐢ㄤ富瑕佺悊瑙ｄ负浼佷笟鍦?\texttt{A/B/C} 涔嬮棿閲嶇粍锛?鏂拌瀹氭妸 MAH 鐨勪綔鐢ㄤ富瑕佺悊瑙ｄ负 original-drug ideas 鍦?\texttt{A/B/C}
+涔嬮棿鐨?commercialization assignment 鍙戠敓鍙樺寲銆倉
+\end{quote}
+
+骞朵笖锛屽拰杩欎竴鐐瑰搴斿湴锛?
+\begin{quote}
+\textbf{鏀跨瓥杩涘叆妯″瀷鐨勬牳蹇冨師璇紝涔熷簲浠庢硾娉涚殑鍒跺害 dummy锛屾洿鏂颁负
+external commercialization 杩欐潯璺嚎鐨勬不鐞?鍚堣鎽╂摝
+\(\tau_{ext}\)銆倉
+\end{quote}
+
+\section{鍗併€佸缓璁彂缁欏悎浣滆€呮椂鏈€鍚庡姞鐨勪竴鍙ュ垽鏂瓆
+
+鍙互鐩存帴琛ヨ繖涓€鍙ワ細
+
+\begin{quote}
+杩欐璋冩暣鐨勬牳蹇冪悊鐢憋紝涓嶆槸鐞嗚鍋忓ソ锛岃€屾槸璇嗗埆涓庢牎鍑嗭細
+鐜版湁鏁版嵁鏇村鏄撴敮鎸佲€滀骇鍝佸疄鐜板叧绯诲彉鍖栤€濓紝鑰屼笉瀹规槗鏀寔鈥滃ぇ瑙勬ā浼佷笟韬唤璺冭縼鈥濄€?鍥犳锛屾妸 MAH 鐨勬牳蹇冩満鍒堕噸鍐欎负
+product-level commercialization assignment锛?骞舵妸鏀跨瓥杩涘叆妯″瀷鐨勬牳蹇冨璞℃敼鍐欎负
+external commercialization route-specific governance friction
+\(\tau_{ext}\)锛?姣旂户缁潥鎸?transition-matrix-centered 鐨勭増鏈洿绋筹紝涔熸洿璐村埗搴︾幇瀹炪€?\end{quote}
+
+\end{document}
+

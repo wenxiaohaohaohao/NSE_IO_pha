@@ -113,6 +113,7 @@ $builtPdf = Join-Path $buildDir "main.pdf"
 if (Test-Path $builtPdf) {
     $targetPdf = "D:\working_paper\DANNI\output\doc\MAH_Policy.pdf"
     Copy-FileWithRetry -Source $builtPdf -Destination $targetPdf
+    Remove-FileWithRetry -Path $builtPdf
     Write-Output "Build succeeded. PDF synced to: $targetPdf"
 }
 else {

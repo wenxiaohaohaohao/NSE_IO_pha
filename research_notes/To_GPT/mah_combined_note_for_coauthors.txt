@@ -1,0 +1,800 @@
+﻿\documentclass[12pt]{ctexart}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array,multirow}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+
+\setstretch{1.2}
+
+\title{MAH Model Note for Coauthors\\
+Bellman, State Variables, and a Formal English Model Description}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\part*{Part I. 涓枃璇存槑锛氭帶鍒跺彉閲忋€佺姸鎬佸彉閲忎笌 Bellman 鍐欐硶}
+\addcontentsline{toc}{part}{Part I. 涓枃璇存槑锛氭帶鍒跺彉閲忋€佺姸鎬佸彉閲忎笌 Bellman 鍐欐硶}
+
+
+\section{璇存槑鐩殑}
+
+杩欎唤璇存槑鍥炵瓟浜斾釜褰兼鐩稿叧鐨勯棶棰橈細
+
+\begin{enumerate}[leftmargin=2em]
+    \item 涓轰粈涔堝湪 MAH 杩欑瘒鏂囩珷閲岋紝鍔冲姩鍔涘拰璧勬湰閫氬父涓嶅簲浣滀负鍔ㄦ€?Bellman 鐨勬牳蹇冩帶鍒跺彉閲忥紝鑰屽簲鍏堝湪闈欐€佸潡涓紭鍖栨帀锛?    \item 鈥滅敓浜ц绱犳槸闈欐€佺殑鈥濆叿浣撴槸浠€涔堟剰鎬濓紵瀵瑰尰鑽紒涓氳€岃█锛岃繖浜涚敓浜ц绱犲寘鎷粈涔堬紵
+    \item 褰撳墠 Bellman 褰㈠紡涓悇涓鍙峰垎鍒唬琛ㄤ粈涔堢粡娴庡璞★紵
+    \item 濡傛灉瀹炶瘉涓婅瀵熷埌 MAH 涔嬪悗骞夸箟鍒涙柊閮戒笂鍗囷紝浼佷笟鑳藉姏鐘舵€佸埌搴曞簲璇ュ浣曡瀹氾細涓€缁磋繕鏄簩缁达紵
+    \item 涓轰粈涔堝彲浠ユ妸鍩哄噯鐘舵€佸啓鎴?    \[
+    z=\text{research-commercialization capability},
+    \]
+    杩欐牱鍋氱殑浼樼偣銆佺己鐐广€佹枃鐚緷鎹拰鍙瘑鍒€у垎鍒槸浠€涔堬紵
+\end{enumerate}
+
+鍏ㄦ枃鐨勬牳蹇冭鐐瑰彲浠ユ鎷负涓€鍙ヨ瘽锛?
+\begin{quote}
+濡傛灉鐩爣鏄?JDE 鐢氳嚦鏇撮珮灞傜骇鏈熷垔锛屾渶绋崇殑鍩哄噯妯″瀷搴斿綋鎶?\emph{research intensity}銆?\emph{commercialization route choice}銆乗emph{organization choice} 鍜?\emph{entry/exit} 浣滀负鍔ㄦ€佹帶鍒跺彉閲忥紱鎶?labor銆乧apital銆乵aterials銆?manufacturing quantity 瑙嗕负闈欐€佺敓浜ф姇鍏ワ紝鍏堝祵鍏ヤ紭鍖栧悗鐨勬祦閲忓埄娑?\(\Pi_s\)锛涘苟鐢ㄤ竴涓竴缁?latent capability \(z\) 鏉ユ鎷尰鑽紒涓氬湪鐮斿彂涓庡晢涓氬寲鎵ц涓婄殑缁煎悎鑳藉姏銆?\end{quote}
+
+\section{涓€銆佷负浠€涔堥潤鎬佺敓浜ф姇鍏ラ€氬父搴斿厛浼樺寲鎺墋
+
+\subsection{1.1 鍩烘湰閫昏緫}
+
+鍔ㄦ€佷紒涓氭ā鍨嬮€氬父鍖哄垎涓ょ被閫夋嫨锛?
+\begin{itemize}[leftmargin=2em]
+    \item \textbf{闈欐€侀€夋嫨}锛氬奖鍝嶅綋鏈熷埄娑︼紝浣嗕笉鐩存帴鏀瑰彉涓嬩竴鏈熺姸鎬侊紱
+    \item \textbf{鍔ㄦ€侀€夋嫨}锛氬奖鍝嶆湭鏉ョ姸鎬併€佹湭鏉ヤ环鍊兼垨鏈潵鍙琛屽姩闆嗗悎銆?\end{itemize}
+
+鍦ㄤ綘鐨勮鏂囬噷锛岀湡姝ｉ渶瑕佽繘鍏?Bellman 閫掑綊鐨勫璞★紝鏄偅浜涗細鏀瑰彉鏈潵浠峰€肩殑鍙橀噺锛屼緥濡傦細
+
+\begin{itemize}[leftmargin=2em]
+    \item 鐮斿彂寮哄害锛坮esearch intensity锛夛紱
+    \item commercialization 璺緞閫夋嫨锛坋xternalize / transfer / abandon / integrate锛夛紱
+    \item 缁勭粐鐘舵€侀€夋嫨锛坰tay / switch / exit锛夛紱
+    \item 杩涘叆鍐崇瓥涓庨€€鍑哄喅绛栥€?\end{itemize}
+
+鐩稿弽锛屽姵鍔ㄥ姏銆佽祫鏈€佷腑闂存姇鍏ャ€佹壒娆＄敓浜ч噺绛夊璞★紝閫氬父棣栧厛褰卞搷鐨勬槸褰撴湡缁忚惀鍒╂鼎銆?濡傛灉杩欎簺瀵硅薄涓嶅甫鏈夊姩鎬佽皟鏁存垚鏈紝涔熶笉鐩存帴鎴愪负涓嬩竴鏈熺姸鎬佸彉閲忥紝閭ｄ箞鏈€鑷劧鐨勫鐞嗘柟寮忔槸锛?
+\begin{quote}
+鍏堝湪褰撴湡鍒╂鼎鍑芥暟涓妸瀹冧滑浼樺寲鎺夛紝鍐嶆妸浼樺寲鍚庣殑娴侀噺鏀剁泭鏀捐繘 Bellman 鏂圭▼銆?\end{quote}
+
+\subsection{1.2 浠€涔堝彨鈥滃厛浼樺寲鎺夆€潁
+
+浠?\(A\) 鍨嬩紒涓氫负渚嬶紝鍋囪鍏舵渶鍘熷鐨勫綋鏈熷埄娑﹀啓鎴愶細
+
+\[
+\pi_A(z;n,k,m,x_A)
+=
+p\cdot q_A(n,k,m;z)
+-wn-rk-c_m m
++\Omega_A(z)x_A
+-\frac{\chi_A}{\eta}x_A^\eta
+-f_A.
+\]
+
+杩欓噷锛?
+\begin{itemize}[leftmargin=2em]
+    \item \(n\)锛氬姵鍔ㄥ姏鎶曞叆锛?    \item \(k\)锛氳祫鏈湇鍔℃垨璁惧浣跨敤锛?    \item \(m\)锛氫腑闂存姇鍏ワ紱
+    \item \(x_A\)锛氱爺鍙戝己搴︼紱
+    \item \(z\)锛氫紒涓氳兘鍔涚姸鎬併€?\end{itemize}
+
+濡傛灉 \(n,k,m\) 鍙奖鍝嶅綋鏈熷埄娑︼紝涓嶈繘鍏ヤ笅涓€鏈熺姸鎬侊紝閭ｄ箞鍏堣В锛?
+\[
+\bar{\pi}_A(z;w,r,c_m)
+=
+\max_{n,k,m}
+\left\{
+p\cdot q_A(n,k,m;z)-wn-rk-c_m m
+\right\}.
+\]
+
+杩欎竴姝ュ仛瀹屼箣鍚庯紝鍐嶅啓锛?
+\[
+\Pi_A(z)
+=
+\bar{\pi}_A(z;w,r,c_m)
++
+\max_{x_A\ge 0}
+\left\{
+\Omega_A(z)x_A-\frac{\chi_A}{\eta}x_A^\eta
+\right\}
+-f_A.
+\]
+
+杩欏氨鏄€滈潤鎬佸眰鍏堜紭鍖栨帀锛屽祵鍏?\(\Pi_A\)鈥濈殑鍚箟銆?
+\subsection{1.3 涓轰粈涔堣繖鏍峰仛鏇寸ǔ}
+
+杩欐牱鍋氱殑涓変釜濂藉鏄細
+
+\begin{enumerate}[leftmargin=2em]
+    \item 瀹冩妸妯″瀷鐨勯噸蹇冩斁鍦ㄤ綘鐪熸鎯宠瘑鍒殑鍔ㄦ€佽竟闄呬笂锛氱爺鍙戙€佸晢涓氬寲銆佺粍缁囬噸鏋勫拰杩涘叆閫€鍑猴紱
+    \item 瀹冮伩鍏嶆妸璁烘枃璇啓鎴愪竴涓祫鏈繁鍖栨垨鍔冲姩閰嶇疆妯″瀷锛?    \item 瀹冧笌澶ч噺鍔ㄦ€佷紒涓氫笌鍒涙柊妯″瀷鐨勬爣鍑嗗啓娉曚竴鑷达細Bellman 涓娇鐢ㄤ紭鍖栧悗鐨?flow payoff锛岃€屼笉鏄湪姣忔湡閫掑綊涓弽澶嶅睍寮€鍏ㄩ儴闈欐€佹姇鍏ラ€夋嫨銆?\end{enumerate}
+
+\subsection{1.4 浠€涔堟椂鍊欎笉鑳戒紭鍖栨帀}
+
+鍙湁鍦ㄤ笅鍒楁儏褰笅锛岃祫鏈垨鍔冲姩鎵嶅€煎緱鏄惧紡杩涘叆鍔ㄦ€?Bellman锛?
+\begin{enumerate}[leftmargin=2em]
+    \item 瀹冩湰韬氨鏄笅涓€鏈熺殑鐘舵€佸彉閲忥紙渚嬪璧勬湰瀛橀噺銆佷骇绾胯兘鍔涖€丟MP 璧勮川鑳藉姏锛夛紱
+    \item 瀹冨瓨鍦ㄦ樉钁楀姩鎬佽皟鏁存垚鏈紙渚嬪 hiring/firing frictions銆佸涔犳垚鏈€佸畨瑁呮垚鏈級锛?    \item 瀹冩伆濂芥槸璁烘枃鐨勪富瑕佽瘑鍒璞★紙渚嬪鐮旂┒ MAH 鏄惁鏀瑰彉鍘傛埧鎶曡祫銆佺敤宸ュ崌绾ф垨璧勮川鎶曡祫锛夈€?\end{enumerate}
+
+濡傛灉涓嶆弧瓒宠繖涓夋潯锛屾渶绋崇殑鍋氭硶浠嶇劧鏄潤鎬佷紭鍖栧悗骞跺叆 \(\Pi_s\)銆?
+\section{浜屻€佽繖閲岀殑鈥滅敓浜ц绱犫€濆鍖昏嵂浼佷笟鍏蜂綋鎸囦粈涔坿
+
+\subsection{2.1 瀵?\(A\) 鍨嬪拰 \(C\) 鍨嬩紒涓殅
+
+濡傛灉 \(A\) 琛ㄧず鐮斿彂涓庣敓浜т竴浣撳寲浼佷笟锛孿(C\) 琛ㄧず鐢熶骇涓撻棬鍖栦紒涓氾紝閭ｄ箞鈥滅敓浜ц绱犫€濇渶鑷劧鍖呮嫭锛?
+\begin{itemize}[leftmargin=2em]
+    \item 鍒堕€?labor锛?    \item 璁惧涓庡巶鎴跨殑璧勬湰鏈嶅姟锛?    \item API 鍜屽叾浠栦腑闂存姇鍏ワ紱
+    \item 鎵规鐢熶骇鏁伴噺锛?    \item 璐ㄦ銆佹斁琛屻€佷粨鍌ㄤ笌閰嶅杩愯惀鎶曞叆銆?\end{itemize}
+
+杩欎簺鍙橀噺棣栧厛褰卞搷鐨勬槸褰撴湡 operating profit锛屽洜姝ゅ鏋滃畠浠笉鏋勬垚鍔ㄦ€佺姸鎬侊紝鏈€鑷劧灏卞睘浜庨潤鎬佸潡銆?
+\subsection{2.2 瀵?\(B\) 鍨嬩紒涓殅
+
+濡傛灉 \(B\) 琛ㄧず鐮斿彂涓撻棬鍖栦紒涓氾紝瀹冨苟涓嶄互鍐呯敓鍒堕€犳姇鍏ヤ负鏍稿績锛屽洜姝ゅ畠鏈€鍏抽敭鐨勬帶鍒跺彉閲忛€氬父涓嶆槸 labor 鎴?capital锛岃€屾槸锛?
+\begin{itemize}[leftmargin=2em]
+    \item 鐮斿彂寮哄害 \(x_B\)锛?    \item 椤圭洰绛涢€夋垨 idea generation 瑙勬ā锛?    \item commercialization 璺嚎閫夋嫨 \(h\)锛?    \item continue / transfer / abandon 鐨勭鏁ｅ喅绛栥€?\end{itemize}
+
+鎵€浠?\(B\) 鍨嬩紒涓氭洿鎺ヨ繎鈥滃垱鏂颁笌缁勭粐璺嚎閫夋嫨鈥濋棶棰橈紝鑰屼笉鏄€滃伐鍘傜敓浜у嚱鏁伴€夋嫨鈥濋棶棰樸€?
+\section{涓夈€丅ellman 鍐欐硶涓庢瘡涓鍙风殑鍚箟}
+
+\subsection{3.1 闈欐€佺敓浜у潡}
+
+瀹氫箟锛?
+\[
+\bar{\pi}_A(z;w)
+=
+\max_{n,k,m}
+\{\text{operating revenue}-\text{operating cost}\},
+\]
+
+\[
+\bar{\pi}_C(z;p_m,w)
+=
+\max_{n,k,m_c}
+\{\text{manufacturing revenue}-\text{manufacturing cost}\}.
+\]
+
+杩欓噷锛?
+\begin{itemize}[leftmargin=2em]
+    \item \(\bar{\pi}_A\)锛歕(A\) 鍨嬩紒涓氬湪缁欏畾鐘舵€?\(z\) 鍜屼环鏍间笅锛岄潤鎬佺敓浜у潡浼樺寲鍚庣殑鍒╂鼎锛?    \item \(\bar{\pi}_C\)锛歕(C\) 鍨嬩紒涓氭彁渚涘彈鎵樼敓浜ф湇鍔℃椂锛岄潤鎬佺敓浜у潡浼樺寲鍚庣殑鍒╂鼎锛?    \item \(w\)锛氬伐璧勬垨缁煎悎瑕佺礌浠锋牸锛?    \item \(p_m\)锛歝ontract-manufacturing service price銆?\end{itemize}
+
+\subsection{3.2 \(B\) 鍨嬩紒涓氱殑鍒涙柊/瀹炵幇鍧梷
+
+瀹氫箟锛?
+\[
+\Pi_B(z)
+=
+\max_{x_B,h}
+\left\{
+x_B\Psi_h(z)-\frac{\chi_B}{\eta}x_B^\eta-f_B
+\right\}.
+\]
+
+杩欓噷锛?
+\begin{itemize}[leftmargin=2em]
+    \item \(\Pi_B(z)\)锛歕(B\) 鍨嬩紒涓氬湪鐘舵€?\(z\) 涓嬬殑浼樺寲鍚庡綋鏈熸祦閲忔敹鐩婏紱
+    \item \(x_B\)锛歳esearch intensity / idea-generation intensity锛?    \item \(h\)锛歝ommercialization route choice锛?    \item \(\Psi_h(z)\)锛氬湪缁欏畾 route \(h\) 涓嬶紝姣忎釜 idea 鐨勬湡鏈涘噣鏀剁泭锛?    \item \(\chi_B\)锛氱爺鍙戞垚鏈弬鏁帮紱
+    \item \(\eta>1\)锛氬嚫鎴愭湰鏇茬巼鍙傛暟锛?    \item \(f_B\)锛氬浐瀹氭垚鏈€?\end{itemize}
+
+濡傛灉鍙繚鐣?external commercialization 杩欐潯涓昏矾绾匡紝鍒欏彲鍐欎负锛?
+\[
+\Psi_{\text{ext}}(z)
+=
+\lambda_{\text{ext}}(z)\bigl(R(z)-p_m-\tau_{ext}\bigr).
+\]
+
+杩欓噷锛?
+\begin{itemize}[leftmargin=2em]
+    \item \(\lambda_{\text{ext}}(z)\)锛歟xternal commercialization 鎴愬姛鐜囷紱
+    \item \(R(z)\)锛氭垚鍔?commercialize 涔嬪悗鐨勭浜烘敹鐩婏紱
+    \item \(p_m\)锛氭敮浠樼粰澶栭儴鐢熶骇鏂圭殑浠锋牸锛?    \item \(\tau_{ext}\)锛歟xternal commercialization route-specific governance/compliance cost銆?\end{itemize}
+
+\subsection{3.3 鍔ㄦ€?Bellman}
+
+瀹氫箟锛?
+\[
+V_s(z)=
+\max_{j\in J(s)}
+\left\{
+\Pi_j(z)-\kappa_{sj}
++\beta E[V_j(z')\mid z,j]
+\right\}.
+\]
+
+杩欓噷锛?
+\begin{itemize}[leftmargin=2em]
+    \item \(V_s(z)\)锛氬綋鍓嶇粍缁囩姸鎬佷负 \(s\)锛岃兘鍔涚姸鎬佷负 \(z\) 鏃讹紝浠庝粖澶╁紑濮嬫渶浼樺喅绛栦笅鐨勬€昏创鐜颁环鍊硷紱
+    \item \(J(s)\)锛氫粠褰撳墠缁勭粐鐘舵€?\(s\) 鍑哄彂鍙鐨勪笅涓€鏈熺粍缁囬€夋嫨闆嗗悎锛?    \item \(j\)锛氭湰鏈熼€夋嫨鐨勭粍缁囧舰寮忥紱
+    \item \(\Pi_j(z)\)锛氳嫢閫夋嫨缁勭粐褰㈠紡 \(j\)锛屽搴旂殑浼樺寲鍚庡綋鏈熸祦閲忔敹鐩婏紱
+    \item \(\kappa_{sj}\)锛氫粠 \(s\) 鍒囨崲鍒?\(j\) 鐨勭粍缁囪浆鎹㈡垚鏈紱
+    \item \(\beta\)锛氭姌鐜板洜瀛愶紱
+    \item \(E[V_j(z')\mid z,j]\)锛氬湪褰撳墠 \(z\) 涓旈€夋嫨 \(j\) 鏃讹紝鏄庢棩 continuation value 鐨勬潯浠舵湡鏈涖€?\end{itemize}
+
+涓€鍙ヨ瘽瑙ｉ噴杩欐潯 Bellman锛?
+\begin{quote}
+浼佷笟浠婂ぉ涓嶆槸鍙湅鈥滃摢涓粍缁囧舰寮忓綋鍓嶅埄娑︽渶楂樷€濓紝鑰屾槸鐪嬧€滃綋鍓嶆祦閲忔敹鐩婂噺鍘昏浆鎹㈡垚鏈紝鍐嶅姞涓婃湭鏉ョ户缁粡钀ョ殑浠峰€尖€濄€?\end{quote}
+
+\section{鍥涖€佸姩鎬佹帶鍒跺彉閲忓埌搴曞簲璇ユ槸浠€涔坿
+
+\subsection{4.1 鍩哄噯妯″瀷涓殑鎺у埗鍙橀噺}
+
+濡傛灉鐩爣鏄?JDE 鐢氳嚦鏇撮珮锛屾渶绋崇殑鍔ㄦ€佹帶鍒跺彉閲忔槸锛?
+\begin{itemize}[leftmargin=2em]
+    \item \(x_A, x_B\)锛氱爺鍙戝己搴︼紱
+    \item \(h\)锛歝ommercialization route choice锛?    \item \(j\)锛歰rganization choice锛坰tay / switch / exit锛夛紱
+    \item entrant's entry choice锛氫互浠€涔堣韩浠借繘鍏ャ€?\end{itemize}
+
+涔熷氨鏄锛孿textbf{鐪熸璇ヨ繘鍏?Bellman 鐨勪富鎺у埗鍙橀噺搴斿綋鏄?research intensity銆乧ommercialization mode 鍜?organizational choice锛岃€屼笉鏄?labor 鎴?capital銆倉
+
+\subsection{4.2 涓轰粈涔堜笉鏄?labor 鎴?capital}
+
+鍥犱负杩欑瘒鏂囩珷鐪熸鎯宠瘑鍒殑鏄細
+
+\begin{quote}
+MAH 鏄惁鏀瑰彉 invention-to-commercialization 鐨勭粍缁囪矾绾裤€?\end{quote}
+
+杩欎笉鏄竴绡囧叧浜庤祫鏈繁鍖栥€佸氨涓氶厤缃垨鍘傛埧鎶曡祫鐨勬枃绔犮€傚鏋滄妸 labor 鍜?capital 鐩存帴鏀惧湪鍔ㄦ€?Bellman 涓紝浣犱細鎶婃ā鍨嬩腑蹇冧粠鈥滅粍缁囪矾绾夸笌鍒涙柊瀹炵幇鈥濇嫋鍚戔€滅敓浜у嚱鏁颁笌瑕佺礌閰嶇疆鈥濓紝杩欎細鍋忕璁烘枃涓婚棶棰樸€?
+\section{浜斻€佷紒涓氳兘鍔涚姸鎬佸埌搴曞簲璇ユ槸浠€涔坿
+
+\subsection{5.1 涓轰粈涔堜笉涓€瀹氳鐢?TFP}
+
+鍦ㄥ埗閫犱笟寮傝川浼佷笟妯″瀷涓紝甯歌鐘舵€佸彉閲忔槸 productivity / efficiency / TFP銆?浣嗗湪鍖昏嵂鍒涙柊闂閲岋紝浼佷笟鐪熸 relevant 鐨勫紓璐ㄦ€у線寰€涓嶆槸鍗曠函鐨勫伐鍘傜墿鐞嗘晥鐜囷紝鑰屾槸锛?
+\begin{itemize}[leftmargin=2em]
+    \item 鐮斿彂鏁堢巼锛?    \item 涓村簥鎴栨敞鍐屾帹杩涜兘鍔涳紱
+    \item 鍟嗕笟鍖栨墽琛岃兘鍔涳紱
+    \item 缁勭粐鍗忚皟鑳藉姏锛?    \item 鐩戠缁忛獙涓庨」鐩鐞嗙粡楠屻€?\end{itemize}
+
+鍥犳锛屽尰鑽紒涓氱殑鈥滆兘鍔涚姸鎬佲€濅笉蹇呭己琛屽啓鎴?manufacturing TFP銆?
+\subsection{5.2 鍩哄噯妯″瀷锛氫竴缁?latent capability}
+
+鏈€绋崇殑 baseline 鏄細
+
+\[
+z=\text{research-commercialization capability}.
+\]
+
+瀹冪殑鍚箟鏄細
+
+\begin{quote}
+浼佷笟鎶?original-drug idea 鍙樻垚鍙晢涓氬寲浜у搧鐨勭患鍚堣兘鍔涖€?\end{quote}
+
+杩欎釜瀵硅薄鍙互姒傛嫭锛?
+\begin{itemize}[leftmargin=2em]
+    \item idea generation efficiency锛?    \item clinical / regulatory execution ability锛?    \item project-management ability锛?    \item coordinating with external manufacturers锛?    \item retaining value from commercialization銆?\end{itemize}
+
+\subsection{5.3 杩欐牱璁惧畾鐨勪紭鐐箎
+
+\begin{enumerate}[leftmargin=2em]
+    \item 瀹冧笌璁烘枃涓婚棶棰樺尮閰嶏細MAH 涓昏鏀圭殑鏄?innovation-to-commercialization 璺嚎锛岃€屼笉鏄伐鍘傜墿鐞嗘晥鐜囷紱
+    \item 瀹冨厑璁镐竴涓?parsimonious baseline锛氱敤涓€缁?latent state 鎬荤粨寮傝川鎬э紱
+    \item 瀹冨拰澶ч噺鍔ㄦ€佷紒涓氭枃鐚腑鈥滅敤涓€缁存寔涔呯姸鎬佹鎷紒涓氬紓璐ㄦ€р€濈殑鍋氭硶涓€鑷淬€?\end{enumerate}
+
+\subsection{5.4 杩欐牱璁惧畾鐨勭己鐐箎
+
+\begin{enumerate}[leftmargin=2em]
+    \item 瀹冩妸 research 鍜?commercialization 娣峰湪涓€璧凤紝鏈哄埗鍒嗚В涓嶅閿嬪埄锛?    \item 瀹冧笌鏁版嵁鐨勬槧灏勪笉鍞竴锛氬悓鏍烽珮鐨?\(z\)锛屽彲鑳芥槸鐮斿彂寮猴紝涔熷彲鑳芥槸鍗忚皟寮猴紱
+    \item 濡傛灉鏀跨瓥鍚庡垱鏂颁笂鍗囷紝瀹规槗娣锋穯鈥滅粰瀹?\(z\) 涓嬪洖鎶ヤ笂鍗団€濆拰鈥淺(z\) 鏈韩鎻愬崌鈥濄€?\end{enumerate}
+
+鍥犳锛屼竴缁?\(z\) 閫傚悎浣滀负 baseline锛屼絾鏈€濂藉湪闄勫綍鎴?robustness 涓璁烘洿缁嗙殑鎵╁睍銆?
+\section{鍏€佸鏋滀笂浜岀淮锛屾渶鍚堢悊鐨勬槸鍝袱涓淮搴
+
+\subsection{6.1 棣栭€夋柟妗坿
+
+濡傛灉鏁版嵁涓庤绠楅兘瓒冲寮猴紝鏈€鍚堢悊鐨勪簩缁寸姸鎬佹槸锛?
+\[
+z=(z_R,z_C),
+\]
+
+鍏朵腑锛?
+\begin{itemize}[leftmargin=2em]
+    \item \(z_R\)锛歳esearch capability锛?    \item \(z_C\)锛歝ommercialization / execution capability銆?\end{itemize}
+
+涓轰粈涔堣繖涓や釜缁村害鏈€鍚堢悊锛熷洜涓?MAH 鏀瑰彉鐨勬牳蹇冧笉鏄瀛︾煡璇嗙敓浜ф湰韬紝鑰屾槸 research-originated ideas 鑳藉惁琚閮ㄥ疄鐜般€佹帹杩涖€佸崗璋冦€佹敞鍐屽苟鏈€缁?commercialize銆傚洜姝わ細
+
+\begin{itemize}[leftmargin=2em]
+    \item \(z_R\) 绠♀€滆兘鍚︾敓鎴愰珮璐ㄩ噺 idea鈥濓紱
+    \item \(z_C\) 绠♀€滆兘鍚︽妸 idea 鎺ㄨ繘鎴愪骇鍝佲€濄€?\end{itemize}
+
+\subsection{6.2 澶囬€夋柟妗坿
+
+鍙︿竴绉嶅彲鑳芥槸锛?
+\[
+z=(z_R,z_M),
+\]
+
+鍏朵腑锛?
+\begin{itemize}[leftmargin=2em]
+    \item \(z_R\)锛歳esearch capability锛?    \item \(z_M\)锛歮anufacturing / qualified production capability銆?\end{itemize}
+
+杩欎釜鐗堟湰鏇村鏄撳拰 manufacturing licenses銆佸墏鍨嬭寖鍥淬€丟MP 璧勮川绛夋暟鎹鎺ワ紝
+浣嗗畠鐨勭己鐐规槸浼氭妸璁烘枃鏍稿績閮ㄥ垎鍦拌鍐欐垚鈥滃埗閫犺兘鍔涢棶棰樷€濓紝鑰屼綘鐨勪富闂鏇存帴杩戔€滆法浼佷笟 commercialization 鐨勬不鐞嗕笌鎵ц鑳藉姏闂鈥濄€?
+鍥犳锛屽鏋滃繀椤诲湪涓や釜缁村害涓€夋渶鍚堢悊鐨勪竴缁勶紝浼樺厛寤鸿锛?
+\[
+(z_R,z_C).
+\]
+
+\subsection{6.3 涓婁簩缁撮渶瑕佺殑鏁版嵁}
+
+鑷冲皯闇€瑕佷袱缁?proxy锛?
+\paragraph{瀵?\(z_R\) 鐨?proxy}
+\begin{itemize}[leftmargin=2em]
+    \item R\&D personnel / scientists锛?    \item R\&D expenditure锛?    \item patent stock / citations锛?    \item IND productivity锛?    \item novel target share锛?    \item 鍘嗗彶 new-drug application success銆?\end{itemize}
+
+\paragraph{瀵?\(z_C\) 鐨?proxy}
+\begin{itemize}[leftmargin=2em]
+    \item NDA / approval / launch conversion锛?    \item 鍘嗗彶 commercialization success锛?    \item regulatory experience锛?    \item manufacturing qualification scope锛?    \item entrusted-manufacturing relationships锛?    \item 鎸佽瘉涓庡閮ㄧ敓浜х殑鍘嗗彶缁忛獙锛?    \item 璐ㄩ噺銆佹斁琛屻€佸悎瑙勬墽琛岀粡楠屻€?\end{itemize}
+
+濡傛灉杩欎袱缁勬暟鎹嬁涓嶅埌锛屼笉瑕佹€ョ潃涓婁簩缁淬€?
+\section{涓冦€佸叧浜?\texorpdfstring{$z=\text{research-commercialization capability}$}{z = research-commercialization capability} 鐨勬洿娣辫璁簘
+
+\subsection{7.1 绗竴闂細姒傚康涓婂彲涓嶅彲浠
+
+鍙互銆傚洜涓哄湪鍔ㄦ€佷紒涓氭ā鍨嬮噷锛岀姸鎬佸彉閲忕殑瑕佹眰涓嶆槸鈥滃繀椤绘槸鐩存帴瑙傛祴鍒扮殑 TFP鈥濓紝鑰屾槸锛?
+\begin{quote}
+瀹冭兘鍚︿綔涓轰竴涓?sufficient statistic锛岀ǔ瀹氬湴姒傛嫭褰撳墠浼佷笟闈㈠鐨?payoffs銆乧hoices 鍜?transitions銆?\end{quote}
+
+鎵€浠ワ紝鍙 \(z\) 鑳界郴缁熸€у湴褰卞搷鐮斿彂鏀剁泭銆佸晢涓氬寲鏀剁泭銆佺粍缁囧垏鎹㈡敹鐩婂拰瀛樻椿姒傜巼锛屽畠灏卞彲浠ヤ綔涓轰竴涓悎娉曠殑 latent capability state銆?
+\subsection{7.2 绗簩闂細椤跺垔鑳戒笉鑳芥帴鍙梷
+
+浣滀负 baseline锛屽畬鍏ㄥ彲浠ユ帴鍙楋紝浣嗘湁鍓嶆彁锛?
+\begin{enumerate}[leftmargin=2em]
+    \item 浣犺鏄庣‘瀹冩槸 latent summary state锛岃€屼笉鏄洿鎺ヨ娴嬬殑鐗╃悊 TFP锛?    \item 浣犱笉鑳借鏀跨瓥鏁堝簲鏈韩涔熷伔鍋峰杩?\(z\) 閲岋紱鏀跨瓥浠嶇劧搴旈€氳繃鐙珛鐨?friction 鎴?expected return shifter 杩涘叆锛?    \item 浣犺缁欏嚭 observable proxies銆乵oments 鎴?calibration targets 鏉?discipline 杩欎釜鐘舵€佸彉閲忋€?\end{enumerate}
+
+\subsection{7.3 绗笁闂細瀹冭兘涓嶈兘琚暟鎹及璁
+
+瀹冮€氬父涓嶈兘琚洿鎺モ€滅湅瑙佲€濓紝浣嗗彲浠ヨ闂存帴璇嗗埆鎴栨牎鍑嗐€傚父瑙佹柟寮忔湁涓夌锛?
+\begin{enumerate}[leftmargin=2em]
+    \item \textbf{proxy approach}锛氱敤 R\&D personnel銆乸atents銆両ND productivity銆乴aunch conversion 绛変綔涓?noisy proxies锛?    \item \textbf{moment-based discipline}锛氳妯″瀷鍖归厤 innovation intensity銆乻urvival銆乪ntry composition銆乺oute adoption銆乧onversion 绛夌煩锛?    \item \textbf{discrete-state approximation}锛氭妸浼佷笟鎸?observable indices 鍒嗘垚 low / medium / high capability bins锛屽啀绂绘暎鍖栫姸鎬併€?\end{enumerate}
+
+鍥犳锛孿(z\) 浣滀负 latent capability 鏄彲浼扮殑锛屼絾閫氬父鏄痋textbf{闂存帴浼拌}鎴朶textbf{缁撴瀯鏍″噯}锛岃€屼笉鏄儚浼氳鍙橀噺閭ｆ牱鐩存帴瑙傛祴銆?
+\section{鍏€佹帹鑽愮殑鍩哄噯妯″瀷鍐欐硶}
+
+缁煎悎涓婇潰鐨勮璁猴紝鏈€绋崇殑鍩哄噯妯″瀷鏄細
+
+\begin{itemize}[leftmargin=2em]
+    \item \textbf{鐘舵€佸彉閲弣锛?    \[
+    z=\text{research-commercialization capability};
+    \]
+    \item \textbf{闈欐€佺敓浜у潡}锛?    labor銆乧apital銆乵aterials銆乵anufacturing quantity 鍏堜紭鍖栨帀锛屽啓鎴?\(\bar{\pi}_A,\bar{\pi}_C\)锛?    \item \textbf{鍔ㄦ€佹帶鍒跺彉閲弣锛?    \[
+    x_A,\ x_B,\ h,\ j,\ \text{entry/exit};
+    \]
+    \item \textbf{Bellman}锛?    \[
+    V_s(z)=\max_{j\in J(s)}
+    \left\{
+    \Pi_j(z)-\kappa_{sj}+\beta E[V_j(z')\mid z,j]
+    \right\}.
+    \]
+\end{itemize}
+
+濡傛灉鏈潵鏁版嵁涓庤绠楅兘鏇村己锛屽啀鎵╁睍涓猴細
+
+\[
+z=(z_R,z_C).
+\]
+
+\section{缁撹}
+
+杩欑瘒 MAH 璁烘枃鏈€绋崇殑寤烘ā鍙ｅ緞涓嶆槸鈥滃埗閫犱笟 TFP 妯″瀷鈥濓紝鑰屾槸锛?
+\begin{quote}
+涓€涓互 innovation-to-commercialization 缁勭粐璺嚎涓烘牳蹇冪殑鍔ㄦ€佷紒涓氭ā鍨嬨€?\end{quote}
+
+鍥犳锛?
+\begin{enumerate}[leftmargin=2em]
+    \item Bellman 涓湡姝ｈ浼樺寲鐨勬槸 research intensity銆乧ommercialization route銆乷rganization choice 鍜?entry/exit锛?    \item labor銆乧apital銆乵aterials 绛夌敓浜ц绱犺嫢涓嶅甫鍔ㄦ€佽皟鏁达紝灏卞簲鍏堝湪闈欐€佸埄娑﹂噷浼樺寲鎺夛紱
+    \item 鍖昏嵂浼佷笟鐨勫熀鍑嗙姸鎬佸彉閲忎笉蹇呮槸 manufacturing TFP锛岃€屾洿鍚堢悊鍦版槸
+    \[
+    z=\text{research-commercialization capability};
+    \]
+    \item 濡傛灉涓婁簩缁达紝棣栭€?    \[
+    z=(z_R,z_C).
+    \]
+\end{enumerate}
+
+杩欏鍐欐硶鏃㈢鍚堝姩鎬佷紒涓氫笌鍒涙柊鏂囩尞鐨勬爣鍑嗗垎宸ワ紝涔熸洿璐村悎 MAH 浣滀负鈥滄敼鍙?commercialization route 鐨勫埗搴︽敼闈┾€濊繖涓€璁烘枃涓婚棶棰樸€?
+
+\newpage
+\part*{Part II. English Note: States, Controls, Static Inputs, Prices, and Payoff Objects}
+\addcontentsline{toc}{part}{Part II. English Note: States, Controls, Static Inputs, Prices, and Payoff Objects}
+
+
+\section{Purpose}
+
+This note rewrites the current MAH model in a journal-style format that makes the
+economic objects fully explicit. The goal is not to enlarge the model mechanically,
+but to clarify exactly which variables are states, which are dynamic controls, which
+are static inputs, which are prices, and which objects enter the Bellman equations
+as optimized flow payoffs. The note is written to match the conventions of the
+dynamic heterogeneous-firm literature and to fit the substantive question of the
+paper: how MAH changes the organizational route from invention to commercialization
+for original-drug ideas.
+
+\section{Environment}
+
+Time is discrete, indexed by $t=0,1,2,\dots$. There are three organizational types,
+\[
+s\in\{A,B,C\},
+\]
+where:
+
+\begin{itemize}[leftmargin=2em]
+    \item $A$ denotes integrated firms that can conduct original-drug R\&D and also
+    organize production internally;
+    \item $B$ denotes research-specialized firms that generate original-drug ideas but
+    do not operate as full internal manufacturers;
+    \item $C$ denotes manufacturing-specialized firms that provide production capability
+    and can supply qualified contract manufacturing.
+\end{itemize}
+
+There is also a mass of potential entrants, who may enter as one of the active organizational
+types after paying the corresponding entry cost.
+
+Each incumbent firm enters the period with an idiosyncratic capability state
+\[
+z\in Z\subset \mathbb{R}_+.
+\]
+In the baseline model, $z$ is one-dimensional. It is interpreted as a broad firm-specific
+capability object that loads differently across organizational forms. Economically, $z$
+summarizes the firm's ability to generate original-drug ideas, to manage projects,
+to coordinate implementation and commercialization, and to adapt organizationally.
+
+\section{Classification of variables}
+
+Table \ref{tab:objects} classifies the main variables and model objects.
+
+\begin{longtable}{p{0.18\textwidth}p{0.20\textwidth}p{0.56\textwidth}}
+\caption{Classification of model objects}\label{tab:objects}\\
+\toprule
+Object & Type & Interpretation \\
+\midrule
+\endfirsthead
+\toprule
+Object & Type & Interpretation \\
+\midrule
+\endhead
+
+$z$ & State variable & Persistent firm capability state. \\[0.4em]
+
+$s\in\{A,B,C\}$ & Discrete state variable & Current organizational form of the firm. \\[0.4em]
+
+$w$ & Price & Wage or composite factor price. \\[0.4em]
+
+$p_m$ & Price & Price of qualified contract-manufacturing services. \\[0.4em]
+
+$n,k,m$ & Static input choices & Labor, capital services, and intermediate inputs used in current-period production. \\[0.4em]
+
+$x_A,x_B$ & Dynamic control variables & Original-drug idea-generation intensities chosen by type-$A$ and type-$B$ firms. \\[0.4em]
+
+$h$ & Dynamic control variable & Commercialization route chosen for a type-$B$ idea, e.g. externalize, transfer, abandon. \\[0.4em]
+
+$j$ & Dynamic control variable & Next organizational choice (stay, switch, exit). \\[0.4em]
+
+$\kappa_{sj}$ & Adjustment-cost object & Organizational switching cost from current type $s$ to chosen type $j$. \\[0.4em]
+
+$\tau_{ext}$ & Route-specific friction & Governance/compliance friction of external commercialization through qualified outside manufacturing. \\[0.4em]
+
+$\bar{\pi}_A(z;w)$ & Optimized static payoff & Current-period operating profit of type $A$ after static production inputs are optimized out. \\[0.4em]
+
+$\bar{\pi}_C(z;p_m,w)$ & Optimized static payoff & Current-period operating profit of type $C$ after static production inputs are optimized out. \\[0.4em]
+
+$\Psi_h(z)$ & Per-idea net value object & Expected net value of one original-drug idea under route $h$. \\[0.4em]
+
+$\Pi_A(z),\Pi_B(z),\Pi_C(z)$ & Optimized flow payoff objects & Current-period payoffs that enter the Bellman equation. \\[0.4em]
+
+$V_A(z),V_B(z),V_C(z)$ & Value functions & Continuation values under each organizational type. \\
+
+\bottomrule
+\end{longtable}
+
+\section{Why static production inputs are optimized out}
+
+The model distinguishes between \emph{static} and \emph{dynamic} choices.
+
+\paragraph{Static choices.}
+Labor, capital services, and intermediate inputs affect current-period operating profits.
+If they do not become next-period states and do not involve dynamic adjustment costs, then
+they should not be carried as separate controls in the Bellman equation. Instead, the firm
+solves a static profit maximization problem conditional on $(z,s)$ and prices.
+
+\paragraph{Dynamic choices.}
+Research intensity, commercialization route, organizational switching, entry, and exit affect
+future values, future states, or the feasibility of future actions. These are the natural
+dynamic controls.
+
+This separation is standard in dynamic firm models: the Bellman equation is written in
+terms of optimized current payoffs rather than raw production problems in every period.
+That separation is especially appropriate here because the economic question is about
+organizational routes from invention to commercialization, not about capital deepening
+or static labor demand per se.
+
+\section{Static production blocks}
+
+\subsection{Integrated firms}
+
+For type-$A$ firms, define the optimized static operating payoff by
+\[
+\bar{\pi}_A(z;w,r,c_m)
+=
+\max_{n,k,m}
+\left\{
+p_A q_A(n,k,m;z)-wn-rk-c_m m
+\right\}.
+\]
+Here:
+\begin{itemize}[leftmargin=2em]
+    \item $n$ is labor input,
+    \item $k$ is capital services or plant use,
+    \item $m$ is intermediate input use,
+    \item $p_A$ is the relevant output price or revenue shifter for current operations,
+    \item $w,r,c_m$ are input prices.
+\end{itemize}
+This object is \emph{not} the full type-$A$ flow payoff. It is only the optimized
+current-period operating block after static production choices have been solved.
+
+\subsection{Manufacturing-specialized firms}
+
+For type-$C$ firms, define the optimized static manufacturing payoff by
+\[
+\bar{\pi}_C(z;p_m,w,r,c_c)
+=
+\max_{n,k,m_c}
+\left\{
+p_m y_C(n,k,m_c;z)-wn-rk-c_c m_c
+\right\}.
+\]
+This is the current-period profit from supplying qualified manufacturing services
+after static input choices are optimized out. The price $p_m$ is the contract-manufacturing
+service price, so this block directly links the manufacturing side of the industry
+to the commercialization problem of type-$B$ firms.
+
+\section{Idea generation and commercialization}
+
+\subsection{Type-$A$ innovation block}
+
+Let $x_A\ge 0$ denote original-drug idea-generation intensity chosen by a type-$A$ firm.
+Given state $z$, define the innovation block as
+\[
+\max_{x_A\ge 0}
+\left\{
+x_A\Omega_A(z)-\frac{\chi_A}{\eta}x_A^\eta
+\right\},
+\qquad \eta>1,
+\]
+where $\Omega_A(z)$ is the per-unit marginal value of original-drug research for
+an integrated firm, $\chi_A>0$ is a cost parameter, and $\eta>1$ governs curvature.
+
+Then the optimized type-$A$ flow payoff is
+\[
+\Pi_A(z)
+=
+\bar{\pi}_A(z;w,r,c_m)
++
+\max_{x_A\ge 0}
+\left\{
+x_A\Omega_A(z)-\frac{\chi_A}{\eta}x_A^\eta
+\right\}
+-f_A.
+\]
+
+\subsection{Type-$B$ idea-generation and route-choice block}
+
+For type-$B$ firms, the core current-period decision is not static manufacturing.
+Instead, it is the combination of idea generation and the route by which ideas
+are commercialized.
+
+Let $x_B\ge 0$ denote idea-generation intensity. Let
+\[
+h\in\mathcal{H}
+\]
+denote the commercialization route for a type-$B$ idea. In the parsimonious
+version of the model, one may let
+\[
+\mathcal{H}=\{\text{externalize},\text{transfer},\text{abandon}\}.
+\]
+
+For any route $h$, let $\Psi_h(z)$ denote the expected net value of one idea.
+Then the optimized type-$B$ flow payoff is
+\[
+\Pi_B(z)
+=
+\max_{x_B,h}
+\left\{
+x_B\Psi_h(z)-\frac{\chi_B}{\eta}x_B^\eta-f_B
+\right\}.
+\]
+
+\subsection{External commercialization as the MAH-sensitive route}
+
+The route that carries the MAH mechanism most directly is external commercialization.
+For that route, write
+\[
+\Psi_{\mathrm{ext}}(z)
+=
+\lambda_{\mathrm{ext}}(z)\bigl(R(z)-p_m-\tau_{ext}\bigr).
+\]
+
+Each term has a distinct interpretation:
+
+\begin{itemize}[leftmargin=2em]
+    \item $\lambda_{\mathrm{ext}}(z)$ is the success rate of external commercialization;
+    \item $R(z)$ is the gross private return from a successfully commercialized original-drug idea;
+    \item $p_m$ is the payment to the qualified external manufacturer;
+    \item $\tau_{ext}$ is the route-specific governance/compliance cost of external commercialization.
+\end{itemize}
+
+It is essential to distinguish $p_m$ from $\tau_{ext}$. The former is the market price
+paid for outside production. The latter is the extra organizational and legal friction of
+using that route while retaining the project and authorization. MAH is modeled not as
+a generic policy dummy that changes everything at once, but as a reform that lowers
+the friction associated with this route.
+
+\section{Dynamic Bellman system}
+
+\subsection{General form}
+
+For each organizational type $s\in\{A,B,C\}$, let the value function be
+\[
+V_s(z)=
+\max_{j\in J(s)}
+\left\{
+\Pi_j(z)-\kappa_{sj}
++\beta E[V_j(z')\mid z,j]
+\right\}.
+\]
+
+This equation has four layers:
+
+\begin{enumerate}[leftmargin=2em]
+    \item \(\Pi_j(z)\): optimized current-period payoff if the firm operates as type \(j\) this period;
+    \item \(\kappa_{sj}\): cost of moving from current organization \(s\) to chosen organization \(j\);
+    \item \(\beta\): discount factor;
+    \item \(E[V_j(z')\mid z,j]\): expected continuation value next period.
+\end{enumerate}
+
+The Bellman equation therefore says that the firm chooses the organizational form
+that maximizes the sum of optimized current payoff, minus switching cost, plus discounted
+future value.
+
+\subsection{Type-specific Bellman equations}
+
+The general form can be written more explicitly as follows.
+
+\paragraph{Type $A$.}
+\[
+V_A(z)
+=
+\max\left\{
+\Pi_A(z)+\beta E[V_A(z')\mid z,A],
+-\kappa_{AB}+\Pi_B(z)+\beta E[V_B(z')\mid z,B],
+-\kappa_{AC}+\Pi_C(z)+\beta E[V_C(z')\mid z,C],
+0
+\right\}.
+\]
+
+\paragraph{Type $B$.}
+\[
+V_B(z)
+=
+\max\left\{
+\Pi_B(z)+\beta E[V_B(z')\mid z,B],
+-\kappa_{BA}+\Pi_A(z)+\beta E[V_A(z')\mid z,A],
+-\kappa_{BC}+\Pi_C(z)+\beta E[V_C(z')\mid z,C],
+0
+\right\}.
+\]
+
+\paragraph{Type $C$.}
+\[
+V_C(z)
+=
+\max\left\{
+\Pi_C(z)+\beta E[V_C(z')\mid z,C],
+-\kappa_{CA}+\Pi_A(z)+\beta E[V_A(z')\mid z,A],
+-\kappa_{CB}+\Pi_B(z)+\beta E[V_B(z')\mid z,B],
+0
+\right\}.
+\]
+
+\section{Which objects are states, which are controls?}
+
+The model should be read as follows.
+
+\subsection{State variables}
+
+The baseline state variables are:
+\[
+(s,z).
+\]
+That is:
+\begin{itemize}[leftmargin=2em]
+    \item $s$ tells us the current organizational form;
+    \item $z$ tells us the current capability state.
+\end{itemize}
+
+\subsection{Dynamic controls}
+
+The main dynamic controls are:
+\begin{itemize}[leftmargin=2em]
+    \item $x_A$ and $x_B$ (research intensities),
+    \item $h$ (commercialization route),
+    \item $j$ (organization choice),
+    \item entry/exit decisions.
+\end{itemize}
+
+\subsection{Static inputs}
+
+The main static inputs are:
+\begin{itemize}[leftmargin=2em]
+    \item labor $n$,
+    \item capital services $k$,
+    \item intermediates $m$,
+    \item manufacturing quantity or manufacturing service intensity where relevant.
+\end{itemize}
+These inputs are not discarded economically; they are simply optimized out before the
+Bellman recursion is written.
+
+\subsection{Prices}
+
+The key equilibrium prices are:
+\begin{itemize}[leftmargin=2em]
+    \item $w$: labor or composite factor price,
+    \item $p_m$: price of qualified contract manufacturing.
+\end{itemize}
+
+\subsection{Payoff objects}
+
+The main payoff objects are:
+\begin{itemize}[leftmargin=2em]
+    \item $\bar{\pi}_A,\bar{\pi}_C$: optimized static profit blocks,
+    \item $\Psi_h$: expected per-idea net value under route $h$,
+    \item $\Pi_A,\Pi_B,\Pi_C$: optimized current flow payoffs,
+    \item $V_A,V_B,V_C$: continuation values.
+\end{itemize}
+
+\section{Why the baseline state should be one-dimensional}
+
+The one-dimensional benchmark
+\[
+z=\text{research-commercialization capability}
+\]
+is attractive because it is parsimonious and directly tied to the MAH question.
+The reform changes the route from invention to commercialization, so the most natural
+summary state is not pure manufacturing TFP, but a broader capability object that
+shifts research productivity, implementation success, organizational adaptation, and
+the value of using external commercialization.
+
+The main gain of this baseline is tractability. It allows the model to capture persistent
+heterogeneity without creating multiple latent processes that may not be separately
+identified in the data. The main cost is that research capability and commercialization
+capability are compressed into a single state. If the data become rich enough, the natural
+next step is a two-dimensional state:
+\[
+z=(z_R,z_C),
+\]
+where $z_R$ is research capability and $z_C$ is commercialization/execution capability.
+But as a baseline intended for estimation or disciplined calibration, the one-dimensional
+state is usually the safer choice.
+
+\section{Interpretation for the paper}
+
+The most important implication of this notation is conceptual. The paper is not a model
+of capital accumulation, labor adjustment, or static production reallocation. It is a model
+of how institutional reform changes the route through which original-drug ideas are turned
+into commercialized products. For that reason:
+
+\begin{itemize}[leftmargin=2em]
+    \item labor and capital belong to optimized static profit blocks unless they are themselves dynamic states;
+    \item research intensity, commercialization route, and organizational switching are the core dynamic controls;
+    \item the external commercialization route is the natural place where the MAH friction enters;
+    \item the Bellman equations should be written in terms of optimized flow payoffs rather than raw production problems.
+\end{itemize}
+
+This is the cleanest way to align the model with the empirical question and with the
+conventions of the top dynamic firm and innovation literature.
+
+\end{document}
+

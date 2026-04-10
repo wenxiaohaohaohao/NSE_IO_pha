@@ -1,0 +1,595 @@
+﻿
+\documentclass[12pt]{ctexart}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\setstretch{1.2}
+
+\title{MAH Governance Cost Mechanism:\\
+Model Mapping, Bellman Equations, and Empirical Implementation}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Purpose}
+
+This note integrates two tasks into one coherent framework.
+
+First, it gives a direct model mapping for the central mechanism in the MAH paper:
+the reform lowers the governance and compliance friction of \emph{external commercialization}
+for research-originated original-drug ideas.
+
+Second, it updates the variable definitions and empirical implementation plan so that
+the empirical section, the static model block, and the dynamic Bellman equations all
+use the same object.
+
+The key update is the following:
+
+\[
+\tau_{ext}
+\]
+
+is the central primitive through which MAH enters the model. It is \emph{not} a generic
+policy dummy, and it is \emph{not} total governance cost for the whole firm. It is the
+\emph{route-specific governance/compliance cost} of commercializing a research-originated
+original-drug idea through an external qualified manufacturer while the innovator retains
+authorization status.
+
+\section{What \texorpdfstring{$\tau_{ext}$}{tau\_ext} is and what it is not}
+
+\subsection{Definition}
+
+Define
+\[
+\tau_{ext} \ge 0
+\]
+as the extra organizational, contractual, and compliance cost that a research-oriented
+firm must bear when it keeps the project/authorization and completes commercialization
+through an external qualified manufacturer rather than through full internal integration.
+
+This cost includes:
+\begin{itemize}[leftmargin=2em]
+    \item drafting and enforcing entrustment agreements and quality agreements;
+    \item auditing, monitoring, and coordinating the contract manufacturer;
+    \item complying with holder-side quality responsibility and release obligations;
+    \item managing cross-firm execution and accountability in the commercialization stage.
+\end{itemize}
+
+\subsection{What it does not include}
+
+It does \emph{not} include:
+\begin{itemize}[leftmargin=2em]
+    \item physical manufacturing cost itself;
+    \item R\&D cost of generating ideas;
+    \item economy-wide demand shifts;
+    \item a generic fixed operating cost of all firms.
+\end{itemize}
+
+Thus the correct interpretation is:
+
+\[
+\tau_{ext}
+=
+\text{governance/compliance cost of the external commercialization route}
+\]
+
+rather than
+
+\[
+\tau_{ext}
+=
+\text{all governance cost in the economy.}
+\]
+
+\section{Why this is the right MAH mechanism}
+
+The economic role of MAH is not that it makes scientists more productive, and not that
+it directly raises drug demand. Its distinctive role is organizational.
+
+Before MAH, a research-originating firm without internal manufacturing capacity could
+typically commercialize an original-drug idea only by integrating downstream production
+or by relinquishing the project to an integrated producer. After MAH, the innovator may
+retain authorization while contracting with a qualified external manufacturer, under a
+legally recognized structure with explicit responsibility allocation and standardized
+compliance requirements.
+
+Therefore, the reform changes the cost of completing commercialization \emph{across firm
+boundaries}. In model language, MAH lowers the route-specific governance/compliance
+friction of external commercialization:
+
+\[
+\tau_{ext}^{post} < \tau_{ext}^{pre}.
+\]
+
+\section{Where \texorpdfstring{$\tau_{ext}$}{tau\_ext} enters the model}
+
+\subsection{Core principle}
+
+The key modeling principle is:
+
+\[
+\boxed{\tau_{ext}\text{ enters only at the stage where a research-originated idea is commercialized externally.}}
+\]
+
+It should not directly enter:
+\begin{itemize}[leftmargin=2em]
+    \item demand,
+    \item scientific productivity,
+    \item the physical production technology of manufacturers,
+    \item generic fixed cost for all firms.
+\end{itemize}
+
+Instead, it enters the \emph{commercialization assignment problem} for original-drug ideas.
+
+\section{Static block}
+
+\subsection{External commercialization payoff for a type-B idea}
+
+Let \(z\) denote firm capability and \(p_m\) the price of qualified contract manufacturing.
+
+For a research-specialized firm \(B\), define the net payoff from commercializing one
+original-drug idea through external qualified production as
+
+\[
+H_B^{out}(z,p_m;\tau_{ext})
+=
+\lambda_B(z,p_m)\,R_B(z)-p_m-\tau_{ext},
+\]
+
+where:
+\begin{itemize}[leftmargin=2em]
+    \item \(R_B(z)\) is the private value of a successfully commercialized original-drug idea;
+    \item \(\lambda_B(z,p_m)\) is the success rate of external commercialization;
+    \item \(p_m\) is the contract-manufacturing price;
+    \item \(\tau_{ext}\) is the route-specific governance/compliance friction.
+\end{itemize}
+
+This separates two conceptually different costs:
+\begin{align*}
+p_m & : \text{market/production payment to the external manufacturer},\\
+\tau_{ext} & : \text{organizational and legal cost of executing the route.}
+\end{align*}
+
+\subsection{Commercialization value per idea}
+
+If the external route is the only route being emphasized, define
+\[
+\Psi_B(z;p_m,\tau_{ext})=\max\left\{H_B^{out}(z,p_m;\tau_{ext}),\,0\right\}.
+\]
+
+If an internal integration or project-transfer route is retained, then more generally:
+\[
+\Psi_B(z;p_m,\tau_{ext})
+=
+\max\left\{
+H_B^{out}(z,p_m;\tau_{ext}),
+H_B^{int}(z),
+0
+\right\}.
+\]
+
+The crucial point is that \(\tau_{ext}\) enters only the external route:
+\[
+\frac{\partial H_B^{out}}{\partial \tau_{ext}}=-1,
+\qquad
+\frac{\partial H_B^{int}}{\partial \tau_{ext}}=0.
+\]
+
+\subsection{Idea-generation problem of a type-B firm}
+
+Let \(x_B \ge 0\) denote idea-generation intensity and let \(\eta>1\) govern convex idea-generation cost.
+Then the optimized current-period payoff of a type-B firm is
+
+\[
+\Pi_B(z;p_m,\tau_{ext})
+=
+-f_B
++
+\max_{x_B\ge 0}
+\left\{
+x_B\Psi_B(z;p_m,\tau_{ext})
+-\frac{\chi_B}{\eta}x_B^\eta
+\right\}.
+\]
+
+The first-order condition yields
+
+\[
+x_B^*(z;p_m,\tau_{ext})
+=
+\left(
+\frac{\Psi_B(z;p_m,\tau_{ext})}{\chi_B}
+\right)^{\frac{1}{\eta-1}}
+\quad \text{if } \Psi_B>0.
+\]
+
+Hence the mechanism runs through:
+
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+H_B^{out}\uparrow
+\Rightarrow
+\Psi_B\uparrow
+\Rightarrow
+x_B^*\uparrow.
+\]
+
+\section{Dynamic Bellman system}
+
+\subsection{Type-B Bellman equation}
+
+Let \(V_B(z)\) denote the value of operating as a type-B firm at state \(z\).
+Suppose the firm can remain \(B\), switch to \(A\), switch to \(C\), or exit.
+
+Define:
+\[
+W_{BB}(z)
+=
+\Pi_B(z;p_m,\tau_{ext})
++
+\beta E\left[V_B(z')\mid z,B\right],
+\]
+
+\[
+W_{BA}(z)
+=
+-\kappa_{BA}
++
+\Pi_A(z;w)
++
+\beta E\left[V_A(z')\mid z,A\right],
+\]
+
+\[
+W_{BC}(z)
+=
+-\kappa_{BC}
++
+\Pi_C(z;p_m,w)
++
+\beta E\left[V_C(z')\mid z,C\right].
+\]
+
+Then:
+\[
+V_B(z)
+=
+\max\left\{
+W_{BB}(z),\,
+W_{BA}(z),\,
+W_{BC}(z),\,
+0
+\right\}.
+\]
+
+The key point is:
+
+\[
+\tau_{ext} \text{ enters } V_B(z) \text{ through } W_{BB}(z) \text{ only.}
+\]
+
+That is, \(\tau_{ext}\) affects the value of remaining a research-specialized firm and using
+the external commercialization route. It does not mechanically alter the value of becoming
+integrated or becoming manufacturing-specialized.
+
+\subsection{Type-A and Type-C Bellman equations}
+
+For type-A:
+\[
+V_A(z)
+=
+\max\left\{
+\begin{aligned}
+&\Pi_A(z;w)+\beta E[V_A(z')\mid z,A],\\
+&-\kappa_{AB}+\Pi_B(z;p_m,\tau_{ext})+\beta E[V_B(z')\mid z,B],\\
+&-\kappa_{AC}+\Pi_C(z;p_m,w)+\beta E[V_C(z')\mid z,C],\\
+&0
+\end{aligned}
+\right\}.
+\]
+
+For type-C:
+\[
+V_C(z)
+=
+\max\left\{
+\begin{aligned}
+&\Pi_C(z;p_m,w)+\beta E[V_C(z')\mid z,C],\\
+&-\kappa_{CA}+\Pi_A(z;w)+\beta E[V_A(z')\mid z,A],\\
+&-\kappa_{CB}+\Pi_B(z;p_m,\tau_{ext})+\beta E[V_B(z')\mid z,B],\\
+&0
+\end{aligned}
+\right\}.
+\]
+
+Thus \(\tau_{ext}\) also affects \(A\) and \(C\) values \emph{indirectly}, through how it changes
+the attractiveness of the \(B\) organizational state.
+
+\subsection{Entry condition}
+
+Let the value of entering as type-B be:
+\[
+V_B^{entry}
+=
+\int V_B(z_0)\,dG(z_0)-c_{EB}.
+\]
+
+Then lower \(\tau_{ext}\) raises type-B entry value:
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+V_B(z)\uparrow
+\Rightarrow
+V_B^{entry}\uparrow.
+\]
+
+So the governance-cost mechanism affects both incumbent behavior and the entry margin.
+
+\section{Observable variables and their corresponding model objects}
+
+The table below updates the empirical implementation plan so that it is fully consistent
+with the model object \(\tau_{ext}\).
+
+\begingroup
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{landscape}
+\begin{table}[htbp]
+\centering
+\caption{Observable variables and their mapping to model objects (Part I)}
+\begin{tabularx}{\linewidth}{@{}L{0.16\linewidth}L{0.20\linewidth}YYY@{}}
+\toprule
+Variable & Mathematical definition & Economic meaning & Data source & Role in regression/calibration \\
+\midrule
+External commercialization adoption & \(\chi^{ext}_{ipt}=1\{h_{ipt}\neq m_{ipt}\}\) & Whether the product is commercialized through separated holder--manufacturer roles & NMPA product approvals, manufacturing licenses, provincial entrusted-manufacturing announcements & Directly observed route adoption; core mechanism variable \\
+Type-B external commercialization & \(\chi^{B\to ext}_{ipt}\) & Most direct product-level realization of the MAH mechanism & Product-level holder--manufacturer matching plus firm classification & Sharpest empirical proxy for the external route \\
+New original-drug products commercialized & \(N_t\) & Main policy outcome & CDE/NMPA application, approval, and launch data & Primary outcome variable \\
+Type-B entry & \(Entry^B_t\) (count or share) & Upstream entry margin induced by lower external commercialization friction & Business registry, applicant/holder identity, firm classification & Auxiliary channel variable \\
+Type-B conversion rate & \(Conv^B_t\) & Closest observable proxy for implementation success & CDE IND/project data + NMPA approvals + originator classification & Core proxy for identifying the effect of \(\tau_{ext}\) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\clearpage
+
+{\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{table}[htbp]
+\centering
+\caption{Observable variables and their mapping to model objects (Part II-A)}
+\begin{tabularx}{\linewidth}{@{}L{0.15\linewidth}L{0.12\linewidth}YYY@{}}
+\toprule
+Variable & Mathematical definition & Economic meaning & Data source & Role in regression/calibration \\
+\midrule
+Pre-policy qualified manufacturing capacity & \(Cap_{r,d,0}\) & Exogenous supply-side shifter of external commercialization feasibility and governance friction & Manufacturing-license database, dosage/process qualification scope & Key heterogeneity variable; identifies where MAH should matter more \\
+Producer-side outcomes & Revenue growth, gross margin, operating margin, entrusted-manufacturing revenue & How supply-side producers respond to higher external commercialization demand & Annual reports, prospectuses, firm databases & Supplementary equilibrium moments \\
+Commercialization text proxies & Keyword frequency: entrusted manufacturing; MAH/holder; marketing release; CMO/CDMO & Supplementary evidence on organizational route adoption & Annual reports, prospectuses, announcements & Auxiliary evidence only; not a core variable \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Observable variables and their mapping to model objects (Part II-B)}
+\begin{tabularx}{\linewidth}{@{}L{0.15\linewidth}L{0.12\linewidth}YYY@{}}
+\toprule
+Variable & Mathematical definition & Economic meaning & Data source & Role in regression/calibration \\
+\midrule
+Generic cash-flow block & Generic sales, output, approvals & Controls for the role of generic production in firm cash flow and industry equilibrium & Annual reports, NMPA/CDE & Control and calibration block in two-medicine environment \\
+Review-speed reform controls & Exposure to approval-delay reduction or drug-category-specific speed-up & Separates MAH from contemporaneous review reform & CDE/NMPA, drug-category data & Control block in reduced-form analysis \\
+\bottomrule
+\end{tabularx}
+\end{table}
+}
+\end{landscape}
+\endgroup
+
+\section{What is identified in the data}
+
+\subsection{Directly observed objects}
+
+The model primitive \(\tau_{ext}\) is not directly observed.
+What can be directly observed are product-level outcomes that are shaped by it.
+
+The most important directly observed variables are:
+
+\begin{enumerate}[leftmargin=2em]
+    \item \textbf{External commercialization adoption}
+    \[
+    \chi^{ext}_{ipt}=1\{\text{holder}_{ipt}\neq \text{manufacturer}_{ipt}\}.
+    \]
+
+    \item \textbf{Type-B external commercialization}
+    \[
+    \chi^{B\to ext}_{ipt}=1\{\text{B-type holder uses an external qualified manufacturer}\}.
+    \]
+
+    \item \textbf{Type-B conversion rate}
+    \[
+    Conv^B_t
+    =
+    \frac{\#\{\text{B-originated original-drug products realized}\}}
+         {\#\{\text{B-originated projects/applications}\}}.
+    \]
+
+    \item \textbf{New original-drug products commercialized}
+    \[
+    N_t = \#\{\text{new original-drug products commercialized at time } t\}.
+    \]
+\end{enumerate}
+
+\subsection{Supply-side shifter for governance friction}
+
+Construct a pre-policy measure of qualified manufacturing capacity:
+\[
+Cap_{r,d,0}
+=
+\#\{\text{qualified manufacturers in region } r \text{ and dosage/process class } d \text{ before MAH}\}.
+\]
+
+This variable is important because if MAH reduces the governance cost of external commercialization,
+its effect should be larger where a suitable external manufacturing partner is easier to find and organize.
+
+\section{Empirical implementation}
+
+\subsection{Core reduced-form regressions}
+
+\paragraph{Regression 1: route adoption}
+\[
+\chi^{B\to ext}_{ipt}
+=
+\alpha_i+\gamma_t+\beta Post_t+\delta X_{ipt}+\varepsilon_{ipt}.
+\]
+
+Expected sign:
+\[
+\beta>0.
+\]
+
+\paragraph{Regression 2: conversion rate}
+\[
+Conv^B_{rdt}
+=
+\alpha_{rd}+\gamma_t+\beta Post_t+\varepsilon_{rdt}.
+\]
+
+Expected sign:
+\[
+\beta>0.
+\]
+
+\paragraph{Regression 3: heterogeneity by external capacity}
+\[
+Y_{rdt}
+=
+\alpha_{rd}
++
+\gamma_t
++
+\beta_1 Post_t
++
+\beta_2(Post_t\times Cap_{r,d,0})
++
+\varepsilon_{rdt},
+\]
+where \(Y_{rdt}\) can be:
+\begin{itemize}[leftmargin=2em]
+    \item \(\chi^{B\to ext}\),
+    \item \(Conv^B\),
+    \item \(N_t\).
+\end{itemize}
+
+Expected sign:
+\[
+\beta_2>0.
+\]
+
+This is the sharpest reduced-form implication of the mechanism:
+if MAH lowers the governance friction of external commercialization, then the reform should
+have larger effects where the relevant external manufacturing route is easier to organize.
+
+\subsection{Data implementation plan}
+
+The preferred sequence is:
+
+\begin{enumerate}[leftmargin=2em]
+    \item Build a product-year dataset containing:
+    \begin{itemize}[leftmargin=2em]
+        \item product approval number,
+        \item drug name, dosage form, and therapeutic category,
+        \item original-drug indicator,
+        \item holder/MAH identity,
+        \item manufacturer identity,
+        \item approval/marketing timing,
+        \item province/city,
+        \item manufacturer qualification scope.
+    \end{itemize}
+
+    \item Construct direct route-adoption variables:
+    \[
+    \chi^{ext}_{ipt}, \quad \chi^{B\to ext}_{ipt}.
+    \]
+
+    \item Construct implementation proxies:
+    \[
+    Conv^B_t, \quad N_t.
+    \]
+
+    \item Add the pre-policy supply-side shifter:
+    \[
+    Cap_{r,d,0}.
+    \]
+
+    \item Use firm annual reports and prospectuses only as supplementary validation for
+    keywords such as:
+    \begin{itemize}[leftmargin=2em]
+        \item entrusted manufacturing,
+        \item contract manufacturing,
+        \item MAH/holder,
+        \item product release,
+        \item CMO/CDMO.
+    \end{itemize}
+\end{enumerate}
+
+\section{How \texorpdfstring{$\tau_{ext}$}{tau\_ext} is calibrated}
+
+\(\tau_{ext}\) should not be ``directly estimated'' from one variable.
+Instead, it should be disciplined by a set of moments:
+
+\begin{enumerate}[leftmargin=2em]
+    \item external commercialization adoption rate;
+    \item type-B external commercialization share;
+    \item B-originated conversion rate;
+    \item number of new original-drug products;
+    \item heterogeneity with respect to \(Cap_{r,d,0}\);
+    \item producer-side outcomes of qualified manufacturers.
+\end{enumerate}
+
+Thus the model treats \(\tau_{ext}\) as a latent structural friction that is pinned down by:
+\begin{itemize}[leftmargin=2em]
+    \item route adoption,
+    \item route productivity,
+    \item route capacity heterogeneity.
+\end{itemize}
+
+\section{Bottom line}
+
+The updated structure can be summarized in one chain:
+
+\[
+MAH
+\Rightarrow
+\tau_{ext}\downarrow
+\Rightarrow
+H_B^{out}\uparrow
+\Rightarrow
+\Psi_B\uparrow
+\Rightarrow
+x_B\uparrow,\ V_B\uparrow,\ Entry_B\uparrow,\ N_t\uparrow.
+\]
+
+This has two advantages.
+
+First, it gives MAH a single, sharp, and institutionally grounded entry point in the model.
+
+Second, it aligns the theory with the empirical objects that can actually be measured:
+route adoption, type-B conversion, new original-drug products, and heterogeneity by external
+qualified manufacturing capacity.
+
+\end{document}
+

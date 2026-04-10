@@ -1,0 +1,487 @@
+
+\documentclass[12pt]{ctexart}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{fontspec}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\setmainfont{Latin Modern Roman}
+\setCJKmainfont{FangSong}
+
+\setstretch{1.2}
+
+\title{给合作者的说明：\\
+为什么我们要从 \texttt{A/B/C} 企业状态转移，转向“产品层面的 commercialization assignment”，\\
+以及为什么政策进入模型的核心原语应改写为 \texorpdfstring{$\tau_{ext}$}{tau\_ext}
+}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{说明目的}
+
+这份说明用于解释：为什么我们现在需要把论文的核心解释对象，从
+“企业身份如何在 \texttt{A/B/C} 之间变化”，更新为“一个原研药
+idea / 产品最终由谁来实现”，以及为什么与这一调整相对应，
+政策进入模型的方式也必须更新。
+
+这次更新不是小修小补，而是对论文对象、识别重心和模型原语的一次统一调整。
+最核心的新判断是：
+
+\begin{quote}
+\textbf{MAH 的作用不应再主要写成一个泛泛的制度 dummy 或 regime index，
+而应写成 external commercialization 这条组织路线的
+route-specific governance/compliance cost 的下降。}
+\end{quote}
+
+我们用
+\[
+\tau_{ext}
+\]
+来表示这个对象。它的含义不是“所有治理成本”，更不是“所有政策效应的总和”，
+而是：
+
+\begin{quote}
+\textbf{研发型主体在保留 authorization / holder 身份的同时，
+通过外部合格生产来完成 original-drug commercialization 所需要承担的额外治理与合规摩擦。}
+\end{quote}
+
+因此，这次调整实际上是两步同时完成：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 把论文对象从 \texttt{firm-state transition-centered} 改成
+    \texttt{product-level commercialization assignment-centered}；
+    \item 把政策进入模型的方式，从“泛泛的制度变化”改成
+    “external commercialization route-specific governance friction 的变化”。
+\end{enumerate}
+
+\section{一、旧设定在解释什么}
+
+旧设定的主线是：
+
+\begin{quote}
+\texttt{MAH} 改变企业组织边界，企业在 \texttt{A/B/C} 三种组织状态之间重新选择，
+进而影响原研药创新与行业均衡。
+\end{quote}
+
+这里的三类企业是：
+
+\begin{itemize}[leftmargin=2em]
+    \item \texttt{A}：研发与生产一体化企业；
+    \item \texttt{B}：研发专门化企业；
+    \item \texttt{C}：生产专门化企业。
+\end{itemize}
+
+在这个框架里，\texttt{MAH} 主要通过两个 reduced-form 渠道进入模型：
+
+\begin{itemize}[leftmargin=2em]
+    \item 降低 \texttt{B} 型企业的 commercialization friction，原来通常记为
+    \(\tau_M\)；
+    \item 降低企业在 \texttt{A/B/C} 之间切换的组织重构成本，记为
+    \(\kappa_{sj}\)。
+\end{itemize}
+
+因此，旧设定最强调的经验对象是：
+
+\begin{itemize}[leftmargin=2em]
+    \item incumbent transition matrix \(P(M)\)；
+    \item entry composition \(e(M)\)；
+    \item 类型份额、退出、producer-side outcomes、commercialization proxies 等。
+\end{itemize}
+
+换句话说，旧版的识别逻辑更接近：
+
+\begin{quote}
+先看企业在 \texttt{A/B/C} 之间有没有明显重组，再把这种组织重组和创新结果联系起来。
+\end{quote}
+
+\section{二、新设定在解释什么}
+
+新设定不再把“企业身份是否从 \texttt{A} 变成 \texttt{B/C}”当成主调整边际，
+而是改成：
+
+\begin{quote}
+\texttt{MAH} 改变的是
+\textbf{original-drug idea 从 invention 到 commercialization 的组织分配方式}。
+\end{quote}
+
+更直白地说，新设定关心的是：
+
+\begin{itemize}[leftmargin=2em]
+    \item 谁生成 original-drug idea；
+    \item 谁持有 / 保留上市许可或产品权益；
+    \item 谁来生产；
+    \item 是内部一体化完成，还是外包给有资质的生产方，还是转给别的企业实现。
+\end{itemize}
+
+因此，新设定最核心的经济问题不再是：
+
+\begin{quote}
+\texttt{A/B/C} 企业身份有没有大规模跳转？
+\end{quote}
+
+而是：
+
+\begin{quote}
+一个 original-drug idea 最终是由谁、通过什么组织路线被实现出来？
+\end{quote}
+
+这和我们最近讨论的方向一致：现实中更容易观察到的，不是企业大规模从
+\texttt{A/B/C} 改头换面，而是同一类企业围绕不同产品采取不同的
+commercialization arrangement。
+
+\section{三、为什么 policy enters the model 也必须跟着更新}
+
+如果论文对象从“企业身份跃迁”改成“产品实现关系”，
+那么政策进入模型的原语也必须跟着改变。
+
+旧写法里，政策更容易被处理成：
+
+\begin{itemize}[leftmargin=2em]
+    \item 一个制度 dummy：\(M\in\{0,1\}\)；
+    \item 或一个比较宽泛的制度 index；
+    \item 或者同时进入很多 reduced-form 对象：\(\tau_M,\kappa_{sj},\phi_B,\ldots\)
+\end{itemize}
+
+这种写法在最初阶段有用，但现在的问题是：它太宽。
+如果论文的核心机制已经被压缩到
+“research-originated idea 如何跨企业边界完成 commercialization”，
+那么 policy enters the model 的单一原语也应该对应到这条路线上。
+
+因此，新的写法应该是：
+
+\[
+\tau_{ext}
+\]
+
+其中 \(\tau_{ext}\) 表示：
+
+\begin{quote}
+\textbf{research-originated original-drug idea 通过外部合格生产完成 commercialization 时，
+该 route 特有的治理/合规摩擦。}
+\end{quote}
+
+这个对象包括：
+
+\begin{itemize}[leftmargin=2em]
+    \item holder 和 manufacturer 之间签约与执行的成本；
+    \item 质量协议、委托协议、监督与协调成本；
+    \item MAH 承担质量责任和上市放行责任所带来的组织成本；
+    \item 跨企业完成 commercialization 的制度性执行成本。
+\end{itemize}
+
+它不包括：
+
+\begin{itemize}[leftmargin=2em]
+    \item 物理生产成本本身；
+    \item 原研 idea generation 的研发成本；
+    \item 行业需求或 market size；
+    \item 所有企业共同面对的固定经营成本。
+\end{itemize}
+
+所以更准确地说：
+
+\[
+\tau_{ext}
+=
+\text{governance/compliance cost of the external commercialization route}
+\]
+
+而不是：
+
+\[
+\tau_{ext}
+=
+\text{all governance cost in the economy.}
+\]
+
+\section{四、为什么 \texorpdfstring{$\tau_{ext}$}{tau\_ext} 最贴 MAH 的制度现实}
+
+这一步是整个调整里最关键的地方。
+
+MAH 的功劳，不是让企业突然更会研发，也不是让药品需求突然变大；
+它的功劳是把：
+
+\begin{quote}
+“没有厂的研发者想把药做出来”
+\end{quote}
+
+这件事，从必须依赖企业内部化解决，改成可以通过法律认可、责任清楚、
+执行标准化的合格合同关系来解决。
+
+换句话说，改革前，一个 research-originating firm 如果没有内部生产能力，
+往往只能：
+
+\begin{itemize}[leftmargin=2em]
+    \item 自己往下游整合，去建厂、拿生产能力；
+    \item 或者把项目 / 产品让给一体化企业去实现。
+\end{itemize}
+
+改革后，新的组织路线变得可行：
+
+\begin{itemize}[leftmargin=2em]
+    \item 研发者可以保留 holder / authorization；
+    \item 通过外部合格生产企业完成制造；
+    \item 同时由法律和监管规则明确质量责任、上市放行、质量协议和委托关系。
+\end{itemize}
+
+因此，MAH 的经济学内容最适合被解释为：
+
+\begin{quote}
+\textbf{它降低了跨企业完成 commercialization 的治理成本。}
+\end{quote}
+
+也就是：
+
+\[
+\tau_{ext}^{post}<\tau_{ext}^{pre}.
+\]
+
+\section{五、旧设定和新设定最本质的不同}
+
+\subsection*{1. 主要调整单位不同}
+
+旧设定的主要调整单位是\textbf{企业组织状态}。
+它关心的是企业从 \texttt{A/B/C} 之间怎么切换。
+
+新设定的主要调整单位是\textbf{产品 / idea 的实现方式}。
+它关心的是一个 original-drug idea 最终：
+
+\begin{itemize}[leftmargin=2em]
+    \item 由 \texttt{A} 内部做出来；
+    \item 由 \texttt{B} 保留权利、外包给 \texttt{A/C} 生产；
+    \item 由 \texttt{B} 转给 \texttt{A} 实现；
+    \item 或者根本没有被实现。
+\end{itemize}
+
+所以：
+
+\begin{itemize}[leftmargin=2em]
+    \item 旧设定是 \texttt{firm-state transition-centered}；
+    \item 新设定是 \texttt{product-level commercialization assignment-centered}。
+\end{itemize}
+
+\subsection*{2. \texttt{A/B/C} 的含义不同}
+
+旧设定里，\texttt{A/B/C} 更像是\textbf{动态状态变量}；
+重点是企业是否从一个状态转到另一个状态。
+
+新设定里，\texttt{A/B/C} 更像是\textbf{组织角色 / 能力载体}。
+它们仍然重要，但它们不再必须表现为大规模身份跃迁，才能解释 MAH 的作用。
+
+换句话说：
+
+\begin{itemize}[leftmargin=2em]
+    \item 旧版：\texttt{A/B/C} 是“谁变成谁”；
+    \item 新版：\texttt{A/B/C} 是“谁在产品实现链条里扮演什么角色”。
+\end{itemize}
+
+\subsection*{3. 经验识别的重心不同}
+
+旧设定最依赖的是：
+
+\begin{itemize}[leftmargin=2em]
+    \item pre/post transition matrix；
+    \item incumbent switching；
+    \item firm-level reorganization evidence。
+\end{itemize}
+
+新设定更依赖的是：
+
+\begin{itemize}[leftmargin=2em]
+    \item 新进入者是否更偏 \texttt{B}；
+    \item original-drug products 是否更常由“研发方持证 + 外部合格生产”来实现；
+    \item entrusted production / commissioned manufacturing / 持证与生产分离的文本和匹配证据；
+    \item producer-side outcomes；
+    \item new original-drug products 的实现数量。
+\end{itemize}
+
+因此，新设定不是不要 transition evidence，而是把它\textbf{降级为辅助证据}。
+真正的一线证据，变成了\textbf{产品实现关系本身}。
+
+\subsection*{4. 对 MAH 作用的理解不同}
+
+旧设定更容易写成：
+
+\begin{quote}
+\texttt{MAH} 降低组织切换成本，因此企业从一体化走向专业化。
+\end{quote}
+
+新设定更准确地写成：
+
+\begin{quote}
+\texttt{MAH} 降低 original-drug idea 通过外部合格生产完成 commercialization 的治理摩擦，
+使研发专门化主体即使不自建全部产能，也更有可能把 idea 变成产品。
+\end{quote}
+
+这个表述更贴近制度现实，也更贴近当前的数据条件。
+因为我们现在更容易观察到“谁研发、谁持证、谁生产、谁实现产品”，
+而不是企业身份的大规模跳转。
+
+\section{六、为什么必须改，而不是继续坚持旧设定}
+
+原因很简单：
+
+\begin{quote}
+\textbf{旧设定最核心的 empirical anchor——\texttt{A/B/C} 身份跃迁——
+现在看起来并不是最强、最可观测、最可校准的 MAH 作用边际。}
+\end{quote}
+
+现实中更可能发生的是：
+
+\begin{itemize}[leftmargin=2em]
+    \item 新进入者更偏 \texttt{B}；
+    \item \texttt{A} 继续做研发，但某些产品外包给有资质的生产方；
+    \item \texttt{B} 做研发并保留某些权益，但找 \texttt{A/C} 生产；
+    \item 还有一些产品转让、委托生产、合作 commercialization 的安排。
+\end{itemize}
+
+这些都说明：
+
+\begin{quote}
+MAH 更像是在\textbf{重组 original-drug idea 的实现路径}，
+而不一定是在推动 incumbent 企业广泛改身份。
+\end{quote}
+
+所以，如果继续把 transition matrix 放在最中心的位置，就会出现一个问题：
+
+\begin{itemize}[leftmargin=2em]
+    \item 理论上很完整；
+    \item 但经验上最难站住。
+\end{itemize}
+
+这就是为什么这次调整是必要的。
+
+\section{七、哪些东西没有变}
+
+这次调整并不是推翻原有模型，下面这些核心内容仍然保留：
+
+\subsection*{1. \texttt{A/B/C} 三类组织角色仍然保留}
+
+只是它们从“主要转移状态”更多变成“产品实现链中的组织角色”。
+
+\subsection*{2. invention / implementation 分离仍然保留}
+
+这一点其实比以前更重要。我们现在更明确地是在讲：
+
+\begin{itemize}[leftmargin=2em]
+    \item innovation 不是 idea generation 自动等于结果；
+    \item 中间还有一个 implementation / commercialization 环节。
+\end{itemize}
+
+\subsection*{3. MAH 通过 commercialization friction 起作用仍然保留}
+
+这一点反而比以前更核心。只是现在这层 friction 被更准确地写成：
+
+\[
+\tau_{ext}
+\]
+
+即 external commercialization route-specific governance/compliance cost。
+
+\subsection*{4. 原研药创新仍然是最终结果变量}
+
+主 outcome 仍然是 new original-drug products 及其相关 innovation outcomes。
+
+\section{八、哪些东西实质性地变了}
+
+\subsection*{1. 论文主问题变了}
+
+旧版更像：
+
+\begin{quote}
+MAH 是否通过企业组织状态转移促进创新？
+\end{quote}
+
+新版更像：
+
+\begin{quote}
+MAH 是否通过重组 original-drug idea 从 invention 到 commercialization 的组织分配方式，
+促进新原研药产品实现？
+\end{quote}
+
+\subsection*{2. 模型最核心的“状态变化”变了}
+
+旧版：\texttt{A/B/C} 之间的企业状态转移。
+
+新版：idea / 产品在不同组织角色之间的实现分配。
+
+\subsection*{3. 数据工程重点变了}
+
+旧版重点：transition matrices。
+
+新版重点：持证—生产—产品实现链接、委托生产文本、产品层 commercialization evidence。
+
+\subsection*{4. 论文解释口径变了}
+
+旧版更像 \texttt{firm reorganization}。
+
+新版更像 \texttt{organization of innovation / commercialization assignment}。
+
+\subsection*{5. policy enters the model 的写法变了}
+
+旧版更容易写成：
+\[
+M \in \{0,1\}
+\]
+并让 \(M\) 去影响很多 reduced-form 对象。
+
+新版更稳的写法是：
+
+\begin{quote}
+政策最核心地进入 external commercialization 这一步，
+通过降低 route-specific governance/compliance friction：
+\[
+\tau_{ext}^{post}<\tau_{ext}^{pre}.
+\]
+\end{quote}
+
+然后，再通过这一条 route 的静态 payoff 和动态 continuation value，
+影响 \(x_B\)、\(V_B\)、Entry\(_B\) 和 new original-drug products。
+
+\section{九、可以给合作者的最简洁概括}
+
+最简洁的说法是：
+
+\begin{quote}
+\textbf{我们不是放弃 \texttt{A/B/C} 框架，而是把 \texttt{A/B/C}
+从“企业身份跃迁模型”改成“产品实现关系模型”中的组织角色。}
+\end{quote}
+
+或者再明确一点：
+
+\begin{quote}
+\textbf{旧设定把 MAH 的作用主要理解为企业在 \texttt{A/B/C} 之间重组；
+新设定把 MAH 的作用主要理解为 original-drug ideas 在 \texttt{A/B/C}
+之间的 commercialization assignment 发生变化。}
+\end{quote}
+
+并且，和这一点对应地：
+
+\begin{quote}
+\textbf{政策进入模型的核心原语，也应从泛泛的制度 dummy，更新为
+external commercialization 这条路线的治理/合规摩擦
+\(\tau_{ext}\)。}
+\end{quote}
+
+\section{十、建议发给合作者时最后加的一句判断}
+
+可以直接补这一句：
+
+\begin{quote}
+这次调整的核心理由，不是理论偏好，而是识别与校准：
+现有数据更容易支持“产品实现关系变化”，而不容易支持“大规模企业身份跃迁”。
+因此，把 MAH 的核心机制重写为
+product-level commercialization assignment，
+并把政策进入模型的核心对象改写为
+external commercialization route-specific governance friction
+\(\tau_{ext}\)，
+比继续坚持 transition-matrix-centered 的版本更稳，也更贴制度现实。
+\end{quote}
+
+\end{document}

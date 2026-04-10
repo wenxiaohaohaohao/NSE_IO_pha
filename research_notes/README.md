@@ -4,10 +4,10 @@
 
 ## 先看哪里
 
-1. `project_plans/mah_model_derivation_plan_for_codex_claude.md`
-   理论推导 phase 顺序与 benchmark 边界。
-2. `project_plans/research_execution_master_plan_zh.md`
-   项目级执行总表（周计划、DoD、风险）。
+1. `project_plans/research_execution_master_plan_zh.md`
+  当前项目级执行总表（周计划、DoD、风险）。
+2. `project_plans/plan_change_log_zh.md`
+  计划口径与执行路径变更记录。
 3. `project_plans/transition_entry_minimum_pipeline_zh.md`
    transition/entry 最小数据管道实施路径。
 4. `build_transition_matrices.do`
@@ -21,6 +21,7 @@
   计划主版本目录（single source of truth），含更新规则和变更日志。
 - `archive_candidates/`
   已下线但暂存可回滚的历史材料。
+  其中 `archive_candidates/phase1_12_legacy_2026-04-10/` 为已停用的 Phase 1-12 全套材料归档（仅保留研究过程记录）。
 - `models/`
   当前保留的模型相关笔记目录。
 - `build_transition_matrices.do`
@@ -39,6 +40,7 @@
 - `project_plans/plan_change_log_zh.md`
 - `project_plans/master_version_dictionary_zh.md`
 3. 历史文档清理采用“先归档后删除”：先移到 `archive_candidates/`，观察期后再删。
+4. 已停用的 Phase 1-12 工作流不再作为当前执行依据，仅保留在归档目录供追溯。
 
 ## 与主稿的关系
 
