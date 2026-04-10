@@ -1,0 +1,531 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array,enumitem,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+\setstretch{1.2}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\title{Section 4 and Appendix C Draft for the MAH Paper\\
+Equilibrium Logic, Main Predictions, and Supporting Derivations}
+\author{}
+\date{April 10, 2026}
+\begin{document}
+\maketitle
+
+\section{Equilibrium Logic and Main Predictions}
+
+This section extracts the equilibrium logic of the model and derives the main comparative-static predictions that guide the empirical analysis. The purpose is not to prove that MAH improves every margin of firm performance, nor to claim that welfare moves one-for-one with innovation counts. Instead, the theory isolates the margins that are most directly affected when the reform lowers the governance and compliance friction of \emph{external commercialization} for research-originated original-drug ideas.
+
+The central mechanism is simple. MAH lowers the route-specific friction faced by a research-specialized firm when it retains the product and completes commercialization through a qualified external manufacturer. In the model, this is captured by a fall in
+\[
+\tau_{ext}.
+\]
+Holding fixed scientific capability and market demand, a lower \(\tau_{ext}\) raises the expected net value of external commercialization for a research-originated idea. This increase raises idea-generation incentives for research-specialized firms, improves their continuation values, strengthens innovative entry, and increases the number of realized original-drug products. The producer side responds through the induced change in demand for qualified contract manufacturing, but the direction of producer profits need not be monotone in general equilibrium.
+
+\subsection{Comparative-static transmission}
+
+Let the net value from commercializing one research-originated original-drug idea through the external route be
+\[
+H_B^{ext}(z,p_m;\tau_{ext})
+=
+\lambda_B(z,p_m)R_B(z)-p_m-\tau_{ext},
+\]
+where \(z\) is firm capability, \(p_m\) is the contract-manufacturing price, \(\lambda_B(z,p_m)\) is the success rate of external commercialization, and \(R_B(z)\) is the private value of a successfully commercialized original-drug idea.
+
+Let the per-idea commercialization value of a type-\(B\) firm be
+\[
+\Psi_B(z;p_m,\tau_{ext})
+=
+\max\left\{
+H_B^{ext}(z,p_m;\tau_{ext}),
+H_B^{int}(z),
+0
+\right\},
+\]
+where \(H_B^{int}(z)\) denotes the value of the best retained non-external alternative, such as internal integration after organizational switching. Then the optimized current-period payoff of a type-\(B\) firm is
+\[
+\Pi_B(z;p_m,\tau_{ext})
+=
+-f_B
++
+\max_{x_B\ge 0}
+\left\{
+x_B\Psi_B(z;p_m,\tau_{ext})
+-\frac{\chi_B}{\eta}x_B^\eta
+\right\},
+\qquad \eta>1.
+\]
+
+The mechanism of the reform can therefore be summarized as
+\[
+\tau_{ext}\downarrow
+\;\Rightarrow\;
+H_B^{ext}\uparrow
+\;\Rightarrow\;
+\Psi_B\uparrow
+\;\Rightarrow\;
+x_B^*\uparrow,\ \Pi_B\uparrow
+\;\Rightarrow\;
+V_B\uparrow
+\;\Rightarrow\;
+B\text{-entry}\uparrow
+\;\Rightarrow\;
+\text{more realized original-drug products.}
+\]
+The propositions below formalize each link in this chain.
+
+\subsection{External commercialization value}
+
+\begin{proposition}[External commercialization value]
+\label{prop:ext_value}
+Suppose \(R_B(z)\) and \(\lambda_B(z,p_m)\) do not depend directly on \(\tau_{ext}\). Then for every \((z,p_m)\),
+\[
+\frac{\partial H_B^{ext}(z,p_m;\tau_{ext})}{\partial \tau_{ext}}=-1.
+\]
+Hence a reduction in \(\tau_{ext}\) raises the net value of the external commercialization route pointwise. Moreover, the set of states in which the external route is weakly preferred expands.
+\end{proposition}
+
+\noindent
+Proposition \ref{prop:ext_value} is the most direct implication of the MAH mechanism. The reform does not enter as a demand shifter or as a direct productivity shock. It lowers a route-specific organizational and compliance friction. As a result, ideas that were previously abandoned or forced into internal integration may now be viably commercialized through qualified external production.
+
+\subsection{Research intensity of research-specialized firms}
+
+\begin{proposition}[Research intensity]
+\label{prop:xb}
+If \(\Psi_B(z;p_m,\tau_{ext})>0\), the optimal idea-generation intensity of a type-\(B\) firm is
+\[
+x_B^*(z;p_m,\tau_{ext})
+=
+\left(
+\frac{\Psi_B(z;p_m,\tau_{ext})}{\chi_B}
+\right)^{\frac{1}{\eta-1}}.
+\]
+Therefore,
+\[
+\frac{\partial x_B^*(z;p_m,\tau_{ext})}{\partial \Psi_B}>0
+\qquad\text{and}\qquad
+\frac{\partial x_B^*(z;p_m,\tau_{ext})}{\partial \tau_{ext}}<0
+\]
+whenever the external route is binding for the firm.
+\end{proposition}
+
+\noindent
+The logic is straightforward. MAH does not need to improve scientific productivity in order to raise innovative effort. It is enough that the expected net payoff from successfully realizing an idea is higher. Through this channel, the reform can increase research effort even if the firm's underlying scientific capability is unchanged.
+
+\subsection{Innovative entry and organizational attractiveness}
+
+\begin{proposition}[Innovative entry]
+\label{prop:entry}
+Let \(V_B(z)\) denote the value of operating as a type-\(B\) firm, and define the entry value
+\[
+V_B^{entry}
+=
+\int V_B(z_0)\,dG(z_0)-c_{EB}.
+\]
+Under standard contraction and monotonicity conditions for the Bellman operator, a reduction in \(\tau_{ext}\) weakly raises \(V_B(z)\) for all \(z\), and therefore weakly raises \(V_B^{entry}\). Consequently, the entry margin for research-oriented firms strengthens.
+\end{proposition}
+
+\noindent
+This proposition clarifies why the reform can affect industry structure even when the primitive policy object is route-specific. Lower external commercialization friction raises the value of operating as a research-specialized firm. Entry therefore responds on the extensive margin, not only incumbent research intensity on the intensive margin.
+
+\subsection{Producer-side response}
+
+\begin{proposition}[Producer-side response]
+\label{prop:producer}
+Let total demand for qualified contract manufacturing be induced by the measure of externally commercialized research-originated ideas. Then a reduction in \(\tau_{ext}\) weakly raises demand for qualified external manufacturing services. However, the effect on manufacturing-specialized firms' profits and continuation values is in general ambiguous, because the equilibrium response of \(p_m\), entry, and competition on the producer side may offset the direct increase in outsourcing demand.
+\end{proposition}
+
+\noindent
+The model therefore delivers a deliberately asymmetric set of predictions. On the research and commercialization side, the sign is sharp. On the producer side, the sign is weaker. This is not a defect of the model; it is a useful discipline. It implies that producer-side outcomes are informative but should not be treated as the unique or primary object of identification.
+
+\subsection{Economic interpretation}
+
+Taken together, Propositions \ref{prop:ext_value}--\ref{prop:producer} imply that MAH should be understood as changing the \emph{organizational route} from invention to commercialization, rather than changing scientific productivity itself. The most direct theoretical predictions are therefore concentrated on the realization of research-originated original-drug ideas.
+
+This distinction matters for empirical design. If the reform works through lower external commercialization friction, then the first-order empirical objects are not generic measures of firm expansion. They are objects that sit directly on the transmission chain:
+(i) whether research-originated original-drug ideas are commercialized externally;
+(ii) whether more research-originated ideas are realized as marketable products; and
+(iii) whether the number and share of new original-drug products rise.
+
+By contrast, transition matrices, entry composition, producer-side outcomes, and related organizational changes are best interpreted as secondary but informative validation objects. They help verify the broader equilibrium logic, but they are not the closest observable counterparts of the core MAH mechanism.
+
+\subsection{Scope and limits}
+
+The theory in this section is intentionally limited in scope. First, it is a comparative-static theory of organizational reallocation and innovation realization; it is not a welfare theorem. Second, it does not imply that every organizational type benefits from the reform. Third, it does not claim that observed innovation outcomes alone identify primitive implementation probabilities. Instead, the commercialization block provides the structural interpretation connecting the policy to observed product outcomes.
+
+For these reasons, the empirical analysis below will prioritize outcomes that map tightly into the commercialization-assignment mechanism, while treating broader organizational responses as validating but second-layer evidence.
+
+\appendix
+\section{Appendix C. Proofs and Supporting Derivations for Section 4}
+
+This appendix provides the supporting derivations for the propositions in Section 4. The objective is twofold. First, it makes explicit the monotonicity chain through which the MAH reform affects research-specialized firms. Second, it clarifies which predictions are theoretically sharp and which are only partial-equilibrium intuitions that become ambiguous once market-clearing and entry responses are allowed.
+
+\subsection{Setup and maintained assumptions}
+
+We work with the baseline model in which \(z\) is a one-dimensional firm capability state and \(\tau_{ext}\) is the route-specific governance and compliance friction attached to external commercialization by research-specialized firms.
+
+We maintain the following assumptions.
+
+\begin{enumerate}[label=\textbf{A\arabic*},leftmargin=2.4em]
+    \item \textbf{External-route separability.}
+    The policy enters only through the external commercialization route:
+    \[
+    H_B^{ext}(z,p_m;\tau_{ext})
+    =
+    \lambda_B(z,p_m)R_B(z)-p_m-\tau_{ext}.
+    \]
+    Internal integration, abandonment, and static manufacturing technology do not depend directly on \(\tau_{ext}\).
+
+    \item \textbf{Regularity of primitives.}
+    \(\lambda_B(z,p_m)\in[0,1]\), \(R_B(z)\ge 0\), and both are continuous in their arguments. The alternative route value \(H_B^{int}(z)\) is continuous in \(z\).
+
+    \item \textbf{Convex idea-generation cost.}
+    The cost function for type-\(B\) idea generation is
+    \[
+    \frac{\chi_B}{\eta}x_B^\eta,
+    \qquad \chi_B>0,\ \eta>1.
+    \]
+
+    \item \textbf{Well-defined dynamic program.}
+    For each organizational type, the Bellman operator is a contraction on the space of bounded continuous value functions, so that the value functions exist and are unique.
+
+    \item \textbf{Entry monotonicity.}
+    Potential entrants compare entry values against fixed entry costs, and a higher value of \(V_B(z)\) weakly increases the type-\(B\) entry margin.
+
+    \item \textbf{Qualified manufacturing market.}
+    There exists a competitive or quasi-competitive market for qualified contract manufacturing services with price \(p_m\), and producer-side values are determined jointly with demand, supply, and entry.
+\end{enumerate}
+
+Assumptions \textbf{A1}--\textbf{A5} are sufficient for the first three propositions. Assumption \textbf{A6} is only needed to discuss the producer side and the equilibrium response of \(p_m\).
+
+\subsection{Static route values and commercialization assignment}
+
+The per-idea value of a type-\(B\) firm is
+\[
+\Psi_B(z;p_m,\tau_{ext})
+=
+\max\left\{
+H_B^{ext}(z,p_m;\tau_{ext}),
+H_B^{int}(z),
+0
+\right\}.
+\]
+
+Define the set of states in which the external route is weakly chosen:
+\[
+\mathcal{E}(\tau_{ext})
+=
+\left\{
+z\in Z:
+H_B^{ext}(z,p_m;\tau_{ext})
+\ge
+\max\{H_B^{int}(z),0\}
+\right\}.
+\]
+
+\begin{lemma}[Pointwise monotonicity of the external route]
+\label{lem:pointwise}
+Under \textbf{A1}--\textbf{A2},
+\[
+\frac{\partial H_B^{ext}(z,p_m;\tau_{ext})}{\partial \tau_{ext}}=-1
+\]
+for every \((z,p_m)\). Hence if \(\tau_{ext}'<\tau_{ext}\), then
+\[
+H_B^{ext}(z,p_m;\tau_{ext}')>H_B^{ext}(z,p_m;\tau_{ext})
+\]
+for every \((z,p_m)\).
+\end{lemma}
+
+\begin{proof}
+This follows immediately from the functional form
+\[
+H_B^{ext}(z,p_m;\tau_{ext})
+=
+\lambda_B(z,p_m)R_B(z)-p_m-\tau_{ext},
+\]
+holding fixed \(\lambda_B\), \(R_B\), and \(p_m\).
+\end{proof}
+
+\begin{lemma}[Expansion of the external-choice region]
+\label{lem:expand}
+If \(\tau_{ext}'<\tau_{ext}\), then
+\[
+\mathcal{E}(\tau_{ext})\subseteq \mathcal{E}(\tau_{ext}').
+\]
+\end{lemma}
+
+\begin{proof}
+Take any \(z\in \mathcal{E}(\tau_{ext})\). By definition,
+\[
+H_B^{ext}(z,p_m;\tau_{ext})
+\ge
+\max\{H_B^{int}(z),0\}.
+\]
+By Lemma \ref{lem:pointwise},
+\[
+H_B^{ext}(z,p_m;\tau_{ext}')
+>
+H_B^{ext}(z,p_m;\tau_{ext}).
+\]
+Therefore,
+\[
+H_B^{ext}(z,p_m;\tau_{ext}')
+>
+\max\{H_B^{int}(z),0\},
+\]
+so \(z\in \mathcal{E}(\tau_{ext}')\).
+\end{proof}
+
+The two lemmas show that the MAH mechanism operates first through the commercialization-assignment margin: the external route becomes viable in weakly more states.
+
+\subsection{Idea generation and optimized current payoffs}
+
+Given \(\Psi_B(z;p_m,\tau_{ext})\), the type-\(B\) firm solves
+\[
+\max_{x_B\ge 0}
+\left\{
+x_B\Psi_B(z;p_m,\tau_{ext})
+-\frac{\chi_B}{\eta}x_B^\eta
+\right\}.
+\]
+
+\begin{lemma}[Optimal idea-generation intensity]
+\label{lem:xb}
+If \(\Psi_B(z;p_m,\tau_{ext})>0\), then the unique interior solution is
+\[
+x_B^*(z;p_m,\tau_{ext})
+=
+\left(
+\frac{\Psi_B(z;p_m,\tau_{ext})}{\chi_B}
+\right)^{\frac{1}{\eta-1}}.
+\]
+Moreover,
+\[
+\frac{\partial x_B^*}{\partial \Psi_B}
+=
+\frac{1}{\eta-1}
+\chi_B^{-\frac{1}{\eta-1}}
+\Psi_B^{\frac{2-\eta}{\eta-1}}
+>0.
+\]
+\end{lemma}
+
+\begin{proof}
+The objective is strictly concave in \(x_B\) because \(\eta>1\). The first-order condition is
+\[
+\Psi_B(z;p_m,\tau_{ext})-\chi_B x_B^{\eta-1}=0.
+\]
+Rearranging yields the stated solution. Differentiating with respect to \(\Psi_B\) gives the derivative above, which is strictly positive whenever \(\Psi_B>0\).
+\end{proof}
+
+Plugging the optimal policy back into the objective gives
+\[
+\Pi_B(z;p_m,\tau_{ext})
+=
+-f_B
++
+\frac{\eta-1}{\eta}
+\chi_B^{-\frac{1}{\eta-1}}
+\Psi_B(z;p_m,\tau_{ext})^{\frac{\eta}{\eta-1}}
+\]
+whenever \(\Psi_B>0\). Thus \(\Pi_B\) is also increasing in \(\Psi_B\).
+
+\begin{corollary}[From commercialization value to innovative effort]
+\label{cor:tau_to_x}
+If the external route is locally binding for the firm, then a reduction in \(\tau_{ext}\) raises \(\Psi_B\), raises \(x_B^*\), and raises \(\Pi_B\).
+\end{corollary}
+
+\begin{proof}
+A lower \(\tau_{ext}\) raises \(H_B^{ext}\) by Lemma \ref{lem:pointwise}, and therefore weakly raises \(\Psi_B\). Lemma \ref{lem:xb} then implies that \(x_B^*\) is weakly higher whenever the relevant optimum remains interior. Since the optimized objective is increasing in \(\Psi_B\), \(\Pi_B\) also rises.
+\end{proof}
+
+This corollary clarifies an important substantive point. The reform does not need to change scientific productivity in order to raise innovative effort. It is enough that it raises the expected payoff from successfully realizing an idea.
+
+\subsection{Bellman monotonicity and entry}
+
+We now show how the static improvement in \(\Pi_B\) translates into a higher type-\(B\) continuation value.
+
+Let
+\[
+W_{BB}(z;\tau_{ext})
+=
+\Pi_B(z;p_m,\tau_{ext})
++
+\beta E[V_B(z')\mid z,B],
+\]
+\[
+W_{BA}(z)
+=
+-\kappa_{BA}
++
+\Pi_A(z;w)
++
+\beta E[V_A(z')\mid z,A],
+\]
+\[
+W_{BC}(z)
+=
+-\kappa_{BC}
++
+\Pi_C(z;p_m,w)
++
+\beta E[V_C(z')\mid z,C].
+\]
+Then the type-\(B\) Bellman equation is
+\[
+V_B(z)
+=
+\max\left\{
+W_{BB}(z;\tau_{ext}),\
+W_{BA}(z),\
+W_{BC}(z),\
+0
+\right\}.
+\]
+
+\begin{lemma}[Bellman monotonicity]
+\label{lem:bellman}
+Under \textbf{A4}, if \(\tau_{ext}'<\tau_{ext}\), then the Bellman operator associated with \(\tau_{ext}'\) weakly dominates the Bellman operator associated with \(\tau_{ext}\) pointwise. Hence
+\[
+V_B(z;\tau_{ext}')\ge V_B(z;\tau_{ext})
+\qquad\text{for all } z.
+\]
+\end{lemma}
+
+\begin{proof}
+By Corollary \ref{cor:tau_to_x}, lowering \(\tau_{ext}\) weakly raises \(\Pi_B(z;p_m,\tau_{ext})\) pointwise. Therefore it weakly raises \(W_{BB}(z;\tau_{ext})\), while leaving \(W_{BA}(z)\), \(W_{BC}(z)\), and the exit option unchanged directly. The Bellman operator under the lower \(\tau_{ext}\) is therefore weakly higher pointwise. Since the Bellman operator is a contraction under \textbf{A4}, its fixed point is monotone with respect to the operator. Hence the value function \(V_B\) is weakly higher pointwise.
+\end{proof}
+
+Define the type-\(B\) entry value as
+\[
+V_B^{entry}(\tau_{ext})
+=
+\int V_B(z_0;\tau_{ext})\,dG(z_0)-c_{EB}.
+\]
+
+\begin{corollary}[Entry]
+\label{cor:entry}
+If \(\tau_{ext}'<\tau_{ext}\), then
+\[
+V_B^{entry}(\tau_{ext}')\ge V_B^{entry}(\tau_{ext}).
+\]
+Therefore the entry condition for research-specialized firms weakly relaxes.
+\end{corollary}
+
+\begin{proof}
+This follows immediately from Lemma \ref{lem:bellman} by integrating over the entrant distribution \(G\) and subtracting the fixed entry cost \(c_{EB}\).
+\end{proof}
+
+\subsection{Optional implication for organizational transition probabilities}
+
+If the model is augmented with extreme-value idiosyncratic shocks to organizational switching, then organizational choice probabilities take logit form:
+\[
+P_{Bj}(z)
+=
+\frac{\exp(\bar V_{Bj}(z)/\sigma)}
+{\sum_{\ell\in\mathcal{J}(B)} \exp(\bar V_{B\ell}(z)/\sigma)},
+\]
+where \(\bar V_{Bj}(z)\) is the alternative-specific value of moving from \(B\) to state \(j\). Since lowering \(\tau_{ext}\) raises the alternative-specific value of remaining \(B\), one obtains
+\[
+\frac{\partial P_{BB}(z)}{\partial \tau_{ext}}<0.
+\]
+Thus the probability that a research-specialized firm remains research-specialized rises when external commercialization becomes easier.
+
+This implication is useful for transition-matrix validation, but it is not the core mechanism of the paper. The core mechanism remains product-level commercialization assignment.
+
+\subsection{Demand for qualified contract manufacturing}
+
+We now derive the producer-side implication. Let
+\[
+d_{ext}(z;p_m,\tau_{ext})
+=
+\mathbf{1}\left\{
+H_B^{ext}(z,p_m;\tau_{ext})
+\ge
+\max\{H_B^{int}(z),0\}
+\right\}
+\]
+denote the indicator that the external route is chosen.
+
+Suppose total demand for qualified contract manufacturing is
+\[
+D_m(p_m,\tau_{ext})
+=
+\int x_B^*(z;p_m,\tau_{ext})\,d_{ext}(z;p_m,\tau_{ext})\,\mu_B(dz),
+\]
+where \(\mu_B\) is the distribution of type-\(B\) firms.
+
+\begin{lemma}[External manufacturing demand]
+\label{lem:demand}
+If \(\tau_{ext}'<\tau_{ext}\), then for every \(p_m\),
+\[
+D_m(p_m,\tau_{ext}')\ge D_m(p_m,\tau_{ext}).
+\]
+\end{lemma}
+
+\begin{proof}
+There are two margins. First, Lemma \ref{lem:expand} implies that the external-choice indicator \(d_{ext}\) weakly increases pointwise in the sense of set inclusion. Second, Corollary \ref{cor:tau_to_x} implies that \(x_B^*\) weakly increases wherever the external route is relevant. Therefore the integrand weakly increases pointwise, which implies the result after integration.
+\end{proof}
+
+Let supply of qualified manufacturing be
+\[
+S_m(p_m,w)=\int m^*(z;p_m,w)\,\mu_C(dz).
+\]
+The market-clearing condition is
+\[
+D_m(p_m,\tau_{ext})=S_m(p_m,w).
+\]
+
+\begin{proposition}[Why producer-side outcomes are ambiguous]
+\label{prop:amb}
+A reduction in \(\tau_{ext}\) shifts contract-manufacturing demand outward. However, the equilibrium effect on \(p_m\), on manufacturing-specialized firms' profits, and on producer-side continuation values is generally ambiguous.
+\end{proposition}
+
+\begin{proof}
+By Lemma \ref{lem:demand}, lower \(\tau_{ext}\) raises demand for external manufacturing. This tends to raise equilibrium quantity of outsourced manufacturing, and under upward-sloping supply may also raise \(p_m\). However, the effect on producer-side profits and continuation values depends on the entire equilibrium adjustment:
+higher \(p_m\) tends to help producers, but greater producer entry, tougher competition, and possible rent dissipation can offset this. Therefore monotonicity at the level of producer profits and values is not guaranteed without stronger assumptions on supply, entry, and market structure.
+\end{proof}
+
+This proposition is important because it explains why producer-side outcomes should be treated as validating evidence rather than as the primary empirical signature of the reform.
+
+\subsection{Why some empirical objects are first-layer and others are second-layer}
+
+The derivations above imply a natural ranking of empirical objects.
+
+\paragraph{First-layer objects.}
+These are the outcomes closest to the primitive mechanism:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+    \item external commercialization adoption by research-originated original-drug projects;
+    \item the number of realized original-drug products originating from research-specialized firms or research-originated ideas more broadly;
+    \item the share of original-drug products among all realized products.
+\end{enumerate}
+
+\paragraph{Second-layer objects.}
+These are broader equilibrium implications that are informative but more indirect:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+    \item transition matrices across organizational types;
+    \item entry composition;
+    \item producer-side outcomes and contract-manufacturing activity;
+    \item broader measures of organizational restructuring.
+\end{enumerate}
+
+The distinction follows directly from the theory. The reform enters first through the value of external commercialization for research-originated ideas. Therefore the closest observable implications are product-level commercialization and realization outcomes. Organizational transitions and producer-side responses remain useful, but they sit one layer further away from the primitive friction.
+
+\subsection{What the theory does not establish}
+
+For completeness, it is helpful to make explicit what Section 4 does \emph{not} prove.
+
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+    \item It does not prove that MAH raises welfare in a one-for-one way with the number of realized original-drug products.
+    \item It does not prove that all organizational types gain.
+    \item It does not imply that innovation outcomes alone identify the primitive implementation probability or success rate.
+    \item It does not require that the latent capability state \(z\) itself rise after the reform; the comparative static works through a higher return to realization at a given \(z\).
+\end{enumerate}
+
+These limitations are intentional. They keep the model tightly aligned with the empirical question and prevent the theory from claiming more than the mechanism can support.
+
+\end{document}
