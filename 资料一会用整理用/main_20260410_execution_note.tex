@@ -1,0 +1,395 @@
+\documentclass[12pt]{ctexart}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array,tabularx,multirow}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric}
+\hypersetup{hidelinks}
+\setstretch{1.18}
+
+\definecolor{mahblue}{RGB}{26,79,129}
+\definecolor{mahgray}{RGB}{90,90,90}
+\definecolor{mahline}{RGB}{210,216,224}
+
+\titleformat{\section}{\Large\bfseries\color{mahblue}}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{mahblue}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{mahblue}}{\thesubsubsection}{0.6em}{}
+
+\newcommand{\tauext}{\tau_{ext}}
+\newcommand{\bb}{\mathbf}
+\newcommand{\E}{\mathbb{E}}
+
+\title{数据到位前的执行准备材料\\
+\large MAH 论文的数值求解、估计、反事实与福利分析路线图}
+\author{}
+\date{2026年4月10日}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{center}
+\begin{tabular}{p{0.9\textwidth}}
+\toprule
+\textbf{本文档的定位}：这不是 Section 5 的正文，也不是代码手册，更不是经验结果汇报。它是一份\textbf{现阶段真正可执行的准备材料}：用来把当前已经锁定的制度机制、模型对象、数值求解逻辑、数据到位后的工作顺序、工具分工、反事实设计与福利分析路径，完整地整理成一份可供博士生阅读和推进的工作蓝图。\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+
+\section{本文档要解决的问题}
+
+你现在还没有把最终数据完全整理好，因此现阶段最重要的任务不是写实证结果，而是把后续工作中最容易混淆的几层关系彻底钉死：
+
+\begin{enumerate}[leftmargin=2em,itemsep=0.3em]
+    \item 当前 MAH 论文的\textbf{核心对象}是什么；
+    \item 这些对象在数值上分别对应什么；
+    \item 为什么这篇模型最适合用 MATLAB 求解，而不是 Dynare；
+    \item 数据到位之后，理论、数值、经验和福利分析各自按什么顺序推进；
+    \item 现在可以准备什么，什么必须等数据到位后再做；
+    \item 哪些看起来“很技术”的东西其实应该暂缓，以免偏离经济学主线。
+\end{enumerate}
+
+本文档服务于上述六个目标。
+
+\section{当前阶段已经锁定的内容}
+
+\subsection{制度主语已经锁定}
+当前版本的论文不再把 MAH 写成宽泛的政策虚拟变量，也不再把政策主语写成笼统的制度冲击。当前版本锁定的是：MAH 的中心经济含义，是降低研发来源的 original-drug ideas 通过外部合格生产商完成商业化时所面临的\textbf{特定路径治理与合规摩擦}，记为
+\[
+\tauext.
+\]
+它不是 demand shock，不是 scientific productivity shock，也不是 generic fixed cost。它只进入 external commercialization route 的净值比较中。
+
+\subsection{模型主语已经锁定}
+当前论文的理论主语不是“企业身份如何在 A/B/C 之间跳跃”本身，而是：
+\begin{quote}
+\textbf{一个原研药 idea 从 invention 到 commercialization，最终由哪一条组织路线实现。}
+\end{quote}
+A/B/C 仍然重要，但它们是组织壳；真正的一阶对象是 commercialization assignment。
+
+\subsection{基准状态已经锁定}
+基准模型采用一维能力状态
+\[
+z\in Z\subset \mathbb{R}_+,
+\]
+并保留二维扩展接口
+\[
+z=(z_R,z_C),
+\]
+其中 $z_R$ 对应 research capability，$z_C$ 对应 commercialization / execution capability。当前基准版不直接上二维，因为那会立刻抬高状态空间维度、计算复杂度和后续估计负担。
+
+\subsection{静态块与动态块的分工已经锁定}
+这篇文章研究的是 invention-to-commercialization 的组织路线，而不是资本深化或劳动力配置。因此：
+\begin{itemize}[leftmargin=2em]
+    \item labor、capital services、intermediate inputs、manufacturing quantity 等生产要素先在当期利润中优化掉；
+    \item research intensity、route choice、organizational switching、entry/exit 才进入 Bellman 系统。
+\end{itemize}
+这不是技术简化，而是和本文研究对象相匹配的经济学分工。
+
+\section{这篇模型在数值上到底属于什么问题}
+
+\subsection{不是 DSGE 线性化问题}
+这篇文章不是一个代表性家庭 + 代表性企业的宏观线性化问题。它也不是先写一组一阶条件、再在稳态附近对系统做 log-linearization 的模型。你真正需要解的是：
+\begin{itemize}[leftmargin=2em]
+    \item 异质企业；
+    \item 进入和退出；
+    \item 组织状态 A/B/C；
+    \item idea generation 与 implementation / commercialization 的分离；
+    \item contract-manufacturing market；
+    \item stationary equilibrium。
+\end{itemize}
+所以它的核心技术对象是：\textbf{动态规划 + 分布演化 + 市场清算 + 外层参数搜索}。
+
+\subsection{本质上是一个嵌套固定点}
+把整件事压缩成一句话，就是：
+\begin{quote}
+\textbf{给价格，解 Bellman；由 Bellman 导出 policy；由 policy 导出行业分布；再让价格调整到市场清算。}
+\end{quote}
+更正式地，数值主链可以写成：
+\[
+(w,p_m,M,\theta)
+\;\Longrightarrow\;
+\text{flow payoffs}
+\;\Longrightarrow\;
+\text{Bellman system}
+\;\Longrightarrow\;
+\text{policies}
+\;\Longrightarrow\;
+\text{transition law}
+\;\Longrightarrow\;
+\text{stationary distribution}
+\;\Longrightarrow\;
+\text{market clearing}.
+\]
+其中 $\theta$ 表示参数向量，$M\in\{0,1\}$ 表示 pre/post reform 制度状态。
+
+\section{为什么现阶段最合适的工具组合是 MATLAB + Stata}
+
+\subsection{Stata 负责什么}
+Stata 负责经验层与事实层：
+\begin{itemize}[leftmargin=2em]
+    \item 数据清洗与企业匹配；
+    \item firm / product / application panel construction；
+    \item descriptive facts；
+    \item transition matrices；
+    \item reduced-form regressions；
+    \item event-study / DID 式事实图；
+    \item moments 的数据侧汇总。
+\end{itemize}
+
+\subsection{MATLAB 负责什么}
+MATLAB 负责结构层和数值层：
+\begin{itemize}[leftmargin=2em]
+    \item state discretization；
+    \item optimized flow payoffs；
+    \item value function iteration / policy iteration；
+    \item stationary distribution；
+    \item market clearing；
+    \item SMM / indirect inference；
+    \item PE / GE counterfactual；
+    \item welfare / surplus comparisons。
+\end{itemize}
+
+\subsection{为什么不推荐 Dynare 作为第一版主工具}
+Dynare 擅长的是标准 DSGE、稳态附近近似、理性预期线性系统。你现在需要的不是这些，而是离散状态、Bellman、转移矩阵和分布固定点。对第一次做异质企业动态模型的人来说，MATLAB 更能帮助你把经济学对象一层层翻译成算法对象。
+
+\section{从经济学对象到数值对象：一张总图}
+
+\begin{center}
+\begin{tikzpicture}[node distance=0.95cm and 0.75cm, every node/.style={font=\small}]
+\tikzstyle{box}=[draw=mahblue, rounded corners=3pt, very thick, align=center, fill=blue!3, minimum height=0.9cm, text width=3.1cm]
+\tikzstyle{arrow}=[-Latex, thick, draw=mahblue]
+\node[box] (par) {参数与制度\\$\theta,\;M$};
+\node[box, below=of par] (price) {价格猜测\\$w,\;p_m$};
+\node[box, below=of price] (flow) {静态块与流量收益\\$\Pi_A,\Pi_B,\Pi_C$};
+\node[box, below=of flow] (bell) {Bellman 系统\\$V_A,V_B,V_C$};
+\node[box, below=of bell] (pol) {最优 policy\\research, route, switch, exit};
+\node[box, below=of pol] (mu) {状态转移与稳态分布\\$\mu_A,\mu_B,\mu_C$};
+\node[box, below=of mu] (clear) {市场清算\\manufacturing \/ factor markets};
+\node[box, right=2.2cm of bell, text width=3.2cm] (mom) {模型 implied moments\\entry, shares, transitions, outcomes};
+\draw[arrow] (par)--(price);
+\draw[arrow] (price)--(flow);
+\draw[arrow] (flow)--(bell);
+\draw[arrow] (bell)--(pol);
+\draw[arrow] (pol)--(mu);
+\draw[arrow] (mu)--(clear);
+\draw[arrow] (clear.west) to[out=180,in=180] (price.west);
+\draw[arrow] (mu.east) -- (mom.west);
+\end{tikzpicture}
+\end{center}
+
+这张图里最重要的不是图形本身，而是顺序。顺序一旦错了，后续所有代码和估计都会乱。
+
+\section{求解器的经济学逻辑：一步一步解释}
+
+\subsection{Step 1：离散化状态空间}
+先把一维能力状态 $z$ 离散化成有限 grid：
+\[
+z_1,\dots,z_{N_z}.
+\]
+再给定一个 Markov transition matrix。若不同组织状态下转移规律不同，则对应不同的转移矩阵。此时你做的不是“近似真实世界的全部复杂性”，而是把一个连续状态对象改写成可计算的离散状态对象。
+
+\subsection{Step 2：给定价格猜测}
+在完整平稳均衡里，$w$ 与 $p_m$ 都是均衡对象。数值求解时你不能一开始就知道它们，因此要先猜一组价格。这个“先猜再更新”的过程，不是权宜之计，而是一般均衡固定点的标准做法。
+
+\subsection{Step 3：先解静态生产块，再构造流量收益}
+对于 A 型和 C 型企业，先求 optimized static operating profit；对于 B 型企业，先求每条 commercialization route 的 per-idea value，再构造 research intensity 的优化问题。于是得到：
+\[
+\Pi_A(z;w),\qquad \Pi_B(z;M,p_m),\qquad \Pi_C(z;w,p_m).
+\]
+这一步完成后，Bellman 中看到的就不再是原始生产问题，而是优化后的 flow payoff。
+
+\subsection{Step 4：解 Bellman}
+对每个组织状态和每个能力点，企业比较：
+\begin{itemize}[leftmargin=2em]
+    \item 留在当前组织状态；
+    \item 转向其他组织状态；
+    \item 退出。
+\end{itemize}
+所以 Bellman 的本质并不是“复杂公式”，而是：
+\begin{quote}
+\textbf{今天收益 + 明天价值，四种或更多种可行路径里选最大的。}
+\end{quote}
+
+\subsection{Step 5：恢复 policy functions}
+Bellman 解完以后，必须恢复最优决策：
+\begin{itemize}[leftmargin=2em]
+    \item $x_A^*(z),x_B^*(z)$；
+    \item B 型 idea 的 route choice；
+    \item A/B/C 的 stay / switch / exit；
+    \item entrants 的 entry type choice。
+\end{itemize}
+这是从“价值函数”走向“行业 law of motion”的关键一步。
+
+\subsection{Step 6：构造行业状态转移与稳态分布}
+单个企业最优，不等于整个行业均衡。行业均衡需要把所有企业的最优决策组合成一个总体转移矩阵，并叠加 entrants inflow，最终求得稳态分布：
+\[
+\mu = T\mu + e.
+\]
+这里的 $\mu$ 不是某个企业的状态，而是行业中不同组织状态、不同能力段的企业质量分布。
+
+\subsection{Step 7：检查市场清算，更新价格}
+在当前 MAH 模型里，最核心的市场清算是 qualified contract manufacturing market；若把 factor market 一起内生化，则还要同时满足 factor clearing。若市场不清，则更新价格，再回到前面的步骤继续迭代。
+
+\section{为什么 SMM 只是外层，而不是另一套模型}
+
+\subsection{SMM 在这里做什么}
+SMM 不创造新模型。它只是拿一组候选参数 $\theta$，反复调用上面的均衡求解器，生成 model-implied moments，再和数据 moments 比较。于是：
+\[
+\theta
+\;\Longrightarrow\;
+\text{solve equilibrium under }M=0\text{ and }M=1
+\;\Longrightarrow\;
+m(\theta)
+\;\Longrightarrow\;
+\min_{\theta} (m(\theta)-m^{data})'W(m(\theta)-m^{data}).
+\]
+
+\subsection{这篇文章的识别不能靠单一 moment}
+这篇文章里，\(\tauext\) 不能靠一个回归系数或一个代理变量“直接估计”。更可信的方式是，让多个与机制相邻的对象联合 discipline 它：
+\begin{itemize}[leftmargin=2em]
+    \item external commercialization use；
+    \item original-drug realization；
+    \item research-oriented entry；
+    \item organizational reallocation；
+    \item producer-side outcomes of qualified manufacturers。
+\end{itemize}
+因此，SMM 对这篇文章的重要性，不在于“高级”，而在于它允许多个边际同时约束同一个结构对象。
+
+\section{数据到位后的完整工作顺序}
+
+\subsection{Phase 0：理论封板与求解器骨架}
+这是当前阶段。你现在真正该做的是：
+\begin{itemize}[leftmargin=2em]
+    \item 封板 Section 2--4 与 Appendix B/C；
+    \item 把 baseline 一维 $z$ 版本写到完全可计算；
+    \item 明确 moments list；
+    \item 明确 parameter blocks；
+    \item 写出 solver blueprint，而不是急着跑估计。
+\end{itemize}
+
+\subsection{Phase 1：数据 construction 与 reduced-form facts}
+等数据到位之后，第一步不是结构估计，而是清楚构造 empirical objects：
+\begin{itemize}[leftmargin=2em]
+    \item A/B/C firm classification；
+    \item original-drug indicators；
+    \item holder-manufacturer matching；
+    \item external commercialization proxies；
+    \item entry / exit / transition matrices；
+    \item producer-side measures。
+\end{itemize}
+这一步主要由 Stata 承担。
+
+\subsection{Phase 2：参数分块与识别检查}
+在正式估计前，先做 parameter-to-moment map：
+\begin{itemize}[leftmargin=2em]
+    \item state process block；
+    \item organization block；
+    \item commercialization block；
+    \item production block；
+    \item innovation block。
+\end{itemize}
+其目标不是“把所有参数都估出来”，而是先弄清楚哪些参数能识别、哪些只能校准、哪些只能做 sensitivity。
+
+\subsection{Phase 3：校准 / 估计}
+这一步才真正进入 quantitative stage。先解 $M=0$ 与 $M=1$ 下的稳态均衡，再匹配数据 moments。第一版可以先用 hand calibration 跑通，确认数值逻辑正确，再逐步切换到正式 SMM。
+
+\subsection{Phase 4：反事实与数值模拟}
+参数 discipline 之后，再做 PE / GE counterfactual：
+\begin{itemize}[leftmargin=2em]
+    \item PE：固定价格，只动 $\tauext$；
+    \item GE：放开 entry、distribution、$p_m$、$w$ 一起调整。
+\end{itemize}
+这样才能把“机制链条”和“一般均衡反馈”分开看。
+
+\subsection{Phase 5：福利分析}
+福利分析必须最后做，而不是最先做。原因很简单：福利是 model-implied object，它依赖前面的均衡对象都已经稳定。第一版最稳的做法是 industry-side welfare / surplus comparison，而不是立刻硬上一个完整 household closure。
+
+\subsection{Phase 6：结果回写正文}
+只有在以上阶段都稳定后，才把数值结果回写成完整论文。这时 Section 5 可能扩成 empirical design，另加 results section；也可能保持现有结构，但无论如何，理论主语和 empirical architecture 不需要再改。
+
+\section{PE、GE、welfare：三种对象必须分开}
+
+\subsection{为什么必须区分 PE 与 GE}
+这篇文章的一个核心优点，就是它允许你把“route-level direct mechanism”和“industry equilibrium feedback”分开。PE 告诉你 MAH 的直接机制链是否成立；GE 告诉你这条链经过 entry、reallocation、price adjustment 之后还剩下什么。
+
+\subsection{PE 主要看什么}
+最直接的 PE 对象是：
+\[
+\tauext\downarrow
+\Rightarrow H_B^{ext}\uparrow
+\Rightarrow \Psi_B\uparrow
+\Rightarrow x_B\uparrow
+\Rightarrow V_B\uparrow.
+\]
+这是机制链的中心，不要一上来就让所有价格、分布和进入都同时动起来。
+
+\subsection{GE 主要看什么}
+GE 主要看：
+\begin{itemize}[leftmargin=2em]
+    \item research-oriented entry 是否上升；
+    \item A/B/C shares 如何变化；
+    \item qualified manufacturers 的需求、供给和价格如何调整；
+    \item producer-side profits 是否单调。
+\end{itemize}
+当前理论已经明确：最后一项在一般均衡里未必单调，这恰恰是模型可信的地方。
+
+\subsection{福利为什么要最后做}
+福利分析不是“多加一页公式”，而是要求你先想清楚：
+\begin{itemize}[leftmargin=2em]
+    \item 什么进入 welfare；
+    \item innovation counts 与 welfare 是否同方向；
+    \item producer-side rents、entry costs、switching costs、governance costs 如何计入。
+\end{itemize}
+因此，福利是一个\textbf{封顶层对象}，不该抢在 solver 与 estimation 前面。
+
+\section{现在不要被哪些东西带偏}
+
+\subsection{不要被伪代码带偏}
+现阶段最危险的误区之一，就是太早进入“伪代码幻觉”。伪代码只有在理论对象、状态变量、价格清算和估计顺序都清楚之后才有用。现在更重要的是：对象映射、逻辑顺序、参数分块、矩匹配设计。
+
+\subsection{不要把求解器当成结果}
+能把 Bellman 跑出来，不等于这篇论文已经接近完成。真正重要的是：这个 solver 是否忠实于最新版本的经济学主语，是否真的围绕 $\tauext$、commercialization assignment 与 organizational routes 搭起来。
+
+\subsection{不要过早扩成二维基准模型}
+二维接口应该保留，但不应该立刻进 baseline。你现在的目标是：先把一维基准模型做到可计算、可解释、可估计，再判断二维扩展是否真的有必要。
+
+\subsection{不要假装现在已经有经验结果}
+这份准备材料的作用，是帮助你在数据到位之前把理论与数值 architecture 钉死。它不是 results draft。凡是需要数据支撑的地方，都必须明确写成“未来将由数据约束”，不能提前写成结论。
+
+\section{一份面向博士生的一页式记忆提纲}
+
+如果把全文压缩成最重要的十句话，可以记成下面这组提纲：
+
+\begin{enumerate}[leftmargin=2em,itemsep=0.28em]
+    \item MAH 进入模型的核心对象是 $\tauext$，不是 generic reform dummy。
+    \item 论文的一阶对象是 commercialization assignment，而不是 transition matrix 本身。
+    \item baseline state 是一维 $z$，二维接口保留但不进当前主模型。
+    \item labor / capital / materials 先在静态块中优化掉，再并入 flow payoff。
+    \item MATLAB 解的是 Bellman + distribution + market clearing，不是 DSGE 线性化。
+    \item 内层固定点是：给价格，解 Bellman，求 policy，求稳态分布。
+    \item 外层固定点是：调价格直到市场清算。
+    \item SMM 只是把整个均衡求解器再包上一层参数搜索。
+    \item PE 看 direct mechanism，GE 看 equilibrium feedback，welfare 最后做。
+    \item 数据到位前最重要的工作，是把 object hierarchy、solver logic 和 moment design 钉死。
+\end{enumerate}
+
+\section{结语：这份材料的正确使用方式}
+
+这份材料最适合在三个场景下使用：
+\begin{enumerate}[leftmargin=2em]
+    \item 你自己推进数值部分之前，先确认每一步在经济学上是什么意思；
+    \item 你和合作者讨论“数据到位后先做什么、后做什么”时，作为排期蓝图；
+    \item 你日后真正开始写 MATLAB solver 时，用它来检查自己有没有被程序细节带偏。
+\end{enumerate}
+
+如果使用方式正确，这份材料的作用不是替代 Section 5，而是帮助你在数据到位前，把未来的 Section 5、数值部分和结果部分的逻辑地基先打牢。
+
+\end{document}
