@@ -51,6 +51,8 @@ __pycache__/
 ~$*.doc
 ~$*.pptx
 ~$*.ppt
+~$*.xlsx
+~$*.xls
 
 # Generic backups and temporary files
 *.bak
