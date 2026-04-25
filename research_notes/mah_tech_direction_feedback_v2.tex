@@ -1,0 +1,258 @@
+\documentclass[12pt]{ctexart}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\setstretch{1.2}
+\title{关于将“技术方向选择反馈”纳入 MAH 模型的正式说明\\\large 供合作者讨论的工作备忘录}
+\author{}
+\date{2026年4月22日}
+\begin{document}
+\maketitle
+
+\section{这份说明要回答什么问题}
+
+当前基线模型已经把 MAH 的核心机制收束为：政策并不直接提高科学发现生产率，也不被建模为一个泛化的政策虚拟变量，而是通过降低原研项目在外部商业化路径上的治理与合规摩擦，改变 \textit{research-originated original-drug ideas} 的 \textit{commercialization assignment}。这一收束是正确的，也是当前版本最有辨识度的地方。
+
+但是，现有基线仍然存在一个重要缺口：模型已经允许 MAH 通过提高原研项目的外部商业化价值，反推 type-B 企业的 \textit{idea-generation intensity}、\textit{continuation value} 和 \textit{research-oriented entry}；然而，模型还没有把企业在更前端所面对的技术方向选择写成内生决策，即企业还没有显式选择“做仿制药项目还是做创新药项目”。当前版本里的创新内生，更多体现为“原研项目投入强度的内生”，而不是“仿制导向与创新导向之间的方向性重新配置”。
+
+因此，这份说明集中回答四个问题：
+\begin{enumerate}[leftmargin=2em]
+    \item 为什么把“技术方向选择反馈”纳入模型是合理的，而且是必要的；
+    \item 它究竟填补了当前基线模型的哪一部分缺陷；
+    \item 它应当如何进入当前模型，需要修改哪些对象、方程和经济解释；
+    \item 这样修改之后，会对经验部分、识别逻辑和模型可操作性提出什么新的要求。
+\end{enumerate}
+
+本文的核心结论是：\textbf{当前最合适的扩展，不是立刻加入“创新成功后能力积累”的深层动态学习机制，而是在现有 \textit{commercialization-assignment} 基线上，加入企业在仿制药与创新药之间的内生技术方向选择。}这样做既能补足模型缺口，又不会破坏当前论文已经建立起来的机制纪律。
+
+\section{为什么可以加入技术方向选择反馈}
+
+\subsection{从经济逻辑上看，这是自然且必要的一步}
+
+如果 MAH 的制度作用是降低原研项目在外部商业化路径上的治理与合规摩擦，那么它所改变的不应仅仅是“企业对既定原研项目投入多少强度”，还应当改变企业在项目组合层面上的方向性选择。更直白地说，政策既然提高了 \textit{original-drug projects} 的单位预期价值，那么企业就不仅会在既定创新方向上更加努力，而且会更愿意把原本用于仿制药或低创新项目的资源，转向创新药或原研药项目。
+
+这一步在经济学上是自然的，因为企业面对的不是一个单一的、没有方向的“研发强度”选择，而通常是一个带有方向性的研发与项目配置问题。对于制药企业而言，仿制药与创新药并不是同一种技术的不同规模，而是两类预期收益、风险结构、组织需求和商业化要求都显著不同的项目类型。因此，如果制度改革改变的是原研项目的商业化可实现性，那么最自然的反馈并不是“总研发机械上升”，而是“企业对创新药方向的边际吸引力上升”。
+
+\subsection{从当前论文的机制主语看，这个扩展是兼容的}
+
+将技术方向选择内生化，并不会推翻当前版本最重要的机制纪律，原因有三。
+
+第一，它不要求把 MAH 改写成 \textit{scientific productivity shock}。政策仍然不是直接进入 \textit{idea production function}，而是进入 \textit{original-drug projects} 的 \textit{commercialization value}。也就是说，政策改变的是项目从 \textit{invention} 到 \textit{implementation} 的回报结构，而不是科研技术本身。
+
+第二，它不要求把 MAH 改写成统一作用于所有项目的泛化收益楔子。相反，政策只需要更强地作用于 \textit{original-drug projects} 的 \textit{external route}，而对 \textit{generic projects} 的直接作用可以设为零或明显更弱。这样一来，MAH 仍然是一个路径特定、项目类型特定的制度冲击。
+
+第三，它和当前论文已经确定的 \textit{empirical object} 是一致的。既然经验部分本来就希望抓住 \textit{original-drug realization}、新原研药产品数量、以及 \textit{original-drug share in realized products}，那么把企业的项目投入写成仿制药与创新药之间的方向选择，反而能让这些经验对象与模型对象对得更紧。
+
+\subsection{为什么现在不应该优先加入“成功创新反过来提升能力”}
+
+技术方向选择反馈和能力积累反馈是两回事。前者是企业在当期做项目配置时，如何在仿制药与创新药之间做资源再分配；后者是企业一旦成功做出创新药之后，未来的 \textit{research capability} 或 \textit{commercialization capability} 是否会被提升。
+
+从理论上说，后者当然成立，也完全可以写成状态演化的一部分。但在当前阶段，直接把成功创新写成状态变量的积累来源，会显著提高模型维度、求解复杂度和经验识别难度，而且会把文章的主语从“制度如何改变项目商业化路径与方向选择”推向“制度如何改变长期能力积累过程”。这一步太大，且会让论文变散。
+
+因此，更合适的次序是：\textbf{先把方向选择补上，再决定是否需要更深层的能力积累反馈。}对于当前版本而言，技术方向选择反馈已经足以弥补最重要的行为缺口。
+
+\section{这个扩展填补了当前模型的哪一部分缺陷}
+
+\subsection{当前模型已经有的部分：innovation effort 的内生反推}
+
+要说得准确，当前基线并不是完全没有“创新的反推作用”。相反，它已经包含了这样一条链条：
+\[
+\tau_{ext}\downarrow \Rightarrow H_B^{ext}\uparrow \Rightarrow \Psi_B\uparrow \Rightarrow x_B\uparrow,\ V_B\uparrow \Rightarrow \text{entry and realization}\uparrow .
+\]
+在这条链中，MAH 通过降低 \textit{external route} 的摩擦，提高了原研项目的单位商业化价值，进而提高了 type-B 企业的 \textit{idea-generation intensity}、\textit{continuation value} 和 \textit{entry incentive}。因此，\textbf{当前模型已经包含“商业化更容易，创新努力更高”这一半反馈。}
+
+\subsection{当前模型缺失的部分：directional reallocation}
+
+真正缺失的是另一半：企业并不是只决定“原研项目努力有多大”，而是在更前端决定“做哪类项目”。如果 MAH 真正提高的是创新药项目的预期净价值，那么企业最自然的行为反应，不只是总研发增加，而是将一部分资源从 \textit{generic-oriented projects} 重新分配到 \textit{original-drug-oriented projects}。
+
+换句话说，当前基线更多是一个 \textit{commercialization-assignment model}，但还不是一个完整的 \textit{technology-direction model}。它能解释为什么原研项目更容易落地、为什么研究型进入者更多、为什么 \textit{original-drug realization} 上升；但它还不能在模型内部清楚地区分：这些变化究竟来自“总创新努力上升”，还是来自“创新方向从仿制药转向创新药”。
+
+\subsection{为什么这是一个必须补的缺口}
+
+这个缺口必须补，原因有三。
+
+第一，如果不把方向选择写进去，论文对于“MAH 激励创新”的表述会过于粗。因为现实里，创新药增加往往不仅意味着研发更努力，而且意味着企业\textbf{改变了项目组合结构}。
+
+第二，如果不把方向选择写进去，经验部分里“\textit{original-drug share} 上升”这种结果变量就只能作为 \textit{reduced-form outcome}，而无法在理论上获得直接对应。换句话说，数据中最有力量的一类现象，模型里却没有一个直接的行为入口。
+
+第三，如果不把方向选择写进去，论文就容易被理解成“MAH 只是让已有原研项目更容易成功”，而不足以说明“MAH 也改变了企业事前选择去做哪类项目”。而在制药产业升级的叙事里，后者恰恰更贴近“从仿制走向创新”的核心含义。
+
+\section{技术方向选择反馈应如何进入当前模型}
+
+\subsection{总体原则：不改主语，只扩展 choice block}
+
+最重要的原则是：\textbf{不要改变当前模型的主语。}MAH 仍然应当通过外部商业化路径进入模型，而不是改写成科研技术冲击或普遍收益冲击。也就是说，这次扩展的目标不是换一个模型，而是在现有模型的基础上，把单一的 \textit{innovation block} 扩展成一个带方向选择的 \textit{innovation block}。
+
+因此，最自然的做法是：在 type-B 企业（必要时也包括 type-A 企业）的 \textit{idea-generation block} 中，引入两类项目投入：
+\[
+x_B^G \ge 0, \qquad x_B^O \ge 0,
+\]
+其中：
+\begin{itemize}[leftmargin=2em]
+    \item $x_B^G$ 表示 type-B 企业对 \textit{generic-oriented} 或低创新项目的投入强度；
+    \item $x_B^O$ 表示 type-B 企业对 \textit{original-drug} 或高创新项目的投入强度。
+\end{itemize}
+原有的单一 $x_B$ 不再足够，因为它无法表示企业在不同技术方向之间的再配置。
+
+\subsection{更新后的 type-B 流量收益}
+
+当前版本里，type-B 企业的关键对象是原研项目的 \textit{per-idea value} 与最优 \textit{idea-generation intensity}。扩展之后，type-B 企业的流量收益可以写成：
+\[
+\Pi_B(z;M,p_m)
+=
+-f_B
++
+\max_{x_B^G,x_B^O\ge 0}
+\left\{
+ x_B^G\Psi_B^G(z)
++
+ x_B^O\Psi_B^O(z;p_m,M)
+-
+ C_B(x_B^G,x_B^O)
+\right\}.
+\]
+其中：
+\begin{itemize}[leftmargin=2em]
+    \item $\Psi_B^G(z)$ 是 generic 项目的单位预期净价值；
+    \item $\Psi_B^O(z;p_m,M)$ 是 \textit{original-drug} 项目的单位预期净价值；
+    \item $C_B(x_B^G,x_B^O)$ 是联合凸成本函数，用来刻画资源稀缺与方向间替代。
+\end{itemize}
+这里最关键的建模纪律是：\textbf{MAH 只直接进入 $\Psi_B^O$，而不直接进入 $\Psi_B^G$。}因为政策的主要制度作用是改变原研项目的商业化路径，而不是系统性地改变 generic 项目的技术收益。
+
+\subsection{更新后的 original-drug 项目价值}
+
+对于 \textit{original-drug projects}，可以把单位价值写成：
+\[
+\Psi_B^O(z;p_m,M)
+=
+\max\left\{
+H_{B,O}^{ext}(z,p_m;M),
+H_{B,O}^{int}(z),
+H_{B,O}^{tr}(z),
+0
+\right\}.
+\]
+其中，最关键的是 \textit{external route}：
+\[
+H_{B,O}^{ext}(z,p_m;M)
+=
+\lambda_{B,O}^{ext}(z,p_m)R_{B,O}(z)-p_m-\tau_{ext}(M).
+\]
+这个表达式延续了当前版本最核心的机制结构：
+\begin{itemize}[leftmargin=2em]
+    \item $R_{B,O}(z)$ 是一个原研项目一旦成功实现后的私有价值；
+    \item $\lambda_{B,O}^{ext}(z,p_m)$ 是该项目通过外部路径实现的成功率；
+    \item $p_m$ 是合格外部生产服务的价格；
+    \item $\tau_{ext}(M)$ 是 \textit{external commercialization route} 的治理与合规摩擦，且它随 MAH 改革下降。
+\end{itemize}
+因此：
+\[
+\tau_{ext}(1)<\tau_{ext}(0)
+\quad\Rightarrow\quad
+H_{B,O}^{ext}\uparrow
+\quad\Rightarrow\quad
+\Psi_B^O\uparrow.
+\]
+而 generic 项目的单位价值则可以写得更简单：
+\[
+\Psi_B^G(z)=R_{B,G}(z)-c_G,
+\]
+或者如果需要，也可允许其受极弱的制度影响，但原则上不应让 MAH 成为 \textit{generic value} 的主要驱动。
+
+\subsection{方向选择的比较静态}
+
+一旦把 \textit{choice block} 改成 $(x_B^G,x_B^O)$，政策冲击的核心比较静态就不再只是“总创新强度上升”，而是更有针对性的方向比较静态：
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^{O*}\uparrow.
+\]
+如果 $G$ 与 $O$ 在资源上具有替代关系，即联合成本函数满足交叉边际替代，那么还可以进一步推出：
+\[
+\frac{x_B^{O*}}{x_B^{G*}}\uparrow.
+\]
+这一步非常重要。它意味着 MAH 不仅提高创新努力，而且\textbf{改变创新方向}：企业将更多资源配置到创新药方向，而不是简单地把所有类型项目一起加码。
+
+\subsection{type-A 企业是否也要做同样扩展}
+
+从逻辑上说，type-A 企业也可以具有 generic 与 original-drug 两类项目选择，因此同样可以写出 $(x_A^G,x_A^O)$。但从当前论文聚焦来看，没有必要一开始就把所有类型都对称扩展。
+
+最简洁、也最贴近现有机制主语的做法是：\textbf{先在 type-B block 中加入方向选择，把 type-B 作为技术方向切换的主载体。}原因在于，当前论文最强的制度机制本来就是围绕 \textit{research-specialized firms} 展开的：正是它们最受 \textit{external commercialization feasibility} 的约束，因此也最可能因为 MAH 而把项目方向向 \textit{original drugs} 重新配置。
+
+如果之后需要更完整的 \textit{industry equilibrium}，再把 type-A 的方向选择作为扩展加入，而不是一开始就让基线爆炸。
+
+\subsection{Bellman 方程如何更新}
+
+在动态上，type-B 企业的 Bellman 方程可更新为：
+\[
+V_B(z)
+=
+\Pi_B(z;M,p_m)
++
+\beta \max\left\{0,\mathbb{E}[V_j(z')\mid z,B]\right\},
+\]
+其中 $\Pi_B$ 已经包含 $(x_B^G,x_B^O)$ 的最优方向选择。
+
+如果下一步仍然保留组织切换，则企业可在 continuation stage 决定 \textit{stay as B}、\textit{switch to A}、or \textit{exit}。重要的是：方向选择进入的是\textbf{当前流量收益和 continuation value 的大小}，但不必立刻改写整个状态转移结构。这样既能把新机制纳入模型，又不会立即把数值求解复杂度推到不可控程度。
+
+\section{这一修改会带来什么新要求}
+
+\subsection{第一，新要求是经验上必须更明确地区分 $G$ 与 $O$}
+
+一旦把企业的 \textit{choice block} 扩展成 $(x^G,x^O)$，模型就要求经验部分至少能够 reasonably 地把项目或产出区分为 \textit{generic-oriented} 与 \textit{original-drug-oriented} 两类。否则模型会比数据更细。
+
+这意味着，经验上不能只停留在“总创新活动上升”。必须能够构造一个足够干净的 \textit{original-drug indicator}，并进一步观察 \textit{original-drug share}、\textit{new original-drug products} 或 \textit{related project composition} 的变化。事实上，这一要求与当前论文 already planned 的 \textit{first-layer empirical objects} 是一致的，但现在会从“结果变量”进一步提升为“直接对应方向选择的行为性对象”。
+
+\subsection{第二，新要求是成本函数必须允许方向间替代}
+
+如果 generic 与 original-drug 的投入彼此独立，政策最多只会让 $x^O$ 上升，而不一定产生“从仿制走向创新”的再配置含义。为了得到真正的 \textit{direction-switching result}，联合成本函数 $C_B(x_B^G,x_B^O)$ 需要体现资源稀缺或组织注意力稀缺，使两类投入在边际上彼此挤出。
+
+最简单的写法可以是：
+\[
+C_B(x_B^G,x_B^O)=\frac{\chi_B}{\eta}(x_B^G+x_B^O)^{\eta},\qquad \eta>1.
+\]
+这样一来，\textit{original-drug projects} 的回报上升，不仅会提升 $x_B^O$，也更可能压低或相对压低 $x_B^G$，从而产生方向转移。
+
+\subsection{第三，新要求是论文必须更清楚地区分“总创新上升”和“方向转移”}
+
+加入技术方向选择后，论文的比较静态会更丰富，但也更要求措辞精确。此后你不能再把所有结果都统称为“创新增强”。你至少要区分：
+\begin{itemize}[leftmargin=2em]
+    \item \textit{total innovative effort} 是否上升；
+    \item \textit{original-drug effort} 是否上升；
+    \item \textit{original-drug effort} 的占比是否上升；
+    \item \textit{realized original-drug products} 的占比是否上升。
+\end{itemize}
+如果不做这种区分，加入方向选择后反而会让文章语言变得混乱。
+
+\subsection{第四，新要求是经验识别仍然不能越界}
+
+即使加入了技术方向选择反馈，也不能因此过度声称已经识别出 MAH 直接提高了 \textit{research productivity}。正确表述仍然应当是：\textbf{MAH 通过提升 \textit{original-drug projects} 的 \textit{commercializability}，改变了企业对创新药方向的最优配置。}换句话说，政策改变的是该类项目的单位预期价值，而不是科技生产函数本身。
+
+这条纪律必须保留，否则技术方向扩展会把原本已经很清楚的机制主语再次冲散。
+
+\section{建议的文本更新顺序}
+
+为了保证修改后文章仍然克制、聚焦，建议按以下顺序更新：
+\begin{enumerate}[leftmargin=2em]
+    \item 在 Section 2 或 Section 3 开头，加一句明确的建模动机：企业不仅选择商业化路径，也选择项目技术方向；
+    \item 在 type-B block 中，把单一 $x_B$ 改为 $(x_B^G,x_B^O)$；
+    \item 把 \textit{original-drug per-idea value} 的外部路径写成受 $\tau_{ext}$ 影响，而 \textit{generic value} 保持不变或弱变；
+    \item 在 Section 4 的主预测中，新增一条：MAH 将提高 \textit{original-drug-oriented effort} 及其在总项目中的占比；
+    \item 在 Section 5 的经验映射中，把 \textit{original-drug share} 与相关 composition indicators 从“补充结果”提升为“方向选择反馈”的关键结果变量。
+\end{enumerate}
+这个更新顺序的优点是：它只在必要位置扩模型，不要求立刻重写整套 \textit{industry equilibrium}，也不要求立刻引入长期能力积累。
+
+\section{结论}
+
+把“技术方向选择反馈”纳入 MAH 模型，不是对当前机制的否定，而是对当前机制的必要补足。现有基线已经包含了“商业化更容易，原研项目投入更高”这一半反馈，但尚未把企业从仿制药转向创新药的方向选择内生化。这个缺口使模型在解释产业升级时仍然偏弱，也使一些最有价值的经验对象，比如 \textit{original-drug share} 的上升，缺乏直接的理论落脚点。
+
+最合适的修补方式，不是立刻加入“创新成功后能力积累”的深层动态机制，而是在现有 \textit{commercialization-assignment} 基线上，把 type-B 企业的单一创新强度扩展为 generic 与 original-drug 两类项目的方向选择，并让 MAH 只通过提高 \textit{original-drug projects} 的单位商业化价值进入。这样做有三方面好处：第一，它保留了当前论文最重要的机制纪律；第二，它把“从仿制到创新”的产业升级叙事真正写进了模型；第三，它让经验部分中最关键的一批结果变量与理论对象更紧密对应。
+
+因此，如果当前要在有限复杂度下做一次真正有价值的模型扩展，\textbf{技术方向选择反馈应当是优先加入的那一步。}
+
+\end{document}

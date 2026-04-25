@@ -1,0 +1,752 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array,multirow}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{natbib}
+
+\singlespacing
+\emergencystretch=2em
+\sloppy
+
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\argmax}{\operatorname*{arg\,max}}
+\newcommand{\Inew}{\mathcal{N}}
+\newcommand{\Surp}{\mathcal{S}}
+\newcommand{\Tpre}{\mathcal{S}^0}
+\newcommand{\Tpost}{\mathcal{S}^1}
+\newcommand{\Lbar}{\bar L}
+
+\title{Institutional Reform and Pharmaceutical Innovation
+\\An Analysis Based on the MAH System}
+\author{Danni Yangchen, Wenxiao Dong, Xinhao Wang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We develop a dynamic industry model to study how China's Marketing Authorization Holder (MAH) reform changes firm boundaries, organizational splitting, post-reform transitions, and the number of new original-drug products commercialized in the pharmaceutical industry. The model has two medicine categories, generic drugs and original drugs. Before MAH, the relevant organizational regime is bundled: firms that conduct original-drug R\&D and bring products to market must combine authorization and production inside one bundled state. After MAH, the feasible organizational space expands to three persistent post-reform states: integrated firms, research-specialized firms, and manufacturing-specialized firms. We model reform as a one-time organizational mapping from the pre-MAH bundled state into the post-MAH organizational space, followed by a standard post-MAH Bellman system with endogenous switching, entry, and exit. This delivers four distinct empirical objects: a pre-MAH bundled persistence object, a reform-era splitting vector, a post-MAH incumbent transition matrix, and a post-MAH entry-composition vector. The model is designed to match the institutional narrative without turning the paper into a large whole-economy macro model.
+\end{abstract}
+
+\section{Introduction and literature strategy}
+
+We study whether MAH relaxes the institutional bundle between original-drug R\&D and production capacity, thereby changing organizational boundaries and increasing the number of new original-drug products that reach commercialization in China's pharmaceutical industry. We focus on the pharmaceutical industry rather than the whole economy. Accordingly, the surplus object that we define below is a pharmaceutical-industry surplus object rather than a whole-economy welfare object.
+
+We organize the model around five literature blocks. First, we use a stationary heterogeneous-firm industry shell with endogenous entry, endogenous exit, and invariant distributions following \citet{Hopenhayn1992}. This block also connects to the selection logic in \citet{Jovanovic1982}, the dynamic-industry control language in \citet{EricsonPakes1995}, and the equilibrium-composition perspective in \citet{Luttmer2007}. Second, we use the innovation literature to justify firm-level original-drug research effort and composition effects on industry outcomes, following \citet{KletteKortum2004} and \citet{AkcigitKerr2018}. Third, we use the market-for-technology and market-for-ideas literatures to motivate why innovative firms need not be vertically integrated in order to create value, following \citet{AroraFosfuriGambardella2001}, \citet{AroraMerges2004}, \citet{GansStern2000}, \citet{GansStern2003}, and \citet{GansHsuStern2008}. Fourth, we use pharmaceutical-policy and pharmaceutical-organization references to motivate why regulatory design can change commercialization and innovation without operating only through prices, following \citet{Lakdawalla2018}, \citet{ChandraEtAl2026}, and \citet{JiaMaYangZhang2023}. Fifth, we borrow only the distinction between invention and implementation from recent startup-innovation work, following \citet{FonsRosenRoldanBlancoSchmitz2026}; we do not borrow their acquisition, search, or bargaining layers.
+
+This modeling strategy matches our empirical question. MAH is not a merger policy, and our data do not identify bargaining primitives. We therefore need an upstream original-drug idea-generation margin, a downstream commercialization margin, a contract-manufacturing market, a one-time reform-era organizational splitting margin, and a post-reform organizational-switching margin. We do not need an acquisition block, a full incomplete-contract model, or a whole-economy DSGE environment.
+
+\section{Institutional background and identification boundary}
+
+We model China's pharmaceutical industry as an environment with two medicine categories,
+\[
+k \in \{G,O\},
+\]
+where $G$ denotes generic drugs and $O$ denotes original drugs. We use this distinction because our policy question is about \emph{new original-drug products}, not total pharmaceutical output. Generic production provides cash flow and manufacturing demand, but MAH mainly changes the commercialization environment for original-drug ideas.
+
+Let $M\in\{0,1\}$ denote the regulatory regime. We interpret $M=0$ as the pre-MAH regime and $M=1$ as the post-MAH regime. We model MAH through two reduced-form channels,
+\begin{align}
+\tau_M(1) &< \tau_M(0), \label{eq:tauM}\\
+\kappa_{sj}(1) &\le \kappa_{sj}(0)
+\qquad \text{for } s,j\in\{A,B,C\},\ s\neq j.
+\label{eq:kappaM}
+\end{align}
+Here $\tau_M(M)$ is the commercialization friction faced especially by research-specialized firms and $\kappa_{sj}(M)$ is the cost of reorganizing from organizational type $s$ to organizational type $j$ in the post-MAH regime.
+
+Our key MAH restriction is not that all firms suddenly invent more after reform. Rather, MAH changes whether a research-specialized firm can retain authorization and commercialize an original-drug idea through external production. Before MAH, this organizational option is not a persistent feasible state. After MAH, it becomes a persistent feasible state.
+
+We also keep the identification boundary explicit. With outcome data alone, we can identify whether MAH raises the number of new original-drug products. We cannot claim to directly estimate the commercialization probability itself from those data alone. We therefore use the commercialization block as a structural interpretation, and we reinforce it with organizational splitting evidence, post-MAH transition evidence, entry evidence, and commercialization proxies.
+
+\section{Regime-dependent state space, timing, and notation}
+
+\subsection{Regime-dependent state space}
+
+The central modeling choice is that the feasible organizational state space changes with the policy regime. We therefore do \emph{not} force the same organizational states to exist persistently before and after MAH.
+
+Before MAH, the persistent organizational state space is
+\begin{equation}
+\Tpre=\{I,\mathrm{exit}\},
+\label{eq:pre_states}
+\end{equation}
+where $I$ denotes the bundled pre-MAH regime: a firm that wishes to conduct original-drug R\&D and independently commercialize new products must combine authorization and production inside the same organizational unit.
+
+After MAH, the persistent organizational state space becomes
+\begin{equation}
+\Tpost=\{A,B,C,\mathrm{exit}\},
+\label{eq:post_states}
+\end{equation}
+where
+\begin{itemize}[leftmargin=2em]
+    \item $A$ denotes an integrated post-MAH firm that can produce generic drugs, produce original drugs, and conduct original-drug R\&D;
+    \item $B$ denotes a research-specialized post-MAH firm that generates original-drug ideas and can commercialize them through qualified external manufacturing while retaining the relevant rights;
+    \item $C$ denotes a manufacturing-specialized post-MAH firm that can produce generic and original drugs, including qualified contract manufacturing for MAH-enabled commercialization, but does not originate new original-drug ideas.
+\end{itemize}
+
+This regime-dependent state space is the formal way to encode the institutional narrative that organizational differentiation becomes persistent only after reform.
+
+\subsection{Timing of the policy event}
+
+Time is discrete, $t=0,1,2,\dots$. Let $T^*$ denote the reform date. The model has three layers:
+\begin{enumerate}[leftmargin=2em]
+    \item a pre-MAH stationary environment on $\Tpre$ for $t<T^*$,
+    \item a one-time reform mapping at $t=T^*$ from the bundled state $I$ into $\{A,B,C,\mathrm{exit}\}$,
+    \item a post-MAH stationary environment on $\Tpost$ for $t>T^*$.
+\end{enumerate}
+
+This structure lets the model distinguish between ordinary within-regime dynamics and the one-time organizational restructuring caused by MAH.
+
+\subsection{Main notation}
+
+Table \ref{tab:notation} defines the main objects.
+
+\begin{longtable}{p{0.24\textwidth}p{0.68\textwidth}}
+\caption{Main notation}\label{tab:notation}\\
+\toprule
+Symbol & Definition \\
+\midrule
+\endfirsthead
+\toprule
+Symbol & Definition \\
+\midrule
+\endhead
+$M$ & Policy regime: $M=0$ pre-MAH, $M=1$ post-MAH. \\
+$k\in\{G,O\}$ & Product category: generic $(G)$ or original $(O)$. \\
+$z$ & Firm capability state. \\
+$w$ & Industry wage or composite factor price. \\
+$p_m$ & Price of qualified contract-manufacturing services. \\
+$\tau_M(M)$ & Commercialization friction faced by post-MAH type-$B$ firms. \\
+$\Gamma_{Ij}$ & One-time reform-era cost of mapping a bundled pre-MAH firm into post-MAH type $j\in\{A,B,C\}$. \\
+$\kappa_{sj}(1)$ & Post-MAH switching cost from organizational type $s$ to organizational type $j$. \\
+$V_I(z;0)$ & Value of operating in the bundled pre-MAH state. \\
+$V_s(z;1)$ & Post-MAH value of operating as type $s\in\{A,B,C\}$. \\
+$\Pi_I(z;w,0)$ & Optimized current operating payoff of a bundled pre-MAH firm. \\
+$\Pi_A(z;w,1)$ & Optimized current operating payoff of an integrated post-MAH firm. \\
+$\Pi_B(z;p_m,1)$ & Optimized current operating payoff of a research-specialized post-MAH firm. \\
+$\Pi_C(z;p_m,w,1)$ & Optimized payoff of a manufacturing-specialized post-MAH firm. \\
+$\Xi_{\mathrm{MAH}}(j\mid z)$ & Post-MAH reform map from bundled state $I$ to type $j$. \\
+$\mathbf R$ & Reform-era organizational splitting vector. \\
+$P_{II}^0$ & Pre-MAH bundled-state survival probability. \\
+$P_{sj}^1$ & Post-MAH transition probability from current type $s$ to chosen type $j$. \\
+$\mathbf P^1$ & Post-MAH incumbent transition matrix. \\
+$\mathbf e^1$ & Post-MAH entry-composition vector. \\
+$\Inew(0),\Inew(1)$ & Number of new original-drug products commercialized pre and post MAH. \\
+\bottomrule
+\end{longtable}
+
+\section{Static operating payoffs with two medicines}
+
+\subsection{Bundled pre-MAH firm}
+
+Before MAH, a firm that wishes to conduct original-drug R\&D and independently commercialize a new original drug must remain in the bundled state $I$. Let $x_I\ge 0$ denote original-drug idea-generation intensity in the pre-MAH bundled regime. The current-period payoff is
+\begin{equation}
+\pi_I(z;w,0)
+=
+\pi_I^G(z;w)
++\pi_I^{O,\mathrm{inc}}(z;w,0)
+-f_I
++x_I\Omega_I(z)-\frac{\chi_I}{\eta}x_I^{\eta},
+\qquad \eta>1,
+\label{eq:piI}
+\end{equation}
+where $\Omega_I(z)\equiv \lambda_I(z)R_I(z)$ is the expected marginal value of one new original-drug idea inside the bundled regime.
+
+The first-order condition gives
+\begin{equation}
+x_I^*(z)=\left(\frac{\Omega_I(z)}{\chi_I}\right)^{\frac{1}{\eta-1}},
+\label{eq:xI}
+\end{equation}
+and the optimized current payoff is
+\begin{equation}
+\Pi_I(z;w,0)
+=
+\pi_I^G(z;w)
++\pi_I^{O,\mathrm{inc}}(z;w,0)
+-f_I
++\frac{\eta-1}{\eta}\chi_I^{-\frac{1}{\eta-1}}\Omega_I(z)^{\frac{\eta}{\eta-1}}.
+\label{eq:PiI}
+\end{equation}
+
+This block is the pre-reform baseline. It is deliberately parsimonious: before MAH, there is no persistent research-specialized commercialization state.
+
+\subsection{Integrated post-MAH firm}
+
+After MAH, an integrated firm chooses original-drug idea-generation intensity $x_A\ge 0$. Its current-period payoff is
+\begin{equation}
+\pi_A(z;w,1)
+=
+\pi_A^G(z;w)
++\pi_A^{O,\mathrm{inc}}(z;w,1)
+-f_A
++x_A\Omega_A(z)-\frac{\chi_A}{\eta}x_A^{\eta},
+\label{eq:piA}
+\end{equation}
+where $\Omega_A(z)\equiv \lambda_A(z)R_A(z)$ is the expected marginal value of one original-drug idea inside an integrated post-MAH firm.
+
+The optimal intensity is
+\begin{equation}
+x_A^*(z)=\left(\frac{\Omega_A(z)}{\chi_A}\right)^{\frac{1}{\eta-1}},
+\label{eq:xA}
+\end{equation}
+and the optimized current payoff is
+\begin{equation}
+\Pi_A(z;w,1)
+=
+\pi_A^G(z;w)
++\pi_A^{O,\mathrm{inc}}(z;w,1)
+-f_A
++\frac{\eta-1}{\eta}\chi_A^{-\frac{1}{\eta-1}}\Omega_A(z)^{\frac{\eta}{\eta-1}}.
+\label{eq:PiA}
+\end{equation}
+
+\subsection{Research-specialized post-MAH firm}
+
+A research-specialized firm chooses original-drug idea-generation intensity $x_B\ge 0$. The expected payoff from one original-drug idea is
+\begin{equation}
+H_B(z;p_m,1)=\lambda_B(z,p_m,1)\bigl(R_B(z)-p_m\bigr)-\tau_M(1),
+\label{eq:HB}
+\end{equation}
+where $R_B(z)$ is the gross private value of a successfully commercialized original-drug idea and $\lambda_B(z,p_m,1)\in[0,1]$ is the post-MAH probability that the idea is successfully commercialized through qualified external manufacturing.
+
+We assume
+\begin{equation}
+\frac{\partial \lambda_B}{\partial z}>0,
+\qquad
+\frac{\partial \lambda_B}{\partial p_m}<0.
+\label{eq:lambda_monotone}
+\end{equation}
+The current-period payoff is
+\begin{equation}
+\pi_B(z;p_m,1)
+=
+-f_B+x_BH_B(z;p_m,1)-\frac{\chi_B}{\eta}x_B^{\eta}.
+\label{eq:piB}
+\end{equation}
+Define $[a]_+=\max\{a,0\}$. Then
+\begin{equation}
+x_B^*(z;p_m,1)=\left(\frac{[H_B(z;p_m,1)]_+}{\chi_B}\right)^{\frac{1}{\eta-1}},
+\label{eq:xB}
+\end{equation}
+and the optimized current payoff is
+\begin{equation}
+\Pi_B(z;p_m,1)
+=
+-f_B
++\frac{\eta-1}{\eta}\chi_B^{-\frac{1}{\eta-1}}[H_B(z;p_m,1)]_+^{\frac{\eta}{\eta-1}}.
+\label{eq:PiB}
+\end{equation}
+
+For comparison with the institutional background, the pre-MAH counterpart of this value is not a persistent state. In reduced form, one may write
+\begin{equation}
+\lambda_B(z,p_m,0)=0,
+\label{eq:lambdaB_pre_zero}
+\end{equation}
+which says that before MAH an otherwise comparable research-specialized firm could not independently commercialize a new original-drug idea through external manufacturing while retaining the relevant rights.
+
+\subsection{Manufacturing-specialized post-MAH firm}
+
+A manufacturing-specialized post-MAH firm earns profits from producing generic drugs and already commercialized original drugs, while also choosing the amount of qualified contract manufacturing dedicated to MAH-enabled original-drug commercialization. Its current-period payoff is
+\begin{equation}
+\Pi_C(z;p_m,w,1)
+=
+\pi_C^G(z;w)
++\pi_C^{O,\mathrm{inc}}(z;w,1)
+-f_C
++\max_{m\ge 0}\{p_mm-c(m,z;w)\},
+\label{eq:PiC}
+\end{equation}
+where $c_m>0$, $c_{mm}>0$, and $c_z<0$.
+
+\section{Pre-MAH Bellman system}
+
+Before MAH, the firm problem is defined on the bundled state space in equation \eqref{eq:pre_states}. Let $Q_I^0(\dd z'\mid z)$ denote the pre-MAH capability transition kernel. The pre-MAH Bellman equation is
+\begin{equation}
+V_I(z;0)=\max\left\{\Pi_I(z;w,0)+\beta\int V_I(z';0)Q_I^0(\dd z'\mid z),\ 0\right\}.
+\label{eq:VI}
+\end{equation}
+
+Define the pre-MAH continuation region and exit region by
+\begin{align}
+\mathcal Z_{II}^0 &= \left\{z\in Z: \Pi_I(z;w,0)+\beta\int V_I(z';0)Q_I^0(\dd z'\mid z)\ge 0\right\},\\
+\mathcal Z_{I,\mathrm{exit}}^0 &= Z\setminus \mathcal Z_{II}^0.
+\end{align}
+If $\mu_I^0$ denotes the stationary pre-MAH measure of bundled firms, the pre-MAH persistence object is
+\begin{equation}
+P_{II}^0=\frac{\mu_I^0(\mathcal Z_{II}^0)}{\mu_I^0(Z)},
+\qquad
+P_{I,\mathrm{exit}}^0=1-P_{II}^0.
+\label{eq:pre_persistence}
+\end{equation}
+
+Equation \eqref{eq:pre_persistence} is the correct pre-reform counterpart of the usual transition matrix in this paper. Before MAH there is no persistent $A/B/C$ transition matrix to estimate.
+
+\section{One-time reform mapping at the MAH date}
+
+\subsection{Choice-specific reform values}
+
+At $t=T^*$, a surviving bundled pre-MAH firm is mapped into the post-MAH organizational space. Let $\Gamma_{Ij}\ge 0$ denote the one-time reform-era cost of reorganizing a bundled pre-MAH firm into post-MAH type $j\in\{A,B,C\}$. The reform-era choice-specific values are
+\begin{equation}
+W_{Ij}^{R}(z)=\Pi_j(z;w,p_m,1)-\Gamma_{Ij}+\beta\int V_j(z';1)Q_j^1(\dd z'\mid z),
+\qquad j\in\{A,B,C\},
+\label{eq:reform_choice}
+\end{equation}
+with $W_{I,\mathrm{exit}}^{R}(z)=0$.
+
+The deterministic benchmark reform policy is
+\begin{equation}
+g_I^{R}(z)=\argmax_{j\in\{A,B,C,\mathrm{exit}\}} W_{Ij}^{R}(z).
+\label{eq:reform_policy}
+\end{equation}
+Equivalently, define the one-time reform mapping
+\begin{equation}
+\Xi_{\mathrm{MAH}}(j\mid z)=\1\{g_I^R(z)=j\},
+\qquad j\in\{A,B,C,\mathrm{exit}\}.
+\label{eq:Xi_det}
+\end{equation}
+
+\begin{remark}[Optional smooth mapping]
+If the empirical implementation later benefits from probabilistic splitting rather than deterministic splitting, one can replace equation \eqref{eq:Xi_det} by a softmax form. Nothing in the rest of the paper requires that extension in the benchmark.
+\end{remark}
+
+\subsection{Aggregate reform splitting vector}
+
+Let $\mu_I^{0,-}$ denote the measure of bundled firms immediately before the reform mapping is applied. The reform-era organizational splitting shares are
+\begin{equation}
+R_{Ij}=\frac{\int \Xi_{\mathrm{MAH}}(j\mid z)\mu_I^{0,-}(\dd z)}{\mu_I^{0,-}(Z)},
+\qquad j\in\{A,B,C,\mathrm{exit}\}.
+\label{eq:Rij}
+\end{equation}
+Collect them in the reform vector
+\begin{equation}
+\mathbf R=\bigl(R_{IA},R_{IB},R_{IC},R_{I,\mathrm{exit}}\bigr).
+\label{eq:Rvector}
+\end{equation}
+
+This is the direct theoretical counterpart of the empirical reform-era state conversion object: among firms that were bundled before MAH, what fraction become mixed/integrated, research-specialized, manufacturing-specialized, or exit when the institutional constraint is lifted?
+
+If capability is preserved at the reform date, the initial post-MAH measures satisfy
+\begin{equation}
+\mu_j^{1,0}(B)=\int \Xi_{\mathrm{MAH}}(j\mid z)\1\{z\in B\}\mu_I^{0,-}(\dd z),
+\qquad j\in\{A,B,C\},
+\label{eq:initial_post_dist}
+\end{equation}
+for every measurable set $B\subseteq Z$.
+
+\section{Post-MAH Bellman system and incumbent transition matrix}
+
+After MAH, the firm operates on the persistent state space in equation \eqref{eq:post_states}. The feasible current-period choice sets are
+\begin{align}
+\mathcal J(A)&=\{A,B,C,\mathrm{exit}\},\\
+\mathcal J(B)&=\{A,B,C,\mathrm{exit}\},\\
+\mathcal J(C)&=\{A,B,C,\mathrm{exit}\}.
+\end{align}
+We set $\kappa_{ss}(1)=0$ for $s\in\{A,B,C\}$.
+
+For each current type $s$ and chosen type $j\in\{A,B,C\}$, define the post-MAH choice-specific value
+\begin{equation}
+W_{sj}^1(z)=\Pi_j(z;w,p_m,1)-\kappa_{sj}(1)+\beta\int V_j(z';1)Q_j^1(\dd z'\mid z),
+\label{eq:choice_specific_post}
+\end{equation}
+with $W_{s,\mathrm{exit}}^1(z)=0$.
+
+The post-MAH Bellman system is
+\begin{align}
+V_A(z;1) &= \max\bigl\{W_{AA}^1(z),W_{AB}^1(z),W_{AC}^1(z),0\bigr\}, \label{eq:VA}\\
+V_B(z;1) &= \max\bigl\{W_{BA}^1(z),W_{BB}^1(z),W_{BC}^1(z),0\bigr\}, \label{eq:VB}\\
+V_C(z;1) &= \max\bigl\{W_{CA}^1(z),W_{CB}^1(z),W_{CC}^1(z),0\bigr\}. \label{eq:VC}
+\end{align}
+
+This Bellman system is the correct post-MAH counterpart of the empirical transition matrix. It is a within-regime transition object, not a reform-date splitting object.
+
+\subsection{Choice regions and the post-MAH transition matrix}
+
+For each current type $s$ and chosen type $j\in\{A,B,C,\mathrm{exit}\}$, define the post-MAH choice region
+\begin{equation}
+\mathcal Z_{sj}^1=\left\{z\in Z: j \text{ solves the Bellman problem for a current type-}s\text{ firm after MAH}\right\}.
+\label{eq:choice_region_post}
+\end{equation}
+
+Let $\mu_s^1$ denote the stationary post-MAH measure of firms whose current type is $s$. The post-MAH incumbent transition probability from $s$ to $j$ is
+\begin{equation}
+P_{sj}^1=\frac{\mu_s^1(\mathcal Z_{sj}^1)}{\mu_s^1(Z)}.
+\label{eq:transition_prob_post}
+\end{equation}
+The post-MAH incumbent transition matrix is therefore
+\begin{equation}
+\mathbf P^1=
+\begin{pmatrix}
+P_{AA}^1 & P_{AB}^1 & P_{AC}^1 & P_{A,\mathrm{exit}}^1 \\
+P_{BA}^1 & P_{BB}^1 & P_{BC}^1 & P_{B,\mathrm{exit}}^1 \\
+P_{CA}^1 & P_{CB}^1 & P_{CC}^1 & P_{C,\mathrm{exit}}^1
+\end{pmatrix},
+\label{eq:Ppost}
+\end{equation}
+where each row sums to one.
+
+The distinction between equations \eqref{eq:Rvector} and \eqref{eq:Ppost} is crucial. $\mathbf R$ is a one-time policy-event splitting object. $\mathbf P^1$ is an ordinary post-reform incumbent transition matrix.
+
+\section{Entry, market clearing, and stationary equilibrium}
+
+\subsection{Entry}
+
+Before MAH, entrants choose whether to enter the bundled state $I$. Let $G_I$ denote the pre-MAH entrant capability distribution. The pre-MAH entrant value is
+\begin{equation}
+\bar V_E^0=\int V_I(z_0;0)G_I(\dd z_0)-c_{EI}.
+\label{eq:VEpre}
+\end{equation}
+Free entry implies $\bar V_E^0\le 0$, with equality if entry is positive.
+
+After MAH, entrants choose whether to enter as type $A$, $B$, or $C$. Let $G$ denote the post-MAH entrant capability distribution. The entrant values are
+\begin{align}
+\bar V_E^A(1)&=\int V_A(z_0;1)G(\dd z_0)-c_{EA},\\
+\bar V_E^B(1)&=\int V_B(z_0;1)G(\dd z_0)-c_{EB},\\
+\bar V_E^C(1)&=\int V_C(z_0;1)G(\dd z_0)-c_{EC}.
+\end{align}
+Let $n_E^A(1),n_E^B(1),n_E^C(1)$ denote post-MAH entrant masses. Free entry implies
+\begin{align}
+\bar V_E^A(1) &\le 0, & n_E^A(1)>0 &\Rightarrow \bar V_E^A(1)=0, \\
+\bar V_E^B(1) &\le 0, & n_E^B(1)>0 &\Rightarrow \bar V_E^B(1)=0, \\
+\bar V_E^C(1) &\le 0, & n_E^C(1)>0 &\Rightarrow \bar V_E^C(1)=0.
+\end{align}
+The post-MAH entry-composition vector is
+\begin{equation}
+\mathbf e^1=\bigl(e_A^1,e_B^1,e_C^1\bigr),
+\qquad
+ e_j^1=\frac{n_E^j(1)}{n_E^A(1)+n_E^B(1)+n_E^C(1)}.
+\label{eq:entry_vector_post}
+\end{equation}
+
+\subsection{Qualified contract-manufacturing market}
+
+The qualified contract-manufacturing market is active only in the post-MAH regime because only then does research-specialized commercialization through external production become a persistent organizational possibility. Total post-MAH demand is
+\begin{equation}
+D_m(p_m,1)=\int x_B^*(z;p_m,1)\lambda_B(z,p_m,1)\mu_B^1(\dd z),
+\label{eq:Dm}
+\end{equation}
+while total post-MAH supply is
+\begin{equation}
+S_m(p_m,w)=\int m^*(z;p_m,w)\mu_C^1(\dd z),
+\label{eq:Sm}
+\end{equation}
+where $m^*(z;p_m,w)$ is the optimizer in equation \eqref{eq:PiC}. Market clearing requires
+\begin{equation}
+D_m(p_m,1)=S_m(p_m,w).
+\label{eq:pm_clear}
+\end{equation}
+
+\subsection{Labor market}
+
+Let labor demand by each active type be $\ell_I(z;w,0)$ before MAH and $\ell_A(z;w,1)$, $\ell_B(z;p_m,1)$, and $\ell_C(z;p_m,w,1)$ after MAH. Then the post-MAH labor-market closure is
+\begin{equation}
+\begin{aligned}
+\int \ell_A(z;w,1)\mu_A^1(\dd z)
+&+\int \ell_B(z;p_m,1)\mu_B^1(\dd z) \\
+&+\int \ell_C(z;p_m,w,1)\mu_C^1(\dd z) \\
+&+\sum_{j\in\{A,B,C\}}\ell_E^jn_E^j(1)=\Lbar.
+\end{aligned}
+\label{eq:labor_clear}
+\end{equation}
+
+\subsection{Post-MAH stationary measures}
+
+For any measurable set $B\subseteq Z$, the next-period measure of post-MAH type $j$ firms is
+\begin{equation}
+\mu_j^{1\prime}(B)
+=
+\sum_{s\in\{A,B,C\}}\int \1\{g_s^1(z)=j\}Q_j^1(B\mid z)\mu_s^1(\dd z)
++n_E^j(1)G(B),
+\qquad j\in\{A,B,C\},
+\label{eq:stationary_measure_post}
+\end{equation}
+where $g_s^1(z)$ is the optimal post-MAH organizational policy. A post-MAH stationary equilibrium requires $\mu_j^{1\prime}=\mu_j^1$ for each $j$.
+
+\begin{definition}[Pre/post stationary equilibrium with reform mapping]
+For the pre-MAH regime, a stationary equilibrium consists of $V_I$, $x_I^*$, $\mu_I^0$, pre-MAH entry, and price $w$ such that bundled incumbents solve equation \eqref{eq:VI}, free entry holds, the labor market clears, and the pre-MAH bundled measure is stationary.
+
+At the reform date, the one-time mapping $\Xi_{\mathrm{MAH}}(j\mid z)$ maps the pre-MAH bundled measure into initial post-MAH measures.
+
+For the post-MAH regime, a stationary equilibrium consists of $\{V_A,V_B,V_C\}$, operating policy rules $\{x_A^*,x_B^*,m^*\}$, organizational policy rules $\{g_A^1,g_B^1,g_C^1\}$, stationary measures $\{\mu_A^1,\mu_B^1,\mu_C^1\}$, entrant masses $\{n_E^A(1),n_E^B(1),n_E^C(1)\}$, and prices $(w,p_m)$ such that incumbents solve the Bellman system in equations \eqref{eq:VA}--\eqref{eq:VC}, entrants satisfy the free-entry conditions, the qualified contract-manufacturing market clears, the labor market clears, and the post-MAH measures are stationary.
+\end{definition}
+
+\section{New original-drug products and empirical counterparts}
+
+The object of interest is the number of \emph{new original-drug products} commercialized. Before MAH,
+\begin{equation}
+\Inew(0)=\int \lambda_I(z)x_I^*(z)\mu_I^0(\dd z).
+\label{eq:Ipre}
+\end{equation}
+After MAH,
+\begin{equation}
+\Inew(1)=\int \lambda_A(z)x_A^*(z)\mu_A^1(\dd z)+\int \lambda_B(z,p_m,1)x_B^*(z;p_m,1)\mu_B^1(\dd z).
+\label{eq:Ipost}
+\end{equation}
+
+The model now yields four distinct empirical objects:
+\begin{enumerate}[leftmargin=2em]
+    \item \textbf{Pre-MAH bundled persistence object:}
+    \[
+    \bigl(P_{II}^0,P_{I,\mathrm{exit}}^0\bigr).
+    \]
+    This is the correct within-regime pre-MAH object.
+    \item \textbf{Reform-era splitting vector:}
+    \[
+    \mathbf R=\bigl(R_{IA},R_{IB},R_{IC},R_{I,\mathrm{exit}}\bigr).
+    \]
+    This is the one-time organizational conversion object at the policy event.
+    \item \textbf{Post-MAH incumbent transition matrix:}
+    \[
+    \mathbf P^1.
+    \]
+    This is the ordinary within-regime post-MAH transition object.
+    \item \textbf{Post-MAH entry composition:}
+    \[
+    \mathbf e^1.
+    \]
+    This is the object that captures how the reform changes the organizational composition of new firms.
+\end{enumerate}
+
+This decomposition is exactly why the paper should not force the same transition matrix to span both sides of the policy event. Reform changes the persistent state space itself.
+
+\section{Assumptions and comparative statics}
+
+\begin{assumption}[Regularity]
+$Z$ is compact. The transition kernels $Q_I^0$ and $Q_j^1$ are weakly continuous in $z$. Flow-payoff functions are bounded and continuous in their arguments.
+\end{assumption}
+
+\begin{assumption}[Convexity]
+$\eta>1$, $c_m>0$, and $c_{mm}>0$. The innovation blocks and the manufacturing block are well behaved.
+\end{assumption}
+
+\begin{assumption}[Policy effect]
+MAH strictly lowers the commercialization friction for research specialization and weakly lowers selected post-MAH switching costs:
+\[
+\tau_M(1)<\tau_M(0),
+\qquad
+\kappa_{sj}(1)\le \kappa_{sj}(0)
+\text{ for } s,j\in\{A,B,C\},\ s\neq j.
+\]
+\end{assumption}
+
+\begin{proposition}[Reform expands the feasible organizational set]
+Relative to the pre-MAH environment, MAH changes the firm's feasible persistent organizational set from $\{I,\mathrm{exit}\}$ to $\{A,B,C,\mathrm{exit}\}$. Therefore, the policy shock is not merely a parameter shift inside a fixed-state dynamic problem; it is an expansion of the persistent organizational state space.
+\end{proposition}
+
+\begin{proposition}[MAH raises the value of research specialization]
+Suppose Assumptions 1--3 hold. Then, for any state $z$ such that post-MAH outsourced commercialization is feasible, a fall in $\tau_M(1)$ or a rise in $\lambda_B(z,p_m,1)$ raises $H_B(z;p_m,1)$ weakly, raises $x_B^*(z;p_m,1)$ weakly, and raises the reform-era choice-specific value $W_{IB}^{R}(z)$ as well as the post-MAH choice-specific value $W_{sB}^1(z)$ for every current type $s\in\{A,B,C\}$.
+\end{proposition}
+
+\begin{proof}
+Equation \eqref{eq:HB} implies that a fall in $\tau_M(1)$ or a rise in $\lambda_B$ raises the one-idea value pointwise. Equation \eqref{eq:xB} then implies that research effort rises weakly. Equation \eqref{eq:PiB} implies that the optimized current payoff of operating as a research-specialized firm rises weakly. Finally, equations \eqref{eq:reform_choice} and \eqref{eq:choice_specific_post} imply that the value of choosing type $B$ rises weakly both at the reform date and in the post-MAH regime.
+\end{proof}
+
+\begin{proposition}[MAH changes both the reform vector and the post-MAH transition matrix]
+If MAH lowers selected organizational frictions and raises the value of operating as type $B$, then the reform vector $\mathbf R$ shifts mass toward $B$ and possibly toward $A$ or $C$ depending on comparative advantage, while the post-MAH transition matrix $\mathbf P^1$ differs from the degenerate pre-MAH persistence object in equation \eqref{eq:pre_persistence}.
+\end{proposition}
+
+\begin{proof}
+Lower reform-era reorganization costs and a higher type-$B$ operating payoff expand the set of bundled firms that optimally map into $B$ at the reform date. Lower post-MAH switching costs and a higher type-$B$ operating payoff expand the post-MAH choice regions that select $B$. Hence both the one-time splitting object and the within-regime post-MAH transition object change.
+\end{proof}
+
+\begin{proposition}[MAH increases the number of new original-drug products under a net composition condition]
+Suppose MAH raises the entrant value of type $B$ and qualified contract-manufacturing supply is sufficiently elastic near the post-MAH stationary equilibrium. Then post-MAH entry composition shifts toward research-specialized firms, qualified contract-manufacturing demand rises, and the number of new original-drug products in equation \eqref{eq:Ipost} rises whenever the increase in research-specialized idea generation dominates any decline in integrated-firm original-drug effort.
+\end{proposition}
+
+\section{Calibration and empirical mapping}
+
+\subsection{Moment selection}
+
+The revised model changes the empirical object list. The central moments are now:
+\begin{enumerate}[leftmargin=2em]
+    \item the pre-MAH bundled persistence object $\bigl(P_{II}^0,P_{I,\mathrm{exit}}^0\bigr)$;
+    \item the reform-era organizational splitting vector $\mathbf R$;
+    \item the post-MAH incumbent transition matrix $\mathbf P^1$;
+    \item the post-MAH entry-composition vector $\mathbf e^1$;
+    \item pre/post counts of original-drug applications, approvals, or closely related new-product measures corresponding to $\Inew(0)$ and $\Inew(1)$;
+    \item commercialization proxies for post-MAH research-specialized firms, such as entrusted-production mentions, commissioned-manufacturing text, and selling expenses;
+    \item producer-side outcomes for post-MAH manufacturing-specialized firms, such as revenue growth, gross margin, and operating margin;
+    \item generic-product sales or production moments for bundled/integrated and manufacturing states, because the two-product structure gives generic cash flow an important role in organizational choice.
+\end{enumerate}
+
+\subsection{Moment-parameter mapping}
+
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{0.27\textwidth}P{0.30\textwidth}P{0.35\textwidth}@{}}
+\caption{Illustrative calibration and estimation map}\label{tab:calibration}\\
+\toprule
+Parameter block & Main moments & Interpretation \\
+\midrule
+\endfirsthead
+\toprule
+Parameter block & Main moments & Interpretation \\
+\midrule
+\endhead
+$\beta$ & Standard annual calibration & Discounting. \\
+$\eta,\chi_I,\chi_A,\chi_B$ & Dispersion of original-drug outcomes by organizational state & Curvature and cost of original-drug research effort. \\
+$f_I,f_A,f_B,f_C$ & Pre/post type shares and entry composition & Fixed organizational costs. \\
+$\pi_I^G,\pi_A^G,\pi_C^G$ parameters & Generic sales, margins, or production moments by state & Generic cash-flow block in the two-medicine environment. \\
+$\lambda_I,R_I,\lambda_A,R_A,R_B$ parameters & Type-specific original-drug outcomes & Commercial value of successful original-drug ideas. \\
+$\lambda_B(\cdot,1),\tau_M(1)$ & Post-MAH type-$B$ commercialization proxies and original-drug outcomes & MAH-sensitive commercialization block. \\
+$Q_I^0,Q_A^1,Q_B^1,Q_C^1,G$ & Persistence and organizational transition moments & Capability dynamics and entrant heterogeneity. \\
+$\Gamma_{Ij}$ & Reform-era splitting vector $\mathbf R$ & One-time organizational re-mapping at MAH. \\
+$\kappa_{sj}(1)$ & Post-MAH transition matrix $\mathbf P^1$ & Ordinary post-MAH switching frictions. \\
+Manufacturing cost parameters & Type-$C$ revenue, margins, and output-related moments & Producer-side technology. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Empirical mapping}
+
+The model is useful only if we map each theoretical object to a distinct empirical counterpart. Table \ref{tab:mapping} summarizes the mapping.
+
+\begin{longtable}{@{}P{0.22\textwidth}P{0.32\textwidth}P{0.36\textwidth}@{}}
+\caption{Mapping model objects to empirical counterparts}\label{tab:mapping}\\
+\toprule
+Model object & Empirical proxy & Comment \\
+\midrule
+\endfirsthead
+\toprule
+Model object & Empirical proxy & Comment \\
+\midrule
+\endhead
+$\bigl(P_{II}^0,P_{I,\mathrm{exit}}^0\bigr)$ & Pre-MAH persistence/exit of bundled firms & Correct pre-reform within-regime object. \\
+$\mathbf R$ & Reform-era conversion shares from pre-MAH bundled firms into mixed, R\&D, production, or exit categories & One-time policy-event mapping; not a stationary transition matrix. \\
+$\mathbf P^1$ & Post-MAH transition matrix across mixed, R\&D, production, and exit categories & Key post-reform incumbent-reorganization object. \\
+$\mathbf e^1$ & Post-MAH entry composition by first observed organizational type & Must be separated from incumbent switching. \\
+$\Inew(0),\Inew(1)$ & Original-drug applications, approvals, or closely related new-product counts & Main policy outcome. \\
+Commercialization block & Entrusted-production text, commissioned-manufacturing text, selling expenses & Indirect evidence on MAH-enabled commercialization. \\
+Generic cash-flow block & Generic sales, generic approvals, or generic-product production by state & Needed because the model has two medicines. \\
+Type-$C$ producer-side block & Gross margin, operating margin, revenue growth for production firms & Needed for the post-MAH supply-side equilibrium discussion. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Practical estimation}
+
+A practical strategy is simulated method of moments or indirect inference. One solves the pre-MAH stationary equilibrium on the bundled state space, applies the reform mapping once, then solves the post-MAH stationary equilibrium on the $A/B/C$ state space. The target moments are the pre-MAH bundled persistence object, the reform splitting vector, the post-MAH transition matrix, the post-MAH entry-composition vector, new original-drug products, commercialization proxies, and producer-side moments.
+
+\section{Why this is the right level of aggregation}
+
+The point of the model is not to build a large whole-economy macro system. The point is to build the smallest industry dynamic model that is still faithful to the MAH institution. The MAH shock does three things that the model must capture:
+\begin{enumerate}[leftmargin=2em]
+    \item it expands the persistent organizational state space,
+    \item it creates a one-time organizational splitting event at reform,
+    \item it generates a new post-MAH within-regime transition system among $A$, $B$, and $C$ firms.
+\end{enumerate}
+A larger model would add complexity without improving the fit to the institutional question or the empirical design.
+
+\section{References}
+
+\begin{thebibliography}{99}
+
+\bibitem[Acemoglu and Linn(2004)]{AcemogluLinn2004}
+Acemoglu, Daron, and Joshua Linn. 2004.
+\newblock Market Size in Innovation: Theory and Evidence from the Pharmaceutical Industry.
+\newblock \emph{Quarterly Journal of Economics} 119(3): 1049--1090.
+
+\bibitem[Aghion et~al.(2005)Aghion, Bloom, Blundell, Griffith, and Howitt]{AghionEtAl2005}
+Aghion, Philippe, Nick Bloom, Richard Blundell, Rachel Griffith, and Peter Howitt. 2005.
+\newblock Competition and Innovation: An Inverted-U Relationship.
+\newblock \emph{Quarterly Journal of Economics} 120(2): 701--728.
+
+\bibitem[Akcigit and Kerr(2018)]{AkcigitKerr2018}
+Akcigit, Ufuk, and William R. Kerr. 2018.
+\newblock Growth through Heterogeneous Innovations.
+\newblock \emph{Journal of Political Economy} 126(4): 1374--1443.
+
+\bibitem[Arora et~al.(2001)Arora, Fosfuri, and Gambardella]{AroraFosfuriGambardella2001}
+Arora, Ashish, Andrea Fosfuri, and Alfonso Gambardella. 2001.
+\newblock \emph{Markets for Technology: The Economics of Innovation and Corporate Strategy}.
+\newblock Cambridge, MA: MIT Press.
+
+\bibitem[Arora and Merges(2004)]{AroraMerges2004}
+Arora, Ashish, and Robert P. Merges. 2004.
+\newblock Specialized Supply Firms, Property Rights and Firm Boundaries.
+\newblock \emph{Industrial and Corporate Change} 13(3): 451--475.
+
+\bibitem[Arrow(1962)]{Arrow1962}
+Arrow, Kenneth J. 1962.
+\newblock Economic Welfare and the Allocation of Resources for Invention.
+\newblock In \emph{The Rate and Direction of Inventive Activity: Economic and Social Factors}, 609--626.
+\newblock Princeton, NJ: Princeton University Press.
+
+\bibitem[Chandra et~al.(2026)Chandra, Kao, Miller, and Stern]{ChandraEtAl2026}
+Chandra, Amitabh, Jennifer Kao, Kathleen L. Miller, and Ariel D. Stern. 2026.
+\newblock Regulatory Incentives for Innovation: The FDA's Breakthrough Therapy Designation.
+\newblock \emph{Review of Economics and Statistics} 108(2): 470--487.
+
+\bibitem[Cunningham et~al.(2021)Cunningham, Ederer, and Ma]{CunninghamEdererMa2021}
+Cunningham, Colleen, Florian Ederer, and Song Ma. 2021.
+\newblock Killer Acquisitions.
+\newblock \emph{Journal of Political Economy} 129(3): 649--702.
+
+\bibitem[Ericson and Pakes(1995)]{EricsonPakes1995}
+Ericson, Richard, and Ariel Pakes. 1995.
+\newblock Markov-Perfect Industry Dynamics: A Framework for Empirical Work.
+\newblock \emph{Review of Economic Studies} 62(1): 53--82.
+
+\bibitem[Fons-Rosen et~al.(2026)Fons-Rosen, Roldan-Blanco, and Schmitz]{FonsRosenRoldanBlancoSchmitz2026}
+Fons-Rosen, Christian, Pau Roldan-Blanco, and Tom Schmitz. 2026.
+\newblock The Effects of Startup Acquisitions on Innovation and Economic Growth.
+\newblock BSE Working Paper 1560.
+
+\bibitem[Gans and Stern(2000)]{GansStern2000}
+Gans, Joshua S., and Scott Stern. 2000.
+\newblock Incumbency and R\&D Incentives: Licensing the Gale of Creative Destruction.
+\newblock \emph{Journal of Economics \& Management Strategy} 9(4): 485--511.
+
+\bibitem[Gans and Stern(2003)]{GansStern2003}
+Gans, Joshua S., and Scott Stern. 2003.
+\newblock The Product Market and the Market for ``Ideas'': Commercialization Strategies for Technology Entrepreneurs.
+\newblock \emph{Research Policy} 32(2): 333--350.
+
+\bibitem[Gans et~al.(2008)Gans, Hsu, and Stern]{GansHsuStern2008}
+Gans, Joshua S., David H. Hsu, and Scott Stern. 2008.
+\newblock The Impact of Uncertain Intellectual Property Rights on the Market for Ideas: Evidence from Patent Grant Delays.
+\newblock \emph{Management Science} 54(5): 982--997.
+
+\bibitem[Hopenhayn(1992)]{Hopenhayn1992}
+Hopenhayn, Hugo A. 1992.
+\newblock Entry, Exit, and Firm Dynamics in Long Run Equilibrium.
+\newblock \emph{Econometrica} 60(5): 1127--1150.
+
+\bibitem[Jia et~al.(2023)Jia, Ma, Yang, and Zhang]{JiaMaYangZhang2023}
+Jia, Ruixue, Xiao Ma, Jianan Yang, and Yiran Zhang. 2023.
+\newblock Improving Regulation for Innovation: Evidence from China's Pharmaceutical Industry.
+\newblock NBER Working Paper 31976.
+
+\bibitem[Jovanovic(1982)]{Jovanovic1982}
+Jovanovic, Boyan. 1982.
+\newblock Selection and the Evolution of Industry.
+\newblock \emph{Econometrica} 50(3): 649--670.
+
+\bibitem[Klette and Kortum(2004)]{KletteKortum2004}
+Klette, Tor Jakob, and Samuel Kortum. 2004.
+\newblock Innovating Firms and Aggregate Innovation.
+\newblock \emph{Journal of Political Economy} 112(5): 986--1018.
+
+\bibitem[Lakdawalla(2018)]{Lakdawalla2018}
+Lakdawalla, Darius. 2018.
+\newblock Economics of the Pharmaceutical Industry.
+\newblock \emph{Journal of Economic Literature} 56(2): 397--449.
+
+\bibitem[Luttmer(2007)]{Luttmer2007}
+Luttmer, Erzo G. J. 2007.
+\newblock Selection, Growth, and the Size Distribution of Firms.
+\newblock \emph{Quarterly Journal of Economics} 122(3): 1103--1144.
+
+\end{thebibliography}
+
+\end{document}

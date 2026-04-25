@@ -1,0 +1,754 @@
+% !TEX program = xelatex
+\documentclass[12pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{iftex}
+\usepackage[hidelinks]{hyperref}
+
+\setstretch{1.2}
+\emergencystretch=2em
+\setlist[itemize]{leftmargin=2em}
+\setlist[enumerate]{leftmargin=2em}
+
+\ifXeTeX\else\ifLuaTeX\else\PackageError{main-20260409}{Please compile this file with XeLaTeX or LuaLaTeX to use explicit CJK fonts}{}\fi\fi
+
+\IfFontExistsTF{Noto Serif CJK SC}{
+    \setCJKmainfont{Noto Serif CJK SC}[
+        UprightFont=*,
+        BoldFont=* Bold,
+        ItalicFont=FandolKai-Regular
+    ]
+}{
+    \setCJKmainfont{FandolSong}[
+        UprightFont=*-Regular,
+        BoldFont=*-Bold,
+        ItalicFont=FandolKai-Regular
+    ]
+}
+\IfFontExistsTF{Noto Sans CJK SC}{
+    \setCJKsansfont{Noto Sans CJK SC}[
+        UprightFont=*,
+        BoldFont=* Bold
+    ]
+}{
+    \setCJKsansfont{FandolHei}[
+        UprightFont=*-Regular,
+        BoldFont=*-Bold
+    ]
+}
+\setCJKmonofont{FandolSong}[
+    UprightFont=*-Regular,
+    BoldFont=*-Bold
+]
+
+\title{MAH Policy Note（更新版）\\
+以现有基础材料为准的统一重写稿}
+\author{}
+\date{2026年4月9日}
+
+\begin{document}
+\maketitle
+
+\begin{quote}
+说明：这不是对 \texttt{MAH\_Policy\_from\_pdf.txt} 的局部润色，而是一次基于新基础材料的重写。今后的回答、模型讨论和实证映射，均应以本稿的对象、机制、术语和识别边界为准。旧版文件可保留为历史草稿，但不再作为当前主版本。
+\end{quote}
+
+\section{本次更新到底要改什么}
+
+你现在的要求，不是把旧稿改得“更顺一点”，而是要把旧稿中已经不再稳固的那一层设定整体换掉。新的基础材料已经把论文主线收束得更清楚：
+
+\begin{quote}
+本文真正要识别的，不是 MAH 是否泛泛地提高了企业收益，也不是 MAH 是否让所有企业“更会研发”；而是 MAH 是否通过改变原研药从 invention 到 commercialization 的组织路线，提升了原研药 idea 的实现概率和实现价值。
+\end{quote}
+
+因此，旧稿里最需要更新的，不是语气，而是以下四个更深层的对象：
+
+\begin{enumerate}
+    \item \textbf{政策进入模型的原语（primitive）要改。} 旧稿中更接近把 MAH 写成一个较宽泛的制度状态变量，主要通过 $\tau_M(M)$ 和 $\lambda_B(z,p_m,M)$ 进入。现在更稳的写法是：保留 $M\in\{0,1\}$ 作为制度环境，但把真正的核心原语收束为
+    \[
+    \tau_{ext}(M),
+    \]
+    即“研发主体在保留 holder / authorization 身份时，通过外部合格生产商完成 original-drug commercialization 所面临的 route-specific governance/compliance cost”。
+
+    \item \textbf{论文的中心叙事要从 firm-state transition-centered 转向 commercialization-assignment-centered。} $A/B/C$ 三类组织状态仍然保留，但它们不再是唯一的主角。真正的一线机制是：一个原研 idea 生成之后，究竟是由谁、通过什么组织路线、在什么制度摩擦下被商业化。
+
+    \item \textbf{$A/B/C$ 的状态转移仍重要，但它现在是围绕 commercialization assignment 服务的。} 换言之，$B\to A$、$A\to B$、$B$ 留在 $B$ 但外包给 $C$，这些都不是彼此平行的故事，而是同一个问题的不同实现路径：原研药项目究竟是被内部一体化完成，还是通过 MAH 允许的外部合格生产关系完成。
+
+    \item \textbf{写作层面要更像 AEJ/JDE，但推导密度要保留。} 所以本稿采用以下折中：结构、术语、段落推进方式向顶刊模型说明靠近；但每一步都额外补上“这一步为什么这么写”的解释，尽量做到一年级博士也能顺下来。
+\end{enumerate}
+
+\section{更新后的统一定位}
+
+\subsection{论文问题}
+
+本文研究中国 MAH 制度改革是否通过\textbf{重塑原研药从 invention 到 commercialization 的组织分配方式}，促进原研药创新。
+
+这里的关键，不是“科学发现能力是否突然提高”，而是：
+
+\begin{quote}
+在改革前，缺乏内部生产能力的研发型主体即便形成 original-drug idea，也很难在保留持证地位与项目控制权的前提下，通过外部生产将其真正推向市场；而在 MAH 制度下，这条组织路线被法律承认、责任被重新分配、执行被规则标准化，从而使外部商业化成为可行且成本更低的路径。
+\end{quote}
+
+因此，这篇文章的核心边际是：
+
+\begin{quote}
+MAH 改变的是创新的组织实现条件，而不是简单改变需求、价格或科学生产率。
+\end{quote}
+
+\subsection{理论定位}
+
+本文采用的是一个\textbf{弱整合版}的新结构经济学视角下的动态行业模型。
+
+所谓“弱整合”，含义是：
+
+\begin{itemize}
+    \item 新结构经济学提供上层理论语言：产业升级、适宜制度安排、有为政府与有效市场的分工；
+    \item 但正文主模型中，MAH 仍被视为给定制度变化；
+    \item 模型的内生部分主要放在企业如何对制度边界变化作出反应：进入、退出、研发、组织重构、商业化路线选择、委托生产市场均衡。
+\end{itemize}
+
+这意味着，本文不把自己写成一个“政府最优化选择制度”的完整大模型，而是把 MAH 当作一项与当前产业升级阶段相匹配的制度供给，然后考察市场中的企业如何沿着 invention-to-commercialization 这条链条重组资源。
+
+\subsection{文献壳与真正借用的机制}
+
+更新后的文献结构应当明确分工：
+
+\begin{itemize}
+    \item \textbf{Hopenhayn / Jovanovic / Ericson--Pakes} 提供的是动态行业壳：进入、退出、状态分布、稳态均衡；
+    \item \textbf{Klette--Kortum / Akcigit--Kerr} 提供的是创新努力与行业构成逻辑；
+    \item \textbf{Arora / Gans--Stern / Arora--Merges} 提供的是“创新主体不必与实施主体完全重合”的组织经济学背景；
+    \item \textbf{FRS} 真正可借的是 invention 与 implementation 的区分，而不是 acquisition、matching 或 bargaining 的整套装置。
+\end{itemize}
+
+因此，本文最稳的模型描述不是“full firm-boundaries game”，而是：
+
+\begin{quote}
+\raggedright
+\textbf{Hopenhayn-style stationary industry shell}\\
+\textbf{+ invention/implementation split + qualified contract-manufacturing market}\\
+\textbf{+ MAH-specific external commercialization friction.}
+\end{quote}
+
+\section{相对于旧版 \texttt{MAH\_Policy\_from\_pdf.txt}，哪些地方必须显式替换}
+
+\subsection{第一处替换：\texorpdfstring{$\tau_M$}{tauM} 改写为 \texorpdfstring{$\tau_{ext}$}{tau-ext}}
+
+旧稿把 MAH 的商业化摩擦写成较宽泛的
+\[
+\tau_M(M).
+\]
+这在早期草稿中是可以接受的，但现在已经不够锋利。
+
+更新后应改写为：
+\[
+\tau_{ext}(M),
+\]
+其中 \texttt{ext} 不是“外部成本”的一般缩写，而是 \textbf{external commercialization route} 的缩写。
+
+它的定义必须写得足够窄：
+\[
+\tau_{ext}(M) \ge 0
+\]
+表示研发导向型主体在保留项目/持证主体身份的同时，通过外部合格生产商完成 original-drug commercialization 所需承担的额外治理与合规成本。
+
+这个成本包括：
+\begin{itemize}
+    \item 委托生产协议与质量协议的起草和执行；
+    \item 对受托生产方的审计、监控与协调；
+    \item holder 端的质量责任与上市放行责任；
+    \item 跨企业执行中的责任分配、可追责性与流程标准化要求。
+\end{itemize}
+
+它\textbf{不包括}：
+\begin{itemize}
+    \item 物理生产成本本身；
+    \item 科学研发成本；
+    \item 行业总需求变化；
+    \item 所有企业共同面对的一般固定成本。
+\end{itemize}
+
+因此，本稿坚持：
+\[
+\tau_{ext}=\text{route-specific governance/compliance friction of external commercialization},
+\]
+而不是
+\[
+\tau_{ext}=\text{a generic policy wedge on everything.}
+\]
+
+\subsection{第二处替换：\texorpdfstring{$\lambda_B(z,p_m,M)$}{lambdaB(z, pm, M)} 从“政策直接作用对象”改成“路线层对象”}
+
+旧稿里一个较强的设定是
+\[
+\lambda_B(z,p_m,M)
+\]
+直接由政策状态 $M$ 进入，甚至在基准版里用
+\[
+\lambda_B(z,p_m,0)=0
+\]
+去编码改革前 $B$ 型企业无法独立商业化。
+
+这个写法在理论上是可行的，但现在更稳的版本应当把\textbf{政策的主效应}从 $\lambda_B$ 上拿下来，转移到 $\tau_{ext}$ 上。
+
+因此，在更新稿里，更建议写成：
+\[
+\lambda_{ext}(z,p_m),
+\]
+即外部商业化路线在给定能力和委托生产价格下的实现成功率。
+
+而 MAH 的核心作用通过下式进入：
+\[
+\tau_{ext}^{post}<\tau_{ext}^{pre}.
+\]
+
+这样做有三个好处：
+\begin{enumerate}
+    \item 它更符合制度叙事。MAH 首先改变的是\textbf{外部商业化这条路线的治理与合规条件}；
+    \item 它避免把政策写成“无所不在地改变所有成功率”的黑箱；
+    \item 它能更清晰地区分：$p_m$ 是外部制造服务的市场价格，$\lambda_{ext}$ 是路线在技术/执行层面的实现成功率，$\tau_{ext}$ 是路线在制度/治理层面的额外摩擦。
+\end{enumerate}
+
+当然，在扩展版里，仍可以允许 MAH 弱化地改善 $\lambda_{ext}$。但在正文主版本中，最应该被强调的核心政策入口仍是 $\tau_{ext}$，而不是 $\lambda$。
+
+\subsection{第三处替换：从 firm boundary change 改写为 commercialization assignment change}
+
+旧稿强调的是：MAH 改变企业边界、企业在 $A/B/C$ 之间转移、行业出现组织重构。这些内容并不错误，但如果写得过重，会把读者往完整的 make-or-buy 模型、并购模型或不完全契约模型那里带。
+
+更新后应改成：
+
+\begin{quote}
+MAH 改变的是原研药 idea 从 invention 到 commercialization 的 assignment 规则；企业边界重构只是这种 assignment 变化在组织层面的表现。
+\end{quote}
+
+换句话说，本文的真正问题不是“企业身份到底如何跃迁”，而是“一个研发产生的原研药项目，最终由哪种组织安排完成商业化”。
+
+围绕这一点，企业状态转移仍然重要，但现在是\textbf{次级层}：
+\begin{itemize}
+    \item $B$ 保持研发专门化，同时通过 $C$ 外包商业化；
+    \item $B\to A$，通过内部一体化实现；
+    \item $A$ 继续内部研发与内部实现；
+    \item 某些项目被放弃或转让。
+\end{itemize}
+
+因此，组织状态本身不再是论文的唯一解释对象，而是承载 commercialization assignment 的载体。
+
+\subsection{第四处替换：transition matrix 仍保留，但从“唯一主对象”改成“重要验证对象”}
+
+旧稿把 incumbent transition matrix、entry composition、producer-side outcomes 放在非常突出的位置。这在老版本中合理，因为当时的叙事更偏 firm-state transition。
+
+更新后，建议把识别对象重新排序：
+
+\paragraph{第一层主对象：}
+\begin{itemize}
+    \item $B$ 型外部商业化路线采用率；
+    \item $B$ 起源项目的 conversion / realization rate；
+    \item 新原研药产品数；
+    \item 原研药占比。
+\end{itemize}
+
+\paragraph{第二层验证对象：}
+\begin{itemize}
+    \item incumbent transition matrix；
+    \item entry composition；
+    \item $C$ 型生产方收入、利润或产能利用率；
+    \item 与受托生产相关的文本和制度执行证据。
+\end{itemize}
+
+这并不是否定 transition matrix 的价值，而是让它回到更准确的位置：
+
+\begin{quote}
+它是检验企业重组是否发生的重要证据，但不再是唯一主线；真正的一线机制是 external commercialization route 是否被打开，以及这一点是否让原研药项目更容易落地。
+\end{quote}
+
+\section{更新后的核心机制表述}
+
+现在可以把整篇文章的机制压缩成一条更锋利的链条：
+\[
+MAH
+\Rightarrow
+\tau_{ext}\downarrow
+\Rightarrow
+H_B^{ext}\uparrow
+\Rightarrow
+\Psi_B\uparrow
+\Rightarrow
+x_B\uparrow,\; V_B\uparrow,\; Entry_B\uparrow,\; Conv^B\uparrow,\; N^O\uparrow.
+\]
+
+逐步解释如下。
+
+\subsection{第一步：MAH 降低外部商业化路径的治理与合规摩擦}
+
+改革前，研发型主体若没有内部生产能力，要把 original-drug idea 做成真正上市产品，必须面对很高的跨企业执行摩擦。改革后，外部商业化关系被重新法律化、标准化，于是：
+\[
+\tau_{ext}^{post}<\tau_{ext}^{pre}.
+\]
+
+\subsection{第二步：每个 B 型 idea 的预期净值上升}
+
+设 $B$ 型企业通过外部合格生产实现一个 original-drug idea 的净收益为
+\[
+H_B^{ext}(z,p_m;M)=\lambda_{ext}(z,p_m)R_B(z)-p_m-\tau_{ext}(M).
+\]
+
+其中：
+\begin{itemize}
+    \item $R_B(z)$：成功商业化后的私人收益；
+    \item $\lambda_{ext}(z,p_m)$：路线成功率；
+    \item $p_m$：外包生产服务价格；
+    \item $\tau_{ext}(M)$：制度性治理/合规摩擦。
+\end{itemize}
+
+于是
+\[
+\frac{\partial H_B^{ext}}{\partial \tau_{ext}}=-1,
+\qquad
+\frac{\partial H_B^{ext}}{\partial M}>0
+\quad \text{if } \tau_{ext}'(M)<0.
+\]
+
+含义非常直接：MAH 不是让 idea “更科学”，而是让 idea “更可做成产品”。
+
+\subsection{第三步：B 型企业的研发激励上升}
+
+令 $x_B\ge 0$ 表示 $B$ 型企业的 idea generation intensity，凸成本为
+\[
+\frac{\chi_B}{\eta}x_B^{\eta},\qquad \eta>1.
+\]
+
+如果一单位 idea 的最优实现价值记为
+\[
+\Psi_B(z;p_m,M)=\max\{H_B^{ext}(z,p_m;M),\;H_B^{int}(z),\;H_B^{tr}(z),\;0\},
+\]
+则 $B$ 型企业的优化后流量收益为
+\[
+\Pi_B(z;p_m,M)= -f_B+ \max_{x_B\ge 0}\left\{x_B\Psi_B(z;p_m,M)-\frac{\chi_B}{\eta}x_B^{\eta}\right\}.
+\]
+
+只要 MAH 使 $\Psi_B$ 上升，最优研发强度就会随之上升：
+\[
+ x_B^*(z;p_m,M)=\left(\frac{\Psi_B(z;p_m,M)}{\chi_B}\right)^{\frac{1}{\eta-1}}
+ \quad \text{if } \Psi_B>0.
+\]
+
+\subsection{第四步：研发专门化主体的生存价值与进入吸引力上升}
+
+当 $\Pi_B$ 上升时，留在 $B$ 状态的 continuation value 上升，于是：
+\begin{itemize}
+    \item 现有 $B$ 型企业更有动力继续经营；
+    \item 潜在进入者更愿意以研发专门化主体进入；
+    \item 外部资本更可能支持缺乏内部工厂但具研发能力的主体。
+\end{itemize}
+
+因此，MAH 通过组织实现条件提升 innovation 的 ex ante expected return。
+
+\subsection{第五步：真正实现商业化的原研药项目数上升}
+
+最终政策效果不应只写成“研发投入更多”，而应落在：
+\begin{itemize}
+    \item 有多少原研药 idea 真的被推进到 commercialization；
+    \item 有多少原研药产品最终实现上市或近似商业化；
+    \item 原研药在全部新产品中的占比是否提高。
+\end{itemize}
+
+这正是本文最应该强调的 outcome margin。
+
+\section{更新后的经济环境与变量分工}
+
+\subsection{时间、企业类型与产品类别}
+
+时间离散，$t=0,1,2,\ldots$。
+
+行业中存在两类药品：
+\[
+ k\in\{G,O\},
+\]
+其中 $G$ 表示仿制药，$O$ 表示原研药。
+
+之所以保留两类药品，是因为：
+\begin{itemize}
+    \item 仿制药提供现金流与生产需求；
+    \item MAH 改变的主要是 original-drug idea 的商业化环境；
+    \item 如果完全去掉 $G$，模型就会失去现实中的资金与产能背景。
+\end{itemize}
+
+活跃企业组织状态为：
+\[
+ s\in\{A,B,C\},
+\]
+其中：
+\begin{itemize}
+    \item $A$：研发与生产一体化企业；
+    \item $B$：研发专门化企业；
+    \item $C$：生产专门化企业；
+    \item 另有潜在进入者 $E$。
+\end{itemize}
+
+\subsection{状态变量}
+
+基准版保留一维能力状态：
+\[
+ z\in Z\subset \mathbb R_+.
+\]
+
+这里的 $z$ 不应理解为狭义工厂 TFP，而应解释为：
+
+\begin{quote}
+\textbf{research-commercialization capability}。
+\end{quote}
+
+即它综合反映：
+\begin{itemize}
+    \item 原研药 idea generation 的能力；
+    \item 项目推进与注册协同能力；
+    \item commercialization execution 能力；
+    \item 组织适应和重构能力；
+    \item 在外部商业化路线下利用制度改革的能力。
+\end{itemize}
+
+坚持一维 $z$ 的原因有两个：第一，当前数据未必足以分别识别纯研发能力与纯商业化执行能力；第二，MAH 的主问题本来就是 invention 到 commercialization 这一整条链上的组织实现能力。
+
+如果以后数据足够丰富，再扩展为二维：
+\[
+ z=(z_R,z_C),
+\]
+其中 $z_R$ 表示研发能力，$z_C$ 表示商业化/执行能力。但在当前阶段，一维基准版更稳。
+
+\subsection{价格}
+
+保留两个关键价格：
+\[
+ w \quad \text{and} \quad p_m,
+\]
+其中：
+\begin{itemize}
+    \item $w$：工资或综合要素价格；
+    \item $p_m$：合格委托生产服务价格。
+\end{itemize}
+
+$p_m$ 与 $\tau_{ext}$ 必须严格区分：
+\begin{itemize}
+    \item $p_m$ 是市场中支付给外部生产方的价格；
+    \item $\tau_{ext}$ 是走这条外部商业化路线时额外承担的制度性治理摩擦。
+\end{itemize}
+
+这是旧稿中最容易混淆、而更新稿必须写清楚的一点。
+
+\subsection{静态投入与动态控制}
+
+这里必须沿用你已经确定下来的写法。
+
+\paragraph{静态投入}
+\begin{itemize}
+    \item labor $n$；
+    \item capital services $k$；
+    \item intermediates $m$；
+    \item 必要时的 manufacturing quantity 或 manufacturing service intensity。
+\end{itemize}
+
+这些变量首先影响的是当期 operating profit，因此在基准版中\textbf{先被优化掉}，进入 $\bar\pi_A$ 与 $\bar\pi_C$，而不直接作为 Bellman 的核心动态控制变量。
+
+\paragraph{动态控制}
+真正进入 Bellman 递归的对象应当是：
+\begin{itemize}
+    \item $x_A$：$A$ 型企业的 original-drug 研发强度；
+    \item $x_B$：$B$ 型企业的 idea generation 强度；
+    \item $h$：$B$ 型 idea 的 commercialization route；
+    \item $j$：下一期组织状态选择（stay / switch / exit）；
+    \item 进入与退出决策。
+\end{itemize}
+
+这一定义分工要保持，因为它最符合你这篇文章的研究问题：本文不是资本深化模型，不是 labor adjustment 模型，而是组织路线模型。
+
+\section{静态块与流量收益的更新写法}
+
+\subsection{A 型企业：内部一体化研发与生产}
+
+先定义 $A$ 型企业的静态经营收益：
+\[
+\bar\pi_A(z;w,r,c_m)=\max_{n,k,m}\left\{ p_A q_A(n,k,m;z)-wn-rk-c_m m \right\}.
+\]
+
+这只是优化后的静态经营块，还不是完整的流量收益。
+
+然后定义其 original-drug 研发块：
+\[
+\max_{x_A\ge 0}\left\{ x_A\Omega_A(z)-\frac{\chi_A}{\eta}x_A^{\eta}\right\},
+\qquad \eta>1.
+\]
+
+因此 $A$ 型企业的优化后流量收益为：
+\[
+\Pi_A(z)=\bar\pi_A(z;w,r,c_m)+\max_{x_A\ge 0}\left\{ x_A\Omega_A(z)-\frac{\chi_A}{\eta}x_A^{\eta}\right\}-f_A.
+\]
+
+\subsection{C 型企业：生产专门化与委托生产供给}
+
+对 $C$ 型企业，静态收益写为：
+\[
+\bar\pi_C(z;p_m,w,r,c_c)=\max_{n,k,m_c}\left\{ p_m y_C(n,k,m_c;z)-wn-rk-c_c m_c\right\}.
+\]
+
+这里 $p_m$ 直接进入 $C$ 型企业收益，因为它代表 qualified contract manufacturing 的市场价格。
+
+随后 $C$ 的完整流量收益可简写为：
+\[
+\Pi_C(z;p_m,w)=\bar\pi_C(z;p_m,w,r,c_c)-f_C,
+\]
+或在扩展版中再加入组织升级选项。
+
+\subsection{B 型企业：idea generation 与路线选择}
+
+$B$ 型企业最关键的是：它不以静态生产最优为中心，而以\textbf{idea generation + commercialization route choice} 为中心。
+
+令 $h\in\mathcal H$ 表示 $B$ 型 idea 的可选实现路径。基准版建议：
+\[
+\mathcal H=\{\text{externalize},\text{integrate},\text{transfer},\text{abandon}\}.
+\]
+
+\paragraph{外部商业化路线}
+对 ext 路线，定义：
+\[
+H_B^{ext}(z,p_m;M)=\lambda_{ext}(z,p_m)R_B(z)-p_m-\tau_{ext}(M).
+\]
+
+这里的四项分别是：
+\begin{itemize}
+    \item $\lambda_{ext}(z,p_m)$：在外部生产路线下成功实现商业化的概率或成功率；
+    \item $R_B(z)$：一旦成功商业化之后的私人回报；
+    \item $p_m$：给外部合格生产方的市场支付；
+    \item $\tau_{ext}(M)$：走这条路线的额外治理与合规摩擦。
+\end{itemize}
+
+\paragraph{内部整合路线}
+如果 $B$ 通过转向 $A$ 来内部化实现，则可写作：
+\[
+H_B^{int}(z;M)=\lambda_A(z)R_A(z)-\kappa_{BA}(M).
+\]
+
+这里 $\kappa_{BA}(M)$ 表示从研发专门化转为一体化的组织重构成本。
+
+\paragraph{转让/放弃路线}
+如果将项目转让给一体化主体，可记作 $H_B^{tr}(z)$；若最终不实现，则为 $0$。
+
+于是，一单位 idea 的最优实现价值为：
+\[
+\Psi_B(z;p_m,M)=\max\{H_B^{ext}(z,p_m;M),\;H_B^{int}(z;M),\;H_B^{tr}(z),\;0\}.
+\]
+
+接着，$B$ 型企业的流量收益为：
+\[
+\Pi_B(z;p_m,M)= -f_B+\max_{x_B\ge 0}\left\{x_B\Psi_B(z;p_m,M)-\frac{\chi_B}{\eta}x_B^{\eta}\right\}.
+\]
+
+这个写法比旧稿更清楚，因为它把“政策影响发生在哪里”明确压到了 $\Psi_B$ 的 route-specific 部分，而不是笼统地压在企业整体收益上。
+
+\section{Bellman 系统的更新写法}
+
+\subsection{总原则}
+
+Bellman 方程现在要围绕\textbf{优化后的流量收益}来写，而不是把 labor、capital、materials 等静态选择每期反复展开。
+
+\subsection{B 型企业的 Bellman}
+
+令 $V_B(z;M)$ 表示企业在状态 $z$、制度环境 $M$ 下作为 $B$ 型企业的价值。
+
+若其可以：留在 $B$、转为 $A$、转为 $C$、退出，则有：
+\[
+W_{BB}(z;M)=\Pi_B(z;p_m,M)+\beta E[V_B(z';M)\mid z,B],
+\]
+\[
+W_{BA}(z;M)= -\kappa_{BA}(M)+\Pi_A(z)+\beta E[V_A(z';M)\mid z,A],
+\]
+\[
+W_{BC}(z;M)= -\kappa_{BC}(M)+\Pi_C(z;p_m,w)+\beta E[V_C(z';M)\mid z,C].
+\]
+
+因此：
+\[
+V_B(z;M)=\max\{W_{BB}(z;M),\;W_{BA}(z;M),\;W_{BC}(z;M),\;0\}.
+\]
+
+这套写法里最关键的一句解释必须写出来：
+
+\begin{quote}
+$\tau_{ext}$ 进入 $V_B$ 的主要渠道，是留在研发专门化状态并走 external commercialization route 的 choice-specific value，而不是所有状态价值一起被政策直接平移。
+\end{quote}
+
+\subsection{A 与 C 型企业的 Bellman}
+
+同理可写：
+\[
+V_A(z;M)=\max_{j\in\mathcal J(A)}\left\{\Pi_j(z;M)-\kappa_{Aj}(M)+\beta E[V_j(z';M)\mid z,j]\right\},
+\]
+\[
+V_C(z;M)=\max_{j\in\mathcal J(C)}\left\{\Pi_j(z;M)-\kappa_{Cj}(M)+\beta E[V_j(z';M)\mid z,j]\right\}.
+\]
+
+但在论文说明中，要强调：$A/B/C$ 的 Bellman 是行业动态壳；真正对 MAH 最敏感的一块是 $B$ 型 idea 的 external commercialization value。这能避免把论文写得像对称三状态切换模型，而弱化 MAH 的制度特异性。
+
+\section{更新后的比较静态与命题方向}
+
+更新后，最自然的命题顺序应当改为以下四组。
+
+\subsection{命题 1：MAH 提高研发专门化主体的外部商业化价值}
+
+若
+\[
+\tau_{ext}^{post}<\tau_{ext}^{pre},
+\]
+则对所有使外部商业化可行的状态 $z$，
+\[
+H_B^{ext}(z,p_m;post) > H_B^{ext}(z,p_m;pre)
+\]
+在非退化状态集合上成立。
+
+\subsection{命题 2：MAH 提高 B 型 idea generation 强度与 B 型价值}
+
+若 $\Psi_B$ 上升，则：
+\[
+x_B^*(z;p_m,post)\ge x_B^*(z;p_m,pre),
+\qquad
+V_B(z;post)\ge V_B(z;pre).
+\]
+
+\subsection{命题 3：MAH 提高 external commercialization adoption 与 B-originated conversion}
+
+若 external route 的 choice-specific value 上升，则：
+\begin{itemize}
+    \item $B$ 型外包商业化采用率上升；
+    \item $B$ 起源项目的实现率上升；
+    \item 新原研药产品数上升。
+\end{itemize}
+
+\subsection{命题 4：transition、producer-side outcomes 与 surplus 不必和 innovation 一一对应}
+
+MAH 可以提高原研药实现数，但：
+\begin{itemize}
+    \item 传统一体化企业利润未必同步上升；
+    \item $C$ 型企业收益上升程度取决于 $p_m$ 和供给弹性；
+    \item 行业 surplus 与创新数量不必一一对应。
+\end{itemize}
+
+这部分应保留，因为它能防止论文把“创新结果增加”粗暴等同于“所有维度都改善”。
+
+\section{识别边界与实证映射也要同步更新}
+
+\subsection{识别边界}
+
+本稿坚持一个重要边界：
+
+\begin{quote}
+仅凭创新结果数据，不能声称直接识别 $\tau_{ext}$ 或 $\lambda_{ext}$ 这样的结构原语。
+\end{quote}
+
+因此，$\tau_{ext}$ 是一个\textbf{latent structural friction}，它不是由单一变量“直接估计”出来的，而是由一组矩共同约束。
+
+\subsection{更新后的核心实证对象}
+
+比起旧稿，更应优先强调以下对象：
+
+\begin{enumerate}
+    \item \textbf{route adoption}
+    \[
+    \chi_{ipt}^{B\to ext}=1\{\text{B-type holder uses an external qualified manufacturer}\}.
+    \]
+
+    \item \textbf{B-originated conversion rate}
+    \[
+    Conv_t^B=
+    \frac{\#\{\text{B-originated original-drug products realized}\}}
+         {\#\{\text{B-originated projects/applications}\}}.
+    \]
+
+    \item \textbf{new original-drug products commercialized}
+    \[
+    N_t^O=\#\{\text{new original-drug products commercialized at time } t\}.
+    \]
+
+    \item \textbf{heterogeneity by external manufacturing capacity}
+
+    构造政策前外部合格生产资源：
+    \[
+    \begin{aligned}
+    Cap_{r,d,0}
+    =
+    \#\bigl\{\,&\text{qualified manufacturers in region } r \\
+    &\text{and dosage/process class } d \text{ before MAH}\,\bigr\}.
+    \end{aligned}
+    \]
+
+    若 MAH 真是通过降低 external commercialization 的治理摩擦起作用，则它的效果应在 $Cap_{r,d,0}$ 较高的地方更强。
+\end{enumerate}
+
+\subsection{transition matrix 现在怎样用}
+
+现在更好的写法是：
+\begin{itemize}
+    \item transition matrix 用来验证企业组织重构确实发生；
+    \item entry composition 用来验证研发专门化主体的进入边际是否增强；
+    \item producer-side outcomes 用来验证外部生产方是否因路线打开而受益；
+    \item 但核心机制仍由 route adoption 与 conversion rate 承载。
+\end{itemize}
+
+\section{更新后的摘要级别写法}
+
+如果把整篇更新后的版本压成接近 AEJ/JDE 的摘要口径，可以写成：
+
+\begin{quote}
+本文构建一个动态行业模型，研究中国 MAH 制度改革如何通过改变原研药从 invention 到 commercialization 的组织实现路径，影响原研药创新。模型中存在研发与生产一体化企业、研发专门化企业与生产专门化企业。MAH 的核心作用并非直接提高科学研发生产率，也非简单改变市场需求，而是降低研发主体在保留持证身份的前提下通过外部合格生产实现原研药商业化的治理与合规摩擦。我们将该制度效应写为 external commercialization route-specific friction $\tau_{ext}$ 的下降，并将其嵌入 invention/implementation 分离、委托生产市场与企业动态进入退出框架之中。该机制提高研发专门化主体每个 original-drug idea 的预期实现价值，从而提高研发强度、研发型进入和 B-originated 项目的 commercial realization rate。模型进一步给出关于 external route adoption、企业组织重构、新原研药产品数与原研药占比的可检验预测。
+\end{quote}
+
+\section{对旧稿的操作性处理建议}
+
+为了避免之后反复冲突，建议你从现在开始把旧版 \texttt{MAH\_Policy\_from\_pdf.txt} 中以下对象视为“待替换对象”：
+
+\subsection{应当替换}
+\begin{itemize}
+    \item $\tau_M(M)$ 的宽泛写法 $\to$ 改成 $\tau_{ext}(M)$；
+    \item $\lambda_B(z,p_m,M)$ 作为政策主效应承载对象 $\to$ 改成 $\lambda_{ext}(z,p_m)$ 为路线成功率，政策主效应主要通过 $\tau_{ext}$；
+    \item “MAH 改变 firm boundaries” 作为全文第一主句 $\to$ 改成 “MAH 改变 original-drug idea 的 commercialization assignment”；
+    \item transition matrix 作为唯一主识别对象 $\to$ 改成 route adoption / conversion / new original-drug realization 为第一层主对象。
+\end{itemize}
+
+\subsection{应当保留但降级为辅助层}
+\begin{itemize}
+    \item $A/B/C$ 三状态；
+    \item switching cost $\kappa_{sj}$；
+    \item incumbent transition matrix；
+    \item producer-side outcomes；
+    \item 一般均衡价格 $w,p_m$；
+    \item surplus / welfare discussion。
+\end{itemize}
+
+\subsection{应当明确保留}
+\begin{itemize}
+    \item 两类药品 $G/O$；
+    \item invention/implementation 区分；
+    \item Hopenhayn 式进入退出与稳态壳；
+    \item 静态投入先优化掉、Bellman 用 flow payoff；
+    \item 一维基准状态 $z = \text{research-commercialization capability}$。
+\end{itemize}
+
+\section{本稿作为之后回答的约束}
+
+从现在起，如果后续讨论继续推进模型、实证或论文写作，应以以下六条作为硬约束：
+\begin{enumerate}
+    \item MAH 的核心机制是 external commercialization route 的治理/合规摩擦下降；
+    \item $\tau_{ext}$ 是最核心的制度原语；
+    \item $A/B/C$ 是组织状态壳，不是唯一主线；
+    \item 真正的一线问题是 original-drug idea 的 commercialization assignment；
+    \item Bellman 应写成 optimized flow payoffs，而不是把静态生产块全部塞进去；
+    \item 正文主模型保持弱整合版 NSE 视角，不扩张成完整政府制度最优化模型。
+\end{enumerate}
+
+\section{最后一句话总结}
+
+\begin{quote}
+旧版 \texttt{MAH\_Policy\_from\_pdf.txt} 的问题，不在于它“太粗糙”，而在于它的主语已经不够准确。更新后的主语不再是“MAH broadly changes firm boundaries”，而应当是“MAH lowers the route-specific governance/compliance friction of external commercialization for research-originated original-drug ideas, thereby changing commercialization assignment, entry incentives, and realized original-drug innovation.”
+\end{quote}
+
+\end{document}
