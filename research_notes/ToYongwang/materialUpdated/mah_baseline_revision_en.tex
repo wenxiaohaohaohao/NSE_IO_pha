@@ -1,0 +1,579 @@
+% !TEX program = xelatex
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\setmainfont{DejaVu Serif}
+\setstretch{1.18}
+\setlist[itemize]{leftmargin=2em,itemsep=0.2em,topsep=0.3em}
+\setlist[enumerate]{leftmargin=2em,itemsep=0.25em,topsep=0.35em}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{Revising the Baseline MAH Model:\\Technology-Direction Choice, Type-B Firms, and Original-Drug Innovation}
+\author{}
+\date{Working memo for coauthor discussion}
+
+\begin{document}
+\maketitle
+
+\section*{Executive Summary}
+
+This memo proposes an important but disciplined revision to the current baseline model of the MAH paper: \textbf{the baseline should not mechanically specify type-B firms as choosing both $x_B^G$ and $x_B^O$.} Under the current definition, type-B firms are research-specialized / original-drug-oriented firms. Their central margin is not within-firm reallocation between generic and original-drug projects. Rather, conditional on being original-drug-oriented innovators, the key question is whether the MAH reform lowers the governance and compliance friction of the external commercialization route, $\tau_{ext}$, thereby raising the commercialization value, realization rate, entry value, and continuation value of their original-drug ideas.
+
+Therefore, the proposed baseline is:
+\[
+\text{type-B: } x_B^O \quad \text{rather than} \quad (x_B^G,x_B^O).
+\]
+
+The industry-level transition from generics toward original drugs remains in the paper, but it should not be interpreted as a within-type-B $G/O$ reallocation. Instead, it should be decomposed into three margins:
+\[
+\Delta S_O
+=
+\Delta S_O^{A,\mathrm{within}}
++
+\Delta S_O^{B,\mathrm{entry}}
++
+\Delta S_O^{B,\mathrm{conversion}}.
+\]
+The first term captures within-firm technology-direction adjustment by type-A integrated firms. The second captures increased entry of original-drug-oriented type-B firms. The third captures a higher realization / conversion rate of type-B original-drug ideas. This revision makes the model lower-dimensional, more consistent with the economic meaning of type-B firms, and better aligned with the paper's final object: \textbf{original-drug innovation}, not organizational reallocation for its own sake.
+
+\section{Purpose of this memo}
+
+The current MAH paper has already disciplined its central mechanism. The reform is not modeled as a direct increase in scientific productivity or as a generic policy dummy. Instead, it lowers the governance and compliance friction associated with commercializing an original-drug project through an external qualified manufacturer. We denote this route-specific friction by $\tau_{ext}$. The central object of the paper is the organizational route through which an original-drug idea moves from invention to commercialization, not capital deepening, static input demand, or a broad demand shock.
+
+Building on this structure, we considered adding a technology-direction feedback, allowing firms to allocate effort between generic-oriented and original-drug-oriented projects:
+\[
+x^G,\quad x^O.
+\]
+This extension is conceptually useful. If MAH raises the commercialization value of original-drug projects, firms may not only increase total research effort but also reallocate effort from generic-oriented projects toward original-drug-oriented projects.
+
+However, a key clarification is needed: \textbf{technology-direction choice should not be mechanically placed inside the type-B block.} In the current model, type-B firms are already research-specialized and original-drug-oriented. If the data also show that type-B firms primarily conduct original-drug projects, then specifying type-B firms as choosing large amounts of both $x_B^G$ and $x_B^O$ in the baseline would over-refine the model and potentially mismatch the empirical object.
+
+The purpose of this memo is to propose a more robust baseline structure for coauthor discussion and for subsequent integration into the main paper.
+
+\section{Core revision}
+
+The earlier candidate specification was:
+\[
+\text{type-B direction choice: } x_B^G,\ x_B^O.
+\]
+
+The revised baseline is:
+\[
+\text{type-B original-drug effort: } x_B^O.
+\]
+
+That is, type-B firms are not modeled in the baseline as allocating effort between generic-oriented and original-drug-oriented projects. Instead, they are treated as research-specialized / original-drug-oriented firms. Their key choices are original-drug idea-generation intensity and commercialization assignment.
+
+Accordingly, the rise in the industry-level original-drug share should not be interpreted as within-type-B switching from $G$ to $O$. It should instead be interpreted as the result of three margins:
+\begin{enumerate}
+    \item type-A integrated firms may reallocate project direction from $G$ toward $O$;
+    \item more original-drug-oriented type-B firms may enter or survive;
+    \item type-B original-drug ideas may be realized at a higher rate through external commercialization.
+\end{enumerate}
+
+This distinction matters. It prevents the model from compressing an industry-level upgrading outcome into a single within-type-B technology-direction choice.
+
+\section{Why the original $x_B^G,x_B^O$ specification should be revised}
+
+\subsection{The original motivation was valid}
+
+The original idea was to express the following mechanism:
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^O\uparrow,\quad x_B^G \text{ becomes relatively less attractive}
+\Rightarrow
+S_O\uparrow.
+\]
+
+This mechanism addresses an important issue: MAH may affect not only the commercialization value of original-drug projects but also the direction of firm research. In this sense, a $G/O$ direction choice is conceptually useful.
+
+\subsection{The issue is whether that choice belongs inside type-B firms}
+
+If type-B firms are already original-drug-oriented research firms in the data, their main margin is not generic-to-original switching. Their main margin is:
+\[
+\text{original-drug idea generation}
++
+\text{commercialization assignment}
++
+\text{realization probability}.
+\]
+
+For type-B firms, the more natural comparative static is therefore:
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^O\uparrow,\quad V_B\uparrow,\quad e_B\uparrow,\quad Conv_B^O\uparrow,
+\]
+rather than:
+\[
+\frac{x_B^O}{x_B^G}\uparrow.
+\]
+
+\subsection{The economic meaning of type-B firms should not be made too broad}
+
+The three organizational types should be interpreted as follows:
+\begin{itemize}
+    \item $A$: integrated firms that conduct research and organize commercialization internally;
+    \item $B$: research-specialized / original-drug-oriented firms that generate original-drug ideas but do not operate as full internal manufacturers in the baseline;
+    \item $C$: manufacturing-specialized firms that provide qualified external manufacturing services.
+\end{itemize}
+
+Under this definition, type-B firms are not general pharmaceutical firms. They are the research-specialized firms most exposed to a decline in $\tau_{ext}$. If the baseline also asks them to choose symmetrically between $G$ and $O$, type-B firms would carry two separate roles: the core subject of the external commercialization mechanism and the within-firm subject of generic-to-original switching. That would increase model dimensionality and blur the paper's main mechanism.
+
+\section{Revised baseline model structure}
+
+\subsection{Type-A: integrated firms that may carry the $G/O$ direction margin}
+
+Type-A firms are more likely to have generic cash flows, original-drug research capability, internal manufacturing capacity, production licenses, and broader project portfolios. Therefore, if a firm-level $G/O$ direction choice is included, type-A firms are the natural place to put it.
+
+A possible formulation is:
+\[
+\Pi_A(z;M)
+=
+\bar{\pi}_A(z)
++
+\max_{x_A^G,x_A^O\ge 0}
+\left\{
+x_A^G\Psi_A^G(z)
++
+x_A^O\Psi_A^O(z;M)
+-
+C_A(x_A^G,x_A^O;z)
+\right\}.
+\]
+Here:
+\begin{itemize}
+    \item $x_A^G$: type-A generic-oriented effort;
+    \item $x_A^O$: type-A original-drug-oriented effort;
+    \item $\Psi_A^G(z)$: per-project value of generic projects;
+    \item $\Psi_A^O(z;M)$: per-project value of original-drug projects;
+    \item $C_A(\cdot)$: direction-specific research cost function.
+\end{itemize}
+
+However, the direct MAH effect on type-A firms should not be made as strong as the effect on type-B firms, because type-A firms can already commercialize internally. The type-A direction block primarily helps explain industry-level generic-to-original reallocation. It is not the core MAH-specific mechanism. If the baseline needs to be even more parsimonious, $x_A^G,x_A^O$ can be moved to the appendix or an extension.
+
+\subsection{Type-B: the baseline keeps only $x_B^O$}
+
+The type-B flow payoff should be written as:
+\[
+\Pi_B(z;M,p_m)
+=
+-f_B
++
+\max_{x_B^O\ge 0}
+\left\{
+x_B^O\Psi_B^O(z;p_m,M)
+-
+C_B(x_B^O;z)
+\right\}.
+\]
+
+Here, $\Psi_B^O$ is the per-idea commercialization value of a type-B original-drug idea:
+\[
+\Psi_B^O(z;p_m,M)
+=
+\max
+\left\{
+H_{B,O}^{ext}(z,p_m;M),
+H_{B,O}^{alt}(z)
+\right\}.
+\]
+
+The value of the external commercialization route is:
+\[
+H_{B,O}^{ext}(z,p_m;M)
+=
+\lambda_{B,O}^{ext}(z,p_m)R_B^O(z)
+-
+p_m
+-
+\tau_{ext}(M).
+\]
+
+The terms are:
+\begin{itemize}
+    \item $R_B^O(z)$: private value of a successfully commercialized original-drug project;
+    \item $\lambda_{B,O}^{ext}(z,p_m)$: success probability or implementation efficiency of the external route;
+    \item $p_m$: price of qualified contract-manufacturing services;
+    \item $\tau_{ext}(M)$: route-specific governance and compliance friction;
+    \item $H_{B,O}^{alt}(z)$: best alternative to the external route, summarizing internalization, transfer, or abandonment.
+\end{itemize}
+
+This revision does not reject the commercialization-assignment structure. It simply contracts the type-B technology-direction choice from $(x_B^G,x_B^O)$ to $x_B^O$, making the baseline more consistent with the definition of type-B firms.
+
+\subsection{Type-C: qualified manufacturing service providers}
+
+Type-C firms should not be modeled as another equally complex innovation subject. In the baseline, they perform two functions: they provide qualified external manufacturing capacity, and they help determine the contract-manufacturing price $p_m$.
+
+A simple payoff is:
+\[
+\Pi_C(z;p_m,w)
+=
+\bar{\pi}_C(z;p_m,w).
+\]
+
+If the main text needs a market-clearing condition, it can include:
+\[
+S_m(p_m,w;M)=D_m(p_m;M).
+\]
+
+However, type-C entry, profit changes, and producer-side general-equilibrium effects should be treated as supporting mechanisms rather than final outcomes.
+
+\section{Revised mechanism chain}
+
+The revised baseline mechanism is:
+\[
+\tau_{ext}(1)<\tau_{ext}(0),
+\]
+\[
+\Rightarrow
+H_{B,O}^{ext}(z,p_m;1)
+>
+H_{B,O}^{ext}(z,p_m;0),
+\]
+\[
+\Rightarrow
+\Psi_B^O(z;p_m,1)
+\ge
+\Psi_B^O(z;p_m,0),
+\]
+\[
+\Rightarrow
+x_B^{O*}(z;p_m,1)
+\ge
+x_B^{O*}(z;p_m,0),
+\quad
+V_B(z;1)\ge V_B(z;0),
+\]
+\[
+\Rightarrow
+e_B(1)\ge e_B(0),
+\quad
+Conv_B^O(1)\ge Conv_B^O(0),
+\quad
+N_O(1)\ge N_O(0).
+\]
+
+The model should ultimately map into three innovation outcomes:
+\[
+N_O(M),\quad S_O(M),\quad Conv_O(M).
+\]
+Commercialization assignment is the mechanism. $N_O$, $S_O$, and $Conv_O$ are the final innovation outcomes.
+
+\section{A revised interpretation of the industry-level original-drug share}
+
+Define:
+\[
+S_O(M)
+=
+\frac{N_O(M)}{N_O(M)+N_G(M)}.
+\]
+
+Under the revised baseline, an increase in $S_O$ is not interpreted as within-type-B switching from $G$ to $O$. Instead, it comes from three margins:
+\[
+\Delta S_O
+=
+\underbrace{\Delta S_O^{A,\mathrm{within}}}_{\text{within-type-A direction change}}
++
+\underbrace{\Delta S_O^{B,\mathrm{entry}}}_{\text{more original-drug-oriented B entry}}
++
+\underbrace{\Delta S_O^{B,\mathrm{conversion}}}_{\text{higher B original-drug conversion}}.
+\]
+
+\subsection{Type-A within-firm direction change}
+
+Integrated firms may conduct both generic and original-drug projects, so their project portfolios may tilt from $G$ toward $O$:
+\[
+\frac{x_A^O}{x_A^G}\uparrow.
+\]
+This is the more natural firm-level margin for $G/O$ technology-direction choice.
+
+\subsection{Type-B entry / composition effect}
+
+MAH lowers $\tau_{ext}$ and raises the continuation and entry value of type-B firms:
+\[
+V_B\uparrow
+\Rightarrow
+e_B\uparrow.
+\]
+If type-B firms are already original-drug-oriented, increased type-B entry raises the industry-level original-drug share.
+
+\subsection{Type-B original-drug conversion effect}
+
+Even if type-B research direction is unchanged, MAH can raise the realization rate of type-B original-drug projects:
+\[
+Conv_B^O\uparrow.
+\]
+This is the link between the commercialization mechanism and innovation outcomes. The model does not infer the mechanism from innovation outcomes alone. Rather, it states that once the external commercialization route becomes feasible, original-drug ideas are more likely to become realized original-drug products.
+
+\section{Concrete revisions to the main paper}
+
+\subsection{Section 3: revise the type-B block}
+
+Replace the possible type-B direction choice
+\[
+x_B^G,\quad x_B^O
+\]
+with
+\[
+x_B^O.
+\]
+
+Suggested text:
+\begin{quote}
+In the baseline model, type-B firms are treated as research-specialized and primarily original-drug-oriented. Their central margin is not within-firm reallocation between generic and original-drug projects, but the generation and commercialization assignment of original-drug ideas.
+\end{quote}
+
+\subsection{Section 3: redefine the role of type-A firms}
+
+If technology-direction choice is retained in the main text, it should be placed primarily in the type-A block:
+\[
+x_A^G,\quad x_A^O.
+\]
+
+Suggested text:
+\begin{quote}
+Type-A firms may have broader project portfolios and therefore can allocate effort between generic-oriented and original-drug-oriented projects. This block captures the within-firm technology-direction margin among integrated firms, while the MAH-specific mechanism remains concentrated in the type-B external commercialization block.
+\end{quote}
+
+\subsection{Section 4: replace the type-B ratio prediction}
+
+Do not state the main prediction as:
+\[
+\frac{x_B^O}{x_B^G}\uparrow.
+\]
+
+Instead, state:
+\[
+x_B^O\uparrow,
+\quad
+V_B\uparrow,
+\quad
+e_B\uparrow,
+\quad
+Conv_B^O\uparrow.
+\]
+
+The industry-level prediction remains:
+\[
+S_O\uparrow,
+\]
+but the interpretation should be:
+\[
+S_O\uparrow
+\quad \text{comes from} \quad
+A\text{-within direction change}
++
+B\text{-entry/composition}
++
+B\text{-conversion}.
+\]
+
+\subsection{Section 5: add an empirical diagnostic}
+
+The empirical section should first check whether type-B firms are actually mixed $G/O$ firms. A useful diagnostic is:
+\begin{quote}
+Diagnostic: Are type-B firms actually mixed $G/O$ firms?
+\end{quote}
+
+Construct:
+\[
+Share_B^O
+=
+\frac{\# O\text{ projects by type-B firms}}
+{\# G\text{ projects by type-B firms}+\# O\text{ projects by type-B firms}}.
+\]
+If $Share_B^O$ is already high before the reform, for example close to 80\% or 90\%, type-B firms should not be treated as the main within-firm $G/O$ direction-choice subjects. The baseline should keep $x_B^O$.
+
+Also construct:
+\[
+Share_A^O
+=
+\frac{\# O\text{ projects by type-A firms}}
+{\# G\text{ projects by type-A firms}+\# O\text{ projects by type-A firms}}.
+\]
+If type-A firms have substantial activity in both $G$ and $O$, then $x_A^G,x_A^O$ has a stronger empirical foundation.
+
+\section{Revised empirical mapping}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabularx}{\textwidth}{p{0.23\textwidth}p{0.30\textwidth}Y}
+\toprule
+Mechanism object & Data object & Interpretation \\
+\midrule
+$\tau_{ext}\downarrow$ & Holder-producer split / route-use proxy & External commercialization route becomes more feasible \\
+$\Psi_B^O\uparrow$ & Higher type-B original-drug realization & Commercialization value of original-drug projects rises \\
+$x_B^O\uparrow$ & More type-B original-drug projects or applications & Response by original-drug-oriented research firms \\
+$e_B\uparrow$ & More research-oriented entry & Entry margin \\
+$Conv_B^O\uparrow$ & Higher conversion from type-B original-drug application to approval or market entry & Realization / implementation margin \\
+$S_O\uparrow$ & Higher original-drug share among realized products & Industry-level innovation-direction outcome \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The revised empirical hierarchy should place realized original-drug products, original-drug share, holder-producer split, and original-drug route-use proxies in the first layer. A/B/C transition matrices should be treated as second-layer validation margins.
+
+\section{Key points for coauthor discussion}
+
+\subsection{This does not weaken technology-direction choice; it relocates it}
+
+Technology-direction choice remains important, but it should be layered:
+\begin{itemize}
+    \item firm-level within choice: mainly type-A;
+    \item type-B margin: original-drug idea generation, entry, external commercialization, and realization;
+    \item industry-level outcome: higher original-drug share.
+\end{itemize}
+
+The paper can still study industrial upgrading from generics to original drugs, but it does not need to assign the entire process to within-type-B switching.
+
+\subsection{A more parsimonious baseline is stronger}
+
+This revision addresses concerns about excessive model dimensionality:
+\begin{itemize}
+    \item not every firm type is assigned a $G/O$ direction choice;
+    \item type-B firms do not simultaneously carry generic-to-original switching and commercialization assignment;
+    \item type-B remains the core subject of the MAH mechanism;
+    \item industry-level $S_O$ remains the final outcome.
+\end{itemize}
+
+This makes the model look more like a JDE-style mechanism model and less like an over-specified industrial-organization simulation.
+
+\subsection{Data should decide whether $x_B^G,x_B^O$ returns in an appendix}
+
+If later data show that type-B firms do have substantial generic activity and that their internal $G/O$ composition changes after the reform, the appendix can extend the model to:
+\[
+x_B^G,\quad x_B^O.
+\]
+But this should not be imposed in the baseline without empirical support.
+
+\section{Recommended final baseline specification}
+
+\subsection{Environment}
+
+\[
+s\in\{A,B,C\}.
+\]
+where:
+\begin{itemize}
+    \item $A$: integrated firms with research and internal commercialization capacity;
+    \item $B$: research-specialized / original-drug-oriented firms that generate original-drug ideas but lack full internal manufacturing capacity;
+    \item $C$: manufacturing-specialized firms that provide qualified external manufacturing services.
+\end{itemize}
+
+\subsection{Type-A block}
+
+Optional direction choice:
+\[
+\Pi_A(z;M)
+=
+\bar{\pi}_A(z)
++
+\max_{x_A^G,x_A^O\ge 0}
+\left\{
+x_A^G\Psi_A^G(z)
++
+x_A^O\Psi_A^O(z;M)
+-
+C_A(x_A^G,x_A^O;z)
+\right\}.
+\]
+If the main model needs further parsimony, retain a single $x_A^O$ and move $x_A^G,x_A^O$ to the appendix.
+
+\subsection{Type-B block}
+
+Baseline:
+\[
+\Pi_B(z;M,p_m)
+=
+-f_B
++
+\max_{x_B^O\ge 0}
+\left\{
+x_B^O\Psi_B^O(z;p_m,M)
+-
+C_B(x_B^O;z)
+\right\}.
+\]
+where:
+\[
+\Psi_B^O(z;p_m,M)
+=
+\max
+\left\{
+H_{B,O}^{ext}(z,p_m;M),
+H_{B,O}^{alt}(z)
+\right\},
+\]
+\[
+H_{B,O}^{ext}(z,p_m;M)
+=
+\lambda_{B,O}^{ext}(z,p_m)R_B^O(z)
+-
+p_m
+-
+\tau_{ext}(M).
+\]
+
+\subsection{Type-C block}
+
+\[
+\Pi_C(z;p_m,w)
+=
+\bar{\pi}_C(z;p_m,w).
+\]
+
+\subsection{Innovation outcomes}
+
+\[
+N_O(M)
+=
+\int x_A^{O*}(z;M)\Lambda_A^O(z)\,d\mu_A(z)
++
+\int x_B^{O*}(z;p_m,M)\Lambda_B^O(z;p_m,M)\,d\mu_B(z).
+\]
+
+\[
+S_O(M)
+=
+\frac{N_O(M)}{N_O(M)+N_G(M)}.
+\]
+
+\[
+Conv_O(M)
+=
+\frac{N_O(M)}
+{\int x_A^{O*}(z;M)d\mu_A(z)+\int x_B^{O*}(z;p_m,M)d\mu_B(z)}.
+\]
+
+These objects align with an innovation-centered model: commercialization assignment is the mechanism, while $N_O$, $S_O$, and $Conv_O$ are the final innovation outcomes.
+
+\section{Short version for coauthors}
+
+We propose revising the baseline technology-direction specification. The previous candidate placed $x_B^G,x_B^O$ inside the type-B block to capture the transition from generics to original drugs. However, under our current model definition, type-B firms are research-specialized / original-drug-oriented firms. Their core constraint is not within-firm switching between generic and original-drug projects, but whether their original-drug ideas can be commercialized through an external qualified manufacturing route. Therefore, the baseline should keep only $x_B^O$ for type-B firms and model the MAH effect as:
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^O,V_B,e_B,Conv_B^O\uparrow.
+\]
+
+The industry-level transition from generics to original drugs remains in the paper, but it should not be entirely assigned to type-B within-firm switching. The increase in the original-drug share $S_O$ can come from three sources: within-firm $G/O$ adjustment by type-A integrated firms, increased entry of original-drug-oriented type-B firms, and a higher realization / conversion rate of type-B original-drug projects. This revision makes the baseline more parsimonious, more consistent with the definition of type-B firms, and better aligned with the concern that the model should not have more dimensions than are needed for the mechanism and final outcome.
+
+Empirically, we should first check whether type-B firms actually have substantial activity in both generic and original-drug projects. If the pre-reform original-drug share of type-B firms is already high, $x_B^G,x_B^O$ should not be in the baseline. If the data show meaningful within-type-B $G/O$ reallocation, then $x_B^G,x_B^O$ can be included in an appendix robustness or extension. The robust baseline should be: type-A carries the possible $G/O$ direction choice, type-B carries the original-drug external-commercialization mechanism, and type-C carries qualified manufacturing supply.
+
+\end{document}

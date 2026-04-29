@@ -1,0 +1,440 @@
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array,multirow}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+\singlespacing
+
+\title{A Formal Model Note for the MAH Paper:\\
+States, Controls, Static Inputs, Prices, and Payoff Objects}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Purpose}
+
+This note rewrites the current MAH model in a journal-style format that makes the
+economic objects fully explicit. The goal is not to enlarge the model mechanically,
+but to clarify exactly which variables are states, which are dynamic controls, which
+are static inputs, which are prices, and which objects enter the Bellman equations
+as optimized flow payoffs. The note is written to match the conventions of the
+dynamic heterogeneous-firm literature and to fit the substantive question of the
+paper: how MAH changes the organizational route from invention to commercialization
+for original-drug ideas.
+
+\section{Environment}
+
+Time is discrete, indexed by $t=0,1,2,\dots$. There are three organizational types,
+\[
+s\in\{A,B,C\},
+\]
+where:
+
+\begin{itemize}[leftmargin=2em]
+    \item $A$ denotes integrated firms that can conduct original-drug R\&D and also
+    organize production internally;
+    \item $B$ denotes research-specialized firms that generate original-drug ideas but
+    do not operate as full internal manufacturers;
+    \item $C$ denotes manufacturing-specialized firms that provide production capability
+    and can supply qualified contract manufacturing.
+\end{itemize}
+
+There is also a mass of potential entrants, who may enter as one of the active organizational
+types after paying the corresponding entry cost.
+
+Each incumbent firm enters the period with an idiosyncratic capability state
+\[
+z\in Z\subset \mathbb{R}_+.
+\]
+In the baseline model, $z$ is one-dimensional. It is interpreted as a broad firm-specific
+capability object that loads differently across organizational forms. Economically, $z$
+summarizes the firm's ability to generate original-drug ideas, to manage projects,
+to coordinate implementation and commercialization, and to adapt organizationally.
+
+\section{Classification of variables}
+
+Table \ref{tab:objects} classifies the main variables and model objects.
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Classification of state variables, controls, prices, and payoff objects}
+\label{tab:objects}
+\begin{tabular}{@{}P{0.22\textwidth}P{0.20\textwidth}P{0.54\textwidth}@{}}
+\toprule
+Object & Type & Interpretation \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Panel A. States and prices}} \\
+\addlinespace[0.2em]
+
+$z$ & State variable & Persistent firm capability state. \\[0.45em]
+
+$s\in\{A,B,C\}$ & Discrete state variable & Current organizational form of the firm. \\[0.45em]
+
+$w$ & Price & Wage or composite factor price. \\[0.45em]
+
+$p_m$ & Price & Price of qualified contract-manufacturing services. \\[0.7em]
+
+\multicolumn{3}{@{}l}{\textbf{Panel B. Static inputs and dynamic controls}} \\
+\addlinespace[0.2em]
+
+$n,k,m$ & Static input choices & Labor, capital services, and intermediate inputs used in current-period production. \\[0.45em]
+
+$x_A,x_B$ & Dynamic control variables & Original-drug idea-generation intensities chosen by type-$A$ and type-$B$ firms. \\[0.45em]
+
+$h$ & Dynamic control variable & Commercialization route chosen for a type-$B$ idea, e.g. externalize, transfer, abandon. \\[0.45em]
+
+$j$ & Dynamic control variable & Next organizational choice (stay, switch, exit). \\[0.7em]
+
+\multicolumn{3}{@{}l}{\textbf{Panel C. Frictions, payoff objects, and values}} \\
+\addlinespace[0.2em]
+
+$\kappa_{sj}$ & Adjustment-cost object & Organizational switching cost from current type $s$ to chosen type $j$. \\[0.45em]
+
+$\tau_{ext}$ & Route-specific friction & Governance/compliance friction of external commercialization through qualified outside manufacturing. \\[0.45em]
+
+$\bar{\pi}_A(z;w)$ & Optimized static payoff & Current-period operating profit of type $A$ after static production inputs are optimized out. \\[0.45em]
+
+$\bar{\pi}_C(z;p_m,w)$ & Optimized static payoff & Current-period operating profit of type $C$ after static production inputs are optimized out. \\[0.45em]
+
+$\Psi_h(z)$ & Per-idea net value object & Expected net value of one original-drug idea under route $h$. \\[0.45em]
+
+$\begin{aligned}[t]
+\Pi_A(z),\,\Pi_B(z),\\
+\Pi_C(z)
+\end{aligned}$ & Optimized flow payoff objects & Current-period payoffs that enter the Bellman equation. \\[0.45em]
+
+$\begin{aligned}[t]
+V_A(z),\,V_B(z),\\
+V_C(z)
+\end{aligned}$ & Value functions & Continuation values under each organizational type. \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Why static production inputs are optimized out}
+
+The model distinguishes between \emph{static} and \emph{dynamic} choices.
+
+\paragraph{Static choices.}
+Labor, capital services, and intermediate inputs affect current-period operating profits.
+If they do not become next-period states and do not involve dynamic adjustment costs, then
+they should not be carried as separate controls in the Bellman equation. Instead, the firm
+solves a static profit maximization problem conditional on $(z,s)$ and prices.
+
+\paragraph{Dynamic choices.}
+Research intensity, commercialization route, organizational switching, entry, and exit affect
+future values, future states, or the feasibility of future actions. These are the natural
+dynamic controls.
+
+This separation is standard in dynamic firm models: the Bellman equation is written in
+terms of optimized current payoffs rather than raw production problems in every period.
+That separation is especially appropriate here because the economic question is about
+organizational routes from invention to commercialization, not about capital deepening
+or static labor demand per se.
+
+\section{Static production blocks}
+
+\subsection{Integrated firms}
+
+For type-$A$ firms, define the optimized static operating payoff by
+\[
+\bar{\pi}_A(z;w,r,c_m)
+=
+\max_{n,k,m}
+\left\{
+p_A q_A(n,k,m;z)-wn-rk-c_m m
+\right\}.
+\]
+Here:
+\begin{itemize}[leftmargin=2em]
+    \item $n$ is labor input,
+    \item $k$ is capital services or plant use,
+    \item $m$ is intermediate input use,
+    \item $p_A$ is the relevant output price or revenue shifter for current operations,
+    \item $w,r,c_m$ are input prices.
+\end{itemize}
+This object is \emph{not} the full type-$A$ flow payoff. It is only the optimized
+current-period operating block after static production choices have been solved.
+
+\subsection{Manufacturing-specialized firms}
+
+For type-$C$ firms, define the optimized static manufacturing payoff by
+\[
+\bar{\pi}_C(z;p_m,w,r,c_c)
+=
+\max_{n,k,m_c}
+\left\{
+p_m y_C(n,k,m_c;z)-wn-rk-c_c m_c
+\right\}.
+\]
+This is the current-period profit from supplying qualified manufacturing services
+after static input choices are optimized out. The price $p_m$ is the contract-manufacturing
+service price, so this block directly links the manufacturing side of the industry
+to the commercialization problem of type-$B$ firms.
+
+\section{Idea generation and commercialization}
+
+\subsection{Type A innovation block}
+
+Let $x_A\ge 0$ denote original-drug idea-generation intensity chosen by a type-$A$ firm.
+Given state $z$, define the innovation block as
+\[
+\max_{x_A\ge 0}
+\left\{
+x_A\Omega_A(z)-\frac{\chi_A}{\eta}x_A^\eta
+\right\},
+\qquad \eta>1,
+\]
+where $\Omega_A(z)$ is the per-unit marginal value of original-drug research for
+an integrated firm, $\chi_A>0$ is a cost parameter, and $\eta>1$ governs curvature.
+
+Then the optimized type-$A$ flow payoff is
+\[
+\Pi_A(z)
+=
+\bar{\pi}_A(z;w,r,c_m)
++
+\max_{x_A\ge 0}
+\left\{
+x_A\Omega_A(z)-\frac{\chi_A}{\eta}x_A^\eta
+\right\}
+-f_A.
+\]
+
+\subsection{Type B idea-generation and route-choice block}
+
+For type-$B$ firms, the core current-period decision is not static manufacturing.
+Instead, it is the combination of idea generation and the route by which ideas
+are commercialized.
+
+Let $x_B\ge 0$ denote idea-generation intensity. Let
+\[
+h\in\mathcal{H}
+\]
+denote the commercialization route for a type-$B$ idea. In the parsimonious
+version of the model, one may let
+\[
+\mathcal{H}=\{\text{externalize},\text{transfer},\text{abandon}\}.
+\]
+
+For any route $h$, let $\Psi_h(z)$ denote the expected net value of one idea.
+Then the optimized type-$B$ flow payoff is
+\[
+\Pi_B(z)
+=
+\max_{x_B,h}
+\left\{
+x_B\Psi_h(z)-\frac{\chi_B}{\eta}x_B^\eta-f_B
+\right\}.
+\]
+
+\subsection{External commercialization as the MAH-sensitive route}
+
+The route that carries the MAH mechanism most directly is external commercialization.
+For that route, write
+\[
+\Psi_{\mathrm{ext}}(z)
+=
+\lambda_{\mathrm{ext}}(z)\bigl(R(z)-p_m-\tau_{ext}\bigr).
+\]
+
+Each term has a distinct interpretation:
+
+\begin{itemize}[leftmargin=2em]
+    \item $\lambda_{\mathrm{ext}}(z)$ is the success rate of external commercialization;
+    \item $R(z)$ is the gross private return from a successfully commercialized original-drug idea;
+    \item $p_m$ is the payment to the qualified external manufacturer;
+    \item $\tau_{ext}$ is the route-specific governance/compliance cost of external commercialization.
+\end{itemize}
+
+It is essential to distinguish $p_m$ from $\tau_{ext}$. The former is the market price
+paid for outside production. The latter is the extra organizational and legal friction of
+using that route while retaining the project and authorization. MAH is modeled not as
+a generic policy dummy that changes everything at once, but as a reform that lowers
+the friction associated with this route.
+
+\section{Dynamic Bellman system}
+
+\subsection{General form}
+
+For each organizational type $s\in\{A,B,C\}$, let the value function be
+\[
+V_s(z)=
+\max_{j\in J(s)}
+\left\{
+\Pi_j(z)-\kappa_{sj}
++\beta E[V_j(z')\mid z,j]
+\right\}.
+\]
+
+This equation has four layers:
+
+\begin{enumerate}[leftmargin=2em]
+    \item \(\Pi_j(z)\): optimized current-period payoff if the firm operates as type \(j\) this period;
+    \item \(\kappa_{sj}\): cost of moving from current organization \(s\) to chosen organization \(j\);
+    \item \(\beta\): discount factor;
+    \item \(E[V_j(z')\mid z,j]\): expected continuation value next period.
+\end{enumerate}
+
+The Bellman equation therefore says that the firm chooses the organizational form
+that maximizes the sum of optimized current payoff, minus switching cost, plus discounted
+future value.
+
+\subsection{Type-specific Bellman equations}
+
+The general form can be written more explicitly as follows.
+
+\paragraph{Type $A$.}
+\[
+\begin{aligned}
+V_A(z)
+=
+\max\Bigl\{&
+\Pi_A(z)+\beta E[V_A(z')\mid z,A],\\
+&-\kappa_{AB}+\Pi_B(z)+\beta E[V_B(z')\mid z,B],\\
+&-\kappa_{AC}+\Pi_C(z)+\beta E[V_C(z')\mid z,C],\\
+&0
+\Bigr\}.
+\end{aligned}
+\]
+
+\paragraph{Type $B$.}
+\[
+\begin{aligned}
+V_B(z)
+=
+\max\Bigl\{&
+\Pi_B(z)+\beta E[V_B(z')\mid z,B],\\
+&-\kappa_{BA}+\Pi_A(z)+\beta E[V_A(z')\mid z,A],\\
+&-\kappa_{BC}+\Pi_C(z)+\beta E[V_C(z')\mid z,C],\\
+&0
+\Bigr\}.
+\end{aligned}
+\]
+
+\paragraph{Type $C$.}
+\[
+\begin{aligned}
+V_C(z)
+=
+\max\Bigl\{&
+\Pi_C(z)+\beta E[V_C(z')\mid z,C],\\
+&-\kappa_{CA}+\Pi_A(z)+\beta E[V_A(z')\mid z,A],\\
+&-\kappa_{CB}+\Pi_B(z)+\beta E[V_B(z')\mid z,B],\\
+&0
+\Bigr\}.
+\end{aligned}
+\]
+
+\section{Which objects are states, which are controls?}
+
+The model should be read as follows.
+
+\subsection{State variables}
+
+The baseline state variables are:
+\[
+(s,z).
+\]
+That is:
+\begin{itemize}[leftmargin=2em]
+    \item $s$ tells us the current organizational form;
+    \item $z$ tells us the current capability state.
+\end{itemize}
+
+\subsection{Dynamic controls}
+
+The main dynamic controls are:
+\begin{itemize}[leftmargin=2em]
+    \item $x_A$ and $x_B$ (research intensities),
+    \item $h$ (commercialization route),
+    \item $j$ (organization choice),
+    \item entry/exit decisions.
+\end{itemize}
+
+\subsection{Static inputs}
+
+The main static inputs are:
+\begin{itemize}[leftmargin=2em]
+    \item labor $n$,
+    \item capital services $k$,
+    \item intermediates $m$,
+    \item manufacturing quantity or manufacturing service intensity where relevant.
+\end{itemize}
+These inputs are not discarded economically; they are simply optimized out before the
+Bellman recursion is written.
+
+\subsection{Prices}
+
+The key equilibrium prices are:
+\begin{itemize}[leftmargin=2em]
+    \item $w$: labor or composite factor price,
+    \item $p_m$: price of qualified contract manufacturing.
+\end{itemize}
+
+\subsection{Payoff objects}
+
+The main payoff objects are:
+\begin{itemize}[leftmargin=2em]
+    \item $\bar{\pi}_A,\bar{\pi}_C$: optimized static profit blocks,
+    \item $\Psi_h$: expected per-idea net value under route $h$,
+    \item $\Pi_A,\Pi_B,\Pi_C$: optimized current flow payoffs,
+    \item $V_A,V_B,V_C$: continuation values.
+\end{itemize}
+
+\section{Why the baseline state should be one-dimensional}
+
+The one-dimensional benchmark
+\[
+z=\text{research-commercialization capability}
+\]
+is attractive because it is parsimonious and directly tied to the MAH question.
+The reform changes the route from invention to commercialization, so the most natural
+summary state is not pure manufacturing TFP, but a broader capability object that
+shifts research productivity, implementation success, organizational adaptation, and
+the value of using external commercialization.
+
+The main gain of this baseline is tractability. It allows the model to capture persistent
+heterogeneity without creating multiple latent processes that may not be separately
+identified in the data. The main cost is that research capability and commercialization
+capability are compressed into a single state. If the data become rich enough, the natural
+next step is a two-dimensional state:
+\[
+z=(z_R,z_C),
+\]
+where $z_R$ is research capability and $z_C$ is commercialization/execution capability.
+But as a baseline intended for estimation or disciplined calibration, the one-dimensional
+state is usually the safer choice.
+
+\section{Interpretation for the paper}
+
+The most important implication of this notation is conceptual. The paper is not a model
+of capital accumulation, labor adjustment, or static production reallocation. It is a model
+of how institutional reform changes the route through which original-drug ideas are turned
+into commercialized products. For that reason:
+
+\begin{itemize}[leftmargin=2em]
+    \item labor and capital belong to optimized static profit blocks unless they are themselves dynamic states;
+    \item research intensity, commercialization route, and organizational switching are the core dynamic controls;
+    \item the external commercialization route is the natural place where the MAH friction enters;
+    \item the Bellman equations should be written in terms of optimized flow payoffs rather than raw production problems.
+\end{itemize}
+
+This is the cleanest way to align the model with the empirical question and with the
+conventions of the top dynamic firm and innovation literature.
+
+\end{document}

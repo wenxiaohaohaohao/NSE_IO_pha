@@ -1,0 +1,514 @@
+% !TEX program = xelatex
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+% Clean footer: current frame number only.
+\setbeamertemplate{footline}{\hfill\insertframenumber\hspace{1em}\vspace{0.5ex}}
+
+\definecolor{PKURed}{RGB}{116,17,40}
+\definecolor{PKULight}{RGB}{245,236,239}
+\setbeamercolor{structure}{fg=PKURed}
+\setbeamercolor{title}{fg=white,bg=PKURed}
+\setbeamercolor{frametitle}{fg=white,bg=PKURed}
+\setbeamercolor{palette primary}{fg=white,bg=PKURed}
+\setbeamercolor{palette secondary}{fg=white,bg=PKURed!88!black}
+\setbeamercolor{palette tertiary}{fg=white,bg=PKURed!76!black}
+\setbeamercolor{palette quaternary}{fg=white,bg=black}
+\setbeamercolor{block title}{fg=white,bg=PKURed}
+\setbeamercolor{block body}{fg=black,bg=PKULight}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+
+\title[Original-Drug Innovation and MAH]{Original-Drug Innovation, Implementation-Route Assignment,\\ and the MAH System in China}
+\subtitle{Mechanism, Dynamic Model, and Empirical Strategy}
+\author{Danni Yangchen \and Wenxiao Dong \and Xinhao Wang}
+\date{\today}
+
+\begin{document}
+
+%------------------------------------------------
+\begin{frame}[plain,noframenumbering]
+\titlepage
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{1. Main Question and Novelty}
+\footnotesize
+\begin{block}{Research question}
+Does MAH raise \textbf{realized original-drug innovation} by changing implementation routes for research-originated ideas?
+\end{block}
+
+\begin{itemize}
+\item MAH is modeled as a change in \textbf{implementation-route assignment}, not as a generic innovation shock.
+\item The mechanism is embedded in a \textbf{dynamic industry model} with switching, entry and exit, and a qualified contract-manufacturing market.
+\end{itemize}
+
+\begin{block}{What is new here relative to adjacent literatures?}
+\begin{itemize}
+\item Not a generic innovation-stimulus paper: the reform acts on \textbf{implementation-route feasibility}, not directly on scientific productivity.
+\item Not a pure regulation or productivity paper: the main outcome is \textbf{realized original-drug products}, not factory-level efficiency alone.
+\item Not a standard outsourcing paper: the key object is \textbf{authorization-retaining external implementation} under MAH.
+\end{itemize}
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{2. Before MAH: Why Implementation Is the Bottleneck}
+\small
+\begin{itemize}
+\item In pharmaceuticals, invention and product realization need not occur inside the same firm.
+\item Before MAH, in China, \textbf{authorization holding was tightly tied to production qualification}. That linkage made external implementation much harder for research-originating firms.
+\item A research-originating firm with an original-drug idea often faced three costly options:
+\begin{enumerate}
+\item build or acquire internal manufacturing capacity;
+\item transfer effective control to an integrated producer;
+\item leave the project unrealized or delayed.
+\end{enumerate}
+\item The bottleneck is therefore often \textbf{organizational implementation}, not only scientific discovery.
+\item This is why the paper focuses on \textbf{original-drug realization} rather than on total pharmaceutical output alone.
+\end{itemize}
+
+\vspace{0.15cm}
+\textbf{Core intuition:} MAH matters if it changes whether a research-originated original-drug idea can reach the market while the innovator retains authorization and project control.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{3. Institutional Evolution under MAH}
+\small
+\begin{itemize}
+\item \textbf{2016 pilot:} selected provinces began to allow MAH-style decoupling between authorization holding and in-house production.
+\item \textbf{2019 Drug Administration Law:} a holder may self-manufacture or entrust a \textbf{qualified} outside manufacturer; entrusted production requires formal entrustment and quality agreements.
+\item \textbf{2022/2023 implementing rules:} holder responsibility, quality management, and regulatory supervision were clarified and strengthened.
+\end{itemize}
+
+\vspace{0.2cm}
+\begin{block}{Institutional interpretation}
+MAH does not simply permit generic outsourcing. It creates a legally structured \textbf{external implementation route} under which the innovator may retain authorization while production is carried out by a qualified outside manufacturer. In the model, that is a change in \textbf{authorization--production assignment}.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{4. Route-Specific Policy Primitive}
+\small
+\begin{block}{Policy primitive}
+\[
+\tau_{ext}(1)<\tau_{ext}(0),
+\]
+where \(M=0\) is the pre-MAH regime and \(M=1\) is the post-MAH regime.
+\end{block}
+
+\begin{itemize}
+\item \(\tau_{ext}(M)\): route-specific governance and compliance friction of external implementation.
+\item The innovator retains authorization status while relying on a qualified external manufacturer.
+\item \(\tau_{ext}\) is \textbf{not} scientific productivity, \textbf{not} the physical manufacturing price \(p_m\), and \textbf{not} a generic policy dummy.
+\item MAH enters the model through \(\tau_{ext}\), while implementation success, manufacturing prices, and alternative routes remain distinct objects.
+\item The model then adds heterogeneous firms, organizational switching, entry and exit, and a qualified contract-manufacturing market around that primitive policy margin.
+\end{itemize}
+
+\vspace{0.1cm}
+\[
+\text{MAH}\Rightarrow \tau_{ext}\downarrow \Rightarrow
+\text{external implementation value}\uparrow \Rightarrow
+\text{realized original-drug innovation}\uparrow.
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{5. Baseline Environment}
+\small
+The baseline is a \textbf{lower-dimensional dynamic industry model}. It keeps only the objects
+needed to connect MAH to original-drug innovation through implementation-route assignment.
+
+\vspace{0.15cm}
+\begin{center}
+\begin{tabular}{p{0.26\textwidth}p{0.58\textwidth}}
+\toprule
+\textbf{Object} & \textbf{Role in the model} \\
+\midrule
+Policy regime \(M\in\{0,1\}\) & Pre-MAH versus post-MAH institutional environment \\
+Capability \(z\in Z\) & One-dimensional firm heterogeneity \\
+Type \(s\in\{A,B,C\}\) & Organizational form and implementation role \\
+Friction \(\tau_{ext}(M)\) & How MAH enters the model \\
+Manufacturing price \(p_m\) & Price of qualified external production services \\
+Factor price \(w\) & Static operating-cost shifter in current profits \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{block}{Discipline}
+The baseline includes route assignment, organizational switching, entry and exit, and a qualified contract-manufacturing market. It does \textbf{not} build a full incomplete-contract model, a full bargaining model, or a government-optimization problem.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{6. Timing Within a Period}
+\small
+For each period \(t\), the sequence is:
+
+\vspace{0.1cm}
+\begin{enumerate}
+\item \textbf{Institutional regime:} firms observe \(M_t\) and the relevant external manufacturing price \(p_{m,t}\).
+\item \textbf{State:} each incumbent observes its organizational state \(s_t\in\{A,B,C\}\) and capability \(z_t\).
+\item \textbf{Research effort:} type-A chooses \((x_{A,t}^G,x_{A,t}^O)\); type-B chooses \(x_{B,t}^O\) only.
+\item \textbf{Idea realization:} research effort generates generic or original-drug ideas.
+\item \textbf{Implementation assignment:} original-drug ideas are assigned across feasible routes \(H=\{ext,int,tr,ab\}\).
+\item \textbf{Organization choice:} incumbents may stay, switch organizational form, or exit.
+\item \textbf{Continuation and entry:} next-period states, entry values, and market-clearing objects are determined.
+\end{enumerate}
+
+\vspace{0.05cm}
+\begin{block}{Where MAH matters in timing}
+MAH acts directly at stage 5 through \(\tau_{ext}(M_t)\), and then feeds back to stages 3, 6, and 7 through the value of original-drug projects, continuation values, and entry incentives.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{7. Economic Roles of the Three Types}
+\small
+\begin{columns}[T]
+\column{0.32\textwidth}
+\begin{block}{Type A}
+Integrated firms
+\begin{itemize}
+\item choose \(x_A^G,x_A^O\)
+\item can implement internally
+\item provide the within-firm direction margin
+\end{itemize}
+\end{block}
+
+\column{0.32\textwidth}
+\begin{block}{Type B}
+Research-specialized firms
+\begin{itemize}
+\item choose \(x_B^O\) only
+\item assign original-drug ideas across routes
+\item are most exposed to \(\tau_{ext}\)
+\end{itemize}
+\end{block}
+
+\column{0.32\textwidth}
+\begin{block}{Type C}
+Manufacturing specialists
+\begin{itemize}
+\item provide qualified production
+\item support the external route
+\item help determine \(p_m\)
+\end{itemize}
+\end{block}
+\end{columns}
+
+\vspace{0.25cm}
+\textbf{Interpretation:} A/B/C are economic organizational forms that govern who invents, who implements, and which routes are feasible for the marginal project.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{8. Type-B Research Block and Route Assignment}
+\small
+Type-B firms are the central mechanism objects in the paper. In the baseline they are
+research-specialized and primarily original-drug-oriented, so they do \textbf{not} choose generic-project effort.
+
+\vspace{0.1cm}
+\begin{block}{Type-B payoff}
+\[
+\Pi_B(z;M,p_m)= -f_B+
+\max_{x_B^O\ge 0}
+\left\{x_B^O\Psi_B^O(z;p_m,M)-C_B(x_B^O;z)\right\}.
+\]
+\end{block}
+
+\begin{itemize}
+\item \(x_B^O\): original-drug idea-generation effort.
+\item \(\Psi_B^O(z;p_m,M)\): per-idea value of a type-B original-drug project.
+\item For each original-drug idea, the feasible route set is \(H=\{ext,int,tr,ab\}\).
+\end{itemize}
+
+\textbf{Key margin:} MAH raises the value of the external route, which raises \(\Psi_B^O\), and therefore lifts original-drug effort, continuation value, entry value, and realization.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{9. Type-A Internal Benchmark}
+\small
+Type-A firms are integrated firms. They can implement internally, so they are not the central
+MAH-specific actor, but they help explain industry-level project composition.
+
+\vspace{0.1cm}
+\[
+\Pi_A(z;M,w,p_m)=\bar\pi_A(z;w,r,c_m)+
+\max_{x_A^G,x_A^O\ge 0}
+\left\{x_A^G\Psi_A^G(z)+x_A^O\Psi_A^O(z;M)-C_A(x_A^G,x_A^O;z)\right\}.
+\]
+
+\begin{itemize}
+\item \(x_A^G\): generic-oriented effort by integrated firms.
+\item \(x_A^O\): original-drug-oriented effort by integrated firms.
+\item This block captures within-type-A generic-to-original portfolio adjustment.
+\end{itemize}
+
+\begin{block}{Role in the paper}
+Type-A provides the internal benchmark. It helps explain within-firm direction adjustment without forcing the main MAH-specific mechanism into type-B generic/original switching.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{10. Type-C and the Qualified Manufacturing Market}
+\small
+Type-C firms are not a second innovation actor in the baseline. Their role is to supply the
+qualified manufacturing services needed for external implementation.
+
+\vspace{0.1cm}
+\[
+\Pi_C(z;p_m,w)=\bar\pi_C(z;p_m,w).
+\]
+
+\begin{itemize}
+\item Type-C supplies qualified production capacity.
+\item The external-route price \(p_m\) summarizes the market cost of using those services.
+\item The external route creates a market link between type-B demand and type-C supply:
+\[
+S_m(p_m,w;M)=D_m(p_m;M).
+\]
+\item Producer-side entry, profits, and general-equilibrium feedbacks are supporting margins, not the final innovation outcome.
+\end{itemize}
+
+\begin{block}{Why this simplification helps}
+It keeps the main model focused on how MAH changes original-drug implementation for type-B research firms, while still allowing the qualified-manufacturing price \(p_m\) to matter in equilibrium.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{11. Original-Drug Route Assignment}
+\small
+For a type-B original-drug idea, the per-idea value is the best feasible route:
+\[
+\Psi_B^O(z;p_m,M)=\max\left\{H_B^{ext}(z,p_m;M),\,H_B^{int}(z),\,H_B^{tr}(z),\,0\right\}.
+\]
+
+\vspace{0.05cm}
+The external route value is
+\[
+H_B^{ext}(z,p_m;M)
+=\lambda_{ext}(z,p_m)R_B(z)-p_m-\tau_{ext}(M).
+\]
+
+\begin{itemize}
+\item \(ext\): retain authorization and use qualified external production.
+\item \(int\), \(tr\), and \(ab\): internal implementation, transfer, or abandonment.
+\item MAH directly shifts only the external route by lowering \(\tau_{ext}(M)\).
+\end{itemize}
+
+\begin{block}{Simple decision rule}
+The external route is chosen when \(H_B^{ext}\) dominates the other feasible routes.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{12. Comparative-Static Logic}
+\small
+\begin{block}{One-sentence mechanism}
+When MAH lowers \(\tau_{ext}\), the external route becomes more attractive for type-B original-drug ideas, which raises per-idea value, research effort, and realization.
+\end{block}
+
+\begin{enumerate}
+\item \textbf{Route margin:} the external-route choice set expands.
+\item \textbf{Effort margin:} higher \(\Psi_B^O\) raises \(x_B^O\).
+\item \textbf{Dynamic margin:} higher project value raises continuation and entry value.
+\item \textbf{Conversion margin:} more original-drug ideas become realized original-drug products.
+\end{enumerate}
+
+\vspace{0.1cm}
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+H_B^{ext}\uparrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^O,\;V_B,\;\operatorname{Conv}_B^O\uparrow.
+\]
+
+\vspace{0.05cm}
+\textbf{Caveat:} type-B entry and type-C profits are equilibrium objects, not unconditional monotone outcomes.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{13. First-Layer Objects and Final Outcomes}
+\small
+The first empirical objects should be the ones closest to the mechanism itself:
+
+\begin{itemize}
+\item external-route use or holder--producer separation;
+\item realized original-drug products;
+\item the share of original drugs among realized products;
+\item research-oriented entry and continuation.
+\end{itemize}
+
+\vspace{0.05cm}
+The same logic can be summarized through three final innovation outcomes:
+\[
+N_O(M),\qquad
+S_O(M)=\frac{N_O(M)}{N_O(M)+N_G(M)},\qquad
+\operatorname{Conv}_O(M).
+\]
+
+\begin{itemize}
+\item \(N_O(M)\): number of realized original-drug products.
+\item \(S_O(M)\): original-drug share among realized products.
+\item \(\operatorname{Conv}_O(M)\): conversion from original-drug idea/application to realized product.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{14. Interpreting the Original-Drug Share}
+\small
+Under the revised baseline, a rise in \(S_O\) is not interpreted as type-B switching from generic to original projects.
+
+\vspace{0.1cm}
+\[
+\Delta S_O=
+\underbrace{\Delta S_O^{A,within}}_{\text{type-A G/O portfolio adjustment}}
++
+\underbrace{\Delta S_O^{B,entry}}_{\text{more original-drug-oriented B entry}}
++
+\underbrace{\Delta S_O^{B,conversion}}_{\text{higher B original-drug realization}}.
+\]
+
+\begin{itemize}
+\item Type-A explains within-firm direction adjustment.
+\item Type-B explains original-drug entry and conversion.
+\item Type-C supplies the qualified production capacity needed for the external route.
+\end{itemize}
+
+\begin{block}{Empirical discipline}
+This decomposition is most persuasive if the data support two diagnostics: type-B firms are already highly original-drug-oriented before the reform, while type-A firms display meaningful generic/original portfolio variation.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{15. Dynamic Industry Block}
+\small
+The static route mechanism feeds into dynamic organizational choice, continuation values, and entry.
+
+\vspace{0.08cm}
+\begin{block}{Bellman logic}
+\[
+V_s(z;M)=\max\left\{0,\ \max_{j\in\mathcal{J}(s)} W_{sj}(z;M)\right\},
+\qquad s\in\{A,B,C\}.
+\]
+\end{block}
+
+\begin{itemize}
+\item Lower \(\tau_{ext}\) raises the current-period value of the type-B external route and therefore \(\Pi_B\).
+\item Higher current payoff lifts continuation value and changes stay/switch/exit choices.
+\item Higher \(V_B\) raises the value of entering as a type-B research firm.
+\end{itemize}
+
+\vspace{0.05cm}
+\textbf{Caveat:} the model most cleanly predicts a higher type-B \emph{entry value}; an observed increase in entry mass requires entry-cost heterogeneity or an elastic supply of potential entrants.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{16. Empirical Mapping: First-Layer and Second-Layer Objects}
+\tiny
+\begin{center}
+\begin{tabular}{p{0.21\textwidth}p{0.32\textwidth}p{0.34\textwidth}}
+\toprule
+\textbf{Model object} & \textbf{Empirical object} & \textbf{Interpretation} \\
+\midrule
+\(\tau_{ext}\downarrow\) & Holder--producer separation; external-route use & External implementation becomes more feasible \\
+\(H_{B}^{ext}\uparrow\) & More MAH-style external implementation under retained authorization & Route assignment changes \\
+\(\Psi_B^O\uparrow\) & Type-B entry and continuation & Original-drug project value rises \\
+\(V_B\uparrow\) & Type-B survival and entry & Dynamic response to higher project value \\
+\(x_B^O\uparrow\) & Original-drug project starts, applications, or R\&D effort & Research-specialized firms respond \\
+\(\operatorname{Conv}_B^O\uparrow\) & Application-to-approval or idea-to-product conversion & Realization becomes more feasible \\
+\(N_O,S_O\uparrow\) & Realized original-drug products and share & Final innovation outcomes \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.08cm}
+\begin{block}{Hierarchy}
+First-layer objects are route use, realization, and original-drug outcomes. Transitions and type-C outcomes are second-layer validation objects.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{17. Data, Pre-Reform Classification, and Exposure}
+\footnotesize
+\begin{block}{Pre-reform economic classification}
+Use \textbf{pre-reform} characteristics so that types are not assigned using endogenous post-reform responses.
+\begin{itemize}
+\item Type A: original-drug activity plus relevant internal manufacturing capability.
+\item Type B: research-oriented firms that lack that internal manufacturing capability.
+\item Type C: qualified manufacturing specialists.
+\end{itemize}
+\end{block}
+
+\begin{block}{Exposure design}
+The main treatment margin is whether MAH matters more for firms or regions that were more
+constrained by the pre-reform implementation bottleneck.
+\begin{itemize}
+\item Baseline firm-level exposure: pre-reform type-B status.
+\item Baseline heterogeneity margins: pre-reform R\&D capacity and pre-reform manufacturing capability.
+\item Post-reform R\&D effort is treated as a mechanism outcome, not as a default control variable.
+\end{itemize}
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{18. Identification, Estimation, and Current Claim Boundary}
+\footnotesize
+\begin{block}{Identification logic}
+The data should first ask whether MAH changes holder--producer separation, external-route use, realized original-drug products, and responses among firms more exposed to pre-reform implementation bottlenecks.
+\end{block}
+
+\begin{block}{Empirical strategy}
+The current design is two-step: reduced-form evidence on first-layer objects first; then a parsimonious stationary model, disciplined by those patterns, for later SMM or minimum-distance estimation.
+\end{block}
+
+\begin{block}{What this draft does and does not claim}
+The draft argues that MAH changes implementation-route assignment rather than scientific productivity directly. It does \textbf{not} claim to observe \(\tau_{ext}\) directly, to infer the mechanism from innovation outcomes alone, or to treat organizational transitions as identifying by themselves.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{19. Current Model-Data Gaps}
+\footnotesize
+\begin{block}{What the current data can already discipline}
+\begin{itemize}
+\item holder--producer separation or other route-use evidence;
+\item realized original-drug products and original-drug shares;
+\item exposure heterogeneity across firms or regions with tighter pre-reform implementation constraints.
+\end{itemize}
+\end{block}
+
+\begin{block}{What still needs stronger measurement or extra structure}
+\begin{itemize}
+\item a cleaner project-to-route measure for the full assignment problem;
+\item application-to-product linkage for a sharper conversion object \(\operatorname{Conv}_O\);
+\item stronger producer-side data for the qualified manufacturing market and \(p_m\)-side validation;
+\item richer transition and entry objects if we want a full stationary SMM exercise rather than a reduced-form-plus-discipline first paper.
+\end{itemize}
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{20. Questions for Advisor}
+\footnotesize
+\begin{block}{What we want to confirm}
+\begin{enumerate}
+\item Is the main question sufficiently new and important: MAH as a change in implementation-route assignment, rather than as a generic innovation shock?
+\item Is the current baseline disciplined enough: type-A with \(x_A^G,x_A^O\), type-B with \(x_B^O\), and type-C supplying the qualified manufacturing market?
+\item Is the empirical hierarchy right: route use and realization first, organizational transitions and producer-side outcomes second?
+\item For the first full paper version, should we stop at reduced-form evidence plus a disciplined mechanism model, or move directly to a fuller stationary estimation block?
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\end{document}

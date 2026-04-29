@@ -1,0 +1,586 @@
+% !TEX program = xelatex
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{xcolor}
+\setstretch{1.18}
+\setlist[itemize]{leftmargin=2em,itemsep=0.2em,topsep=0.3em}
+\setlist[enumerate]{leftmargin=2em,itemsep=0.25em,topsep=0.35em}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{MAH 模型 baseline 修订说明：\\技术方向选择、Type-B 设定与原研药创新落脚点}
+\author{}
+\date{供合作者讨论的工作备忘录}
+
+\begin{document}
+\maketitle
+
+\section*{执行摘要}
+
+本备忘录建议对当前 MAH 论文的 baseline 模型做一个重要但克制的修订：\textbf{不要在 baseline 中机械设定 type-B 企业同时选择 $x_B^G$ 与 $x_B^O$。}在当前模型定义下，type-B 企业是 research-specialized / original-drug-oriented firms，其核心边际不是在仿制药项目和原研药项目之间做企业内部方向切换，而是：给定其原研导向属性，MAH 是否通过降低外部商业化路径的治理与合规摩擦 $\tau_{ext}$，提高其原研药 idea 的商业化价值、实现率、进入价值和 continuation value。
+
+因此，baseline 应改为：
+\[
+\text{type-B: } x_B^O \quad \text{rather than} \quad (x_B^G,x_B^O).
+\]
+
+行业层面的 ``从仿制药转向原研药'' 仍然保留，但不再被解释为 type-B 企业内部的 $G/O$ 切换，而应分解为三类来源：
+\[
+\Delta S_O
+=
+\Delta S_O^{A,\mathrm{within}}
++
+\Delta S_O^{B,\mathrm{entry}}
++
+\Delta S_O^{B,\mathrm{conversion}}.
+\]
+第一项是 type-A integrated firms 的企业内部技术方向调整；第二项是原研导向 type-B 企业进入增加；第三项是 type-B 原研项目的 realization / conversion rate 上升。这样修改后，模型维度更低，和 type-B 的经济含义更一致，也更符合论文的最终落脚点：\textbf{original-drug innovation}，而不是组织重构本身。
+
+\section{本说明的目的}
+
+当前论文已经将 MAH 的核心机制收束为：政策不是直接提高企业的科学发现能力，也不是一个泛化政策 dummy，而是降低原研药项目通过外部合格生产商实现商业化时的治理与合规摩擦，即降低 $\tau_{ext}$。论文的中心对象是 original-drug idea 从 invention 到 commercialization 的组织实现路径，而不是资本深化、静态生产投入或一般需求冲击。
+
+在此基础上，我们曾考虑加入 ``技术方向选择反馈''，即让企业在仿制药项目和原研药项目之间做内生配置：
+\[
+x^G,\quad x^O.
+\]
+这个扩展本身是有价值的，因为如果 MAH 提高原研药项目的商业化价值，企业不仅可能提高总研发强度，也可能将资源从 generic-oriented projects 转向 original-drug-oriented projects。
+
+但是，这里需要进一步修正一个关键点：\textbf{技术方向选择不应机械地放在 type-B 企业内部。}原因是，type-B 在当前模型中本来就是研发专业化、原研导向的主体；如果数据也显示 type-B 主要从事原研药项目，那么在 baseline 中设定它同时选择大量 $x_B^G$ 与 $x_B^O$ 会显得过度细化，并且可能与现实对象不匹配。
+
+本说明的目标是给出一个更稳健的 baseline 设定，用于后续合作者讨论和主文稿整合。
+
+\section{核心修订}
+
+修订前的备选写法是：
+\[
+\text{type-B direction choice: } x_B^G,\ x_B^O.
+\]
+
+修订后的 baseline 写法是：
+\[
+\text{type-B original-drug effort: } x_B^O.
+\]
+
+也就是说，type-B 在 baseline 中不再被设定为同时进行 generic-oriented 和 original-drug-oriented 项目配置，而被设定为 research-specialized / original-drug-oriented firms。其核心选择是原研药 idea-generation intensity 以及原研药项目的 commercialization assignment。
+
+对应地，行业层面的 original-drug share 上升不再被解释为 type-B 企业内部从 $G$ 转向 $O$，而应解释为：
+\begin{enumerate}
+    \item type-A integrated firms 的项目方向可能从 $G$ 向 $O$ 调整；
+    \item 更多原研导向的 type-B firms 进入或存活；
+    \item type-B 原研药 idea 通过外部商业化路径被实现的概率上升。
+\end{enumerate}
+
+这一区分非常重要。它使模型不再将 ``从仿制转向原研'' 这个行业层面结果，错误地压缩成 type-B 内部的单一方向选择。
+
+\section{为什么原来的 $x_B^G,x_B^O$ 设定需要调整}
+
+\subsection{原设定的动机是合理的}
+
+原设定试图表达以下机制：
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^O\uparrow,\quad x_B^G \text{ relatively less attractive}
+\Rightarrow
+S_O\uparrow.
+\]
+
+这条思路想解决一个重要问题：MAH 不仅提高原研药项目的 commercialization value，也可能改变企业的技术方向。因此，从概念上看，$G/O$ direction choice 是有价值的。
+
+\subsection{问题在于该方向选择是否应发生在 type-B 内部}
+
+如果 type-B 在现实中本来就是原研导向研发主体，那么它的主要 margin 不是 generic-to-original switching，而是：
+\[
+\text{original-drug idea generation}
++
+\text{commercialization assignment}
++
+\text{realization probability}.
+\]
+
+因此，对于 type-B，更自然的比较静态是：
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^O\uparrow,\quad V_B\uparrow,\quad e_B\uparrow,\quad Conv_B^O\uparrow,
+\]
+而不是：
+\[
+\frac{x_B^O}{x_B^G}\uparrow.
+\]
+
+\subsection{type-B 的经济含义决定其不应被写得过宽}
+
+当前三类企业的经济含义应当是：
+\begin{itemize}
+    \item $A$: integrated firms，能够进行研发并内部组织商业化；
+    \item $B$: research-specialized / original-drug-oriented firms，生成原研药 idea，但 baseline 中不作为完整内部生产商；
+    \item $C$: manufacturing-specialized firms，提供 qualified external manufacturing services。
+\end{itemize}
+
+在这个定义下，type-B 不是普通综合药企，而是最受 $\tau_{ext}$ 下降影响的研发专业化主体。若 baseline 又让其对称地选择 $G/O$ 两类项目，会同时承担两种角色：一是原研药外部商业化机制的核心主体，二是仿制到原研方向转换的企业内部主体。这样会增加模型维度，也会模糊论文主线。
+
+\section{修订后的 baseline 模型结构}
+
+\subsection{Type-A: 可承担 $G/O$ 技术方向选择的 integrated firms}
+
+Type-A 企业更可能同时拥有仿制药现金流、原研药研发能力、内部生产能力、生产资质和更完整的项目组合。因此，如果需要在 firm level 放置 $G/O$ direction choice，最自然的主体是 type-A。
+
+可写为：
+\[
+\Pi_A(z;M)
+=
+\bar{\pi}_A(z)
++
+\max_{x_A^G,x_A^O\ge 0}
+\left\{
+x_A^G\Psi_A^G(z)
++
+x_A^O\Psi_A^O(z;M)
+-
+C_A(x_A^G,x_A^O;z)
+\right\}.
+\]
+其中：
+\begin{itemize}
+    \item $x_A^G$: type-A 的 generic-oriented effort；
+    \item $x_A^O$: type-A 的 original-drug-oriented effort；
+    \item $\Psi_A^G(z)$: 仿制药项目的单位价值；
+    \item $\Psi_A^O(z;M)$: 原研药项目的单位价值；
+    \item $C_A(\cdot)$: 方向性研发成本函数。
+\end{itemize}
+
+但是需要强调：MAH 对 type-A 的直接作用不应像对 type-B 那么强，因为 type-A 本来可以内部商业化。Type-A 的方向选择主要用于解释行业层面的 generic-to-original reallocation，而不是本文最核心的 MAH 机制。如果为了进一步降维，也可以在主模型中暂时不展开 $x_A^G,x_A^O$，而将其放入 appendix 或 extension。
+
+\subsection{Type-B: baseline 只保留 $x_B^O$}
+
+Type-B 的 flow payoff 应改为：
+\[
+\Pi_B(z;M,p_m)
+=
+-f_B
++
+\max_{x_B^O\ge 0}
+\left\{
+x_B^O\Psi_B^O(z;p_m,M)
+-
+C_B(x_B^O;z)
+\right\}.
+\]
+
+其中，$\Psi_B^O$ 是 type-B 原研药 idea 的 per-idea commercialization value：
+\[
+\Psi_B^O(z;p_m,M)
+=
+\max
+\left\{
+H_{B,O}^{ext}(z,p_m;M),
+H_{B,O}^{alt}(z)
+\right\}.
+\]
+
+外部商业化路线的价值为：
+\[
+H_{B,O}^{ext}(z,p_m;M)
+=
+\lambda_{B,O}^{ext}(z,p_m)R_B^O(z)
+-
+p_m
+-
+\tau_{ext}(M).
+\]
+
+其中：
+\begin{itemize}
+    \item $R_B^O(z)$: 成功商业化后原研药项目的私人价值；
+    \item $\lambda_{B,O}^{ext}(z,p_m)$: 外部商业化路径的实现概率或实现效率；
+    \item $p_m$: 合格委托生产服务价格；
+    \item $\tau_{ext}(M)$: 外部商业化路径的治理与合规摩擦；
+    \item $H_{B,O}^{alt}(z)$: 非 external route 的最佳 outside option，可以概括 internalization, transfer 或 abandonment。
+\end{itemize}
+
+这不是推翻原来的 commercialization assignment 结构，而是把 type-B 的技术方向选择从 $(x_B^G,x_B^O)$ 收缩为 $x_B^O$，使其更符合 type-B 的定义。
+
+\subsection{Type-C: qualified manufacturing service provider}
+
+Type-C 不应被写成另一个同等复杂的创新主体。它在 baseline 中承担两个功能：提供 qualified external manufacturing capacity，并决定或参与决定 $p_m$。
+
+可保持：
+\[
+\Pi_C(z;p_m,w)
+=
+\bar{\pi}_C(z;p_m,w).
+\]
+
+如主模型需要市场清算，可加入：
+\[
+S_m(p_m,w;M)=D_m(p_m;M).
+\]
+
+但 type-C 的进入、利润变化、生产端 general-equilibrium effect 应作为 supporting mechanism，而不是文章最终落脚点。
+
+\section{修订后的核心机制链条}
+
+修订后，baseline 的核心机制应写成：
+\[
+\tau_{ext}(1)<\tau_{ext}(0),
+\]
+\[
+\Rightarrow
+H_{B,O}^{ext}(z,p_m;1)
+>
+H_{B,O}^{ext}(z,p_m;0),
+\]
+\[
+\Rightarrow
+\Psi_B^O(z;p_m,1)
+\ge
+\Psi_B^O(z;p_m,0),
+\]
+\[
+\Rightarrow
+x_B^{O*}(z;p_m,1)
+\ge
+x_B^{O*}(z;p_m,0),
+\quad
+V_B(z;1)\ge V_B(z;0),
+\]
+\[
+\Rightarrow
+e_B(1)\ge e_B(0),
+\quad
+Conv_B^O(1)\ge Conv_B^O(0),
+\quad
+N_O(1)\ge N_O(0).
+\]
+
+最终落脚到三个 innovation outcomes：
+\[
+N_O(M),\quad S_O(M),\quad Conv_O(M).
+\]
+
+这里，commercialization assignment 是机制，$N_O$, $S_O$, $Conv_O$ 是最终创新结果。
+
+\section{行业层面 original-drug share 的新解释}
+
+定义：
+\[
+S_O(M)
+=
+\frac{N_O(M)}{N_O(M)+N_G(M)}.
+\]
+
+修订后，$S_O$ 的上升不再被解释为 type-B 内部从 $G$ 转向 $O$，而来自三个 margin：
+\[
+\Delta S_O
+=
+\underbrace{\Delta S_O^{A,\mathrm{within}}}_{\text{type-A 内部项目方向调整}}
++
+\underbrace{\Delta S_O^{B,\mathrm{entry}}}_{\text{type-B 原研导向进入增加}}
++
+\underbrace{\Delta S_O^{B,\mathrm{conversion}}}_{\text{type-B 原研项目实现率提高}}.
+\]
+
+\subsection{Type-A within-firm direction change}
+
+一体化企业可能同时做仿制药和原研药，因此其项目组合可能从 $G$ 向 $O$ 倾斜：
+\[
+\frac{x_A^O}{x_A^G}\uparrow.
+\]
+这是真正适合 $G/O$ 技术方向选择的 firm-level margin。
+
+\subsection{Type-B entry / composition effect}
+
+MAH 降低 $\tau_{ext}$，提高 type-B 的 continuation value 和 entry value：
+\[
+V_B\uparrow
+\Rightarrow
+e_B\uparrow.
+\]
+如果 type-B 本来就是原研导向主体，那么 type-B entry 上升本身会提高行业 original-drug share。
+
+\subsection{Type-B original-drug conversion effect}
+
+即使 type-B 的研发方向不变，MAH 也可能提高其原研项目实现率：
+\[
+Conv_B^O\uparrow.
+\]
+这对应 ``商业化机制和创新结果之间的连接''。我们不是用创新结果直接反推机制，而是强调：外部商业化路径变得可行后，原研 idea 更容易转化为 realized original-drug products。
+
+\section{对主文稿的具体修改建议}
+
+\subsection{Section 3: 修改 type-B block}
+
+将原先可能出现的
+\[
+x_B^G,\quad x_B^O
+\]
+改为
+\[
+x_B^O.
+\]
+
+建议加入如下英文表述：
+\begin{quote}
+In the baseline model, type-B firms are treated as research-specialized and primarily original-drug-oriented. Their central margin is not within-firm reallocation between generic and original-drug projects, but the generation and commercialization assignment of original-drug ideas.
+\end{quote}
+
+对应中文含义是：在 baseline 模型中，type-B 企业被视为研发专业化且主要原研导向的企业。它们的核心边际不是在企业内部从仿制药项目转向原研药项目，而是原研药 idea 的生成强度及其商业化路径分配。
+
+\subsection{Section 3: 重新定义 type-A 的角色}
+
+如果保留技术方向选择，则应优先放在 type-A：
+\[
+x_A^G,\quad x_A^O.
+\]
+
+建议加入如下英文表述：
+\begin{quote}
+Type-A firms may have broader project portfolios and therefore can allocate effort between generic-oriented and original-drug-oriented projects. This block captures the within-firm technology-direction margin among integrated firms, while the MAH-specific mechanism remains concentrated in the type-B external commercialization block.
+\end{quote}
+
+\subsection{Section 4: 替换原来的 type-B ratio prediction}
+
+不要把主预测写成：
+\[
+\frac{x_B^O}{x_B^G}\uparrow.
+\]
+
+应改为：
+\[
+x_B^O\uparrow,
+\quad
+V_B\uparrow,
+\quad
+e_B\uparrow,
+\quad
+Conv_B^O\uparrow.
+\]
+
+同时保留行业层面预测：
+\[
+S_O\uparrow,
+\]
+但解释为：
+\[
+S_O\uparrow
+\quad \text{comes from} \quad
+A\text{-within direction change}
++
+B\text{-entry/composition}
++
+B\text{-conversion}.
+\]
+
+\subsection{Section 5: 加入数据诊断}
+
+经验部分必须先确认 type-B 是否真的有 $G/O$ 双向项目活动。建议加入一个小节：
+\begin{quote}
+Diagnostic: Are type-B firms actually mixed $G/O$ firms?
+\end{quote}
+
+构造：
+\[
+Share_B^O
+=
+\frac{\# O\text{ projects by type-B firms}}
+{\# G\text{ projects by type-B firms}+\# O\text{ projects by type-B firms}}.
+\]
+如果 $Share_B^O$ 在改革前已经很高，例如长期接近 80\% 或 90\%，则说明 type-B 不是 $G/O$ 内部方向选择主体。baseline 应保持 $x_B^O$。
+
+同时构造：
+\[
+Share_A^O
+=
+\frac{\# O\text{ projects by type-A firms}}
+{\# G\text{ projects by type-A firms}+\# O\text{ projects by type-A firms}}.
+\]
+如果 type-A 同时拥有大量 $G$ 和 $O$ 项目，那么 $x_A^G,x_A^O$ 更有数据基础。
+
+\section{经验映射的修订版本}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabularx}{\textwidth}{p{0.23\textwidth}p{0.30\textwidth}Y}
+\toprule
+机制对象 & 数据对象 & 解释 \\
+\midrule
+$\tau_{ext}\downarrow$ & holder-producer split / route-use proxy & 外部商业化路径更可行 \\
+$\Psi_B^O\uparrow$ & type-B 原研项目 realization 上升 & 原研项目商业化价值提高 \\
+$x_B^O\uparrow$ & type-B 原研项目数量或申请强度上升 & 原研导向研发主体反应 \\
+$e_B\uparrow$ & research-oriented entry 增加 & 进入边际 \\
+$Conv_B^O\uparrow$ & type-B 原研项目从申请到批准或上市的转化率上升 & realization / implementation margin \\
+$S_O\uparrow$ & realized products 中原研药占比上升 & 行业创新方向结果 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+修订后的 empirical hierarchy 应当把 realized original-drug products、original-drug share、holder-producer split、original-drug route-use proxy 放在 first-layer objects 中；A/B/C transition matrices 则作为 second-layer validation margins。
+
+\section{对合作者需要强调的判断}
+
+\subsection{这不是削弱技术方向选择，而是重新定位它}
+
+技术方向选择仍然重要，但应分层：
+\begin{itemize}
+    \item firm-level within choice: 主要放在 type-A；
+    \item type-B margin: 原研项目生成、进入、外部商业化、realization；
+    \item industry-level outcome: original-drug share 上升。
+\end{itemize}
+
+因此，文章仍然可以讲 ``从仿制到原研'' 的产业升级，但不必把这个过程全部压在 type-B 内部。
+
+\subsection{Baseline 更克制，反而更强}
+
+本修订回应了模型维度过多的担忧：
+\begin{itemize}
+    \item 不再给所有类型都设 $G/O$ 方向选择；
+    \item 不再让 type-B 同时承担 generic-to-original switching 和 commercialization assignment 两个角色；
+    \item 保留 type-B 作为核心机制主体；
+    \item 把 industry-level $S_O$ 作为最终结果。
+\end{itemize}
+
+这会让模型更像一个 JDE-style mechanism model，而不是过度细化的产业组织模拟模型。
+
+\subsection{数据决定是否把 $x_B^G,x_B^O$ 放回 appendix}
+
+如果后续数据发现 type-B 企业确实有大量 generic projects，并且改革后 type-B 内部 $G/O$ composition 明显变化，则可以在 appendix 中扩展为：
+\[
+x_B^G,\quad x_B^O.
+\]
+但在 baseline 中不应预设这一点。
+
+\section{建议的 baseline 最终写法}
+
+\subsection{Environment}
+
+\[
+s\in\{A,B,C\}.
+\]
+其中：
+\begin{itemize}
+    \item $A$: integrated firms，具备研发和内部商业化能力；
+    \item $B$: research-specialized / original-drug-oriented firms，生成原研药 idea，但缺少完整内部生产能力；
+    \item $C$: manufacturing-specialized firms，提供 qualified external manufacturing services。
+\end{itemize}
+
+\subsection{Type-A block}
+
+可选方向选择：
+\[
+\Pi_A(z;M)
+=
+\bar{\pi}_A(z)
++
+\max_{x_A^G,x_A^O\ge 0}
+\left\{
+x_A^G\Psi_A^G(z)
++
+x_A^O\Psi_A^O(z;M)
+-
+C_A(x_A^G,x_A^O;z)
+\right\}.
+\]
+若主模型进一步降维，则保留单一 $x_A^O$，把 $x_A^G,x_A^O$ 放入 appendix。
+
+\subsection{Type-B block}
+
+Baseline:
+\[
+\Pi_B(z;M,p_m)
+=
+-f_B
++
+\max_{x_B^O\ge 0}
+\left\{
+x_B^O\Psi_B^O(z;p_m,M)
+-
+C_B(x_B^O;z)
+\right\}.
+\]
+其中：
+\[
+\Psi_B^O(z;p_m,M)
+=
+\max
+\left\{
+H_{B,O}^{ext}(z,p_m;M),
+H_{B,O}^{alt}(z)
+\right\},
+\]
+\[
+H_{B,O}^{ext}(z,p_m;M)
+=
+\lambda_{B,O}^{ext}(z,p_m)R_B^O(z)
+-
+p_m
+-
+\tau_{ext}(M).
+\]
+
+\subsection{Type-C block}
+
+\[
+\Pi_C(z;p_m,w)
+=
+\bar{\pi}_C(z;p_m,w).
+\]
+
+\subsection{Innovation outcomes}
+
+\[
+N_O(M)
+=
+\int x_A^{O*}(z;M)\Lambda_A^O(z)\,d\mu_A(z)
++
+\int x_B^{O*}(z;p_m,M)\Lambda_B^O(z;p_m,M)\,d\mu_B(z).
+\]
+
+\[
+S_O(M)
+=
+\frac{N_O(M)}{N_O(M)+N_G(M)}.
+\]
+
+\[
+Conv_O(M)
+=
+\frac{N_O(M)}
+{\int x_A^{O*}(z;M)d\mu_A(z)+\int x_B^{O*}(z;p_m,M)d\mu_B(z)}.
+\]
+
+这些对象与当前 innovation-centered revision 一致：commercialization assignment 是机制，$N_O$, $S_O$, $Conv_O$ 是最终创新结果。
+
+\section{可直接发给合作者的简短总结}
+
+我们建议修改 baseline 中的技术方向选择设定。原来考虑把 type-B 写成同时选择 $x_B^G,x_B^O$，用来刻画 ``从仿制转向原研''。但根据当前模型定义，type-B 是 research-specialized / original-drug-oriented firm，它的核心约束不是在仿制药和原研药之间做内部项目组合切换，而是其原研药 idea 能否通过外部合格生产路径实现商业化。因此，baseline 中 type-B 更适合只保留 $x_B^O$，并把 MAH 的作用写成：
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^O,V_B,e_B,Conv_B^O\uparrow.
+\]
+
+``从仿制到原研'' 的产业升级仍然保留，但不再全部压在 type-B 内部。行业 original-drug share $S_O$ 的上升可以来自三部分：type-A integrated firms 的 within-firm $G/O$ 方向调整、type-B 原研导向进入增加、以及 type-B 原研项目 realization / conversion rate 上升。这样修改后，baseline 更克制，和 type-B 的定义更一致，也更符合关于 ``模型维度不要过多、机制和落脚点匹配'' 的建议。
+
+数据上，我们需要先检查 type-B 企业是否真的有大量 generic 和 original-drug 混合项目。如果 type-B 的 original-drug share 本来就很高，则 $x_B^G,x_B^O$ 不应放入 baseline；如果数据表明 type-B 确实有明显 $G/O$ 内部配置，则可以把 $x_B^G,x_B^O$ 放入 appendix robustness 或 extension。当前 baseline 的稳健设定应是：type-A 可承担 $G/O$ 方向选择，type-B 承担原研 idea 的 external commercialization mechanism，type-C 承担 qualified manufacturing supply。
+
+\end{document}

@@ -1,0 +1,466 @@
+% !TEX program = xelatex
+\documentclass[12pt]{ctexart}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+
+\setstretch{1.2}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.15em}
+\setlist[itemize]{leftmargin=2em,itemsep=0.2em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=2em,itemsep=0.2em,topsep=0.35em}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection.}{0.6em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{\thesubsubsection.}{0.6em}{}
+
+\title{MAH 项目汇报 PPT 打磨方案\\\large 从 19 页技术版压缩为 13 页主汇报版}
+\author{}
+\date{供与导师讨论前修改使用}
+
+\begin{document}
+\maketitle
+
+\section{总判断}
+
+当前 19 页 PPT 的内容是够的，主轴也已经基本清楚。但是如果目标是去找导师做第一次或阶段性正式讨论，\textbf{19 页略偏长、偏理论、偏公式密集}。更稳妥的做法是：
+
+\begin{quote}
+\textbf{主汇报版压缩到 12--14 页；当前 19 页保留为 technical backup。}
+\end{quote}
+
+当前版本最强的地方是已经把文章主轴从泛泛的“MAH 是否促进创新”，收束为：
+\[
+\text{MAH}
+\Rightarrow
+\text{implementation/commercialization-route assignment}
+\Rightarrow
+\text{realized original-drug innovation}.
+\]
+
+这个 object hierarchy 必须保留。机制对象是 commercialization-route assignment，最终结果对象是 realized original-drug innovation。PPT 后续所有页都应该服务于这条主轴：\textbf{MAH 不是直接提高科学发现生产率，而是通过降低外部商业化实现路径的治理与合规摩擦，使更多原研药 idea 能够被实现为产品，并进一步改变企业的技术方向选择。}
+
+当前版本的主要问题不在于主轴错，而在于中段模型讲得过密。第 10--15 页连续展开方向选择、route assignment、$H^{ext}_{B,O}$、比较静态和 Bellman，容易让老师在还没有看到数据抓手之前就被公式带走。因此建议将主线压缩，把部分理论页移入 backup。
+
+\section{当前 19 页 PPT 的优点}
+
+\subsection{主问题已经比旧版本清楚}
+
+当前版本已经不是简单问“MAH 是否促进医药创新”，而是明确问：MAH 是否通过改变 idea 到 product 的 implementation route，提高 realized original-drug innovation。这个设定是正确的，也是目前项目最有 JDE 潜力的地方。
+
+\subsection{政策 primitive 定义得比较干净}
+
+当前 PPT 已经把政策 primitive 写成：
+\[
+\tau_{ext}(1)<\tau_{ext}(0).
+\]
+
+这里的 $\tau_{ext}$ 不是 demand，不是 scientific productivity，也不是 universal policy wedge，而是 external implementation/commercialization route 的治理与合规摩擦。这一设定应该继续作为模型和经验部分的核心。
+
+\subsection{A/B/C 的解释方向是正确的}
+
+当前版本已经说明 A/B/C 不是 literal firm identities，而是经济学上的 organizational states。这一点必须保留，因为导师很可能会问：现实中企业不是固定 A、B、C，为什么模型可以这样分？正确回答是：A/B/C 描述的是边际项目的 dominant organizational mode，而不是企业工商登记意义上的永久身份。
+
+\subsection{加入 $x_B^G$ 与 $x_B^O$ 是必要更新}
+
+把 B 型主体的研发努力分为 generic-oriented effort 和 original-drug-oriented effort 是非常重要的。这一设定直接回应一个关键质疑：如果最终看到创新药增加，是否只是企业研发投入增加，而不是 MAH 机制？
+
+正确解释是：如果 MAH 降低 $\tau_{ext}$，提高的是原研药项目通过外部商业化路径实现的预期价值，那么企业提高 $x_B^O$ 或提高原研药努力份额 $\omega_B^O$，本身就是机制内生反应，而不是机制外的混淆因素。
+
+\subsection{数据边界说得比较诚实}
+
+当前版本已经区分了当前数据可以做的 Module A，以及未来需要补的 Module B/C。这个诚实边界很重要。不能声称当前 approval-side data 已经能直接识别 $\tau_{ext}$。更稳妥的写法是：当前数据可以支持与 $\tau_{ext}$ 下降相一致的一组 observable implications，例如 holder-producer split、original-drug counts and shares、route-use proxies；未来数据再进一步补 conversion、capability 和 entry。
+
+\section{当前版本的主要问题}
+
+\subsection{模型中段太密}
+
+当前第 10--15 页基本都是模型：
+
+\begin{center}
+\begin{tabular}{L{0.18\textwidth}L{0.68\textwidth}}
+\toprule
+当前页 & 内容 \\
+\midrule
+第 10 页 & $x_B^G,x_B^O$ direction choice \\
+第 11 页 & original-drug route assignment \\
+第 12 页 & why MAH raises original-drug effort \\
+第 13 页 & $H^{ext}_{B,O}$ 对象定义 \\
+第 14 页 & comparative statics \\
+第 15 页 & Bellman and equilibrium \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+这 6 页对于内部技术讨论是有价值的，但作为给导师的主汇报版本过密。建议压缩成 3 页主线，剩下放入 backup。
+
+\subsection{缺少“文献与贡献定位”页}
+
+当前 PPT 缺一页专门说明本文相对已有文献的新意。导师很可能会问：这篇文章和已有中国医药监管改革文献，尤其是审批时长、IND、clinical trials、firm composition 相关研究有什么区别？
+
+你需要明确说：已有文献更多关注 approval delay 和 review-time channel；本文关注 MAH 下 authorization-production separation 如何改变原研药 idea 的 commercialization-route assignment。
+
+\subsection{缺少“替代解释与识别威胁”页}
+
+当前 PPT 虽然讲了 data gap，但没有系统回应 alternative explanations。导师很可能问：
+\begin{itemize}
+    \item 会不会只是一般研发投入增加？
+    \item 会不会是审批速度提高？
+    \item 会不会是需求变化？
+    \item 会不会是医药行业整体趋势？
+\end{itemize}
+
+因此必须新增一页，专门讲如何区分 MAH mechanism 和 general R\&D boom / approval-time reform / demand shock。
+
+\section{建议的 13 页主汇报版结构}
+
+\subsection{Slide 1：Title}
+
+\textbf{建议标题：}
+\begin{quote}
+Original-Drug Innovation, Commercialization-Route Assignment, and the MAH System in China
+\end{quote}
+
+建议把 implementation-route assignment 改成 commercialization-route assignment。Implementation 在理论上准确，但 commercialization 更贴近医药制度语境，也更适合中文汇报中的“商业化实现路径”。口头讲解时可以说明 implementation/commercialization 是同一个核心边际。
+
+\subsection{Slide 2：Main Question and Object Hierarchy}
+
+保留当前第 2 页，但压缩文字。核心只保留：
+\[
+\text{MAH}
+\Rightarrow
+\text{commercialization-route assignment}
+\Rightarrow
+\text{realized original-drug innovation}.
+\]
+
+并明确三点：
+\begin{itemize}
+    \item mechanism object: route assignment;
+    \item final object: original-drug realization;
+    \item not demand, not direct scientific productivity, not generic policy dummy.
+\end{itemize}
+
+这一页的功能是把全文问题一次性说清楚。
+
+\subsection{Slide 3：Why Implementation Is the Bottleneck}
+
+保留当前第 3 页。建议把改革前研发主体面临的选择压缩成三项：
+\begin{enumerate}
+    \item integrate downstream production;
+    \item transfer effective control to an integrated producer;
+    \item leave the idea unrealized.
+\end{enumerate}
+
+这页要讲出本文的经济学动机：原研药创新的瓶颈不只是 scientific discovery，而是 idea 能否在不完全内部化下游生产链条的情况下被实现。
+
+\subsection{Slide 4：What MAH Changes Institutionally}
+
+保留当前第 4 页，但建议加入三个关键词：
+\begin{itemize}
+    \item retained authorization;
+    \item qualified external production;
+    \item holder responsibility.
+\end{itemize}
+
+这页的重点不是说 MAH 放松监管，而是说 MAH 在保留质量责任的前提下，把外部生产关系变成更标准化、更可监管、更可执行的组织路径。
+
+\subsection{Slide 5：Contribution Relative to Existing Literature}
+
+\textbf{新增页。}
+
+建议标题：
+\begin{quote}
+What is new relative to approval-time reform papers?
+\end{quote}
+
+建议内容：
+\begin{center}
+\begin{tabularx}{0.95\textwidth}{Y Y}
+\toprule
+Existing approval-time reform papers & This paper \\
+\midrule
+Approval delay, IND, clinical trials & MAH, authorization-production separation \\
+Innovation quantity and new firm entry & Commercialization-route assignment \\
+Regulation affects expected returns through delay & Institution changes how original-drug ideas become products \\
+Firm composition and application response & Holder-producer assignment and realized original-drug products \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+这一页的作用是让老师立刻明白：本文不是重复审批提速文献，而是抓住 MAH 的制度特异性。
+
+\subsection{Slide 6：Policy Primitive and Identification Boundary}
+
+保留当前第 5 页。核心公式仍然是：
+\[
+\tau_{ext}(1)<\tau_{ext}(0).
+\]
+
+建议加一句：
+\begin{quote}
+We discipline observable implications of $\tau_{ext}$; we do not claim to directly observe $\tau_{ext}$ in reduced form.
+\end{quote}
+
+这句话非常重要，因为它防止过度识别声称。
+
+\subsection{Slide 7：Baseline Model Architecture}
+
+将当前第 6、7、8、9 页合并成一页。建议内容：
+\begin{itemize}
+    \item $k\in\{G,O\}$: generic vs original-drug projects;
+    \item $s\in\{A,B,C\}$: integrated / research-specialized / manufacturing-specialized modes;
+    \item $z\in Z\subset\mathbb{R}_+$: one-dimensional capability state;
+    \item static production choices are optimized out;
+    \item dynamic decisions: direction choice, route assignment, stay/switch/exit.
+\end{itemize}
+
+把“A/B/C are not literal firm identities”放成一行 note：
+\begin{quote}
+A/B/C are organizational states for the marginal project, not permanent legal firm identities.
+\end{quote}
+
+当前第 8 页可移入 backup。
+
+\subsection{Slide 8：Direction Choice and Route Assignment}
+
+将当前第 10 和第 11 页合并。这一页保留两个核心对象。
+
+第一，B 型状态下企业分配 effort：
+\[
+x_B^G,\qquad x_B^O.
+\]
+
+第二，原研药项目选择 route：
+\[
+\mathcal{H}^O=\{ext,int,tr,ab\}.
+\]
+
+这一页的关键纪律是：
+\[
+\text{MAH shifts }\Psi_B^O\text{ through }H^{ext}_{B,O},\qquad \text{not }\Psi_B^G.
+\]
+
+也就是说，MAH 主要提高原研药项目的外部实现价值，而不是直接提高仿制药项目价值。
+
+\subsection{Slide 9：Core Mechanism Equation}
+
+将当前第 12 和第 13 页合并。这是整套 PPT 最重要的机制页。
+
+建议保留外部路径价值：
+\[
+H^{ext}_{B,O}(z,p_m;M)
+=
+\lambda^{ext}_{B,O}(z,p_m)R_{B,O}(z)-p_m-\tau_{ext}(M).
+\]
+
+然后给出完整机制链条：
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+H^{ext}_{B,O}\uparrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^{O*}\uparrow,\ \omega_B^O\uparrow
+\Rightarrow
+N_O,\ S_O,\ Conv_O\uparrow.
+\]
+
+这页直接回答导师和 MIT 教授可能提出的核心问题：创新结果和商业化机制到底如何连接？答案是：MAH 先提高外部实现路径价值，再提高原研药方向的 effort 和 realization。
+
+\subsection{Slide 10：Comparative Statics and Predictions}
+
+将当前第 14 和第 16 页合并。建议分成 first-layer outcomes 和 second-layer validation margins。
+
+\textbf{First-layer outcomes:}
+\begin{itemize}
+    \item external-route use rises;
+    \item original-drug effort/share rises;
+    \item original-drug realization rises.
+\end{itemize}
+
+\textbf{Second-layer validation margins:}
+\begin{itemize}
+    \item research-oriented entry may rise;
+    \item A/B/C transitions may adjust;
+    \item type-C producer profit has ambiguous sign in general equilibrium.
+\end{itemize}
+
+这里要强调：transition matrix 和 producer-side outcomes 是机制验证对象，不是最终结果对象。
+
+\subsection{Slide 11：Empirical Mapping: What We Can Observe Now}
+
+保留当前第 17 页的主题，但改成表格。
+
+\begin{center}
+\begin{tabularx}{0.95\textwidth}{Y Y Y}
+\toprule
+Model object & Observable proxy now & Future upgrade \\
+\midrule
+External route use & Holder-producer split & Explicit entrusted-production indicator \\
+Original-drug realization & Approval-side original-drug counts & Application-to-approval conversion \\
+Direction choice & Original-drug share & R\&D / project-level data \\
+Capability state & Rough firm-type proxy & Pre-reform R\&D and manufacturing capability \\
+Entry & New MAH holders / applicants & Firm-year entry panel \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+这页要让老师一眼看到：模型对象不是空的，每个对象都有当前 proxy 和未来数据升级路径。
+
+\subsection{Slide 12：Identification Threats and How We Address Them}
+
+\textbf{新增页。}
+
+建议内容：
+\begin{center}
+\begin{tabularx}{0.95\textwidth}{Y Y Y}
+\toprule
+Alternative explanation & Why insufficient & MAH-consistent pattern \\
+\midrule
+General R\&D boom & Raises broad innovation, not necessarily route use & Stronger for original-drug external-route projects \\
+Approval-time reform & Affects review delay & Should not directly create holder-producer split \\
+Demand shock & Expands market & Not necessarily concentrated among research-oriented non-manufacturers \\
+Firm composition trend & Entrants may increase anyway & Should align with MAH exposure and route-use proxies \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+这页是必须加的。它主动回应识别质疑，尤其是“会不会只是研发投入增加”这一问题。
+
+\subsection{Slide 13：What We Need Feedback On}
+
+保留当前第 19 页，但压缩成三个问题：
+
+\begin{enumerate}
+    \item Is the hierarchy right: route assignment as mechanism, original-drug realization as final object?
+    \item Is $x_B^G,x_B^O$ the right minimal extension to connect the mechanism with innovation outcomes?
+    \item Is the empirical roadmap credible enough: Module A now, Module B/C later?
+\end{enumerate}
+
+最后保留 bottom line：
+\begin{quote}
+MAH matters because it changes how ideas become products and which ideas firms choose to pursue.
+\end{quote}
+
+\section{建议移入 Backup 的页面}
+
+\begin{center}
+\begin{tabularx}{0.95\textwidth}{L{0.2\textwidth}Y Y}
+\toprule
+Backup 页 & 内容 & 原因 \\
+\midrule
+Backup 1 & A/B/C Are Organizational States, Not Literal Firm Identities & 是重要防守页，但不必占主线页。 \\
+Backup 2 & External Implementation Value: Object Definition & 若主线已讲 $H^{ext}_{B,O}$，详细对象定义放 backup。 \\
+Backup 3 & Dynamic Structure and Equilibrium & Bellman 和市场清算是技术防守，不适合第一次主汇报过早展开。 \\
+Backup 4 & Data-Estimation Gap & 当前主线用 empirical mapping + identification threats 即可；详细 gap 可放 backup。 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{当前 19 页的逐页处理建议}
+
+\begin{center}
+\begin{longtable}{L{0.15\textwidth}L{0.25\textwidth}L{0.48\textwidth}}
+\toprule
+当前页 & 建议 & 理由 \\
+\midrule
+\endfirsthead
+\toprule
+当前页 & 建议 & 理由 \\
+\midrule
+\endhead
+第 1 页 & 保留 & 标题页。 \\
+第 2 页 & 保留并压缩 & 主问题和 object hierarchy 清楚。 \\
+第 3 页 & 保留 & 解释为什么 implementation 是瓶颈。 \\
+第 4 页 & 保留 & 制度机制必须讲。 \\
+第 5 页 & 保留 & $\tau_{ext}$ 是核心 primitive。 \\
+第 6 页 & 与第 7/8/9 页合并 & 模型架构分得太碎。 \\
+第 7 页 & 合并或 backup & A/B/C role 可压缩。 \\
+第 8 页 & backup & 是防守页，不是主线页。 \\
+第 9 页 & 合并到模型架构页 & timing 和 $z$ 不需要单独占一页。 \\
+第 10 页 & 与第 11 页合并 & direction choice 是核心，但可与 route assignment 同页。 \\
+第 11 页 & 与第 10 页合并 & route assignment 是核心。 \\
+第 12 页 & 与第 13 页合并 & 两页都在解释 $H^{ext}$ 和机制链条。 \\
+第 13 页 & backup 或合并 & 对象定义太细。 \\
+第 14 页 & 与第 16 页合并 & comparative statics 和 predictions 可同页。 \\
+第 15 页 & backup & Bellman 对主线过技术。 \\
+第 16 页 & 合并到 prediction 页 & 内容重要，但可压缩。 \\
+第 17 页 & 改成 empirical mapping table & 当前文字偏多。 \\
+第 18 页 & backup 或改成 data gap 附页 & 主线更需要 identification threats。 \\
+第 19 页 & 保留并压缩 & 反馈问题必须有。 \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\section{术语统一建议}
+
+\subsection{Implementation-route assignment 与 commercialization-route assignment}
+
+对外汇报建议用 commercialization-route assignment 作为主术语，中文统一讲“商业化实现路径分配”。Implementation 可以在模型页出现，但标题和主线不宜过多使用，以免显得过硬、过抽象。
+
+\subsection{Realized original-drug innovation}
+
+中文建议统一说“已实现的原研药创新”或“原研药实现结果”。不要在 PPT 中混用“创新药研发数量”“原研药 realization”“创新结果”等多个表述，否则老师会觉得结果对象漂移。
+
+\subsection{$x_B^G,x_B^O$ 的解释}
+
+不能只说 $x_B^G$ 是仿制药努力，$x_B^O$ 是原研药努力。必须明确其经济学功能：
+
+\begin{quote}
+这个 block 的作用，是把“研发投入增加”从潜在混淆因素，转化为 MAH 提高原研药商业化价值之后的内生方向选择反应。
+\end{quote}
+
+\section{面向导师汇报的版本选择}
+
+\subsection{15--20 分钟}
+
+使用 13 页主线版。不要主动展开完整 Bellman。Bellman 放 backup，等老师问到再讲。
+
+\subsection{30--40 分钟}
+
+可以使用 15 页扩展版。在 13 页基础上加入：
+\begin{itemize}
+    \item A/B/C are not literal firm identities;
+    \item Dynamic Structure and Equilibrium.
+\end{itemize}
+
+\subsection{逐模型讨论}
+
+可以使用当前 19 页 technical version，但开场应先声明：
+\begin{quote}
+我准备了一个 13 页主线版和一个 19 页技术版。如果老师希望先看整体识别和数据，我讲主线；如果老师希望看模型，我可以展开 Bellman 和 route assignment。
+\end{quote}
+
+\section{最终建议}
+
+当前 19 页 PPT 不是不能用，但不应该作为默认主汇报版本。最优做法是：
+
+\begin{quote}
+\textbf{主线压缩到 13 页，当前 19 页改成 technical backup。}
+\end{quote}
+
+具体操作是：
+\begin{enumerate}
+    \item 合并第 6--9 页；
+    \item 合并第 10--11 页；
+    \item 合并第 12--13 页；
+    \item 合并第 14 和第 16 页；
+    \item 第 15 页 Bellman 放 backup；
+    \item 第 18 页 data gap 放 backup；
+    \item 新增 contribution positioning；
+    \item 新增 alternative explanations / identification threats；
+    \item 第 17 页改成 model-object-to-observable mapping table。
+\end{enumerate}
+
+这样修改后，PPT 会更像一份可以和导师高效讨论的 JDE 项目主线，而不是一份内部技术笔记。
+
+\end{document}

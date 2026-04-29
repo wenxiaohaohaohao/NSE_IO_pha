@@ -1,0 +1,256 @@
+\documentclass[12pt]{ctexart}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{titlesec}
+
+\setstretch{1.2}
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.35em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.8em,itemsep=0.35em,topsep=0.35em}
+\titleformat{\section}{\Large\bfseries}{}{0pt}{}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+\title{基于 \texttt{slides\_updated} 的逐页中文讲稿}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\noindent 这份讲稿按当前 slides 的页序组织。每一节对应一页 slides，写法不是逐字翻译，而是明天可以直接对老师讲的中文版本。使用时建议以这一页的“建议讲法”为主，再根据老师反应选择是否补充“这一页想强调的点”。
+
+\newpage
+\section*{Slide 1. Title Page}
+\textbf{建议讲法：}老师好，今天我想汇报的项目，是中国 MAH 改革如何通过改变原研项目从 idea 到 product 的 implementation route，影响 realized original-drug innovation。现在这套汇报会先讲问题和制度背景，再讲模型怎么组织这个机制，然后讲我们准备如何把模型和数据接起来，最后我会明确说当前还存在什么 gap，以及我希望请老师帮我们判断哪些关键问题。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 这不是单纯讲一个政策效果，而是讲一个制度如何改变 innovation implementation 的组织路径。
+\item 这次汇报会同时覆盖 mechanism、dynamic model 和 empirical strategy。
+\end{itemize}
+
+\newpage
+\section*{Slide 2. 1. Main Question and Novelty}
+\textbf{建议讲法：}这一页我想先把研究问题和新意说清楚。我们的核心问题不是 MAH 会不会笼统地提高创新，而是 MAH 会不会通过改变 research-originated original-drug ideas 的 implementation route，提升最终能够落到市场上的 original-drug products。也就是说，我们关注的是 realized original-drug innovation，而不是实验室里的 scientific productivity 本身。这个项目的主要新意，在于我们把 MAH 理解成 implementation-route assignment 的变化，而不是 generic innovation shock；同时，我们把经验识别首先放在 route use 和 realization 上，而不是一开始就把所有 downstream organizational outcome 都当成核心证据。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 相对 innovation literature，我们的机制不是研发能力本身变强，而是 idea 变成 product 的路径变了。
+\item 相对 outsourcing literature，我们讨论的是 authorization-retaining external implementation，不是普通委外生产。
+\end{itemize}
+
+\newpage
+\section*{Slide 3. 2. Before MAH: Why Implementation Is the Bottleneck}
+\textbf{建议讲法：}这一页想讲改革前为什么会存在 implementation bottleneck。在制药行业里，invention 和 product realization 并不一定发生在同一家企业内部。中国 MAH 改革前，一个 research-originating firm 如果没有自己的 manufacturing qualification，就很难在保留项目控制权和 authorization 的同时把 original-drug idea 推到市场。它通常只有几个代价都比较高的选择：要么自己去补 internal manufacturing capacity，要么把项目有效控制权转给 integrated producer，要么项目被延后甚至放弃。所以这里真正的约束往往不是 scientific discovery 不存在，而是 organizational implementation 太难。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 我们不是否认研发重要，而是说政策真正直接改变的是 implementation bottleneck。
+\item 因此 paper 关注的结果变量是 realized original-drug products，而不是 total pharmaceutical output。
+\end{itemize}
+
+\newpage
+\section*{Slide 4. 3. Institutional Evolution under MAH}
+\textbf{建议讲法：}这一页把制度演变讲清楚。2016 年 pilot 开始，已经出现了 authorization holding 和 in-house production 可以分离的制度方向。2019 年 Drug Administration Law 则把这个安排正式法律化，holder 可以 self-manufacture，也可以委托 qualified outside manufacturer 生产，但前提是有正式的 entrustment 和 quality agreement。之后 2022 和 2023 的 implementing rules 进一步把 holder responsibility、quality management 和 supervision 讲清楚。这里最关键的一点是，MAH 不是一个宽泛的“允许外包”的口号，而是创造了一条 legally structured external implementation route，在这条 route 下，创新方可以保留 authorization，生产由 qualified outside manufacturer 完成。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 制度变化的核心是 authorization--production assignment 的重构。
+\item 这也是为什么我们在模型里把政策原语写成 route-specific friction 的下降。
+\end{itemize}
+
+\newpage
+\section*{Slide 5. 4. Route-Specific Policy Primitive}
+\textbf{建议讲法：}这一页把模型里的政策 primitive 讲清楚。我们用 $\tau_{ext}(1) < \tau_{ext}(0)$ 来表示 MAH 改革后，external implementation 这条 route 上的 governance 和 compliance friction 下降了。这个对象很重要，因为它说明政策并不是直接提高 scientific productivity，也不是直接降低物理制造成本 $p_m$，更不是一个笼统 policy dummy。政策影响的是：当 innovator 保留 authorization，同时依赖 qualified external manufacturer 时，这条 route 的组织成本和制度摩擦变低了。之后模型再把 heterogeneous firms、switching、entry and exit，以及 contract-manufacturing market 放到这个 primitive 上面。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 一定要把 $\tau_{ext}$ 和 scientific productivity 区分开。
+\item 后面所有 comparative statics 都是从这一个 route-specific margin 往外推。
+\end{itemize}
+
+\newpage
+\section*{Slide 6. 5. Baseline Environment}
+\textbf{建议讲法：}这一页说明 baseline model 的边界。我们的 baseline 是一个 lower-dimensional dynamic industry model，只保留回答这个问题真正需要的对象：政策 regime、firm capability、organizational type，以及和 route assignment 有关的价格和成本对象。也就是说，我们不是要在第一步就写一个最完整的 political-economy 或 incomplete-contract 模型，而是先用一个 disciplined baseline，把 MAH 如何改变 implementation-route assignment、进而影响 original-drug realization 的主链条写清楚。这个 baseline 里有 switching、entry and exit，以及 qualified contract-manufacturing market；但它不试图一次性把 full bargaining、government optimization 或其他更厚的层次都塞进来。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 模型是 dynamic 的，但 baseline 仍然保持低维和有纪律。
+\item 这不是“越复杂越好”，而是先把必要机制写干净。
+\end{itemize}
+
+\newpage
+\section*{Slide 7. 6. Timing Within a Period}
+\textbf{建议讲法：}这一页是把一时期内部发生什么按顺序讲清楚。先观察制度环境和 relevant prices，再观察 firm 的 state 和 capability。接着 type-A 选择 generic 和 original-drug effort，type-B 只选择 original-drug effort。然后 idea realization 发生，再进入 implementation assignment：original-drug ideas 在 ext、int、tr、ab 这些 feasible routes 之间选择。之后 incumbents 再决定 stay、switch 还是 exit，最后 continuation 和 entry value 进入下一期。这个 timing 的意义是：MAH 直接作用在第 5 步，也就是 route assignment，但之后会通过 project value、continuation value 和 entry incentives，反馈到 effort、organizational choice 和 industry dynamics。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 政策直接作用点很窄，但动态反馈很广。
+\item 这也是为什么 paper 不是一个静态 partial-equilibrium note。
+\end{itemize}
+
+\newpage
+\section*{Slide 8. 7. Economic Roles of the Three Types}
+\textbf{建议讲法：}这一页的作用是把三类 firm 的经济角色分开。Type-A 是 integrated firms，它们可以同时决定 generic 和 original-drug 方向，并且能够 internal implementation，所以它们提供的是 within-firm direction margin。Type-B 是 research-specialized firms，它们只在 original-drug margin 上做选择，并且它们最暴露在 MAH 改变的那条 external route 上，所以它们是 paper 的 central mechanism actor。Type-C 则不是 innovation actor，而是 qualified manufacturing specialists，它们的作用是支撑 external route，并通过 qualified manufacturing market 影响相关价格。把这三类角色分清楚之后，后面的模型结构和经验 mapping 就会更清晰。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item Type-A 解释 direction adjustment。
+\item Type-B 承担 route-assignment mechanism。
+\item Type-C 提供 market side support，而不是第二个 innovation source。
+\end{itemize}
+
+\newpage
+\section*{Slide 9. 8. Type-B Innovation Intensity and Route Assignment}
+\textbf{建议讲法：}这一页进入我们最核心的 mechanism block。Type-B firms 在 baseline 里是 research-specialized，而且主要在 original-drug margin 上活动，所以它们不再承担 generic effort 的选择。它们的问题是：给定一个 original-drug project，每个 project 的 per-idea value $\Psi_B^O$ 取决于哪条 implementation route 最优。MAH 之所以重要，是因为它提高了 external route 的 value，从而提高了整个 original-drug project 的 expected value。这个 value 一旦上升，type-B 的 original-drug effort、continuation value、entry value，以及最后能够实现的 original-drug products，都有可能随之上升。所以 type-B 是政策机制最直接的承载者。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 这页是全篇最核心的 micro block。
+\item 关键不是 type-B 更“会研发”了，而是它的 original-drug project 更可实施了。
+\end{itemize}
+
+\newpage
+\section*{Slide 10. 9. Type-A Internal Benchmark}
+\textbf{建议讲法：}这一页解释为什么我们仍然保留 type-A block。Type-A 不是 MAH 最直接作用的对象，因为它们本来就能 internal implementation；但它们对于解释 industry-level project composition 很重要。具体来说，type-A 可以在 generic 和 original-drug 之间做 portfolio adjustment，所以它提供的是 within-firm direction margin。保留这一块有两个好处：第一，它能解释行业 original-drug share 上升不一定都来自 type-B；第二，它避免我们把所有机制都硬塞进 type-B 的 generic/original switching 里。换句话说，type-A 是一个 benchmark，但不是旁枝。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 保留 type-A block，是为了给 original-drug share 的解释留出合理空间。
+\item 这样做也让 revised baseline 更符合你们现在的 donor 文件选择。
+\end{itemize}
+
+\newpage
+\section*{Slide 11. 10. Type-C and the Qualified Manufacturing Market}
+\textbf{建议讲法：}这一页要强调的是，type-C 不是第二个创新主体，它的作用是提供 qualified manufacturing services，支撑 external implementation。这一点非常重要，因为如果没有这块，external route 就只是一句制度口号，没有 market side。这里的价格对象 $p_m$ 可以理解为 qualified contract manufacturing 的 equilibrium price。我们不需要在这一步把 producer-side profit prediction 说得过满，但要明确说明：一旦 type-B 对 external route 的需求上升，qualified manufacturing market 就会被带动起来。也就是说，type-C block 的意义是给 route assignment 一个真实的 market interface。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 这页的 clean prediction 是 qualified external manufacturing demand 更强。
+\item 但不能把 type-C profits 说成无条件上升。
+\end{itemize}
+
+\newpage
+\section*{Slide 12. 11. Original-Drug Route Assignment}
+\textbf{建议讲法：}这一页把 original-drug route assignment 说具体。对 type-B 的一个 original-drug idea 来说，per-idea expected value 是几条 feasible routes 中最好的那一条。形式上我们写成 ext、int、tr、ab 四种 route 的最大值。这里最关键的是，MAH 直接移动的只有 ext，也就是 innovator 保留 authorization，同时使用 qualified external production 的那条 route。其他 route 仍然存在，但它们不是政策直接改变的对象。这个写法的好处是，它把制度变化准确地放到了 assignment stage，而不是笼统地说企业“更容易创新”了。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 可以口头上说“外部 route 相对其他 route 变得更可行”，但不要把 slide 讲成只有 ext vs alt。
+\item 一定要点明 MAH 直接移动的是 ext，不是所有 route。
+\end{itemize}
+
+\newpage
+\section*{Slide 13. 12. Comparative-Static Logic}
+\textbf{建议讲法：}这一页是把机制链条讲成 comparative static。逻辑顺序是这样的：当 MAH 降低 $\tau_{ext}$ 之后，external route 变得更有吸引力，于是 original-drug project 的 per-idea value 上升。这个 value 上升以后，首先会推高 type-B 的 original-drug innovation intensity；其次会推高 continuation value 和 entry value；再进一步，会提高 original-drug idea 最终变成 realized product 的 conversion。这里我会特别提醒老师，我们并不把所有 downstream outcome 都讲成无条件单调，比如 entry mass 和 producer profits 还取决于更多一般均衡和供给弹性条件。这个 caveat 是有意保留的，不是模型没做完。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 这页的中心句是：MAH 不是 generic innovation shock，而是 route-specific friction shock。
+\item 需要主动说出 caveat，避免老师觉得你把模型说得过满。
+\end{itemize}
+
+\newpage
+\section*{Slide 14. 13. First-Layer Objects and Final Outcomes}
+\textbf{建议讲法：}这一页开始转向 empirical hierarchy。我们先把最靠近机制的 first-layer objects 说清楚，也就是 route use、holder-producer separation、realized original-drug products，以及 research-oriented entry and continuation。之后才把这些内容总结到 final outcomes，比如 $N_O$、$S_O$ 和 conversion object 上。换句话说，aggregate innovation outcomes 很重要，但它们不是 identification 的起点。起点应该是最靠近 implementation-route mechanism 的证据，这样 paper 的 empirical discipline 才是清楚的。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item first-layer 先于 final outcomes，是这篇 paper 很重要的方法论纪律。
+\item 这也解释了为什么我们不会只拿 aggregate innovation outcome 来讲机制。
+\end{itemize}
+
+\newpage
+\section*{Slide 15. 14. Interpreting the Original-Drug Share}
+\textbf{建议讲法：}这一页解释 original-drug share 上升到底意味着什么。按照 revised baseline，我们不再把它解释成 type-B 在 generic 和 original 之间切换。相反，行业层面的 original-drug share 上升可以来自三条渠道：第一，type-A 内部的 generic/original portfolio adjustment；第二，更 original-drug-oriented 的 type-B entry 或 composition change；第三，type-B original-drug projects 的 realization 或 conversion 变强。所以 $S_O$ 上升不是一个单一机制的充分统计量。为了让这个 decomposition 更有说服力，数据上还需要看两个 diagnostic：type-B 在 reform 前是否已经高度偏 original-drug，以及 type-A 是否确实同时有 generic 和 original activity。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 这页是在防止对 $S_O$ 的过度解读。
+\item 这里也自然把 $Share_B^O$ 和 $Share_A^O$ 的 empirical role 带出来。
+\end{itemize}
+
+\newpage
+\section*{Slide 16. 15. Dynamic Industry Block}
+\textbf{建议讲法：}这一页说明静态 route mechanism 如何进入动态 industry block。核心逻辑是，外部 route 的 value 上升之后，不只是当期 payoff 变了，continuation value 也会变，进而影响 stay、switch、exit 和 entry。我们把这个动态对象写成 Bellman 逻辑，是为了说明当前 model 不只是一个静态 assignment problem，而是一个有 organizational reallocation 和 industry composition response 的框架。不过我也会明确说，最干净的 prediction 是 entry value 上升；如果要把这句话再推进成 observed entry mass 一定上升，就还需要 entry-cost heterogeneity 或 entrant supply elasticity 这样的额外条件。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 动态块的作用是把 route assignment 和 industry reallocation 连起来。
+\item 但 switching 和 entry mass 属于 second-layer implication，不是第一层机制证据。
+\end{itemize}
+
+\newpage
+\section*{Slide 17. 16. Empirical Mapping: First-Layer and Second-Layer Objects}
+\textbf{建议讲法：}这一页是给老师一个 model-to-data 的总对照。表格左边是 model objects，右边是 empirical objects 和 interpretation。这里我会强调两点：第一，表格的目的不是说每个结构对象都能被直接观测，而是把哪些 observable 最接近核心机制讲清楚；第二，我们故意把 empirical hierarchy 分成 first-layer 和 second-layer。第一层是 route use、realization 和 original-drug outcomes；transitions 和 type-C outcomes 仍然有价值，但它们更多是 validation objects，而不是一开始就承担 identification 任务。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 这页是整套经验设计的导航图。
+\item 讲的时候不要逐行念表，而要抓住 hierarchy 和 interpretation。
+\end{itemize}
+
+\newpage
+\section*{Slide 18. 17. Data, Exposure Construction, and Type Outcomes}
+\textbf{建议讲法：}这一页是把数据端的 discipline 讲清楚。首先，exposure 必须建立在 pre-reform characteristics 上，而不是用 reform 后结果倒推谁是“MAH firm”。这点很重要，因为我们的分类是 economic classification，不是法律身份分类。一个 integrated incumbent 是否属于 type-A，要看它有没有 original-drug activity 和相关 internal manufacturing capability；潜在的 type-B exposure，则是 research-oriented 但缺乏内部制造能力的企业；type-C exposure 对应 qualified manufacturing specialists。之后，在 empirical design 上，我们关心的是：改革前 implementation bottleneck 更强的 firm 或 region，在 reform 后是否反应更强。最后还要说明，post-reform R\&D effort 在这里更像 mechanism outcome，而不是随手加进去的控制变量。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item firm typing 和 exposure construction 都必须以 pre-reform 为基础。
+\item 不要让老师觉得我们在用 post-reform outcome 反向定义 treatment group。
+\end{itemize}
+
+\newpage
+\section*{Slide 19. 18. Identification, Estimation, and Current Claim Boundary}
+\textbf{建议讲法：}这一页我会把 identification logic、estimation strategy 和 current claim boundary 一次讲清楚。识别上，最先要看的不是最终 aggregate outcomes，而是 MAH 是否改变了 holder-producer separation、external-route use、realized original-drug products，以及这些结果在 pre-reform 更受 implementation bottleneck 约束的对象上是否更强。估计上，我们现在采用的是两步走：第一步先做 reduced-form evidence，把 first-layer objects 和 heterogeneity pattern 讲清楚；第二步再用一个 parsimonious stationary model 去做后续的 SMM 或 minimum-distance。最后我要明确说当前不 claim 什么：我们不 claim 能直接观测 $\tau_{ext}$，不 claim 单靠 innovation outcomes 就能识别机制，也不 claim organizational transitions 自己就足够 identifying。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 这是整套汇报里最需要主动划边界的一页。
+\item 讲清“不 claim 什么”会让整个项目看起来更严谨，而不是更弱。
+\end{itemize}
+
+\newpage
+\section*{Slide 20. 19. Current Model-Data Gaps}
+\textbf{建议讲法：}这一页我会诚实地说 current model-data gaps 在哪里。已经比较能做的部分，包括 route-use evidence、holder-producer separation、realized original-drug products，以及按 pre-reform exposure 做异质性分析。现在还不够强的地方主要有四块：第一，project-to-route 的更直接 measure 还需要更干净的数据；第二，conversion object 如果要更有说服力，需要 application-to-product linkage；第三，qualified manufacturing market 这边如果要做得更完整，还需要更强的 producer-side data 和 $p_m$ 相关 validation；第四，如果我们想直接进入完整 stationary SMM，那 transitions、entry 和更多 market-side objects 还需要更系统的数据支撑。这一页的作用不是示弱，而是让老师清楚我们知道下一步的硬约束在哪里。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 这页要讲得坦诚，但不能讲得散。
+\item 最重要的是让老师看到你知道“当前可识别的核心”和“下一步需要补的结构”。
+\end{itemize}
+
+\newpage
+\section*{Slide 21. 20. Questions for Advisor}
+\textbf{建议讲法：}最后一页我会把最希望老师帮我们判断的四个问题明确提出来。第一，这个研究问题的大方向是否足够新，也就是把 MAH 理解成 implementation-route assignment 的变化，而不是 generic innovation shock，这个 framing 是否成立。第二，现在的 baseline discipline 是否合适，也就是 type-A 承担 direction choice、type-B 承担 original-drug route assignment、type-C 承担 qualified manufacturing supply，这样的分工是否干净。第三，这样的 empirical hierarchy 是否合理，是否应该坚持 route use 和 realization first、transitions 和 producer-side outcome second。第四，在第一版 paper 里，我们是否应该先停在 reduced-form evidence 加 disciplined mechanism model，还是现在就直接把 stationary estimation block 一起往前推。这样老师比较容易沿着最关键的 decision margin 给反馈。
+
+\vspace{0.5em}
+\textbf{这一页想强调的点：}
+\begin{itemize}
+\item 结尾不要只是总结，要把老师需要判断的 decision points 摆出来。
+\item 这会让会谈更高效，也更容易拿到有用反馈。
+\end{itemize}
+
+\end{document}

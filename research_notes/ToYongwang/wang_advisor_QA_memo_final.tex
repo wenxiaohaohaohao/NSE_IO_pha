@@ -1,0 +1,303 @@
+% !TEX program = xelatex
+\documentclass[10pt]{ctexart}
+
+\usepackage[a4paper,margin=0.6in]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,array,tabularx}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+\setmainfont{Times New Roman}
+\setCJKmainfont{SimSun}
+\setsansfont{Arial}
+\setCJKsansfont{SimHei}
+\setstretch{1.0}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{1pt plus 0.5pt minus 0.25pt}
+\setlist[itemize]{leftmargin=1.6em,itemsep=0pt,topsep=0.15em,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{leftmargin=1.8em,itemsep=0pt,topsep=0.15em,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries}{\thesection.}{0.45em}{}
+\titleformat{\subsection}{\small\bfseries}{\thesubsection.}{0.45em}{}
+
+\newcommand{\qtitle}[1]{\vspace{0.35em}\noindent\textbf{问：#1}\par\vspace{0.15em}\noindent\textbf{答：}}
+\newcommand{\key}[1]{\textbf{#1}}
+
+\title{见王老师前的问答式准备稿\\\large 路线 A：Reduced-form Evidence + Disciplined Mechanism Model}
+\author{}
+\date{2026年4月}
+
+\begin{document}
+\flushbottom
+\small
+\maketitle
+
+\begin{center}
+\fbox{\begin{minipage}{0.95\textwidth}
+\textbf{核心定位：}本次向王老师呈现的不是完整 draft，也不是空泛 proposal，更不是“半成品”；而是一个已经形成科学问题、机制模型和经验映射的 \textbf{pre-draft research proposal}。第一版主线建议采用 \textbf{路线 A}：reduced-form evidence + disciplined mechanism model。路线 B，即完整 stationary SMM / minimum-distance estimation，作为后续升级接口保留。
+\end{minipage}}
+\end{center}
+
+\vspace{-0.35em}
+
+\section{核心问答}
+
+\qtitle{我们去找王老师，呈现的是什么？是 proposal、draft，还是半成品？}
+最准确的说法是：\key{一个已经形成核心科学问题、机制模型和经验映射的 pre-draft research proposal。}
+
+不能说是完整 draft，因为现在还没有完整经验结果、最终估计、稳健性、反事实和 welfare。也不应说是普通 proposal，因为项目已经有清楚机制、模型骨架、比较静态和经验对象。更不能说是“半成品”，因为这会给老师一种“问题还没想清楚、需要老师重做项目”的印象。
+
+建议开场说：
+\begin{quote}
+老师，我们这次不是请您看一个最终稿，也不是从零讨论选题。我们已经把科学问题、制度机制、模型骨架和经验映射收束出来了。我们想请您判断：科学问题是否抓得准，机制边界是否清楚，模型是否还需要收缩，以及经验部分应该优先抓哪些对象。
+\end{quote}
+
+\qtitle{我们需要王老师提供什么？是具体模型指导，还是方向把握？}
+主要需要四类判断，而不是让老师手把手写模型。
+
+\begin{enumerate}
+    \item \key{科学问题判断：}MAH 是否应被定位为 implementation-route assignment reform，而不是 generic innovation policy？
+    \item \key{机制边界判断：}MAH 是否应主要落在外部实现路线的治理与合规摩擦 \(\tau_{ext}\) 下降上？这个机制是否过窄，是否遗漏了必须进入主机制的制度边际？
+    \item \key{模型取舍判断：}当前保留 \(A/B/C\)、\(z\)、\(\tau_{ext}\)、\(\Psi_B^O\)、\(x_B^O\)、\(p_m\)、entry/exit/switching 是否足够克制？哪些应保留，哪些应放到 appendix 或后续版本？
+    \item \key{经验优先级判断：}经验部分是否应先抓 route use、holder--producer separation、realized original-drug products、conversion 和 research-oriented entry，再把 transition matrix 和 producer-side outcomes 作为第二层验证？
+\end{enumerate}
+
+一句话说，我们需要王老师做 \key{方向把握 + 机制边界 + 模型取舍 + 经验优先级} 的判断，而不是从零构造模型。
+
+\qtitle{一句话科学问题应该怎么讲？}
+推荐版本是：
+\begin{quote}
+\key{本文研究 MAH 制度是否通过降低研发主体采用外部合格生产实现原研药商业化的治理与合规摩擦，提高原研药 idea 的期望实现价值，从而促进 realized original-drug innovation。}
+\end{quote}
+
+更短版本：
+\begin{quote}
+\key{MAH 是否通过降低原研药 idea 的外部实现摩擦，提高其期望实现价值，从而促进原研药创新？}
+\end{quote}
+
+英文版本：
+\begin{quote}
+\textit{This paper studies whether China’s MAH reform increases realized original-drug innovation by lowering the governance and compliance friction of external implementation for research-originated ideas.}
+\end{quote}
+
+这句话必须包含四个元素：政策是 MAH；摩擦是 external implementation friction；机制是 implementation-route assignment；结果是 realized original-drug innovation。
+
+\qtitle{研究目标是什么？}
+目标不是证明 MAH 泛泛地促进所有医药创新，也不是证明 MAH 提高药企生产率。目标是：
+\begin{quote}
+\key{解释 MAH 如何通过改变原研药 idea 的 implementation-route assignment，提高原研药实现数量、原研药占比和 idea/application 到 realized product 的转化。}
+\end{quote}
+
+对应最终结果变量是：
+\[
+N_O(M),\qquad
+S_O(M)=\frac{N_O(M)}{N_O(M)+N_G(M)},\qquad
+Conv_O(M).
+\]
+其中，\(N_O\) 是 realized original-drug products 的数量，\(S_O\) 是 realized products 中原研药占比，\(Conv_O\) 是从 original-drug idea / application 到 realized product 的转化率。
+
+\qtitle{选择集是什么？}
+选择集需要分三层讲。
+
+第一，对一个原研药 idea，路线选择集是：
+\[
+H=\{ext,int,tr,ab\}.
+\]
+其中，\(ext\) 是外部实现：研发主体保留授权或项目控制，委托合格生产；\(int\) 是内部一体化；\(tr\) 是转让或 license-out；\(ab\) 是放弃。对应 per-idea expected value 是：
+\[
+\Psi_B^O(z;p_m,M)=\max\{H_B^{ext}(z,p_m;M),H_B^{int}(z),H_B^{tr}(z),0\}.
+\]
+
+第二，B 型研发主体选择原研药创新强度：
+\[
+x_B^O.
+\]
+这里必须强调，\(x_B^O\) 是 original-drug innovation intensity / idea-arrival intensity，不是一个企业拥有多少个 idea 的整数数量。
+
+第三，A/B/C 是经济学组织状态：A 型是一体化企业；B 型是研发专业化主体；C 型是合格生产能力供给者。它们的作用是组织“谁发明、谁实现、路线如何分配”。
+
+\qtitle{约束条件是什么？}
+约束条件有四类。
+
+\begin{enumerate}
+    \item \key{制度约束：}改革前授权、生产、质量责任高度绑定；改革后 MAH 允许 holder 保留授权并委托 qualified manufacturer 生产。模型中写成
+    \[
+    \tau_{ext}(1)<\tau_{ext}(0).
+    \]
+    \item \key{能力约束：}企业有异质能力 \(z\)。基准模型用一维 \(z\) 概括 research、project management、organizational coordination 和 implementation execution。二维扩展 \(z=(z_R,z_C)\) 可以放在 appendix。
+    \item \key{生产能力约束：}B 型主体的关键约束是有研发或项目生成能力，但没有完整内部生产能力。因此 MAH 对 B 型 external route 的影响最直接。
+    \item \key{数据约束：}\(\tau_{ext}\) 和 \(\Psi_B^O\) 不是数据中直接观察到的变量。经验上只能通过 route use、holder--producer separation、realized original-drug products、conversion 和 research-oriented entry 等可观察对象去 discipline 机制。
+\end{enumerate}
+
+\section{路线 A：第一版主线}
+
+\qtitle{路线 A 的准确定位是什么？}
+路线 A 是：
+\[
+\text{Reduced-form evidence} + \text{disciplined mechanism model}.
+\]
+
+它的目标不是直接估计所有结构参数，而是回答：
+\begin{quote}
+\key{MAH 之后，最接近 external implementation friction 机制的可观察对象，是否按照模型预测的方向发生变化？}
+\end{quote}
+
+路线 A 可以说：证据与 MAH 降低 external implementation friction 的机制一致。路线 A 不能说：我们直接估计了 \(\tau_{ext}\) 的下降幅度。
+
+\qtitle{路线 A 中，模型到底做什么？}
+路线 A 不是不用模型，而是先用模型做机制验证。模型承担六个任务：
+
+\begin{enumerate}
+    \item 定义 \(\tau_{ext}\)：外部实现路线的 route-specific governance and compliance friction。
+    \item 定义 \(\Psi_B^O\)：一个 B 型原研药 idea 在最优路线分配后的期望价值。
+    \item 定义 \(x_B^O\)：B 型主体原研药 innovation intensity / idea-arrival intensity。
+    \item 推出比较静态：
+    \[
+    \tau_{ext}\downarrow
+    \Rightarrow
+    H_B^{ext}\uparrow
+    \Rightarrow
+    \Psi_B^O\uparrow
+    \Rightarrow
+    x_B^O,\ V_B,\ Entry_B,\ Conv_B^O\uparrow.
+    \]
+    \item 说明为什么 route use、holder--producer separation、realization、conversion、entry 是最接近机制的 empirical objects。
+    \item 明确不能直接观察 \(\tau_{ext}\) 和 \(\Psi_B^O\)，所以不能把 reduced-form outcomes 解释成 primitive 的直接估计。
+\end{enumerate}
+
+所以，disciplined mechanism model 的作用是 \key{定义机制、推出比较静态、组织经验对象、限制经验解释边界}，不是在第一版里完成 full quantitative estimation。
+
+\qtitle{路线 A 下经验部分应该优先看什么？}
+经验部分应分两层。
+
+\key{第一层：最接近机制的 first-layer objects。}
+\begin{itemize}
+    \item \textbf{Route use / holder--producer separation:} 最接近 external implementation route。
+    \item \textbf{Realized original-drug products:} 对应最终结果 \(N_O\)。
+    \item \textbf{Original-drug share:} 对应 \(S_O=N_O/(N_O+N_G)\)。
+    \item \textbf{Conversion:} 如果有 application/status panel，可看 application-to-approval 或 idea-to-product conversion。
+    \item \textbf{Research-oriented entry / continuation:} 对应 \(V_B\) 和 entry value 的上升。
+\end{itemize}
+
+\key{第二层：supporting validation objects。}
+\begin{itemize}
+    \item A/B/C transition matrix；
+    \item \(B\rightarrow A\) switching；
+    \item type-C producer-side response；
+    \item qualified manufacturing market；
+    \item exit rates 和 state-bin-specific route use。
+\end{itemize}
+
+第二层对象有用，但不能替代第一层机制证据。否则文章会变成“企业类型重组论文”，而不是“MAH 如何提高原研药实现”的论文。
+
+\qtitle{路线 A 下可以说什么，不能说什么？}
+可以说：
+\begin{quote}
+\key{如果 MAH 降低 \(\tau_{ext}\)，模型预测 route use、holder--producer separation、realized original-drug products、conversion 和 research-oriented entry 应该上升。经验上若这些 first-layer objects 按预测方向变化，尤其是在改革前更受 implementation bottleneck 约束的主体或地区更明显，则支持 MAH 通过降低 external implementation friction 提高 original-drug realization 的机制。}
+\end{quote}
+
+不能说：
+\begin{itemize}
+    \item 我们直接估计了 \(\tau_{ext}\) 的下降幅度；
+    \item holder--producer separation 的回归系数就是 \(\tau_{ext}\)；
+    \item reduced-form outcomes 是 primitive 的直接估计；
+    \item 只要 \(N_O\) 上升，就证明 MAH 降低了 \(\tau_{ext}\)；
+    \item transition matrix 单独识别机制。
+\end{itemize}
+
+\section{路线 B：后续升级接口}
+
+\qtitle{路线 B 是什么？}
+路线 B 是 full stationary SMM / minimum-distance estimation。它要把 \(\tau_{ext}(0)\) 和 \(\tau_{ext}(1)\) 当作结构参数，通过 moments 间接估计，然后做 counterfactual。
+
+形式上是：
+\[
+\hat{\theta}=\arg\min_{\theta}
+[m^{data}-m^{model}(\theta)]'W[m^{data}-m^{model}(\theta)].
+\]
+
+这里 \(\theta\) 可以包含：
+\[
+\theta=(\tau_{ext}(0),\tau_{ext}(1),\chi_B,a_0,a_1,\kappa_{I0},\kappa_{I1},c_{EB},c_{EC}).
+\]
+
+\qtitle{路线 B 要做哪些任务？}
+路线 B 至少需要十二步：
+\begin{enumerate}
+    \item 构造 firm-year、product-year、firm-product-year panel；
+    \item 分类 A/B/C；
+    \item 构造状态变量 \(z\)；
+    \item 估计 transition kernels；
+    \item 设定参数向量 \(\theta\)；
+    \item 解 Bellman equations；
+    \item 求 policy functions；
+    \item 求 stationary distribution；
+    \item 解 \(p_m\) market clearing；
+    \item 生成 model moments；
+    \item 匹配 data moments 并估计参数；
+    \item 做 no-MAH counterfactual。
+\end{enumerate}
+
+这才是 full quantitative model 的任务。
+
+\qtitle{为什么第一版现在不做路线 B？}
+不是因为路线 B 不重要，而是因为当前阶段不宜把第一版压在路线 B 上。
+
+\begin{enumerate}
+    \item \key{数据要求更高：}需要完整 firm-product panel、conversion 数据、entry/exit 数据、producer-side 数据和状态变量构造。
+    \item \key{识别负担更重：}要区分 \(\tau_{ext}\)、\(p_m\)、route success、entry cost、transition cost 等多个结构对象。
+    \item \key{数值求解更复杂：}需要 Bellman、stationary distribution、market clearing 和 SMM objective。
+    \item \key{讨论风险更大：}容易把会议从“科学问题是否成立”提前拉到“结构模型是否可估、moments 是否足够识别”的技术细节。
+\end{enumerate}
+
+因此，第一版更稳的是路线 A；路线 B 作为后续升级接口保留。
+
+\section{给王老师的标准话术}
+
+\qtitle{明天开场怎么说？}
+\begin{quote}
+老师，我们这次不是请您看一个完整成稿，而是想请您帮我们确认研究问题和模型边界。我们现在把文章从“MAH 是否促进医药创新”收束到一个更具体的问题：MAH 是否通过降低研发主体采用外部合格生产实现原研药的治理与合规摩擦，改变原研药 idea 的 implementation route，从而提高 realized original-drug innovation。
+
+现在我们的核心机制是：MAH 降低 \(\tau_{ext}\)，提高外部实现路线的价值 \(H_B^{ext}\)，进而提高每个原研药 idea 的期望价值 \(\Psi_B^O\)，再影响 B 型研发主体的原研药 innovation intensity \(x_B^O\)、continuation value、entry value 和 realized original-drug products。
+
+我们最希望您帮我们判断四件事：第一，这个科学问题是否抓得准；第二，MAH 是否应该这样落在 \(\tau_{ext}\)；第三，模型里的 \(A/B/C\)、\(x_B^O\)、\(\Psi_B^O\)、\(p_m\) 是否过多；第四，经验上是否应该先抓 route use 和 original-drug realization，再把 transition 和 producer-side outcomes 作为辅助验证。
+\end{quote}
+
+\qtitle{如何解释路线 A？}
+\begin{quote}
+老师，我们现在第一版倾向于把模型定位为 \textbf{disciplined mechanism model}，而不是 \textbf{full quantitative model}。模型的任务是定义 \(\tau_{ext}\)、\(\Psi_B^O\) 和 \(x_B^O\)，推出
+\[
+\tau_{ext}\downarrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^O,\ V_B,\ Entry_B,\ Conv_B^O\uparrow
+\]
+的比较静态，并据此告诉经验部分应该优先看 route use、holder--producer separation、realized original-drug products、conversion 和 research-oriented entry。
+
+这一路线下，我们不会说自己直接估计了 \(\tau_{ext}\) 的下降幅度，也不会把 reduced-form outcomes 解释成 primitive 的直接估计。我们只能说这些证据与 MAH 降低 external implementation friction 的机制一致。
+
+如果老师认为第一版必须做完整量化，我们可以保留 SMM / minimum-distance 接口，把 \(\tau_{ext}(0)\) 和 \(\tau_{ext}(1)\) 作为结构参数，通过 moments 间接估计。但这需要更完整的 firm-product panel、conversion 数据、entry/exit 数据、producer-side 数据和状态变量构造。当前阶段，我们判断先做 reduced-form evidence + disciplined mechanism model 更稳。
+\end{quote}
+
+\qtitle{最后应该问王老师哪五个问题？}
+\begin{enumerate}
+    \item \key{科学问题是否成立？}MAH 作为 implementation-route assignment reform，而不是 generic innovation policy，这个定位是否准确？
+    \item \key{机制是否抓准？}把政策写成 \(\tau_{ext}\) 下降，而不是需求冲击、科研生产率冲击或审批时长冲击，是否合理？
+    \item \key{模型是否过度复杂？}当前保留 \(A/B/C\)、\(z\)、\(\tau_{ext}\)、\(\Psi_B^O\)、\(x_B^O\)、\(p_m\)、entry/exit/switching 是否足够克制？哪些应删，哪些应放 appendix？
+    \item \key{经验层级是否正确？}第一层优先看 holder--producer separation、external-route use、realized original-drug products、conversion 和 research-oriented entry；第二层再看 transition 和 type-C outcomes，这个顺序是否对？
+    \item \key{第一版文章做到什么程度？}是先做 reduced-form evidence + disciplined mechanism model，还是必须推进到完整 stationary SMM / minimum-distance estimation？
+\end{enumerate}
+
+\section{最终结论}
+
+明天要传递的核心信息是：
+\begin{quote}
+\key{我们不是拿一个混乱半成品请老师重做项目，而是带着一个已经收束的 pre-draft research proposal 来请老师判断方向。第一版主线是路线 A：reduced-form evidence + disciplined mechanism model。模型先用于机制验证，定义 \(\tau_{ext}\)、\(\Psi_B^O\)、\(x_B^O\)，推出比较静态，并组织经验对象。路线 B 的 full stationary SMM / minimum-distance 是后续升级接口，不是当前第一版必须承诺完成的内容。}
+\end{quote}
+
+\end{document}

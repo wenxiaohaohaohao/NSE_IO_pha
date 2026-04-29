@@ -1,0 +1,456 @@
+% !TEX program = xelatex
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+
+\setmainfont{DejaVu Serif}
+\setCJKmainfont{Noto Serif CJK SC}
+\setsansfont{DejaVu Sans}
+\setCJKsansfont{Noto Sans CJK SC}
+
+\onehalfspacing
+\emergencystretch=2em
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=2em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=2.2em,itemsep=0.25em,topsep=0.35em}
+
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection.}{0.6em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{\thesubsubsection.}{0.6em}{}
+
+\newcommand{\tauext}{\tau_{\mathrm{ext}}}
+\newcommand{\Post}{\mathrm{Post}}
+\newcommand{\Original}{\mathrm{Original}}
+\newcommand{\Exposure}{\mathrm{Exposure}}
+\newcommand{\Split}{\mathrm{Split}}
+\newcommand{\RouteUse}{\mathrm{RouteUse}}
+\newcommand{\Conv}{\mathrm{Conv}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\one}{\mathbf{1}}
+
+\title{附录：机制解释\\商业化分配、研发投入与 MAH 改革下的原研药创新}
+\author{}
+\date{供并入主文稿的中文工作稿}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+本附录解释本文的核心机制，并专门回应一个关键识别疑问：如果实证结果表现为原研药创新增加，那么这个结果如何与 MAH 的商业化机制相连接？它是否可能只是企业自身研发投入增加的结果，而不是政策机制的结果？本文的回答不是机械地把研发投入作为需要控制掉的混淆项。相反，在本文机制中，原研药方向研发投入的增加本身可以是政策机制的内生反应：MAH 降低外部商业化路径的治理与合规摩擦，提高原研药项目的事前预期价值，企业因而增加原研药方向投入、调整项目组合，并推动更多原研药 idea 被实现为可上市产品。经验部分的任务，是证明创新结果与商业化路径使用、持有人和生产者分离、原研药 realization、以及改革前商业化约束暴露度之间存在系统联系，而不是仅用最终创新结果反推机制。
+\end{abstract}
+
+\section{本附录的目的及其与正文的关系}
+
+正文的核心论点是：药品上市许可持有人制度（Marketing Authorization Holder, MAH）改革通过改变研发型主体将原研药 idea 商业化的组织路线，影响原研药创新。政策进入模型的核心对象不是一个泛化的政策虚拟变量，也不是直接提高科学发现效率的生产率冲击，而是外部商业化路径上的治理与合规摩擦：
+\[
+\tauext(M),
+\]
+其中 $M=0$ 表示 MAH 改革前制度环境，$M=1$ 表示 MAH 改革后制度环境。本文的核心制度含义是：
+\[
+\tauext(1)<\tauext(0).
+\]
+这个不等式表示，改革后研发型主体在保留上市许可持有人身份的同时，通过合格外部生产商完成生产和商业化的组织成本下降。
+
+本附录要澄清的是：这种商业化机制如何传导到可观察的创新结果。这个问题非常重要。一个读者或审稿人可能会问：如果最后观察到的是原研药研发、申请或批准数量上升，那么它为什么一定和 MAH 的商业化机制有关？会不会只是因为企业整体加大了研发投入，或者医药行业本来就在经历研发扩张？
+
+本文不能简单回答“我们控制研发投入”。原因在于，如果 MAH 提高了原研药项目的事前预期回报，那么企业增加研发投入本身可能正是政策机制的一部分，而不是与机制无关的混淆项。更严谨的做法，是区分三个层次的对象：
+\begin{enumerate}
+    \item 外部商业化路径的制度摩擦 $\tauext$；
+    \item 原研药项目的事前预期价值，它取决于商业化 assignment；
+    \item 企业内生选择的技术方向、研发努力和项目组合。
+\end{enumerate}
+在本文机制下，MAH 促进原研药创新，是因为它提高了依赖外部商业化路径的原研药项目的事前预期净价值。企业由此可能增加原研药方向研发投入、从仿制药项目向原研药项目重新配置资源、以研发型企业身份进入，或者推动更多原本会被放弃或转让的项目进入实现阶段。这些变化是机制结果，而不应被自动视为需要剔除的干扰因素。
+
+本附录因此承担三个功能。第一，它把“商业化机制”和“创新结果”之间的经济链条写清楚。第二，它说明为什么当期研发投入不能被机械地当作普通控制变量。第三，它把机制翻译成实证上可以检验的一组限制条件，从而帮助正文回应“创新结果与机制联系不够紧密”的质疑。
+
+\section{核心质疑：仅有创新结果不足以识别机制}
+
+如果一篇文章只展示 MAH 改革后原研药申请或批准数量上升，那么这个证据不足以识别本文机制。原因是，同一个结果可能由很多不同渠道产生：
+\begin{enumerate}
+    \item 企业整体研发支出上升；
+    \item 科学研究能力或研发生产率提高；
+    \item 药品需求或市场规模扩大；
+    \item 其他审评审批改革缩短等待时间；
+    \item 创新药融资环境改善；
+    \item MAH 降低外部商业化路径摩擦。
+\end{enumerate}
+只有最后一个解释才是本文的核心机制。因此，经验部分不能从创新结果本身直接反推商业化机制。它必须进一步证明，原研药创新增加同时伴随着最接近 $\tauext$ 的机制变量变化，例如外部商业化路径使用、持有人和生产者分离、研发型持有人增加、以及原研药项目转化率提高。
+
+这里有两个不同强度的命题。
+\begin{quote}
+\textbf{弱命题：} MAH 改革后创新增加。
+\end{quote}
+\begin{quote}
+\textbf{机制命题：} MAH 降低外部商业化路径的治理与合规摩擦；这提高了受内部生产能力约束的原研药项目的预期净价值；企业因而调整研发方向和商业化 assignment；最终更多原研药 idea 被实现为产品。
+\end{quote}
+第一种命题过于宽泛，不能支撑本文理论。第二种命题才是本文需要建立的机制链条。
+
+\section{模型对象}
+
+\subsection{药品方向}
+
+本文将项目方向分为两类：
+\[
+k\in\{G,O\},
+\]
+其中 $G$ 表示仿制药导向项目，$O$ 表示原研药导向项目。本文最终关注的创新对象不是全部医药活动，而是原研药 realization。仿制药项目仍然重要，因为它提供比较组，也因为企业可能在仿制药和原研药之间进行项目组合调整。
+
+\subsection{组织类型}
+
+模型使用三类经济组织状态：
+\[
+s\in\{A,B,C\}.
+\]
+其中，$A$ 型企业是研发与生产一体化企业，能够在企业内部完成研发和生产实施；$B$ 型企业是研发专业化企业，能够产生原研药 idea，但在基准状态下不拥有完整内部生产能力；$C$ 型企业是生产专业化企业，提供合格生产能力，并可能服务于外部商业化市场。
+
+这里的 $A/B/C$ 是经济学上的组织状态，不是工商登记意义上的永久身份。一个企业可能在不同项目上采取不同组织路线。保留这一分类的原因是，它能够让模型清楚地区分“发明主体”和“生产实施主体”，从而刻画 MAH 如何改变原研药 idea 的商业化 assignment。
+
+\subsection{政策原语}
+
+政策原语是：
+\[
+\tauext(M)\geq 0,
+\]
+其中 $\tauext$ 表示：研发型主体在保留 authorization 或 holder 身份的情况下，通过外部合格生产商实现原研药商业化所需承担的路径特定治理与合规摩擦。
+
+它不是以下对象：
+\begin{itemize}
+    \item 需求冲击；
+    \item 科学生产率冲击；
+    \item 所有监管成本的一般下降；
+    \item 物理制造成本本身；
+    \item 全部企业共同面对的一般固定成本。
+\end{itemize}
+本文的制度解释是：
+\[
+\Delta \tauext = \tauext(1)-\tauext(0)<0.
+\]
+换言之，MAH 的核心经济作用不是让科学家更容易发现新 idea，而是让已有或潜在的原研药 idea 更容易通过外部合格生产路径被实现。
+
+\section{两阶段机制：技术方向选择与商业化 assignment}
+
+本文可以被理解为一个两阶段创新模型。第一阶段是技术方向选择：企业在仿制药项目和原研药项目之间分配研发努力。第二阶段是商业化 assignment：原研药 idea 被分配到内部实施、外部商业化、项目转让或放弃等不同路径。
+
+\subsection{第一阶段：技术方向选择}
+
+对具有研发能力的企业 $s\in\{A,B\}$，令
+\[
+x_s^G\geq 0, \qquad x_s^O\geq 0
+\]
+分别表示仿制药方向和原研药方向研发努力。也可以将其写成总研发努力 $x_s$ 和原研药方向份额 $\omega_s^O\in[0,1]$：
+\[
+x_s^O=\omega_s^O x_s,\qquad x_s^G=(1-\omega_s^O)x_s.
+\]
+这一写法能够区分“总研发扩张”和“方向性创新反应”。一般研发 boom 可能同时提高 $x_s^G$ 与 $x_s^O$。但本文 MAH 机制的核心预测是：原研药方向的研发努力 $x_s^O$ 和原研药方向份额 $\omega_s^O$ 应该上升得更明显，尤其是在改革前受商业化约束更强的企业中。
+
+一个简洁的研发成本函数可以写成：
+\[
+C_s(x_s^G,x_s^O)=\frac{\chi_{sG}}{\eta_G}(x_s^G)^{\eta_G}+\frac{\chi_{sO}}{\eta_O}(x_s^O)^{\eta_O},
+\qquad \eta_G,\eta_O>1.
+\]
+企业的研发流收益可以写作：
+\[
+\Pi_s^{R}(z;M)=\max_{x_s^G,x_s^O\geq0}
+\left\{x_s^G \Psi_s^G(z)+x_s^O\Psi_s^O(z;M)-C_s(x_s^G,x_s^O)\right\}.
+\]
+其中 $\Psi_s^G$ 是仿制药方向研发努力的项目价值，$\Psi_s^O$ 是原研药方向研发努力的项目价值。关键限制是：MAH 直接影响 $\Psi_s^O$，而且是通过商业化 assignment 影响 $\Psi_s^O$，不是直接提高所有研发方向的科学发现生产率。
+
+\subsection{第二阶段：原研药 idea 的商业化 assignment}
+
+对 $B$ 型企业产生的原研药 idea，定义其外部商业化路径的净价值为：
+\[
+H_{B,O}^{\mathrm{ext}}(z,p_m;M)
+=\rho_{B,O}^{\mathrm{ext}}(z,p_m)R_O(z)-p_m-\tauext(M),
+\]
+其中 $R_O(z)$ 是一个成功商业化的原研药项目的私人价值，$\rho_{B,O}^{\mathrm{ext}}(z,p_m)$ 是通过外部路径成功实施的概率或效率，$p_m$ 是合格生产服务价格，$\tauext(M)$ 是执行外部路径所需承担的制度性组织摩擦。
+
+$B$ 型企业还可能面对其他路线。令
+\[
+H_{B,O}^{\mathrm{int}}(z),\qquad H_{B,O}^{\mathrm{tr}}(z),\qquad 0
+\]
+分别表示内部整合、项目转让和放弃的净价值。那么一个原研药 idea 的单位价值可以写成：
+\[
+\Psi_B^O(z,p_m;M)=\max\left\{
+H_{B,O}^{\mathrm{ext}}(z,p_m;M),
+H_{B,O}^{\mathrm{int}}(z),
+H_{B,O}^{\mathrm{tr}}(z),
+0
+\right\}.
+\]
+MAH 机制的特征在于：
+\[
+\frac{\partial H_{B,O}^{\mathrm{ext}}}{\partial \tauext}=-1,
+\qquad
+\frac{\partial H_{B,O}^{\mathrm{int}}}{\partial \tauext}=0,
+\qquad
+\frac{\partial H_{B,O}^{\mathrm{tr}}}{\partial \tauext}=0.
+\]
+因此，$\tauext$ 的下降弱提高原研药 idea 的价值：
+\[
+\frac{\partial \Psi_B^O}{\partial \tauext}\leq 0,
+\]
+并且当外部路径被选择，或者外部路径处于临界选择边际附近时，这个效应严格成立。
+
+\section{从商业化摩擦下降到原研药方向研发努力增加}
+
+假设 $B$ 型企业的原研药方向研发努力为内点解。原研药方向努力的一阶条件是：
+\[
+\chi_{BO}(x_B^O)^{\eta_O-1}=\Psi_B^O(z,p_m;M).
+\]
+因此：
+\[
+x_B^{O*}(z,p_m;M)=\left(\frac{\Psi_B^O(z,p_m;M)}{\chi_{BO}}\right)^{\frac{1}{\eta_O-1}}.
+\]
+只要 MAH 改革提高 $\Psi_B^O$，它就会提高原研药方向研发努力：
+\[
+\tauext \downarrow \quad \Rightarrow \quad \Psi_B^O \uparrow \quad \Rightarrow \quad x_B^{O*}\uparrow.
+\]
+如果仿制药项目价值 $\Psi_B^G$ 不直接受 $\tauext$ 影响，那么在标准凸成本条件下，原研药方向份额也会上升：
+\[
+\omega_B^{O*}=\frac{x_B^{O*}}{x_B^{G*}+x_B^{O*}}\uparrow.
+\]
+
+这一步是回应“是不是企业研发投入增加，而不是政策机制”的关键。更高的研发努力不一定是竞争性解释。如果这种研发努力增加是由 MAH 引起的原研药项目商业化价值上升所诱发，那么它就是机制的一部分。真正的经验问题是：研发努力和创新结果的变化是否集中发生在本文机制所预测的方向、路径和企业群体中。
+
+\section{可观察结果与经验层级}
+
+令 $N_O$ 表示 realized original-drug products 的数量，$S_O$ 表示 realized products 中原研药占比，$\Conv_O$ 表示从原研药申请或项目到 realized product 的转化率。核心经验链条是：
+\[
+\tauext \downarrow
+\Rightarrow H_{B,O}^{\mathrm{ext}} \uparrow
+\Rightarrow \Psi_B^O \uparrow
+\Rightarrow \omega_B^{O*},x_B^{O*},V_B \uparrow
+\Rightarrow N_O,S_O,\Conv_O \uparrow.
+\]
+这条链条意味着经验对象应按层级组织。
+
+\begin{longtable}{p{0.22\textwidth}p{0.32\textwidth}p{0.36\textwidth}}
+\caption{机制所要求的经验对象层级}\label{tab:hierarchy_cn}\\
+\toprule
+层级 & 经验对象 & 解释 \\
+\midrule
+\endfirsthead
+\toprule
+层级 & 经验对象 & 解释 \\
+\midrule
+\endhead
+第一层 & 持有人和生产者分离；外部路径使用；MAH 持有人与实际生产企业不同 & 最接近商业化 assignment 和 route use 变化的可观察代理变量。 \\
+\addlinespace
+第二层 & realized original-drug products；realized products 中原研药占比 & 更接近商业化实现而非单纯 idea generation 的最终创新结果。 \\
+\addlinespace
+第三层 & 原研药项目从申请到批准的转化率 & 在申请数据可用时，能更强地证明 realization feasibility 改善。 \\
+\addlinespace
+第四层 & 原研药方向研发努力或项目方向份额 & 机制结果，表示企业是否把研发资源重新配置到原研药方向。 \\
+\addlinespace
+第五层 & 研发型企业进入；改革前有研发能力但缺少生产能力的企业增长 & $B$ 型企业价值上升所预测的组成变化。 \\
+\bottomrule
+\end{longtable}
+
+第一层对象最重要。如果原研药创新结果上升，但外部路径使用、持有人和生产者分离、研发型持有人等机制变量完全不动，那么 MAH 商业化机制的证据就会变弱。相反，如果原研药结果上升的同时，外部路径使用增加、持有人和生产者分离增加、且缺乏内部生产能力的研发型企业反应更强，那么机制解释会更可信。
+
+\section{为什么当期研发投入可能是 bad control}
+
+面对“是不是研发投入增加导致创新增加”的质疑，一个常见反应是在回归中加入当期研发支出控制变量。但这通常不是最合适的做法。原因是，如果政策提高了原研药项目价值，那么研发努力就是一条机制渠道：
+\[
+M \Rightarrow \tauext\downarrow \Rightarrow \Psi_B^O\uparrow \Rightarrow x_B^O\uparrow \Rightarrow N_O\uparrow.
+\]
+在用 $N_O$ 对 MAH 暴露度做回归时，若直接控制 $x_B^O$，可能会把理论上最想解释的一部分处理效应控制掉。
+
+更合适的做法，是区分研发变量的三种用法：
+\begin{enumerate}
+    \item \textbf{改革前研发能力作为异质性变量。} 改革前研发能力可以帮助识别企业类型和机制暴露度。因为它是预定变量，不属于 bad control。
+    \item \textbf{改革后研发投入作为机制结果。} 改革后原研药方向研发投入应被研究为政策机制的结果，而不是被机械控制掉。
+    \item \textbf{用于吸收广泛趋势的稳健性控制。} 行业融资环境、省份年度冲击或行业年度固定效应可以帮助吸收一般创新 boom，但不应吸收本文理论预测的方向性研发反应。
+\end{enumerate}
+因此，正确的经验问题不是“控制掉所有研发投入以后 MAH 是否仍然显著”。正确的问题是：研发投入和创新结果是否在 MAH 机制预测的企业、项目方向和商业化路径上系统变化。
+
+\section{如何区分 MAH 机制与一般研发 boom}
+
+下表总结本文机制与一般研发 boom 的预测差异。
+
+\begin{longtable}{p{0.27\textwidth}p{0.31\textwidth}p{0.33\textwidth}}
+\caption{不同解释下的经验预测差异}\label{tab:rdboom_cn}\\
+\toprule
+经验模式 & MAH 商业化机制 & 一般研发 boom \\
+\midrule
+\endfirsthead
+\toprule
+经验模式 & MAH 商业化机制 & 一般研发 boom \\
+\midrule
+\endhead
+原研药结果 & 明显增加，尤其是可通过外部路径商业化的原研药项目 & 可能增加，但不一定集中在外部商业化相关项目 \\
+\addlinespace
+仿制药结果 & 不预测同等幅度直接上升；相对份额可能下降 & 若总研发普遍扩张，仿制药和原研药可能同时增加 \\
+\addlinespace
+持有人和生产者分离 & 对 realized original-drug products 应该增加 & 没有必然增加理由 \\
+\addlinespace
+改革前无内部生产能力但有研发能力的企业 & 反应应更强 & 没有明确理由反应更强 \\
+\addlinespace
+原研药研发份额 & 应上升，因为 $\Psi^O$ 相对 $\Psi^G$ 上升 & 不一定上升；总研发扩张不必然改变方向结构 \\
+\addlinespace
+申请到批准转化率 & 对受商业化可行性约束的原研药项目应改善 & 不一定改善；更多申请不等于更高转化率 \\
+\bottomrule
+\end{longtable}
+
+这个区分给经验设计提供了纪律。本文不需要证明不存在任何其他创新趋势。本文需要证明，观察到的经验模式更符合 MAH 路径特定商业化机制，而不是更符合一个泛化的研发扩张解释。
+
+\section{经验限制条件}
+
+\subsection{限制一：原研药项目的反应应强于仿制药项目}
+
+如果 MAH 主要通过原研药商业化路径发挥作用，那么原研药项目的反应应强于仿制药项目。一个基准规格可以写成：
+\[
+Y_{ikt}=\beta\,\Post_t\times \Exposure_i\times \Original_k
++\alpha_i+\delta_{kt}+\gamma_t+X_{ikt}'\theta+\varepsilon_{ikt},
+\]
+其中 $Y_{ikt}$ 是企业或产品 $i$、方向 $k$、时间 $t$ 的结果变量，$\Original_k$ 表示原研药方向，$\Exposure_i$ 表示改革前对 MAH 机制的暴露度。核心系数是 $\beta$。
+
+当 $Y$ 是第一层或第二层对象时，$\beta$ 的解释最强。例如 route use、holder-producer split、original-drug realization、original-drug share 或 conversion。
+
+\subsection{限制二：有研发能力但缺少生产能力的企业反应应更强}
+
+令 $Research_i^{pre}$ 表示改革前研发能力，$NoManu_i^{pre}$ 表示改革前缺少内部生产能力。机制预测最强反应应发生在：
+\[
+Research_i^{pre}=1,
+\qquad
+NoManu_i^{pre}=1.
+\]
+一个有用的规格是：
+\[
+Y_{it}=\beta\,\Post_t\times Research_i^{pre}\times NoManu_i^{pre}
++\alpha_i+\gamma_t+X_{it}'\theta+\varepsilon_{it}.
+\]
+对于方向性结果，还可以进一步与 $\Original_k$ 交互。
+
+这个限制非常关键，因为它能把 MAH 机制与一般研发趋势区分开。一般研发 boom 没有明确理由集中发生在“有研发能力但缺少生产能力”的企业中。
+
+\subsection{限制三：路径使用变量应先于或同步于 realized innovation 变化}
+
+机制预测 route-use margins 应该发生变化。对批准产品 $p$，定义：
+\[
+\Split_p=\one\{\mathrm{holder}_p\neq \mathrm{producer}_p\}.
+\]
+那么对原研药产品，特别是高暴露企业或地区，$\Split_p$ 或类似外部路径代理变量应在改革后增加：
+\[
+\Split_{pt}=\beta\,\Post_t\times \Exposure_i\times \Original_p
++\alpha_i+\gamma_t+X_{pt}'\theta+\varepsilon_{pt}.
+\]
+这不是对 $\tauext$ 的直接估计，而是一个可观察的路径使用代理变量。当外部路径变得更可行时，它应当发生变化。
+
+\subsection{限制四：原研药占比应上升}
+
+机制预测的不只是原研药数量增加，还包括方向结构变化。在企业-年份或省份-年份层面，定义：
+\[
+S_{it}^O=\frac{N_{it}^O}{N_{it}^O+N_{it}^G}.
+\]
+对外部商业化约束暴露度更高的单位，预测符号是：
+\[
+\frac{\partial S_{it}^O}{\partial M}>0.
+\]
+
+\subsection{限制五：有申请数据时，转化率应提高}
+
+如果未来能够获得完整申请数据，可以定义：
+\[
+\Conv_{it}^O=\frac{\mathrm{approved\ original\ projects}_{it}}{\mathrm{filed\ original\ projects}_{it}}.
+\]
+机制预测，对那些受商业化可行性约束的原研药项目，转化率应提高。这比批准数量本身更强，因为它能够区分“申请变多”和“实现概率变高”。
+
+\section{当前数据与未来数据模块}
+
+经验部分应清楚区分当前可以构造的对象和未来需要进一步补充的数据。当前如果已经有批文端或审批端匹配表，可以支持 realized-product outcomes 和 holder-producer separation 的构造。这类数据有价值，因为它能区分 authorization 或 holder 侧与生产侧。但它本身不一定能完整识别所有申请的分母，也不一定能直接观察持有人在改革前是否缺少内部生产能力。
+
+\begin{longtable}{p{0.26\textwidth}p{0.32\textwidth}p{0.33\textwidth}}
+\caption{机制对象的数据状态}\label{tab:data_status_cn}\\
+\toprule
+对象 & 当前可行性 & 更强识别所需数据升级 \\
+\midrule
+\endfirsthead
+\toprule
+对象 & 当前可行性 & 更强识别所需数据升级 \\
+\midrule
+\endhead
+持有人和生产者分离 & 可由持有人名称和生产企业名称构造 & 企业名称标准化；若有委托生产直接指标更好 \\
+\addlinespace
+realized original-drug counts & 可由批文端数据和药品类型编码构造 & 用申报类型和注册类型做稳健性分类 \\
+\addlinespace
+original-drug share & 可在 realized products 中构造 & 若加入申请端数据，可得到更完整分母 \\
+\addlinespace
+申请到批准转化率 & 仅用批准数据无法完整识别 & 需要包含受理、在审、撤回、拒绝、批准状态的申请面板 \\
+\addlinespace
+改革前生产能力 & 单靠批文端记录通常无法完整识别 & 需要生产许可证、GMP、生产设施或历史自产记录 \\
+\addlinespace
+研发型企业进入 & 单靠批准数据通常无法完整识别 & 需要企业-年份面板、研发历史、申请记录和产品范围 \\
+\bottomrule
+\end{longtable}
+
+这种模块化写法很重要。论文可以先使用当前可得的批准端或批文端证据，但必须明确保留未来申请端、能力端和企业面板数据的接口。这样既不会过度声称，也能让机制随着数据完善而逐步加强。
+
+\section{论文中应如何表述机制证据}
+
+正文应避免暗示已经直接观察或估计了 primitive friction。除非结构估计明确在一组假设下恢复出 $\tauext$，否则经验部分不应写：
+\begin{quote}
+“本文估计了 $\tauext$ 的下降。”
+\end{quote}
+更稳妥的写法是：
+\begin{quote}
+“证据与外部商业化路径的路径特定治理与合规摩擦下降相一致；这种解释体现在持有人和生产者分离、原研药 realization、以及改革前受商业化约束更强企业的更强反应中。”
+\end{quote}
+
+类似地，论文也不应仅因为改革后创新结果更大，就直接宣称 MAH 促进创新。更严谨的表述是：route-use 变化、original-drug realization、direction reallocation 和 exposure heterogeneity 的组合，共同支持本文提出的商业化机制。
+
+\section{对正文经验设计的含义}
+
+经验设计应围绕四个模块组织。
+
+\subsection{模块 A：路径使用证据}
+
+首先估计 MAH 是否与 realized original-drug products 中更高的持有人和生产者分离、外部商业化路径使用、或研发型 holder 活动相关。这是最接近机制的可观察对象。如果这个模块完全不动，则 commercialization-assignment 解释会较弱。
+
+\subsection{模块 B：原研药 realization}
+
+其次估计 realized original-drug products 是否增加，original-drug share 是否上升。这些是最终创新结果，但必须和路径使用证据一起解释。
+
+\subsection{模块 C：方向性重新配置}
+
+当研发投入或申请数据可用时，进一步估计企业是否从仿制药方向向原研药方向重新配置 effort 或项目。这是 $\omega_B^O\uparrow$ 的直接经验对应物。
+
+\subsection{模块 D：暴露度异质性}
+
+最后估计 effects 是否在改革前更受商业化约束的企业或地区中更强。最重要的暴露度维度包括：改革前研发能力、缺少内部生产能力、以及当地合格外部生产商供给密度。
+
+\section{机制总结}
+
+本文机制可以概括为五步：
+\begin{enumerate}
+    \item MAH 改变商业化的制度结构，允许持有人保留 authorization，同时委托合格外部生产商生产。
+    \item 这一制度变化降低原研药项目外部商业化路径的治理与合规摩擦 $\tauext$。
+    \item 较低的 $\tauext$ 提高外部路径价值 $H_{B,O}^{\mathrm{ext}}$，从而提高研发专业化企业原研药 idea 的单位价值 $\Psi_B^O$。
+    \item 更高的 $\Psi_B^O$ 诱导企业增加原研药方向研发努力、提高原研药项目份额、以研发型创新者身份进入，或者将原本会被放弃或转让的项目推进到商业化实现阶段。
+    \item 可观察含义是：外部路径使用增加、持有人和生产者分离增加、原研药 realization 增加、原研药占比上升，并且这些效应在改革前受生产能力约束的研发型企业中更强。
+\end{enumerate}
+
+因此，原研药方向研发投入增加并不自动构成对本文机制的替代解释。在本文机制下，它可能正是原研药商业化预期价值上升后的内生反应。经验设计必须证明的是：研发努力和创新结果是否沿着 MAH 商业化机制所预测的方向、路径和群体发生变化。
+
+\section{建议并入正文的修改位置}
+
+本附录对应正文的三处直接修改。
+\begin{enumerate}
+    \item \textbf{Introduction。} 加一句明确表述：本文不是单纯从创新结果反推机制，而是通过 route-use margins、original-drug realization 和高暴露企业的方向性反应来连接机制与结果。
+    \item \textbf{Model section。} 明确加入技术方向选择，区分 $x_s^G$ 和 $x_s^O$，或者等价地使用总研发努力 $x_s$ 和原研药方向份额 $\omega_s^O$。
+    \item \textbf{Empirical section。} 增加一个小节，标题可设为“区分 MAH 机制与一般研发 boom”，并使用本附录列出的经验限制条件。
+\end{enumerate}
+
+这些修改直接回应“创新结果与商业化机制联系不够紧密”的质疑，同时也强化论文的 JDE 定位：本文不是解释一个国别政策结果，而是将制度细节、组织路线和创新实现之间的机制写成可检验的经济学命题。
+
+\end{document}

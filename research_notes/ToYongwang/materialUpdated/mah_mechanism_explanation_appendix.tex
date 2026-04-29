@@ -1,0 +1,448 @@
+% !TEX program = pdflatex
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+
+\onehalfspacing
+\emergencystretch=2em
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.6em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.8em,itemsep=0.25em,topsep=0.35em}
+
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection.}{0.6em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{\thesubsubsection.}{0.6em}{}
+
+\newcommand{\tauext}{\tau_{\mathrm{ext}}}
+\newcommand{\Post}{\mathrm{Post}}
+\newcommand{\Original}{\mathrm{Original}}
+\newcommand{\Exposure}{\mathrm{Exposure}}
+\newcommand{\Split}{\mathrm{Split}}
+\newcommand{\RouteUse}{\mathrm{RouteUse}}
+\newcommand{\Conv}{\mathrm{Conv}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\one}{\mathbf{1}}
+
+\title{Appendix: Mechanism Explanation\\Commercialization Assignment, R\&D Effort, and Original-Drug Innovation under the MAH Reform}
+\author{}
+\date{Draft for integration into the main manuscript}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+This appendix clarifies the paper's central mechanism and addresses a key identification concern: if the observed outcome is an increase in original-drug innovation, how do we know that the result is connected to the MAH commercialization mechanism rather than to a general increase in firms' R\&D inputs? The answer is not to treat R\&D effort mechanically as a nuisance control. In the proposed mechanism, an increase in original-drug-oriented effort is an endogenous response to a higher expected value of original-drug commercialization. The empirical task is therefore to show that innovation outcomes move together with route-use margins, holder--producer separation, original-drug realization, and exposure to pre-reform commercialization constraints. The appendix formalizes that logic and translates it into testable empirical restrictions.
+\end{abstract}
+
+\section{Purpose and relation to the main text}
+
+The main text argues that the Marketing Authorization Holder (MAH) reform affects original-drug innovation by changing the organizational route through which research-originated ideas are commercialized. The primitive policy object is not a generic policy dummy and not a direct shock to scientific productivity. It is the route-specific governance and compliance friction of external commercialization,
+\[
+\tauext(M),
+\]
+where $M=0$ denotes the pre-MAH regime and $M=1$ denotes the post-MAH regime. The central mechanism is
+\[
+\tauext(1)<\tauext(0).
+\]
+This inequality means that a research-originating firm can more feasibly retain authorization while using a qualified external manufacturer to implement production and complete commercialization.
+
+This appendix explains how that commercialization mechanism links to observed innovation outcomes. The issue is subtle. A reader may ask: if the final empirical outcome is an increase in original-drug R\&D or original-drug approvals, could this simply reflect higher firm R\&D investment rather than the MAH mechanism? The correct response is not simply to control for contemporaneous R\&D expenditure. Such a control may absorb a channel through which the policy operates. Instead, the paper should distinguish three objects:
+\begin{enumerate}
+    \item the institutional friction on the external commercialization route, $\tauext$;
+    \item the expected value of original-drug projects, which depends on commercialization assignment;
+    \item the firm's endogenous technology-direction choice and R\&D effort.
+\end{enumerate}
+Under the proposed mechanism, MAH raises original-drug innovation because it increases the ex ante expected value of original-drug projects that rely on external commercialization. Firms may then respond by increasing original-drug-oriented effort, shifting effort from generic projects toward original-drug projects, entering as research-oriented firms, or pushing more projects through the commercialization stage. These are mechanism outcomes, not necessarily confounders.
+
+The appendix is written as an integration-ready component. It can be inserted after the institutional appendix or after the empirical mapping appendix. Its role is to make explicit why the link between commercialization assignment and innovation outcomes is empirically meaningful and how the paper should avoid overclaiming.
+
+\section{The concern: innovation outcomes alone do not identify the mechanism}
+
+A simple finding that original-drug approvals or applications increase after MAH would not be enough to establish the paper's mechanism. Such a finding could be consistent with several interpretations:
+\begin{enumerate}
+    \item a general rise in pharmaceutical R\&D expenditure;
+    \item an improvement in scientific productivity;
+    \item a demand or market-size shock;
+    \item faster review or lower approval delay from other regulatory reforms;
+    \item a financing boom affecting innovative firms;
+    \item a MAH-induced reduction in external commercialization friction.
+\end{enumerate}
+Only the last interpretation is the paper's central mechanism. Therefore, the empirical design should not infer the mechanism from innovation outcomes alone. It should show that the increase in original-drug innovation is accompanied by changes in route-use margins that are close to $\tauext$.
+
+The key distinction is between two claims.
+\begin{quote}
+\textbf{Weak claim:} MAH is followed by more innovation.
+\end{quote}
+\begin{quote}
+\textbf{Mechanism claim:} MAH reduces the route-specific friction of external commercialization; this raises the expected value of original-drug projects for firms constrained by internal manufacturing capacity; these firms then shift effort and commercialization decisions toward original-drug realization.
+\end{quote}
+The first claim is too broad for the paper's theory. The second claim is the mechanism that connects the institutional change to original-drug innovation.
+
+\section{Model objects}
+
+\subsection{Drug direction}
+
+Let projects be divided into two directions,
+\[
+k\in\{G,O\},
+\]
+where $G$ denotes generic-oriented projects and $O$ denotes original-drug-oriented projects. The paper's final innovation object is not total pharmaceutical activity. It is original-drug realization. Generic projects remain relevant because they provide a comparison group and because firms may allocate effort between generic and original-drug directions.
+
+\subsection{Organizational types}
+
+The model uses three economic organizational types:
+\[
+s\in\{A,B,C\}.
+\]
+Type-$A$ firms are integrated firms that can conduct R\&D and organize implementation internally. Type-$B$ firms are research-specialized firms that can generate original-drug ideas but do not operate as full internal manufacturers in the baseline state. Type-$C$ firms are manufacturing-specialized firms that provide qualified production capability and may serve the external commercialization market.
+
+These are economic states, not permanent corporate labels. A firm may operate different projects through different routes. The classification is useful because MAH is most relevant for projects whose research origin and production implementation need not be inside the same organization.
+
+\subsection{The policy primitive}
+
+The policy primitive is
+\[
+\tauext(M)\geq 0,
+\]
+where $\tauext$ is the route-specific governance and compliance friction of commercializing a research-originated original-drug idea through a qualified external manufacturer while the innovator retains authorization status. It is not:
+\begin{itemize}
+    \item a demand shifter;
+    \item a scientific-productivity shifter;
+    \item a generic reduction in all regulatory costs;
+    \item the physical manufacturing cost itself;
+    \item a general firm fixed cost.
+\end{itemize}
+The maintained institutional interpretation is that MAH reduces this route-specific friction:
+\[
+\Delta \tauext = \tauext(1)-\tauext(0)<0.
+\]
+
+\section{A two-stage mechanism: direction choice and commercialization assignment}
+
+The main text can be read as a two-stage model of innovation. The first stage is project-direction choice: firms allocate effort across generic and original-drug projects. The second stage is commercialization assignment: original-drug ideas are assigned to internal implementation, external commercialization, transfer, or abandonment.
+
+\subsection{Stage 1: technology-direction choice}
+
+For a research-capable firm of type $s\in\{A,B\}$, let
+\[
+x_s^G\geq 0, \qquad x_s^O\geq 0
+\]
+denote generic-oriented and original-drug-oriented effort. Alternatively, one may write total effort $x_s$ and an original-drug direction share $\omega_s^O\in[0,1]$:
+\[
+x_s^O=\omega_s^O x_s,\qquad x_s^G=(1-\omega_s^O)x_s.
+\]
+This notation clarifies the distinction between a general R\&D boom and a direction-specific innovation response. A general R\&D boom raises $x_s^G$ and $x_s^O$ broadly. The MAH mechanism predicts a stronger increase in $x_s^O$ and in $\omega_s^O$, especially among firms that were constrained by the pre-reform commercialization regime.
+
+A parsimonious cost function is
+\[
+C_s(x_s^G,x_s^O)=\frac{\chi_{sG}}{\eta_G}(x_s^G)^{\eta_G}+\frac{\chi_{sO}}{\eta_O}(x_s^O)^{\eta_O},
+\qquad \eta_G,\eta_O>1.
+\]
+The flow payoff from research effort can be written as
+\[
+\Pi_s^{R}(z;M)=\max_{x_s^G,x_s^O\geq0}
+\left\{x_s^G \Psi_s^G(z)+x_s^O\Psi_s^O(z;M)-C_s(x_s^G,x_s^O)\right\},
+\]
+where $\Psi_s^G$ is the project value of generic-oriented effort and $\Psi_s^O$ is the project value of original-drug-oriented effort. The key restriction is that MAH directly affects $\Psi_s^O$ through commercialization assignment, not $\Psi_s^G$ through a generic R\&D productivity shift.
+
+\subsection{Stage 2: commercialization assignment for original-drug ideas}
+
+For a type-$B$ original-drug idea, define the net value of the external route as
+\[
+H_{B,O}^{\mathrm{ext}}(z,p_m;M)
+=\rho_{B,O}^{\mathrm{ext}}(z,p_m)R_O(z)-p_m-\tauext(M),
+\]
+where $R_O(z)$ is the private value of a successfully commercialized original-drug project, $\rho_{B,O}^{\mathrm{ext}}(z,p_m)$ is the probability or efficiency of successful external implementation, $p_m$ is the market price of qualified manufacturing services, and $\tauext(M)$ is the institutional friction of executing the external route.
+
+The type-$B$ firm may also have alternative routes. Let
+\[
+H_{B,O}^{\mathrm{int}}(z), \qquad H_{B,O}^{\mathrm{tr}}(z), \qquad 0
+\]
+denote the net values of internal integration, transfer, and abandonment. Then the per-idea value of an original-drug project is
+\[
+\Psi_B^O(z,p_m;M)=\max\left\{
+H_{B,O}^{\mathrm{ext}}(z,p_m;M),
+H_{B,O}^{\mathrm{int}}(z),
+H_{B,O}^{\mathrm{tr}}(z),
+0
+\right\}.
+\]
+The distinctive MAH channel is
+\[
+\frac{\partial H_{B,O}^{\mathrm{ext}}}{\partial \tauext}=-1,
+\qquad
+\frac{\partial H_{B,O}^{\mathrm{int}}}{\partial \tauext}=0,
+\qquad
+\frac{\partial H_{B,O}^{\mathrm{tr}}}{\partial \tauext}=0.
+\]
+Therefore, a decline in $\tauext$ weakly raises the value of the original-drug idea:
+\[
+\frac{\partial \Psi_B^O}{\partial \tauext}\leq 0,
+\]
+with a strict effect whenever the external route is chosen or is near the relevant margin.
+
+\section{From lower commercialization friction to higher original-drug effort}
+
+Suppose the type-$B$ firm's original-drug effort is interior. The first-order condition for original-drug effort is
+\[
+\chi_{BO}(x_B^O)^{\eta_O-1}=\Psi_B^O(z,p_m;M).
+\]
+Thus
+\[
+x_B^{O*}(z,p_m;M)=\left(\frac{\Psi_B^O(z,p_m;M)}{\chi_{BO}}\right)^{\frac{1}{\eta_O-1}}.
+\]
+Whenever the MAH reform raises $\Psi_B^O$, it raises original-drug-oriented effort:
+\[
+\tauext \downarrow \quad \Rightarrow \quad \Psi_B^O \uparrow \quad \Rightarrow \quad x_B^{O*}\uparrow.
+\]
+If generic project value $\Psi_B^G$ is not directly affected by $\tauext$, then the original-drug direction share also rises under standard convex cost conditions:
+\[
+\omega_B^{O*}=\frac{x_B^{O*}}{x_B^{G*}+x_B^{O*}}\uparrow.
+\]
+This is the point that resolves the main conceptual concern. Higher R\&D effort is not a competing explanation if it is induced by the MAH-driven increase in original-drug project value. It becomes a mechanism outcome. The empirical question is whether the increase in effort and outcomes is concentrated in the directions and firms that the mechanism predicts.
+
+\section{Observed outcomes and empirical hierarchy}
+
+Let $N_O$ denote the number of realized original-drug products, $S_O$ the share of original-drug products in total realized products, and $\Conv_O$ the conversion rate from original-drug application or project to realized product. The central empirical chain is
+\[
+\tauext \downarrow
+\Rightarrow H_{B,O}^{\mathrm{ext}} \uparrow
+\Rightarrow \Psi_B^O \uparrow
+\Rightarrow \omega_B^{O*},x_B^{O*},V_B \uparrow
+\Rightarrow N_O,S_O,\Conv_O \uparrow.
+\]
+This chain implies a hierarchy of empirical objects.
+
+\begin{longtable}{p{0.22\textwidth}p{0.33\textwidth}p{0.36\textwidth}}
+\caption{Empirical hierarchy implied by the mechanism}\label{tab:hierarchy}\\
+\toprule
+Layer & Empirical object & Interpretation \\
+\midrule
+\endfirsthead
+\toprule
+Layer & Empirical object & Interpretation \\
+\midrule
+\endhead
+Layer 1 & Holder--producer separation; external-route use; split between MAH holder and actual producer & Closest observable proxies for changes in commercialization assignment and route use. \\
+\addlinespace
+Layer 2 & Realized original-drug products; original-drug share among realized products & Final innovation outcomes that are closest to commercialization rather than pure idea generation. \\
+\addlinespace
+Layer 3 & Application-to-approval conversion for original-drug projects & Stronger evidence that feasibility of realization improved, once application-side data are available. \\
+\addlinespace
+Layer 4 & Original-drug-oriented R\&D effort or project-direction shares & Mechanism outcome showing that firms reallocate effort toward original-drug projects. \\
+\addlinespace
+Layer 5 & Entry of research-oriented firms; growth of firms with pre-reform R\&D but weak manufacturing capacity & Composition response predicted by the increase in type-$B$ value. \\
+\bottomrule
+\end{longtable}
+
+The first-layer objects are essential. If original-drug outcomes rise but route-use measures do not move, the evidence for the MAH mechanism is weaker. Conversely, if original-drug outcomes rise together with holder--producer separation, research-oriented holder activity, and stronger responses among firms lacking pre-reform manufacturing capability, the mechanism becomes much more credible.
+
+\section{Why contemporaneous R\&D controls may be bad controls}
+
+A common response to the concern about R\&D investment is to add contemporaneous R\&D expenditure as a control. That is not generally appropriate. If the policy raises original-drug project value, then R\&D effort is partly a channel:
+\[
+M \Rightarrow \tauext\downarrow \Rightarrow \Psi_B^O\uparrow \Rightarrow x_B^O\uparrow \Rightarrow N_O\uparrow.
+\]
+Controlling for $x_B^O$ in a regression of $N_O$ on MAH exposure may remove part of the treatment effect that the theory aims to explain.
+
+The empirical strategy should instead distinguish among three uses of R\&D variables.
+\begin{enumerate}
+    \item \textbf{Pre-reform R\&D capacity as heterogeneity.} Pre-reform R\&D capacity helps classify firms and measure exposure to the mechanism. This is not a bad control because it is predetermined.
+    \item \textbf{Post-reform R\&D as a mechanism outcome.} Post-reform original-drug-oriented R\&D should be studied as an outcome of the policy mechanism.
+    \item \textbf{Robustness controls for broad trends.} Aggregate financing conditions, province-year shocks, or industry-year fixed effects may help absorb broad innovation booms, but they should not absorb the direction-specific R\&D response that the theory predicts.
+\end{enumerate}
+The correct empirical question is not whether the effect survives after controlling away all R\&D effort. The correct question is whether R\&D effort and realized innovation shift specifically toward original-drug projects among firms and regions where the commercialization constraint was most binding before MAH.
+
+\section{Distinguishing the MAH mechanism from a general R\&D boom}
+
+The following table summarizes the difference between the proposed mechanism and a general R\&D boom.
+
+\begin{longtable}{p{0.27\textwidth}p{0.31\textwidth}p{0.33\textwidth}}
+\caption{Predicted patterns under alternative interpretations}\label{tab:rdboom}\\
+\toprule
+Empirical pattern & MAH commercialization mechanism & General R\&D boom \\
+\midrule
+\endfirsthead
+\toprule
+Empirical pattern & MAH commercialization mechanism & General R\&D boom \\
+\midrule
+\endhead
+Original-drug outcomes & Strong increase, especially for externally commercializable projects & Possible increase, but not necessarily concentrated in externally commercializable projects \\
+\addlinespace
+Generic-drug outcomes & No direct prediction of comparable increase; may rise less or fall in relative share & May rise together with original-drug outcomes if total R\&D expands broadly \\
+\addlinespace
+Holder--producer separation & Should increase for realized original-drug products & No necessary increase \\
+\addlinespace
+Firms without pre-reform manufacturing capability & Should respond more strongly if they have research capability & No clear reason for a stronger response \\
+\addlinespace
+Original-drug R\&D share & Should rise because $\Psi^O$ rises relative to $\Psi^G$ & May or may not rise; total R\&D can increase without direction reallocation \\
+\addlinespace
+Conversion from application to approval & Should improve for projects constrained by commercialization feasibility, once data allow measurement & Not necessarily improved; more applications may not imply higher conversion \\
+\bottomrule
+\end{longtable}
+
+This distinction gives the empirical design its discipline. The paper does not need to prove that no other innovation trend exists. It needs to show that the observed pattern aligns with the route-specific predictions of the MAH mechanism better than with a generic R\&D boom.
+
+\section{Empirical restrictions}
+
+\subsection{Restriction 1: stronger response for original-drug projects}
+
+If MAH operates through original-drug commercialization, effects should be stronger for original-drug projects than for generic projects. A baseline specification can be written as
+\[
+Y_{ikt}=\beta\,\Post_t\times \Exposure_i\times \Original_k
++\alpha_i+\delta_{kt}+\gamma_t+X_{ikt}'\theta+\varepsilon_{ikt},
+\]
+where $Y_{ikt}$ is an outcome for firm or product $i$, direction $k$, and time $t$; $\Original_k$ indicates original-drug direction; and $\Exposure_i$ measures pre-reform exposure to the MAH mechanism. The key coefficient is $\beta$.
+
+A positive $\beta$ is more informative when $Y$ is one of the first-layer or second-layer objects: route use, holder--producer split, original-drug realization, original-drug share, or conversion.
+
+\subsection{Restriction 2: stronger response among research-capable firms lacking manufacturing capability}
+
+Let $Research_i^{pre}$ indicate pre-reform research capability and $NoManu_i^{pre}$ indicate lack of internal manufacturing capability before the reform. The mechanism predicts the strongest response for
+\[
+Research_i^{pre}=1,
+\qquad
+NoManu_i^{pre}=1.
+\]
+A useful specification is
+\[
+Y_{it}=\beta\,\Post_t\times Research_i^{pre}\times NoManu_i^{pre}
++\alpha_i+\gamma_t+X_{it}'\theta+\varepsilon_{it}.
+\]
+For direction-specific outcomes, this can be further interacted with $\Original_k$.
+
+This restriction is central because it separates the MAH mechanism from a broad innovation trend. A general R\&D boom need not be concentrated among firms that had research capability but lacked manufacturing capacity.
+
+\subsection{Restriction 3: route-use margins should move before or together with realized innovation}
+
+The mechanism predicts movement in route-use margins. For approved product $p$, define
+\[
+\Split_p=\one\{\mathrm{holder}_p\neq \mathrm{producer}_p\}.
+\]
+Then $\Split_p$ or a related external-route proxy should increase for original-drug products after the reform, especially among exposed firms or regions:
+\[
+\Split_{pt}=\beta\,\Post_t\times \Exposure_i\times \Original_p
++\alpha_i+\gamma_t+X_{pt}'\theta+\varepsilon_{pt}.
+\]
+This is not a direct estimate of $\tauext$. It is an observable route-use proxy that should respond when the external route becomes more feasible.
+
+\subsection{Restriction 4: original-drug shares should rise}
+
+The mechanism predicts not only more original-drug output but also a shift in direction. At the firm-year or province-year level, define
+\[
+S_{it}^O=\frac{N_{it}^O}{N_{it}^O+N_{it}^G}.
+\]
+The predicted sign is
+\[
+\frac{\partial S_{it}^O}{\partial M}>0
+\]
+for units more exposed to the external commercialization constraint.
+
+\subsection{Restriction 5: conversion should improve when application data are available}
+
+Because the current approval-side data may not contain the full application denominator, conversion may need to remain a later data module. Once application data are available, define
+\[
+\Conv_{it}^O=\frac{\mathrm{approved\ original\ projects}_{it}}{\mathrm{filed\ original\ projects}_{it}}.
+\]
+The mechanism predicts that conversion improves for original-drug projects whose commercialization feasibility improves under MAH. This is stronger evidence than approval counts alone because it separates more applications from a higher realization probability.
+
+\section{Current data and future data modules}
+
+The empirical section should be explicit about what can be constructed now and what requires future data. The current approval-side matched table can support realized-product outcomes and holder--producer separation. It is useful because it separates the authorization or holder side from the production side. However, it does not by itself identify the full denominator of all applications, nor does it necessarily reveal whether the holder lacked internal manufacturing capability before the reform.
+
+\begin{longtable}{p{0.26\textwidth}p{0.32\textwidth}p{0.33\textwidth}}
+\caption{Data status for mechanism objects}\label{tab:data_status}\\
+\toprule
+Object & Current empirical status & Required upgrade for stronger identification \\
+\midrule
+\endfirsthead
+\toprule
+Object & Current empirical status & Required upgrade for stronger identification \\
+\midrule
+\endhead
+Holder--producer split & Constructible from holder and producer names in approval-side records & Name standardization; direct entrusted-production indicator if available \\
+\addlinespace
+Realized original-drug counts & Constructible from approval-side records and drug-type coding & Robust alternative coding using filing type and registration type \\
+\addlinespace
+Original-drug share & Constructible among realized products & Broader denominator if application-side data are added \\
+\addlinespace
+Application-to-approval conversion & Not fully identified from approval-only data & Application/status panel including accepted, pending, withdrawn, rejected, and approved projects \\
+\addlinespace
+Pre-reform manufacturing capability & Not fully identified from approval-side records alone & Production-license, GMP, manufacturing-facility, or self-manufacturing history data \\
+\addlinespace
+Research-oriented entry & Not fully identified from approval-only data & Firm-year panel with entry, research history, applications, and product scope \\
+\bottomrule
+\end{longtable}
+
+This modular structure is important. The paper can begin with the strongest available approval-side evidence while clearly reserving stronger conversion and capability tests for later merged data. This avoids overclaiming and preserves the mechanism as the data environment improves.
+
+\section{How to state the claim in the paper}
+
+The paper should avoid language that implies direct observation of the primitive friction. The empirical section should not say:
+\begin{quote}
+``We estimate the decline in $\tauext$.''
+\end{quote}
+unless the structural estimation explicitly recovers that parameter under stated assumptions. A safer and more accurate statement is:
+\begin{quote}
+``The evidence is consistent with a decline in the route-specific friction of external commercialization, as reflected in holder--producer separation, original-drug realization, and stronger responses among firms more exposed to pre-reform commercialization constraints.''
+\end{quote}
+Similarly, the paper should not state that MAH raises innovation simply because post-reform innovation outcomes are larger. It should state that the combination of route-use changes, original-drug realization, direction reallocation, and heterogeneity by commercialization constraint supports the proposed mechanism.
+
+\section{Implications for the main empirical design}
+
+The empirical design should be organized around four modules.
+
+\subsection{Module A: route-use evidence}
+
+Estimate whether MAH is associated with more holder--producer separation or external commercialization among realized original-drug products. This is the closest observable counterpart of the mechanism. A positive effect here is necessary for the commercialization-assignment interpretation to be convincing.
+
+\subsection{Module B: original-drug realization}
+
+Estimate whether realized original-drug products increase and whether original-drug shares rise. These are final innovation outcomes, but they should be interpreted jointly with route-use evidence.
+
+\subsection{Module C: direction reallocation}
+
+When R\&D or application data are available, estimate whether firms reallocate effort or projects from generic-oriented activity toward original-drug activity. This is the direct empirical counterpart of $\omega_B^O\uparrow$.
+
+\subsection{Module D: exposure heterogeneity}
+
+Estimate whether effects are stronger for firms or regions more exposed to the pre-reform commercialization constraint. The most important exposure dimensions are pre-reform research capability, lack of internal manufacturing capability, and local availability of qualified external manufacturers.
+
+\section{Summary of the mechanism}
+
+The paper's mechanism can be summarized in five steps.
+\begin{enumerate}
+    \item MAH changes the institutional structure of commercialization by allowing the holder to retain authorization while using a qualified external manufacturer.
+    \item This lowers the route-specific governance and compliance friction $\tauext$ for external commercialization of original-drug projects.
+    \item Lower $\tauext$ raises the value $H_{B,O}^{\mathrm{ext}}$ of the external route and therefore raises the per-idea value $\Psi_B^O$ of original-drug projects for research-specialized firms.
+    \item Higher $\Psi_B^O$ induces firms to increase original-drug-oriented effort, shift the direction of R\&D toward original-drug projects, enter as research-oriented innovators, or commercialize projects that would otherwise have been abandoned or transferred.
+    \item The observable implications are stronger route use, more holder--producer separation, higher original-drug realization, higher original-drug shares, and stronger effects for firms constrained by pre-reform production requirements.
+\end{enumerate}
+
+This is why an increase in original-drug R\&D effort is not automatically a competing explanation. Under the mechanism, it is part of the response to a higher expected value of original-drug commercialization. The empirical design must therefore show that R\&D effort and innovation outcomes move in the direction, route, and exposed groups predicted by the MAH commercialization channel.
+
+\section{Suggested insertion points in the main manuscript}
+
+This appendix suggests three direct edits to the main manuscript.
+
+\begin{enumerate}
+    \item \textbf{Introduction.} Add a sentence stating that the paper does not infer the mechanism from innovation outcomes alone; it links the mechanism to route-use margins, original-drug realization, and direction-specific responses among exposed firms.
+    \item \textbf{Model section.} Make technology-direction choice explicit by distinguishing $x_s^G$ and $x_s^O$, or equivalently total effort $x_s$ and original-drug share $\omega_s^O$.
+    \item \textbf{Empirical section.} Add a subsection titled ``Distinguishing the MAH mechanism from a general R\&D boom,'' using the empirical restrictions listed above.
+\end{enumerate}
+
+These changes directly address the concern that the link between the innovation result and the commercialization mechanism is not tight enough. They also strengthen the paper's JDE positioning by making the mechanism empirically falsifiable rather than merely interpretive.
+
+\end{document}

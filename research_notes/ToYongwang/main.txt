@@ -1,0 +1,2276 @@
+% !TEX program = xelatex
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{newtxmath}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+
+\setmainfont{Times New Roman}[
+  UprightFont=*,
+  BoldFont=* Bold,
+  ItalicFont=* Italic,
+  BoldItalicFont=* Bold Italic
+]
+
+\onehalfspacing
+\emergencystretch=2em
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.2em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.7em,itemsep=0.2em,topsep=0.35em}
+\setlength{\bibsep}{0.2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\normalfont\normalsize\bfseries}
+  {\thesection.}{0.6em}{}
+\titlespacing*{\section}{0pt}{1.6em}{0.6em}
+\titleformat{\subsection}
+  {\normalfont\normalsize\itshape}
+  {\thesubsection.}{0.55em}{}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.35em}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\itshape}
+  {}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{0.8em}{0.25em}
+\title{Original-Drug Innovation, Implementation-Route Assignment,\\and the MAH System in China}
+\author{Danni Yangchen \and Wenxiao Dong \and Xinhao Wang}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{plain}
+
+\begin{abstract}\noindent
+This paper studies China's Marketing Authorization Holder (MAH) reform as a change in implementation-route assignment rather than as a generic innovation shock. Institutionally, MAH changes authorization--production assignment by allowing the innovator to retain authorization while using a qualified external manufacturer. In the model, that change lowers $\tau_{\mathit{ext}}$, the route-specific governance and compliance friction of external implementation, and raises the value of bringing original-drug ideas to market through that route. We embed the mechanism in a dynamic industry environment with heterogeneous firms, endogenous entry and exit, organizational switching, and a qualified contract-manufacturing market. The empirical design is organized around route use, original-drug realization, entry composition, and supporting organizational reallocation.
+\end{abstract}
+
+\noindent\textit{Keywords:} MAH reform; original-drug innovation; implementation-route assignment; organizational routes; heterogeneous firms; contract manufacturing.\\
+\noindent\textit{JEL codes:} D22; L23; L65; O31; O38.
+% =========================================================
+% Revised Introduction
+% =========================================================
+
+% =========================================================
+% Part 1: Revised Introduction
+% =========================================================
+
+\section{Introduction}
+
+A recurring theme in the economics of innovation is that invention and implementation need not be organized inside the same firm. This point is especially salient in the pharmaceutical industry, where turning a scientifically promising idea into a marketable drug requires not only discovery, but also regulatory execution, quality accountability, and reliable production. In such an environment, institutional design matters not merely because it changes prices or demand, but because it changes which organizational routes from invention to implementation are feasible, enforceable, and scalable.
+
+This paper studies China's Marketing Authorization Holder (MAH) reform through that lens. Our question is not whether MAH is a generic pro-innovation policy, nor whether it directly raises scientific productivity. Instead, we ask whether MAH changes the organizational route through which research-originated original-drug ideas are brought to market, and thereby increases the number of ideas that can be realized as marketable products. That is the paper's central object.
+
+That question is well suited to the Chinese pharmaceutical industry. The industry has long been shaped by a structural tension between a growing upstream research margin and a historically tighter linkage between authorization and internal production. Under the pre-reform regime, a research-originating firm without internal manufacturing capacity faced substantial difficulty in bringing an original-drug idea to market while retaining project control and authorization status. In practice, a scientifically promising project could fail not because it lacked scientific merit, but because implementation required either downstream integration or a transfer of effective control to an integrated producer. MAH changes that institutional environment by explicitly allowing the holder to retain authorization while commissioning production from a qualified external manufacturer under a legally recognized structure with clear quality responsibility and standardized compliance requirements.
+
+The economic implication follows directly. MAH lowers the governance and compliance friction of one specific organizational route: external implementation by a research-originating firm that retains authorization status. We denote that route-specific friction by $\tau_{ext}$. This object is narrower and more informative than a generic policy dummy. It is not a stand-in for all regulatory costs in the industry, nor for demand, scientific productivity, or general business conditions. It captures the extra organizational and compliance burden of implementing an original-drug idea through a qualified external manufacturer while the innovator keeps the project and holder status. If MAH lowers $\tau_{ext}$, then the expected net value of externally implemented original-drug ideas rises, and so does the set of research-oriented firms for which implementation becomes feasible.
+
+This change in implementation-route assignment is the main mechanism of the paper. More concretely, MAH changes authorization--production assignment: under the external route, the innovator may retain authorization while a qualified outside producer performs production. Firm-boundary reorganization remains important, but it is no longer the only or even the first margin. A research-specialized firm may remain research-specialized and use the external implementation route. It may instead switch into an integrated form and internalize implementation. An integrated incumbent may continue to invent and implement internally. A project may also be transferred or abandoned. These are not separate stories. They are alternative implementation assignments for the same underlying problem: who ultimately carries a research-originated original-drug idea from authorization to realized product, and under which institutional conditions.
+
+To study that problem, we build a dynamic industry model with three organizational forms. Type-$A$ firms are integrated: they conduct original-drug research and organize production internally. Type-$B$ firms are research-specialized: they generate original-drug ideas but do not operate as full internal manufacturers. Type-$C$ firms are manufacturing-specialized: they provide qualified production capability and serve the contract-manufacturing market. The model is embedded in a stationary heterogeneous-firm environment with endogenous entry, exit, and organizational switching. Original-drug innovation is modeled as a two-stage process: firms first generate ideas, and those ideas are then assigned to implementation routes. MAH operates primarily on the second stage rather than the first.
+
+This modeling choice connects the paper to several literatures. First, the paper joins the dynamic heterogeneous-firm literature on entry, exit, selection, and industry composition, following \citet{Jovanovic1982}, \citet{Hopenhayn1992}, and \citet{EricsonPakes1995}. It also draws on innovation-based firm dynamics in \citet{KletteKortum2004} and \citet{AkcigitKerr2018}, where innovative effort and firm composition jointly shape industry outcomes. Relative to that literature, the present paper adapts the industry-dynamics shell to an organizational-boundary problem rather than a pure productivity-selection problem.
+
+Second, the paper connects to the literature on the organization of innovation and commercialization. A central lesson of this literature is that innovators do not necessarily earn returns by integrating downstream production themselves. Returns depend on complementary assets, commercialization capability, and the availability of cooperation or licensing arrangements \citep{Teece1986, AroraFosfuriGambardella2001, AroraMerges2004, GansStern2003, GansHsuStern2002, AroraGambardella2010}. This insight is especially useful in the present setting because the key policy margin is not whether a scientifically promising idea exists, but whether a research-originating firm can commercialize that idea while retaining authorization and coordinating with an external qualified manufacturer.
+
+Third, the paper relates to the pharmaceutical innovation literature, which emphasizes that regulation and policy often affect innovation through expected returns, market size, development delay, and institutional design rather than through factory-level productivity alone \citep{AcemogluLinn2004, Lakdawalla2018}. The paper also speaks directly to the Chinese pharmaceutical reform context, where \citet{JiaMaYangZhang2024} show that regulatory reform can reshape innovation incentives and outcomes. Relative to that literature, our contribution is to show that, in a latecomer pharmaceutical industry, reform may work not primarily by making research more productive in the scientific sense, but by changing the organizational routes through which ideas become products.
+
+Finally, the paper is also related to recent work distinguishing invention from implementation. In our setting, the relevant question is not just who generates ideas, but how those ideas are implemented and realized. In that sense, the paper borrows the invention-versus-implementation distinction from \citet{FonsRosenRoldanBlancoSchmitz2024}, while replacing startup acquisition with MAH-enabled implementation through qualified external manufacturing.
+
+This framing changes the empirical priority of the paper. The first-layer objects are implementation-route assignment, conversion from research-originated ideas to realized products, the number of new original-drug products, and the share of original drugs in realized products. Organizational transition matrices remain important, but they serve as complementary validation rather than as the sole organizing object.
+
+The rest of the paper proceeds as follows. Section 2 describes the institutional setting and identification boundary. Section 3 develops the model. Section 4 states the main comparative-static implications. Section 5 maps the model to observables and explains the estimation logic. The appendices then record the institutional details, fuller derivations, proof details, and expanded empirical implementation material that support the main text.
+
+\section{Institutional Setting and Identification Boundary}
+
+The economic question of this paper is not whether regulatory reform improves innovation in a broad and undifferentiated sense. It is narrower and more disciplined. We study whether the Marketing Authorization Holder (MAH) reform changes the organizational route through which an original-drug idea moves from invention to implementation, and whether that change increases the set of research-originated projects that can be realized as marketable products.
+
+This distinction matters for both interpretation and modeling. In the present setting, the key constraint is not simply the scientific difficulty of discovering a promising idea. The deeper bottleneck is whether a research-originated idea can be brought to market without forcing the innovator to internalize the entire downstream production chain. In other words, the central margin is organizational implementation rather than scientific discovery alone. The reform is therefore most naturally understood as changing the conditions under which implementation can be carried out across firm boundaries, not as a generic increase in demand, a direct rise in scientific productivity, or a reduced-form shift in all firm payoffs at once.
+
+\subsection{Institutional environment and the substantive distinction between generic and original drugs}
+
+We study China's pharmaceutical industry in an environment with two medicine categories,
+
+\[
+k \in \{G,O\},
+\]
+
+where $G$ denotes generic drugs and $O$ denotes original drugs. This distinction is substantive rather than cosmetic. The paper's policy question concerns the realization of new original-drug products rather than total pharmaceutical output. Generic production remains economically important because it provides cash flow, manufacturing demand, and a source of revenue for integrated and manufacturing-specialized firms. But the reform studied here acts primarily on the implementation environment for original-drug ideas.
+
+This focus follows from the industry's broader upgrading problem. As the industry moves from a generic-oriented stage toward one in which original-drug development becomes more important, the ability to generate an idea and the ability to commercialize that idea need not be located inside the same organization. This separation is especially relevant when research-oriented firms can generate valuable projects but do not operate full internal manufacturing capacity. Under those conditions, the critical question becomes whether the institutional environment allows research-originated projects to be completed through a legally recognized and operationally viable external route.
+
+This is why the paper focuses on the organization of implementation rather than on a standard production-side channel. If the reform mainly changed factory productivity, static input demand, or product demand, then a different model would be appropriate. The mechanism emphasized here is different. The reform matters because it changes whether a research-originated project can be implemented while the innovator retains the relevant authorization position and coordinates with a qualified outside manufacturer.
+
+\subsection{What MAH changes institutionally}
+
+Let
+
+\[
+M \in \{0,1\}
+\]
+
+denote the regulatory regime, where $M = 0$ is the pre-MAH regime and $M = 1$ is the post-MAH regime. The institutional content of MAH can be stated more concretely than a generic reform dummy. The reform changes who may legally hold market authorization, how production may be organized once authorization is obtained, and how authorization and production may be assigned across firms under a regulated relationship.
+
+A first key step is that the reform decouples, in legal form, the authorization-holding role from the requirement of in-house production. The 2016 pilot plan already moved in that direction by allowing drug R\&D institutions and scientific personnel in the pilot regions to apply for drug marketing authorization and become holders even when they were not conventional integrated drug manufacturers. For research-originating entities without production facilities, this was a basic institutional break from the older environment, in which research,
+
+approval, and production were much more tightly bundled in practice.\footnote{Official sources are explicit on this point. The 2016 Pilot Plan for the Marketing Authorization Holder System states that drug R\&D institutions and scientific personnel in the pilot regions may apply for drug marketing authorization and become holders even when they were not conventional integrated drug manufacturers. For research-originating entities without production facilities, this was a basic institutional break from the older environment, in which research, approval, and production were much more tightly bundled in practice. See the General Office of the State Council's pilot-plan release of June 6, 2016, and the CFDA follow-up notice of July 7, 2016.}
+
+A second key step is that the reform does not merely allow external production in a loose sense; it legalizes a specific entrusted-production structure. Under the 2019 revised Drug Administration Law, the marketing authorization holder may either manufacture the drug itself or entrust a qualified drug manufacturer to produce it. In the entrusted-production case, the holder and the entrusted producer must sign both an entrustment agreement and a quality agreement and must strictly perform the obligations stated in those agreements. Institutionally, this means that external implementation is not modeled as an anonymous spot-market purchase of factory services. It is a legally structured authorization--production assignment with specified contractual and quality-management content.\footnote{See the 2019 revised \textit{Drug Administration Law of the People's Republic of China}, especially the MAH chapter as published by the NMPA. The law states that the marketing authorization holder may self-manufacture or entrust a qualified drug manufacturer to produce the drug, and that entrusted production requires an entrustment agreement and a quality agreement.}
+
+A third key step is that the reform preserves and sharpens holder responsibility rather than shifting it away from the holder. The 2019 law makes the holder the legally central entity for the drug across its lifecycle: non-clinical research, clinical trials, production and distribution, post-marketing study, and pharmacovigilance. The same law also states that the holder's legal representative and principal person are fully responsible for drug quality, and that the holder must establish a quality assurance system, assign dedicated quality-management personnel, and regularly audit entrusted manufacturers and distributors. The 2022 NMPA supervisory provisions deepen that architecture by emphasizing a full-process quality-management system and clearer responsibility allocation across key posts, while the 2023 NMPA notice on MAH entrusted production strengthens supervision of the entrusted route itself.\footnote{The official law text states that the holder is responsible for the drug across research, trials, production and distribution, post-marketing study, and adverse-reaction monitoring and handling; that the legal representative and principal person bear full responsibility for drug quality; and that the holder shall establish a quality assurance system and regularly audit entrusted parties. See the 2019 revised \textit{Drug Administration Law}. For supervisory deepening, see the NMPA's 2022 \textit{Provisions on Supervising the Implementation of the Drug Marketing Authorization Holder's Primary Responsibility for Drug Quality and Safety}, released on December 29, 2022 and effective March 1, 2023, and the NMPA's 2023 announcement on strengthening supervision of MAH entrusted production.}
+
+These legal details matter for economic interpretation. Before MAH, a research-originating firm without internal manufacturing capacity faced a severe obstacle if it wanted to implement an original-drug project while retaining effective control and the authorization
+
+position. In practice, the innovator often had to move toward internal integration, rely on a more fragile organizational arrangement, or relinquish control over downstream implementation. After MAH, external implementation through a qualified manufacturer becomes a legally recognized route under which the holder may retain authorization while production is carried out by another firm under formalized contractual and supervisory requirements.
+
+That change should not be described as a generic policy relaxation. Its institutional content is more specific. The reform alters the legal and organizational conditions under which an authorization--production assignment can be executed. It clarifies who remains responsible, standardizes the contractual basis of entrusted production, makes cross-firm implementation more regulable and more supervisable, and thereby makes it more feasible for a research-based firm to bring a project to market without first becoming a fully integrated manufacturer.
+
+For the purposes of this paper, the sharpest economic interpretation is therefore that MAH lowers the governance and compliance burden attached to a particular route: external implementation of a research-originated original-drug project through a qualified outside manufacturer while the holder retains legally meaningful responsibility. The subsection that follows translates that institutional change into the route-specific friction $\tau_{ext}$, while Appendix A provides the fuller institutional documentation.
+
+\subsection{The economic mechanism: from institutional change to \texorpdfstring{$\tau_{ext}$}{tau-ext}}
+
+This institutional interpretation leads to a disciplined modeling choice. The reform is not written as a demand shifter. It is not written as a direct increase in scientific productivity. It is not written as a generic regime dummy entering every firm payoff. Instead, the reform enters through a route-specific friction,
+
+\[
+\tau_{ext}(M)\ge 0,
+\]
+
+which denotes the governance and compliance cost of completing implementation through an external qualified manufacturer while the innovator retains the relevant holder role. The present version therefore sharpens the policy primitive relative to earlier drafts: the paper's central MAH-sensitive object is the external-route friction itself.
+
+This object is deliberately narrow. It includes the organizational and compliance burdens specific to that route, such as the execution and monitoring of the external arrangement, the compliance obligations attached to holder-side responsibility, and the cross-firm coordination required to turn a research-originated project into a marketable product. It does not represent physical manufacturing cost itself, the R\&D cost of generating an idea, or an economy-wide fixed cost. This distinction is central to the paper's internal logic. 
+
+Once the reform is mapped into $\tau_{ext}(M)$, the model can cleanly distinguish three different objects: the market price of qualified external manufacturing, the technical or execution-side success of implementation, and the institutional friction specific to the external route.
+
+The immediate implication is straightforward. When
+
+\[
+\tau_{ext}(1) < \tau_{ext}(0),
+\]
+
+the expected private value of a research-originated project rises for firms that rely on external implementation. This does not require scientific productivity to change. A project becomes more attractive because the route through which it can be completed becomes more feasible and less costly in organizational terms.
+
+\subsection{Identification boundary}
+
+A clear identification boundary follows from this logic. With standard firm-level and product-level outcome data, the paper can study whether MAH is associated with more original-drug realization, a higher share of original-drug outcomes, changes in entry composition, and reallocation across organizational forms. These are objects that can be linked to the reform in reduced-form or structural-reduced-form evidence.
+
+What the data do not automatically reveal is a primitive route-specific friction or a primitive implementation probability by themselves. The model therefore interprets the implementation-route block as a structural explanation of observed changes rather than as a primitive that is directly measured in isolation. This is an important discipline device. It prevents the paper from claiming more than the available evidence can support.
+
+The empirical implication is that the main evidence should be organized around outcomes that are closest to the mechanism. At the first layer are measures of original-drug realization and the use or viability of external implementation routes. At the second layer are entry composition, organizational reallocation, and producer-side outcomes in the qualified manufacturing segment. Taken together, these objects can support the interpretation that the reform operates by reducing an external implementation friction. Taken separately, none of them should be presented as a direct estimate of $\tau_{ext}$ itself.
+
+This mapping also changes how the paper describes organizational reallocation. The relevant question is not simply whether firms move mechanically across three labels. The more fundamental question is how original-drug projects are assigned to implementation routes. An idea can be implemented inside an integrated firm, can be carried forward by a research-specialized firm that contracts with a qualified manufacturing specialist, can induce organizational switching, or can fail to reach implementation. The three organizational types remain useful because they organize these possibilities in a tractable way. But the paper's first-order object is implementation-route assignment.
+
+\textbf{Interface to Section 3.} The model in the next section builds on this institutional mapping. It combines three elements. First, it retains an industry-dynamics shell with heterogeneous firms, endogenous entry and exit, and a stationary equilibrium perspective. Second, it distinguishes invention from implementation, so that idea generation does not automatically imply realized innovation. Third, it places a qualified contract-manufacturing market next to integrated implementation, which makes it possible to study how the reform changes the assignment of original-drug projects across routes. Under this interpretation, MAH raises original-drug innovation not because it makes all firms more scientifically productive, but because it changes the organizational feasibility of implementation.
+
+\section{Model}
+
+This section translates the institutional mechanism described in Section 2 into a dynamic industry model with heterogeneous firms, endogenous entry and exit, organizational specialization, and a contract-manufacturing market. The baseline is deliberately kept lower-dimensional. Its purpose is not to describe every organizational and technological margin in China's pharmaceutical industry, but to isolate the minimum structure needed to link MAH to original-drug innovation through implementation-route assignment. The model is therefore rich enough to distinguish invention from implementation, to allow route assignment to vary across organizational forms, and to embed those choices in a stationary industry environment. At the same time, it does not build a full incomplete-contract model, a full bargaining model, or an explicit government-optimization problem.
+
+The baseline model uses a one-dimensional capability state. However, the structure is written in a way that preserves a clean interface for a later two-dimensional extension. The appendix shows how the same logic can be generalized to a state vector
+
+\[
+z=(z_R,z_C),
+\]
+
+where $z_R$ denotes research capability and $z_C$ denotes implementation or execution capability. That extension is not part of the baseline specification used in the main text.
+
+\subsection{Environment}
+
+Time is discrete and indexed by $t=0,1,2,\ldots$. There are three active organizational forms,
+
+\[
+s\in\{A,B,C\},
+\]
+
+with the following interpretation.
+
+\begin{itemize}[nosep]
+\item Type-A firms are integrated firms. They can generate original-drug ideas and can also organize implementation internally.
+
+\item Type-B firms are research-specialized firms. They generate original-drug ideas but do not operate as full internal manufacturers in the baseline state.
+
+\item Type-C firms are manufacturing-specialized firms. They provide qualified external manufacturing capability and may earn profits from entrusted production.
+\end{itemize}
+
+There is also a mass of potential entrants that may enter as one of the active organizational types after paying the relevant entry cost.
+
+Each incumbent enters period $t$ with an idiosyncratic capability state
+
+\[
+z_t \in Z \subset \mathbb{R}_+.
+\]
+
+In the baseline model, $z_t$ is scalar. Economically, it summarizes the firm's broad capability in research, project management, organizational coordination, and implementation execution. The same state loads differently across organizational forms. A stronger $z$ can therefore raise the payoff to integrated R\&D, to research-specialized idea generation, to external implementation, and to manufacturing provision, but not necessarily by the same amount.
+
+The institutional environment is summarized by
+
+\[
+M \in \{0,1\},
+\]
+
+where $M=0$ denotes the pre-MAH regime and $M=1$ the post-MAH regime. The key route-specific policy object is
+
+\[
+\tau_{ext}(M)\ge 0,
+\]
+
+the governance and compliance friction of external implementation through a qualified outside manufacturer while the innovator retains the holder position.
+
+The model contains two price objects. Let $w$ denote a wage or composite factor price relevant for current operating activity, and let $p_m$ denote the price of qualified contract-manufacturing services. In the baseline model, these prices are stationary equilibrium objects.
+
+\subsection{Static production blocks}
+
+The model distinguishes between static and dynamic choices. Static choices affect current-period operating profits but do not become next-period state variables and do not carry dynamic adjustment costs in the baseline specification. Dynamic choices alter future values,
+future feasible actions, or the allocation of projects across implementation routes.
+
+This distinction is important for the present paper. The paper's object is the organizational
+route from invention to implementation, not capital deepening or static labor demand.
+Accordingly, production inputs such as labor, capital services, intermediates, and current
+manufacturing quantity are optimized out before the Bellman equations are written.
+This is the same separation used in standard dynamic firm models in which the Bellman
+equation is written in terms of optimized flow payoffs rather than raw within-period produc-
+tion problems.
+
+For an integrated firm, let the optimized static operating payoff be
+
+\begin{equation}
+\bar{\pi}_A(z;w,r,c_m)=\max_{n,k,m}\left\{R_A(n,k,m;z)-wn-rk-c_m m\right\},
+\end{equation}
+
+where $n$ is labor input, $k$ capital services or plant use, $m$ intermediate-input use, and
+$R_A(\cdot)$ is operating revenue under the integrated production technology.
+
+For a manufacturing specialist, let the optimized static operating payoff be
+
+\begin{equation}
+\bar{\pi}_C(z;p_m,w,r,c_m)=
+\max_{q_m,n,k,m}\left\{p_m q_m-c_C(q_m,n,k,m;z)-wn-rk-c_m m-f_C\right\},
+\end{equation}
+
+where $q_m$ denotes the quantity of qualified contract-manufacturing services supplied and
+$c_C(\cdot)$ is the corresponding production cost function. In both cases, the resulting optimized
+objects summarize current operating profits and are carried into the dynamic problem as
+flow-payoff components.
+
+\subsection{Integrated firms}
+
+Type-A firms combine internal operating capability with a broader project portfolio. In the
+baseline, they are the natural location for a within-firm technology-direction margin between
+generic-oriented and original-drug-oriented projects. Let $x_A^G\ge 0$ and $x_A^O\ge 0$ denote
+the current-period intensities of generic-oriented and original-drug-oriented project generation
+by an integrated firm. Conditional on $z$, generic projects deliver per-project value
+$\Psi_A^G(z)$, while original-drug projects deliver per-project value $\Psi_A^O(z;M)$. To keep
+the main text tractable, the baseline uses separable convex direction-specific costs with common
+curvature $\eta>1$. The flow payoff of a type-A firm is therefore
+
+\begin{equation}
+\begin{aligned}
+\Pi_A(z;M,w,p_m)={}&\bar{\pi}_A(z;w,r,c_m)\\
+&+\max_{x_A^G,x_A^O\ge 0}\left\{
+x_A^G\Psi_A^G(z)+x_A^O\Psi_A^O(z;M)\right.\\
+&\left.\hspace{5.7em}
+-\frac{\chi_A^G}{\eta}(x_A^G)^{\eta}
+-\frac{\chi_A^O}{\eta}(x_A^O)^{\eta}
+\right\},
+\qquad \eta>1.
+\end{aligned}
+\end{equation}
+
+Whenever the corresponding per-project value is positive, the optimal integrated-firm
+direction choices are
+
+\begin{equation}
+\begin{aligned}
+x_A^{G*}(z)&=\left(\frac{\Psi_A^G(z)}{\chi_A^G}\right)^{\frac{1}{\eta-1}},\\
+x_A^{O*}(z;M)&=\left(\frac{\Psi_A^O(z;M)}{\chi_A^O}\right)^{\frac{1}{\eta-1}},
+\end{aligned}
+\end{equation}
+
+with the relevant margin set to zero whenever its per-project value is nonpositive. This type-A
+block carries the within-firm technology-direction margin that helps explain industry-level
+changes in the original-drug share without forcing that margin into the type-$B$ mechanism
+block.
+
+Economically, type-A firms provide the internal benchmark. They do not rely on the
+external implementation route as their primary implementation channel, so the reform
+does not enter their per-idea value through $\tau_{ext}$ in the direct way that it enters the problem
+of research-specialized firms. The type-A direction block therefore helps explain within-firm
+reallocation between generic and original-drug portfolios, while the MAH-specific mechanism
+remains concentrated in the type-$B$ external-route block.
+
+\subsection{Research-specialized firms and implementation-route assignment}
+
+Type-B firms are the central objects for the paper's mechanism. In the baseline they are
+research-specialized and primarily original-drug-oriented. Their central margin is not
+within-firm reallocation between generic and original-drug projects. It is the generation of
+original-drug ideas and the assignment of those ideas to feasible implementation routes.
+This is the formal counterpart of the invention-versus-implementation distinction
+emphasized in the paper's institutional and conceptual discussion. It also keeps the baseline
+disciplined: type-$B$ firms are not asked to carry both a generic-to-original portfolio problem
+and the MAH-specific implementation-route assignment problem at the same time.
+
+Let $x_B^O\ge 0$ denote the current-period intensity of original-drug idea generation by a
+research-specialized firm. For each generated original-drug idea, the firm chooses an implementation
+route from
+
+\hspace*{2em}a feasible set
+
+\[
+H=\{ext,int,tr,ab\},
+\]
+
+where $ext$ denotes external implementation through a qualified outside manufacturer
+while the innovator retains the project, $int$ denotes internal implementation through an
+integration-type route, $tr$ denotes transfer of the project to another party, and $ab$ denotes
+abandonment.
+
+The net value of external implementation is
+
+\begin{equation}
+H^{ext}_B(z,p_m;M)=\lambda_{ext}(z,p_m)R_B(z)-p_m-\tau_{ext}(M),
+\end{equation}
+
+where $R_B(z)$ is the private value of a successfully commercialized original-drug project,
+$\lambda_{ext}(z,p_m)\in[0,1]$ is the implementation success term associated with the external route, $p_m$
+is the price of qualified contract manufacturing, and $\tau_{ext}(M)$ is the route-specific governance
+and compliance friction.
+
+The net value of internal implementation is written as
+
+\begin{equation}
+H^{int}_B(z)=\lambda_{int}(z)R_B(z)-\kappa_I(z),
+\end{equation}
+
+where $\lambda_{int}(z)\in[0,1]$ is the implementation success term of the internal route and $\kappa_I(z)$ is a project-level internalization cost. 
+
+The transfer route is summarized by
+
+\begin{equation}
+H^{tr}_B(z)=T_B(z),
+\end{equation}
+
+and the abandonment route is normalized to
+
+\begin{equation}
+H^{ab}_B(z)=0.
+\end{equation}
+
+The per-idea implementation value of an original-drug project faced by a type-B firm is therefore
+
+\begin{equation}
+\Psi_B^O(z;p_m,M)=\max\left\{H^{ext}_B(z,p_m;M),\,H^{int}_B(z),\,H^{tr}_B(z),\,0\right\}.
+\end{equation}
+
+The important discipline condition is that MAH enters directly only through the external
+route. In particular,
+
+\begin{equation}
+\frac{\partial H^{ext}_B(z,p_m;M)}{\partial \tau_{ext}}=-1,\qquad
+\frac{\partial H^{int}_B(z)}{\partial \tau_{ext}}=0,\qquad
+\frac{\partial H^{tr}_B(z)}{\partial \tau_{ext}}=0.
+\end{equation}
+
+Thus the reform shifts route values by changing the external route rather than by acting as
+a uniform payoff shifter across all projects and all organizational forms.
+
+Given the per-idea value in (9), the type-B firm's flow payoff is
+
+\begin{equation}
+\Pi_B(z;M,p_m)=-f_B+\max_{x_B^O\ge 0}\left\{x_B^O\Psi_B^O(z;p_m,M)-\frac{\chi_B}{\eta}(x_B^O)^{\eta}\right\}.
+\end{equation}
+
+Whenever $\Psi_B^O(z;p_m,M)>0$, the optimal idea-generation intensity is
+
+\begin{equation}
+x_B^{O*}(z;p_m,M)=\left(\frac{\Psi_B^O(z;p_m,M)}{\chi_B}\right)^{\frac{1}{\eta-1}},
+\end{equation}
+
+and otherwise $x_B^{O*}(z;p_m,M)=0$. This structure makes the central mechanism transparent:
+MAH raises the expected value of research-originated projects not by changing the firm's
+scientific productivity directly, but by increasing the value of an implementation route that
+becomes more feasible once $\tau_{ext}(M)$ falls. This is why the baseline does not state its
+main prediction as a within-type-$B$ generic/original ratio. The MAH-specific margin in the
+main text is the level and realization of original-drug-oriented effort by research-specialized
+firms.
+
+\subsection{Organizational switching and Bellman equations}
+
+Firms may remain in their current organizational form, switch to another form, or exit. Let
+$\mathcal{J}(s)\subseteq\{A,B,C\}$ denote the set of active organizational forms that are feasible next-
+period choices for a firm currently in state $s$. Let $\kappa_{sj}(z;M)\ge 0$ denote the cost of switching from
+current form $s$ to next-period form $j$, with $\kappa_{ss}(z;M)=0$. The cost may depend on the firm's current capability and the institutional environment.
+
+Define the post-choice value of selecting organizational form $j$ next period as
+
+\begin{equation}
+W_{sj}(z;M)=\Pi_j(z;M,w,p_m)-\kappa_{sj}(z;M)+\beta E\!\left[V_j(z';M)\mid z,j\right],
+\end{equation}
+
+where $\Pi_j$ denotes the optimized current-period flow payoff of form $j$, $\beta\in(0,1)$ is the discount
+factor, and the expectation is taken over the Markov transition of the capability state. Exit
+yields zero continuation value. The Bellman equation for an incumbent of current form $s$ is
+therefore
+
+\begin{equation}
+V_s(z;M)=\max\left\{0,\ \max_{j\in\mathcal{J}(s)} W_{sj}(z;M)\right\},
+\qquad s\in\{A,B,C\}.
+\end{equation}
+
+This formulation keeps organizational switching in its correct place. Organization is not
+chosen for its own sake. It matters because organizational form affects current flow payoffs,
+feasible implementation routes, and continuation values. In that sense, organizational
+switching is a second-order object relative to implementation-route assignment itself.
+
+The transition law for the capability state is written as
+
+\begin{equation}
+z' \sim F_j(\cdot\mid z),
+\end{equation}
+
+where the transition kernel may depend on the chosen organizational form. In the baseline
+model, $F_j$ preserves the one-dimensional state structure. The appendix records how a two-
+dimensional extension can be introduced without changing the paper's basic logic.
+
+\subsection{Entry and stationary equilibrium}
+
+Potential entrants draw an initial capability state
+
+\[
+z_0 \sim G_0,
+\]
+
+and may choose an entry type $j\in\{A,B,C\}$ after paying the corresponding entry cost $c_{Ej}$.
+The value of entering as type $j$ is
+
+\begin{equation}
+V_{Ej}(M)=\int V_j(z_0;M)\,dG_0(z_0)-c_{Ej}.
+\end{equation}
+
+With free entry into the most attractive margin, the equilibrium entry condition is
+
+\begin{equation}
+\max\left\{V_{EA}(M),V_{EB}(M),V_{EC}(M)\right\}=0
+\end{equation}
+
+whenever entry occurs on that margin, with the usual weak-inequality version for inactive
+entry margins.
+
+Let $\mu_s$ denote the stationary measure of incumbents in organizational form $s$ over the
+capability space $Z$. The contract-manufacturing market must clear. Let the supply of
+qualified manufacturing services be
+
+\begin{equation}
+S_m(p_m,w;M)=\int q_m^*(z;p_m,w)\,d\mu_C(z),
+\end{equation}
+
+and the demand for external implementation services be
+
+\begin{equation}
+D_m(p_m;M)=\int x_B^{O*}(z;p_m,M)\,\mathbf{1}\!\left\{h_B^*(z;p_m,M)=ext\right\}\,d\mu_B(z),
+\end{equation}
+
+where $h_B^*(z;p_m,M)$ is the optimal route choice implied by (9). Market clearing in qualified
+manufacturing requires
+
+\begin{equation}
+S_m(p_m,w;M)=D_m(p_m;M).
+\end{equation}
+
+If the factor price is endogenized within the industry block, $w$ must also satisfy the corre-
+sponding factor-market-clearing condition. If it is taken from outside the industry block, it
+is treated as a parameter.
+
+A stationary equilibrium under institutional regime $M$ consists of four objects: 
+(i) value functions $\{V_A,V_B,V_C\}$ satisfying (14); 
+(ii) policy rules for innovation, implementation-route assignment, switching, exit, and entry; 
+(iii) stationary distributions $\{\mu_A,\mu_B,\mu_C\}$ consistent with firm policies and the state-transition kernels; 
+and (iv) prices $(w,p_m)$ such that free-entry and market-clearing conditions hold.
+
+\textbf{Interface to Section 4.} Once these equilibrium objects are defined, the next section can
+derive the paper's main comparative-static predictions. In particular, it can ask how a fall
+in $\tau_{ext}(M)$ changes route choice, the value of research-specialized idea generation, innovative
+entry, organizational reallocation, and producer-side outcomes in the qualified manufacturing
+segment.
+
+\section{Equilibrium Logic and Main Predictions}
+
+This section draws out the model's main comparative-static implications. Its purpose is
+not to add new structure, but to translate the dynamic industry model in Section 3 into
+a set of clear theoretical predictions that can later discipline the empirical section. The
+section therefore stays journal-readable and deliberately keeps proofs short. Full derivations,
+regularity conditions, and algebraic details are collected in Appendix C.
+
+The central logic is recursive. A decline in $\tau_{ext}$ raises the net value of the external com-
+mercialization route for research-specialized firms. That route-level change lifts the per-idea
+implementation value of type-$B$ firms, which in turn raises their optimal idea-generation
+intensity and their continuation value. Once the value of entering and operating as a research-
+specialized firm rises, research-oriented entry becomes more attractive. These direct effects
+need not imply monotone producer-side profits in general equilibrium, because the qualified
+manufacturing price and the mass of type-$C$ suppliers are themselves endogenous.
+
+\subsection{Comparative-static logic}
+
+The model implies a hierarchy of effects. The most direct object is the value of the external
+route itself, $H^{ext}_B(z,p_m;M)$ in (5). A fall in $\tau_{ext}$ does not mechanically shift all payoffs in
+the economy. It shifts the value of one specific route in the implementation-route assignment
+problem of type-$B$ firms. Because the type-$B$ firm chooses the best route according to (9),
+this route-level effect is transmitted into the per-idea implementation value $\Psi_B^O(z;p_m,M)$.
+The research choice in (11) then maps that change into the firm's optimal idea-generation
+intensity $x_B^{O*}(z;p_m,M)$.
+
+These direct objects feed into dynamic values. If the optimized flow payoff of operating as
+a type-$B$ firm rises pointwise, then the Bellman equation (14) implies a weak rise in $V_B(z;M)$,
+provided the state-transition kernel is unchanged. That higher continuation value lifts the
+expected value of entering as a type-$B$ firm through (16). The equilibrium consequences
+for type-$C$ firms are more subtle. A stronger external route tends to increase demand for
+qualified contract manufacturing, but equilibrium producer-side profits depend not only on
+demand but also on the endogenous response of $p_m$, the entry and distribution of type-$C$
+firms, and any general-equilibrium pressure on costs.
+
+\subsection{External implementation value}
+
+For a given pair $(z,p_m)$, define the external-route choice set
+
+\[
+\mathcal{E}^{ext}(M)=\left\{z\in Z:\ H^{ext}_B(z,p_m;M)\ge
+\max\left\{H^{int}_B(z),H^{tr}_B(z),0\right\}\right\}.
+\]
+
+This is the set of capability states for which the external route is optimal for a type-$B$ project
+at a given qualified manufacturing price.
+
+\textbf{Proposition 4.1} (External implementation value). \textit{Fix $(z,p_m)$ and suppose that the direct
+policy effect of MAH is a decline in the route-specific friction, so that $\tau_{ext}(1)<\tau_{ext}(0)$, while \textit{$R_B(z)$, $\lambda_{ext}(z,p_m)$, $H^{int}_B(z)$, and $H^{tr}_B(z)$ are held fixed in the direct comparison. Then}}
+
+\[
+H^{ext}_B(z,p_m;1)>H^{ext}_B(z,p_m;0).
+\]
+
+\textit{Consequently,}
+
+\[
+\Psi_B^O(z;p_m,1)\ge \Psi_B^O(z;p_m,0)
+\]
+
+\textit{for every $z$, with strict inequality whenever the external route binds in the maximization problem. Moreover, the external-route choice set weakly expands:}
+
+\[
+\mathcal{E}^{ext}(0)\subseteq \mathcal{E}^{ext}(1).
+\]
+
+\textit{Proof sketch.} Equation (5) is affine in $\tau_{ext}$ with slope $-1$, while the other route values
+are not directly shifted in the comparison. Hence the external route becomes strictly more
+attractive at fixed $(z,p_m)$, which weakly increases the maximized value in (9). Any state
+that previously chose the external route continues to do so, and some states on the margin
+may switch into that route. \hfill$\square$
+
+The proposition isolates the paper's sharpest mechanism. MAH operates by raising
+the relative value of one implementation route. The first comparative-static object is
+therefore not an innovation aggregate, a firm-size outcome, or a transition matrix, but the
+route assignment itself.
+
+\subsection{Research intensity of type-B firms}
+
+The next step concerns the research response of type-B firms. Their research decision is
+governed by a standard convex cost problem in (11), so the sign of the response follows from
+the sign of the shift in $\Psi_B^O$.
+
+\textbf{Proposition 4.2} (Original-drug research intensity of type-B firms). \textit{Suppose $\eta>1$ and let $x_B^{O*}(z;p_m,M)$
+be given by (12) whenever $\Psi_B^O(z;p_m,M)>0$, with $x_B^{O*}(z;p_m,M)=0$ otherwise. If}
+
+\[
+\Psi_B^O(z;p_m,1)\ge \Psi_B^O(z;p_m,0)
+\]
+
+\textit{for all $z$, then}
+
+\[
+x_B^{O*}(z;p_m,1)\ge x_B^{O*}(z;p_m,0)
+\]
+
+\textit{for all $z$. The inequality is strict for any state with strictly positive per-idea value in both
+regimes and a strict increase in $\Psi_B^O$.}
+
+\textit{Proof sketch.} For $\Psi_B^O>0$, equation (12) is strictly increasing in $\Psi_B^O$ because the exponent
+$1/(\eta-1)$ is positive. If the pre-reform optimum is cornered at zero and the reform raises $\Psi_B^O$ above zero, the firm becomes active on the research margin. Appendix C shows the
+derivative explicitly and also derives the associated increase in optimized flow payoff.
+\hfill$\square$
+
+The economic point is simple but important. The reform raises type-$B$ research not
+by changing the firm's idea-production technology directly, but by increasing the value of
+successfully commercializing the original-drug ideas it already knows how to generate. The
+prediction is therefore about the level of original-drug-oriented effort by research-specialized
+firms, not about a within-type-$B$ generic/original ratio.
+
+\subsection{Innovative entry}
+
+Entry responds through continuation values rather than directly through the route equations.
+Because the model closes with free entry, one should distinguish carefully between the value
+of entering and the observed mass of entry. The former is pinned down by the model as
+written; the latter requires an entry-supply margin or entry-cost heterogeneity if one wants
+a literal mass response.
+
+\textbf{Proposition 4.3} (Innovative entry). \textit{Suppose the direct fall in $\tau_{ext}$ raises
+$\Pi_B(z;M,p_m)$ pointwise and leaves the state-transition kernel fixed. Then the Bellman
+operator in (14) implies}
+
+\[
+V_B(z;1)\ge V_B(z;0)
+\]
+
+\textit{for all $z$. Therefore the expected value of entering as a type-$B$ firm,}
+
+\[
+V_{EB}(M)=\int V_B(z_0;M)\,dG_0(z_0)-c_{EB},
+\]
+
+\textit{weakly rises. In any implementation with heterogeneous entry costs or an upward-sloping en-
+try supply of potential research-oriented firms, observed entry into the type-$B$ margin weakly
+rises as well.}
+
+\textit{Proof sketch.} A pointwise increase in the type-$B$ flow payoff shifts up the corresponding
+Bellman operator. By monotonicity of the operator, the value function cannot fall. In-
+tegrating over the initial-state distribution then raises the expected entry value. The last
+statement translates a value comparison into an observed entry comparison under standard
+extensive-margin assumptions on potential entrants.
+
+This proposition clarifies the paper's empirical interpretation. The model most cleanly
+predicts that the type-$B$ entry margin becomes more attractive. A literal increase in the
+observed mass of research-oriented entry follows once one allows the population of potential
+entrants to be elastic, which is the economically natural interpretation in this setting.
+
+\subsection{Producer-side response and equilibrium ambiguity}
+
+The effect on manufacturing specialists is not summarized by a single monotone sign. The
+most direct effect of MAH is to strengthen the external route, which tends to raise demand
+for qualified contract manufacturing. But equilibrium profits of type-$C$ firms depend on
+more than that demand shift.
+
+\textbf{Proposition 4.4} (Producer-side response and equilibrium ambiguity). \textit{Holding fixed the
+type-$B$ distribution and the manufacturing price $p_m$, a decline in $\tau_{ext}$ weakly raises demand
+for qualified external manufacturing whenever it weakly raises both $x_B^{O*}(z;p_m,M)$ and the
+measure of states choosing the external route. In general equilibrium, however, the effect on
+type-$C$ profits is ambiguous. The sign depends on the induced movement in $p_m$, on type-$C$
+entry and selection, and on any change in input costs such as $w$.}
+
+\textit{Proof sketch.} At fixed prices and firm distributions, the direct demand effect is mechani-
+cal from (19). The equilibrium profit of a manufacturing specialist is instead governed by
+the optimized payoff $\Pi_C(z;p_m,w)$, which is increasing in $p_m$ by the envelope theorem but
+decreasing in input costs and potentially diluted by equilibrium entry of additional type-$C$
+firms. Hence a positive demand shift for external manufacturing does not imply a uniform
+profit increase for every producer.
+\hfill$\square$
+
+This is the main general-equilibrium warning of the model. MAH can raise innovation
+and expand the range of projects implemented through external manufacturing without
+guaranteeing that all producer-side margins move in the same direction.
+
+\subsection{Empirical hierarchy and scope limits}
+
+The propositions imply a hierarchy of empirical objects. The first-layer objects are those
+closest to the model's central mechanism: the use of external implementation routes, the
+realization of research-originated original-drug projects, the number of new original-drug
+products, and the share of original-drug outcomes in total realized products. These are the
+cleanest empirical counterparts of the chain
+
+\[
+\tau_{ext} \downarrow\  \Rightarrow H_B^{ext} \uparrow\ \Rightarrow \Psi_B^O \uparrow\ \Rightarrow x_B^O,\quad V_B \uparrow\ \Rightarrow \text{implementation and original-drug realization} \uparrow
+\]
+
+The same logic can be summarized through three final innovation outcomes:
+\[
+N_O(M),\qquad
+S_O(M)=\frac{N_O(M)}{N_O(M)+N_G(M)},\qquad
+\operatorname{Conv}_O(M).
+\]
+Here $N_O(M)$ is the number of realized original-drug products, $S_O(M)$ is the original-drug
+share among realized products, and $\operatorname{Conv}_O(M)$ is the conversion rate from original-drug
+idea or application to realized product. In the revised baseline, the mechanism-to-outcome
+chain is
+\[
+\tau_{ext}(1)<\tau_{ext}(0)
+\Rightarrow
+\Psi_B^O(1)\ge \Psi_B^O(0)
+\Rightarrow
+x_B^O,\;V_B,\;e_B,\;\operatorname{Conv}_B^O \uparrow
+\Rightarrow
+N_O,\;S_O,\;\operatorname{Conv}_O \uparrow.
+\]
+
+An increase in the industry original-drug share should not be attributed to a single within-
+type-$B$ margin. In the present baseline it can arise through three economically distinct
+channels: integrated firms may shift more effort toward original-drug projects, the entry and
+composition of research-oriented firms may change, and original-drug projects generated by
+type-$B$ firms may be more likely to reach realization once the external route becomes more
+feasible.
+
+The second-layer objects are still informative, but they are not the paper's core theoretical
+object. These include organizational transition matrices, cumulative reallocation across
+$A/B/C$, and producer-side outcomes in the contract-manufacturing segment. They are best
+interpreted as validation margins that support the implementation-route assignment mechanism
+rather than as stand-alone targets.
+
+Two final scope limits are worth making explicit. First, this section states comparative-
+static predictions, not welfare results. Second, the baseline model uses a one-dimensional
+state variable. Appendix C records how the same logic extends to a two-dimensional state
+$z=(z_R,z_C)$, but the main text does not need that extra dimensionality to discipline the
+central mechanism.
+
+\textbf{Interface to Section 5.} Section 5 will map these first-layer and second-layer model objects
+into observables. That mapping matters because not every object in this section is equally
+close to the primitive friction $\tau_{ext}$. The empirical design should therefore prioritize measures
+of route use, implementation realization, and research-oriented entry before turning to
+transition matrices or producer-side equilibrium outcomes.
+
+\section{Empirical Mapping and Estimation Strategy}
+
+This section maps model objects to observables and lays out an empirical strategy that
+matches the mechanism discipline of the model. The empirical design
+should follow the same hierarchy as the theory: implementation-route assignment first, original-
+drug realization next, organizational reallocation and producer-side outcomes as supporting
+evidence rather than as stand-alone proof of the mechanism.
+
+\subsection{Organizational types and key observables}
+
+The empirical classification should be based on pre-reform characteristics so that firms are
+not coded using endogenous post-reform responses. Type-$A$ firms are integrated innovators
+with original-drug activity and internal manufacturing capability on the relevant margin.
+Type-$B$ firms are research-oriented firms that lack that internal manufacturing capability.
+Type-$C$ firms are qualified manufacturing specialists. This is an economic rather than purely
+legal classification, because the model is organized around implementation feasibility and
+organizational roles.
+
+The first-layer empirical objects should be the ones closest to the mechanism itself: route use
+or holder--producer separation, realized original-drug products, the share of original drugs
+among realized products, and research-oriented entry. Organizational transitions and producer-
+side outcomes in the qualified manufacturing segment should be treated as second-layer
+validation objects.
+
+Table~\ref{tab:empirical_mapping_main} summarizes the mapping between the model's core
+objects and the observable evidence. The purpose of the table is not to claim that each
+structural object is directly measured. It is to keep the empirical section disciplined about
+which observables are closest to the implementation-route mechanism and which ones are
+further downstream.
+
+\begin{table}[htbp]
+\centering
+\caption{Main Empirical Mapping}
+\label{tab:empirical_mapping_main}
+\small
+\begin{tabular}{p{0.22\textwidth}p{0.30\textwidth}p{0.34\textwidth}}
+\toprule
+\textbf{Model object} & \textbf{Empirical object} & \textbf{Interpretation} \\
+\midrule
+$\tau_{ext}\downarrow$ & Holder--producer separation; external-route use & External implementation becomes more feasible \\
+$H_{B}^{ext}\uparrow$ & Greater use of MAH-style authorization--production assignment & Route assignment changes \\
+$\Psi_B^O\uparrow$ & Type-$B$ entry and continuation & Original-drug project value rises \\
+$V_B\uparrow$ & Survival and entry of research-specialized holders & Dynamic response to higher project value \\
+$x_B^O\uparrow$ & Original-drug project starts, applications, or R\&D effort & Research-specialized firms respond \\
+$\operatorname{Conv}_B^O\uparrow$ & Application-to-approval or idea-to-product conversion & Implementation feasibility improves \\
+$N_O,S_O\uparrow$ & Realized original-drug products and their share & Final innovation outcomes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Before imposing a richer within-type-$B$ direction-choice block, the data should also check
+whether type-$B$ firms are in fact mixed generic/original firms. A useful diagnostic is
+\[
+Share_B^O=
+\frac{\# O\text{ projects by type-}B\text{ firms}}
+{\# G\text{ projects by type-}B\text{ firms}+\# O\text{ projects by type-}B\text{ firms}}.
+\]
+If $Share_B^O$ is already high before the reform, the baseline treatment of type-$B$ firms as
+primarily original-drug-oriented is empirically appropriate.
+
+The same logic should be applied to integrated firms when deciding whether the type-A
+direction block belongs in the main text. A useful companion diagnostic is
+\[
+Share_A^O=
+\frac{\# O\text{ projects by type-}A\text{ firms}}
+{\# G\text{ projects by type-}A\text{ firms}+\# O\text{ projects by type-}A\text{ firms}}.
+\]
+If type-$A$ firms display substantial activity in both generic and original-drug projects before
+the reform, then the type-A direction block with $x_A^G$ and $x_A^O$ has direct empirical
+content rather than serving as a purely theoretical decomposition device.
+
+\subsection{Identification logic}
+
+The empirical design should distinguish the MAH mechanism from a generic post-reform
+R\&D boom. The strongest evidence comes from four modules. First, the paper should ask
+whether MAH is associated with more holder--producer separation or greater use of external
+implementation among realized original-drug products. Second, it should ask whether
+realized original-drug products and original-drug shares rise. Third, where project or
+application data are available, it should ask whether original-drug-oriented effort or original-
+drug project counts rise among the firms most exposed to the pre-reform implementation
+bottleneck. Fourth, it should ask whether effects are stronger among firms or regions that
+were more constrained by the lack of internal manufacturing capability before MAH.
+
+This logic also disciplines the paper's language. The empirical section should not claim that
+the data directly observe or directly estimate the primitive friction $\tau_{ext}$ unless the structural
+estimation explicitly recovers that parameter under stated assumptions. A safer statement is
+that the evidence is consistent with a decline in the route-specific friction of external
+implementation, as reflected in route use, original-drug realization, and stronger responses
+among firms more exposed to pre-reform implementation constraints.
+
+This logic also constrains how the paper should use post-reform R\&D variables. A contemporaneous
+R\&D control is not automatically harmless. Under the model, a decline in $\tau_{ext}$ can raise the
+expected value of original-drug projects, which then raises original-drug-oriented effort and
+realization together. In that environment, post-reform R\&D effort may be part of the mechanism
+rather than a neutral confounder. The cleaner empirical design is therefore to use pre-reform
+R\&D capacity and pre-reform manufacturing capability as heterogeneity margins, while treating
+post-reform original-drug-oriented effort as a mechanism outcome to be explained rather than
+controlled away.
+
+\subsection{Practical estimation and implementation}
+
+The practical estimation strategy should proceed in two layers. A first layer estimates reduced-
+form responses of the first-layer objects and documents the relevant heterogeneity patterns.
+A second layer uses those empirical patterns to discipline a parsimonious stationary model,
+for example through simulated method of moments or an adjacent minimum-distance
+procedure, treating MAH as a change in the route-specific friction between pre-reform and
+post-reform regimes. Transition matrices and producer-side outcomes can then be used as
+validation moments rather than as the first objects the estimation is asked to fit.
+
+\subsection{What the current draft does and does not claim}
+
+The current draft makes three restricted claims. First, it argues that MAH is best interpreted
+as changing implementation-route assignment rather than scientific productivity directly. Second,
+it provides a model in which that mechanism can raise original-drug realization, original-drug
+shares, and research-oriented entry. Third, it lays out an empirical design in which route-use
+evidence, realization outcomes, and exposure heterogeneity jointly discipline that
+interpretation.
+
+What the current draft does not claim is just as important. It does not infer the mechanism
+from innovation outcomes alone. It does not claim that firm reclassification or transition
+matrices by themselves identify the relevant friction. And it does not claim a direct estimate
+of $\tau_{ext}$ without the additional structure required for structural estimation.
+
+\section{Conclusion}
+
+This paper studies China's MAH reform as a change in implementation-route assignment. The
+central claim is not that MAH mechanically raises scientific productivity, but that it lowers
+the route-specific friction of external implementation and thereby changes which research-
+originated original-drug ideas can be brought to market. In that environment, organizational
+forms matter because they determine which implementation routes are feasible, who retains
+authorization, and how ideas are translated into realized products.
+
+That interpretation gives the paper a disciplined empirical target. The first objects to study
+are route use, holder--producer separation, original-drug realization, original-drug shares, and
+research-oriented entry. Organizational reallocation and producer-side outcomes remain useful,
+but they are supporting evidence rather than the core empirical object. The broader implication
+is that institutional reform in a latecomer industry may matter not mainly by changing
+research productivity inside the laboratory, but by changing the organizational routes through
+which ideas become products.
+
+\appendix
+
+\section{Institutional Details and Mechanism Clarification}
+
+This appendix expands the institutional discussion in Section 2 in a way that is closer to how
+a JDE paper would document the legal content of the reform. The objective is not merely to
+repeat that MAH ``lowers external implementation costs,'' but to show why that is the most
+disciplined economic translation of the institutional record. The basic point is that MAH
+did not simply remove regulation. Rather, it created a legally recognized route under which
+authorization can remain with the holder while production is performed by a qualified outside
+manufacturer, and it paired that route with explicit holder-side responsibility, contractual
+requirements, and supervisory expectations.\footnote{The discussion in this appendix is anchored in four official layers of the Chinese regulatory record: the 2016 \textit{Pilot Plan for the Marketing Authorization Holder System}, issued by the General Office of the State Council; the 2019 revision of the \textit{Drug Administration Law of the People's Republic of China}; the NMPA's 2022 \textit{Provisions on Supervising the Implementation of the Drug Marketing Authorization Holder's Primary Responsibility for Drug Quality and Safety}, effective March 1, 2023; and the NMPA's 2023 announcement on strengthening supervision of entrusted production under the MAH system.}
+
+\subsection{Institutional evolution: from pilot to legal consolidation}
+
+The institutional evolution matters because it clarifies that MAH is not a loose industry
+slogan but a progressively formalized legal arrangement.
+
+\textbf{First stage: the 2016 pilot.} The 2016 pilot plan already made two core ideas explicit.
+First, in the pilot provinces, drug R\&D institutions and scientific personnel could act as
+registration applicants and, after obtaining market authorization, become marketing au-
+thorization holders. Second, the pilot plan made clear that the holder would not escape
+legal responsibility merely because production was entrusted to another entity. The plan
+stated that drug-injury victims could seek compensation from the holder, the entrusted
+manufacturer, or the seller, with recourse among them according to legal responsibility. It
+also required cross-jurisdiction regulatory coordination when the holder and the entrusted
+manufacturer were located in different provinces. In institutional terms, the pilot did not
+simply permit outsourcing; it established the early legal template for authorization-retaining
+external implementation.\footnote{See the State Council's June 6, 2016 announcement on the pilot plan. The official release states that R\&D institutions or scientific personnel in pilot regions could apply for authorization and become holders; that victims could seek compensation from the holder, entrusted manufacturer, or seller; and that the holder's province and the manufacturer's province should coordinate supervision.}
+
+\textbf{Second stage: legal consolidation in the 2019 Drug Administration Law.} The
+2019 revision of the Drug Administration Law converted MAH from a pilot arrangement
+into a formal legal architecture. The law defines the marketing authorization holder as the
+entity that obtains the drug registration certificate. It further states that the holder is
+responsible for the drug's non-clinical research, clinical trials, production and distribution,
+post-marketing studies, and pharmacovigilance-related monitoring, reporting, and handling.
+The law also states that the holder's legal representative and principal person are fully
+responsible for drug quality.
+
+The same chapter then adds three institutional elements that are central for this paper.
+First, the holder must establish a drug quality assurance system and assign dedicated person-
+nel to quality management. Second, the holder must regularly audit the quality-management
+systems of entrusted manufacturers and distributors and supervise them to ensure that they
+continue to possess quality assurance and control capabilities. Third, the law explicitly al-
+lows the holder either to manufacture by itself or to entrust manufacturing to a qualified drug
+manufacturer, but in the entrusted case the holder and the manufacturer must sign both an
+entrustment agreement and a quality agreement and strictly perform the obligations set out
+in those agreements.\footnote{The official law text, as published after the 2019 revision, states in the MAH chapter that the holder is the entity obtaining the registration certificate; that the holder bears responsibility for non-clinical research, clinical trials, production and distribution, post-marketing research, and adverse-reaction monitoring and handling; that the legal representative and principal person bear full responsibility for drug quality; that the holder shall establish a quality assurance system and assign independent quality-management personnel; that the holder shall regularly audit entrusted manufacturers and distributors; and that entrusted production requires both an entrustment agreement and a quality agreement.}
+
+\textbf{Third stage: post-law supervisory deepening.} Subsequent NMPA rules sharpened
+the operational meaning of holder responsibility. The 2022 supervisory provisions on the
+holder's primary responsibility for drug quality and safety emphasize that the holder must
+establish a full-process quality-management system and remain responsible for the drug's
+safety, effectiveness, and quality controllability across research, production, distribution,
+use, post-marketing study, and pharmacovigilance. The official policy interpretation also
+stresses that the holder should maintain an independent quality-management department
+and clearly assign responsibilities across key functions. In 2023, the NMPA issued a further
+notice specifically aimed at strengthening supervision of entrusted production under the
+MAH system. This is important for economic interpretation: the delegated-production route
+was not converted into a casual or light-touch outsourcing margin. It was converted into a
+more standardized, more explicitly governed, and more directly supervised route.\footnote{The NMPA's 2022 announcement releasing the supervisory provisions states that the rules would take effect on March 1, 2023. Official policy interpretations emphasize full-process quality management, an independent quality-management department, and clearer responsibility for key posts. The NMPA's 2023 announcement on entrusted production further tightened supervision of MAH-based delegated manufacturing.}
+
+\subsection{Holder responsibility: what remains with the holder after production is separated}
+
+For the economics of the paper, the most important institutional point is that MAH separates
+\textit{production performance} from \textit{ultimate holder responsibility}; it does not transfer the core
+accountability for the drug away from the holder.
+
+The legal record implies that, once a drug is authorized, the holder remains the focal
+entity for the drug across the life cycle. At a minimum, four dimensions remain holder-side
+responsibilities.
+
+\begin{enumerate}
+
+\item \textbf{Lifecycle responsibility.} The holder remains the legally central entity from research
+and registration through post-marketing monitoring.
+
+\item \textbf{Quality-system responsibility.} The holder must establish and maintain a quality
+assurance system rather than rely passively on the contractor's internal systems.
+
+\item \textbf{Oversight responsibility.} The holder must audit and supervise the quality-management
+systems of entrusted manufacturers and other entrusted parties.
+
+\item \textbf{Release and safety responsibility.} The holder remains the entity on which the law
+and the supervisory rules center quality and safety responsibility, even when physical
+production is performed elsewhere.
+\end{enumerate}
+
+This institutional structure is precisely why the external route is economically subtle.
+MAH did not create a world in which a research-originating firm can simply hand off pro-
+duction and walk away. The holder retains legally meaningful obligations. In fact, one
+reason the reform is economically interesting is that it makes the external route feasible
+without eliminating holder-side responsibility. That is also why the relevant model object is
+not a zero-cost outsourcing technology. The external route remains costly, but the cost is
+now attached to a standardized and legally recognized governance structure rather than to
+an ad hoc or weakly enforceable arrangement.
+
+\subsection{Entrusted production: why it is more than a make-or-buy choice}
+
+The term ``entrusted production'' can sound deceptively simple, as if the reform merely
+allowed a firm to buy manufacturing services in the market. Institutionally, the arrangement
+is more specific. The MAH architecture requires that entrusted production be carried out by
+a qualified drug manufacturer and that the relationship between holder and manufacturer
+be governed by both an entrustment agreement and a quality agreement. In other words,
+external implementation is not just a spot purchase of factory capacity. It is a legally
+structured relationship in which quality responsibility, monitoring obligations, and execution
+requirements must be allocated and performed.
+
+This point helps explain why the external route should be modeled through a governance
+and compliance object rather than through a single production-price term. Even if the
+market payment to a qualified manufacturer is represented by $p_m$, the holder must still incur
+additional costs of selecting, auditing, coordinating, documenting, and supervising the cross-
+firm arrangement. These costs are distinct from the physical act of producing a batch of
+drugs. The official law and the later supervisory rules make exactly this distinction visible:
+the contractual and quality architecture of the relationship is an object of regulation in its
+own right.
+
+The institutional logic can therefore be written schematically as follows:
+
+\begin{quote}
+MAH = separation of authorization and production under retained holder responsibility and standardized compliance rules.
+\end{quote}
+This is the core legal-to-economic bridge of the paper.
+
+\subsection{Why the policy primitive is route-specific}
+
+Once the institutional content is stated precisely, the natural policy primitive follows. Let a
+research-originated original-drug idea be owned by a research-oriented firm. 
+
+There are two conceptually distinct ways to complete implementation.
+
+\begin{enumerate}
+
+\item \textbf{Internal implementation.} The project is carried out inside an integrated structure.
+
+\item \textbf{External implementation.} The innovator retains the relevant holder role and
+completes implementation through a qualified outside manufacturer.
+\end{enumerate}
+
+The institutional content of MAH concerns the second route. Therefore the natural
+primitive is not ``the reform'' in the abstract, but the cost attached to that route. Denote
+this cost by
+
+\[
+\tau_{ext}\ge 0.
+\]
+
+By construction, $\tau_{ext}$ is a route-level object. It is not total firm-level governance cost, not
+aggregate regulatory burden, and not an omnibus policy wedge.
+
+The logic is easiest to see by writing the external route separately from the internal route.
+Let $R_B(z)$ denote the private value of successful implementation for a research-oriented
+firm with capability state $z$. Let $p_m$ denote the price of qualified contract manufacturing. Let
+$\lambda_{ext}(z,p_m)\in[0,1]$ denote the route-level success rate of external implementation, where
+success here refers to a reduced-form implementation or realization probability conditional on
+using that route. Then the expected net value of one idea under external implementation
+can be written as
+
+\begin{equation}
+H_B^{ext}(z,p_m;\tau_{ext})=\lambda_{ext}(z,p_m)R_B(z)-p_m-\tau_{ext}.
+\end{equation}
+
+This decomposition is useful because each term has a distinct interpretation:
+
+\begin{itemize}[nosep]
+\item $R_B(z)$: value of a successful original-drug implementation outcome,
+
+\item $\lambda_{ext}(z,p_m)$: technical or execution-side realization term,
+
+\item $p_m$: market payment to the outside manufacturer,
+
+\item $\tau_{ext}$: governance and compliance burden of using the external route.
+\end{itemize}
+
+Equation (21) is exactly where the institutional interpretation of MAH belongs. The
+reform lowers $\tau_{ext}$, not necessarily $p_m$, and not necessarily the idea-generation cost of science
+itself.
+
+\subsection{Why \texorpdfstring{$\tau_{ext}$}{tau-ext} is not demand, science, or a generic fixed cost}
+
+The institutional record also clarifies what the reform is \textit{not}.
+
+\textbf{Not a demand shock.} The legal core of MAH concerns who may hold authorization,
+who may manufacture, how entrusted production is governed, and who bears quality re-
+sponsibility. These are organizational and regulatory-allocation changes. They do not, by
+themselves, change reimbursement rules, final demand conditions, or therapeutic demand
+for a drug. A demand channel could of course coexist in data through other policies, but it
+is not the distinctive institutional content of MAH.
+
+\textbf{Not a scientific-productivity shock.} Nothing in the legal architecture of MAH changes
+the research technology by which an idea is scientifically discovered. The reform may raise
+the expected payoff to research because more ideas become commercializable, but that is an
+expected-return channel, not a direct productivity shift in the scientific production function.
+
+\textbf{Not a generic fixed-cost reduction for all firms.} This point is especially important.
+MAH does not simply relax every firm's operating burden. The post-law architecture may
+even impose more explicit documentation, auditing, and quality-system obligations on the
+holder. What changes is that these obligations are attached to a legally recognized and
+standardized external route, so that the \textit{net friction of using that route} falls relative to
+the pre-reform environment. In other words, MAH can simultaneously preserve or even
+sharpen holder-side responsibility while still lowering the effective governance cost of external
+implementation by making the arrangement legally supported, contractually structured,
+and regulatorily intelligible. That is why the correct object is a route-specific friction, not a
+generic fixed cost common to all firms.
+
+\subsection{Per-idea value and route choice}
+
+Suppose the research-oriented firm compares external implementation with at least one
+outside option. The simplest outside option is to abandon the idea, normalized to zero. A
+richer version adds internal implementation or organizational switching. To keep the logic
+transparent, write the per-idea value as
+
+\begin{equation}
+\Psi_B(z,p_m;\tau_{ext})=
+\max\left\{
+H_B^{ext}(z,p_m;\tau_{ext}),\,
+H_B^{int}(z),\,
+0
+\right\},
+\end{equation}
+
+where $H_B^{int}(z)$ denotes the net value of the best internally organized route available to the
+firm.
+
+Two useful cases follow.
+
+\textbf{Case 1: external route is the relevant margin.} If the reform mainly operates by
+opening or lowering the cost of external implementation, then the relevant comparative static is obtained from the external term in (22). Since
+
+\[
+\frac{\partial H_B^{ext}}{\partial \tau_{ext}}=-1,
+\]
+
+a fall in $\tau_{ext}$ weakly raises $\Psi_B$, and strictly raises it whenever the external route is the
+maximizing route in (22).
+
+\textbf{Case 2: internal implementation remains an option.} If the firm can instead switch
+into a more integrated structure, then MAH may still matter even without changing the in-
+ternal route directly. A fall in $\tau_{ext}$ lowers the relative value of full internalization and therefore
+changes organizational assignment even if internal implementation itself is technologically
+unchanged.
+
+Either way, the point remains the same: the reform operates first on the route-level value
+of external implementation, and organizational outcomes move because relative route
+values move.
+
+\subsection{What the data can and cannot identify}
+
+The identification boundary in the main text can be restated formally. Let observed outcomes
+be collected in a vector
+
+\[
+Y=(N_O,S_O,E_B,T,C_m,Y_C),
+\]
+
+where $N_O$ is the number of original-drug realizations or closely related counts, $S_O$ is the share
+of original-drug outcomes, $E_B$ is research-oriented entry, $T$ denotes organizational transition
+objects, $C_m$ denotes implementation-route proxies, and $Y_C$ denotes producer-side outcomes
+for qualified manufacturers.
+
+These objects can move coherently after reform if the reform lowers $\tau_{ext}$. But the mapping
+from $Y$ to $\tau_{ext}$ is not one-to-one without additional structure. The role of the model is
+therefore to provide a disciplined interpretation of jointly moving margins rather than to
+claim that a primitive route-specific friction is directly observed in the raw data.
+
+\section{Full Model Objects and Additional Derivations}
+
+This appendix provides the detailed derivations underlying Section 3. The main text keeps
+the model journal-readable. Here the objective is different: to spell out the economic objects,
+the timing, and the algebra in enough detail that a first-year PhD student can follow the
+construction of the model line by line.
+
+To keep the algebra compact, some appendix formulas below occasionally write $x_B$ and
+$\Psi_B$ as shorthand for the baseline original-drug objects $x_B^O$ and $\Psi_B^O$ introduced in the
+main text. No generic margin is added in these derivations.
+
+\subsection{Timing, states, and classes of variables}
+
+The model has four conceptually distinct classes of objects.
+
+\begin{enumerate}
+
+\item \textbf{State variables.} The organizational form $s\in\{A,B,C\}$ and the persistent capability
+state $z\in Z\subset \mathbb{R}_+$ summarize the firm's current position at the beginning of the period.
+
+\item \textbf{Static input choices.} Labor, capital services, intermediate inputs, and current manu-
+facturing quantity affect current operating profits but do not become next-period states
+in the baseline model.
+
+\item \textbf{Dynamic controls.} Innovation intensity, implementation-route choice, organiza-
+tional switching, entry, and exit alter future values or the firm's future feasible action
+set.
+
+\item \textbf{Price objects.} The factor-price object $w$ and the contract-manufacturing price $p_m$ are
+equilibrium prices that enter optimized flow payoffs.
+\end{enumerate}
+
+A convenient timing for the incumbent problem is the following.
+
+\begin{enumerate}
+
+\item The firm enters the period with state $(s,z)$.
+
+\item Static operating choices are made for the current form, yielding optimized operating
+payoffs such as $\bar{\pi}_A$ or $\bar{\pi}_C$.
+
+\item If the firm is of type $A$ or $B$, it chooses current innovation intensity.
+
+\item If the firm is of type $B$, it solves the implementation-route assignment problem
+for each research-originated idea.
+
+\item The firm chooses whether to remain, switch organizational form, or exit.
+
+\item The next-period state is drawn according to the transition kernel associated with the
+chosen organizational form.
+\end{enumerate}
+
+This timing is one of several equivalent ways to write the model. The key point is not the
+exact within-period order but the separation between static operating choices and dynamic
+organizational choices.
+
+\subsection{Why static production inputs are optimized out}
+
+It is useful to be explicit about why the model first solves a static operating problem. Suppose
+an integrated firm faced the raw within-period problem
+
+\begin{equation}
+\begin{aligned}
+\pi_A(z;n,k,m,x_A^G,x_A^O)={}&R_A(n,k,m;z)-wn-rk-c_m m\\
+&+x_A^G\Psi_A^G(z)+x_A^O\Psi_A^O(z;M)\\
+&-\frac{\chi_A^G}{\eta}(x_A^G)^\eta-\frac{\chi_A^O}{\eta}(x_A^O)^\eta.
+\end{aligned}
+\end{equation}
+
+Here $(n,k,m)$ are static production inputs and $(x_A^G,x_A^O)$ are dynamic innovation choices. If $(n,k,m)$
+do not become next-period states and do not carry adjustment costs, then there is no gain
+from carrying them separately into the Bellman equation. One first defines
+
+\begin{equation}
+\bar{\pi}_A(z;w,r,c_m)=\max_{n,k,m}\left\{R_A(n,k,m;z)-wn-rk-c_m m\right\},
+\end{equation}
+
+and then writes the optimized flow payoff as
+
+\begin{equation}
+\Pi_A(z;M,w,p_m)=\bar{\pi}_A(z;w,r,c_m)+\max_{x_A^G,x_A^O\ge 0}\left\{
+x_A^G\Psi_A^G(z)+x_A^O\Psi_A^O(z;M)
+-\frac{\chi_A^G}{\eta}(x_A^G)^\eta-\frac{\chi_A^O}{\eta}(x_A^O)^\eta
+\right\}.
+\end{equation}
+
+The same logic applies to the $C$ block. This separation keeps the dynamic problem fo-
+cused on the objects that matter for the paper's question: research effort, implementation-route
+assignment, organizational switching, entry, and exit.
+
+\subsection{Detailed derivation of the type-A problem}
+
+Consider the type-A objective in (3). Conditional on $z$, the current-value problem is
+
+\begin{equation}
+\max_{x_A^G,x_A^O\ge 0}\left\{
+x_A^G\Psi_A^G(z)+x_A^O\Psi_A^O(z;M)
+-\frac{\chi_A^G}{\eta}(x_A^G)^\eta-\frac{\chi_A^O}{\eta}(x_A^O)^\eta
+\right\}.
+\end{equation}
+
+Because the cost is separable across the two direction choices, the interior first-order conditions are
+
+\begin{equation}
+\begin{aligned}
+\Psi_A^G(z)-\chi_A^G(x_A^G)^{\eta-1}&=0,\\
+\Psi_A^O(z;M)-\chi_A^O(x_A^O)^{\eta-1}&=0.
+\end{aligned}
+\end{equation}
+
+Hence
+
+\begin{equation}
+\begin{aligned}
+x_A^{G*}(z)&=\left(\frac{\Psi_A^G(z)}{\chi_A^G}\right)^{\frac{1}{\eta-1}}
+\qquad \text{if }\Psi_A^G(z)>0,\\
+x_A^{O*}(z;M)&=\left(\frac{\Psi_A^O(z;M)}{\chi_A^O}\right)^{\frac{1}{\eta-1}}
+\qquad \text{if }\Psi_A^O(z;M)>0.
+\end{aligned}
+\end{equation}
+
+If $\Psi_A^G(z)\le 0$, the Kuhn--Tucker conditions imply $x_A^{G*}(z)=0$. If
+$\Psi_A^O(z;M)\le 0$, they imply $x_A^{O*}(z;M)=0$. Substituting the interior
+solutions into the objective gives
+
+\begin{equation}
+\frac{\eta-1}{\eta}(\chi_A^G)^{-\frac{1}{\eta-1}}\left[\Psi_A^G(z)\right]_+^{\frac{\eta}{\eta-1}}
++
+\frac{\eta-1}{\eta}(\chi_A^O)^{-\frac{1}{\eta-1}}\left[\Psi_A^O(z;M)\right]_+^{\frac{\eta}{\eta-1}},
+\end{equation}
+
+where $[u]_+:=\max\{u,0\}$. Therefore the optimized type-A flow payoff is
+
+\begin{equation}
+\begin{aligned}
+\Pi_A(z;M,w,p_m)={}&\bar{\pi}_A(z;w,r,c_m)\\
+&+\frac{\eta-1}{\eta}(\chi_A^G)^{-\frac{1}{\eta-1}}
+\left[\Psi_A^G(z)\right]_+^{\frac{\eta}{\eta-1}}\\
+&+\frac{\eta-1}{\eta}(\chi_A^O)^{-\frac{1}{\eta-1}}
+\left[\Psi_A^O(z;M)\right]_+^{\frac{\eta}{\eta-1}}.
+\end{aligned}
+\end{equation}
+
+\subsection{Detailed derivation of the type-B implementation block}
+
+The type-$B$ problem is the central mechanism block. The first step is to compute the net
+value of one idea under each feasible implementation route.
+
+\textbf{External route.} The external route uses qualified contract manufacturing while the in-
+novator retains the project. The route value is repeated here for convenience:
+
+\begin{equation}
+H_B^{ext}(z,p_m;M)=\lambda_{ext}(z,p_m)R_B(z)-p_m-\tau_{ext}(M).
+\end{equation}
+
+This decomposition is important. The term $p_m$ is the market payment to the qualified
+manufacturer. The term $\tau_{ext}(M)$ is not physical manufacturing cost; it is the extra orga-
+nizational, contractual, and compliance burden of executing the external route under the
+holder-responsibility architecture discussed in Appendix A.
+
+\textbf{Internal route.} The internal route is summarized by
+
+\begin{equation}
+H_B^{int}(z)=\lambda_{int}(z)R_B(z)-\kappa_I(z).
+\end{equation}
+
+The term $\kappa_I(z)$ stands for project-level internalization or integration cost. It is distinct from
+$\kappa_{sj}(z;M)$ below, which is an organizational switching cost entering the dynamic choice of
+next-period organizational form.
+
+\textbf{Transfer route and abandonment.} The transfer value is
+
+\begin{equation}
+H_B^{tr}(z)=T_B(z),
+\end{equation}
+
+and the abandonment value is
+
+\begin{equation}
+H_B^{ab}(z)=0.
+\end{equation}
+
+\textbf{Per-idea value.} The firm compares the four route values and chooses the largest:
+
+\begin{equation}
+\Psi_B(z;p_m,M)=\max\{H_B^{ext}(z,p_m;M),H_B^{int}(z),H_B^{tr}(z),0\}.
+\end{equation}
+
+The optimal route is therefore
+
+\begin{equation}
+h_B^*(z;p_m,M)\in \arg\max_{h\in H}\{H_B^h(z,p_m;M)\}.
+\end{equation}
+
+The route-specific role of MAH then follows mechanically:
+
+\begin{equation}
+\frac{\partial \Psi_B(z;p_m,M)}{\partial \tau_{ext}} \le 0,
+\end{equation}
+
+with strict inequality whenever the external route is the unique maximizer. If another route
+is chosen, a small change in $\tau_{ext}$ need not alter the max operator locally. This is why the
+main text states the comparative statics of route assignment rather than claiming a globally
+smooth response everywhere.
+
+\textbf{Idea-generation choice.} Given (35), the type-$B$ firm's current problem is
+
+\begin{equation}
+\max_{x_B\ge 0}\left\{x_B\Psi_B(z;p_m,M)-\frac{\chi_B}{\eta}x_B^\eta\right\}.
+\end{equation}
+
+For an interior solution,
+
+\begin{equation}
+\Psi_B(z;p_m,M)-\chi_B x_B^{\eta-1}=0.
+\end{equation}
+
+Hence
+
+\begin{equation}
+x_B^{O*}(z;p_m,M)=
+\left(\frac{\Psi_B(z;p_m,M)}{\chi_B}\right)^{\frac{1}{\eta-1}}
+\qquad \text{if }\Psi_B(z;p_m,M)>0,
+\end{equation}
+
+and $x_B^{O*}(z;p_m,M)=0$ otherwise. Substituting the interior solution yields
+
+\begin{equation}
+\max_{x_B\ge 0}\left\{x_B\Psi_B-\frac{\chi_B}{\eta}x_B^\eta\right\}
+=
+\frac{\eta-1}{\eta}\chi_B^{-\frac{1}{\eta-1}}\Psi_B^{\frac{\eta}{\eta-1}}
+\end{equation}
+
+when $\Psi_B>0$. Thus the optimized type-$B$ flow payoff can be written as
+
+\begin{equation}
+\Pi_B(z;M,p_m)=
+\begin{cases}
+-f_B+\dfrac{\eta-1}{\eta}\chi_B^{-\frac{1}{\eta-1}}\Psi_B(z;p_m,M)^{\frac{\eta}{\eta-1}},
+& \Psi_B(z;p_m,M)>0, \\[1.0ex]
+-f_B,
+& \Psi_B(z;p_m,M)\le 0.
+\end{cases}
+\end{equation}
+
+This piecewise form is useful for proofs because it makes clear that a lower $\tau_{ext}$ raises current
+flow payoffs of type-$B$ firms only in states where the max operator transmits the external
+route into the relevant per-idea value.
+
+\subsection{Detailed derivation of the type-C block}
+
+Type-$C$ firms choose the supply of qualified manufacturing services. Let the raw current
+problem be
+
+\begin{equation}
+\max_{q_m,n,k,m}\left\{p_m q_m-c_C(q_m,n,k,m;z)-wn-rk-c_m m-f_C\right\}.
+\end{equation}
+
+If the objective is concave and differentiable, the first-order condition with respect to $q_m$ is
+
+\begin{equation}
+p_m=\frac{\partial c_C(q_m,n,k,m;z)}{\partial q_m}
+\end{equation}
+
+for an interior solution, alongside the standard first-order conditions for static inputs. The
+optimized value of this problem is precisely $\bar{\pi}_C(z;p_m,w,r,c_m)$ in (2). What matters for the
+model is that type-$C$ profitability is determined by the market-clearing manufacturing price
+and by the stationary measure of external implementation demand, not by direct exposure
+to $\tau_{ext}$ in the same way as type-$B$ firms.
+
+\subsection{Bellman system in expanded form}
+
+Let $\mathcal{J}(s)$ be the set of feasible next-period organizational forms for a firm that currently
+begins the period in form $s$. For each candidate next-period form $j$, define
+
+\begin{equation}
+W_{sj}(z;M)=\Pi_j(z;M,w,p_m)-\kappa_{sj}(z;M)+\beta E[V_j(z';M)\mid z,j].
+\end{equation}
+
+It is convenient to interpret $W_{sj}(z;M)$ as the value of choosing the next-period organization
+$j$ when the current state is $(s,z)$. The incumbent then compares all feasible continuation
+options and the exit option. The Bellman equation is
+
+\begin{equation}
+V_s(z;M)=\max\left\{0,\ \max_{j\in\mathcal{J}(s)}W_{sj}(z;M)\right\}.
+\end{equation}
+
+The optimal switching rule is
+
+\begin{equation}
+j_s^*(z;M)\in\arg\max\left\{0,\ \max_{j\in\mathcal{J}(s)}W_{sj}(z;M)\right\}.
+\end{equation}
+
+When the maximizer is zero, the firm exits.
+
+A useful way to read (46) is by cases. For a type-$B$ incumbent,
+
+\begin{equation}
+V_B(z;M)=\max\{0,W_{BA}(z;M),W_{BB}(z;M),W_{BC}(z;M)\}
+\end{equation}
+
+if all three transitions are feasible. The term $W_{BB}$ retains the type-$B$ flow payoff with its
+implementation-route assignment block, while $W_{BA}$ and $W_{BC}$ compare that path to switching
+into different organizational structures. This makes clear why organizational transitions are a
+second-layer object in the current paper: they summarize how route values and continuation
+values combine to reassign firms across organizational states.
+
+\subsection{Entry, distributions, and market clearing in detail}
+
+Potential entrants draw $z_0\sim G_0$ and compare the values of entering as the three active types.
+The expected net value of entry as type $j$ is repeated here:
+
+\begin{equation}
+V_{Ej}(M)=\int V_j(z_0;M)\,dG_0(z_0)-c_{Ej}.
+\end{equation}
+
+With free entry,
+
+\begin{equation}
+\max\{V_{EA}(M),V_{EB}(M),V_{EC}(M)\}\le 0,
+\end{equation}
+
+with equality on each active entry margin.
+
+Let $\mu=(\mu_A,\mu_B,\mu_C)$ denote the stationary measure over active firms. For a measurable
+set $B\subseteq Z$, stationarity requires
+
+\begin{equation}
+\mu_j(B)=\sum_{s\in\{A,B,C\}}\int \mathbf{1}\{j_s^*(z;M)=j\}F_j(B\mid z)\,d\mu_s(z)+e_j(M)G_0(B),
+\end{equation}
+
+where $e_j(M)$ is the mass of entrants into organizational form $j$.
+
+The contract-manufacturing market clears when supply equals demand. Supply is given
+by
+
+\begin{equation}
+S_m(p_m,w;M)=\int q_m^*(z;p_m,w)\,d\mu_C(z).
+\end{equation}
+
+Demand comes from research-specialized firms that choose the external route,
+
+\begin{equation}
+D_m(p_m;M)=\int x_B^{O*}(z;p_m,M)\mathbf{1}\{h_B^*(z;p_m,M)=ext\}\,d\mu_B(z).
+\end{equation}
+
+Hence
+
+\begin{equation}
+S_m(p_m,w;M)=D_m(p_m;M).
+\end{equation}
+
+If the factor market is endogenized inside the industry block, one would add the relevant
+labor or composite-input clearing condition. If $w$ is instead taken as externally given, then
+only (54) is solved inside the industry block.
+
+\subsection{Definition of stationary equilibrium}
+
+A stationary equilibrium under institutional regime $M$ is a collection
+
+\[
+\left(
+\{V_s\}_{s\in\{A,B,C\}},
+\{x_A^{G*},x_A^{O*},x_B^{O*},h_B^*,j_s^*\},
+\mu_A,\mu_B,\mu_C,
+w,p_m
+\right)
+\]
+
+such that:
+
+\begin{enumerate}
+
+\item the value functions satisfy the Bellman equations in (46);
+
+\item policy functions solve the corresponding static and dynamic optimization problems;
+
+\item entrant choices satisfy the free-entry condition in (50);
+
+\item the stationary measures satisfy (51);
+
+\item the contract-manufacturing market clears as in (54); and
+
+\item any additional factor-market-clearing condition is satisfied if the factor price is endoge-
+nized.
+\end{enumerate}
+
+This definition adapts the stationary-industry logic of Hopenhayn to a context in which the
+central state is organizational rather than purely technological and in which implementation
+may be carried out either internally or across firm boundaries.
+
+\subsection{Interface for a two-dimensional state extension}
+
+The baseline model uses a scalar capability state $z$ because the main text should remain
+tractable. However, the architecture preserves a clean interface for a richer state space. The
+most natural extension is
+
+\[
+z=(z_R,z_C),
+\]
+
+where $z_R$ denotes research capability and $z_C$ denotes implementation or execution capa-
+bility.
+
+Under this extension:
+
+\begin{itemize}[nosep]
+\item $\Psi_A^G$, $\Psi_A^O$, and $R_B$ can load more strongly on $z_R$,
+
+\item $\lambda_{ext}$, $\lambda_{int}$, and $\bar{\pi}_C$ can load more strongly on $z_C$,
+
+\item the transition kernels become $F_j(\cdot\mid z_R,z_C)$, and
+
+\item route assignment may become more sharply sorted by relative strengths in research and
+implementation.
+\end{itemize}
+
+The main text does not adopt this extension because it would expand the state space,
+complicate estimation and stationary-distribution computation, and shift attention away
+from the paper's main institutional object. But nothing in the current model prevents this
+extension from being used in a later quantitative version.
+
+\section{Proofs and Comparative-Static Details}
+
+This appendix develops the comparative-static arguments used in Section 4. The main text
+deliberately gives only proof sketches. Here the derivations are expanded in a way that is
+sufficiently explicit for a first-year PhD student to follow the logical chain from the route-
+specific friction $\tau_{ext}$ to the paper's equilibrium predictions.
+
+As in Appendix B, some formulas below use $x_B$ and $\Psi_B$ as shorthand for the baseline
+original-drug objects $x_B^O$ and $\Psi_B^O$ to avoid repetitive superscripts in intermediate
+steps.
+
+\subsection{Regularity conditions and interpretation of the comparisons}
+
+The proofs below separate \textit{direct} route-level comparisons from \textit{equilibrium} comparisons. The
+distinction matters because the reform acts directly on one route-specific object while prices
+and distributions may adjust endogenously in equilibrium.
+
+For the direct comparisons, the appendix uses the following conditions.
+
+\begin{enumerate}
+
+\item \textbf{Route-specific policy shift.} The reform lowers the external-route friction:
+\end{enumerate}
+
+\[
+\tau_{ext}(1)<\tau_{ext}(0).
+\]
+
+\begin{enumerate}
+\setcounter{enumi}{1}
+
+\item \textbf{Direct route specificity.} In the direct comparison, $H_B^{int}(z)$ and $H_B^{tr}(z)$ are not directly
+shifted by $M$. The reform enters only through the external route in (5).
+
+\item \textbf{Technology fixed in the direct comparison.} The objects $R_B(z)$, $\lambda_{ext}(z,p_m)$, $\lambda_{int}(z)$,
+and $\kappa_I(z)$ are held fixed when comparing route values at a given $(z,p_m)$.
+
+\item \textbf{Convex research cost.} The idea-generation problem of type-$B$ firms satisfies $\eta>1$.
+
+\item \textbf{Fixed state transitions in the direct value comparison.} The Markov kernels
+$F_j(z'\mid z)$ are unchanged across the two direct policy comparisons.
+\end{enumerate}
+
+The direct-comparison statements are the cleanest way to isolate the institutional mech-
+anism. The equilibrium statements then add the possibility that $p_m$, $w$, entry, and firm
+distributions react to those direct shifts.
+
+\subsection{Proof of Proposition 4.1}
+
+Start from the external-route value in (5):
+
+\[
+H_B^{ext}(z,p_m;M)=\lambda_{ext}(z,p_m)R_B(z)-p_m-\tau_{ext}(M).
+\]
+
+Under the direct-comparison conditions listed above,
+
+\[
+H_B^{ext}(z,p_m;1)-H_B^{ext}(z,p_m;0)
+=
+-\tau_{ext}(1)+\tau_{ext}(0)
+=
+\tau_{ext}(0)-\tau_{ext}(1)>0.
+\]
+
+Thus the external route is strictly more attractive at every fixed $(z,p_m)$.
+
+Next consider the maximized per-idea implementation value:
+
+\[
+\Psi_B(z;p_m,M)=\max\{H_B^{ext}(z,p_m;M),H_B^{int}(z),H_B^{tr}(z),0\}.
+\]
+
+Since only one element of the maximization set increases and none decrease, the maximized
+value cannot fall. Formally, if $a'\ge a$, then for any collection $(b,c,d)$,
+
+\[
+\max\{a',b,c,d\}\ge \max\{a,b,c,d\}.
+\]
+
+Applying this with $a'=H_B^{ext}(z,p_m;1)$ and $a=H_B^{ext}(z,p_m;0)$ yields
+
+\[
+\Psi_B(z;p_m,1)\ge \Psi_B(z;p_m,0).
+\]
+
+The inequality is strict whenever the reform raises the highest element of the choice set or
+moves the external route into a tie-breaking or strictly dominant position.
+
+Now define the external-route choice set at a given $p_m$ as
+
+\[
+\mathcal{E}^{ext}(M)=\left\{z:\ H_B^{ext}(z,p_m;M)\ge \max\{H_B^{int}(z),H_B^{tr}(z),0\}\right\}.
+\]
+
+Take any $z\in \mathcal{E}^{ext}(0)$. Then
+
+\[
+H_B^{ext}(z,p_m;0)\ge \max\{H_B^{int}(z),H_B^{tr}(z),0\}.
+\]
+
+Because $H_B^{ext}(z,p_m;1)>H_B^{ext}(z,p_m;0)$, it follows that
+
+\[
+H_B^{ext}(z,p_m;1)\ge \max\{H_B^{int}(z),H_B^{tr}(z),0\},
+\]
+
+so $z\in \mathcal{E}^{ext}(1)$. Therefore,
+
+\[
+\mathcal{E}^{ext}(0)\subseteq \mathcal{E}^{ext}(1).
+\]
+
+This proves Proposition 4.1.
+
+\textbf{Interpretation.} The proposition is a pure route-assignment result. It does not require that
+total innovation or aggregate profits already rise. It only requires that the reform lowers the
+extra governance and compliance burden borne by the external implementation route.
+
+\subsection{Proof of Proposition 4.2}
+
+For $\Psi_B(z;p_m,M)>0$, the type-$B$ firm's current-period problem is
+
+\[
+\max_{x_B\ge 0}\left\{x_B\Psi_B(z;p_m,M)-\frac{\chi_B}{\eta}x_B^\eta\right\}.
+\]
+
+The first-order condition for an interior optimum is
+
+\[
+\Psi_B(z;p_m,M)-\chi_B x_B^{\eta-1}=0,
+\]
+
+so
+
+\[
+x_B^{O*}(z;p_m,M)=\left(\frac{\Psi_B(z;p_m,M)}{\chi_B}\right)^{\frac{1}{\eta-1}}.
+\]
+
+Differentiating with respect to $\Psi_B$ gives
+
+\[
+\frac{\partial x_B^{O*}}{\partial \Psi_B}
+=
+\frac{1}{\eta-1}\chi_B^{-\frac{1}{\eta-1}}\Psi_B^{\frac{2-\eta}{\eta-1}},
+\]
+
+which is strictly positive whenever $\Psi_B>0$ because $\eta>1$.
+
+Hence any pointwise increase in $\Psi_B$ weakly increases the interior optimum. If the
+pre-reform per-idea value satisfies $\Psi_B(z;p_m,0)\le 0$ while the post-reform value satisfies
+$\Psi_B(z;p_m,1)>0$, then the firm's research choice moves from the corner $x_B^{O*}(z;p_m,0)=0$
+to a strictly positive interior value. This is the extensive-margin activation of research.
+
+It is also useful to derive the optimized flow payoff explicitly. Substituting the interior
+solution back into (11) yields
+
+\[
+\Pi_B(z;M,p_m)
+=
+-f_B+\frac{\eta-1}{\eta}\chi_B^{-\frac{1}{\eta-1}}\Psi_B(z;p_m,M)^{\frac{\eta}{\eta-1}}
+\]
+
+whenever $\Psi_B>0$, and $\Pi_B(z;M,p_m)=-f_B$ otherwise. The derivative of the positive-value
+branch with respect to $\Psi_B$ is
+
+\[
+\frac{\partial \Pi_B}{\partial \Psi_B}
+=
+\chi_B^{-\frac{1}{\eta-1}}\Psi_B^{\frac{1}{\eta-1}}
+>0.
+\]
+
+Thus a higher per-idea implementation value raises both research intensity and the opti-
+mized flow payoff of operating as a type-$B$ firm.
+
+\textbf{Interpretation.} The role of MAH in this derivation is indirect but economically central.
+It does not enter the research technology itself. It enters the expected return to research by
+changing the feasibility and net payoff of one implementation route.
+
+\subsection{Proof of Proposition 4.3}
+
+The Bellman equation for an incumbent in organizational form $s$ is
+
+\[
+V_s(z;M)=\max\left\{0,\ \max_{j\in\mathcal{J}(s)}W_{sj}(z;M)\right\},
+\]
+
+with
+
+\[
+W_{sj}(z;M)=\Pi_j(z;M,w,p_m)-\kappa_{sj}(z;M)+\beta E[V_j(z';M)\mid z,j].
+\]
+
+To establish the type-$B$ value comparison, define the Bellman operator
+
+\[
+(\mathcal{T}_B V)(z;M)
+=
+\max\left\{
+0,\
+\max_{j\in\mathcal{J}(B)}
+\left[
+\Pi_j(z;M,w,p_m)-\kappa_{Bj}(z;M)+\beta E[V_j(z';M)\mid z,j]
+\right]
+\right\}.
+\]
+
+Under the maintained comparison in Proposition 4.3, the direct effect of the reform is a
+pointwise increase in $\Pi_B(z;M,w,p_m)$, with the transition kernel unchanged. The Bellman
+operator is monotone in its payoff arguments: if one raises the flow payoff component point-
+wise and holds the continuation kernel fixed, the fixed point of the operator cannot fall.
+Therefore,
+
+\[
+V_B(z;1)\ge V_B(z;0)\qquad \text{for all } z.
+\]
+
+Entry values are then compared by integrating over the initial-state distribution:
+
+\[
+V_{EB}(1)-V_{EB}(0)
+=
+\int\bigl[V_B(z_0;1)-V_B(z_0;0)\bigr]\,dG_0(z_0)\ge 0.
+\]
+
+Hence the expected value of entering as a type-$B$ firm weakly rises.
+
+At this point one must separate two concepts.
+
+\begin{enumerate}
+
+\item The model as written pins down the value of entry through $V_{EB}(M)$.
+
+\item A literal change in the observed mass of entrants requires an extensive margin on the
+supply of potential entrants or a distribution of entry costs.
+\end{enumerate}
+
+If, for example, prospective research-oriented entrants draw an idiosyncratic entry cost $c$
+from a cdf $H(c)$ and enter whenever $\int V_B(z_0;M)\,dG_0(z_0)\ge c$, then the mass of entrants is
+
+\[
+N_B(M)=H\!\left(\int V_B(z_0;M)\,dG_0(z_0)\right),
+\]
+
+which is weakly increasing in the expected entry value because $H$ is nondecreasing.
+
+\textbf{Interpretation.} The strongest theoretical statement is that MAH raises the attractiveness
+of the research-oriented entry margin. An increase in observed entry follows once the model
+
+\subsection{Proof of Proposition 4.4}
+
+Start from demand for qualified external manufacturing in (19):
+
+\[
+D_m(p_m;M)=\int x_B^{O*}(z;p_m,M)\mathbf{1}\{h_B^*(z;p_m,M)=ext\}\,d\mu_B(z).
+\]
+
+At fixed $(p_m,\mu_B)$, demand can rise through two channels.
+
+\begin{enumerate}
+
+\item \textbf{Intensity channel.} Proposition 4.2 implies that a rise in $\Psi_B$ weakly increases $x_B^{O*}$.
+
+\item \textbf{Route-assignment channel.} Proposition 4.1 implies that the set of states choosing
+the external route weakly expands.
+\end{enumerate}
+
+If both channels move weakly upward, then $D_m(p_m;M)$ weakly rises at fixed prices and fixed
+type-$B$ distributions.
+
+Now consider the optimized type-$C$ payoff,
+
+\[
+\Pi_C(z;p_m,w)=\max_{m\ge 0}\{p_m m-c(m,z;w)-f_C\}.
+\]
+
+Let $m^*(z;p_m,w)$ denote the maximizer. By the envelope theorem,
+
+\[
+\frac{\partial \Pi_C(z;p_m,w)}{\partial p_m}=m^*(z;p_m,w)\ge 0.
+\]
+
+Thus if one could hold $w$ fixed and guarantee that equilibrium $p_m$ rises, then type-$C$ profits
+would weakly increase pointwise. But that is not the correct equilibrium comparison.
+
+In equilibrium, three offsetting forces matter.
+
+\begin{enumerate}
+
+\item \textbf{Price adjustment.} The equilibrium price $p_m$ solves market clearing in (20). If supply
+expands strongly, the demand shift need not translate into a large increase in $p_m$.
+
+\item \textbf{Entry and selection.} Higher demand for entrusted production may attract additional
+type-$C$ firms. That can dissipate infra-marginal gains even if the market grows.
+
+\item \textbf{Input-cost pressure.} If the equilibrium wage or composite factor price $w$ rises, type-$C$
+margins are compressed even when demand strengthens.
+\end{enumerate}
+
+Therefore the equilibrium sign of the profit response is ambiguous. What the model predicts
+cleanly is the direction of the demand shift for qualified external manufacturing, not a
+universal sign for all producer-side payoff objects.
+
+\textbf{Interpretation.} This ambiguity is not a weakness of the model. It is precisely what
+prevents the paper from making an implausibly strong claim that every downstream producer
+should benefit mechanically from a reallocation toward external implementation.
+
+\subsection{Why transition matrices are second-order objects}
+
+It is useful to formalize why organizational transition matrices should be treated as support-
+ing objects rather than as the primary theoretical object. Let
+
+\[
+P_{sj}(M)=\Pr\{\text{firm of current form } s \text{ chooses next form } j \mid M\}
+\]
+
+be the equilibrium transition probability induced by the policy functions from (14). These
+probabilities are endogenous summaries of three deeper objects:
+
+\begin{enumerate}
+
+\item route values such as $H_B^{ext}$ and $H_B^{int}$,
+
+\item flow payoffs $\Pi_j$,
+
+\item continuation values $V_j$.
+\end{enumerate}
+
+Hence a change in the transition matrix is a downstream manifestation of the deeper mech-
+anism. The paper's central mechanism is therefore not ``MAH changes transitions'' in the
+abstract. It is ``MAH changes implementation-route assignment, and transition patterns may
+adjust as a consequence.'' This is why transition matrices are valuable empirically but should
+not be given first-order theoretical status.
+
+\subsection{Interface for a two-dimensional extension}
+
+The baseline model uses one-dimensional capability $z$ because the paper's central mechanism
+does not require more than that. Still, the model leaves open a natural extension to
+
+\[
+z=(z_R,z_C),
+\]
+
+where $z_R$ is research capability and $z_C$ is implementation or execution capability.
+
+With this extension, the key route-level expression becomes
+
+\[
+H_B^{ext}(z_R,z_C,p_m;M)=\lambda_{ext}(z_R,z_C,p_m)R_B(z_R,z_C)-p_m-\tau_{ext}(M),
+\]
+
+and the direct effect of the reform remains
+
+\[
+\frac{\partial H_B^{ext}}{\partial \tau_{ext}}=-1.
+\]
+
+Therefore the direct logic of Proposition 4.1 survives without change: lowering $\tau_{ext}$ still raises
+the external-route value pointwise.
+
+What changes is the geometry of route assignment. In one dimension, the external-route
+choice set can often be described by an interval or a cutoff-style subset. In two dimensions, the
+relevant object is a region in $(z_R,z_C)$ space. To recover clean monotone comparative statics,
+one typically needs additional single-crossing or supermodularity conditions, for example
+that the advantage of the external route relative to alternatives is weakly increasing in $z_C$
+for fixed $z_R$.
+
+The research-response logic also survives. As long as $\Psi_B(z_R,z_C;p_m,M)$ weakly rises
+pointwise, the convex-cost problem of the type-$B$ firm still implies a weak rise in optimal
+research intensity. Likewise, the entry comparison survives if the value function of entering
+as a type-$B$ firm rises after integrating over the joint initial-state distribution.
+
+The reason to keep this extension in the appendix rather than in the main text is practical
+rather than conceptual. The one-dimensional baseline already captures the paper's central
+object --- a reform that changes the value of external implementation while leaving a clean
+interface for dynamic industry equilibrium. The two-dimensional extension is therefore best
+treated as a robustness of model architecture, not as a necessary ingredient of the baseline
+argument.
+\newpage
+\section{Empirical Classification, Mapping, and Estimation Details}
+
+This appendix corresponds to Section 5. It records the detailed empirical implementation that
+supports the main-text hierarchy: variable construction, classification rules, measurement of
+first-layer and second-layer outcomes, transition construction, and numerical estimation
+details.
+
+\begin{itemize}[nosep]
+\item Detailed $A/B/C$ classification rules.
+
+\item Transition-matrix construction and validation details.
+
+\item Measurement of original-drug outcomes and implementation proxies.
+
+\item Estimation-algorithm details and any later robustness checks.
+\end{itemize}
+
+\section{Expanded Empirical Mapping and Estimation Strategy}
+
+This section maps the model to observables and lays out an empirical strategy that is both empirically disciplined and computationally implementable. The strategy proceeds in three layers. First, it estimates reduced-form effects of MAH on the outcomes that are closest to the model's mechanism. Second, it uses those reduced-form patterns to discipline the construction of empirical moments. Third, it estimates a parsimonious stationary model by simulated method of moments (SMM), treating the reform as a change in the route-specific friction $\tau_{ext}$ between a pre-reform and a post-reform regime. This design follows the logic of the dynamic industry and structural estimation literatures: the model uses a stationary industry environment with heterogeneous firms and organizational choice, while the empirical implementation combines first-step estimation of transition objects with a second-step minimum-distance fit of structural parameters \citep{Hopenhayn1992, EricsonPakes1995, PakesPollard1989, BajariBenkardLevin2007, AguirregabiriaMira2010}.
+
+\subsection{5.1 Data structure and empirical objects}
+
+The empirical implementation should begin by constructing three linked panels.
+
+\begin{enumerate}
+\item A \textbf{firm-year panel} indexed by $i,t$, containing firm identity, year, province, entry and exit status, product scope, original-drug activity, manufacturing capability, and indicators for entrusted production or external implementation where observable.
+
+\item A \textbf{product-year panel} indexed by $p,t$, containing product identity, year of approval or realization, whether the product is original or generic, and, where available, information on the holder and the actual producer.
+
+\item A \textbf{firm-product-year panel} indexed by $i,p,t$, containing the link between firms and realized products. This panel is useful for classifying implementation routes and for distinguishing idea generation from implementation.
+\end{enumerate}
+
+The key empirical principle is that firm types should be classified using pre-reform characteristics so as to avoid coding firms based on endogenous post-reform responses. Let
+\[
+Orig_i^{pre}=1
+\]
+if firm $i$ shows pre-reform original-drug research activity, such as original-drug applications, clinical development, or other upstream innovative activity. Let
+\[
+Manu_i^{pre}=1
+\]
+if firm $i$ has pre-reform internal manufacturing capability, such as an active production license, observable internal production, or self-manufacturing of approved products. Let
+\[
+CMO_i^{pre}=1
+\]
+if firm $i$ appears before reform to provide manufacturing services to other firms or otherwise operates as a manufacturing specialist.
+
+Using those variables, the baseline mapping is
+\[
+A_i^{pre}=1\{Orig_i^{pre}=1,\ Manu_i^{pre}=1\},
+\]
+\[
+B_i^{pre}=1\{Orig_i^{pre}=1,\ Manu_i^{pre}=0\},
+\]
+\[
+C_i^{pre}=1\{Orig_i^{pre}=0,\ Manu_i^{pre}=1,\ CMO_i^{pre}=1\}.
+\]
+
+This classification is deliberately economic rather than purely legal. Type-$A$ firms are integrated innovators. Type-$B$ firms are research-oriented firms without internal manufacturing capability on the relevant margin. Type-$C$ firms are manufacturing specialists. Firms that do not fit cleanly into one of these categories should either be omitted in the baseline or assigned according to a transparent priority rule, with robustness checks reported later.
+
+The empirical outcomes are organized into first-layer and second-layer objects. The first-layer outcomes are the closest empirical counterparts to the model's mechanism:
+
+\begin{enumerate}
+\item \textbf{External-route use:}
+\[
+Y_{it}^{route}=1
+\]
+if firm $i$ commercializes a product through an external manufacturing route in year $t$.
+
+\item \textbf{Original-drug realization:}
+\[
+Y_{it}^{orig}
+\]
+is the count of newly realized original-drug products associated with firm $i$ in year $t$.
+
+\item \textbf{Original-drug share:}
+\[
+Share_{it}^{orig}=\frac{\text{new original-drug products}_{it}}{\text{all newly realized products}_{it}}.
+\]
+
+\item \textbf{Research-oriented entry:}
+\[
+Entry_{pt}^{B}
+\]
+captures entry into the type-$B$ margin, measured at the firm or province-year level.
+\end{enumerate}
+
+The second-layer outcomes are validation margins:
+
+\begin{enumerate}
+\item transitions across the $A/B/C$ organizational states;
+\item exit rates by firm type;
+\item changes in the size and composition of the manufacturing-specialist segment;
+\item supply-side outcomes associated with entrusted production.
+\end{enumerate}
+
+This hierarchy is important. The paper's model predicts that the most immediate response to a fall in $\tau_{ext}$ should appear in route use, original-drug realization, and research-oriented entry. Organizational transitions and producer-side outcomes are informative, but they are second-order relative to implementation-route assignment itself.
+
+\subsection{5.2 Reduced-form evidence}
+
+The reduced-form evidence should be built around differential exposure to the MAH mechanism. The paper's theory implies that MAH should matter most for firms that were pre-reform research-oriented but lacked internal manufacturing capability. This suggests using pre-reform type-$B$ status as the main treatment margin.
+
+Define
+\[
+Research_i^{pre}=1\{B_i^{pre}=1\}.
+\]
+
+The baseline firm-level specification is
+\begin{equation}
+Y_{it}=\alpha_i+\gamma_t+\beta\left(Post_t\times Research_i^{pre}\right)+X_{it}'\delta+\varepsilon_{it},
+\end{equation}
+where $\alpha_i$ are firm fixed effects, $\gamma_t$ are year fixed effects, and $X_{it}$ includes firm age, province-level controls, and other broad time-varying controls where available.
+
+Equation (1) should be estimated separately for
+\[
+Y_{it}^{route},\qquad Y_{it}^{orig},\qquad Share_{it}^{orig}.
+\]
+The sign prediction is positive in all three cases.
+
+Because MAH was rolled out in stages, the paper should go beyond a single post indicator and estimate an event-study specification. Let $T_i$ denote the first relevant reform exposure year for firm $i$. Then estimate
+\begin{equation}
+Y_{it}=\alpha_i+\gamma_t+\sum_{k\neq -1}\beta_k
+\mathbf{1}\{t-T_i=k\}\times Research_i^{pre}+X_{it}'\delta+\varepsilon_{it}.
+\end{equation}
+This specification serves three purposes. First, it checks pre-trends. Second, it shows whether the main response occurs only after the external route becomes operationally relevant. Third, it helps distinguish temporary timing effects from a persistent reallocation toward external implementation.
+
+A complementary product-level specification should move closer to the model's unit of assignment. Let $p$ index a product or project, and let
+\[
+Externalizable_p^{pre}=1
+\]
+indicate a product or product class more likely to rely on external implementation. Then estimate
+\begin{equation}
+Y_{pt}^{realized}=\alpha_p+\gamma_t+\beta_p\left(Post_t\times Externalizable_p^{pre}\right)+u_{pt},
+\end{equation}
+where $Y_{pt}^{realized}$ is an indicator or count for product realization. The purpose of this specification is to show that the reform shifts the realization margin more strongly where implementation feasibility is likely to matter most.
+
+The paper should also estimate entry responses at the province-year level. Let
+\[
+EntryRate_{qt}^{B}
+\]
+be the number of entering type-$B$ firms in province $q$ and year $t$, normalized by the pre-existing stock of firms or population. Then estimate
+\begin{equation}
+EntryRate_{qt}^{B}=\alpha_q+\gamma_t+\beta_e Post_t\times Exposure_q^{pre}+Z_{qt}'\rho+\nu_{qt},
+\end{equation}
+where $Exposure_q^{pre}$ measures how strongly province $q$ was exposed to the implementation bottleneck before reform, for example through the pre-reform prevalence of research-oriented firms without internal manufacturing.
+
+The reduced-form section should report the first-layer results first. Only after those patterns are established should the paper turn to second-layer evidence, such as changes in transition rates or manufacturing-specialist participation.
+
+\subsection{5.3 Mapping the data to the structural state}
+
+The model uses a one-dimensional capability state $z$. To bring that model to the data, the paper should construct an empirical capability index using pre-reform observables. A practical baseline is
+\[
+z_i^{pre}=\omega_1 \widetilde{OrigStock}_i^{pre}
++\omega_2 \widetilde{ProdScope}_i^{pre}
++\omega_3 \widetilde{Size}_i^{pre}
++\omega_4 \widetilde{Experience}_i^{pre},
+\]
+where $\widetilde{OrigStock}_i^{pre}$ is a standardized measure of pre-reform original-drug research activity.
+The variable $\widetilde{ProdScope}_i^{pre}$ is standardized product scope, $\widetilde{Size}_i^{pre}$ is standardized firm size,
+and $\widetilde{Experience}_i^{pre}$ captures years of operation or related experience.
+
+In practice, the easiest baseline is to define $z_i^{pre}$ as the first principal component of these standardized variables. A simpler robustness check is to assign equal weights and use the normalized average. The baseline structural exercise should discretize the empirical $z$ distribution into $N_z$ bins, with $N_z=5$ or $N_z=7$ as a practical starting point:
+\[
+z\in\{z_1,\dots,z_{N_z}\}.
+\]
+
+This delivers the empirical objects needed for the stationary model:
+\begin{enumerate}
+\item the distribution of firms across $(s,z)$ states in the pre-reform regime;
+\item entry rates by type and $z$ bin;
+\item transition probabilities across organizational forms and $z$ bins;
+\item route-use, realization, and exit moments by type and $z$ bin.
+\end{enumerate}
+
+This step is deliberately parsimonious. It keeps the empirical implementation close to the model while avoiding a high-dimensional state space that would make estimation fragile and unnecessarily expensive.
+
+\subsection{5.4 First-step estimation of transition and policy objects}
+
+Following the logic of two-step structural estimation, the first step of the structural exercise should estimate objects that can be learned directly from the data before solving the model \citep{BajariBenkardLevin2007, AguirregabiriaMira2010}. In particular, the paper should estimate:
+
+\begin{enumerate}
+\item the initial entrant distribution over $(s,z)$;
+\item the empirical transition kernels
+\[
+\widehat{F}_A(z'|z),\qquad \widehat{F}_B(z'|z),\qquad \widehat{F}_C(z'|z);
+\]
+\item empirical entry and exit rates by firm type and state bin;
+\item reduced-form route-choice frequencies by firm type and state bin.
+\end{enumerate}
+
+In the baseline implementation, these objects should be estimated using the pre-reform sample and then held fixed across the pre- and post-reform stationary regimes. This choice has two advantages. First, it makes the structural interpretation of $\tau_{ext}$ cleaner, because the reform is not allowed to mechanically change every component of the model at once. Second, it keeps the computational problem feasible in Matlab.
+
+\subsection{5.5 Structural estimation by simulated method of moments}
+
+The structural exercise should treat the reform as a comparison between a pre-reform regime $M=0$ and a post-reform regime $M=1$. The key reform-sensitive object is the route-specific external friction:
+\[
+\tau_{ext}(0),\qquad \tau_{ext}(1),
+\]
+with the central hypothesis
+\[
+\tau_{ext}(1)<\tau_{ext}(0).
+\]
+
+To keep the first implementation feasible, the baseline parameter vector should be parsimonious:
+\[
+\theta=
+\left(
+\tau_{ext}(0),\tau_{ext}(1),
+\chi_B,
+a_0,a_1,
+\kappa_{I0},\kappa_{I1},
+c_{EB},c_{EC}
+\right),
+\]
+where $\chi_B$ controls the curvature of idea-generation cost for type-$B$ firms, $(a_0,a_1)$ parameterize the external-route success function, $(\kappa_{I0},\kappa_{I1})$ parameterize internalization cost, and $(c_{EB},c_{EC})$ are entry costs for research-specialized and manufacturing-specialized entrants. The discount factor $\beta$ and the innovation-cost exponent $\eta$ should be fixed in the baseline.
+
+A convenient baseline specification is
+\[
+\lambda_{ext}(z,p_m)=\Lambda(a_0+a_1 z-\rho p_m),
+\]
+with $\rho$ fixed, and
+\[
+\kappa_I(z)=\kappa_{I0}-\kappa_{I1}z.
+\]
+
+Let $m^{data}$ denote the vector of empirical moments. A practical baseline set is
+\[
+m^{data}=
+(m_1,\dots,m_{14}),
+\]
+where:
+\begin{align*}
+m_1  &= \text{share of type-}B\text{ firms using the external route, pre-reform},\\
+m_2  &= \text{share of type-}B\text{ firms using the external route, post-reform},\\
+m_3  &= \text{mean number of realized original-drug products for type-}B\text{ firms, pre-reform},\\
+m_4  &= \text{mean number of realized original-drug products for type-}B\text{ firms, post-reform},\\
+m_5  &= \text{mean original-drug share for type-}B\text{ firms, pre-reform},\\
+m_6  &= \text{mean original-drug share for type-}B\text{ firms, post-reform},\\
+m_7  &= \text{entry rate into type-}B\text{, pre-reform},\\
+m_8  &= \text{entry rate into type-}B\text{, post-reform},\\
+m_9  &= \text{transition rate }B\rightarrow A\text{, pre-reform},\\
+m_{10} &= \text{transition rate }B\rightarrow A\text{, post-reform},\\
+m_{11} &= \text{exit rate of type-}B\text{ firms, pre-reform},\\
+m_{12} &= \text{exit rate of type-}B\text{ firms, post-reform},\\
+m_{13} &= \text{share of type-}C\text{ firms among active firms, pre-reform},\\
+m_{14} &= \text{share of type-}C\text{ firms among active firms, post-reform}.
+\end{align*}
+
+Let $m^{model}(\theta)$ denote the model-implied moments. The SMM estimator is
+\begin{equation}
+\hat{\theta}
+=
+\arg\min_{\theta}
+\left[m^{data}-m^{model}(\theta)\right]'
+W
+\left[m^{data}-m^{model}(\theta)\right].
+\end{equation}
+In the first pass, $W$ can be the identity matrix. In the second pass, it should be replaced by the inverse of the estimated covariance matrix of the empirical moments. This follows the standard minimum-distance / simulation-estimation logic in the structural literature \citep{PakesPollard1989}.
+
+\subsection{5.6 Matlab implementation}
+
+The Matlab workflow should follow the empirical logic of the section and separate data construction, reduced-form estimation, model solution, and SMM estimation. A transparent file structure is:
+
+\begin{verbatim}
+build_panel.m
+classify_firms.m
+construct_state.m
+estimate_reduced_form.m
+estimate_transitions.m
+solve_model.m
+stationary_dist.m
+simulate_moments.m
+smm_objective.m
+run_smm.m
+bootstrap_smm.m
+\end{verbatim}
+
+The estimation should proceed in the following order.
+
+\paragraph{Step 1: Build the panel data.}
+Merge the raw firm, product, and route data into the firm-year, product-year, and firm-product-year panels. Construct pre-reform classification variables and identify entry, exit, and route-use indicators.
+
+\paragraph{Step 2: Estimate the reduced-form evidence.}
+Estimate equations (1)--(4). Confirm that the first-layer outcomes move in the directions predicted by the model. The structural exercise should be interpreted only after the reduced-form evidence supports the mechanism.
+
+\paragraph{Step 3: Construct the empirical state.}
+Build $z_i^{pre}$, discretize it into bins, and compute the empirical state distribution across $(s,z)$.
+
+\paragraph{Step 4: Estimate first-step transition objects.}
+Estimate the empirical transition kernels and entry distributions from the pre-reform data. In the baseline implementation, keep these fixed across regimes.
+
+\paragraph{Step 5: Solve the model for a candidate parameter vector.}
+For a trial value of $\theta$, solve the stationary model under $M=0$ and under $M=1$. This requires:
+\begin{enumerate}
+\item solving the Bellman equations by value function iteration;
+\item computing policy functions for innovation, route choice, exit, and entry;
+\item iterating forward on the stationary distribution over $(s,z)$;
+\item finding the contract-manufacturing price $p_m$ that clears the external manufacturing market in each regime.
+\end{enumerate}
+
+\paragraph{Step 6: Simulate model moments.}
+Using the solved policy functions and stationary distributions, compute the model-implied moments corresponding to $m_1,\dots,m_{14}$.
+
+\paragraph{Step 7: Minimize the SMM criterion.}
+Use \texttt{fmincon} as the baseline optimizer. If the objective function is rough, use a coarse grid search to generate starting values and check robustness with \texttt{patternsearch}.
+
+\paragraph{Step 8: Inference.}
+Use a block bootstrap at the firm level to re-estimate the empirical moments and re-compute $\hat{\theta}$. Report standard errors for the structural parameters and for the implied change in $\tau_{ext}$.
+
+For numerical stability, the baseline code should normalize one payoff object, bound probabilities away from zero and one, and use the pre-reform solution as the starting value for the post-reform regime.
+
+\subsection{5.7 Parameter identification}
+
+The paper should be explicit about which moments identify which parameters. In the baseline design:
+
+\begin{itemize}
+\item the change in external-route use from pre- to post-reform identifies the fall in $\tau_{ext}$ most directly;
+\item the change in original-drug realization and original-drug share for type-$B$ firms helps identify the interaction of $\tau_{ext}$ with the implementation value;
+\item the pre/post change in type-$B$ entry helps identify the research-oriented entry margin and $c_{EB}$;
+\item the $B\rightarrow A$ transition moments help identify the relative attractiveness of internalization and thus $\kappa_I(z)$;
+\item the size and prevalence of the type-$C$ segment help discipline the external manufacturing side and the equilibrium price of external production.
+\end{itemize}
+
+This mapping prevents the paper from claiming that one coefficient or one moment identifies the entire model. Instead, the structural interpretation comes from the joint movement of moments that correspond to distinct blocks of the model.
+
+\subsection{5.8 Scope and interpretation}
+
+The baseline empirical strategy makes three disciplined claims. First, it estimates whether MAH changed route use, original-drug realization, and research-oriented entry in the directions predicted by the model. Second, it uses those reduced-form patterns to discipline a parsimonious stationary model. Third, it interprets the estimated decline in $\tau_{ext}$ as a structural summary of the change in the external implementation environment rather than as a literal direct measurement of every legal or contractual component of MAH.
+
+At the same time, the baseline strategy does not claim to identify every institutional margin separately. In particular, it does not separately identify all components of contractual governance, monitoring, regulatory burden, and quality responsibility. Those objects are aggregated into the route-specific friction $\tau_{ext}$. That aggregation is appropriate given the paper's question and the level of the available data.
+
+\textbf{Interface to Section 6.} With the model estimated, the next section can report three classes of results: reduced-form effects on first-layer and second-layer outcomes, structural estimates of the change in $\tau_{ext}$ and related parameters, and counterfactual exercises comparing observed post-reform outcomes to a no-MAH counterfactual in which the external-route friction remains at its pre-reform level.
+\bibliographystyle{plainnat}
+\bibliography{mah_references}
+\end{document}

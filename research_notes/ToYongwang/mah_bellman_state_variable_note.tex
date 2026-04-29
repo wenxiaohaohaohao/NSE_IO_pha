@@ -1,0 +1,557 @@
+% !TEX program = xelatex
+\documentclass[12pt,fontset=none]{ctexart}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{iftex}
+\usepackage[hidelinks]{hyperref}
+
+\setstretch{1.2}
+
+\ifXeTeX\else\PackageError{mah-bellman-note}{Please compile this file with XeLaTeX}{}\fi
+
+\IfFontExistsTF{Noto Serif CJK SC}{
+    \setCJKmainfont{Noto Serif CJK SC}[
+        UprightFont=*,
+        BoldFont=* Bold,
+        ItalicFont=FandolKai-Regular
+    ]
+}{
+    \setCJKmainfont{FandolSong}[
+        UprightFont=*-Regular,
+        BoldFont=*-Bold,
+        ItalicFont=FandolKai-Regular
+    ]
+}
+\IfFontExistsTF{Noto Sans CJK SC}{
+    \setCJKsansfont{Noto Sans CJK SC}[
+        UprightFont=*,
+        BoldFont=* Bold
+    ]
+}{
+    \setCJKsansfont{FandolHei}[
+        UprightFont=*-Regular,
+        BoldFont=*-Bold
+    ]
+}
+\setCJKmonofont{FandolSong}[
+    UprightFont=*-Regular,
+    BoldFont=*-Bold
+]
+
+\title{MAH 模型中的控制变量、状态变量与 Bellman 写法\\
+——基于顶级经济学文献的一份建模说明}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{说明目的}
+
+这份说明回答五个彼此相关的问题：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 为什么在 MAH 这篇文章里，劳动力和资本通常不应作为动态 Bellman 的核心控制变量，而应先在静态块中优化掉？
+    \item “生产要素是静态的”具体是什么意思？对医药企业而言，这些生产要素包括什么？
+    \item 当前 Bellman 形式中各个符号分别代表什么经济对象？
+    \item 如果实证上观察到 MAH 之后广义创新都上升，企业能力状态到底应该如何设定：一维还是二维？
+    \item 为什么可以把基准状态写成
+    \[
+    z=\text{research-commercialization capability},
+    \]
+    这样做的优点、缺点、文献依据和可识别性分别是什么？
+\end{enumerate}
+
+全文的核心观点可以概括为一句话：
+
+\begin{quote}
+如果目标是 JDE 甚至更高层级期刊，最稳的基准模型应当把 \emph{research intensity}、
+\emph{commercialization route choice}、\emph{organization choice} 和
+\emph{entry/exit} 作为动态控制变量；把 labor、capital、materials、
+manufacturing quantity 视为静态生产投入，先嵌入优化后的流量利润
+\(\Pi_s\)；并用一个一维 latent capability \(z\) 来概括医药企业在研发与商业化执行上的综合能力。
+\end{quote}
+
+\section{一、为什么静态生产投入通常应先优化掉}
+
+\subsection{1.1 基本逻辑}
+
+动态企业模型通常区分两类选择：
+
+\begin{itemize}[leftmargin=2em]
+    \item \textbf{静态选择}：影响当期利润，但不直接改变下一期状态；
+    \item \textbf{动态选择}：影响未来状态、未来价值或未来可行行动集合。
+\end{itemize}
+
+在你的论文里，真正需要进入 Bellman 递归的对象，是那些会改变未来价值的变量，例如：
+
+\begin{itemize}[leftmargin=2em]
+    \item 研发强度（research intensity）；
+    \item commercialization 路径选择（externalize / transfer / abandon / integrate）；
+    \item 组织状态选择（stay / switch / exit）；
+    \item 进入决策与退出决策。
+\end{itemize}
+
+相反，劳动力、资本、中间投入、批次生产量等对象，通常首先影响的是当期经营利润。
+如果这些对象不带有动态调整成本，也不直接成为下一期状态变量，那么最自然的处理方式是：
+
+\begin{quote}
+先在当期利润函数中把它们优化掉，再把优化后的流量收益放进 Bellman 方程。
+\end{quote}
+
+\subsection{1.2 什么叫“先优化掉”}
+
+以 \(A\) 型企业为例，假设其最原始的当期利润写成：
+
+\[
+\pi_A(z;n,k,m,x_A)
+=
+p\cdot q_A(n,k,m;z)
+-wn-rk-c_m m
++\Omega_A(z)x_A
+-\frac{\chi_A}{\eta}x_A^\eta
+-f_A.
+\]
+
+这里：
+
+\begin{itemize}[leftmargin=2em]
+    \item \(n\)：劳动力投入；
+    \item \(k\)：资本服务或设备使用；
+    \item \(m\)：中间投入；
+    \item \(x_A\)：研发强度；
+    \item \(z\)：企业能力状态。
+\end{itemize}
+
+如果 \(n,k,m\) 只影响当期利润，不进入下一期状态，那么先解：
+
+\[
+\bar{\pi}_A(z;w,r,c_m)
+=
+\max_{n,k,m}
+\left\{
+p\cdot q_A(n,k,m;z)-wn-rk-c_m m
+\right\}.
+\]
+
+这一步做完之后，再写：
+
+\[
+\Pi_A(z)
+=
+\bar{\pi}_A(z;w,r,c_m)
++
+\max_{x_A\ge 0}
+\left\{
+\Omega_A(z)x_A-\frac{\chi_A}{\eta}x_A^\eta
+\right\}
+-f_A.
+\]
+
+这就是“静态层先优化掉，嵌入 \(\Pi_A\)”的含义。
+
+\subsection{1.3 为什么这样做更稳}
+
+这样做的三个好处是：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 它把模型的重心放在你真正想识别的动态边际上：研发、商业化、组织重构和进入退出；
+    \item 它避免把论文误写成一个资本深化或劳动配置模型；
+    \item 它与大量动态企业与创新模型的标准写法一致：Bellman 中使用优化后的 flow payoff，而不是在每期递归中反复展开全部静态投入选择。
+\end{enumerate}
+
+\subsection{1.4 什么时候不能优化掉}
+
+只有在下列情形下，资本或劳动才值得显式进入动态 Bellman：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 它本身就是下一期的状态变量（例如资本存量、产线能力、GMP 资质能力）；
+    \item 它存在显著动态调整成本（例如 hiring/firing frictions、学习成本、安装成本）；
+    \item 它恰好是论文的主要识别对象（例如研究 MAH 是否改变厂房投资、用工升级或资质投资）。
+\end{enumerate}
+
+如果不满足这三条，最稳的做法仍然是静态优化后并入 \(\Pi_s\)。
+
+\section{二、这里的“生产要素”对医药企业具体指什么}
+
+\subsection{2.1 对 A 型和 C 型企业}
+
+如果 \(A\) 表示研发与生产一体化企业，\(C\) 表示生产专门化企业，那么“生产要素”最自然包括：
+
+\begin{itemize}[leftmargin=2em]
+    \item 制造 labor；
+    \item 设备与厂房的资本服务；
+    \item API 和其他中间投入；
+    \item 批次生产数量；
+    \item 质检、放行、仓储与配套运营投入。
+\end{itemize}
+
+这些变量首先影响的是当期 operating profit，因此如果它们不构成动态状态，最自然就属于静态块。
+
+\subsection{2.2 对 B 型企业}
+
+如果 \(B\) 表示研发专门化企业，它并不以内生制造投入为核心，因此它最关键的控制变量通常不是 labor 或 capital，而是：
+
+\begin{itemize}[leftmargin=2em]
+    \item 研发强度 \(x_B\)；
+    \item 项目筛选或 idea generation 规模；
+    \item commercialization 路线选择 \(h\)；
+    \item continue / transfer / abandon 的离散决策。
+\end{itemize}
+
+所以 \(B\) 型企业更接近“创新与组织路线选择”问题，而不是“工厂生产函数选择”问题。
+
+\section{三、Bellman 写法与每个符号的含义}
+
+\subsection{3.1 静态生产块}
+
+定义：
+
+\[
+\bar{\pi}_A(z;w)
+=
+\max_{n,k,m}
+\{\text{operating revenue}-\text{operating cost}\},
+\]
+
+\[
+\bar{\pi}_C(z;p_m,w)
+=
+\max_{n,k,m_c}
+\{\text{manufacturing revenue}-\text{manufacturing cost}\}.
+\]
+
+这里：
+
+\begin{itemize}[leftmargin=2em]
+    \item \(\bar{\pi}_A\)：\(A\) 型企业在给定状态 \(z\) 和价格下，静态生产块优化后的利润；
+    \item \(\bar{\pi}_C\)：\(C\) 型企业提供受托生产服务时，静态生产块优化后的利润；
+    \item \(w\)：工资或综合要素价格；
+    \item \(p_m\)：contract-manufacturing service price。
+\end{itemize}
+
+\subsection{3.2 B 型企业的创新/实现块}
+
+定义：
+
+\[
+\Pi_B(z)
+=
+\max_{x_B,h}
+\left\{
+x_B\Psi_h(z)-\frac{\chi_B}{\eta}x_B^\eta-f_B
+\right\}.
+\]
+
+这里：
+
+\begin{itemize}[leftmargin=2em]
+    \item \(\Pi_B(z)\)：\(B\) 型企业在状态 \(z\) 下的优化后当期流量收益；
+    \item \(x_B\)：research intensity / idea-generation intensity；
+    \item \(h\)：commercialization route choice；
+    \item \(\Psi_h(z)\)：在给定 route \(h\) 下，每个 idea 的期望净收益；
+    \item \(\chi_B\)：研发成本参数；
+    \item \(\eta>1\)：凸成本曲率参数；
+    \item \(f_B\)：固定成本。
+\end{itemize}
+
+如果只保留 external commercialization 这条主路线，则可写为：
+
+\[
+\Psi_{\text{ext}}(z)
+=
+\lambda_{\text{ext}}(z)\bigl(R(z)-p_m-\tau_{ext}\bigr).
+\]
+
+这里：
+
+\begin{itemize}[leftmargin=2em]
+    \item \(\lambda_{\text{ext}}(z)\)：external commercialization 成功率；
+    \item \(R(z)\)：成功 commercialize 之后的私人收益；
+    \item \(p_m\)：支付给外部生产方的价格；
+    \item \(\tau_{ext}\)：external commercialization route-specific governance/compliance cost。
+\end{itemize}
+
+\subsection{3.3 动态 Bellman}
+
+定义：
+
+\[
+V_s(z)=
+\max_{j\in J(s)}
+\left\{
+\Pi_j(z)-\kappa_{sj}
++\beta E[V_j(z')\mid z,j]
+\right\}.
+\]
+
+这里：
+
+\begin{itemize}[leftmargin=2em]
+    \item \(V_s(z)\)：当前组织状态为 \(s\)，能力状态为 \(z\) 时，从今天开始最优决策下的总贴现价值；
+    \item \(J(s)\)：从当前组织状态 \(s\) 出发可行的下一期组织选择集合；
+    \item \(j\)：本期选择的组织形式；
+    \item \(\Pi_j(z)\)：若选择组织形式 \(j\)，对应的优化后当期流量收益；
+    \item \(\kappa_{sj}\)：从 \(s\) 切换到 \(j\) 的组织转换成本；
+    \item \(\beta\)：折现因子；
+    \item \(E[V_j(z')\mid z,j]\)：在当前 \(z\) 且选择 \(j\) 时，明日 continuation value 的条件期望。
+\end{itemize}
+
+一句话解释这条 Bellman：
+
+\begin{quote}
+企业今天不是只看“哪个组织形式当前利润最高”，而是看“当前流量收益减去转换成本，再加上未来继续经营的价值”。
+\end{quote}
+
+\section{四、动态控制变量到底应该是什么}
+
+\subsection{4.1 基准模型中的控制变量}
+
+如果目标是 JDE 甚至更高，最稳的动态控制变量是：
+
+\begin{itemize}[leftmargin=2em]
+    \item \(x_A, x_B\)：研发强度；
+    \item \(h\)：commercialization route choice；
+    \item \(j\)：organization choice（stay / switch / exit）；
+    \item entrant's entry choice：以什么身份进入。
+\end{itemize}
+
+也就是说，\textbf{真正该进入 Bellman 的主控制变量应当是 research intensity、commercialization mode 和 organizational choice，而不是 labor 或 capital。}
+
+\subsection{4.2 为什么不是 labor 或 capital}
+
+因为这篇文章真正想识别的是：
+
+\begin{quote}
+MAH 是否改变 invention-to-commercialization 的组织路线。
+\end{quote}
+
+这不是一篇关于资本深化、就业配置或厂房投资的文章。如果把 labor 和 capital 直接放在动态 Bellman 中，你会把模型中心从“组织路线与创新实现”拖向“生产函数与要素配置”，这会偏离论文主问题。
+
+\section{五、企业能力状态到底应该是什么}
+
+\subsection{5.1 为什么不一定要用 TFP}
+
+在制造业异质企业模型中，常见状态变量是 productivity / efficiency / TFP。
+但在医药创新问题里，企业真正 relevant 的异质性往往不是单纯的工厂物理效率，而是：
+
+\begin{itemize}[leftmargin=2em]
+    \item 研发效率；
+    \item 临床或注册推进能力；
+    \item 商业化执行能力；
+    \item 组织协调能力；
+    \item 监管经验与项目管理经验。
+\end{itemize}
+
+因此，医药企业的“能力状态”不必强行写成 manufacturing TFP。
+
+\subsection{5.2 基准模型：一维 latent capability}
+
+最稳的 baseline 是：
+
+\[
+z=\text{research-commercialization capability}.
+\]
+
+它的含义是：
+
+\begin{quote}
+企业把 original-drug idea 变成可商业化产品的综合能力。
+\end{quote}
+
+这个对象可以概括：
+
+\begin{itemize}[leftmargin=2em]
+    \item idea generation efficiency；
+    \item clinical / regulatory execution ability；
+    \item project-management ability；
+    \item coordinating with external manufacturers；
+    \item retaining value from commercialization。
+\end{itemize}
+
+\subsection{5.3 这样设定的优点}
+
+\begin{enumerate}[leftmargin=2em]
+    \item 它与论文主问题匹配：MAH 主要改的是 innovation-to-commercialization 路线，而不是工厂物理效率；
+    \item 它允许一个 parsimonious baseline：用一维 latent state 总结异质性；
+    \item 它和大量动态企业文献中“用一维持久状态概括企业异质性”的做法一致。
+\end{enumerate}
+
+\subsection{5.4 这样设定的缺点}
+
+\begin{enumerate}[leftmargin=2em]
+    \item 它把 research 和 commercialization 混在一起，机制分解不够锋利；
+    \item 它与数据的映射不唯一：同样高的 \(z\)，可能是研发强，也可能是协调强；
+    \item 如果政策后创新上升，容易混淆“给定 \(z\) 下回报上升”和“\(z\) 本身提升”。
+\end{enumerate}
+
+因此，一维 \(z\) 适合作为 baseline，但最好在附录或 robustness 中讨论更细的扩展。
+
+\section{六、如果上二维，最合理的是哪两个维度}
+
+\subsection{6.1 首选方案}
+
+如果数据与计算都足够强，最合理的二维状态是：
+
+\[
+z=(z_R,z_C),
+\]
+
+其中：
+
+\begin{itemize}[leftmargin=2em]
+    \item \(z_R\)：research capability；
+    \item \(z_C\)：commercialization / execution capability。
+\end{itemize}
+
+为什么这两个维度最合理？因为 MAH 改变的核心不是科学知识生产本身，而是 research-originated ideas 能否被外部实现、推进、协调、注册并最终 commercialize。因此：
+
+\begin{itemize}[leftmargin=2em]
+    \item \(z_R\) 管“能否生成高质量 idea”；
+    \item \(z_C\) 管“能否把 idea 推进成产品”。
+\end{itemize}
+
+\subsection{6.2 备选方案}
+
+另一种可能是：
+
+\[
+z=(z_R,z_M),
+\]
+
+其中：
+
+\begin{itemize}[leftmargin=2em]
+    \item \(z_R\)：research capability；
+    \item \(z_M\)：manufacturing / qualified production capability。
+\end{itemize}
+
+这个版本更容易和 manufacturing licenses、剂型范围、GMP 资质等数据对接，
+但它的缺点是会把论文核心部分地误写成“制造能力问题”，而你的主问题更接近“跨企业 commercialization 的治理与执行能力问题”。
+
+因此，如果必须在两个维度中选最合理的一组，优先建议：
+
+\[
+(z_R,z_C).
+\]
+
+\subsection{6.3 上二维需要的数据}
+
+至少需要两组 proxy：
+
+\paragraph{对 \(z_R\) 的 proxy}
+\begin{itemize}[leftmargin=2em]
+    \item R\&D personnel / scientists；
+    \item R\&D expenditure；
+    \item patent stock / citations；
+    \item IND productivity；
+    \item novel target share；
+    \item 历史 new-drug application success。
+\end{itemize}
+
+\paragraph{对 \(z_C\) 的 proxy}
+\begin{itemize}[leftmargin=2em]
+    \item NDA / approval / launch conversion；
+    \item 历史 commercialization success；
+    \item regulatory experience；
+    \item manufacturing qualification scope；
+    \item entrusted-manufacturing relationships；
+    \item 持证与外部生产的历史经验；
+    \item 质量、放行、合规执行经验。
+\end{itemize}
+
+如果这两组数据拿不到，不要急着上二维。
+
+\section{七、关于 \texorpdfstring{$z=\text{research-commercialization capability}$}{z = research-commercialization capability} 的更深讨论}
+
+\subsection{7.1 第一问：概念上可不可以}
+
+可以。因为在动态企业模型里，状态变量的要求不是“必须是直接观测到的 TFP”，而是：
+
+\begin{quote}
+它能否作为一个 sufficient statistic，稳定地概括当前企业面对的 payoffs、choices 和 transitions。
+\end{quote}
+
+所以，只要 \(z\) 能系统性地影响研发收益、商业化收益、组织切换收益和存活概率，它就可以作为一个合法的 latent capability state。
+
+\subsection{7.2 第二问：顶刊能不能接受}
+
+作为 baseline，完全可以接受，但有前提：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 你要明确它是 latent summary state，而不是直接观测的物理 TFP；
+    \item 你不能让政策效应本身也偷偷塞进 \(z\) 里；政策仍然应通过独立的 friction 或 expected return shifter 进入；
+    \item 你要给出 observable proxies、moments 或 calibration targets 来 discipline 这个状态变量。
+\end{enumerate}
+
+\subsection{7.3 第三问：它能不能被数据估计}
+
+它通常不能被直接“看见”，但可以被间接识别或校准。常见方式有三种：
+
+\begin{enumerate}[leftmargin=2em]
+    \item \textbf{proxy approach}：用 R\&D personnel、patents、IND productivity、launch conversion 等作为 noisy proxies；
+    \item \textbf{moment-based discipline}：让模型匹配 innovation intensity、survival、entry composition、route adoption、conversion 等矩；
+    \item \textbf{discrete-state approximation}：把企业按 observable indices 分成 low / medium / high capability bins，再离散化状态。
+\end{enumerate}
+
+因此，\(z\) 作为 latent capability 是可估的，但通常是\textbf{间接估计}或\textbf{结构校准}，而不是像会计变量那样直接观测。
+
+\section{八、推荐的基准模型写法}
+
+综合上面的讨论，最稳的基准模型是：
+
+\begin{itemize}[leftmargin=2em]
+    \item \textbf{状态变量}：
+    \[
+    z=\text{research-commercialization capability};
+    \]
+    \item \textbf{静态生产块}：
+    labor、capital、materials、manufacturing quantity 先优化掉，写成 \(\bar{\pi}_A,\bar{\pi}_C\)；
+    \item \textbf{动态控制变量}：
+    \[
+    x_A,\ x_B,\ h,\ j,\ \text{entry/exit};
+    \]
+    \item \textbf{Bellman}：
+    \[
+    V_s(z)=\max_{j\in J(s)}
+    \left\{
+    \Pi_j(z)-\kappa_{sj}+\beta E[V_j(z')\mid z,j]
+    \right\}.
+    \]
+\end{itemize}
+
+如果未来数据与计算都更强，再扩展为：
+
+\[
+z=(z_R,z_C).
+\]
+
+\section{结论}
+
+这篇 MAH 论文最稳的建模口径不是“制造业 TFP 模型”，而是：
+
+\begin{quote}
+一个以 innovation-to-commercialization 组织路线为核心的动态企业模型。
+\end{quote}
+
+因此：
+
+\begin{enumerate}[leftmargin=2em]
+    \item Bellman 中真正要优化的是 research intensity、commercialization route、organization choice 和 entry/exit；
+    \item labor、capital、materials 等生产要素若不带动态调整，就应先在静态利润里优化掉；
+    \item 医药企业的基准状态变量不必是 manufacturing TFP，而更合理地是
+    \[
+    z=\text{research-commercialization capability};
+    \]
+    \item 如果上二维，首选
+    \[
+    z=(z_R,z_C).
+    \]
+\end{enumerate}
+
+这套写法既符合动态企业与创新文献的标准分工，也更贴合 MAH 作为“改变 commercialization route 的制度改革”这一论文主问题。
+
+\end{document}

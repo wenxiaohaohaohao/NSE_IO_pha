@@ -1,0 +1,653 @@
+% !TEX program = xelatex
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+
+\onehalfspacing
+\emergencystretch=2em
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.7em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.9em,itemsep=0.25em,topsep=0.35em}
+\renewcommand{\arraystretch}{1.15}
+
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection.}{0.6em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{\thesubsubsection.}{0.6em}{}
+
+\newcommand{\tauext}{\tau_{\mathrm{ext}}}
+\newcommand{\Post}{\mathrm{Post}}
+\newcommand{\Original}{\mathrm{Original}}
+\newcommand{\Exposure}{\mathrm{Exposure}}
+\newcommand{\Conv}{\mathrm{Conv}}
+\newcommand{\R}{\mathbb{R}}
+
+\title{模型降维、机制-落脚点匹配与主文整合说明\\
+\large Model Discipline, Mechanism-Outcome Alignment, and Main-Text Integration Notes}
+\author{}
+\date{Draft for integration into the MAH manuscript}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+这份材料回应一个关键建议：当前 MAH 模型的大体方向是可行的，但维度不应过多，模型机制必须和论文落脚点严格匹配。本文建议将主模型从“完整刻画中国医药产业组织重构”收缩为“解释 MAH 如何通过降低原研药外部商业化摩擦来提高原研药创新”的机制模型。基线模型保留一维能力状态 $z$、外部商业化摩擦 $\tauext$、type-B 研发型企业的原研药/仿制药方向选择，以及 original-drug idea 在 external route 与 outside option 之间的 commercialization assignment。其余复杂维度放入 appendix 或 extension。\\[0.6em]
+\noindent
+This note responds to a key modeling suggestion: the current MAH model is broadly viable, but its dimensionality should be disciplined and each state, control, and equilibrium object should be tied to the paper's final outcome. The proposed revision narrows the baseline model from a full model of organizational restructuring in China's pharmaceutical industry to a mechanism model of how MAH raises original-drug innovation by lowering the route-specific friction of external commercialization. The baseline retains a one-dimensional capability state $z$, the external-commercialization friction $\tauext$, type-B technology-direction choice between generic and original-drug projects, and the commercialization assignment of original-drug ideas between the external route and an outside option. Additional dimensions are moved to appendices or extensions.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% =========================================================
+\section{中文版本：给 MIT 教授和合作者的完整回应}
+% =========================================================
+
+\subsection{核心判断}
+
+MIT 教授的建议可以概括为一句话：
+\begin{quote}
+模型大体上可以，但不要为了完整而完整。主模型必须服务于论文最终落脚点。如果落脚点是原研药创新，那么模型机制就应该围绕原研药 idea 如何从 invention 走向 commercialization，而不是围绕所有可能的组织状态变化展开。
+\end{quote}
+
+这个建议非常重要。它说明当前模型已经过了“机制是否有经济学含义”的第一关，但下一步必须解决“模型是否过度复杂、机制是否和 outcome 严格对齐”的问题。因此，最稳的策略不是继续增加维度，而是明确区分：
+\begin{enumerate}
+    \item 主文基线模型中必须保留的机制对象；
+    \item 可以放入 appendix 的扩展对象；
+    \item 暂时不进入第一版模型的复杂对象。
+\end{enumerate}
+
+主模型应该回答一个问题：
+\begin{quote}
+当 MAH 降低外部商业化路径的治理与合规摩擦 $\tauext$ 时，为什么研发型企业更愿意做原研药项目，并且为什么更多原研药 idea 能够被实现为产品？
+\end{quote}
+
+主模型不应回答所有问题。例如，它不需要同时完整解释所有 A/B/C 企业之间的状态跃迁、所有生产商利润变化、所有生产服务市场均衡、所有能力积累路径和所有项目转让市场。那些对象可以作为 appendix、robustness 或 future extension。
+
+\subsection{给教授的建议性回复}
+
+可以对教授这样回答：
+
+\begin{quote}
+您的建议非常对。我们现在准备把模型目标再收紧。它不是要建立一个完整的中国医药产业结构模型，而是要解释一个核心机制：MAH 降低原研药外部商业化路径的治理与合规摩擦，从而提高原研药 idea 被实现为产品的概率，并进一步影响企业的技术方向选择。
+
+所以我们会把 baseline 模型做得更克制。主模型只保留和这个机制直接相关的对象：一维能力状态 $z$、原研药外部商业化摩擦 $\tauext$、type-B 研发型企业的原研药/仿制药方向选择，以及 original-drug idea 在 external route 和 outside option 之间的 commercialization assignment。Type-A 主要作为内部商业化 benchmark，type-C 主要提供合格生产服务和 $p_m$ 价格，不把所有类型都对称地复杂化。
+
+更复杂的部分，比如二维能力 $z=(z_R,z_C)$、完整 A/B/C transition matrix、type-A 的技术方向选择、producer-side general equilibrium、能力积累和完整 contracting/bargaining，我们会放到 appendix 或 extension，而不放进 baseline。这样模型维度和文章落脚点会更匹配：落脚点是 original-drug innovation，机制是 commercialization assignment，而不是组织重构本身。
+\end{quote}
+
+这个回答的重点不是防御，而是吸收建议。它承认模型需要降维，同时保留了文章最有辨识度的机制。
+
+\subsection{模型目标的重新定位}
+
+当前项目的主线应从以下较宽表述：
+\[
+\mathrm{MAH}\Rightarrow \mathrm{A/B/C\ organizational\ restructuring}\Rightarrow \mathrm{innovation}
+\]
+
+收缩为以下机制链条：
+\[
+\mathrm{MAH}\Rightarrow \tauext \downarrow
+\Rightarrow \mathrm{external\ commercialization\ value}\uparrow
+\Rightarrow \mathrm{original\text{-}drug\ effort\ and\ realization}\uparrow.
+\]
+
+这一调整的含义是：A/B/C 仍然有用，但它们不再是论文的最终落脚点。A/B/C 是组织状态和机制载体；真正的最终 outcome 是：
+\[
+N_O,\qquad S_O,\qquad \Conv_O,
+\]
+其中 $N_O$ 表示 realized original-drug products 数量，$S_O$ 表示 realized products 中 original-drug share，$\Conv_O$ 表示 original-drug application 或 idea 到 realized product 的转化率。
+
+因此，主文中应反复强调：
+\begin{quote}
+Commercialization assignment 是机制，original-drug innovation 是结果。组织重构是 supporting evidence，而不是论文本身的最终对象。
+\end{quote}
+
+\subsection{主模型应保留的四个核心结构}
+
+基线模型只需要保留四个机制必要对象。
+
+\begin{longtable}{p{0.26\textwidth}p{0.18\textwidth}p{0.47\textwidth}}
+\toprule
+模型对象 & baseline 中是否保留 & 理由 \\
+\midrule
+一维能力状态 $z$ & 保留 & 足够刻画企业异质性，同时避免状态空间爆炸。 \\
+\addlinespace
+外部商业化摩擦 $\tauext$ & 保留 & 这是 MAH 进入模型的核心 primitive。 \\
+\addlinespace
+type-B 技术方向选择 $x_B^G,x_B^O$ & 保留 & 直接连接“从仿制药项目转向原研药项目”的创新方向变化。 \\
+\addlinespace
+original-drug idea 的 external-vs-alternative commercialization assignment & 保留 & 这是机制核心，直接连接制度改革和原研药 realization。 \\
+\bottomrule
+\end{longtable}
+
+这里最重要的是 type-B。Type-B 研发型企业是机制主角，因为它们有原研药 idea，但缺少完整内部生产能力，因此最受 $\tauext$ 下降影响。Type-A 可以作为 integrated internal benchmark；type-C 可以作为合格生产服务供给端，用来决定或支持 $p_m$。
+
+\subsection{不要让 A/B/C 对称复杂化}
+
+在主模型中，A/B/C 不应承担同等复杂度。
+
+\subsubsection{Type-A：内部商业化 benchmark}
+
+Type-A 是一体化企业，可以内部研发和内部生产。它的主要作用是提供 internal commercialization benchmark：
+\[
+\Pi_A(z).
+\]
+主文中不需要让 type-A 同时完整选择 $x_A^G,x_A^O$、external route、internal route、transfer route 和 switching route。这样做会让模型维度迅速上升，但对解释 MAH 的核心作用帮助有限。
+
+\subsubsection{Type-B：核心机制主体}
+
+Type-B 是研发型企业，是主模型的核心。它面对两个关键选择：
+\begin{enumerate}
+    \item 技术方向选择：在 generic-oriented projects 和 original-drug-oriented projects 之间分配努力；
+    \item 商业化路径选择：原研药 idea 是通过 external route 实现，还是进入 alternative route。
+\end{enumerate}
+
+因此，type-B 的 flow payoff 应该是主模型的中心方程。
+
+\subsubsection{Type-C：合格生产服务供给者}
+
+Type-C 不应成为第二主角。它在基线中的作用是提供 qualified contract-manufacturing service，并决定或支持生产服务价格 $p_m$。完整的 type-C entry、producer-side profits 和 contract-manufacturing market clearing 可以放入 appendix。
+
+\subsection{将 route choice 压缩为 external route vs. outside option}
+
+如果主文同时展开
+\[
+ext,\quad int,\quad tr,\quad ab,
+\]
+读者很容易被路线分类淹没。基线中更干净的写法是：
+\[
+\Psi_B^O(z;p_m,M)=\max\{H_{B,O}^{ext}(z,p_m;M),H_{B,O}^{alt}(z)\}.
+\]
+
+其中，external route 的价值为
+\[
+H_{B,O}^{ext}(z,p_m;M)=\lambda_{ext}(z,p_m)R_B^O(z)-p_m-\tauext(M),
+\]
+而 $H_{B,O}^{alt}(z)$ 概括 internalization、project transfer 和 abandonment 的最优 outside option。
+
+这种写法保留了核心机制：
+\[
+\frac{\partial H_{B,O}^{ext}}{\partial \tauext}=-1,
+\qquad
+\frac{\partial H_{B,O}^{alt}}{\partial \tauext}=0.
+\]
+
+因此，当 MAH 使 $\tauext$ 下降时，external route 的价值上升，而 alternative route 不直接受该摩擦影响。
+
+\subsection{type-B 的技术方向选择}
+
+主模型中建议把 type-B 的研发努力分成两类：
+\[
+x_B^G \ge 0,\qquad x_B^O \ge 0,
+\]
+其中 $G$ 表示 generic-oriented effort，$O$ 表示 original-drug-oriented effort。也可以写成总努力 $x_B$ 和原研方向份额 $\omega_B^O$：
+\[
+x_B^O=\omega_B^O x_B,\qquad x_B^G=(1-\omega_B^O)x_B.
+\]
+
+type-B 的流量收益可以写成：
+\[
+\Pi_B(z;M,p_m)
+=
+\max_{x_B^G,x_B^O}\left\{
+ x_B^G\Psi_B^G(z)
++x_B^O\Psi_B^O(z;p_m,M)
+-C_B(x_B^G,x_B^O;z)
+\right\}-f_B.
+\]
+
+这里的核心限制是：MAH 主要提高 $\Psi_B^O$，而不是直接提高 $\Psi_B^G$。也就是说，政策不是 general R\&D productivity shock，而是 original-drug commercialization value shock：
+\[
+\tauext\downarrow
+\Rightarrow H_{B,O}^{ext}\uparrow
+\Rightarrow \Psi_B^O\uparrow
+\Rightarrow x_B^O\uparrow,
+\qquad
+\omega_B^O\uparrow.
+\]
+
+这正好回应“商业化机制和创新结果是否联系紧密”的质疑。商业化不是直接等于创新；商业化路径改善提高了原研项目的预期净价值，进而改变研发努力方向和项目实现概率。
+
+\subsection{基线模型的最简正式结构}
+
+一个干净的主文 baseline 可以写成以下形式。
+
+企业状态：
+\[
+s\in\{A,B,C\},\qquad z\in Z.
+\]
+
+政策对象：
+\[
+\tauext(1)<\tauext(0).
+\]
+
+external commercialization route：
+\[
+H_{B,O}^{ext}(z,p_m;M)
+=
+\lambda_{ext}(z,p_m)R_B^O(z)-p_m-\tauext(M).
+\]
+
+原研药项目价值：
+\[
+\Psi_B^O(z;p_m,M)
+=
+\max\{H_{B,O}^{ext}(z,p_m;M),H_{B,O}^{alt}(z)\}.
+\]
+
+type-B 流量收益：
+\[
+\Pi_B(z;M,p_m)
+=
+\max_{x_B^G,x_B^O}\left\{
+ x_B^G\Psi_B^G(z)
++x_B^O\Psi_B^O(z;p_m,M)
+-C_B(x_B^G,x_B^O;z)
+\right\}-f_B.
+\]
+
+最终 outcomes：
+\[
+N_O(M),\qquad S_O(M),\qquad \Conv_O(M).
+\]
+
+核心预测：
+\[
+\tauext\downarrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^O\uparrow
+\Rightarrow
+N_O,\ S_O,\ \Conv_O\uparrow.
+\]
+
+这就是最紧的机制。它保留了 JDE 需要的动态和组织结构，但避免把主模型写成过度复杂的产业组织模型。
+
+\subsection{哪些维度应放入 appendix}
+
+以下内容重要，但不应进入 baseline 主模型：
+
+\begin{longtable}{p{0.35\textwidth}p{0.55\textwidth}}
+\toprule
+扩展维度 & 推荐处理方式 \\
+\midrule
+二维能力状态 $z=(z_R,z_C)$ & 放 appendix。主文只保留一维 $z$，二维作为 robustness 或 extension。 \\
+\addlinespace
+完整 route set $\{ext,int,tr,ab\}$ & 主文用 external vs. alternative，appendix 再展开 alternative 的内部结构。 \\
+\addlinespace
+完整 A/B/C transition matrix & 放 empirical second-layer 或 appendix。它是机制验证，不是最终 outcome。 \\
+\addlinespace
+type-A 的 $x_A^G,x_A^O$ & 可作为扩展。baseline 先把方向选择放在 type-B。 \\
+\addlinespace
+producer-side general equilibrium & 放 appendix 或 counterfactual section。主文只保留 $p_m$ 作为价格对象。 \\
+\addlinespace
+能力积累和 learning-by-innovation & 暂不进入第一版。它会把文章推向长期能力积累模型。 \\
+\addlinespace
+完整 contracting / bargaining model & 不建议进入第一版。会把论文带向 incomplete-contract paper。 \\
+\bottomrule
+\end{longtable}
+
+这些维度不是错，而是不应该同时出现在主模型。JDE 版本的核心不是炫耀模型复杂度，而是让模型机制、数据对象和论文结论严格对齐。
+
+\subsection{主文应如何修改}
+
+\subsubsection{Section 3 开头加入 baseline discipline}
+
+建议在模型部分开头加入类似表述：
+
+\begin{quote}
+The baseline model is deliberately kept lower-dimensional. Its purpose is not to describe all organizational and technological margins in China's pharmaceutical industry, but to isolate the minimum structure needed to link MAH to original-drug innovation through commercialization assignment.
+\end{quote}
+
+中文意思是：baseline 模型故意保持低维。它不是要描述中国医药产业所有组织和技术边际，而是保留足以把 MAH、commercialization assignment 和 original-drug innovation 连接起来的最小结构。
+
+\subsubsection{Section 4 的命题围绕最终 outcomes}
+
+Section 4 的命题不要围绕“组织状态是否变化”作为第一对象，而应围绕：
+\[
+N_O,\quad S_O,\quad \Conv_O.
+\]
+组织转移和 type-C 反应作为 supporting predictions。
+
+\subsubsection{Section 5 的经验设计围绕机制层级}
+
+Section 5 应按照以下顺序组织：
+\begin{enumerate}
+    \item route-use evidence：holder-producer separation、external route use；
+    \item original-drug realization：$N_O$、$S_O$、$\Conv_O$；
+    \item technology-direction reallocation：$x_B^O$ 或 original-drug project share；
+    \item heterogeneity：研发型但缺乏生产能力的企业是否反应更强；
+    \item second-layer evidence：A/B/C transition matrix、type-C producer-side outcomes。
+\end{enumerate}
+
+这样实证结构和模型机制是一致的。
+
+\subsection{最终建议}
+
+这次修改的原则可以压缩成三句话：
+\begin{enumerate}
+    \item 主模型降维，不再追求完整刻画所有组织和生产边际；
+    \item 最终落脚点明确为 original-drug innovation，而不是组织重构本身；
+    \item 复杂维度进入 appendix，使主文保持机制清楚、维度克制、经验可对接。
+\end{enumerate}
+
+这会让文章更像一篇 JDE 论文：有制度背景，有机制模型，有可检验预测，有发展经济学含义，而不是一个过度展开的结构性产业组织模型。
+
+\newpage
+
+% =========================================================
+\section{English version: full response for the MIT professor and coauthors}
+% =========================================================
+
+\subsection{Main assessment}
+
+The professor's suggestion can be summarized as follows:
+\begin{quote}
+The model is broadly acceptable, but it should not become high-dimensional for its own sake. Every state, control, and equilibrium object in the baseline must serve the paper's final outcome. If the final outcome is original-drug innovation, the model should focus on how original-drug ideas move from invention to commercialization, rather than on all possible dimensions of organizational restructuring.
+\end{quote}
+
+This is a constructive and important comment. It means that the project has passed the first test: the mechanism is economically meaningful. The next task is to discipline the model so that the mechanism, empirical objects, and final outcomes are tightly aligned. The right response is not to add more layers. The right response is to define three categories clearly:
+\begin{enumerate}
+    \item objects that must remain in the main baseline model;
+    \item objects that are useful but should be moved to appendices or extensions;
+    \item objects that are not necessary for the first version.
+\end{enumerate}
+
+The main model should answer one question:
+\begin{quote}
+When MAH lowers the governance and compliance friction of the external commercialization route, why do research-oriented firms allocate more effort toward original-drug projects, and why are more original-drug ideas realized as marketable products?
+\end{quote}
+
+The baseline does not need to answer every possible question. It does not need to fully characterize all A/B/C transitions, all producer-side profit effects, all equilibrium responses in the contract-manufacturing market, all capability-accumulation channels, or all project-transfer markets. Those elements can be placed in appendices, robustness exercises, or future extensions.
+
+\subsection{Suggested reply to the professor}
+
+A concise reply can be written as follows:
+
+\begin{quote}
+This is a very helpful suggestion. We are revising the model so that the baseline is more disciplined. The model is not intended to be a complete structural model of China's pharmaceutical industry. Its purpose is to isolate one mechanism: MAH lowers the governance and compliance friction of the external commercialization route for original-drug ideas, thereby increasing the probability that research-originated ideas are realized as marketable products and feeding back into firms' technology-direction choices.
+
+Accordingly, the baseline model will retain only the objects directly needed for this mechanism: a one-dimensional capability state $z$, the external-commercialization friction $\tauext$, type-B firms' choice between generic-oriented and original-drug-oriented effort, and the commercialization assignment of original-drug ideas between the external route and an outside option. Type-A firms will serve mainly as the internal-commercialization benchmark, while type-C firms will provide qualified manufacturing services and support the contract-manufacturing price $p_m$. We will not make all organizational types symmetrically complex in the baseline.
+
+More complicated dimensions, such as a two-dimensional capability state $z=(z_R,z_C)$, the full A/B/C transition matrix, type-A technology-direction choice, producer-side general equilibrium, capability accumulation, and a full contracting or bargaining layer, will be moved to appendices or extensions. This keeps the baseline aligned with the paper's final outcome: original-drug innovation. The mechanism is commercialization assignment; organizational restructuring is a supporting margin, not the outcome by itself.
+\end{quote}
+
+The tone is important. The reply should not be defensive. It should show that the comment improves the paper by making the model more disciplined.
+
+\subsection{Repositioning the model}
+
+The broad earlier version of the model can be written as
+\[
+\mathrm{MAH}\Rightarrow \mathrm{A/B/C\ organizational\ restructuring}\Rightarrow \mathrm{innovation}.
+\]
+
+The revised version should be narrower:
+\[
+\mathrm{MAH}\Rightarrow \tauext \downarrow
+\Rightarrow \mathrm{external\ commercialization\ value}\uparrow
+\Rightarrow \mathrm{original\text{-}drug\ effort\ and\ realization}\uparrow.
+\]
+
+This does not remove A/B/C from the model. It changes their role. A/B/C remain useful organizational states and mechanism carriers, but they are not the final outcome. The final innovation outcomes are
+\[
+N_O,\qquad S_O,\qquad \Conv_O,
+\]
+where $N_O$ denotes the number of realized original-drug products, $S_O$ denotes the share of original drugs among realized products, and $\Conv_O$ denotes the conversion rate from original-drug applications or ideas to realized products.
+
+The main text should repeatedly make the following distinction:
+\begin{quote}
+Commercialization assignment is the mechanism. Original-drug innovation is the outcome. Organizational reallocation is supporting evidence, not the final object of the paper.
+\end{quote}
+
+\subsection{Four objects to retain in the baseline model}
+
+The baseline model should retain only four essential objects.
+
+\begin{longtable}{p{0.28\textwidth}p{0.18\textwidth}p{0.46\textwidth}}
+\toprule
+Model object & Keep in baseline? & Rationale \\
+\midrule
+One-dimensional capability state $z$ & Yes & It captures firm heterogeneity while avoiding state-space explosion. \\
+\addlinespace
+External-commercialization friction $\tauext$ & Yes & This is the central primitive through which MAH enters the model. \\
+\addlinespace
+Type-B technology-direction choice $x_B^G,x_B^O$ & Yes & It links MAH to the shift from generic-oriented projects to original-drug-oriented projects. \\
+\addlinespace
+Commercialization assignment of original-drug ideas between the external route and an alternative option & Yes & This is the core mechanism connecting institutional reform to original-drug realization. \\
+\bottomrule
+\end{longtable}
+
+The key actor is type-B. Type-B firms have research capability but lack full internal manufacturing capacity. They are therefore most affected by a decline in $\tauext$. Type-A firms can be treated as the integrated internal benchmark. Type-C firms can be modeled as suppliers of qualified manufacturing services that support or determine the price $p_m$.
+
+\subsection{Do not make A/B/C symmetrically complex}
+
+The three organizational types should not carry the same degree of complexity in the baseline.
+
+\subsubsection{Type-A as the internal benchmark}
+
+Type-A firms are integrated firms that can conduct research and organize production internally. In the baseline, their main role is to provide an internal-commercialization benchmark:
+\[
+\Pi_A(z).
+\]
+The main text does not need type-A firms to choose simultaneously between $x_A^G$, $x_A^O$, external commercialization, internal commercialization, project transfer, and organizational switching. That would raise dimensionality without increasing the clarity of the MAH mechanism.
+
+\subsubsection{Type-B as the core mechanism actor}
+
+Type-B firms are the central actors. They face two key choices:
+\begin{enumerate}
+    \item technology-direction choice: how to allocate effort between generic-oriented and original-drug-oriented projects;
+    \item commercialization assignment: whether an original-drug idea is realized through the external route or falls back to an alternative option.
+\end{enumerate}
+
+The type-B flow payoff should therefore be the core equation in the baseline model.
+
+\subsubsection{Type-C as the supplier of qualified manufacturing services}
+
+Type-C should not become a second main actor. In the baseline, type-C firms provide qualified contract-manufacturing services and support the price $p_m$. Full type-C entry, producer-side profits, and contract-manufacturing market clearing can be moved to an appendix.
+
+\subsection{Compress route choice to external route versus outside option}
+
+If the main text separately expands
+\[
+ext,\quad int,\quad tr,\quad ab,
+\]
+readers may lose the core mechanism. A cleaner baseline is
+\[
+\Psi_B^O(z;p_m,M)=\max\{H_{B,O}^{ext}(z,p_m;M),H_{B,O}^{alt}(z)\}.
+\]
+
+The value of the external route is
+\[
+H_{B,O}^{ext}(z,p_m;M)=\lambda_{ext}(z,p_m)R_B^O(z)-p_m-\tauext(M),
+\]
+while $H_{B,O}^{alt}(z)$ summarizes the best alternative among internalization, project transfer, and abandonment.
+
+This formulation preserves the mechanism:
+\[
+\frac{\partial H_{B,O}^{ext}}{\partial \tauext}=-1,
+\qquad
+\frac{\partial H_{B,O}^{alt}}{\partial \tauext}=0.
+\]
+
+Therefore, when MAH lowers $\tauext$, the value of the external route rises, while the alternative option is not directly affected by the external-route friction.
+
+\subsection{Type-B technology-direction choice}
+
+The baseline should split type-B research effort into two directions:
+\[
+x_B^G \ge 0,\qquad x_B^O \ge 0,
+\]
+where $G$ denotes generic-oriented effort and $O$ denotes original-drug-oriented effort. Equivalently, one may write total effort $x_B$ and original-drug effort share $\omega_B^O$:
+\[
+x_B^O=\omega_B^O x_B,\qquad x_B^G=(1-\omega_B^O)x_B.
+\]
+
+A type-B flow payoff can be written as
+\[
+\Pi_B(z;M,p_m)
+=
+\max_{x_B^G,x_B^O}\left\{
+ x_B^G\Psi_B^G(z)
++x_B^O\Psi_B^O(z;p_m,M)
+-C_B(x_B^G,x_B^O;z)
+\right\}-f_B.
+\]
+
+The key restriction is that MAH primarily raises $\Psi_B^O$, not $\Psi_B^G$. Thus, MAH is not a general R\&D productivity shock. It is a shock to the commercialization value of original-drug projects:
+\[
+\tauext\downarrow
+\Rightarrow H_{B,O}^{ext}\uparrow
+\Rightarrow \Psi_B^O\uparrow
+\Rightarrow x_B^O\uparrow,
+\qquad
+\omega_B^O\uparrow.
+\]
+
+This resolves the concern that the commercialization mechanism and innovation outcomes are weakly connected. Commercialization does not mechanically equal innovation. Rather, an improvement in the commercialization route raises the expected net value of original-drug projects, which then changes firms' direction of R\&D effort and the probability that original-drug ideas are realized.
+
+\subsection{Minimal formal baseline}
+
+A clean main-text baseline can be written as follows.
+
+Firm states:
+\[
+s\in\{A,B,C\},\qquad z\in Z.
+\]
+
+Policy object:
+\[
+\tauext(1)<\tauext(0).
+\]
+
+External commercialization route:
+\[
+H_{B,O}^{ext}(z,p_m;M)
+=
+\lambda_{ext}(z,p_m)R_B^O(z)-p_m-\tauext(M).
+\]
+
+Original-drug project value:
+\[
+\Psi_B^O(z;p_m,M)
+=
+\max\{H_{B,O}^{ext}(z,p_m;M),H_{B,O}^{alt}(z)\}.
+\]
+
+Type-B flow payoff:
+\[
+\Pi_B(z;M,p_m)
+=
+\max_{x_B^G,x_B^O}\left\{
+ x_B^G\Psi_B^G(z)
++x_B^O\Psi_B^O(z;p_m,M)
+-C_B(x_B^G,x_B^O;z)
+\right\}-f_B.
+\]
+
+Final outcomes:
+\[
+N_O(M),\qquad S_O(M),\qquad \Conv_O(M).
+\]
+
+Main prediction:
+\[
+\tauext\downarrow
+\Rightarrow
+\Psi_B^O\uparrow
+\Rightarrow
+x_B^O\uparrow
+\Rightarrow
+N_O,\ S_O,\ \Conv_O\uparrow.
+\]
+
+This is the tightest version of the mechanism. It preserves the dynamic and organizational content needed for a JDE-style paper, while preventing the baseline from becoming an unnecessarily complex structural industrial-organization model.
+
+\subsection{Dimensions to move to appendices}
+
+The following dimensions are useful, but should not enter the baseline simultaneously.
+
+\begin{longtable}{p{0.36\textwidth}p{0.54\textwidth}}
+\toprule
+Extension & Recommended treatment \\
+\midrule
+Two-dimensional capability state $z=(z_R,z_C)$ & Put in appendix. The main text should use one-dimensional $z$; the two-dimensional version can be a robustness or extension. \\
+\addlinespace
+Full route set $\{ext,int,tr,ab\}$ & Use external versus alternative in the main text; expand the internal structure of the alternative option in the appendix. \\
+\addlinespace
+Full A/B/C transition matrix & Use as empirical second-layer evidence or appendix material. It validates the mechanism but is not the final outcome. \\
+\addlinespace
+Type-A technology-direction choice $x_A^G,x_A^O$ & Treat as an extension. The baseline should first place direction choice in type-B. \\
+\addlinespace
+Producer-side general equilibrium & Put in appendix or counterfactual section. The main text can retain $p_m$ as the relevant price object. \\
+\addlinespace
+Capability accumulation and learning-by-innovation & Do not include in the first version. This would shift the paper toward a long-run capability-accumulation model. \\
+\addlinespace
+Full contracting or bargaining model & Not recommended for the first version. It would turn the paper into an incomplete-contract or bargaining paper. \\
+\bottomrule
+\end{longtable}
+
+These dimensions are not wrong. The point is that they should not all appear in the main model. A JDE version should prioritize disciplined mechanism-to-outcome alignment over model complexity.
+
+\subsection{Concrete edits to the main manuscript}
+
+\subsubsection{Add baseline discipline at the start of Section 3}
+
+The model section should begin with a discipline statement:
+
+\begin{quote}
+The baseline model is deliberately kept lower-dimensional. Its purpose is not to describe all organizational and technological margins in China's pharmaceutical industry, but to isolate the minimum structure needed to link MAH to original-drug innovation through commercialization assignment.
+\end{quote}
+
+This sentence tells the reader that the reduced dimensionality is a modeling choice, not a weakness.
+
+\subsubsection{State Section 4 predictions around final outcomes}
+
+The propositions in Section 4 should be organized around
+\[
+N_O,\quad S_O,\quad \Conv_O,
+\]
+not around organizational transition as the first-order object. Organizational transitions and type-C responses should appear as supporting predictions.
+
+\subsubsection{Organize Section 5 around the empirical hierarchy}
+
+The empirical section should follow the mechanism hierarchy:
+\begin{enumerate}
+    \item route-use evidence: holder-producer separation and external-route use;
+    \item original-drug realization: $N_O$, $S_O$, and $\Conv_O$;
+    \item technology-direction reallocation: $x_B^O$ or the original-drug project share;
+    \item heterogeneity: stronger responses among research-capable firms lacking internal manufacturing capacity;
+    \item second-layer evidence: A/B/C transition matrices and type-C producer-side outcomes.
+\end{enumerate}
+
+This makes the empirical structure match the model.
+
+\subsection{Final recommendation}
+
+The revision can be summarized in three principles:
+\begin{enumerate}
+    \item reduce the dimensionality of the baseline model and avoid modeling every organizational and production margin simultaneously;
+    \item define the final object as original-drug innovation rather than organizational restructuring per se;
+    \item move complex dimensions to appendices so that the main text remains mechanism-focused, empirically connected, and interpretable.
+\end{enumerate}
+
+With this revision, the paper becomes more suitable for JDE. It has an institutional setting, a disciplined mechanism model, testable predictions, and a development-economics interpretation. It no longer looks like an overextended structural industrial-organization model.
+
+\end{document}

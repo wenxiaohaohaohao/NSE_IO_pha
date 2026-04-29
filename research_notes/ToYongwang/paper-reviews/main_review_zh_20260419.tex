@@ -1,0 +1,179 @@
+\documentclass[12pt]{ctexart}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks,pdfpagelabels=false]{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+
+\setlist[itemize]{leftmargin=1.8em,itemsep=0.3em,topsep=0.4em}
+\setlist[enumerate]{leftmargin=2em,itemsep=0.45em,topsep=0.4em}
+\emergencystretch=3em
+\newcommand{\fileref}[1]{\nolinkurl{#1}}
+
+\title{\textbf{当前稿中文评审意见}\\[0.4em]
+\large \textit{Organizational Routes, Commercialization Assignment, and the MAH System in China}}
+\author{基于工作区当前 \texttt{main.tex} 的内部评审}
+\date{2026年4月19日}
+
+\begin{document}
+
+\maketitle
+
+\section*{一、评审口径与总体判断}
+
+这份评审\textbf{不评价文章完成度}，也不以“是否已经可投稿”为标准。考虑到这个项目目前只推进了一个月、且主要用途是与导师讨论项目进度，我下面只按五个标准来评估当前版本：
+\begin{enumerate}
+\item 研究对象是否清楚；
+\item 制度机制是否和理论主语一致；
+\item 模型设定是否自洽；
+\item 实证设计是否和模型对象一一对应；
+\item 文内前后是否存在会影响讨论的逻辑不对照。
+\end{enumerate}
+
+按这个标准看，我对当前版本的总体判断是：\textbf{项目方向是对的，而且已经形成了一个可以和导师认真讨论的研究框架。} 当前最强的进展，不是“写了多少页”，而是把主语从“MAH 是否一般性促进创新”转成了“MAH 是否通过降低外部商业化路线的制度摩擦，改变 research-originated original-drug ideas 的 commercialization assignment”。这个聚焦是对的，也是整篇最有价值的地方。
+
+我也想先明确一点：从目前文本来看，我\textbf{没有看到明显的制度事实与机制主语相互打架的地方}。真正需要优先处理的，不是“内容还不够多”，而是几个关键接口还需要进一步统一：尤其是\textbf{时间结构、内部化路线与组织切换的关系、政策进入模型的纪律条件、以及经验对象的可观测定义。}
+
+一句话概括：\textbf{这不是“完成度问题”，而是“接口统一问题”。}
+
+\section*{二、当前版本已经比较稳的内容}
+
+\begin{enumerate}
+\item \textbf{研究对象和机制主语已经清楚。}
+当前稿把 MAH 的经济含义明确写成外部商业化路线上的治理/合规摩擦 $\tau_{ext}$，而不是需求冲击、科研生产率冲击，或一个对所有企业统一生效的政策虚拟变量。这个口径在 \fileref{main.tex:160--172} 说得很清楚，在模型中又通过
+\fileref{main.tex:338--379} 的 $H_B^{ext}(z,p_m;M)$、$H_B^{int}(z)$ 和 $\Psi_B(z;p_m,M)$ 被正式写出来。这个从制度到模型原语的映射，是当前版本最成熟的一块。
+
+\item \textbf{“发明”与“实现/商业化”分开，是全文最有解释力的设定。}
+稿件不是把创新直接等同于研发投入或专利申请，而是把 original-drug innovation 写成“先生成 idea，再决定如何 commercialize”的两阶段过程。这样一来，A/B/C 三类企业的设定才真正有了经济含义：A 是 integrated implementation，B 是 research-specialized，C 是 manufacturing-specialized。这个框架使得 MAH 的作用自然落在 route assignment 上，而不必假装政策直接提高科研效率。
+
+\item \textbf{$p_m$、$\lambda_{ext}$、$\tau_{ext}$ 三个对象被分开，是很重要的理论进步。}
+从当前文本看，作者已经很有意识地把“外部生产价格”、“外部路线执行成功率”和“外部路线制度摩擦”拆开。这一点在主文和附录里都保持得比较一致。这个拆分非常重要，因为如果三者混在一起，后面的实证和结构估计就会失去解释力。
+
+\item \textbf{第一层和第二层经验对象的层次感是对的。}
+把 route use、original-drug realization、research-oriented entry 放在第一层；把组织转移矩阵和制造端结果放在第二层，这个 hierarchy 是合理的。它避免了把所有结果都塞进“企业边界变化”这一种表述里，也让实证部分更贴近机制本身。
+\end{enumerate}
+
+\section*{三、最值得和导师优先讨论的四个核心问题}
+
+\begin{enumerate}
+\item \textbf{时间结构目前没有完全统一，这是我认为最需要优先修正的内部一致性问题。}
+
+在 timing 说明里，\fileref{main.tex:1036--1048} 写的是：企业先以当前组织形态进入当期、做当期静态经营和创新决策，然后再决定是否切换组织形态。但在 Bellman 方程里，\fileref{main.tex:404--414} 和 \fileref{main.tex:1263--1267} 又把
+\[
+W_{sj}(z;M)=\Pi_j(z;M,w,p_m)-\kappa_{sj}(z;M)+\beta E[V_j(z' ;M)\mid z,j]
+\]
+解释成“选择下一期组织形态 $j$ 的价值”，并让 $\Pi_j$ 作为\textbf{当前期} flow payoff 进入。
+
+这里存在一个时间上的张力：如果 $j$ 真的是“下一期组织形态”，那么当前期收益更自然应该来自当前形态 $s$；如果 $\Pi_j$ 已经是当前期收益，那么含义更像“本期立即切换并立即以 $j$ 形态生产”。这两种 timing 都可以做，但必须二选一，不能在文字和 Bellman 里同时使用。
+
+我建议和导师讨论时把这点明确成一个建模决策：
+\begin{itemize}
+\item 要么采用“\textbf{当期切换、当期生效}”的写法，那就把 timing 文字改成与 Bellman 一致；
+\item 要么采用“\textbf{当期决策、下期生效}”的写法，那就把 Bellman 改成当前期先拿 $\Pi_s$，再加切换成本和 continuation value。
+\end{itemize}
+
+这不是技术细节，而是会直接影响 B 型企业内部化、组织切换和 transition moments 的解释。
+
+\item \textbf{B 企业的“内部化路线”和“B\textrightarrow A 组织切换”之间，还需要更清楚的边界。}
+
+当前稿在 \fileref{main.tex:349--352} 把
+\[
+H_B^{int}(z)=\lambda_{int}(z)R_B(z)-\kappa_I(z)
+\]
+定义成 B 企业面对的一条\textbf{project-level internal implementation route}。同时在附录里，\fileref{main.tex:1153--1155} 又明确说 $\kappa_I(z)$ 和组织切换成本 $\kappa_{sj}(z;M)$ 不是同一个东西。
+
+这一点在理论上是可以成立的：一个是“单个项目内部化”的成本，一个是“企业组织形态切换”的成本。但问题在于，后面的经验识别部分又在 \fileref{main.tex:2161} 把 $B\rightarrow A$ 的转移矩拿来识别 internalization 的相对吸引力，从而识别 $\kappa_I(z)$。这样一来，项目层 internal route 和企业层 organization switching 在经验上就被重新缠在一起了。
+
+我觉得这里需要和导师一起决定一个更干净的 baseline：
+\begin{itemize}
+\item 如果内部化本质上就是“从 B 变成 A”，那就把 internal route 和组织切换合并，避免双重定义；
+\item 如果 internal route 和 B\textrightarrow A 确实要同时存在，那就要明确说清：哪个 moment 识别 $\kappa_I(z)$，哪个 moment 识别 $\kappa_{BA}(z)$，二者不能再混着解释。
+\end{itemize}
+
+在我看来，这是当前模型里第二个最需要尽快钉住的接口。
+
+\item \textbf{“政策只通过外部路线进入模型”这条纪律条件，还需要在全模型里保持到底。}
+
+当前稿在 \fileref{main.tex:372--379} 很明确地强调：MAH 直接影响的只有 external route，$H_B^{int}$ 和 $H_B^{tr}$ 对 $\tau_{ext}$ 的导数都是零。这个纪律条件非常好，也是整篇可识别性的基础。
+
+但紧接着在组织切换部分，\fileref{main.tex:405--406} 又允许 switching cost $\kappa_{sj}(z;M)$ 依赖制度环境 $M$。这样一来，政策事实上又可能通过组织切换成本直接进入模型，而不只是通过 external route 进入。这个设定如果不加限制，会削弱全文最重要的路线特异性解释。
+
+因此我建议在和导师讨论时，把这点说得更硬一点：
+\begin{itemize}
+\item baseline 最好把 $\kappa_{sj}$ 视为与政策无关，或者至少在第一版估计里固定住；
+\item 如果一定要让 $\kappa_{sj}$ 依赖 $M$，那就必须解释为什么这不等于又把 MAH 写回了“广义组织成本冲击”。
+\end{itemize}
+
+\item \textbf{实证里最关键的可观测对象，是“external-route use”究竟怎么定义。}
+
+在 \fileref{main.tex:1905--1909}，稿件把
+\[
+Y_{it}^{route}=1
+\]
+定义为 firm $i$ 在年份 $t$ 通过 external manufacturing route commercialize 产品。但如果论文要识别的是 retained-holder external commercialization 所对应的 $\tau_{ext}$，那么这个变量不能只表示“有外包生产”或“有委托生产”，而应尽量接近下面这个更窄的对象：\textbf{holder 没有放弃 authorization / project control，但实际生产由外部合格制造商完成。}
+
+同样，\fileref{main.tex:1968--1976} 的 product-level 变量 $Externalizable_p^{pre}$ 也需要更可操作的定义。否则经验层面会出现一个问题：理论对象很窄，但经验代理变量过宽，最后估出来的东西就会混入普通 outsourcing、生产代工或其他非 MAH 机制。
+
+所以从与导师讨论的角度看，我会把这个问题直接表述成：\textbf{我们手头的数据里，什么变量最接近“保留 holder 身份下的外部商业化路线”？} 这比先讨论回归式本身更重要。
+\end{enumerate}
+
+\section*{四、模型与实证接口上还需要再收紧的两个问题}
+
+\begin{enumerate}
+\item \textbf{转移矩和参数识别之间，当前还有一处不完全对上的地方。}
+
+Bellman 系统里明确存在组织切换成本 $\kappa_{sj}(z;M)$，见 \fileref{main.tex:405--406} 与 \fileref{main.tex:1263}。但在结构估计部分，\fileref{main.tex:2045--2064} 实际只把 $\kappa_I(z)$ 参数化了。文中并没有把 $\kappa_{BA}$ 或其他组织切换成本参数单独写进 $\theta$。与此同时，\fileref{main.tex:2157--2162} 又希望用 $B\rightarrow A$ 的转移矩去识别 internalization attractiveness。
+
+这意味着当前经验块里有一个小的断点：\textbf{究竟是 project-level 的 $\kappa_I$ 被识别，还是 firm-level 的 switching cost 在起作用？} 如果组织切换成本不估计，就需要说它是校准的、固定的，或者被吸收到别的对象里；否则用 transition moments 说“识别 $\kappa_I$”就不够严谨。
+
+\item \textbf{event-study 与 stationary structural model 的关系，需要一段更明确的桥接解释。}
+
+我认为当前 reduced-form 设计本身是合理的：\fileref{main.tex:1961--1966} 的 event-study 可以用来检验 pre-trend 和 rollout timing；而后面的结构部分则是把改革理解为 pre/post 两个 regime 之间的比较。这两者并不矛盾。
+
+但为了避免和导师讨论时出现“一个是动态 rollout，一个是稳态比较，二者怎么放在一起”的疑问，建议文中明确加一句：\textbf{event-study 的任务是验证方向、时点和动态响应是否与机制一致；stationary model 的任务是把改革前后当作两个制度环境，对长期配置做结构化解释。} 只要这句话写出来，前后关系就会顺很多。
+\end{enumerate}
+
+\section*{五、表达和清晰度层面我建议立刻修的小点}
+
+这些不是大问题，但改掉以后会明显提升与导师讨论时的可读性。
+
+\begin{enumerate}
+\item \textbf{建议把“哪一版 Section 5 才是实质经验设计”说清楚。}
+当前文件里既有一个较短的 main-text Section 5，也有后面更完整的一版 empirical mapping。为了避免讨论时读者觉得“前面像没展开、后面又像重新写了一遍”，建议在内部汇报时明确以后面的长版为 operative empirical design。
+
+\item \textbf{记号上有一两个小地方可以立刻统一。}
+例如 \fileref{main.tex:1922--1926} 把研究型进入写成 $Entry_{pt}^{B}$，但这里既不是 product-level，也不是前文一贯的 firm/province index，容易让人误读。像这种记号小问题，最好在下一版里统一掉。
+
+\item \textbf{份额变量需要一个 denominator rule。}
+\fileref{main.tex:1917--1920} 把 original-drug share 定义为“新原研产品数 / 新实现产品总数”。这个定义本身没问题，但最好顺手说清：如果某 firm-year 没有任何 realized product，是把该比率记为缺失、记为零，还是只在正分母样本上估计。这个小地方会直接影响回归样本。
+
+\item \textbf{$z$ 的经验映射最好补一句“为什么这样构造不会和类型划分重复”。}
+当前 \fileref{main.tex:1992--2003} 用 pre-reform original activity、product scope、size 和 experience 构造 $z$，这是可以的。建议再明确一句：manufacturing capability 已经主要用于 A/B/C 类型划分，所以在 baseline 的 $z$ 构造里最好不要重复使用；如果要使用，就解释它进入的是哪一维 capability。这样可以避免“类型定义”和“状态变量定义”之间互相污染。
+\end{enumerate}
+
+\section*{六、我会如何向导师概括这个项目当前的状态}
+
+如果让我用最简洁的方式向导师概括，我会这样说：
+
+\begin{quote}
+这个项目当前最重要的进展，不是完成了一篇论文，而是已经把研究对象、制度机制和模型主语基本对齐了。现在最需要导师帮助拍板的，不是“还要不要继续加模块”，而是四个接口选择：第一，组织切换的 timing 怎么写；第二，B 企业内部化和 B\textrightarrow A 组织切换到底是什么关系；第三，政策是不是只通过 $\tau_{ext}$ 进入；第四，数据里什么最接近 retained-holder external commercialization。
+\end{quote}
+
+如果这四个问题定下来，我认为这个项目的理论骨架就会明显更稳，后面的实证也会更容易落地。
+
+\section*{七、最终结论}
+
+总结来说，我对当前版本的判断是：
+
+\begin{itemize}
+\item \textbf{方向是对的。} 现在的主语、机制和三类企业框架是值得继续推进的。
+\item \textbf{没有看到明显的“制度事实和理论主语互相冲突”的硬伤。}
+\item \textbf{最该优先处理的是内部接口的一致性，而不是篇幅或完成度。}
+\item \textbf{如果要和导师讨论，最值得拿出来讨论的是四个接口选择，而不是问“这篇文章成熟了吗”。}
+\end{itemize}
+
+一句话收束：\textbf{这个项目已经有了可讨论的核心，下一步关键是把机制、模型和实证之间的接口彻底统一。}
+
+\end{document}
