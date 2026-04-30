@@ -28,7 +28,6 @@
 
 \title[Original-Drug Innovation and MAH]{Original-Drug Innovation, Implementation-Route Assignment,\\ and the MAH System in China}
 \subtitle{Mechanism, Dynamic Model, and Empirical Strategy}
-\author{Danni Yangchen \and Wenxiao Dong \and Xinhao Wang}
 \date{\today}
 
 \begin{document}
@@ -500,7 +499,7 @@ The draft argues that MAH changes implementation-route assignment rather than sc
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}{20. Questions for Advisor}
+\begin{frame}{20. Questions}
 \footnotesize
 \begin{block}{What we want to confirm}
 \begin{enumerate}
@@ -509,6 +508,105 @@ The draft argues that MAH changes implementation-route assignment rather than sc
 \item Is the empirical hierarchy right: route use and realization first, organizational transitions and producer-side outcomes second?
 \item For the first full paper version, should we stop at reduced-form evidence plus a disciplined mechanism model, or move directly to a fuller stationary estimation block?
 \end{enumerate}
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\appendix
+\section{Supplementary Notes}
+
+\begin{frame}{21. Supplementary Takeaway}
+\small
+This supplementary note clarifies how to interpret the empirical exposure construction on slide 17.
+
+\begin{block}{Main point}
+Use \textbf{pre-reform} firm or region characteristics to measure exposure to the implementation bottleneck created by the old research--production bundle.
+\end{block}
+
+\begin{itemize}
+\item Do \textbf{not} define treatment as post-reform MAH-holder status.
+\item Do \textbf{not} claim that MAH-style type-B firms already existed before the reform.
+\item Do interpret high exposure as: more likely to benefit from lower external-implementation friction after MAH.
+\end{itemize}
+
+\begin{block}{Core exposure object}
+\[
+Exposure_i^{B,pre}=ResearchOrientation_i^{pre}\times WeakManufacturing_i^{pre}.
+\]
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{22. Exposure Construction}
+\footnotesize
+\begin{center}
+\begin{tabular}{p{0.25\textwidth}p{0.23\textwidth}p{0.42\textwidth}}
+\toprule
+\textbf{Exposure type} & \textbf{Suggested proxy} & \textbf{Interpretation} \\
+\midrule
+Integrated-incumbent exposure & original-drug activity $\times$ manufacturing capability & Potential type-A firms that already combine research and production \\
+Potential type-B exposure & research orientation $\times$ weak internal manufacturing & Core treated margin: firms constrained by the old bundle \\
+Type-C exposure & qualified manufacturing capacity $\times$ weak research orientation & External implementation supply side \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.15cm}
+\begin{block}{Concrete proxy ideas}
+Research orientation can use original-drug applications, IND activity, patents, or R\&D intensity. Manufacturing capability can use production licenses, GMP status, dosage scope, and prior production records.
+\end{block}
+
+\begin{block}{A simple cross-classification}
+High research + high manufacturing $\rightarrow$ integrated incumbent.\newline
+High research + low manufacturing $\rightarrow$ potential B exposure.\newline
+Low research + high manufacturing $\rightarrow$ potential C exposure.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{23. Empirical Design and Interpretation}
+\footnotesize
+\begin{block}{Baseline specification}
+\[
+Y_{it}=\alpha_i+\gamma_t+\beta\left(Post_t\times Exposure_i^{B,pre}\right)+X_i^{pre}\times\gamma_t+\varepsilon_{it}.
+\]
+\end{block}
+
+\begin{itemize}
+\item $\alpha_i$: firm fixed effects.
+\item $\gamma_t$: year fixed effects.
+\item $Post_t\times Exposure_i^{B,pre}$: firms more exposed to the old implementation bottleneck should react more after MAH.
+\item $X_i^{pre}\times\gamma_t$: absorb differential pre-trends.
+\end{itemize}
+
+\begin{block}{Triple-difference version}
+\[
+\begin{aligned}
+Y_{it}={}&\alpha_i+\gamma_t
++\beta\left(Post_t\times ResearchOrientation_i^{pre}\times WeakManufacturing_i^{pre}\right) \\
+&+\theta_1\left(Post_t\times ResearchOrientation_i^{pre}\right)
++\theta_2\left(Post_t\times WeakManufacturing_i^{pre}\right)+\varepsilon_{it}.
+\end{aligned}
+\]
+\end{block}
+
+\begin{block}{Interpretation}
+The coefficient $\beta$ captures whether reform has a stronger effect on firms that were both research-oriented and weak in internal manufacturing before MAH.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{24. Cautions}
+\small
+\begin{itemize}
+\item Exposure should be measured before the reform; using post-reform holder status is endogenous.
+\item MAH is an implementation-route policy, not a generic innovation shock.
+\item The cleanest empirical story is first-layer objects: holder--producer separation, external-route use, realized original-drug products, and original-drug shares.
+\item Type-C outcomes are supporting evidence for the contract-manufacturing market, not the final target.
+\end{itemize}
+
+\begin{block}{Bottom line}
+This supplement makes the slide deck's mechanism claim sharper: MAH matters because it lowers the friction of external commercialization for pre-reform exposed firms.
 \end{block}
 \end{frame}
 
