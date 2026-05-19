@@ -722,7 +722,7 @@ Restricting attention to original-drug records, define
 \]
 where $O_p=1$ if product $p$ is classified as an original drug or satisfies the paper's baseline original-drug proxy. This share is not the policy treatment. It is an observed outcome that proxies the use of an external commercialization route while retaining authorization.
 
-\subsection{Why Route Share Maps to $\tau^E$}
+\subsection{Why Route Share Maps to the Entrusted-Route Wedge}
 
 After the reform, when the entrusted route is feasible, a firm compares commercialization routes after a successful original-drug opportunity is realized. To isolate the logic, consider only internal production and entrusted production among retained products:
 \[
@@ -760,7 +760,11 @@ and taking logs yields
     \frac{C^I(k)-C^E-\tau_t^E}{\sigma_r}.
 \]
 
-If $C^I(k)$ and $C^E$ are stable across the comparison, or are handled through comparable samples and controls, the pre-post difference in log-odds is
+This equation does not say that the route-use share equals $\tau^E$. It says that the route-use share, through a retained-product route-choice equation, disciplines the relative attractiveness of the entrusted route. Without additional data on internal production costs, direct contract-manufacturing costs, quality agreements, audit costs, contract terms, and firm-level regulatory execution, the calibration recovers only a composite effective wedge relative to the route-choice scale.
+
+\subsection{When a Pre--Post Log-Odds Moment Is Valid}
+
+A pre--post log-odds moment is valid only if the pre-reform data contain a legally and economically comparable entrusted-retention route. Under that condition, and if $C^I(k)$ and $C^E$ are stable across the comparison or handled through comparable samples and controls, one can write
 \[
     \frac{\Delta \tau}{\sigma_r}
     =
@@ -772,26 +776,15 @@ where
 \[
     \Delta\tau = \tau_{pre}^E-\tau_{post}^E>0.
 \]
-
-This equation does not say that the route-use share equals $\tau^E$. It says that the route-use share, through the route-choice equation, disciplines the change in the relative attractiveness of the entrusted route. More precisely, it identifies
-\[
-    \Delta\tau^E/\sigma_r,
-\]
-namely the decline in the external-route wedge relative to the route-choice scale.
-
-\subsection{What This Block Can and Cannot Identify}
-
-This block can support the following statement: if the holder--producer split among original-drug records rises after MAH, and this rise cannot be explained by changes in product composition, therapeutic class, region, or firm capability composition, the pattern is consistent with a decline in $\tau^E$.
-
-It cannot support the following stronger statement: the data separately identify legal compliance costs, search costs, quality-agreement costs, contracting costs, and contract-manufacturing prices. These components enter the route-choice payoff as a composite wedge. Without additional data on quality agreements, auditing costs, contract terms, manufacturing prices, and firm-level regulatory execution, they cannot be separately recovered.
+This is not the baseline interpretation when the MAH-style entrusted route was institutionally unavailable before the reform.
 
 \subsection{What If Pre-Reform Route-Use Data Are Unavailable?}
 
-This is the most important practical issue. If the MAH-style entrusted route was institutionally unavailable before the reform, then
+This is the central practical issue. If the MAH-style entrusted route was institutionally unavailable before the reform, then there is no comparable pre-reform entrusted-route share. Writing
 \[
-    s_{pre}^E=0.
+    s_{pre}^E=0
 \]
-In that case,
+as though it were an observed route-use rate is misleading, because
 \[
     \log\left(\frac{s_{pre}^E}{1-s_{pre}^E}\right)=\log(0)
 \]
@@ -808,17 +801,29 @@ After MAH,
 \]
 Thus there is no comparable pre-reform entrusted-route share. The baseline interpretation should emphasize that MAH first expands the feasible route set and then, conditional on route feasibility, lowers the governance and compliance friction of the route.
 
-\paragraph{Response 2: Use a small pseudo-count only as a computational device.}
+\paragraph{Response 2: Use post-MAH exposure or implementation-intensity variation.}
+If the route is unavailable before MAH, the preferred empirical calibration margin is post-MAH variation across regions, dosage forms, therapeutic classes, or firm types. For example, regions or dosage-form segments with greater pre-reform qualified manufacturing capacity may experience a larger effective decline in external commercialization friction. A transparent reduced-form calibration moment is
+\[
+    \log\left(\frac{s_{g,post}^E}{1-s_{g,post}^E}\right)
+    =
+    \eta_0+\eta_1 Exposure_g+u_g,
+\]
+where $g$ indexes a region, dosage-form segment, therapeutic class, or firm type. This disciplines relative differences in the effective entrusted-route wedge without imposing a nonexistent pre-reform route-use rate.
+
+\paragraph{Response 3: Use a small pseudo-count only as a sensitivity device.}
 For example, use
 \[
     \tilde{s}_{pre}^E
     =
     \frac{0.5}{N_{pre}+1}
 \]
-instead of zero. This makes the log-odds expression computable, but the pseudo-share should not be interpreted as a real pre-reform route-use rate. It should be reported only as a sensitivity check.
+instead of zero. This makes the log-odds expression computable, but the pseudo-share should not be interpreted as a real pre-reform route-use rate. It should be reported only as a sensitivity check, not as the baseline calibration moment.
 
-\paragraph{Response 3: Use post-reform exposure or implementation-intensity variation.}
-If the route is unavailable before MAH, one can use post-MAH variation across regions, dosage forms, therapeutic classes, or firm types. For example, regions or dosage-form segments with greater pre-reform qualified manufacturing capacity may experience a larger effective decline in external commercialization friction. This variation can discipline the effective change in $\tau^E$ without imposing a nonexistent pre-reform route share.
+\subsection{What This Block Can and Cannot Identify}
+
+This block can support the following statement: if the holder--producer split among original-drug records rises after MAH, or if higher-exposure segments show higher post-MAH split shares, and this pattern cannot be explained by changes in product composition, therapeutic class, region, or firm capability composition, the pattern is consistent with a lower effective entrusted-route wedge.
+
+It cannot support the following stronger statement: the data separately identify legal compliance costs, search costs, quality-agreement costs, contracting costs, and contract-manufacturing prices. These components enter the route-choice payoff as a composite wedge. Without additional data on those objects, they cannot be separately recovered.
 
 \section{Original-Drug Counts and R\&D Arrival Scale}
 
@@ -1007,9 +1012,9 @@ These moments are needed to calibrate $z$, $F_e$, and heterogeneous responses mo
 
 The following scope limits should be explicit after Section 8:
 \begin{enumerate}[leftmargin=2em]
-    \item \textbf{What can be claimed:} changes in route use, original-drug counts, and research-oriented entry are consistent with a decline in the entrusted-production wedge.
-    \item \textbf{What cannot be claimed:} the current data do not separately estimate contract-manufacturing prices, legal compliance costs, firm-specific project success probabilities, or firm-specific true governance costs.
-    \item \textbf{Current baseline:} use approval-side realized-product moments for mechanism calibration.
+    \item \textbf{What can be claimed:} route-use proxies and realized original-drug outcomes can discipline whether observed patterns are consistent with route-set expansion and a lower effective entrusted-production wedge.
+    \item \textbf{What cannot be claimed:} the current data do not separately estimate contract-manufacturing prices, legal compliance costs, firm-specific project success probabilities, latent idea arrivals, or firm-specific true governance costs.
+    \item \textbf{Current baseline:} use approval-side realized-product moments for mechanism calibration; do not treat approval-side data as a full R\&D-process panel.
     \item \textbf{Future upgrade:} once application panels, firm-year entry panels, and capability panels are merged, the exercise can be expanded toward a fuller SMM or indirect-inference design.
 \end{enumerate}
 
@@ -1018,12 +1023,12 @@ The following scope limits should be explicit after Section 8:
 The following paragraph can be used directly in the appendix or adapted for the main text:
 
 \begin{quote}
-The calibration strategy in Section 8 should be interpreted as mechanism calibration rather than full structural estimation. The route-use moment disciplines the decline in the external entrusted-production wedge relative to the route-choice scale; the baseline original-drug count moment disciplines the composite scale that converts R\&D effort into original-drug opportunities; and the research-oriented entry moment, when available, disciplines the entry-cost distribution. Because the MAH-style entrusted route may be structurally unavailable before the reform, the pre-reform split share should not be mechanically inserted into a log-odds formula. The baseline interpretation treats the reform as route-set expansion plus conditional friction reduction, while pseudo-counts or post-MAH exposure variation are used only as robustness devices. The current approval-side data can support realized original-drug counts and holder--producer split, but they do not directly identify latent idea arrival, project-level success probabilities, or true research-oriented entry. The calibration exercise is therefore a disciplined mechanism calibration, not full structural identification.
+The calibration strategy in Section 8 should be interpreted as a mechanism-calibration blueprint rather than full structural estimation. The route-use block disciplines the effective entrusted-production wedge relative to the route-choice scale; the baseline original-drug count block disciplines the composite scale that converts R\&D effort into realized original-drug outcomes; and the research-oriented entry block, when suitable data become available, disciplines the entry-cost distribution. Because the MAH-style entrusted route may be structurally unavailable before the reform, the pre-reform split share should not be mechanically inserted into a log-odds formula. The baseline interpretation treats the reform as route-set expansion plus conditional friction reduction. If the data permit, post-MAH exposure or implementation-intensity variation can discipline relative differences in the effective route wedge; pseudo-counts for a zero pre-MAH split share should be reported only as sensitivity devices. The current approval-side data can support realized original-drug counts and holder--producer split, but they do not directly identify latent idea arrival, project-level success probabilities, or true research-oriented entry. The calibration exercise is therefore a disciplined mechanism calibration, not full structural identification.
 \end{quote}
 
 \section{Appendix Conclusion}
 
-The correct interpretation of Section 8 is that data moments discipline composite model objects rather than every structural primitive. Route-use data discipline $\Delta\tau^E/\sigma_r$, original-drug counts discipline $\beta a^2/\kappa$, and research-oriented entry disciplines $F_e$. When many pre-reform data objects are unavailable, the baseline must remain modest: the current exercise is approval-side mechanism calibration, while richer entry and state calibration should be reserved for future merged data modules.
+The correct interpretation of Section 8 is that data moments discipline composite model objects rather than every structural primitive. Route-use data discipline the effective entrusted-route wedge relative to the route-choice scale only under a retained-product route comparison, a comparable pre-reform route, or post-MAH exposure variation. Original-drug counts discipline the composite innovation-arrival scale $\beta a^2/\kappa$, and research-oriented entry disciplines $F_e$ only when an appropriate firm-entry panel is available. When many pre-reform data objects are unavailable, the baseline must remain modest: the current exercise is approval-side mechanism calibration, while richer entry and state calibration should be reserved for future merged data modules.
 
 
 
