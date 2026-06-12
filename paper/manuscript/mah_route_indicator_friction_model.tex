@@ -5,13 +5,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb,amsthm,mathtools,bm}
-\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{booktabs,array,tabularx}
 \usepackage{enumitem}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \usepackage{setspace}
 \usepackage[round,authoryear]{natbib}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
 \onehalfspacing
 \setlength{\parindent}{1.5em}
 \setlength{\parskip}{0.12em}
@@ -19,27 +20,16 @@
 \setlist[enumerate]{leftmargin=2em,itemsep=0.25em,topsep=0.35em}
 \emergencystretch=3em
 
-\newtheorem{assumption}{Assumption}
 \newtheorem{proposition}{Proposition}
-\newtheorem{lemma}{Lemma}
 \newtheorem{corollary}{Corollary}
 \newtheorem{remark}{Remark}
-\newtheorem{definition}{Definition}
 
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\1}{\mathbf{1}}
 \newcommand{\dd}{\mathrm{d}}
-\newcommand{\argmaxop}{\operatorname*{arg\,max}}
-\newcommand{\calI}{\mathcal{I}}
-\newcommand{\calN}{\mathcal{N}}
 \newcommand{\calR}{\mathcal{R}}
-\newcommand{\calH}{\mathcal{H}}
-\newcommand{\pos}[1]{\left[#1\right]_+}
-\newcommand{\ind}{\mathbb{I}}
-\newcommand{\R}{\mathcal{R}}
 
 \title{MAH, Commercialization Frictions, and Original-Drug Innovation}
-
 \author{}
 \date{}
 
@@ -49,253 +39,105 @@
 
 \begin{abstract}
 \noindent
-This note develops a theoretical mechanism model and mechanism-calibration blueprint for how China's Marketing Authorization Holder (MAH) system can affect original-drug innovation. The model keeps the institutional timing explicit. Firms choose original-drug R\&D intensity before successful drug opportunities are realized. If a successful opportunity is realized, the firm chooses a commercialization route: internal production when feasible, entrusted production while retaining marketing authorization when the route is legally and technologically feasible, non-retained transfer/sale/out-licensing, or abandonment. MAH enters the model in three linked ways. First, it makes the MAH-style entrusted-production route part of the relevant commercialization choice set. Second, conditional on this route being institutionally available, MAH lowers the policy and contractual friction of using a qualified entrusted manufacturer while retaining authorization. Third, the baseline closes the qualified contract-manufacturing service market, so MAH-induced route demand can raise the endogenous service price $p_m^*(M)$. Demand-side conditions enter only through a reduced-form route-independent commercialization return, while observed approvals or launches are separated from latent opportunity arrival through a composite realization probability. Route choice is modeled with a logit inclusive value, which keeps the theory and route-share calibration internally consistent. The reform does not directly raise scientific productivity, lower clinical-trial cost, increase demand, eliminate residual holder-side monitoring burdens, or make entrusted production universally better than internal production or transfer. Instead, it raises expected future commercialization value for firms for which the retained external route is relevant after accounting for realization probability, contract-manufacturing prices, residual holder responsibilities, and outside options. The note does not claim full structural identification or a complete causal empirical design. Instead, it maps model objects to feasible moments, states required normalizations, and explains how approval-side realized-product data can discipline composite objects such as the route-realization value, the entrusted-production wedge, the innovation-arrival scale, and, in future modules, the entry-cost distribution.
+This paper develops a partial-equilibrium mechanism model of how China's Marketing Authorization Holder (MAH) system can affect original-drug innovation. Firms choose original-drug R\&D before successful opportunities are realized. After a successful opportunity arrives, a firm chooses whether to commercialize internally, retain authorization while entrusting production to a qualified manufacturer, transfer or out-license the opportunity, or abandon it. MAH affects expected R\&D value by adding a regulated holder-producer separation route, lowering the route-specific policy and contractual friction of that retained external route, and changing the composite probability that a latent opportunity becomes an observed approval or launch. The baseline closes only the qualified contract-manufacturing service market, generating an endogenous service price $p_m^*(M)$ that can attenuate the reform's effect. The model does not treat MAH as a demand shock, a scientific-productivity shock, a removal of holder responsibility, or a universal reduction in all commercialization costs. It delivers comparative statics for route value, R\&D intensity, and observed realized original-drug outcomes, and it clarifies which data moments can discipline composite objects in a mechanism calibration.
 \end{abstract}
 
-\noindent\textit{Keywords:} MAH; original-drug innovation; commercialization frictions; entrusted production; route choice; firm entry.\\
+\noindent\textit{Keywords:} MAH; original-drug innovation; commercialization frictions; entrusted production; route choice.\\
 \noindent\textit{JEL codes:} D22; L65; O31; O38; I18.
-
-\newpage
-\tableofcontents
-\newpage
 
 \section{Introduction}
 
-The purpose of this note is to discipline a theoretical mechanism and a mechanism-calibration blueprint rather than to estimate a full dynamic structural model of the Chinese pharmaceutical industry. The central question is whether MAH can raise original-drug innovation by improving downstream commercialization options. The mechanism is an expected-profit channel. A firm chooses R\&D before knowing how many drug opportunities will be successful, but it anticipates the institutional regime under which a successful opportunity will later be produced, entrusted, transferred, or abandoned. The empirical role of the model is correspondingly modest: it organizes which data moments are close to the mechanism and which objects those moments can discipline.
+China's MAH system separates the right to hold marketing authorization from a strict requirement of in-house production. This institutional change is potentially important for original-drug innovation because many research-originating firms can generate valuable projects but lack complete manufacturing capacity. The central mechanism studied here is therefore not demand expansion or scientific productivity. It is an expected-commercialization-value channel: when a firm anticipates that a future successful project can be commercialized through an additional retained route, current R\&D becomes more valuable.
 
-This logic follows two lines of literature. First, pharmaceutical innovation responds to expected downstream rewards. Market-size and expected-return models show that firms direct innovation toward projects with higher expected commercial value \citep{Schmookler1966,AcemogluLinn2004,Finkelstein2004,BlumeKohoutSood2013,DuboisDeMouzonScottMortonSeabright2015,BudishRoinWilliams2015,DranoveGarthwaiteHermosilla2014}. Second, the value of innovation depends on complementary assets and commercialization strategy. An innovator without manufacturing or distribution capability may need to cooperate with, license to, or sell to firms that possess those assets \citep{Teece1986,AroraFosfuriGambardella2001,GansStern2003}. MAH fits this logic because it changes the commercialization environment by allowing the holder to retain authorization while using a qualified external manufacturer.
+The mechanism builds on two established ideas. First, pharmaceutical R\&D responds to expected downstream rewards \citep{Schmookler1966,AcemogluLinn2004,Finkelstein2004,DuboisDeMouzonScottMortonSeabright2015,BudishRoinWilliams2015}. Second, an innovator's ability to appropriate returns depends on complementary assets and commercialization strategy \citep{Teece1986,AroraFosfuriGambardella2001,GansStern2003}. MAH fits this second logic because it changes how an innovator may access manufacturing capability while retaining the authorization asset.
 
-The model is deliberately narrow. It does not treat MAH as a demand shock. Demand enters only through a single reduced-form market-return shifter for the Chinese original-drug environment. The model does not index R\&D effort, opportunity arrival, route choice, or retained stock by therapeutic area. It does not assume that MAH makes science easier. It does not assume that entrusted production dominates internal production. It also does not track every product in a firm's portfolio. Instead, it follows the product-line innovation tradition by using a stock of products or certificates as a low-dimensional state and an innovation-arrival function linking R\&D effort to expected new drug opportunities \citep{KletteKortum2004}. The resulting framework is suitable for a setting where the currently feasible evidence is closer to approval-side realized products, holder-producer links, and route-use proxies than to latent idea arrivals, project-level R\&D expenditure, or project-specific success probabilities. Throughout the paper, original-drug approvals and retained certificates are treated as data-side realizations or proxies of the model's upstream opportunity-arrival objects, not as literal observations of latent ideas.
+The model is deliberately narrow. It is not a full dynamic structural model of the pharmaceutical industry. It does not solve product-market clearing, R\&D input-market clearing, free entry, exit, or an invariant firm distribution. The baseline closes only the market directly tied to the MAH mechanism: the market for qualified contract-manufacturing services. This single closure is important because MAH-induced demand for entrusted production can raise the service price $p_m^*(M)$, preventing the model from mechanically implying that MAH increases innovation for all firms.
 
-The model should be read as a partial-equilibrium mechanism model rather than a full dynamic structural model of the pharmaceutical industry. The baseline treats the market-return shifter and the distributions of incumbent, potential entrant, and qualified producer characteristics as background objects, but it closes the one market directly tied to the MAH mechanism: the market for qualified contract-manufacturing services. This gives an endogenous service price $p_m^*(M)$ without solving for product-market clearing, R\&D input-market clearing, free entry, exit, or an invariant industry distribution. MAH affects the firm problem through route-set expansion, a reduction in the MAH-reducible policy and contractual friction $\tau^E$ of the retained external route, and a composite realization probability that links latent opportunities to observed approvals or launches. The main theoretical results are comparative statics for private opportunity value, R\&D intensity, and realized original-drug outcomes. The calibration section maps feasible data moments to composite objects, but it does not claim to identify all primitives or to solve a full general-equilibrium allocation.
+The contribution is to organize the mechanism in a way that is internally consistent with feasible data. The theory separates latent opportunity arrival from observed approvals or launches, keeps residual holder responsibility in the entrusted-route payoff, and treats route-use data as a proxy for realized holder-producer separation rather than as the policy treatment itself. The empirical role of the model is correspondingly modest: it maps feasible approval-side moments to composite objects such as route-realization value and innovation-realization scale, without claiming to identify every primitive friction separately.
 
-\section{Related Literature}
+The model is presented in two layers. The main text gives the shortest complete version needed for the paper's argument. The technical appendix gives the object-status audit, payoff accounting, Bellman derivation, CMO market regularity conditions, comparative-static derivations, and calibration boundaries. Research notes are kept outside the manuscript and are used only as a model-design control panel.
 
-The first relevant literature studies how expected rewards shape pharmaceutical innovation. \citet{AcemogluLinn2004} show that potential market size affects entry of new drugs, and later work studies how insurance design, reimbursement, and expected profitability shift drug-development incentives \citep{Finkelstein2004,BlumeKohoutSood2013,DuboisDeMouzonScottMortonSeabright2015,BudishRoinWilliams2015,DranoveGarthwaiteHermosilla2014}. Recent work on China studies how regulatory and demand-side changes affect drug development \citep{JiaMaYangZhang2023,BarwickXiaXia2026}. This paper differs by focusing on a commercialization-friction channel rather than on market size, approval delay, or reimbursement.
+\section{Institutional Background}
 
-The second literature studies commercialization strategy and complementary assets. \citet{Teece1986} emphasizes that innovators' returns depend on access to complementary assets. \citet{AroraFosfuriGambardella2001} and \citet{GansStern2003} analyze markets for technology and the choice between commercialization and cooperation with established firms. The MAH reform is naturally interpreted through this lens: it improves one way for an innovator to access manufacturing capability while retaining the authorization asset.
+The relevant institutional point is timing. Under China's drug-registration framework, a firm need not already be the final commercial holder when it starts R\&D. The economic choice is forward-looking: a firm invests today while anticipating the commercialization environment it will face if a project succeeds. After obtaining a Drug Approval License, the applicant becomes the MAH \citep{NMPARegistration2022}. The model therefore treats MAH as affecting expected future commercialization feasibility rather than current scientific productivity.
 
-The third literature provides the modeling style. \citet{KletteKortum2004} use stochastic innovation arrivals and product-line growth to connect firm-level R\&D to aggregate innovation. The model below uses a simpler version of that idea: R\&D intensity determines the expected number of original-drug opportunities, and retained opportunities enter a drug-stock state. The model avoids the full state space of dynamic industry models such as \citet{EricsonPakes1995} and \citet{BajariBenkardLevin2007}.
+The MAH reform creates a regulated holder-producer separation route. The 2016 pilot allowed eligible applicants in selected regions to become holders under the pilot arrangement \citep{StateCouncilMAHPilot2016,CFDAMAHImplementation2016}. The later legal framework consolidated the principle that an MAH may manufacture by itself or entrust production to a qualified manufacturer \citep{DrugAdministrationLaw2019}. Subsequent NMPA rules require holder-side quality responsibility, assessment of the entrusted manufacturer, quality and entrustment agreements, and ongoing supervision \citep{NMPAHolderResponsibility2022,NMPAManufacturing2022,NMPAEntrustedProduction2023}.
 
-\section{Institutional Background and Economic Timing}
-
-The model distinguishes legal registration timing from economic decision timing. Under China's \textit{Provisions for Drug Registration}, drug registration includes applications for clinical trials, marketing authorization, renewal, and supplementary applications. After obtaining the Drug Approval License, the applicant becomes the MAH \citep{NMPARegistration2022}. Therefore, the model should not say that a firm must already hold the final approval or a commercial manufacturing certificate before it starts R\&D. The relevant point is forward-looking: expected future commercialization feasibility affects the value of current R\&D.
-
-The institutional content of MAH is more specific than a generic reform dummy. It changes who may legally hold marketing authorization, how production may be organized after authorization is obtained, and how authorization and production may be assigned across firms under a regulated relationship. The key institutional break is the separation of the authorization-holding role from a strict requirement of in-house production.\footnote{The 2016 pilot plan authorized selected provinces and municipalities to pilot the MAH system and allowed eligible applicants to apply to become holders under the pilot arrangement; see \citet{StateCouncilMAHPilot2016}. The former CFDA follow-up notice operationalized pilot implementation and supervision; see \citet{CFDAMAHImplementation2016}.} This separation is especially relevant for research-originating firms that can generate valuable projects but do not operate full internal manufacturing capacity.
-
-Under the \textit{Drug Administration Law}, an MAH may manufacture drug products by itself or entrust a qualified drug manufacturer. If production is contracted out, the MAH and the contract manufacturer must sign entrustment and quality agreements, and the MAH remains responsible for the drug's safety, efficacy, and quality \citep{DrugAdministrationLaw2019}.\footnote{For the post-law responsibility architecture, see the 2022 NMPA provisions on MAH quality and safety responsibility, released on December 29, 2022 and effective March 1, 2023 \citep{NMPAHolderResponsibility2022}.} The manufacturing supervision rules require the MAH to assess the contracted firm's quality assurance and risk-management capabilities, sign quality and entrustment agreements, and supervise performance \citep{NMPAManufacturing2022}. Thus MAH does not remove regulation. It creates a regulated holder-producer separation route.
-
-This point matters for the economic mechanism. Entrusted production under MAH is not an anonymous spot purchase of factory services. It is a legally structured authorization-production assignment in which the innovating holder may retain authorization while production is performed by a qualified outside manufacturer under contractual, quality-management, and supervisory requirements.\footnote{The 2023 NMPA announcement on MAH entrusted production further specifies licensing, quality-management, inspection, and supervision requirements for entrusted production; see \citet{NMPAEntrustedProduction2023}.} The holder does not hand off the project and walk away; it keeps legally meaningful lifecycle and quality-system responsibilities. The reform therefore lowers the policy and contractual friction of using this particular external route, without eliminating the residual monitoring and quality-control burden borne by the holder.
-
-The economic timing is as follows. In period $t$, a firm chooses original-drug R\&D intensity. In period $t+1$, successful original-drug opportunities may arrive. Conditional on an opportunity, the firm chooses among internal production, entrusted production while retaining MAH, non-retained transfer/sale/out-licensing, or abandonment. This timing captures the expectation mechanism: MAH facilitates expected future commercialization profits, and this expected future value motivates more current R\&D. The reform is not modeled as a demand shock, a direct scientific-productivity shock, or a generic fixed-cost reduction for all firms. It is modeled as a route-specific change in the feasibility and friction of retaining authorization while using a qualified entrusted producer.
+These rules imply two modeling restrictions. First, entrusted production is not anonymous outsourcing. It is a regulated retained route in which authorization remains with the holder while production is performed by a qualified external manufacturer. Second, MAH does not eliminate holder responsibility. The holder retains quality, safety, lifecycle, and monitoring obligations. The model captures this through a residual entrusted-route burden $\mu_i^E$ and a composite realization probability $\zeta_i^E(M,p_m)$.
 
 \section{Model}
 
-The model combines four standard blocks rather than importing one complete canonical model. The market-return interpretation follows the pharmaceutical innovation literature in which expected market size, revenue, or profit shapes drug R\&D incentives \citep{AcemogluLinn2004,DuboisDeMouzonScottMortonSeabright2015,BarwickXiaXia2026}. The innovation-stock and R\&D-arrival structure follows product-line innovation models \citep{KletteKortum2004}. The commercialization-route choice follows the markets-for-technology and complementary-assets literature, where innovators choose between internal commercialization, cooperation, licensing, transfer, or other external routes \citep{Teece1986,AroraFosfuriGambardella2001,GansStern2003}. The property-rights interpretation follows the idea that control rights and outside options shape ex ante investment incentives \citep{GrossmanHart1986,HartMoore1990}. The contribution here is to adapt these blocks to the MAH setting, where the key institutional change is a regulated holder-producer separation route.
+\subsection{Environment and Timing}
 
-\subsection{Scope and partial-equilibrium closure}
+There are two periods within the firm problem. In period $t$, firm $i$ chooses original-drug R\&D effort $x_i$. In period $t+1$, successful original-drug opportunities arrive, and the firm chooses a commercialization route for each opportunity. The institutional regime is $M\in\{0,1\}$, where $M=1$ denotes the MAH regime.
 
-The baseline model is a partial-equilibrium dynamic route-choice model with one market closure. It takes as given the market-return environment, the distributions of incumbent and potential entrant characteristics, the distribution of qualified producer characteristics, and the institutional regime. It endogenizes only the price of qualified contract-manufacturing services through the market-clearing condition below. Firms choose original-drug R\&D intensity before successful opportunities are realized. Conditional on a successful opportunity, they choose a commercialization route.
+Firm characteristics are summarized by
+\[
+    \theta_i=(a_i,k_i,h_i^I,q_i^E,\mu_i^E,S_i,\tau_i^T),
+\]
+where $a_i$ is research productivity, $k_i$ indexes internal manufacturing capability, $h_i^I$ indicates whether internal production is feasible, $q_i^E$ indicates whether the opportunity is feasible for entrusted production, $\mu_i^E$ is the residual holder-side burden under entrusted production, $S_i$ is the gross non-retained transfer or out-licensing value, and $\tau_i^T$ is the transfer-route friction.
 
-Formally, a baseline partial-equilibrium MAH environment consists of
+The model is partial equilibrium except for the qualified contract-manufacturing service market. It takes the market-return environment and firm-characteristic distributions as given. The service price $p_m^*(M)$ is determined by market clearing:
 \begin{equation}
-    \mathcal E_t =
-    \left(
-    R_t,\; H(\theta_i),\; G_N(\theta_i),\; H_C(z^C),\; M_t,\; \tau^E(M_t)
-    \right),
-    \label{eq:pe_environment}
-\end{equation}
-where $R_t$ is the market-return shifter, $H$ is the distribution of incumbent firm characteristics $\theta_i$, $G_N$ is the distribution of potential entrant characteristics, $H_C$ is the distribution of qualified contract-manufacturing capacity, $M_t$ is the institutional regime, and $\tau^E(M_t)$ is the MAH-reducible policy and contractual friction of the entrusted route. The equilibrium service price $p_{m,t}^*(M_t)$ is determined by
-\begin{equation}
-    D_m(p_m;M_t)=S_m(p_m),
+    D_m(p_m;M)=S_m(p_m).
     \label{eq:baseline_cm_clearing}
 \end{equation}
-where $D_m$ is innovator demand for qualified entrusted manufacturing services and $S_m$ is qualified producer supply. Section \ref{sec:cm_market_baseline} defines these objects after route choice is introduced.
 
-The model does not solve for product-market clearing, R\&D input-market clearing, free-entry zero-profit conditions, firm exit, or an invariant industry distribution. Its purpose is to characterize how MAH-induced route-set expansion, entrusted-route friction reduction, realization probabilities, and the contract-manufacturing price response affect the private opportunity value $\Gamma_i$, R\&D intensity $x_i^*$, and observed realized original-drug outcomes.
+\subsection{Route Set and Route Payoffs}
 
-\subsection{Demand side and route-independent commercialization return}
-
-The baseline model uses a route-independent gross commercialization return rather than a full product-market demand system. Let $R^{event}_{it}$ denote the gross event payoff from converting a successful original-drug opportunity into a marketed product before route-level implementation costs are paid. This object summarizes market size, therapeutic value, reimbursement environment, procurement exposure, and the quality or novelty composition of the opportunity. It is not the continuation value of keeping the drug in the innovating firm's future portfolio; that continuation value is represented separately by $v_t$.
-
-For an entrusted-production opportunity, define the route-specific realized-return kernel
+Conditional on a successful opportunity, the route set is
 \begin{equation}
-    \bar R^E_{ip,t}
-    \equiv
-    \E_t\!\left[R^{event}_{ip,t}\mid L_{ip}=1,E\right],
-    \label{eq:RbarE}
-\end{equation}
-where $L_{ip}=1$ means that the successful opportunity is implemented and reaches production or launch through the retained entrusted route. The baseline uses $\bar R^E_{ip,t}$ as a compressed payoff object. It does not separately model sales, after-sales service, pharmacovigilance, penalties, or post-launch partner-performance shocks as state variables. Appendix \ref{sec:ces_appendix} gives a CES background interpretation for $R^{event}$, and Appendix \ref{sec:post_risk_appendix} explains how $\bar R^E$ can be viewed as the expectation of a post-production aggregate risk kernel.
-
-The key boundary is that MAH is not modeled as shifting demand. Demand-side conditions discipline the background level of $R^{event}$ and $\bar R^E$, but MAH operates through commercialization-route feasibility, route friction, realization probability, and the contract-manufacturing service price. The main MAH comparative statics hold the demand-side market-return background fixed.
-
-\subsection{Firm characteristics and state variables}
-
-Each firm $i$ has fixed research and manufacturing abilities,
-\begin{equation}
-    a_i>0,\qquad k_i>0,
-    \label{eq:jointdist}
-\end{equation}
-where $a_i$ is research ability and $k_i$ is manufacturing ability. The joint distribution of firm characteristics is unrestricted. Research ability and manufacturing ability may be positively correlated, negatively correlated, or independent. This is important because the model should not impose that research-oriented firms always lack manufacturing capability.
-
-The firm also has fixed commercialization characteristics
-\[
-    (h_i^I,q_i^E,S_i,\tau_i^T,\mu_i^E).
-\]
-The indicator $h_i^I\in\{0,1\}$ records whether the firm can feasibly use internal production for the opportunity. The indicator $q_i^E\in\{0,1\}$ summarizes whether the firm has access to a qualified entrusted-production match when MAH makes the route legally available; in a project-producer version this object can be written as $q_{im}^E$. The object $S_i-\tau_i^T$ is the net non-retained transfer outside option defined below. The object $\mu_i^E\ge0$ is the residual holder-side burden of using entrusted production after MAH makes the retained external route feasible: quality-control work, technical transfer, producer supervision, and cross-firm coordination that remain with the holder. This burden is not lowered mechanically by MAH in the baseline. The full incumbent distribution is therefore $H(\theta_i)$, where $\theta_i=(a_i,k_i,h_i^I,q_i^E,S_i,\tau_i^T,\mu_i^E)$.
-
-The endogenous state is
-\begin{equation}
-    n_{it}\ge0,
-    \label{eq:state}
-\end{equation}
-where $n_{it}$ is the stock of retained original drugs or original-drug certificates held by firm $i$ at the beginning of period $t$. Existing retained drugs generate expected flow payoff
-\begin{equation}
-    \pi n_{it},\qquad \pi>0.
-    \label{eq:oldflow}
-\end{equation}
-Here $\pi$ should be read as $\E_j[\pi_j]$, an average retained-product flow payoff across therapeutic areas, drug ages, market sizes, and competitive environments. The stock depreciates, expires, or becomes obsolete at rate $\delta\in(0,1)$. This product-stock state is a low-dimensional substitute for a full multi-product portfolio, following product-line innovation models \citep{KletteKortum2004}.
-
-\subsection{R\&D production function and uncertainty}
-
-The firm chooses original-drug R\&D intensity
-\begin{equation}
-    x_{it}\ge0.
-    \label{eq:rdintensity}
-\end{equation}
-R\&D intensity produces a random number of successful original-drug opportunities in the next period. Let $Y_{i,t+1}$ denote the number of such opportunities that reach the commercialization-route decision stage. The object $Y_{i,t+1}$ is not a raw scientific idea arrival at the laboratory stage. In approval-side data, approvals, retained certificates, or realized original-drug records are downstream proxies for this object. A richer pipeline model could introduce an earlier idea-arrival stage and a separate clinical or regulatory success probability, but the baseline mechanism model absorbs those probabilities into effective research ability $a_i$. The drug-count production function is
-\begin{equation}
-    \lambda_{i,t+1}(x_{it})\equiv \E_t[Y_{i,t+1}]=f(a_i,x_{it})=a_i x_{it}.
-    \label{eq:production}
-\end{equation}
-Equation \eqref{eq:production} is the model's production function for the number of new original-drug opportunities or certificates. It is not physical pill production. It says that research effort raises the expected number of successful opportunities, and higher research ability makes effort more productive. This is the simplest version of the stochastic innovation-arrival structure used in product-line innovation models \citep{KletteKortum2004}. A Poisson count interpretation is optional,
-\begin{equation}
-    Y_{i,t+1}\mid x_{it},a_i\sim \operatorname{Poisson}(a_i x_{it}),
-    \label{eq:poisson}
-\end{equation}
-but the comparative statics below require only the conditional mean in equation \eqref{eq:production}. Any unobserved scientific success probability can be absorbed into the effective research ability $a_i$.
-
-R\&D effort has convex cost,
-\begin{equation}
-    C(x_{it})=\frac{\kappa}{2}x_{it}^2,\qquad \kappa>0.
-    \label{eq:rdcost}
-\end{equation}
-This reduced-form cost delivers an interior closed-form solution. It is not a claim that project-level R\&D spending is observed. It is a tractability assumption used to make the expected-return channel transparent.
-
-\subsection{MAH route availability and entrusted friction}
-
-Let $M_{t+1}\in\{0,1\}$ denote the institutional regime relevant for commercialization in period $t+1$. The variable $M_{t+1}=0$ denotes the pre-MAH regime, and $M_{t+1}=1$ denotes the MAH regime. The feasible route set is firm-specific:
-\begin{equation}
-    \calR_i(M_{t+1})
-    =
-    \{A,T\}
-    \cup \{I:h_i^I=1\}
-    \cup \{E:M_{t+1}=1,\;q_i^E=1\}.
+    \calR_i(M)=
+    \{A,T\}\cup \{I:h_i^I=1\}\cup \{E:M=1,\ q_i^E=1\}.
     \label{eq:routeset}
 \end{equation}
-Here $I$ is internal production, $E$ is entrusted production while retaining MAH, $T$ is a non-retained outside option such as transfer, sale, or out-licensing that removes the opportunity from the innovating firm's retained stock, and $A$ is abandonment or delay. This discrete route set follows the commercialization-strategy logic in which innovators choose between internal development and external technology-market arrangements depending on the availability of a market for technology or ideas \citep{AroraFosfuriGambardella2001,GansStern2003}. The special case $h_i^I=0$ is important for research-oriented firms without internal manufacturing capacity, but it is not imposed as a universal theory assumption.
+Here $I$ is internal production, $E$ is retained entrusted production, $T$ is a non-retained transfer, sale, or out-licensing option, and $A$ is abandonment or delay.
 
-Conditional on the entrusted route being available, MAH also lowers the policy and contractual friction of using that route. A convenient way to write this is
+Let $R_i^{event}$ denote the route-independent commercialization-event return from a realized original drug, and let $v$ be the continuation value of adding one retained product or certificate to the firm's stock. The entrusted-route payoff is
 \begin{equation}
-    \tau^E_{i,t+1}(M_{t+1})=\bar\tau_i^E-\Delta\tau_i M_{t+1},\qquad \Delta\tau_i\ge0.
-    \label{eq:tau_indicator}
-\end{equation}
-Equation \eqref{eq:tau_indicator} should be read together with the route set in equation \eqref{eq:routeset}. When $M_{t+1}=0$, the MAH-style entrusted route is not feasible for the innovating holder. When $M_{t+1}=1$ and $q_i^E=1$, the route is feasible and its friction is lower. This formulation captures both ideas: MAH adds a regulated holder-producer separation option, and the strength of the option is governed by the friction $\tau^E$.
-
-The object $\tau^E$ is deliberately route-specific and MAH-reducible. It is not the market return $R$, the research productivity parameter $a_i$, the R\&D cost parameter $\kappa$, the direct payment for entrusted manufacturing services $p_m$, or the residual holder-side burden $\mu_i^E$. It captures institutional uncertainty, contractual responsibility allocation, and regulatory-compliance ambiguity associated with retaining authorization while using a qualified producer. A fall in $\tau^E$ means that the external route becomes more legally supported, contractually structured, and regulatorily intelligible. It does not mean that the holder has no responsibility or that physical manufacturing, monitoring, technical transfer, and quality control become free.
-
-For derivative comparative statics, it is useful to study $\Gamma$ as a function of the continuous friction $\tau^E$ conditional on $E$ being feasible. The binary reform effect can then be decomposed into route-set expansion, a fall in $\tau^E$, a realization-probability response, and a contract-manufacturing price response.
-
-\subsection{\texorpdfstring{Commercialization route choice in period $t+1$}{Commercialization route choice in period t+1}}
-
-For each successful original-drug opportunity, the firm chooses one route $r\in\calR_i(M_{t+1})$. Let $R^{event}_{i,t+1}$ be the gross commercialization-event payoff from a commercialized original drug in period $t+1$. It summarizes the non-stock payoff associated with converting a successful opportunity into a marketed product, including market size, therapeutic value, reimbursement environment, and product demand. It is included because pharmaceutical innovation responds to expected market rewards \citep{AcemogluLinn2004,DuboisDeMouzonScottMortonSeabright2015,BarwickXiaXia2026}. The model does not require firm-product revenue data.
-
-\paragraph{Payoff accounting.}
-There are three distinct payoff objects. First, $R^{event}$ or $\bar R^E$ is the commercialization-event payoff from turning a successful opportunity into a marketed product. Second, existing retained products generate the expected flow payoff $\pi n_{it}$. Third, $v_t$ is the marginal continuation value of adding one retained original-drug asset to the firm's stock. Retained routes receive continuation value only when the opportunity is implemented and retained. Thus $R^{event}\neq v_t$ and $R^{event}\neq \pi n_{it}$.
-
-\begin{assumption}[Payoff accounting and route ownership]
-$R^{event}_{i,t+1}$ and $\bar R^E_{ip,t+1}$ are route-period commercialization payoffs and exclude the continuation value of keeping the product in the innovating firm's retained stock. Continuation value is represented separately by $v_{t+1}$. The route $T$ is a non-retained outside option: after transfer, sale, or non-retained out-licensing, the innovating firm receives $S_i-\tau_i^T$ but does not add the product to its retained stock. A retained licensing arrangement would be a different route and is not modeled separately here.
-\end{assumption}
-
-\paragraph{Non-retained transfer option.}
-The route $T$ is a non-retained outside option. It includes transfer, sale, or non-retained out-licensing arrangements under which the innovating firm receives a net payment but does not add the product to its retained stock. We write this payoff as
-\begin{equation}
-    b^T_i=S_i-\tau_i^T.
-    \label{eq:transfer_payoff}
-\end{equation}
-The object $S_i$ is the gross expected non-retained transfer value, and $\tau_i^T$ is the transaction or contracting friction associated with that outside option. In the baseline, $S_i-\tau_i^T$ is taken as exogenous. This is conservative: MAH may also improve the innovator's transfer bargaining position by giving it a credible retained commercialization outside option. Appendix \ref{sec:ghm_extension} gives a reduced-form version of this Grossman-Hart-Moore-style hold-up channel. A useful special case is
-\begin{equation}
-    S_i=\omega_i^T R^{event}_{it},
-    \qquad
-    \omega_i^T\in[0,1],
-    \label{eq:transfer_special_case}
-\end{equation}
-but the main comparative statics do not require imposing this functional form.
-
-The entrusted route contains a composite realization probability. Let
-\begin{equation}
-    \zeta^E_{i,t+1}(M_{t+1},p_{m,t+1})
+    G_i^E(M,p_m)
     =
-    \zeta^E\!\left(\tau^E_{i,t+1}(M_{t+1}),q_i^E,\theta_i,z^C,p_{m,t+1}\right)
-    \in[0,1],
-    \label{eq:zetaE}
+    \zeta_i^E(M,p_m)\left[\bar R_i^E+v\right]
+    -p_m-\tau_i^E(M)-\mu_i^E,
+    \label{eq:GE}
 \end{equation}
-with $\partial\zeta^E/\partial\tau^E\le0$. This object is not a separately identified primitive in the calibration. It is a compact way to distinguish latent opportunity arrival from observed realization through the retained entrusted route.
+where $\tau_i^E(M)$ is the MAH-reducible policy and contractual friction, and
+\[
+    \zeta_i^E(M,p_m)=\zeta^E(\tau_i^E(M),q_i^E,\theta_i,p_m)
+\]
+is a composite probability linking latent opportunity arrival to observed approval, launch, or realized retained outcome. The baseline uses $\bar R_i^E=\E[R_i\mid L_i=1,E]$ as a compressed post-production payoff object.
 
-Route values in period $t+1$ are
+The other route payoffs are
 \begin{align}
-    G^I_{i,t+1} &= R^{event}_{i,t+1}+v_{t+1}-C^I(k_i),\label{eq:GI}\\
-    G^E_{i,t+1} &=
-    \zeta^E_{i,t+1}(M_{t+1},p^*_{m,t+1})
-    \left[\bar R^E_{i,t+1}+v_{t+1}\right]
-    -p^*_{m,t+1}(M_{t+1})
-    -\tau^E_{i,t+1}(M_{t+1})
-    -\mu_i^E,\label{eq:GE}\\
-    G^T_{i,t+1} &= S_i-\tau_i^T,\label{eq:GT}\\
-    G^A_{i,t+1} &=0.\label{eq:GA}
+    G_i^I &= R_i^{event}+v-C^I(k_i), \label{eq:GI}\\
+    G_i^T &= S_i-\tau_i^T, \label{eq:GT}\\
+    G_i^A &=0. \label{eq:GA}
 \end{align}
-Here $C^I(k_i)$ is internal production cost, with
-\begin{equation}
-    \frac{\partial C^I(k_i)}{\partial k_i}<0,
-    \label{eq:CIderiv}
-\end{equation}
-so higher manufacturing ability lowers internal production cost. Here $p^*_{m,t+1}(M_{t+1})$ is the equilibrium project-level price or effective payment for qualified entrusted manufacturing services. It is a route-level implementation cost, not a per-unit marginal cost inside the demand system. The separate object $\tau^E_{i,t+1}$ captures the MAH-reducible policy and contractual friction of the retained external route. The residual burden $\mu_i^E$ captures holder-side monitoring, quality-control, technical-transfer, and coordination costs that remain even when the route is legally supported. $S_i-\tau_i^T$ is the net value of the non-retained outside option.
+The transfer value $S_i-\tau_i^T$ is kept exogenous in the baseline. A Grossman-Hart-Moore-style outside-option interpretation is useful, but it is not added as a main state variable \citep{GrossmanHart1986,HartMoore1990}.
 
-A convenient example is
-\begin{equation}
-    C^I(k_i)=F_I+\frac{\bar c_I}{k_i},
-    \qquad k_i>0,
-    \label{eq:CI_example}
-\end{equation}
-where $F_I$ is the fixed internal commercialization burden and $\bar c_I/k_i$ captures the idea that higher manufacturing capability lowers the cost of internal production. The main comparative statics require only $C_k^I(k_i)<0$; the closed-form results do not depend on this specific functional form.
+\subsection{Route Choice and CMO Market Closure}
 
-Route choice is logit throughout the theory and calibration. With Type-I extreme value route shocks of scale $\sigma_r>0$, the probability of route $r$ is
+Route choice follows a logit model throughout:
 \begin{equation}
-    P_i(r\mid M_{t+1})
+    P_i(r\mid M,p_m)
     =
-    \frac{\exp(G^r_{i,t+1}/\sigma_r)}
-    {\sum_{\ell\in\calR_i(M_{t+1})}\exp(G^\ell_{i,t+1}/\sigma_r)},
-    \qquad r\in\calR_i(M_{t+1}),
+    \frac{\exp(G_i^r(M,p_m)/\sigma_r)}
+    {\sum_{\ell\in\calR_i(M)}\exp(G_i^\ell(M,p_m)/\sigma_r)},
+    \qquad \sigma_r>0.
     \label{eq:logit_prob}
 \end{equation}
-and the expected value of one successful original-drug opportunity is the inclusive value
+The inclusive value of a successful opportunity is
 \begin{equation}
-    \Gamma_{i,t+1}(M_{t+1})
+    \Gamma_i(M,p_m)
     =
-    \sigma_r
-    \log
-    \left[
-    \sum_{r\in\calR_i(M_{t+1})}
-    \exp(G^r_{i,t+1}/\sigma_r)
-    \right].
-    \label{eq:Gamma_general}
+    \sigma_r\log
+    \sum_{r\in\calR_i(M)}
+    \exp(G_i^r(M,p_m)/\sigma_r).
+    \label{eq:Gamma}
 \end{equation}
-The Euler constant is omitted because it is an additive constant that can be absorbed into the payoff normalization. Deterministic route choice is the limiting case $\sigma_r\to0$, not a separate calibration device.
+The deterministic maximum is the limiting case as $\sigma_r\rightarrow0$, not the baseline model.
 
-\subsection{Contract-manufacturing service market closure}
-\label{sec:cm_market_baseline}
-
-The baseline closes only the market for qualified entrusted manufacturing services. Given $p_m$ and regime $M$, route choice and R\&D imply demand
+Demand for qualified entrusted manufacturing services is generated only by realized retained entrusted production:
 \begin{equation}
     D_m(p_m;M)
     =
@@ -303,1205 +145,137 @@ The baseline closes only the market for qualified entrusted manufacturing servic
     a_i x_i^*(M,p_m)
     P_i(E\mid M,p_m)
     \zeta_i^E(M,p_m)
-    \,\dd H_i,
-    \label{eq:cm_demand_baseline}
+    \dd H_i .
+    \label{eq:cm_demand}
 \end{equation}
-where $P_i(E\mid M,p_m)=0$ when $E\notin\calR_i(M)$. Qualified producer supply is
+Qualified producer supply is upward sloping,
 \begin{equation}
-    S_m(p_m)=\int s_j(p_m;z_j^C)\dd H_C(j),
-    \label{eq:cm_supply_baseline}
+    S_m(p_m)=\int s(p_m,z_j^C)\dd H_C(z_j^C),
+    \qquad
+    \frac{\partial s(p_m,z_j^C)}{\partial p_m}\ge0.
+    \label{eq:cm_supply}
 \end{equation}
-where $z_j^C$ indexes producer-side manufacturing capability. The equilibrium service price $p_m^*(M)$ solves equation \eqref{eq:baseline_cm_clearing}. This closure lets MAH-induced entrusted-route demand raise $p_m^*(M)$, which can partially offset the fall in $\tau^E$. No other market is closed in the baseline.
+The equilibrium service price $p_m^*(M)$ solves equations \eqref{eq:baseline_cm_clearing}--\eqref{eq:cm_supply}. No other market is closed.
 
-\subsection{Recursive Bellman equation}
+\subsection{R\&D Choice and Observed Outcomes}
 
-The expected retained-stock transition is
+R\&D effort produces latent successful original-drug opportunities according to
 \begin{equation}
-    n_{i,t+1}
-    =
-    (1-\delta)n_{it}
-    +
-    Y_{i,t+1}
-    \sum_{r\in\calR_i(M_{t+1})}P_i(r\mid M_{t+1})\rho^r\zeta_i^r(M_{t+1}),
-    \label{eq:transition}
+    \lambda_i^{lat}=a_i x_i,
+    \label{eq:latent_arrival}
 \end{equation}
-where $\rho^I=\rho^E=1$, $\rho^T=\rho^A=0$, and $\zeta_i^I=\zeta_i^T=\zeta_i^A=1$ are normalizations unless richer route-specific realization data are available. Equation \eqref{eq:transition} is written in expected-count form. If one wants to track multiple realized opportunities one by one, the last term can be written as a summation over realized opportunities. That notation is not needed for the main model.
-
-\begin{assumption}[Boundedness and stationary value]
-\label{ass:bounded_stationary}
-Let $\beta\in(0,1)$, $\delta\in(0,1)$, $\sigma_r>0$, and suppose route payoffs are bounded for all feasible firm types and regimes. In stationary environments, the Bellman operator is a contraction on bounded value functions, and the retained-stock component has finite marginal value because $\beta(1-\delta)<1$.
-\end{assumption}
-
-Because the value function is affine in the stock state, write
+with cost
 \begin{equation}
-    V_t(n_{it};\cdot)=A_t(\cdot)+v_t n_{it}.
-    \label{eq:affine}
+    C_i^R(x_i)=\frac{\kappa}{2}x_i^2,\qquad \kappa>0.
+    \label{eq:rd_cost}
 \end{equation}
-The marginal value of one retained original drug satisfies
+Because each latent success has expected route value $\Gamma_i(M,p_m^*(M))$, the firm solves
+\[
+    \max_{x_i\ge0}
+    \beta a_i x_i\Gamma_i(M,p_m^*(M))-\frac{\kappa}{2}x_i^2 .
+\]
+The interior solution is
 \begin{equation}
-    v_t=\pi+\beta(1-\delta)v_{t+1}.
-    \label{eq:vrecursion}
-\end{equation}
-Using equations \eqref{eq:production}, \eqref{eq:Gamma_general}, and \eqref{eq:vrecursion}, the Bellman reduces to
-\begin{align}
-V_t(n_{it};\cdot)
-=&\; \pi n_{it}+\beta A_{t+1}+\beta(1-\delta)v_{t+1}n_{it} \nonumber\\
-&+\max_{x_{it}\ge0}\left\{
-\beta a_i x_{it}
-\E_t\left[\Gamma_{i,t+1}(M_{t+1},\tau^E_{i,t+1},\mu_i^E)\right]
--\frac{\kappa}{2}x_{it}^2
-\right\}.
-\label{eq:Bellman_reduced}
-\end{align}
-The reduced problem keeps the payoff accounting transparent: $\Gamma$ already contains the route-period payoff and the incremental continuation value of retained realized products, while $\pi n$ is the flow payoff from the pre-existing retained stock.
-
-\section{Closed-Form Solution}
-
-The R\&D choice solves
-\begin{equation}
-\max_{x_{it}\ge0}\left\{
-\beta a_i x_{it}\E_t[\Gamma_{i,t+1}]
--\frac{\kappa}{2}x_{it}^2
-\right\}.
-\label{eq:xproblem}
-\end{equation}
-The first-order condition is
-\begin{equation}
-    \beta a_i\E_t[\Gamma_{i,t+1}]-\kappa x_{it}=0.
-    \label{eq:foc}
-\end{equation}
-Since abandonment gives value zero, $\Gamma_{i,t+1}\ge0$. The optimal R\&D intensity is
-\begin{equation}
-    x^*_{it}=\frac{\beta a_i}{\kappa}\E_t[\Gamma_{i,t+1}].
+    x_i^*(M)=\frac{\beta a_i}{\kappa}\Gamma_i(M,p_m^*(M)).
     \label{eq:xstar}
 \end{equation}
-The expected number of next-period latent successful original-drug opportunities is
+Observed realized output differs from latent opportunity arrival:
 \begin{equation}
-    \lambda^{lat,*}_{i,t+1}\equiv \E_t[Y^*_{i,t+1}]
-    =a_i x^*_{it}
-    =\frac{\beta a_i^2}{\kappa}\E_t[\Gamma_{i,t+1}].
-    \label{eq:lambdastar}
-\end{equation}
-Observed realized original-drug outcomes additionally depend on route-use probabilities and realization probabilities:
-\begin{equation}
-    \lambda^{obs,*}_{i,t+1}
+    \lambda_i^{obs}(M)
     =
-    a_i x^*_{it}
-    \sum_{r\in\calR_i(M_{t+1})}
-    P_i(r\mid M_{t+1})\zeta_i^r(M_{t+1}).
-    \label{eq:lambdaobs}
-\end{equation}
-For a research-oriented sample focused on the retained entrusted route, the corresponding object is
-\begin{equation}
-    \lambda^{obs,E,*}_{i,t+1}
-    =
-    a_i x^*_{it}
-    P_i(E\mid M_{t+1})
-    \zeta_i^E(M_{t+1}).
-    \label{eq:lambdaobsE}
-\end{equation}
-Equations \eqref{eq:xstar}--\eqref{eq:lambdaobsE} give the mechanism in closed form: expected future commercialization value raises current R\&D, while observed approvals or launches are downstream realized outcomes rather than latent opportunity arrivals.
-
-For stationary comparative statics, hold the market-return background and residual entrusted-route burden fixed, set $M_t=M$, $\tau^E_{it}=\tau^E_i(M)$, $p_{m,t}=p_m^*(M)$, $v_t=v$, and $A_t=A$. From equation \eqref{eq:vrecursion},
-\begin{equation}
-    v=\frac{\pi}{1-\beta(1-\delta)}.
-    \label{eq:vstationary}
-\end{equation}
-The stationary inclusive value under regime $M$ is
-\begin{equation}
-    \Gamma_i^M
-    =
-    \sigma_r
-    \log
-    \left[
+    a_i x_i^*(M)
     \sum_{r\in\calR_i(M)}
-    \exp(G_i^r(M,p_m^*(M))/\sigma_r)
-    \right].
-    \label{eq:Gamma_stationary}
+    P_i(r\mid M,p_m^*(M))\zeta_i^r(M,p_m^*(M)).
+    \label{eq:lambda_obs}
 \end{equation}
-The stationary solutions under regime $M$ are
-\begin{align}
-    x_i^*(M)&=\frac{\beta a_i}{\kappa}\Gamma_i^M,\label{eq:xstationary}\\
-    \lambda_i^{lat,*}(M)&=\frac{\beta a_i^2}{\kappa}\Gamma_i^M,\label{eq:lambdastationary}\\
-    V_i(n_i;M)&=\frac{\beta^2 a_i^2}{2\kappa(1-\beta)}\left[\Gamma_i^M\right]^2+\frac{\pi}{1-\beta(1-\delta)}n_i.\label{eq:Vstationary}
-\end{align}
-The corresponding realized-output objects are defined by equations \eqref{eq:lambdaobs} and \eqref{eq:lambdaobsE}.
-
-\section{Comparative Statics}
-
-The comparative statics hold the demand-side market-return background fixed. The main result is not that a lower generic cost raises value. The main result is a logit-weighted sorting statement: MAH creates a retained external commercialization route, and the strength of the R\&D response is governed by how much probability mass the firm assigns to that route after accounting for realization probability, residual holder burdens, the endogenous contract-manufacturing price, and outside options.
-
-\subsection{Logit-weighted entrusted-route relevance}
-
-When $E\in\calR_i(M)$, define the entrusted-route marginal payoff effect of a change in the MAH-reducible friction, holding the market-clearing service price fixed, as
+For the retained entrusted route,
 \begin{equation}
-    \frac{\partial G_i^E}{\partial \tau_i^E}
+    \lambda_i^{obs,E}(M)
     =
-    \left(\bar R_i^E+v\right)
-    \frac{\partial \zeta_i^E}{\partial \tau_i^E}
-    -1
-    \le0.
-    \label{eq:dGEdtau}
+    a_i x_i^*(M)
+    P_i(E\mid M,p_m^*(M))\zeta_i^E(M,p_m^*(M)).
+    \label{eq:lambda_obs_E}
 \end{equation}
-If $E\notin\calR_i(M)$, set $P_i(E\mid M)=0$. The derivative of the inclusive value is
-\begin{equation}
-    \frac{\partial \Gamma_i^M}{\partial \tau_i^E}
-    =
-    P_i(E\mid M)
-    \left[
-    \left(\bar R_i^E+v\right)
-    \frac{\partial \zeta_i^E}{\partial \tau_i^E}
-    -1
-    \right]
-    \le0.
-    \label{eq:dGammadTau_logit}
-\end{equation}
-This expression is the smooth counterpart of the deterministic sorting condition. The effect of the entrusted-route friction is small for firms that assign little route-choice probability to $E$, and large for firms for which $E$ is close to or above their best alternative.
+
+\section{Theoretical Implications}
 
 \begin{proposition}[Logit-weighted R\&D response]
-\label{prop:logit_weighted_response}
-Conditional on the entrusted route being feasible, a reduction in $\tau_i^E$ weakly raises firm $i$'s latent R\&D opportunity arrival:
-\begin{align}
+\label{prop:rd_response}
+For a firm with $E\in\calR_i(M)$, holding $p_m$, $\zeta_i^E$, and other route payoffs fixed,
+\begin{equation}
     \frac{\partial x_i^*}{\partial \tau_i^E}
-    &=
-    \frac{\beta a_i}{\kappa}
-    \frac{\partial \Gamma_i^M}{\partial \tau_i^E}
-    \le0,
-    \label{eq:dxdtau_logit}\\
-    \frac{\partial \lambda_i^{lat,*}}{\partial \tau_i^E}
-    &=
-    \frac{\beta a_i^2}{\kappa}
-    \frac{\partial \Gamma_i^M}{\partial \tau_i^E}
-    \le0.
-    \label{eq:dLambdadtau_logit}
-\end{align}
-The response is stronger for high-$a_i$ firms and for firms with high $P_i(E\mid M)$.
+    =
+    -\frac{\beta a_i}{\kappa}P_i(E\mid M,p_m)<0.
+    \label{eq:dxdtau}
+\end{equation}
+The effect of a lower entrusted-route friction is larger when the firm assigns higher route probability to retained entrusted production.
 \end{proposition}
 
-\begin{proof}
-Differentiate equations \eqref{eq:xstationary} and \eqref{eq:lambdastationary}. The derivative of the log-sum inclusive value is the route probability times the derivative of the route payoff, which gives equation \eqref{eq:dGammadTau_logit}.
-\end{proof}
+\noindent The result follows because the derivative of the log-sum inclusive value with respect to a route payoff equals that route's logit probability. The model therefore predicts probability-weighted sorting rather than a universal response. Firms for which the entrusted route is infeasible, unattractive, or dominated by internal production respond little.
 
-\begin{corollary}[Deterministic sorting as a limit]
-\label{cor:deterministic_sorting_limit}
-Let $\sigma_r\to0$. Define
-\[
-    B_i^0=\max_{r\in\calR_i(0)}G_i^r(0),
-    \qquad
-    E_i(1)=G_i^E(1,p_m^*(1)).
-\]
-Then the strict MAH response converges to the hard sorting condition
-\begin{equation}
-    \Delta_i^{MAH}>0
-    \quad\Longleftrightarrow\quad
-    E_i(1)>B_i^0.
-    \label{eq:deterministic_sorting_limit}
-\end{equation}
-\end{corollary}
+The technical appendix also gives the full derivative when $\zeta_i^E$ varies with the entrusted-route friction. The main-text expression isolates the direct route-friction channel by holding realization probability fixed.
 
-Thus the deterministic cutoff is not the baseline route-choice rule. It is the limiting interpretation of the logit model. Economically, the strongest responses should arise among high-research-capability firms with weak internal manufacturing fallback, weak non-retained transfer outside options, high entrusted-route realization probability, low residual monitoring burdens, and access to non-scarce CMO capacity.
-
-\subsection{Manufacturing capability and price feedback}
-
-For firms with feasible internal production, the retained external route is more attractive than internal production when
-\begin{equation}
-    \zeta_i^E(M)\left[\bar R_i^E+v\right]
-    -p_m^*(M)-\tau_i^E(M)-\mu_i^E
-    >
-    R_i^{event}+v-C^I(k_i).
-    \label{eq:external_beats_internal_logit}
-\end{equation}
-Equivalently,
-\begin{equation}
-    C^I(k_i)
-    >
-    R_i^{event}+v
-    -
-    \zeta_i^E(M)\left[\bar R_i^E+v\right]
-    +p_m^*(M)+\tau_i^E(M)+\mu_i^E.
-    \label{eq:manufacturing_comparison_logit}
-\end{equation}
-If $\zeta_i^E=1$ and $\bar R_i^E=R_i^{event}$, this reduces to the simpler internal-versus-entrusted cost comparison. With realization risk, the cutoff also depends on the probability that the retained entrusted route can actually be implemented.
-
-The binary MAH effect can be discussed through the entrusted-route payoff decomposition
-\begin{equation}
-    \frac{\dd G_i^E}{\dd M}
-    =
-    \left(\bar R_i^E+v\right)\frac{\dd \zeta_i^E}{\dd M}
-    -
-    \frac{\dd p_m^*(M)}{\dd M}
-    -
-    \frac{\dd \tau_i^E(M)}{\dd M}
-    -
-    \frac{\dd \mu_i^E(M)}{\dd M}.
-    \label{eq:GE_M_decomposition}
-\end{equation}
-This is a mechanism decomposition, not a standalone theorem. MAH raises the entrusted-route payoff when the improvement in feasibility and policy friction is large enough to dominate the contract-manufacturing price response and any residual holder-side burden. The endogenous price response is important because
-\[
-    MAH\Rightarrow D_m\uparrow\Rightarrow p_m^*(M)\uparrow
-\]
-can partially offset the direct decline in $\tau_i^E$.
-
-\begin{table}[htbp]
-\centering
-\scriptsize
-\caption{Model-Implied Differences Across Mechanisms}
-\label{tab:alternative_mechanisms}
-\begin{tabularx}{\textwidth}{@{}L{0.22\textwidth}L{0.20\textwidth}L{0.27\textwidth}Y@{}}
-\toprule
-Mechanism & Model object & Route-use prediction & Innovation prediction \\
-\midrule
-Demand expansion & $R^{event}\uparrow$ & Does not specifically predict holder--producer split & Multiple commercialization routes become more attractive \\
-Scientific productivity improvement & $a_i\uparrow$ & Does not specifically predict entrusted-route use & Research-capable firms expand opportunities broadly \\
-Review-speed or approval-probability reform & Lower delay or higher success probability & Does not necessarily change the retained external route & Applications or approvals can rise broadly \\
-MAH route-friction channel & $E$ route added, $\tau_i^E\downarrow$, $\zeta_i^E\uparrow$, $p_m^*$ adjusts & Holder--producer split rises among relevant retained products & Strongest for high-$a_i$, low-$k_i$, weak transfer option, high $\zeta_i^E$, and low $\mu_i^E$ firms \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-These results are private option-value results. They do not imply that social welfare necessarily rises, that entrusted production is always chosen, or that every firm responds. The aggregate implications below are fixed-distribution sums of the firm-level logit-weighted responses, not general-equilibrium innovation or welfare statements.
-
-\section{Aggregate Response Modules: Incumbents, Potential Entrants, and Expected Drug Counts}
-
-Let $H_I(\theta,n)$ be the distribution of incumbents and let $G_N(\theta)$ be the distribution of potential entrants, where $\theta=(a,k,h^I,q^E,S,\tau^T,\mu^E)$. Let $f^e$ be an entry cost with conditional cumulative distribution $F_e(\cdot\mid\theta)$ and density $f_e(\cdot\mid\theta)$.
-
-The entry block is not a full free-entry equilibrium condition in the baseline model. It is a response module that maps the post-entry value $A(\theta,M)$ into potential research-oriented entry through an entry-cost distribution $F_e$. In the current approval-side data environment, this module should be interpreted as a future calibration or sensitivity exercise unless a credible firm-year entry panel is available.
-
-The stationary entrant value, excluding old stock, is
-\begin{equation}
-    A(\theta,M)
-    =
-    \frac{\beta^2 a^2}{2\kappa(1-\beta)}
-    \left[\Gamma^M(\theta)\right]^2.
-    \label{eq:entrant_value}
-\end{equation}
-A potential entrant enters if $A(\theta,M)\ge f^e$. Therefore the mass of entrants is
-\begin{equation}
-    N_E(M)=
-    \int
-    F_e\!\left(A(\theta,M)\mid\theta\right)
-    \,\dd G_N(\theta).
-    \label{eq:entrymass}
-\end{equation}
-For a potential entrant with fixed $\theta_i$ and entry cost $f_i^e$, MAH strictly changes the entry decision only when
+\begin{proposition}[Observed entrusted-route decomposition]
+\label{prop:obs_decomposition}
+The change in observed retained entrusted output can be decomposed as
 \begin{align}
-    \Delta Entry_i>0
-    \quad\Longleftrightarrow\quad
-    f_i^e
-    \in
-    [&A(\theta_i,0),A(\theta_i,1)).
-    \label{eq:entry_threshold}
-\end{align}
-Thus MAH does not make all potential entrants enter. It pushes across the entry threshold only those potential entrants whose entry costs lie between the pre-MAH and post-MAH operation values.
-
-Conditional on MAH route availability, differentiating with respect to $\tau^E$ gives
-\begin{equation}
-    \frac{\partial A(\theta,1)}{\partial \tau^E}
-    =
-    \frac{\beta^2 a^2}{\kappa(1-\beta)}
-    \Gamma^1(\theta)
-    \frac{\partial\Gamma^1(\theta)}{\partial\tau^E}
-    \le0.
-    \label{eq:dAdtau}
-\end{equation}
-Thus
-\begin{equation}
-    \frac{\partial N_E(1)}{\partial \tau^E}
-    =
-    \int
-    f_e\!\left(A(\theta,1)\mid\theta\right)
-    \frac{\partial A(\theta,1)}{\partial\tau^E}
-    \,\dd G_N(\theta)
-    \le0.
-    \label{eq:dEntrydtau}
-\end{equation}
-This is the standard entry logic that higher post-entry value attracts additional entrants \citep{BresnahanReiss1991,Berry1992}, here applied to research-oriented entry.
-
-Holding the distribution of incumbent characteristics fixed, the model-implied latent opportunity count from incumbents is
-\begin{equation}
-    \Lambda_I^{lat}(M)
-    =
-    \int
-    \frac{\beta a^2}{\kappa}
-    \Gamma^M(\theta)
-    \,\dd H_I(\theta,n).
-    \label{eq:LambdaI}
-\end{equation}
-The corresponding observed realized count from incumbents is
-\begin{equation}
-    \Lambda_I^{obs}(M)
-    =
-    \int
-    \frac{\beta a^2}{\kappa}
-    \Gamma^M(\theta)
-    \sum_{r\in\calR_i(M)}P_i(r\mid M)\zeta_i^r(M)
-    \,\dd H_I(\theta,n).
-    \label{eq:LambdaIobs}
-\end{equation}
-Holding the potential entrant pool fixed, the model-implied latent opportunity count from entrants is
-\begin{equation}
-    \Lambda_N^{lat}(M)
-    =
-    \int
-    F_e\!\left(A(\theta,M)\mid\theta\right)
-    \frac{\beta a^2}{\kappa}
-    \Gamma^M(\theta)
-    \,\dd G_N(\theta).
-    \label{eq:LambdaN}
-\end{equation}
-Holding the distribution of incumbent characteristics and the potential entrant pool fixed, the model-implied aggregate latent opportunity count is
-\begin{equation}
-    \Lambda^{lat,agg}(M)=\Lambda_I^{lat}(M)+\Lambda_N^{lat}(M).
-    \label{eq:LambdaAgg}
-\end{equation}
-This is an aggregate response under fixed distributions, not a general-equilibrium aggregate obtained from an invariant industry distribution.
-Conditional on MAH route availability, the incumbent-margin derivative is
-\begin{equation}
-    \frac{\partial \Lambda_I^{lat}(1)}{\partial\tau^E}
-    =
-    \int
-    \frac{\beta a^2}{\kappa}
-    \frac{\partial\Gamma^1(\theta)}{\partial\tau^E}
-    \,\dd H_I(\theta,n)
-    \le0.
-    \label{eq:dLambdaI}
-\end{equation}
-The entrant-margin derivative is
-\begin{align}
-    \frac{\partial \Lambda_N^{lat}(1)}{\partial\tau^E}
-    =&
-    \int
-    F_e\!\left(A(\theta,1)\mid\theta\right)
-    \frac{\beta a^2}{\kappa}
-    \frac{\partial\Gamma^1(\theta)}{\partial\tau^E}
-    \,\dd G_N(\theta)
-    \nonumber\\
+    \dd \lambda_i^{obs,E}
+    =&\;
+    a_i P_i(E\mid M,p_m^*(M))\zeta_i^E(M,p_m^*(M))\dd x_i^* \notag\\
     &+
-    \int
-    \frac{\beta a^2}{\kappa}
-    \Gamma^1(\theta)
-    f_e\!\left(A(\theta,1)\mid\theta\right)
-    \frac{\partial A(\theta,1)}{\partial\tau^E}
-    \,\dd G_N(\theta)
-    \le0.
-    \label{eq:dLambdaN}
+    a_i x_i^*(M)\zeta_i^E(M,p_m^*(M))\dd P_i(E\mid M,p_m^*(M)) \notag\\
+    &+
+    a_i x_i^*(M)P_i(E\mid M,p_m^*(M))\dd\zeta_i^E(M,p_m^*(M)).
+    \label{eq:obs_decomposition}
 \end{align}
-Both terms are weakly negative by equation \eqref{eq:dGammadTau_logit} and equation \eqref{eq:dAdtau}. Therefore,
-\begin{equation}
-    \frac{\partial \Lambda^{lat,agg}(1)}{\partial\tau^E}\le0.
-    \label{eq:dLambdaAgg}
-\end{equation}
-A reduction in entrusted-production friction weakly increases the fixed-distribution aggregate response through both incumbent intensity and potential entrant response.
+\end{proposition}
 
-\begin{corollary}[Aggregate fixed-distribution implication]
-For any fixed joint distribution of firm characteristics, and for any fixed conditional entry-cost distribution, MAH weakly raises model-implied aggregate expected original-drug opportunities through route-set expansion and friction reduction. Conditional on the entrusted route being feasible,
-\begin{equation}
-    \frac{\partial \Lambda^{lat,agg}(1)}{\partial\tau^E}\le0,
-    \label{eq:agg_prop_derivative}
-\end{equation}
-so $\dd\tau^E<0$ implies $\dd\Lambda^{lat,agg}\ge0$. The increase is strict if a positive-measure set of incumbents or potential entrants has $a>0$, positive operation or entry value, and positive entrusted-route probability.
+\noindent Observed approvals or launches may rise because firms invest more in R\&D, because successful projects are more likely to use the entrusted route, or because the composite realization probability improves. Approval-side data do not separately identify these components without additional application, status, and project-level information.
+
+\begin{proposition}[CMO price attenuation]
+\label{prop:cmo_attenuation}
+Suppose MAH lowers $\tau_i^E$ for a positive-measure set of firms and raises demand for entrusted production. If qualified CMO supply is upward sloping, the induced increase in $p_m^*(M)$ partially offsets the entrusted-route value gain.
+\end{proposition}
+
+\noindent The entrusted-route payoff depends on the net wedge $p_m^*(M)+\tau_i^E(M)+\mu_i^E$. A reduction in policy or contracting friction increases route value only to the extent that it is not fully absorbed by a higher equilibrium service price or by residual holder-side responsibilities. This is the main force preventing a mechanical ``MAH raises innovation for everyone'' conclusion.
+
+\begin{corollary}[Aggregate implication]
+For a fixed firm distribution, aggregate latent original-drug opportunities rise when the positive $\Gamma_i(M,p_m^*(M))$ response among treated-relevant firms is not offset by CMO price feedback and when the affected set has positive measure. Aggregate observed original-drug outcomes additionally require that route-use and realization-probability terms do not fall enough to offset the latent-opportunity gain. The result is a private-value and realized-output implication, not a welfare theorem.
 \end{corollary}
 
-\begin{proof}
-Equations \eqref{eq:dLambdaI} and \eqref{eq:dLambdaN} imply equation \eqref{eq:dLambdaAgg}. Strictness follows when $\partial\Gamma^1/\partial\tau^E<0$ on a positive-measure set.
-\end{proof}
+\section{Empirical and Calibration Implications}
 
-\section{Mechanism Calibration Blueprint}
-
-The model is not intended to identify every primitive. The calibration exercise is a mechanism calibration: it asks whether data moments close to the route-choice and realization channels can discipline a small number of composite objects. It is not a full structural estimation exercise and not a stand-alone causal identification design.
-
-\subsection{Model-to-data mapping}
-
-The key requirement is to keep model objects, empirical moments, and claim strength separate. Table \ref{tab:model_data_mapping} summarizes the mapping.
+The model is intended to discipline a mechanism calibration, not to identify every primitive friction. The key empirical distinction is between latent opportunity arrival and observed realized outcomes. Approval data, holder-producer links, and original-drug counts are close to realized outcomes. They are not direct observations of latent ideas, project-level scientific success, or true route-specific legal and managerial costs.
 
 \begin{table}[htbp]
 \centering
-\scriptsize
-\caption{Model Objects, Data Moments, and Claim Boundaries}
+\footnotesize
+\caption{Model Objects and Feasible Data Moments}
 \label{tab:model_data_mapping}
-\begin{tabularx}{\textwidth}{@{}L{0.17\textwidth}L{0.25\textwidth}L{0.24\textwidth}Y@{}}
+\begin{tabularx}{\textwidth}{L{0.28\textwidth}Y Y}
 \toprule
-Model object & Economic meaning & Feasible data moment & Claim boundary \\
+Model object & Feasible moment & Claim boundary \\
 \midrule
-$R^{event}$ and $\bar R^E$ & Route-independent gross return and entrusted-route realized-return kernel & Demand-side controls: disease burden, patient population, reimbursement, procurement exposure, aggregate sales or therapeutic-composition controls & Background/control for opportunity value; not evidence that MAH raises demand \\
-$p_m^*(M)$ & Equilibrium price or effective payment for qualified contract-manufacturing services & Contract-manufacturing prices, CMO fee schedules, cost reports, producer capacity, or sensitivity values if unavailable & Endogenous only in the CMO service market; not a product-market price index \\
-$\tau^E$ & MAH-reducible policy, contractual, and regulatory friction of the retained external route & Holder--producer split among comparable original-drug records; post-MAH exposure-gradient in split shares & Enters a composite route-use wedge; not separately identified as legal cost alone \\
-$\zeta_i^E$ & Composite realization probability for the retained entrusted route & Approval/launch realization, application-to-approval conversion, holder--producer split among realized products & Distinguishes latent arrival from observed realization; not separately identified from $\bar R^E$ \\
-$\mu_i^E$ & Residual holder-side monitoring, quality-control, technical-transfer, and coordination burden & Not separately identified in approval-side data; handled by heterogeneity, normalization, or sensitivity values & Prevents entrusted production from being treated as costless after MAH \\
-$\Gamma_i^M$ & Private expected value of a successful original-drug opportunity under regime $M$ & Not directly observed; inferred through route-use and count moments after normalizations & Private option value, not social welfare \\
-$x_i^*$ & Original-drug R\&D intensity & Usually unobserved in approval-side data; may be proxied by R\&D spending, patents, or clinical-trial sponsorship in future modules & Not identified from approval records alone \\
-$\lambda_i^{lat,*}$ and $\lambda_i^{obs,*}$ & Latent opportunity arrival and observed realization & Original-drug applications, IND/CTA records, approvals, launches, or realized products, depending on data layer & Approval counts are downstream realizations, not latent idea arrivals \\
-$n_{it}$ & Stock of retained original drugs or certificates & Holder-level stock of retained original-drug approvals or certificates & Captures retained assets; transferred products require separate interpretation \\
-$N_E$ and $F_e$ & Research-oriented entry and entry-cost distribution & First appearance in original-drug applications, clinical-trial sponsorship, or holder records & Future or sensitivity module unless firm-year entry data are merged \\
+$P_i(E\mid M,p_m^*(M))\zeta_i^E(M,p_m^*(M))$ & Holder-producer split among realized original drugs & Disciplines a composite route-realization wedge, not a primitive $\tau_i^E$ or $\mu_i^E$ separately. \\
+$a_i x_i^*(M)$ and realization scale & Realized original-drug counts & Disciplines innovation-realization scale, not latent idea arrival alone. \\
+$p_m^*(M)$ or CMO scarcity & Qualified entrusted-producer participation or capacity proxy & Needed to interpret attenuation; direct CMO prices may be unavailable. \\
+Entry-cost distribution $F_e$ & Firm-year research-oriented entry panel & Future or sensitivity module unless credible entry data are merged. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\subsection{Executable calibration steps}
+Three calibration boundaries follow. First, route-use moments should be interpreted as evidence about relative route attractiveness among realized products, not as a direct estimate of the MAH policy treatment. Second, original-drug counts discipline a composite scale combining R\&D effort, research productivity, route choice, and realization probabilities. Third, entry should not be a baseline calibrated outcome unless the data contain a credible firm-year entry panel and pre-reform capability measures.
 
-A feasible blueprint has five steps.
+The baseline empirical exercise should therefore focus on approval-side realized-product moments: realized original-drug counts, original-drug shares, holder-producer splits, and heterogeneity by pre-reform manufacturing capability where available. Application-to-approval conversion, true project-level success probabilities, CMO prices, and research-oriented entry are natural future modules, but they should not be treated as already identified by approval-side records alone.
 
-\paragraph{Step 1: Define the sample and moments.}
-Construct a comparable product-level sample of original-drug records. If available, also construct demand-side controls $d_t^{data}$ for $R^{event}$ and $\bar R^E$, such as disease burden, patient population, reimbursement status, procurement exposure, or therapeutic-area composition. These controls are used to discipline or condition the market-return background, not to define MAH as a demand shock. The baseline approval-side moments are
-\[
-m^{data}
-=
-\left(
-s^{E,data}_{post},
-\bar\lambda^{O,obs,data}_{0},
-N_E^{data}
-\right),
-\]
-where $s^{E,data}_{post}$ is the post-MAH holder--producer split share among comparable original-drug records, $\bar\lambda^{O,obs,data}_{0}$ is a baseline realized original-drug count, and $N_E^{data}$ is included only when a credible research-oriented entry panel is available. The demand-side control vector $d_t^{data}$ can be reported alongside these moments or used in sensitivity checks for $R^{event}$ and $\bar R^E$.
-
-\paragraph{Step 2: Choose composite parameters.}
-The calibration should target composite objects rather than primitive costs:
-\[
-\theta
-=
-\left(
-\omega_E,\alpha_O,\mu_e
-\right),
-\]
-where $\omega_E$ denotes a composite route-realization wedge that includes $p_m^*$, $\tau^E$, $\mu^E$, $\zeta^E$, and the route-choice scale $\sigma_r$ relative to internal production or another retained route; $\alpha_O$ denotes the composite innovation-arrival scale $\beta a^2/\kappa$; and $\mu_e$ indexes a parsimonious entry-cost distribution. In the baseline approval-side exercise, $\mu_e$ can be omitted or treated as a sensitivity parameter.
-
-\paragraph{Step 3: State normalizations.}
-Because approval-side data do not separately observe $a_i$, $\kappa$, $\Gamma_i$, $\zeta_i^E$, $\bar R_i^E$, project-level success probabilities, and route-choice scale, the calibration must normalize at least one object. Examples include $\kappa=1$, a benchmark $\Gamma^0(\theta)=1$, a chosen route-choice scale $\sigma_r$, or sensitivity values for $p_m^*(M)$. The calibrated parameters should be interpreted relative to these normalizations.
-
-\paragraph{Step 4: Match moments.}
-Let $m^{model}(\theta)$ denote the moments generated by the model under the chosen normalizations. The calibration can minimize
-\begin{equation}
-Q(\theta)
-=
-\left[m^{data}-m^{model}(\theta)\right]'W
-\left[m^{data}-m^{model}(\theta)\right],
-\label{eq:calib_objective}
-\end{equation}
-where $W$ is a transparent weighting matrix. With few moments, $W$ can be diagonal and sensitivity to alternative weights should be reported rather than hidden.
-
-\paragraph{Step 5: Report sensitivity and claim boundaries.}
-The baseline report should show how the calibrated composite route-realization wedge and innovation-arrival scale change under alternative original-drug definitions, sample restrictions, holder-producer name cleaning rules, route-use proxies, and sensitivity values for CMO prices or capacity. The exercise can support statements about consistency with the MAH commercialization-friction mechanism. It cannot separately estimate legal compliance costs, search costs, quality-agreement costs, contracting costs, contract-manufacturing prices, realization probabilities, post-production risk, or firm-specific project success probabilities.
-
-\subsection{Route-use moments under the logit model}
-
-The baseline theory already uses the logit route-choice model in equation \eqref{eq:logit_prob}. The route-use block is therefore not an extra smoothing trick; it is the empirical counterpart of the same route-choice structure. To isolate the logic, compare internal production and entrusted production among successful opportunities that remain with the innovating holder. In that conditional comparison,
-\begin{equation}
-    G_t^E-G_t^I
-    =
-    \zeta_t^E(\bar R_t^E+v)
-    -p_{m,t}^*
-    -\tau_t^E-\mu^E
-    -
-    (R_t^{event}+v-C^I(k)).
-    \label{eq:route_gap}
-\end{equation}
-Conditional on comparing retained internal production and retained entrusted production,
-\begin{equation}
-    P_i(r=E\mid r\in\{I,E\})
-    =
-    \frac{\exp(G_i^E/\sigma_r)}
-    {\exp(G_i^E/\sigma_r)+\exp(G_i^I/\sigma_r)}.
-    \label{eq:calib_logit_probability}
-\end{equation}
-Therefore,
-\begin{equation}
-    \log\left(\frac{s_t^E}{1-s_t^E}\right)
-    =
-    \frac{G_t^E-G_t^I}{\sigma_r},
-    \label{eq:logodds}
-\end{equation}
-where $s_t^E$ is a holder--producer split share among comparable retained original-drug records and $\sigma_r$ is a route-choice scale. Without separate evidence on holder-side monitoring and quality-control costs, realization probabilities, route-specific returns, and CMO prices, route-use moments discipline a composite effective route-realization wedge rather than the primitive legal friction alone.
-
-The baseline should not mechanically use a pre-post log-odds difference when the pre-MAH entrusted route is structurally unavailable. In that case $s_{pre}^E=0$ by institutional design, so $\log(s_{pre}^E/(1-s_{pre}^E))$ is not a comparable route-use moment. The baseline interpretation should treat the reform as route-set expansion plus a conditional friction decline. If the data permit, post-MAH exposure variation provides the cleaner calibration margin:
-\begin{equation}
-    \log\left(\frac{s_{\ell,post}^E}{1-s_{\ell,post}^E}\right)
-    =
-    \eta_0+\eta_1 Exposure_\ell+u_\ell,
-    \label{eq:post_exposure_logodds}
-\end{equation}
-where $\ell$ indexes an exposure cell, such as a region, dosage-form segment, firm type, or other implementation-intensity cell. The coefficient $\eta_1$ disciplines relative differences in the effective entrusted-route wedge across exposure cells. A pseudo-count for a zero pre-MAH split share can be reported only as a sensitivity device, not as the baseline economic interpretation.
-
-\subsection{Count and entry blocks}
-
-Baseline original-drug counts discipline the composite R\&D arrival scale and realization mapping. From equations \eqref{eq:lambdastationary} and \eqref{eq:lambdaobs},
-\begin{equation}
-    \bar\lambda_0^{O,obs}
-    =
-    \E\left[
-    \frac{\beta a^2}{\kappa}\Gamma^0(\theta)
-    \sum_{r\in\calR_i(0)}P_i(r\mid0)\zeta_i^r(0)
-    \right].
-    \label{eq:arrival_scale}
-\end{equation}
-If the data are approval-side realized products, this moment should be described as a realized-product count rather than a direct observation of latent idea arrival.
-
-Entrant counts discipline the entry-cost distribution only when the data contain a credible firm-year measure of research-oriented entry. From equation \eqref{eq:entrymass},
-\begin{equation}
-    N_E(M)=
-    \int
-    F_e\!\left(A(\theta,M)\mid\theta\right)
-    \,\dd G_N(\theta).
-    \label{eq:entry_calib}
-\end{equation}
-With only approval-side records, the entry block should be kept as a future module or sensitivity exercise.
-
-\subsection{Data requirements}
-
-The minimum product-level data are drug registration and approval records with product name, approval date, registration category, original-drug classification, holder, producer or manufacturer, dosage form, and indication or therapeutic class. These records are needed to construct original-drug counts and holder-producer split. Relevant official sources include NMPA and CDE registration and approval data, with careful cleaning of holder and producer names.
-
-Demand-side data are useful as controls for $R^{event}$ and $\bar R^E$. They may include disease burden, patient population, reimbursement status, NRDL status, procurement exposure, aggregate therapeutic-area sales, prescription volume, or therapeutic-area composition. These variables help keep the MAH commercialization-friction channel distinct from changes in market size or payment environment. They should not be interpreted as evidence that MAH itself raises demand.
-
-The minimum firm-level data are legal-entity identifiers, founding date, location, ownership, business scope, observed first drug project, and proxies for research and manufacturing ability. Research ability $a_i$ can be proxied by pre-reform original-drug applications, patents, clinical trial sponsorship, or R\&D expenditure where available. Manufacturing ability $k_i$ can be proxied by Drug Manufacturing Certificates, GMP or manufacturing-site information, dosage-form scope, production license records, or manufacturing assets. Firm registries such as the National Enterprise Credit Information Publicity System and commercial databases such as Tianyancha or Qichacha can help standardize firm identities.
-
-The route-use outcome should identify whether the MAH or holder differs from the actual producer. The main proxy is
-\begin{equation}
-    Split_p=\1\{Holder_p\ne Producer_p\}.
-    \label{eq:split}
-\end{equation}
-This proxy is not the policy treatment. It is an observed route-use proxy for realized products, and it should be validated against name standardization, group affiliation, and product-level regulatory records where possible. Data on quality agreements, technology-transfer requirements, audits, holder-manufacturer coordination, CMO prices, and application-to-approval status would be useful for separating parts of the composite route-realization value, but the baseline approval-side data should not be interpreted as doing that separation.
-
-Useful additional data include CDE clinical trial or IND/CTA records, CNIPA patent data, centralized procurement data, hospital procurement or sales databases where accessible, and regional policy exposure measures. These data help separate the MAH commercialization channel from broader market-size or demand-side changes, but they are not required for the theoretical mechanism itself.
-
-\subsection{Preferred eight-moment extension}
-
-The baseline mechanism calibration uses three moment families: route use, original-drug counts, and research-oriented entry. A richer implementation can expand these into eight empirical moments:
-
-\begin{enumerate}
-    \item Original-drug holder--producer split share:
-    \[
-        m_1=\Pr(Split_p=1\mid O_p=1).
-    \]
-    This disciplines the composite route-realization wedge relative to the route-choice scale.
-
-    \item Realized original-drug count:
-    \[
-        m_2=\E[Y^O_{it}].
-    \]
-    This disciplines the composite innovation-arrival scale and realization mapping.
-
-    \item Original-drug share among all realized products:
-    \[
-        m_3=\frac{Y^O_{it}}{Y^{all}_{it}}.
-    \]
-    This disciplines the original-drug orientation of realized innovation.
-
-    \item External-route use among research-oriented or B-like firms:
-    \[
-        m_4=\Pr(Split_p=1\mid O_p=1,\;B\text{-like firm}).
-    \]
-    This tests whether the mechanism is strongest for firms most likely to need external commercialization.
-
-    \item Application-to-approval conversion for original drugs:
-    \[
-        m_5=\frac{\#\text{ Approved original drugs}}{\#\text{ Original-drug applications}}.
-    \]
-    This moment should be used only after application and status data are available.
-
-    \item Research-oriented entry:
-    \[
-        m_6=\#\{\text{first-time original-drug applicants or sponsors}\}.
-    \]
-    This disciplines the entry-cost distribution only when a credible firm-year entry panel is available.
-
-    \item Heterogeneity by pre-reform manufacturing capability:
-    \[
-        m_7=\Delta Y^O_{LowManu}-\Delta Y^O_{HighManu}
-    \]
-    or
-    \[
-        m_7=\Delta Split^O_{LowManu}-\Delta Split^O_{HighManu}.
-    \]
-    This checks whether the response is stronger among firms with weaker internal manufacturing capacity.
-
-    \item Producer-side entrusted-manufacturing response:
-    \[
-        m_8=\#\{\text{qualified entrusted producers}\}
-    \]
-    or a related measure of producer-side participation. This is needed for the baseline CMO service-market closure when direct price data are unavailable.
-\end{enumerate}
-
-These moments are not all available in the current approval-side data. The current baseline should use feasible approval-side moments and reserve conversion, entry, and detailed producer-side moments for future merged data modules or sensitivity checks.
+The formal appendix documents the corresponding moment equations, route-share log-odds mapping, and entry-module boundary. This separation is intentional: the main paper states what the feasible moments can support, while the appendix records the algebra behind that claim.
 
 \section{Conclusion}
 
-The model gives a simple mechanism and a disciplined calibration blueprint. MAH adds the regulated route through which an innovating holder can retain marketing authorization while entrusting production to a qualified manufacturer. Conditional on the route being available and holding the demand-side market-return background fixed, a lower MAH-reducible route friction raises the logit inclusive value most for firms that assign high probability to the retained external route. The effect is mediated by realization probability, the endogenous contract-manufacturing service price, residual holder burden, and outside options. Because expected next-period route value enters the Bellman, current R\&D intensity rises for those firms. Since the latent opportunity arrival rate is produced by $\lambda=ax$, higher R\&D intensity raises latent opportunities, while observed approvals or launches also depend on route-use probabilities and realization probabilities. The calibration blueprint maps this mechanism to approval-side realized-product moments while preserving the boundary between latent opportunities, retained certificates, route-use proxies, demand-side controls, and realized approvals. The paper does not require project-level R\&D investment, observed project-specific success probabilities, a complete causal design, product-level demand estimation, or a full general-equilibrium industry model.
-
+The paper's main mechanism is simple: MAH changes the value of R\&D by changing the commercialization route set available after a successful original-drug opportunity arrives. The retained entrusted route matters most for firms that can generate projects but lack complete internal manufacturing capability, and its value depends on route feasibility, residual holder responsibility, composite realization probability, outside options, and the equilibrium price of qualified contract-manufacturing services. The model remains intentionally partial equilibrium. This restriction is useful because it keeps the theory aligned with the paper's empirical objective: explaining how a specific institutional change can alter expected route value, R\&D incentives, and observed realized original-drug outcomes without turning the project into a full industry equilibrium or welfare model.
 
 \clearpage
 \bibliographystyle{aer}
 \bibliography{mah_route_indicator_friction_refs}
-
-\section{Appendix}
-
-\appendix
-\setstretch{1.18}
-\setlist[itemize]{leftmargin=2em,itemsep=0.2em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=2em,itemsep=0.2em,topsep=0.35em}
-
-\section{CES Background for the Commercialization Return}
-\label{sec:ces_appendix}
-
-This appendix gives one possible background interpretation for the reduced-form commercialization return used in the main text. It is not part of the baseline market closure. Consider a representative payer or consumer allocating original-drug expenditure $E_t$ across differentiated original-drug varieties $\omega\in\Omega_t$ with CES preferences \citep{DixitStiglitz1977,Melitz2003}:
-\begin{equation}
-    X_t
-    =
-    \left[
-    \int_{\omega\in\Omega_t}
-    \left(q_{\omega t}x_{\omega t}\right)^{\frac{\sigma-1}{\sigma}}
-    \dd\omega
-    \right]^{\frac{\sigma}{\sigma-1}},
-    \qquad \sigma>1.
-    \label{eq:ces_utility}
-\end{equation}
-The associated quality-adjusted price index is
-\begin{equation}
-    P_t
-    =
-    \left[
-    \int_{\omega\in\Omega_t}
-    q_{\omega t}^{\sigma-1}p_{\omega t}^{1-\sigma}
-    \dd\omega
-    \right]^{\frac{1}{1-\sigma}},
-    \label{eq:ces_price_index}
-\end{equation}
-and demand for variety $\omega$ is
-\begin{equation}
-    x_{\omega t}
-    =
-    E_tP_t^{\sigma-1}q_{\omega t}^{\sigma-1}p_{\omega t}^{-\sigma}.
-    \label{eq:ces_demand}
-\end{equation}
-If the drug is priced with the CES markup, operating profit is
-\begin{equation}
-    \varpi_{\omega t}
-    =
-    \frac{1}{\sigma}
-    E_tP_t^{\sigma-1}q_{\omega t}^{\sigma-1}p_{\omega t}^{1-\sigma}.
-    \label{eq:ces_profit}
-\end{equation}
-The main text compresses this demand-side background into $R^{event}$. It does not solve for feedback from MAH-induced innovation to $P_t$, expenditure allocation, or product-market competition.
-
-\section{Post-Production Aggregate Risk}
-\label{sec:post_risk_appendix}
-
-The main text uses $\bar R_i^E$ as a compressed payoff object for the retained entrusted route. One interpretation is
-\begin{equation}
-    \bar R^E_{ip}
-    =
-    \E_{\omega\sim F_{post}^E}
-    [R_{ip}(\omega)\mid L_{ip}=1,E].
-    \label{eq:post_risk_Rbar}
-\end{equation}
-The shock $\omega$ summarizes post-production uncertainty after the project has been implemented through the entrusted route. The model does not separately introduce sales, after-sales service, pharmacovigilance, regulatory penalty, or partner-performance states. Those risks are intentionally compressed into $\bar R^E$ so that the baseline remains a mechanism model rather than a full product-level dynamic state-space model.
-
-\section{Institutional Details and Mechanism Clarification}
-
-This appendix expands the institutional discussion behind the route-specific friction in the model. The objective is not to claim that MAH simply removes regulation. The point is more precise: MAH creates a legally recognized route under which marketing authorization can remain with the holder while production is performed by a qualified outside manufacturer, and it pairs that route with explicit holder-side responsibility, contractual requirements, quality-management obligations, and supervisory expectations.
-
-\subsection{Institutional evolution from pilot to legal consolidation}
-
-The institutional evolution matters because MAH is not a loose industry slogan. It is a progressively formalized legal arrangement. The reform path first weakened the tight practical bundling of research, authorization, and in-house production by allowing authorization-holding and production to be separated under regulated conditions \citep{StateCouncilMAHPilot2016,CFDAMAHImplementation2016}. The later legal architecture then made the holder the entity associated with the drug registration certificate and located lifecycle responsibility on that holder \citep{DrugAdministrationLaw2019,NMPAHolderResponsibility2022}.
-
-The key legal consolidation is that the holder may either manufacture by itself or entrust manufacturing to a qualified drug manufacturer. In the entrusted-production case, the holder and the manufacturer must sign both an entrustment agreement and a quality agreement, and they must perform the obligations specified in those agreements \citep{DrugAdministrationLaw2019}. Subsequent manufacturing supervision rules sharpen the operational meaning of this arrangement by requiring quality-assurance assessment, risk-management assessment, agreements, and supervision of performance \citep{NMPAManufacturing2022,NMPAEntrustedProduction2023}. In economic terms, the delegated-production route is not converted into a casual outsourcing margin. It is converted into a standardized, legally supported, and supervised route.
-
-\subsection{Holder responsibility after production is separated}
-
-For the economics of the paper, the important institutional point is that MAH separates production performance from ultimate holder responsibility. It does not transfer the core accountability for the drug away from the holder. Once a drug is authorized, the holder remains the focal entity for the drug across the life cycle.
-
-At a minimum, four dimensions remain holder-side responsibilities:
-\begin{enumerate}
-    \item \textbf{Lifecycle responsibility.} The holder remains the legally central entity from research and registration through production, distribution, post-marketing study, and pharmacovigilance.
-    \item \textbf{Quality-system responsibility.} The holder must establish and maintain a quality assurance system rather than rely passively on the contractor's internal systems.
-    \item \textbf{Oversight responsibility.} The holder must audit and supervise the quality-management systems and performance of entrusted manufacturers and other entrusted parties.
-    \item \textbf{Safety and release responsibility.} The holder remains the entity around which the law and supervisory rules organize quality, safety, and effectiveness responsibilities, even when physical production is performed elsewhere.
-\end{enumerate}
-
-This institutional structure explains why the entrusted route is economically subtle. MAH did not create a zero-cost outsourcing technology. A research-originating holder cannot simply hand off production and walk away. In the model, this residual holder-side burden is captured by $\mu_i^E$. MAH can lower the policy and contractual friction $\tau_i^E$ of using the retained external route, but it does not eliminate monitoring, quality-control, technical-transfer, or coordination burdens.
-
-\subsection{What the entrusted-route friction is not}
-
-The institutional record also clarifies what $\tau^E$ and $\mu^E$ are not.
-
-\textbf{Not a demand shock.} The legal core of MAH concerns who may hold authorization, who may manufacture, how entrusted production is governed, and who bears quality responsibility. These are organizational and regulatory-allocation changes. They do not by themselves change reimbursement rules, final demand conditions, or therapeutic demand for a drug. Demand-side changes may coexist in the data through other policies, but they are not the distinctive institutional content of MAH.
-
-This does not mean that market demand is absent from the model. Demand-side conditions enter through $R^{event}$ and $\bar R^E$ as background payoff shifters and calibration controls, while MAH operates through commercialization-route feasibility, realization probability, CMO service-market prices, and the relative attractiveness of the retained external route.
-
-\textbf{Not a scientific-productivity shock.} Nothing in the MAH architecture changes the scientific technology by which an idea is discovered. The reform may raise expected payoff to research because more ideas become commercializable or because a route becomes more feasible, but that is an expected-return channel, not a direct productivity shift in the scientific production function.
-
-\textbf{Not a generic fixed-cost reduction for all firms.} MAH does not simply relax every firm's operating burden. The post-law architecture may impose more explicit documentation, auditing, and quality-system obligations on the holder. What changes is that these obligations are attached to a legally recognized and standardized external route, so that the MAH-reducible component $\tau_i^E$ can fall relative to the pre-reform environment. The residual component $\mu_i^E$ remains in the entrusted-route payoff. In other words, MAH can preserve or sharpen holder-side responsibility while still lowering the policy and contractual cost of external implementation by making the arrangement legally supported, contractually structured, and regulatorily intelligible.
-
-This is why the model separates $p_m^*(M)$, $\tau_i^E$, $\mu_i^E$, and $\zeta_i^E$. The direct service price $p_m^*(M)$ is distinct from the MAH-reducible policy friction $\tau_i^E$, both are distinct from residual holder-side monitoring and quality-control burden $\mu_i^E$, and $\zeta_i^E$ captures route realization rather than primitive legal cost. The comparative statics in the model should therefore be read as statements about the private option value of a legally recognized entrusted-production route, not as statements about demand, science, or a generic deregulation shock.
-
-\section{Baseline Contract-Manufacturing Service Market}
-\label{sec:appendix_cm_market}
-
-This appendix expands the CMO service-market closure used in the baseline model. It is the only market-clearing condition in the paper.
-
-The demand for entrusted manufacturing services is
-\begin{equation}
-    D_m(p_m;M)
-    =
-    \int
-    a_i x_i^*(M,p_m)
-    P_i(r=E\mid M,p_m)
-    \zeta_i^E(M,p_m)
-    \dd H_i,
-    \label{eq:cm_demand}
-\end{equation}
-where $a_i x_i^*(M,p_m)$ is latent opportunity arrival, $P_i(r=E\mid M,p_m)$ is the logit route probability, and $\zeta_i^E(M,p_m)$ maps latent entrusted-route use into expected realized entrusted-production demand.
-
-The supply of qualified contract-manufacturing services is
-\begin{equation}
-    S_m(p_m)=\int s_j(p_m;z_j^C)\dd H_C(j),
-    \label{eq:cm_supply}
-\end{equation}
-where $z_j^C$ indexes producer-side manufacturing capability.
-
-The service-market-clearing condition is
-\begin{equation}
-    D_m(p_m;M)=S_m(p_m).
-    \label{eq:cm_clearing}
-\end{equation}
-
-Equation \eqref{eq:cm_clearing} gives $p_m^*(M)$. A full general-equilibrium model would additionally require product-market clearing, R\&D input-market clearing, free entry, exit, and an invariant firm distribution. The present paper deliberately does not take those steps.
-
-\section{GHM-Style Outside Option and Hold-Up Extension}
-\label{sec:ghm_extension}
-
-The baseline treats the non-retained transfer value $S_i$ as exogenous. This is conservative because MAH may improve the innovator's bargaining position even when the innovator ultimately transfers, sells, or out-licenses the project. In the property-rights logic of \citet{GrossmanHart1986} and \citet{HartMoore1990}, control over an asset can strengthen outside options and reduce hold-up risk.
-
-A simple reduced-form extension is
-\begin{equation}
-    S_i(M)=\bar S_i+\rho_T \max\{G_i^E(M),0\},
-    \qquad \rho_T\in[0,1].
-    \label{eq:Si_hold_up_extension}
-\end{equation}
-This does not introduce a full Nash bargaining model. It only records the idea that the credible ability to retain authorization and use entrusted production can raise the innovator's threat point in transfer negotiations. If $\rho_T>0$, the baseline model understates the total MAH effect because MAH raises not only the retained entrusted route value but also the non-retained transfer outside option.
-
-\section{Overview of Calibration Strategy}
-
-This appendix documents the mechanism-calibration blueprint behind Section 8. The objective is not to turn the theory section into a full dynamic structural estimation exercise, nor to claim a complete causal empirical design. The objective is narrower: to use a small set of empirical moments that are close to the mechanism to discipline a small set of composite model objects.
-
-The calibration targets three objects:
-\begin{enumerate}[label=(\roman*),leftmargin=2em]
-    \item the effective route-realization wedge, which combines $p_m^*(M)$, $\tau^E$, $\mu^E$, $\zeta^E$, $\bar R^E$, and the route-choice scale;
-    \item the composite scale that converts R\&D intensity into latent original-drug opportunities and then into observed realizations;
-    \item the distribution of research-oriented entry costs, kept as a future or sensitivity module when the current data do not contain a firm-entry panel.
-\end{enumerate}
-
-Demand-side controls discipline $R^{event}$ and $\bar R^E$. They are not a fourth MAH mechanism and should not be interpreted as evidence that MAH increases demand.
-
-Therefore, Section 8 should be read as a \textbf{mechanism calibration blueprint}, not as full structural identification. It asks whether observed route-use patterns and realized original-drug outcomes are consistent with the mechanism that MAH expanded the feasible commercialization route set, changed route-realization probability, lowered the MAH-reducible policy and contractual friction of the external commercialization route, and induced a CMO price response. It does not claim to separately identify legal compliance costs, search costs, residual monitoring burdens, quality-management costs, contract-manufacturing prices, $\zeta^E$, $\bar R^E$, latent idea arrivals, or firm-specific project success probabilities.
-
-\section{Definition of Moments}
-
-A moment is a statistic that can be computed both in the data and in the model. For example, in the data one may compute
-\[
-    s_{post}^{E,data}
-    =
-    \frac{\#\{\text{post-reform original-drug records with different holder and producer}\}}
-    {\#\{\text{comparable post-reform original-drug records}\}}.
-\]
-Given parameters, the model can generate the corresponding object:
-\[
-    s_{post}^{E,model}(\theta).
-\]
-The calibration logic is to choose parameters $\theta$ such that
-\[
-    m^{model}(\theta) \approx m^{data}.
-\]
-
-The moment $m$ can be a route-use share, an original-drug count, an entrant count, an original-drug share, or a holder--producer split. A moment is not a new structural variable. It is the empirical bridge between the model and the data.
-
-\section{Calibration Blocks}
-
-The three calibration blocks in Section 8 are summarized in Table \ref{tab:three_blocks_en}.
-
-\begin{table}[htbp]
-\centering
-\scriptsize
-\caption{Three Calibration Blocks}
-\label{tab:three_blocks_en}
-\begin{tabularx}{\textwidth}{@{}L{0.19\textwidth}L{0.31\textwidth}L{0.28\textwidth}Y@{}}
-\toprule
-Calibration block & Data moment & Model moment & Disciplined object \\
-\midrule
-Route-use data & Post-MAH holder--producer split share; exposure-gradient in split shares; pseudo-count sensitivity only & $\log\frac{s_{\ell,post}^E}{1-s_{\ell,post}^E}=\eta_0+\eta_1 Exposure_\ell+u_\ell$ & Composite route-realization wedge or exposure-gradient in that wedge \\
-Original-drug counts & Baseline original-drug approvals, realized products, or applications & $\bar\lambda_0^{O,obs}=\E[\frac{\beta a^2}{\kappa}\Gamma^0(\theta)\sum_rP_i(r\mid0)\zeta_i^r(0)]$ & Composite innovation-arrival scale plus realization mapping \\
-Entrant counts & Research-oriented entrant counts or proxies & $N_E(M)=\int F_e(A(\theta,M)\mid\theta)dG_N(\theta)$ & Entry-cost distribution $F_e$ \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-These blocks correspond to the same mechanism chain:
-\[
-\tau^E \downarrow,\;\zeta^E\uparrow,\;p_m^*\text{ adjusts}
-\Rightarrow
-\Gamma \uparrow
-\Rightarrow
-x^* \uparrow
-\Rightarrow
-\lambda^{lat,*} \uparrow
-\Rightarrow
-\lambda^{obs,*}\text{ may rise}
-\Rightarrow
-\Lambda^{lat,agg} \uparrow
-\Rightarrow
-N_E \uparrow.
-\]
-
-Here $\tau^E$ is the MAH-reducible policy and contractual friction of the external commercialization route, $\mu^E$ is the residual holder-side monitoring and quality-control burden, $\zeta^E$ is the composite realization probability, $\Gamma$ is the logit inclusive value of a successful original-drug opportunity, $x^*$ is optimal original-drug R\&D intensity, $\lambda^{lat,*}$ is the latent arrival rate of original-drug opportunities, $\lambda^{obs,*}$ is the realized-output counterpart, $\Lambda^{lat,agg}$ is aggregate expected latent opportunities, and $N_E$ is research-oriented entry.
-
-\section{Route-Use Moment and Entrusted-Production Wedge}
-
-\subsection{The Data Moment}
-
-The central data object for route use is the holder--producer split. For product record $p$, define
-\[
-    Split_p = \ind\{Holder_p \neq Producer_p\}.
-\]
-Restricting attention to original-drug records, define
-\[
-    s_t^{E,data}
-    =
-    \frac{\sum_{p\in t} Split_p O_p}
-    {\sum_{p\in t} O_p},
-\]
-where $O_p=1$ if product $p$ is classified as an original drug or satisfies the paper's baseline original-drug proxy. This share is not the policy treatment. It is an observed outcome that proxies the use of an external commercialization route while retaining authorization.
-
-\subsection{Why Route Share Maps to the Entrusted-Route Wedge}
-
-After the reform, when the entrusted route is feasible, a firm compares commercialization routes after a successful original-drug opportunity is realized. To isolate the logic, consider only internal production and entrusted production among retained products:
-\[
-    G_t^I = R_t^{event} - C^I(k) + v,
-\]
-\[
-    G_t^E =
-    \zeta_t^E(\bar R_t^E+v)-p_{m,t}^*-\tau_t^E-\mu^E.
-\]
-Subtracting internal production from entrusted production gives
-\[
-    G_t^E-G_t^I
-    =
-    \zeta_t^E(\bar R_t^E+v)-p_{m,t}^*-\tau_t^E-\mu^E
-    -(R_t^{event}+v-C^I(k)).
-\]
-The older special case in which $R_t$ and $v$ cancel is obtained only when $\zeta_t^E=1$ and $\bar R_t^E=R_t^{event}$. In the baseline model, route share disciplines a composite route-realization value that includes the realization probability, route-specific realized return, CMO service price, MAH-reducible route friction, and residual holder-side burden.
-
-Using the same logit route-choice model as in the main text,
-\[
-    s_t^E
-    =
-    \frac{\exp(G_t^E/\sigma_r)}
-    {\exp(G_t^E/\sigma_r)+\exp(G_t^I/\sigma_r)}.
-\]
-Then the odds ratio is
-\[
-    \frac{s_t^E}{1-s_t^E}
-    =
-    \exp\left(\frac{G_t^E-G_t^I}{\sigma_r}\right),
-\]
-and taking logs yields
-\[
-    \log\left(\frac{s_t^E}{1-s_t^E}\right)
-    =
-    \frac{G_t^E-G_t^I}{\sigma_r}
-\]
-
-This equation does not say that the route-use share equals $\tau^E$, $\mu^E$, or $\zeta^E$. It says that the route-use share, through a retained-product route-choice equation, disciplines the relative attractiveness of the entrusted route. Without additional data on internal production costs, direct contract-manufacturing costs, quality agreements, audit costs, contract terms, firm-level regulatory execution, and application-to-approval conversion, the calibration recovers only a composite route-realization wedge relative to the route-choice scale.
-
-\subsection{When a Pre--Post Log-Odds Moment Is Valid}
-
-A pre--post log-odds moment is valid only if the pre-reform data contain a legally and economically comparable entrusted-retention route. Under that condition, and if $C^I(k)$, $p_m$, and $\mu^E$ are stable across the comparison or handled through comparable samples and controls, one can write
-\[
-    \frac{\Delta \tau}{\sigma_r}
-    =
-    \log\left(\frac{s_{post}^E}{1-s_{post}^E}\right)
-    -
-    \log\left(\frac{s_{pre}^E}{1-s_{pre}^E}\right),
-\]
-where
-\[
-    \Delta\tau = \tau_{pre}^E-\tau_{post}^E>0.
-\]
-This is not the baseline interpretation when the MAH-style entrusted route was institutionally unavailable before the reform.
-
-\subsection{What If Pre-Reform Route-Use Data Are Unavailable?}
-
-This is the central practical issue. If the MAH-style entrusted route was institutionally unavailable before the reform, then there is no comparable pre-reform entrusted-route share. Writing
-\[
-    s_{pre}^E=0
-\]
-as though it were an observed route-use rate is misleading, because
-\[
-    \log\left(\frac{s_{pre}^E}{1-s_{pre}^E}\right)=\log(0)
-\]
-is undefined. The formula cannot be used mechanically. There are three disciplined responses.
-
-\paragraph{Response 1: Treat the pre-reform regime as a route-set-expansion boundary case.}
-Before MAH,
-\[
-    \calR_i(0)=\{A,T\}\cup\{I:h_i^I=1\}.
-\]
-After MAH,
-\[
-    \calR_i(1)=\{A,T\}\cup\{I:h_i^I=1\}\cup\{E:q_i^E=1\}.
-\]
-Thus there is no comparable pre-reform entrusted-route share. The baseline interpretation should emphasize that MAH first expands the feasible route set and then, conditional on route feasibility, lowers the MAH-reducible policy and contractual friction of the route.
-
-\paragraph{Response 2: Use post-MAH exposure or implementation-intensity variation.}
-If the route is unavailable before MAH, the preferred empirical calibration margin is post-MAH variation across regions, dosage forms, therapeutic classes, or firm types. For example, regions or dosage-form segments with greater pre-reform qualified manufacturing capacity may experience a larger effective decline in external commercialization friction. A transparent reduced-form calibration moment is
-\[
-    \log\left(\frac{s_{\ell,post}^E}{1-s_{\ell,post}^E}\right)
-    =
-    \eta_0+\eta_1 Exposure_\ell+u_\ell,
-\]
-where $\ell$ indexes an exposure cell, such as a region, dosage-form segment, firm type, or other implementation-intensity cell. This disciplines relative differences in the effective entrusted-route wedge without imposing a nonexistent pre-reform route-use rate.
-
-\paragraph{Response 3: Use a small pseudo-count only as a sensitivity device.}
-For example, use
-\[
-    \tilde{s}_{pre}^E
-    =
-    \frac{0.5}{N_{pre}+1}
-\]
-instead of zero. This makes the log-odds expression computable, but the pseudo-share should not be interpreted as a real pre-reform route-use rate. It should be reported only as a sensitivity check, not as the baseline calibration moment.
-
-\subsection{What This Block Can and Cannot Identify}
-
-This block can support the following statement: if the holder--producer split among original-drug records rises after MAH, or if higher-exposure segments show higher post-MAH split shares, and this pattern cannot be explained by changes in product composition, therapeutic class, region, or firm capability composition, the pattern is consistent with a higher relative route-realization value of the entrusted route.
-
-It cannot support the following stronger statement: the data separately identify legal compliance costs, search costs, quality-agreement costs, contracting costs, contract-manufacturing prices, realization probabilities, or post-production risk-adjusted returns. These components enter the route-choice payoff as a composite wedge. Without additional data on those objects, they cannot be separately recovered.
-
-\section{Original-Drug Counts and R\&D Arrival Scale}
-
-\subsection{The Model Equation}
-
-The firm chooses original-drug R\&D intensity $x_i$. The latent arrival rate of original-drug opportunities is
-\[
-    \lambda_i(x_i)=a_i x_i.
-\]
-Given the expected commercialization value $\Gamma_i^M$ of a successful opportunity, the first-order condition gives
-\[
-    x_i^*(M)=\frac{\beta a_i}{\kappa}\Gamma_i^M.
-\]
-Therefore, the optimal latent arrival rate is
-\[
-    \lambda_i^{lat,*}(M)=a_i x_i^*(M)
-    =
-    \frac{\beta a_i^2}{\kappa}\Gamma_i^M.
-\]
-Observed realized output further multiplies latent arrival by route-choice and realization probabilities as in equation \eqref{eq:lambdaobs}.
-Taking expectations in the pre-reform or baseline regime gives
-\[
-    \bar\lambda_0^{O,obs}
-    =
-    \E\left[
-    \frac{\beta a^2}{\kappa}\Gamma^0(\theta)
-    \sum_{r\in\calR_i(0)}P_i(r\mid0)\zeta_i^r(0)
-    \right].
-\]
-
-\subsection{The Data Moment}
-
-The most direct moment is the baseline number of original-drug outcomes:
-\[
-    \bar\lambda_0^{O,data}
-    =
-    \frac{\#\{\text{pre-reform original-drug records}\}}
-    {\#\{\text{pre-reform years}\}}.
-\]
-At the firm-year level, define
-\[
-    Y_{it}^{O,base}=\sum_{p\in(i,t)}O_p^{base}.
-\]
-If the current dataset is an approval-side realized-product file, this object should be interpreted as realized original-drug products, not latent idea arrival. If future data include CDE applications, IND/CTA records, or clinical-trial registrations, those objects can be used to construct moments closer to upstream innovation-opportunity arrival.
-
-\subsection{Why This Moment Only Disciplines a Composite Parameter}
-
-From
-\[
-    \lambda_i^{obs,*}=
-    \frac{\beta a_i^2}{\kappa}\Gamma_i
-    \sum_rP_i(r)\zeta_i^r,
-\]
-original-drug counts depend on at least four composite objects:
-\begin{enumerate}[label=(\roman*),leftmargin=2em]
-    \item $a_i$: research ability;
-    \item $\kappa$: the marginal cost scale of R\&D effort;
-    \item $\Gamma_i$: the commercialization value of a successful opportunity;
-    \item route-use and realization probabilities.
-\end{enumerate}
-
-If the data only reveal realized original-drug counts, the model cannot separately identify $a_i$, $\kappa$, $\Gamma_i$, and $\zeta_i^r$. High original-drug counts may reflect strong scientific capability, low R\&D effort costs, high commercialization value, high route-use probability, or high realization probability. Without project-level R\&D costs, project success rates, project values, application-to-approval status, or rich firm-capability data, these objects cannot be separately recovered.
-
-The disciplined approach is to normalize one object. For example,
-\[
-    \kappa=1,
-\]
-or for a benchmark firm,
-\[
-    \Gamma^0(\theta)=1.
-\]
-Then
-\[
-    \frac{\beta a^2}{\kappa}
-\]
-is interpreted as a composite innovation-arrival scale, while realized-product counts also require assumptions on route-use and realization probabilities.
-
-\subsection{What If Pre-Reform Original-Drug Counts Are Sparse?}
-
-Sparse pre-reform approvals do not invalidate the mechanism. Drug development cycles are long, and final approvals are downstream outcomes. Pre-reform approval counts can therefore be noisy low-frequency moments. Disciplined responses include:
-\begin{enumerate}[leftmargin=2em]
-    \item using multi-year averages rather than year-by-year moments;
-    \item using IND/CTA records, clinical-trial registrations, CDE acceptance numbers, or original-drug applications as upstream proxies;
-    \item separating realized approvals from upstream applications as distinct moments;
-    \item reporting robustness under alternative original-drug definitions, such as broad new-drug definitions, strict class-I innovative drugs, or inclusion/exclusion of improved new drugs.
-\end{enumerate}
-
-The writing boundary is simple: approval-side data calibrate realized original-drug product counts; application-side data are closer to innovation-opportunity arrival.
-
-\section{Entry Counts and Entry-Cost Distribution}
-
-\subsection{The Model Equation}
-
-A potential entrant enters if post-entry value exceeds entry cost:
-\[
-    A(\theta,M)\ge f_e.
-\]
-The post-entry value is
-\[
-    A(\theta,M)
-    =
-    \frac{\beta^2 a^2}{2\kappa(1-\beta)}
-    [\Gamma^M(\theta)]^2.
-\]
-If $f_e$ has conditional distribution function $F_e(\cdot\mid\theta)$, the entry probability is
-\[
-    \Pr(f_e\le A(\theta,M)\mid\theta)
-    =
-    F_e(A(\theta,M)\mid\theta).
-\]
-Aggregating over potential entrants gives
-\[
-    N_E(M)=
-    \int
-    F_e(A(\theta,M)\mid\theta)
-    dG_N(\theta).
-\]
-For a fixed potential entrant, the strict entry-response region is
-\begin{align*}
-    f_i^e
-    \in
-    [A(\theta_i,0),A(\theta_i,1)).
-\end{align*}
-This threshold statement mirrors the firm-level route-choice result: MAH changes entry only for potential entrants whose entry costs are between the pre-MAH and post-MAH values. In the logit baseline, $\Gamma^M$ is the inclusive value rather than a deterministic maximum.
-
-\subsection{The Data Moment}
-
-The ideal data moment is the number of research-oriented entrants, not the number of all newly registered pharmaceutical firms. Examples include:
-\begin{itemize}[leftmargin=2em]
-    \item firms that appear for the first time in original-drug applications;
-    \item firms that sponsor clinical trials for the first time;
-    \item firms that first appear as MAH/holder for original-drug records;
-    \item firms without traditional production capacity that enter original-drug R\&D or commercialization records.
-\end{itemize}
-
-Define
-\[
-    Entry_{it}^{R}=1
-\]
-if firm $i$ first enters observable original-drug R\&D or original-drug realization activity in year $t$. Then the data moment is
-\[
-    N_{E,t}^{data}=\sum_i Entry_{it}^{R}.
-\]
-
-\subsection{Why This Step Should Be Sensitivity or a Future Module}
-
-A current approval-side realized-product file is typically not a firm-entry panel. Observing that a firm first appears in an approval record is not equivalent to observing true firm entry or research-oriented entry. There are three reasons:
-\begin{enumerate}[leftmargin=2em]
-    \item the firm may have been founded long before its first approval;
-    \item the firm may have upstream R\&D activity that has not yet reached final approval;
-    \item name standardization, acquisitions, subsidiaries, and holder-entity changes can affect the first observed year.
-\end{enumerate}
-
-Therefore, entrant-count calibration should not be a baseline result in the current data environment. It should be kept as a future data module or as a sensitivity appendix. A serious calibration of $F_e$ requires a merged firm-year entry panel, business registration data, CDE application data, and firm-capability data.
-
-\subsection{How to Calibrate Entry Costs}
-
-One can assume a simple one-parameter distribution. For example,
-\[
-    f_e\sim \text{Exponential}(\mu),
-\]
-so that
-\[
-    F_e(A)=1-\exp(-A/\mu).
-\]
-The pre-MAH entry rate can be used to match $\mu$, and the post-MAH change in $\Gamma^M$ can then be used to predict the post-MAH entry response. A lognormal distribution is also possible, but if the data are thin, it is better not to introduce too many shape parameters.
-
-The interpretation should be modest: this step does not estimate each potential entrant's true entry cost. It checks whether the entry margin moves in the direction predicted by a lower external commercialization wedge.
-
-\section{Handling Missing Pre-Reform Data}
-
-Missing or weak pre-reform data are not a minor nuisance. They are central to the calibration design. The empirical architecture should therefore be modular.
-
-\subsection{Module A: Current Approval-Side Realized-Product Moments}
-
-The most credible baseline moments are:
-\begin{enumerate}[leftmargin=2em]
-    \item realized original-drug product counts;
-    \item original-drug share among realized products;
-    \item holder--producer split;
-    \item split-based route-use proxy among original-drug records.
-\end{enumerate}
-These objects can be constructed from the current approval-side matching file, but they are realized-product objects rather than full R\&D-process objects.
-
-\subsection{Module B: Future Application and Status Panel}
-
-Once CDE applications, IND/CTA records, clinical trials, withdrawn projects, pending projects, rejected projects, and approved projects are merged, one can construct:
-\begin{enumerate}[leftmargin=2em]
-    \item application-to-approval conversion;
-    \item project realization probabilities;
-    \item upstream original-drug opportunity arrival;
-    \item delay and conversion moments.
-\end{enumerate}
-These moments are closer to $\lambda_i$ and commercialization success.
-
-\subsection{Module C: Future Firm-Capability and Entry Panel}
-
-Once business-registration records, production licenses, GMP or dosage-form scope, R\&D expenditure, patents, and clinical-trial sponsorship are merged, one can construct:
-\begin{enumerate}[leftmargin=2em]
-    \item pre-reform research capability;
-    \item pre-reform manufacturing capability;
-    \item research-oriented entry;
-    \item capability-bin-specific route-use and realization moments.
-\end{enumerate}
-These moments are needed to calibrate the firm-characteristic distribution, $F_e$, and heterogeneous responses more credibly.
-
-\section{Recommended Scope for Appendix}
-
-The following scope limits should be explicit after Section 8:
-\begin{enumerate}[leftmargin=2em]
-    \item \textbf{What can be claimed:} route-use proxies and realized original-drug outcomes can discipline whether observed patterns are consistent with route-set expansion and a lower composite effective entrusted-production wedge.
-    \item \textbf{What cannot be claimed:} the current data do not separately estimate contract-manufacturing prices, legal compliance costs, firm-specific project success probabilities, latent idea arrivals, or firm-specific true governance costs.
-    \item \textbf{Current baseline:} use approval-side realized-product moments for mechanism calibration; do not treat approval-side data as a full R\&D-process panel.
-    \item \textbf{Future upgrade:} once application panels, firm-year entry panels, and capability panels are merged, the exercise can be expanded toward a fuller SMM or indirect-inference design.
-\end{enumerate}
-
-\section{Suggested Text for Main Paper}
-
-The following paragraph can be used directly in the appendix or adapted for the main text:
-
-\begin{quote}
-The calibration strategy in Section 8 should be interpreted as a mechanism-calibration blueprint rather than full structural estimation. The route-use block disciplines the composite effective route wedge relative to the route-choice scale, including the MAH-reducible policy friction and any residual holder-side burden that cannot be separately observed. The baseline original-drug count block disciplines the composite scale that converts R\&D effort into realized original-drug outcomes; and the research-oriented entry block, when suitable data become available, disciplines the entry-cost distribution. Because the MAH-style entrusted route may be structurally unavailable before the reform, the pre-reform split share should not be mechanically inserted into a log-odds formula. The baseline interpretation treats the reform as route-set expansion plus conditional friction reduction. If the data permit, post-MAH exposure or implementation-intensity variation can discipline relative differences in the effective route wedge; pseudo-counts for a zero pre-MAH split share should be reported only as sensitivity devices. The current approval-side data can support realized original-drug counts and holder--producer split, but they do not directly identify latent idea arrival, project-level success probabilities, residual holder-side burden, or true research-oriented entry. The calibration exercise is therefore a disciplined mechanism calibration, not full structural identification.
-\end{quote}
-
-\section{Appendix Conclusion}
-
-The correct interpretation of Section 8 is that data moments discipline composite model objects rather than every structural primitive. Route-use data discipline the effective entrusted-route wedge relative to the route-choice scale only under a retained-product route comparison, a comparable pre-reform route, or post-MAH exposure variation. Original-drug counts discipline the composite innovation-arrival scale $\beta a^2/\kappa$, and research-oriented entry disciplines $F_e$ only when an appropriate firm-entry panel is available. When many pre-reform data objects are unavailable, the baseline must remain modest: the current exercise is approval-side mechanism calibration, while richer entry and state calibration should be reserved for future merged data modules.
-
-
-
-
 
 \end{document}
