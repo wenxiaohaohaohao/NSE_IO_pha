@@ -21,7 +21,7 @@ p_m=p_m^*(M).
 Firm type:
 
 \[
-\theta_i=(a_i,k_i,h_i^I,\mu_i^E,S_i,\tau_i^T).
+\theta_i=(a_i,k_i,h_i^I,q_i^E,\mu_i^E,S_i,\tau_i^T).
 \]
 
 Route set:
@@ -43,8 +43,15 @@ But do not impose \(h_i^I=0\) for all firms in the general model.
 Demand:
 
 \[
-D_m(p_m;M)=\int \lambda_i^{obs}(M,p_m)P_i(E\mid M,p_m)dH_i.
+D_m(p_m;M)=
+\int
+a_i x_i^*(M,p_m)
+P_i(E\mid M,p_m)
+\zeta_i^E(M,p_m)
+dH_i.
 \]
+
+Do not write this as \(\lambda_i^{obs}P_i(E\mid M)\). The object \(\lambda_i^{obs}\) already aggregates over route probabilities and realization probabilities, so multiplying it by \(P_i(E\mid M)\) would double-count route choice. The CMO market uses latent opportunity arrival times the entrusted-route probability times entrusted-route realization.
 
 Supply:
 
@@ -75,17 +82,17 @@ G_i^I=R_i^I+v-C^I(k_i)\quad \text{if } h_i^I=1.
 Entrusted production / MAH route:
 
 \[
-\mathcal V_i^E(M)=\zeta_i^E(M)\widetilde R_i^E.
+\mathcal V_i^E(M,p_m)=\zeta_i^E(M,p_m)\widetilde R_i^E.
 \]
 
 \[
-G_i^E=\mathcal V_i^E(M)-p_m^*(M)-\tau^E(M)-\mu_i^E.
+G_i^E(M,p_m)=\mathcal V_i^E(M,p_m)-p_m-\tau^E(M)-\mu_i^E.
 \]
 
 Alternative expanded notation:
 
 \[
-G_i^E=\zeta_i^E(M)\widetilde R_i^E-p_m^*(M)-\tau^E(M)-\mu_i^E.
+G_i^E(M,p_m)=\zeta_i^E(M,p_m)\widetilde R_i^E-p_m-\tau^E(M)-\mu_i^E.
 \]
 
 Do not claim \(\zeta_i^E\) and \(\widetilde R_i^E\) are separately identified unless extra data are introduced.
@@ -115,17 +122,17 @@ G_i^A=0.
 If using logit baseline:
 
 \[
-P_i(r\mid M)=\frac{\exp(G_i^r/\sigma_r)}{\sum_{\ell\in\mathcal R_i(M)}\exp(G_i^\ell/\sigma_r)}.
+P_i(r\mid M,p_m^*(M))=\frac{\exp(G_i^r(M,p_m^*(M))/\sigma_r)}{\sum_{\ell\in\mathcal R_i(M)}\exp(G_i^\ell(M,p_m^*(M))/\sigma_r)}.
 \]
 
 \[
-\Gamma_i(M)=\sigma_r\log\sum_{\ell\in\mathcal R_i(M)}\exp(G_i^\ell/\sigma_r).
+\Gamma_i(M,p_m^*(M))=\sigma_r\log\sum_{\ell\in\mathcal R_i(M)}\exp(G_i^\ell(M,p_m^*(M))/\sigma_r).
 \]
 
 Deterministic limit:
 
 \[
-\Gamma_i(M)=\max_{r\in\mathcal R_i(M)}G_i^r.
+\Gamma_i(M,p_m^*(M))=\max_{r\in\mathcal R_i(M)}G_i^r(M,p_m^*(M)).
 \]
 
 Use this only as a limiting case or in a separate deterministic version.
@@ -135,19 +142,19 @@ Use this only as a limiting case or in a separate deterministic version.
 Problem:
 
 \[
-\max_{x_i\ge0}\left\{\beta a_i x_i \Gamma_i(M)-\frac{\kappa}{2}x_i^2\right\}.
+\max_{x_i\ge0}\left\{\beta a_i x_i \Gamma_i(M,p_m^*(M))-\frac{\kappa}{2}x_i^2\right\}.
 \]
 
 FOC:
 
 \[
-x_i^*(M)=\frac{\beta a_i}{\kappa}\Gamma_i(M).
+x_i^*(M)=\frac{\beta a_i}{\kappa}\Gamma_i(M,p_m^*(M)).
 \]
 
 Latent opportunity arrival:
 
 \[
-\lambda_i^{latent}(M)=a_i x_i^*(M)=\frac{\beta a_i^2}{\kappa}\Gamma_i(M).
+\lambda_i^{latent}(M)=a_i x_i^*(M)=\frac{\beta a_i^2}{\kappa}\Gamma_i(M,p_m^*(M)).
 \]
 
 ## 7. Observed realization
@@ -155,13 +162,13 @@ Latent opportunity arrival:
 General:
 
 \[
-\lambda_i^{obs}(M)=a_i x_i^*(M)\sum_{r\in\mathcal R_i(M)}P_i(r\mid M)\zeta_i^r(M).
+\lambda_i^{obs}(M)=a_i x_i^*(M)\sum_{r\in\mathcal R_i(M)}P_i(r\mid M,p_m^*(M))\zeta_i^r(M,p_m^*(M)).
 \]
 
 Entrusted-route component:
 
 \[
-\lambda_i^{obs,E}(M)=a_i x_i^*(M)P_i(E\mid M)\zeta_i^E(M).
+\lambda_i^{obs,E}(M)=a_i x_i^*(M)P_i(E\mid M,p_m^*(M))\zeta_i^E(M,p_m^*(M)).
 \]
 
 ## 8. Comparative-static chain
@@ -169,7 +176,7 @@ Entrusted-route component:
 MAH affects observed realization through:
 
 \[
-M\Rightarrow \mathcal R_i(M)\Rightarrow G_i^E\Rightarrow P_i(E\mid M),\Gamma_i(M)\Rightarrow x_i^*(M)\Rightarrow \lambda_i^{obs}(M).
+M\Rightarrow \mathcal R_i(M)\Rightarrow G_i^E(M,p_m^*(M))\Rightarrow P_i(E\mid M,p_m^*(M)),\Gamma_i(M,p_m^*(M))\Rightarrow x_i^*(M)\Rightarrow \lambda_i^{obs}(M).
 \]
 
 With CMO feedback:

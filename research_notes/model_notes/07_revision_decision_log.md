@@ -55,7 +55,7 @@ Do not claim separate structural identification of \(\zeta^E\) unless there is d
 Use:
 
 \[
-\mathcal V_i^E(M)=\zeta_i^E(M)\widetilde R_i^E.
+\mathcal V_i^E(M,p_m)=\zeta_i^E(M,p_m)\widetilde R_i^E.
 \]
 
 If identification is weak, calibrate or discuss \(\mathcal V_i^E\), not \(\zeta_i^E\) alone.
@@ -103,7 +103,7 @@ Do not impose no internal production for all firms.
 **Final decision:** If route-share calibration is used, use logit inclusive value in the baseline.
 
 \[
-\Gamma_i(M)=\sigma_r\log\sum_r\exp(G_i^r/\sigma_r).
+\Gamma_i(M,p_m^*(M))=\sigma_r\log\sum_r\exp(G_i^r(M,p_m^*(M))/\sigma_r).
 \]
 
 Deterministic max is the limiting case:

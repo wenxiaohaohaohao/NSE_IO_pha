@@ -22,7 +22,7 @@ A firm is more likely to increase R&D after MAH if it has:
 - weak internal manufacturing feasibility \(h_i^I=0\) or low \(k_i\);
 - low residual holder burden \(\mu_i^E\);
 - strong CMO match \(q_i^E=1\);
-- high composite realization value \(\mathcal V_i^E(M)\);
+- high composite realization value \(\mathcal V_i^E(M,p_m^*(M))\);
 - access to a CMO market where \(p_m^*(M)\) does not rise too much.
 
 ## 3. CMO price feedback
@@ -30,7 +30,7 @@ A firm is more likely to increase R&D after MAH if it has:
 Any MAH comparative static for entrusted-route value should include:
 
 \[
-\frac{dG_i^E}{dM}=\frac{d\mathcal V_i^E(M)}{dM}-\frac{dp_m^*(M)}{dM}-\frac{d\tau^E(M)}{dM}-\frac{d\mu_i^E}{dM}.
+\frac{dG_i^E}{dM}=\frac{d\mathcal V_i^E(M,p_m^*(M))}{dM}-\frac{dp_m^*(M)}{dM}-\frac{d\tau^E(M)}{dM}-\frac{d\mu_i^E}{dM}.
 \]
 
 Baseline can set \(d\mu_i^E/dM=0\), but this must be stated.
@@ -42,7 +42,7 @@ If \(dp_m^*(M)/dM\) is large, the MAH effect is partially offset.
 If using:
 
 \[
-\mathcal V_i^E(M)=\zeta_i^E(M)\widetilde R_i^E,
+\mathcal V_i^E(M,p_m)=\zeta_i^E(M,p_m)\widetilde R_i^E,
 \]
 
 then comparative statics can be written as:
@@ -70,10 +70,10 @@ Identification warning: \(\zeta_i^E\) and \(\widetilde R_i^E\) are not separatel
 If route choice is logit:
 
 \[
-\Gamma_i(M)=\sigma_r\log\sum_r\exp(G_i^r/\sigma_r),
+\Gamma_i(M,p_m^*(M))=\sigma_r\log\sum_r\exp(G_i^r(M,p_m^*(M))/\sigma_r),
 \]
 
-then all R&D comparative statics must use this \(\Gamma_i(M)\).
+then all R&D comparative statics must use this \(\Gamma_i(M,p_m^*(M))\).
 
 Do not use:
 
@@ -92,19 +92,19 @@ in the proposition unless explicitly taking the limit:
 With quadratic cost and linear arrival:
 
 \[
-x_i^*(M)=\frac{\beta a_i}{\kappa}\Gamma_i(M).
+x_i^*(M)=\frac{\beta a_i}{\kappa}\Gamma_i(M,p_m^*(M)).
 \]
 
 Therefore:
 
 \[
-\frac{dx_i^*}{dM}=\frac{\beta a_i}{\kappa}\frac{d\Gamma_i(M)}{dM}.
+\frac{dx_i^*}{dM}=\frac{\beta a_i}{\kappa}\frac{d\Gamma_i(M,p_m^*(M))}{dM}.
 \]
 
 Observed realization:
 
 \[
-\lambda_i^{obs}(M)=a_i x_i^*(M)\sum_rP_i(r\mid M)\zeta_i^r(M).
+\lambda_i^{obs}(M)=a_i x_i^*(M)\sum_rP_i(r\mid M,p_m^*(M))\zeta_i^r(M,p_m^*(M)).
 \]
 
 Its derivative includes:
@@ -119,7 +119,7 @@ A strict MAH effect requires at least one of the following:
 
 1. \(E\) becomes feasible and has positive choice probability;
 2. \(\tau^E(M)\) falls enough;
-3. \(\mathcal V_i^E(M)\) rises enough;
+3. \(\mathcal V_i^E(M,p_m^*(M))\) rises enough;
 4. \(p_m^*(M)\) does not rise enough to offset the benefit.
 
 ## 8. Suggested main propositions

@@ -23,7 +23,7 @@ The paper studies how MAH changes the **innovation-to-commercialization route** 
 Baseline mechanism:
 
 \[
-MAH\Rightarrow \mathcal R_i(M)\text{ changes}\Rightarrow \tau^E(M)\downarrow\Rightarrow \Gamma_i(M)\uparrow\Rightarrow x_i^*(M)\uparrow\Rightarrow \lambda_i^{obs}(M)\uparrow.
+MAH\Rightarrow \mathcal R_i(M)\text{ changes}\Rightarrow \tau^E(M)\downarrow\Rightarrow \Gamma_i(M,p_m^*(M))\uparrow\Rightarrow x_i^*(M)\uparrow\Rightarrow \lambda_i^{obs}(M)\uparrow.
 \]
 
 The model must avoid making the mechanism a pure option-value tautology:
@@ -80,18 +80,18 @@ But the model should not over-identify risk components.
 Use a **composite route-realization value**:
 
 \[
-\mathcal V_i^E(M)=\zeta_i^E(M)\widetilde R_i^E.
+\mathcal V_i^E(M,p_m)=\zeta_i^E(M,p_m)\widetilde R_i^E.
 \]
 
 Then:
 
 \[
-G_i^E=\mathcal V_i^E(M)-p_m^*(M)-\tau^E(M)-\mu_i^E.
+G_i^E=\mathcal V_i^E(M,p_m^*(M))-p_m^*(M)-\tau^E(M)-\mu_i^E.
 \]
 
 ### Interpretation
 
-- \(\zeta_i^E(M)\): route-realization / landing probability component.
+- \(\zeta_i^E(M,p_m)\): route-realization / landing probability component.
 - \(\widetilde R_i^E\): risk-adjusted post-production payoff.
 - \(\zeta_i^E\widetilde R_i^E\): composite route-realization value.
 
@@ -108,13 +108,13 @@ Choose one route-choice framework for the baseline.
 Use logit route choice:
 
 \[
-P_i(r\mid M)=\frac{\exp(\bar G_i^r/\sigma_r)}{\sum_{\ell\in\mathcal R_i(M)}\exp(\bar G_i^\ell/\sigma_r)}.
+P_i(r\mid M,p_m^*(M))=\frac{\exp(G_i^r(M,p_m^*(M))/\sigma_r)}{\sum_{\ell\in\mathcal R_i(M)}\exp(G_i^\ell(M,p_m^*(M))/\sigma_r)}.
 \]
 
 Inclusive value:
 
 \[
-\Gamma_i(M)=\sigma_r\log\sum_{\ell\in\mathcal R_i(M)}\exp(\bar G_i^\ell/\sigma_r).
+\Gamma_i(M,p_m^*(M))=\sigma_r\log\sum_{\ell\in\mathcal R_i(M)}\exp(G_i^\ell(M,p_m^*(M))/\sigma_r).
 \]
 
 ### Deterministic version
@@ -122,7 +122,7 @@ Inclusive value:
 Use only as limiting case:
 
 \[
-\Gamma_i(M)=\max_{r\in\mathcal R_i(M)}G_i^r\quad \text{as }\sigma_r\to0.
+\Gamma_i(M,p_m^*(M))=\max_{r\in\mathcal R_i(M)}G_i^r(M,p_m^*(M))\quad \text{as }\sigma_r\to0.
 \]
 
 Do not mix deterministic comparative statics with logit calibration unless the deterministic case is explicitly stated as a limit.
@@ -138,13 +138,13 @@ Do not mix deterministic comparative statics with logit calibration unless the d
 ### Observed realization
 
 \[
-\lambda_i^{obs}(M)=\lambda_i^{latent}(M)\sum_{r\in\mathcal R_i(M)}P_i(r\mid M)\zeta_i^r(M).
+\lambda_i^{obs}(M)=\lambda_i^{latent}(M)\sum_{r\in\mathcal R_i(M)}P_i(r\mid M,p_m^*(M))\zeta_i^r(M,p_m^*(M)).
 \]
 
 If focusing on entrusted route:
 
 \[
-\lambda_i^{obs,E}(M)=a_i x_i^*(M)P_i(E\mid M)\zeta_i^E(M).
+\lambda_i^{obs,E}(M)=a_i x_i^*(M)P_i(E\mid M,p_m^*(M))\zeta_i^E(M,p_m^*(M)).
 \]
 
 ## 8. Current unresolved issues

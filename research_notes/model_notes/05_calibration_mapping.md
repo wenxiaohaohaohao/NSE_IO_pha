@@ -32,8 +32,10 @@ Data moments:
 Model object:
 
 \[
-P_i(E\mid M).
+P_i(E\mid M,p_m^*(M))\zeta_i^E(M,p_m^*(M)).
 \]
+
+If the data are holder-producer split shares among realized original-drug products, the moment is downstream of both route choice and realization. It can discipline \(P_i(E\mid M,p_m^*(M))\) alone only after conditioning on comparable realized retained products and imposing additional assumptions on route-specific realization probabilities.
 
 If logit:
 
@@ -41,7 +43,7 @@ If logit:
 \log\frac{P_i(E)}{P_i(I)}=\frac{G_i^E-G_i^I}{\sigma_r}.
 \]
 
-Identified object:
+Disciplined object:
 
 \[
 \frac{G_i^E-G_i^I}{\sigma_r}.
@@ -50,13 +52,13 @@ Identified object:
 This may include:
 
 \[
-p_m^*(M),\quad \tau^E(M),\quad \mu_i^E,\quad C^I(k_i),\quad \mathcal V_i^E(M)-R_i^I.
+p_m^*(M),\quad \tau^E(M),\quad \mu_i^E,\quad C^I(k_i),\quad \mathcal V_i^E(M,p_m^*(M))-R_i^I.
 \]
 
 Not separately identified:
 
 \[
-\tau^E,\quad \mu_i^E,\quad p_m,\quad C^I(k_i),\quad \sigma_r
+\tau^E,\quad \mu_i^E,\quad p_m^*,\quad C^I(k_i),\quad \zeta_i^E,\quad \bar R_i^E,\quad \sigma_r
 \]
 
 unless extra moments or normalizations are imposed.
@@ -74,25 +76,25 @@ Data moments:
 Latent model object:
 
 \[
-\lambda_i^{latent}=a_i x_i^*=\frac{\beta a_i^2}{\kappa}\Gamma_i.
+\lambda_i^{latent}=a_i x_i^*=\frac{\beta a_i^2}{\kappa}\Gamma_i(M,p_m^*(M)).
 \]
 
 Observed model object:
 
 \[
-\lambda_i^{obs}=a_i x_i^*\sum_rP_i(r\mid M)\zeta_i^r(M).
+\lambda_i^{obs}=a_i x_i^*\sum_rP_i(r\mid M,p_m^*(M))\zeta_i^r(M,p_m^*(M)).
 \]
 
-Identified object:
+Disciplined object:
 
 \[
-\frac{\beta a_i^2}{\kappa}\Gamma_i\sum_rP_i(r\mid M)\zeta_i^r(M).
+\frac{\beta a_i^2}{\kappa}\Gamma_i(M,p_m^*(M))\sum_rP_i(r\mid M,p_m^*(M))\zeta_i^r(M,p_m^*(M)).
 \]
 
 Not separately identified:
 
 \[
-a_i,\quad \kappa,\quad \Gamma_i,\quad \zeta_i^r.
+a_i,\quad \kappa,\quad \Gamma_i(M,p_m^*(M)),\quad \zeta_i^r.
 \]
 
 ## 4. CMO market moments
@@ -145,19 +147,19 @@ Data moments:
 Model object:
 
 \[
-\zeta_i^E(M)\quad \text{or}\quad \mathcal V_i^E(M)=\zeta_i^E(M)\widetilde R_i^E.
+\zeta_i^E(M,p_m)\quad \text{or}\quad \mathcal V_i^E(M,p_m)=\zeta_i^E(M,p_m)\widetilde R_i^E.
 \]
 
 Baseline warning:
 
-If no separate data on expected payoff \(\widetilde R_i^E\), estimate only a composite route-realization object.
+If no separate data on expected payoff \(\widetilde R_i^E\), discipline only a composite route-realization object.
 
 ## 7. Recommended calibration table
 
 | Block | Data moment | Model moment | Disciplined object | Identification warning |
 |---|---|---|---|---|
-| Route use | Holder-producer split | \(P_i(E\mid M)\) | Relative route wedge | Cannot isolate \(\tau^E\) |
+| Route use | Holder-producer split | \(P_i(E\mid M,p_m^*(M))\zeta_i^E(M,p_m^*(M))\) | Relative route-realization wedge | Cannot isolate \(\tau^E,\mu_i^E,p_m^*,\zeta_i^E\) |
 | Innovation counts | IND/NDA/original approvals | \(\lambda_i^{obs}\) | Innovation-realization scale | Cannot isolate \(a_i,\kappa,\Gamma,\zeta\) |
 | CMO capacity | Qualified manufacturers / B-license firms | \(S_m(p_m)\) | CMO supply shifter/slope | Price may be proxied imperfectly |
-| Realization risk | approval/launch conversion | \(\zeta_i^E\) or composite value | route-realization object | Separate \(\zeta\) only if payoff separately measured |
+| Realization risk | approval/launch conversion | \(\zeta_i^E\) or composite value | route-realization object | Separate \(\zeta\) only with conversion data and payoff/route-choice normalizations |
 | Entry activation | new research-oriented firms | \(N_E(M)\) | activation threshold | Not full free entry |

@@ -7,7 +7,7 @@ This file fixes payoff accounting and prevents double counting.
 The model uses several payoff objects:
 
 \[
-R_t,\quad \widetilde R_i^E,\quad v_t,\quad \pi n_{it},\quad b_i^r,\quad G_i^r,\quad \Gamma_i(M).
+R_t,\quad \widetilde R_i^E,\quad v_t,\quad \pi n_{it},\quad b_i^r,\quad G_i^r,\quad \Gamma_i(M,p_m^*(M)).
 \]
 
 These must not overlap incorrectly.
@@ -22,7 +22,7 @@ These must not overlap incorrectly.
 | \(\pi n_{it}\) | flow payoff from existing retained stock | no, current flow only | Bellman flow payoff |
 | \(b_i^r\) | non-stock route payoff | no | route value construction |
 | \(G_i^r\) | full value of route \(r\) | yes if retained route | route choice |
-| \(\Gamma_i(M)\) | value of successful opportunity after route choice | yes | R&D FOC |
+| \(\Gamma_i(M,p_m^*(M))\) | value of successful opportunity after route choice at the equilibrium CMO service price | yes | R&D FOC |
 
 ## 3. No double-counting rules
 
@@ -81,13 +81,13 @@ G_i^I=R_i^I-C^I(k_i)+v.
 Use:
 
 \[
-G_i^E=\mathcal V_i^E(M)-p_m^*(M)-\tau^E(M)-\mu_i^E.
+G_i^E=\mathcal V_i^E(M,p_m^*(M))-p_m^*(M)-\tau^E(M)-\mu_i^E.
 \]
 
 where:
 
 \[
-\mathcal V_i^E(M)=\zeta_i^E(M)\widetilde R_i^E.
+\mathcal V_i^E(M,p_m)=\zeta_i^E(M,p_m)\widetilde R_i^E.
 \]
 
 If \(\widetilde R_i^E\) includes continuation value \(v\), state it explicitly.
@@ -95,7 +95,7 @@ If \(\widetilde R_i^E\) includes continuation value \(v\), state it explicitly.
 Alternative:
 
 \[
-G_i^E=\zeta_i^E(M)(R_i^E+v)-p_m^*(M)-\tau^E(M)-\mu_i^E.
+G_i^E=\zeta_i^E(M,p_m^*(M))(R_i^E+v)-p_m^*(M)-\tau^E(M)-\mu_i^E.
 \]
 
 Then do not add \(v\) again elsewhere.
@@ -117,10 +117,10 @@ A clean timing:
 The R&D part can be written as:
 
 \[
-\max_{x_i\ge0}\left\{\beta a_i x_i \Gamma_i(M)-\frac{\kappa}{2}x_i^2\right\}.
+\max_{x_i\ge0}\left\{\beta a_i x_i \Gamma_i(M,p_m^*(M))-\frac{\kappa}{2}x_i^2\right\}.
 \]
 
-This is valid only after \(\Gamma_i(M)\) is defined as the value of a successful opportunity including the route choice and continuation accounting.
+This is valid only after \(\Gamma_i(M,p_m^*(M))\) is defined as the value of a successful opportunity including the route choice, CMO service-market price, and continuation accounting.
 
 ## 7. Required manuscript clarification
 

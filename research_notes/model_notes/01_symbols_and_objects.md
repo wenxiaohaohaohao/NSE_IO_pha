@@ -20,6 +20,7 @@ This file fixes the meaning of all model objects. Do not introduce a symbol in t
 | \(a_i\) | research ability | primitive/effective ability | no | no | Absorbs latent research productivity and unobserved success probability |
 | \(k_i\) | manufacturing ability | primitive/proxy | proxy possible | no | Production license/capacity proxies possible |
 | \(h_i^I\) | internal production feasibility | firm-type indicator | proxy possible | partially | \(h_i^I=0\) for research-oriented firms without production capability |
+| \(q_i^E\) | entrusted-production feasibility / CMO match suitability | firm-project feasibility indicator | proxy possible | partially | \(q_i^E=1\) is required for the retained entrusted route under MAH |
 | \(\mu_i^E\) | residual holder-side burden | primitive cost | no | no | Monitoring, quality, technical transfer, coordination |
 | \(S_i\) | gross transfer value | payoff object | no | no | Should potentially depend on outside option |
 | \(\tau_i^T\) | transfer/transaction friction | primitive cost | no | no | Enters transfer payoff |
@@ -30,8 +31,8 @@ This file fixes the meaning of all model objects. Do not introduce a symbol in t
 |---|---|---|---|---|---|
 | \(R_t\) | market-return / commercialization payoff | reduced-form payoff | proxy possible | no | Keep fixed in baseline |
 | \(\widetilde R_i^E\) | post-production risk-adjusted payoff under \(E\) | composite payoff | proxy possible | no | Includes aggregate post-production risk |
-| \(\zeta_i^E(M)\) | route-realization / landing probability under \(E\) | composite / derived object | proxy possible | no | Do not claim separate structural identification without additional data |
-| \(\mathcal V_i^E(M)\) | composite route-realization value | composite payoff | no | partially | \(\mathcal V_i^E(M)=\zeta_i^E(M)\widetilde R_i^E\) |
+| \(\zeta_i^E(M,p_m)\) | route-realization / landing probability under \(E\) | composite / derived object | proxy possible | no | May depend on policy friction, feasibility, firm type, and CMO service conditions; do not claim separate structural identification without additional data |
+| \(\mathcal V_i^E(M,p_m)\) | composite route-realization value | composite payoff | no | partially | \(\mathcal V_i^E(M,p_m)=\zeta_i^E(M,p_m)\widetilde R_i^E\) |
 | \(\omega_i\) | post-production aggregate risk shock | optional appendix object | no | no | Not a baseline state variable |
 | \(F_{post}^E\) | distribution of post-production aggregate risk | optional appendix object | no | no | Baseline uses risk-adjusted payoff |
 
@@ -42,7 +43,7 @@ This file fixes the meaning of all model objects. Do not introduce a symbol in t
 | \(b_i^r\) | non-stock payoff from route \(r\) | payoff component | no | Excludes \(v\rho^r\) |
 | \(G_i^r\) | full route value | route value | yes if retained | \(G_i^r=b_i^r+v\rho^r\), or risk-adjusted equivalent |
 | \(\rho^r\) | retention indicator | route property | no | \(\rho^I=\rho^E=1\), \(\rho^T=\rho^A=0\) |
-| \(\Gamma_i(M)\) | value of a successful opportunity | derived object | yes | max value or logit inclusive value |
+| \(\Gamma_i(M,p_m)\) | value of a successful opportunity | derived object | yes | Logit inclusive value evaluated at the relevant CMO service price; deterministic max only as \(\sigma_r\to0\) limit |
 
 ## 5. Innovation and output objects
 
@@ -53,7 +54,7 @@ This file fixes the meaning of all model objects. Do not introduce a symbol in t
 | \(Y_{i,t+1}\) | latent opportunity count | latent random variable | no | no | Not equal to approvals |
 | \(\lambda_i^{latent}\) | expected latent opportunity arrival | derived | no | no | \(a_i x_i\) |
 | \(\lambda_i^{obs}\) | observed commercialization realization | derived/data counterpart | yes | outcome | Approvals, launch, product realization |
-| \(P_i(r\mid M)\) | route-use probability | derived | route-share proxy | partially | If logit route choice is used |
+| \(P_i(r\mid M,p_m)\) | route-use probability | derived | route-share proxy | partially | Logit route probability evaluated at the relevant CMO service price |
 
 ## 6. Identification rules
 
