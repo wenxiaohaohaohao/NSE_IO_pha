@@ -1,0 +1,182 @@
+% Phase 1 --- Object and Timing Audit
+% Governed by: paper/spec/MAH_model_rebuild_execution_note_for_Codex.md (Sec. 4-6)
+%              paper/spec/MAH_model_rebuild_amendment_v1.1_for_Codex.md (Sec. A, D, E)
+% Status: Phase 1, APPROVED (replayed onto the correct base review-model@cd5b6e4;
+% content unchanged from the original approval -- this module never referenced
+% manuscript-specific objects, so no correction was needed here).
+% Do not cite objects not yet defined in this module (RL-19); see
+% paper/model_notes/01_symbols_and_objects.md for the deferred-objects list.
+
+\section{Primitives, Objects, and Timing}
+\label{sec:primitives-timing}
+
+\subsection{Purpose}
+
+This module fixes, before any payoff is derived, (i) a complete
+classification of every primitive and state object used in the baseline,
+and (ii) the timing of decisions. No payoff, cost, or value function is
+introduced here. The advancement control $x_i$ is defined with the
+narrower meaning required by amendment v1.1: it is \emph{not} generic R\&D,
+upstream scientific research, or patent-generating effort.
+
+\subsection{Object-status table}
+\label{subsec:object-status}
+
+Every symbol below is classified into exactly one of the nine categories
+fixed by the execution note (primitive parameter; exogenous firm
+characteristic; exogenous project characteristic; control; endogenous
+firm-level object; endogenous route-level object; equilibrium price;
+aggregate/distributional primitive; derived observed outcome).
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Symbol & Category & Meaning \\
+\hline
+$M \in \{0,1\}$ & primitive parameter & institutional regime ($M=0$ pre-MAH, $M=1$ MAH) \\
+$a_i>0$ & exogenous firm characteristic & research capability / research productivity \\
+$k_i>0$ & exogenous firm characteristic & internal manufacturing capability \\
+$z_j$ & exogenous firm characteristic & CMO manufacturing-service productivity \\
+$q>0$ & exogenous project characteristic & project commercial/scientific value index \\
+$m>0$ & exogenous project characteristic & manufacturing requirement / complexity \\
+$g \in \{O,I\}$ & exogenous project characteristic & empirical novelty class (original / incremental) \\
+$s(q)\in[0,1]$ & primitive (technology function of $q$) & downstream clinical/regulatory realization probability \\
+$s_g(q)\in[0,1]$ & primitive (technology function of $q$) & type-specific realization probability, if required \\
+$x_i \geq 0$ & control & project-development / advancement intensity \\
+$H(a,k)$ & aggregate/distributional primitive & joint distribution of $(a_i,k_i)$ \\
+$H_C(z)$ & aggregate/distributional primitive & distribution of CMO efficiency \\
+$F(q,m)$ & aggregate/distributional primitive & distribution of project draws \\
+$F_g(q,m)$ & aggregate/distributional primitive & type-specific distribution of project draws \\
+$\lambda_i^{plan}=a_ix_i$ & endogenous firm-level object & arrival intensity of route-planning-stage projects \\
+$r \in \{I,E,T,A\}$ & endogenous route-level object & commercialization route choice \\
+$p_m$ & equilibrium price & manufacturing-service (CMO) price \\
+\hline
+\end{tabular}
+\end{center}
+
+No object outside this table is used in this module. Route values
+$W_i^I,W_i^E,W_i^T,W^A$, the manufacturing-cost technologies, the expected
+project value $\Omega_i$, and all equilibrium-market objects belong to
+Phases 2--7 and are deliberately absent here (RL-19: no proposition or
+payoff before its objects are formally defined).
+
+\subsection{The advancement control $x_i$: narrowed interpretation}
+\label{subsec:xi-narrow}
+
+Per amendment v1.1 \S A, the baseline control $x_i$ must not be
+interpreted as generic R\&D, upstream scientific research, or
+patent-generating effort. It is instead
+\[
+x_i = \text{project-development / advancement intensity},
+\]
+or, more compactly, \emph{project-development intensity}. Its economic
+role is to raise the flow of viable original-drug projects that reach the
+route-planning / commercialization-relevant development stage:
+\[
+\lambda_i^{plan} = a_i x_i.
+\]
+Intended empirical counterparts: IND/application activity, initiation of
+early-stage clinical development, first-stage clinical trials, and
+advancement of viable drug candidates toward commercialization --- not raw
+patent applications. Upstream scientific research, patent generation, and
+discovery of basic compounds are \emph{outside} the baseline timing; they
+may have occurred before a project enters this model. This model begins at
+the margin where a developer decides how intensively to advance viable
+drug projects while anticipating future commercialization routes, because
+MAH directly changes downstream manufacturing/commercialization options,
+not scientific-discovery technology.
+
+Note on the pre-existing manuscript's terminology (see
+\texttt{paper/manuscript/mah\_route\_indicator\_friction\_model.tex}
+\S4.1, \S4.4): that manuscript's $x_i$ is described as ``original-drug
+R\&D effort'' and its cost is written $C_i^R(x_i)=\frac{\kappa}{2}x_i^2$
+with $R$ genuinely standing for R\&D. This is precisely the broad reading
+amendment v1.1 requires narrowing (RL-21); the crosswalk from that
+manuscript's $x_i,C_i^R$ to this module's $x_i,C_X$ is completed formally
+in Phase 12, not here.
+
+\subsection{Empirical novelty class $g$}
+\label{subsec:novelty-class}
+
+Per amendment v1.1 \S D, when the paper distinguishes original and
+incremental innovation it uses an empirical project class $g\in\{O,I\}$.
+This is \emph{not} a new baseline decision state: it enters only by
+allowing project primitives to have type-specific distributions
+$(q,m)\sim F_g(q,m)$ and, if required, a type-specific realization
+probability $s_g(q)$. No object or proposition in this module ranks
+$g=O$ against $g=I$; any such ranking is deferred to Phase 8's Corollary
+and must be proved from primitive restrictions, not assumed.
+
+\subsection{Timing}
+\label{subsec:timing}
+
+\paragraph{Stage 0: Institutional regime.} The economy is under
+$M\in\{0,1\}$. $M=0$ is the pre-MAH organizational environment; $M=1$ is
+the regime in which MAH retained holder--producer separation is legally
+available. (The pre-existing manuscript additionally uses a continuous
+implementation index $\eta\in[0,1]$ conditional on $M=1$; per RL-13, this
+module and the new baseline do not use $\eta$ at all.)
+
+\paragraph{Stage 1: Project-development / advancement investment.}
+(Relabeled per amendment v1.1 \S E; was ``R\&D'' in the pre-amendment
+draft.) Developer $i$ observes $(a_i,k_i)$ and chooses
+\[
+x_i \geq 0.
+\]
+The intensity of viable projects reaching the route-planning /
+commercialization-relevant development stage is
+\[
+\lambda_i^{plan} = a_i x_i.
+\]
+(This production function is mathematically identical to the pre-existing
+manuscript's equation~(eq:planning\_arrival); only the interpretation of
+$x_i$ narrows.)
+
+\paragraph{Stage 2: Project characteristics.} Each arriving project draws
+\[
+(q,m) \sim F(q,m),
+\]
+optionally stratified by novelty class, $(q,m)\sim F_g(q,m)$. (The
+pre-existing manuscript has no analog of this stage: its route payoffs
+$G_i^I,G_i^E,G_i^T,G_i^A$ are firm-level constants, not functions of a
+project draw $(q,m)$. This is new structure the rebuild adds.)
+
+\paragraph{Stage 3: Commercialization organization.} Conditional on the
+project draw and the equilibrium manufacturing-service price $p_m$, the
+project chooses among
+\[
+\{I,E,T,A\},
+\]
+where $I$ is internal manufacturing, $E$ is retained entrusted
+manufacturing, $T$ is transfer/out-license/non-retained route, and $A$ is
+abandonment or indefinite delay. Route \emph{values} are not defined in
+this module; only the choice set and its timing are fixed here. (The
+pre-existing manuscript resolves this choice via a logit model over
+$G_i^r$, eq.~(eq:logit\_prob); this module and Phase 4 use a deterministic
+maximum instead, per RL-12 -- logit is deferred to Phase 11 as an
+explicit, non-baseline calibration extension.)
+
+\paragraph{Stage 4: Downstream realization.} A route-independent
+downstream clinical/regulatory realization probability $s(q)\in[0,1]$ (or
+$s_g(q)$ if type-specific) determines whether the retained project
+generates commercial value. $M$ does not directly shift $s(q)$ or
+$s_g(q)$ (RL-09). (The pre-existing manuscript's analog is
+$\zeta_i^r=s_i\chi_i^r$, a firm-level rather than project-level object;
+crosswalked formally in Phase 12.)
+
+\paragraph{Stage 5: Manufacturing-service market consistency.} Aggregate
+entrusted-route demand must be consistent with the equilibrium CMO price
+$p_m^*$. Market clearing itself is defined in Phase 6--7. (The
+pre-existing manuscript's analog is $p_m^*(M,\eta)$, Proposition
+prop:cmo\_existence; the new baseline drops the $\eta$ argument per
+RL-13.)
+
+\subsection{What this module deliberately excludes}
+
+No demand curve, no profit function, no manufacturing-cost technology, no
+route value, no advancement cost, no expected project value $\Omega_i$,
+and no CMO supply/demand object appears in this module. No claim is made
+here about whether MAH raises patent applications, upstream research, or
+breakthrough innovation (RL-21--RL-24): this module only fixes objects and
+timing. No logit, inclusive value, or continuous $\eta$ appears anywhere
+in this module (RL-12, RL-13).
