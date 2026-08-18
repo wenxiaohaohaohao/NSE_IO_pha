@@ -1,0 +1,196 @@
+% Phase 2 --- Demand and Operating Profit
+% Governed by: paper/spec/MAH_model_rebuild_execution_note_for_Codex.md (Sec. 7)
+% Status: Phase 2, replayed onto the correct base review-model@cd5b6e4.
+% The derivation itself is unchanged from the original approval; only
+% subsec:crosswalk-note below is corrected to reference the real manuscript's
+% legacy objects (R_i^event, bar R_i^E, Gamma_i) instead of an earlier,
+% mistaken reference to a different PDF that turned out not to be the
+% canonical current manuscript. See paper/model_notes/06_open_issues_log.md
+% OI-01/OI-02.
+% Builds only on objects defined in Phase 1
+% (paper/model_notes/01_symbols_and_objects.md). Introduces A, epsilon, p,
+% y(p;q), c, pi(q,c), phi, beta, R(q,c). Does not introduce any route,
+% manufacturing-technology, or MAH-friction object (RL-19).
+
+\section{Demand and Operating Profit}
+\label{sec:demand-profit}
+
+\subsection{Goal}
+
+This module replaces the reduced-form market-return objects used in the
+pre-existing manuscript --- $R_i^{event}$ (route-independent
+commercialization-event return) and $\bar R_i^E$ (entrusted-route return
+kernel), both exogenous primitives in
+\texttt{paper/manuscript/mah\_route\_indicator\_friction\_model.tex}
+eq.~(eq:GI)--(eq:GE) --- with an operating-profit object derived from an
+explicit demand curve and a marginal cost. The marginal cost $c$ is left
+as a free argument here: it is not yet a technology-specific object.
+Phase 3 instantiates $c$ as $c_I(m,k_i)$ or $c_E(m)$; using an
+undetermined $c$ here is a deliberate scope choice matching the note's
+own Phase 2 specification, not a violation of the no-forward-reference
+discipline (RL-19), because $c$ is a free argument of the function
+$R(q,c)$, not a claim about any specific route's cost.
+
+\subsection{Baseline demand}
+\label{subsec:demand}
+
+Use a minimal constant-elasticity residual demand for a project of value
+$q$:
+\begin{equation}
+y(p;q) = A q\, p^{-\varepsilon}, \qquad \varepsilon > 1.
+\label{eq:demand}
+\end{equation}
+Here $A>0$ is an exogenous market-size shifter, $q>0$ is the project
+value index fixed in Phase 1, and $\varepsilon>1$ is the demand
+elasticity. \textbf{MAH must not shift $A$, $q$, or $\varepsilon$}
+(RL-08): nothing in this module makes any of the three a function of
+$M$.
+
+\subsection{Static pricing problem}
+\label{subsec:pricing}
+
+Given a marginal manufacturing cost $c>0$, the seller solves
+\begin{equation}
+\max_{p \geq c} \ \Pi(p) \equiv (p-c)\,y(p;q) = Aq\left(p^{1-\varepsilon} - c\,p^{-\varepsilon}\right).
+\label{eq:pricing-problem}
+\end{equation}
+
+\paragraph{FOC.} Differentiating,
+\[
+\Pi'(p) = Aq\left[(1-\varepsilon)p^{-\varepsilon} + c\varepsilon p^{-\varepsilon-1}\right]
+= Aq\,p^{-\varepsilon-1}\big[(1-\varepsilon)p + c\varepsilon\big].
+\]
+Since $Aq\,p^{-\varepsilon-1}>0$ for $p>0$, the interior FOC is
+$(1-\varepsilon)p+c\varepsilon=0$, giving
+\begin{equation}
+p^*(c) = \frac{\varepsilon}{\varepsilon-1}\,c.
+\label{eq:pstar}
+\end{equation}
+
+\paragraph{SOC.} Differentiating again,
+\[
+\Pi''(p) = Aq\,p^{-\varepsilon-2}\Big[\varepsilon(\varepsilon-1)p - c\varepsilon(\varepsilon+1)\Big].
+\]
+At $p=p^*(c)$, $\varepsilon(\varepsilon-1)p^* = \varepsilon^2 c$, so the bracket equals
+$\varepsilon^2c - c\varepsilon(\varepsilon+1) = -\varepsilon c <0$. Hence
+\begin{equation}
+\Pi''(p^*(c)) = Aq\,\big(p^*(c)\big)^{-\varepsilon-2}(-\varepsilon c) < 0,
+\label{eq:soc}
+\end{equation}
+since $A,q,\varepsilon,c,p^*(c)>0$. The interior critical point is a strict
+maximum.
+
+\subsection{Operating profit}
+\label{subsec:profit}
+
+Substituting \eqref{eq:pstar} into \eqref{eq:pricing-problem}:
+\[
+\pi(q,c) \equiv \Pi(p^*(c))
+= Aq\,\big(p^*(c)\big)^{-\varepsilon}\big(p^*(c) - c\big)
+= Aq\,\big(p^*(c)\big)^{-\varepsilon}\cdot \frac{c}{\varepsilon-1},
+\]
+and using $\big(p^*(c)\big)^{-\varepsilon} = \left(\frac{\varepsilon-1}{\varepsilon}\right)^{\varepsilon} c^{-\varepsilon}$,
+\begin{equation}
+\boxed{\ \pi(q,c) = Aq\,\frac{(\varepsilon-1)^{\varepsilon-1}}{\varepsilon^{\varepsilon}}\,c^{1-\varepsilon}. \ }
+\label{eq:profit}
+\end{equation}
+
+\paragraph{Comparative statics.}
+\[
+\pi_q = \frac{\partial \pi}{\partial q} = A\,\frac{(\varepsilon-1)^{\varepsilon-1}}{\varepsilon^{\varepsilon}}\,c^{1-\varepsilon} = \frac{\pi(q,c)}{q} > 0,
+\]
+\[
+\pi_c = \frac{\partial \pi}{\partial c} = (1-\varepsilon)\,Aq\,\frac{(\varepsilon-1)^{\varepsilon-1}}{\varepsilon^{\varepsilon}}\,c^{-\varepsilon} = (1-\varepsilon)\,\frac{\pi(q,c)}{c} < 0,
+\]
+where the sign of $\pi_c$ follows because $\varepsilon>1\Rightarrow(1-\varepsilon)<0$ and $\pi(q,c)/c>0$. Both signs match the note's requirement $\pi_q>0,\ \pi_c<0$.
+
+\subsection{Present value}
+\label{subsec:pv}
+
+Suppose a commercialized drug remains commercially active into the next
+period with probability $\varphi\in[0,1)$, and future profit is
+discounted at $\beta\in(0,1)$. The flow of profits is
+$\pi,\ \beta\varphi\pi,\ (\beta\varphi)^2\pi,\dots$, a geometric series
+with ratio $\beta\varphi\in[0,1)$, so it converges to
+\begin{equation}
+\boxed{\ R(q,c) = \frac{\pi(q,c)}{1-\beta\varphi}. \ }
+\label{eq:pv}
+\end{equation}
+Because $\beta\varphi<1$ is guaranteed by $\beta<1$ and $\varphi<1$, the
+denominator is strictly positive and $R(q,c)$ is well-defined. Since
+$1-\beta\varphi>0$ is a positive scalar independent of $q,c$,
+\[
+R_q = \frac{\pi_q}{1-\beta\varphi} > 0, \qquad
+R_c = \frac{\pi_c}{1-\beta\varphi} < 0,
+\]
+i.e.\ the present-value return inherits the sign pattern of operating
+profit exactly.
+
+\subsection{Dimensional consistency}
+\label{subsec:dimensions}
+
+All objects in this module are flow-profit quantities per period, except
+$\beta,\varphi,\varepsilon$ which are dimensionless scalars and $A$ which
+absorbs whatever units are needed to make \eqref{eq:demand} a quantity.
+$\pi(q,c)$ has revenue-flow units (price $\times$ quantity); dividing by
+the dimensionless $(1-\beta\varphi)$ leaves $R(q,c)$ in the same
+revenue-flow units, capitalized into a present value. No route-specific
+fixed cost (e.g.\ a future $F_I,F_E,\mu_E,\tau_E$) is introduced or
+subtracted in this module, so no cost can be double-counted here; that
+check is repeated when route values combine $R(q,c)$ with route-specific
+costs in Phase 4.
+
+\subsection{Economic interpretation}
+\label{subsec:econ-interp}
+
+Operating profit $\pi(q,c)$ is the constant-markup surplus a seller
+retains after pricing optimally against a project-specific demand curve
+scaled by $q$ and producing at constant marginal cost $c$: a
+higher-value project ($q$ larger) scales profit proportionally at any
+given cost, while a higher marginal cost $c$ lowers profit both directly,
+through a thinner per-unit markup, and indirectly, through the
+higher optimal price it induces, which shrinks quantity sold. $R(q,c)$
+capitalizes this per-period profit into a present value under a
+survival-hazard structure: $\varphi$ is the chance the product still
+generates profit next period, so the effective discount factor
+$\beta\varphi$ compounds patience with commercial durability. Because
+$A$, $q$, and $\varepsilon$ are demand-side and clinical-value-side
+primitives that this module deliberately keeps free of $M$, any MAH
+effect on a developer's payoff must enter later, and only through the
+cost argument $c$ once Phase 3 gives $c$ technology-specific content —
+this is what makes the eventual MAH channel a manufacturing/organizational
+one rather than a demand or clinical-value one.
+
+\subsection{Crosswalk to the pre-existing manuscript (completed formally in Phase 12)}
+\label{subsec:crosswalk-note}
+
+$R(q,c)$, together with the route-specific costs added in Phase 3--4, is
+intended to fully replace the pre-existing manuscript's two exogenous
+return primitives (\texttt{paper/manuscript/mah\_route\_indicator\_friction\_model.tex}
+\S4.2, just before eq.~(eq:GI)):
+\begin{itemize}
+\item $R_i^{event}$ --- ``the route-independent commercialization-event
+  return from an internally realized original drug'' --- replaced by
+  $R(q,c_I(m,k_i))$ once Phase 3 instantiates the internal-route cost.
+\item $\bar R_i^E$ --- ``the corresponding entrusted-route return
+  kernel'' --- replaced by $R(q,c_E(m))$ once Phase 3 instantiates the
+  entrusted-route cost.
+\end{itemize}
+Both legacy objects are firm-level exogenous constants with no demand or
+cost microfoundation; $R(q,c)$ is derived and project-level ($q$-indexed),
+which is the intended generalization. The manuscript's inclusive value
+$\Gamma_i(M,\eta,p_m)$ (its eq.~(eq:Gamma)) is a separate object --- an
+expectation over a \emph{logit} route choice --- and is not replaced
+here; it is replaced by $\Omega_i(M,p_m)$ in Phase 5, once Phase 4 route
+values exist. No reduced-form return object may survive past this module
+without one of these two pointers; the full dependency accounting
+(equations, propositions, calibration claims that depended on
+$R_i^{event}$ or $\bar R_i^E$) is completed formally in the Phase 12
+crosswalk table, per the note's own scoping of that phase.
+
+\subsection{What this module deliberately excludes}
+
+No route value, no manufacturing-cost technology $c_I,c_E,F_I,F_E$, no
+MAH friction $\tau_E(M)$, and no advancement/cost object $x_i,C_X$
+appears in this module. $M$ does not appear at all in this module: the
+demand and profit chain is entirely policy-free, as required (RL-08).
