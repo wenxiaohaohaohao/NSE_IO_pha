@@ -1,0 +1,1650 @@
+\documentclass[12pt,UTF8]{ctexart}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,tabularx,array,longtable}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\hypersetup{hidelinks}
+\allowdisplaybreaks[3]
+\setlength{\emergencystretch}{3em}
+\setlength{\extrarowheight}{2pt}
+\setstretch{1.18}
+\sloppy
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prb}{\mathbb{P}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\Rset}{\mathcal{R}}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{命题}[section]
+\newtheorem{assumption}{假设}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{说明}[section]
+
+\title{MAH 模型详细讲义\\
+\large 路线扩张、实施强度、CMO 支持市场与观测份额}
+\author{工作区：D:\textbackslash working\_paper\textbackslash DANNI}
+\date{2026年7月17日}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\bigskip
+
+\section{导言：这份讲义到底要解释什么}
+
+这份讲义解释的不是一个“所有市场都联立清算”的大模型，而是一个更聚焦、
+也更适合当前论文问题的机制模型。核心问题只有一句话：
+
+\begin{quote}
+当 MAH 制度允许“持证主体”和“生产主体”分离以后，原研项目的商业化路线
+会不会变多、变顺，从而提高企业今天做原研研发的私人回报？
+\end{quote}
+
+这里的经济逻辑有三层。
+
+\begin{enumerate}[leftmargin=2em]
+    \item 第一层是\textbf{离散的路线扩张}。MAH 以前，很多企业如果没有足够的
+    自有生产能力，就只能内部生产、转让，或者放弃。MAH 以后，合法的
+    “持证但委托生产”的 retained external route 出现了，记为路线 $E$。
+    \item 第二层是\textbf{连续的实施强度}。即使法律上开放了 $E$ 路线，
+    各地区、年份、剂型、监管执行环境也未必一样顺畅。我们用
+    $\eta\in[0,1]$ 表示 post-MAH implementation intensity。$\eta$ 越高，
+    说明在 MAH 规则已经存在的前提下，外部委托这条 retained route
+    越容易真正跑通。
+    \item 第三层是\textbf{CMO 支持市场的价格反馈}。如果很多企业都想走 $E$
+    路线，对合格委托生产支持的需求会上升，这会推高有效支持成本 $p^*$，
+    进而部分抵消制度改革的好处。这就是 attenuation。
+\end{enumerate}
+
+因此，本讲义的基准视角是：
+
+\begin{quote}
+MAH 不是一个一般性 demand shock，不是一个一般性 scientific productivity
+shock，也不是一个纯粹的 approval-delay reform。它首先改变 route set，
+然后通过 route-specific implementation 和 friction 影响原研研发激励。
+\end{quote}
+
+下面我们会把这个逻辑拆成本科生也能完整跟上的几个模块：制度背景、
+对象与假设、收益函数、EV1 logit 推导、R\&D 最优化、CMO 市场闭合、
+比较静态、观测份额、Bellman 递推、校准与识别、机制区分以及局限。
+
+\paragraph{本节小结。}
+这份模型讲义只研究一条窄机制：MAH 如何通过 retained external route
+的可行性与顺畅度，影响原研项目的预期商业化价值和研发投入。
+
+\section{制度问题：为什么 MAH 会进入原研研发激励模型}
+
+\subsection{制度直觉}
+
+在药品制度环境里，很多研究导向企业的问题不是“想不想创新”，而是
+“即使项目做出来，最后能不能以自己保留 holder 身份的方式，把产品推到市场”。
+如果必须自己生产，那么没有完备生产能力的研究导向企业就会在研发一开始
+就预期到商业化受限。这样，当前的研发回报会被压低。
+
+MAH 的制度意义正在这里：它把“谁持有上市许可”和“谁负责实际生产”
+从严格绑定，变成了可以在监管规则下分离。经济上，这不是一句简单的
+“允许外包”，因为 holder 责任并没有消失。持证方仍然要承担质量、
+持续监督、技术转移、协议管理等责任。因此，外部路线不是无摩擦的。
+这也是为什么模型里必须同时保留：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 一项路线层面的\textbf{有效支持成本} $p$；
+    \item 一项 MAH 可改善、但不一定完全消失的
+    \textbf{路线摩擦} $\tau_i^E(M,\eta)$；
+    \item 一项 holder 仍然承担的\textbf{剩余负担} $\mu_i^E$。
+\end{enumerate}
+
+\subsection{为什么要区分 \texorpdfstring{$M$ 和 $\eta$}{M 和 eta}}
+
+本讲义把改革分成两个对象。
+
+\begin{enumerate}[leftmargin=2em]
+    \item $M\in\{0,1\}$：制度是否在法律上开放 MAH retained external route。
+    $M=0$ 是 pre-MAH，$M=1$ 是 post-MAH。
+    \item $\eta\in[0,1]$：在 $M=1$ 条件下，实施强度有多高。$\eta$ 可以理解成
+    地区、年份、剂型、监管执行、CMO 配套成熟度等综合指标。
+\end{enumerate}
+
+这样做的好处是：
+
+\begin{enumerate}[leftmargin=2em]
+    \item $M$ 专门处理\textbf{离散的路线开放}；
+    \item $\eta$ 专门处理\textbf{post-MAH 内部的连续差异}；
+    \item 经验上也更贴近数据：很多时候 pre-MAH 根本没有可比的 $E$ 路线，
+    但 post-MAH 不同地区之间存在不同的 implementation intensity。
+\end{enumerate}
+
+\paragraph{本节小结。}
+MAH 在模型里不是一般性“利好政策”，而是一个改变商业化路线可行性和
+外部生产实施条件的制度安排，因此要同时区分法律开放和实施强度。
+
+\section{模型对象与核心假设}
+
+\subsection{对象表}
+
+\begingroup
+\small
+\renewcommand{\arraystretch}{1.14}
+\noindent\begin{tabularx}{\textwidth}{p{0.13\textwidth} p{0.17\textwidth} X p{0.14\textwidth}}
+\toprule
+符号 & 类型 & 经济含义 & 状态 \\
+\midrule
+$i$ & 企业索引 & 不同企业 & 外生索引 \\
+$r\in\{I,E,T,A\}$ & 路线索引 & 内部生产、委托生产、转让、放弃 & 外生索引 \\
+$M\in\{0,1\}$ & 制度变量 & 是否法律上开放 MAH 外部 retained route & 外生制度 \\
+$\eta\in[0,1]$ & 连续制度强度 & post-MAH implementation intensity & 外生制度强度 \\
+$a_i$ & 企业特征 & 研发能力或研发生产率 & 外生异质性 \\
+$k_i$ & 企业特征 & 内部生产能力 & 外生异质性 \\
+$h_i^I\in\{0,1\}$ & 可行性指标 & 企业是否可行地走内部生产路线 & 外生异质性 \\
+$q_i^E\in\{0,1\}$ & 可行性指标 & 企业是否具备进入合格委托生产安排的技术与监管资格；不表示已经完成匹配 & 外生异质性 \\
+$s_i\in[0,1]$ & 项目基础成功率 & 项目自身从“值得规划”到“可能被实现”的基础成功部分 & 外生异质性 \\
+$\chi_i^r$ & 路线实施因子 & 给定路线后，制度、执行和支持条件把项目真正落地的可能性 & 路线特定 \\
+$\zeta_i^r=s_i\chi_i^r$ & 复合实现概率 & route-specific observed realization probability & 内生于路线环境 \\
+\bottomrule
+\end{tabularx}
+
+\medskip
+\noindent\begin{tabularx}{\textwidth}{p{0.13\textwidth} p{0.17\textwidth} X p{0.14\textwidth}}
+\toprule
+符号 & 类型 & 经济含义 & 状态 \\
+\midrule
+$R_i^r$ & 回报对象 & 路线 $r$ 成功实现时的事件性商业化回报 & 给定回报环境 \\
+$v$ & continuation value & 新增一个 retained product 进入企业 stock 的边际延续价值 & 内生值函数对象 \\
+$p$ & 有效支持成本 & 合格 CMO 支持的有效价格或支付成本 & 市场内生 \\
+$\tau_i^E(M,\eta)$ & 路线摩擦 & MAH 可改善的 external route friction & 制度相关 \\
+$\mu_i^E$ & 剩余 holder 负担 & 质量责任、协调、监督、技术转移等未消失成本 & 外生或缓变 \\
+$S_i-\tau_i^T$ & 转让净回报 & 非 retained transfer/sale/out-licensing outside option & 外生基准 \\
+$\kappa$ & 成本参数 & R\&D effort 的二次成本斜率 & 外生参数 \\
+$H$ & 分布 & 企业异质性的横截面分布 & 外生分布 \\
+$D^B(p)$ & 背景需求 & 模型外既有 CMO 支持需求 & 外生函数 \\
+$S^{CMO}(p)$ & 支持供给 & 合格 CMO 支持供给函数 & 外生供给函数 \\
+$p^*(M,\eta)$ & 均衡成本 & CMO 支持市场清算出的有效支持成本 & 内生结果 \\
+\bottomrule
+\end{tabularx}
+\endgroup
+
+\subsection{核心假设}
+
+\begin{assumption}[部分均衡边界]
+除合格 CMO 支持市场以外，其余背景环境都看作给定。模型不闭合产品市场、
+研发投入市场、自由进入退出和行业稳态分布。
+\end{assumption}
+
+\begin{assumption}[路线可行性]
+内部路线仅在 $h_i^I=1$ 时可行；外部 retained route 仅在
+$M=1$ 且 $q_i^E=1$ 时可行。
+\end{assumption}
+
+\begin{assumption}[复合实现概率分解]
+对任何产生观测结果的路线 $r$，
+\[
+\zeta_i^r(M,\eta,p)=s_i\chi_i^r(M,\eta,p), \qquad 0\le \zeta_i^r\le 1.
+\]
+其中 $s_i$ 是项目基础成功部分，$\chi_i^r$ 是 route-specific implementation
+部分。
+\end{assumption}
+
+\begin{assumption}[实施强度的方向]
+对 retained external route，$\partial \chi_i^E/\partial \eta\ge 0$，
+$\partial \tau_i^E/\partial \eta\le 0$。也就是说，实施强度越高，
+项目越容易通过外部路线落地，同时制度相关摩擦越低。
+\end{assumption}
+
+\begin{assumption}[R\&D 成本]
+企业选择研发强度 $x_i\ge 0$，成本函数为
+\[
+C_i^R(x_i)=\frac{\kappa}{2}x_i^2,\qquad \kappa>0.
+\]
+这保证一阶条件简单、二阶条件严格凹。
+\end{assumption}
+
+\begin{assumption}[EV1 路线冲击]
+路线选择阶段存在独立同分布的 Type-I extreme value 冲击，
+尺度参数为 $\sigma>0$。
+\end{assumption}
+
+\begin{assumption}[CMO 支持市场的单调性]
+$D^B(p)$ 连续且弱下降，$S^{CMO}(p)$ 连续且严格上升。
+对每个企业，$G_i^E$ 对 $p$ 弱下降，因此由此诱导的
+$x_i^*(M,\eta,p)$ 和 $P_i(E\mid M,\eta,p)$ 也弱下降。
+\end{assumption}
+
+\paragraph{为什么这些假设足够。}
+这些假设并不要求我们解释所有宏观均衡，只要求我们把与 MAH
+机制最直接相关的一块市场闭合起来。这样模型既有明确经济含义，
+又不会做出超出数据与论文目标的夸张识别声明。
+
+\paragraph{本节小结。}
+这个模型最关键的对象有四组：企业异质性 $(a_i,k_i)$、制度状态 $(M,\eta)$、
+路线实现对象 $\zeta_i^r=s_i\chi_i^r$、以及 CMO 支持成本 $p^*$。
+
+\section{逐期 timing、路线集合与四类 payoff}
+
+\subsection{逐期 timing}
+
+把企业决策拆成一个足够清晰、又不过分复杂的顺序：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 期初，企业带着既有产品存量 $n_i$、研发能力 $a_i$、
+    内部生产能力 $k_i$ 等状态进入本期。
+    \item 企业在看到当前制度环境 $(M,\eta)$ 后，选择原研研发强度 $x_i$。
+    \item 研发强度决定“到达路线规划阶段的项目到达率”：
+    \[
+    \lambda_i^{lat}=a_i x_i.
+    \]
+    这里“lat”不是实验室最早想法，而是已经走到值得进入商业化路线规划阶段的
+    有效项目流量。
+    \item 如果项目到达了路线规划阶段，企业比较可行路线集合中的各个 payoff。
+    \item 给定全体企业的外部路线使用倾向，CMO 支持市场清算出有效支持成本
+    $p^*(M,\eta)$。
+    \item 实际被观测到的 realized output 还要乘上 route-specific
+    realization probability $\zeta_i^r$。
+    \item retained route 成功实现后，企业下期 stock 增加；非 retained
+    route 不增加 stock。
+\end{enumerate}
+
+\subsection{路线集合}
+
+条件于项目已经到达路线规划阶段，企业的可行路线集合是
+\begin{equation}
+\Rset_i(M)=
+\{A,T\}\cup \{I:h_i^I=1\}\cup \{E:M=1,\ q_i^E=1\}.
+\label{eq:route_set}
+\end{equation}
+
+四条路线分别是：
+
+\begin{enumerate}[leftmargin=2em]
+    \item $I$：企业自己保留 holder 身份并内部生产；
+    \item $E$：企业保留 holder 身份，但委托外部合格生产主体生产；
+    \item $T$：转让、出售或 non-retained out-licensing；
+    \item $A$：放弃或延迟。
+\end{enumerate}
+
+\subsection{四类 payoff}
+
+\paragraph{第一步：先把实现概率与 continuation value 讲清楚。}
+保留路线 $I,E$ 的共同特征是：只有项目真正被实现并形成 retained outcome，
+企业才会拿到当期商业化事件回报，并把产品或证书加到自己的 stock 里。
+因此，保留路线的 payoff 自然写成
+\[
+\zeta_i^r(R_i^r+v)-\text{cost},
+\qquad r\in\{I,E\}.
+\]
+
+其中：
+
+\begin{enumerate}[leftmargin=2em]
+    \item $R_i^r$ 是事件性商业化回报；
+    \item $v$ 是多保留一个产品进入 stock 的边际 continuation value；
+    \item $\zeta_i^r=s_i\chi_i^r$ 是这条路线真正被落地并被观测到的复合实现概率。
+\end{enumerate}
+
+\paragraph{第二步：分别写每条路线。}
+
+\begin{align}
+G_i^I(M,\eta,p)
+&=
+\zeta_i^I(M,\eta,p)\bigl(R_i^I+v\bigr)-C^I(k_i),
+\label{eq:GI}\\
+G_i^E(M,\eta,p)
+&=
+\zeta_i^E(M,\eta,p)\bigl(R_i^E+v\bigr)
+-p-\tau_i^E(M,\eta)-\mu_i^E,
+\label{eq:GE}\\
+G_i^T(M,\eta,p)
+&=
+S_i-\tau_i^T,
+\label{eq:GT}\\
+G_i^A(M,\eta,p)
+&=0.
+\label{eq:GA}
+\end{align}
+
+\paragraph{为什么 $T$ 不写成加 $v$ 的形式。}
+$T$ 是 non-retained route。企业可以得到一笔净转让收益
+$S_i-\tau_i^T$，但不会把产品保留在自己的 stock 里，因此没有 $+v$。
+这一步非常重要，因为很多读者会把“委托生产”与“转让”混为一谈。
+在这个模型里两者完全不同：
+
+\begin{enumerate}[leftmargin=2em]
+    \item $E$：holder 仍然是原企业，产品留在企业资产里；
+    \item $T$：holder 不再是原企业，产品不进入企业 future stock。
+\end{enumerate}
+
+\paragraph{内部生产成本的一个便于直觉的例子。}
+为了理解 $k_i$ 的作用，可以采用
+\begin{equation}
+C^I(k_i)=F_I+\frac{\bar c_I}{k_i},\qquad k_i>0.
+\label{eq:CI_example}
+\end{equation}
+这里 $F_I$ 是内部生产的固定组织负担，$\bar c_I/k_i$ 表示内部生产能力越强，
+单位项目的内部落地越便宜。重要的是方向：
+\[
+\frac{\partial C^I(k_i)}{\partial k_i}<0.
+\]
+
+\subsection{离散的 route-set expansion}
+
+现在可以非常直接地看出 MAH 的离散效应。
+
+\begin{align*}
+\Rset_i(0)&=\{A,T\}\cup\{I:h_i^I=1\},\\
+\Rset_i(1)&=\{A,T\}\cup\{I:h_i^I=1\}\cup\{E:q_i^E=1\}.
+\end{align*}
+
+因此，$M$ 的核心作用首先不是“让所有现有路线都更赚钱”，
+而是\textbf{给部分企业多增加了一条原来根本不存在的 retained route}。
+这就是 route-set expansion。
+
+\paragraph{本节小结。}
+本节最重要的式子是四条路线的 payoff。保留路线拿到的是
+$\zeta_i^r(R_i^r+v)-\text{cost}$，非保留转让路线没有 $+v$。
+MAH 的第一个作用是把 $E$ 路线从“不可选”变成“可选”。
+
+\section{EV1 logit 与 inclusive value：一步一步推导}
+
+\subsection{为什么需要随机效用}
+
+如果企业永远机械地选择 payoff 最大的路线，那么模型会得到一个硬阈值：
+谁的 $G_i^E$ 稍微高一点，谁就全部走 $E$；稍微低一点，就完全不走。
+这在理论上可以，但在数据里往往太硬。现实中，即使面对同样的可观察 payoff，
+不同企业或项目也会因为细微的管理、匹配、偏好差异做出不同路线选择。
+
+因此我们写：
+\begin{equation}
+U_i^r = G_i^r + \varepsilon_i^r,
+\label{eq:latent_utility}
+\end{equation}
+其中 $\varepsilon_i^r$ 是独立同分布的 EV1 冲击，分布函数为
+\begin{equation}
+F(\varepsilon)=\exp\left[-\exp\left(-\frac{\varepsilon}{\sigma}\right)\right],
+\qquad \sigma>0.
+\label{eq:ev1_cdf}
+\end{equation}
+
+对应密度函数是
+\begin{equation}
+f(\varepsilon)
+=
+\frac{1}{\sigma}
+\exp\left(-\frac{\varepsilon}{\sigma}\right)
+\exp\left[-\exp\left(-\frac{\varepsilon}{\sigma}\right)\right].
+\label{eq:ev1_pdf}
+\end{equation}
+
+\subsection{路线选择概率的推导}
+
+企业选择路线 $r$ 的概率是
+\[
+P_i(r)=\Prb\bigl(U_i^r\ge U_i^\ell,\ \forall \ell\in\Rset_i(M)\bigr).
+\]
+
+把 $U_i^r=G_i^r+\varepsilon_i^r$ 代进去，可得
+\[
+P_i(r)
+=
+\Prb\bigl(
+\varepsilon_i^\ell
+\le
+\varepsilon_i^r + G_i^r-G_i^\ell,\ \forall \ell\neq r
+\bigr).
+\]
+
+对 $\varepsilon_i^r$ 积分，有
+\begin{align}
+P_i(r)
+&=
+\int_{-\infty}^{\infty}
+\prod_{\ell\neq r}
+F\!\left(\varepsilon + G_i^r-G_i^\ell\right)
+f(\varepsilon)\dd \varepsilon.
+\label{eq:logit_step1}
+\end{align}
+
+把 EV1 的 $F(\cdot)$ 和 $f(\cdot)$ 代入后，乘积项可以整理成
+\begin{align}
+P_i(r)
+&=
+\int_{-\infty}^{\infty}
+\frac{1}{\sigma}
+\exp\left(-\frac{\varepsilon}{\sigma}\right)
+\exp\left[
+-\exp\left(-\frac{\varepsilon}{\sigma}\right)
+\sum_{\ell\in\Rset_i(M)}
+\exp\left(\frac{G_i^\ell-G_i^r}{\sigma}\right)
+\right]
+\dd \varepsilon.
+\label{eq:logit_step2}
+\end{align}
+
+现在做变量替换：
+\[
+y=\exp\left(-\frac{\varepsilon}{\sigma}\right),\qquad
+\dd y = -\frac{1}{\sigma}\exp\left(-\frac{\varepsilon}{\sigma}\right)\dd\varepsilon.
+\]
+于是积分变成
+\begin{align}
+P_i(r)
+&=
+\int_{0}^{\infty}
+\exp\left[
+-y
+\sum_{\ell\in\Rset_i(M)}
+\exp\left(\frac{G_i^\ell-G_i^r}{\sigma}\right)
+\right]
+\dd y \notag\\
+&=
+\left[
+\sum_{\ell\in\Rset_i(M)}
+\exp\left(\frac{G_i^\ell-G_i^r}{\sigma}\right)
+\right]^{-1}.
+\label{eq:logit_step3}
+\end{align}
+
+再把 $G_i^r$ 移回来，就得到标准 logit 公式：
+\begin{equation}
+P_i(r\mid M,\eta,p)
+=
+\frac{\exp(G_i^r/\sigma)}
+{\sum_{\ell\in\Rset_i(M)}\exp(G_i^\ell/\sigma)}.
+\label{eq:logit_prob}
+\end{equation}
+
+\subsection{inclusive value 的推导}
+
+定义一项有效项目进入路线选择阶段时的期望最优价值：
+\[
+\E\left[\max_{r\in\Rset_i(M)}U_i^r\right].
+\]
+
+在 EV1 设定下有标准结果：
+\[
+\E\left[\max_{r}U_i^r\right]
+=
+\sigma\log\sum_{r}\exp(G_i^r/\sigma)+C_E\sigma,
+\]
+其中 $C_E$ 是 Euler 常数。由于 $C_E\sigma$ 对所有企业和路线都只是一个
+加法常数，我们在模型里把它吸收到归一化里，定义
+\begin{equation}
+\Gamma_i(M,\eta,p)
+=
+\sigma\log\sum_{r\in\Rset_i(M)}\exp(G_i^r/\sigma).
+\label{eq:inclusive_value}
+\end{equation}
+
+\paragraph{为什么 $\Gamma_i$ 很重要。}
+$\Gamma_i$ 不是“某条路线”的价值，而是“一旦项目到达路线规划阶段，
+企业平均而言能拿到的最优商业化机会价值”。它把所有路线选择可能性压缩成
+一个标量，因此非常适合作为研发阶段的前瞻回报对象。
+
+\subsection{一个关键导数}
+
+对任意路线 payoff $G_i^r$，对式 \eqref{eq:inclusive_value} 求导：
+\begin{align}
+\frac{\partial \Gamma_i}{\partial G_i^r}
+&=
+\sigma
+\frac{1}{\sum_{\ell}\exp(G_i^\ell/\sigma)}
+\cdot
+\frac{1}{\sigma}\exp(G_i^r/\sigma)\notag\\
+&=
+\frac{\exp(G_i^r/\sigma)}
+{\sum_{\ell}\exp(G_i^\ell/\sigma)}
+=
+P_i(r\mid M,\eta,p).
+\label{eq:Gamma_derivative}
+\end{align}
+
+这个式子有极强的直觉含义：
+
+\begin{quote}
+如果某条路线在最优选择里本来就几乎不会被采用，那么改善它的 payoff
+对 $\Gamma_i$ 的提升就很小；如果某条路线本来就很 relevant，
+改善它的 payoff 对 $\Gamma_i$ 的提升就大。
+\end{quote}
+
+\subsection{确定性极限}
+
+当 $\sigma\to 0$ 时，
+\[
+\Gamma_i(M,\eta,p)\to \max_{r\in\Rset_i(M)} G_i^r(M,\eta,p).
+\]
+这说明 deterministic max 不是另一个完全不同的模型，而是 logit 模型的极限。
+但在本讲义里，基准形式就是 logit，因为后面 route share、observed share、
+log odds 的解释都依赖这个平滑形式。
+
+\paragraph{本节小结。}
+EV1 假设给出两个核心结果：一是 logit 选择概率，二是 inclusive value
+$\Gamma_i$。更重要的是，$\partial\Gamma_i/\partial G_i^r=P_i(r)$，
+这让后面的比较静态非常透明。
+
+\section{R\&D 选择：FOC、SOC 与最优研发强度}
+
+\subsection{有效项目到达率}
+
+按照用户给定的统一模型，\textbf{$a_i x_i$ 是进入路线规划阶段的项目到达率}：
+\begin{equation}
+\lambda_i^{lat}=a_i x_i.
+\label{eq:latent_arrival}
+\end{equation}
+
+这个写法的含义是：
+
+\begin{enumerate}[leftmargin=2em]
+    \item $a_i$ 衡量企业把研发投入转成有效项目机会的能力；
+    \item $x_i$ 是企业自己选择的研发强度；
+    \item 两者相乘，得到进入“后续商业化路线选择”的项目流量。
+\end{enumerate}
+
+\subsection{研发问题}
+
+在给定 $(M,\eta,p)$ 的情况下，企业的研发问题写成
+\begin{equation}
+\max_{x_i\ge 0}
+\left\{
+\beta a_i x_i \Gamma_i(M,\eta,p)
+\;-\;
+\frac{\kappa}{2}x_i^2
+\right\}.
+\label{eq:rd_problem}
+\end{equation}
+
+这里的逻辑非常直接：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 左边第一项 $\beta a_i x_i \Gamma_i$ 是“有效项目到达率”
+    乘上“每个有效项目的前瞻机会价值”；
+    \item 第二项是研发强度的凸成本。
+\end{enumerate}
+
+\subsection{一阶条件 FOC}
+
+对 \eqref{eq:rd_problem} 关于 $x_i$ 求导：
+\begin{equation}
+\frac{\partial}{\partial x_i}
+\left[
+\beta a_i x_i \Gamma_i
+-\frac{\kappa}{2}x_i^2
+\right]
+=
+\beta a_i\Gamma_i - \kappa x_i.
+\label{eq:foc_step}
+\end{equation}
+
+令一阶条件等于零，得到
+\begin{equation}
+\beta a_i\Gamma_i(M,\eta,p)-\kappa x_i=0.
+\label{eq:foc}
+\end{equation}
+
+所以最优研发强度是
+\begin{equation}
+x_i^*(M,\eta,p)
+=
+\frac{\beta a_i}{\kappa}\Gamma_i(M,\eta,p).
+\label{eq:xstar_offeq}
+\end{equation}
+
+\subsection{二阶条件 SOC}
+
+对 \eqref{eq:rd_problem} 再求一次导数：
+\[
+\frac{\partial^2}{\partial x_i^2}
+\left[
+\beta a_i x_i \Gamma_i
+-\frac{\kappa}{2}x_i^2
+\right]
+=
+-\kappa<0.
+\]
+
+因此目标函数严格凹，\eqref{eq:xstar_offeq} 给出的就是唯一最优解。
+
+\subsection{把最优研发强度代回去}
+
+最优有效项目到达率就是
+\begin{equation}
+\lambda_i^{lat,*}(M,\eta,p)
+=
+a_i x_i^*(M,\eta,p)
+=
+\frac{\beta a_i^2}{\kappa}\Gamma_i(M,\eta,p).
+\label{eq:lambda_lat_star}
+\end{equation}
+
+这个式子非常重要，因为它说明：
+
+\begin{quote}
+原研项目流量不是单独由研发能力 $a_i$ 决定，也不是单独由商业化机会价值
+$\Gamma_i$ 决定，而是二者共同决定。
+\end{quote}
+
+\subsection{观测到的 realized output}
+
+潜在项目流量 $\lambda_i^{lat,*}$ 和最终观测到的 output 不是一回事。
+路线选择和路线实现都要继续筛选。定义路线 $r$ 的观测实现输出为
+\begin{equation}
+Y_i^{obs,r}(M,\eta,p)
+=
+a_i x_i^*(M,\eta,p)
+P_i(r\mid M,\eta,p)
+\zeta_i^r(M,\eta,p).
+\label{eq:obs_route_output}
+\end{equation}
+
+于是企业的总观测 realized output 是
+\begin{equation}
+Y_i^{obs}(M,\eta,p)
+=
+a_i x_i^*(M,\eta,p)
+\sum_{r\in\Rset_i(M)}
+P_i(r\mid M,\eta,p)\zeta_i^r(M,\eta,p).
+\label{eq:obs_total_output}
+\end{equation}
+
+\paragraph{直觉。}
+式 \eqref{eq:obs_total_output} 有三层乘法：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 有多少有效项目到达路线规划阶段；
+    \item 这些项目有多大概率走某条路线；
+    \item 走了那条路线后，有多大概率真的实现并被我们观测到。
+\end{enumerate}
+
+所以数据里的 approvals、holder--producer split、observed original-drug
+records，本质上都在看第三层对象，而不是直接看到最上游的“科研灵感”。
+
+\paragraph{本节小结。}
+最优研发强度是
+$x_i^*=\frac{\beta a_i}{\kappa}\Gamma_i$，唯一性来自严格凹的二次成本。
+观测 output 则必须进一步乘上路线选择概率和复合实现概率。
+
+\section{CMO 支持市场：背景需求、存在唯一性与 IFT}
+
+\subsection{为什么要单独闭合这一块市场}
+
+如果所有企业都想走 retained external route，那么他们对合格 CMO
+支持的需求就会上升。若支持资源稀缺，价格会上升，改革带来的好处会被部分抵消。
+这正是 MAH 机制里最有经济内容、也最应该被保留的价格反馈。
+
+\subsection{总需求函数}
+
+按照用户指定的结构，CMO 总需求是
+\begin{equation}
+D^{CMO}(p;M,\eta)
+=
+D^B(p)
++\int a_i x_i^*(M,\eta,p)P_i(E\mid M,\eta,p)\dd H(i).
+\label{eq:cmo_total_demand}
+\end{equation}
+
+这里特别注意两点。
+
+\begin{enumerate}[leftmargin=2em]
+    \item 第一项 $D^B(p)$ 是背景需求，表示模型外已有的 CMO 支持需求。
+    \item 第二项是本模型企业在\textbf{路线规划阶段}对 external support 的需求。
+    \textbf{这里不能再乘 $\zeta_i^E$。}因为这一步是“要不要为可能的
+    external route 做支持安排”的需求，不是最终 realized output。
+\end{enumerate}
+
+\subsection{供给函数与市场清算}
+
+设合格 CMO 支持供给为
+\begin{equation}
+S^{CMO}(p),
+\qquad
+\frac{\dd S^{CMO}(p)}{\dd p}>0.
+\label{eq:cmo_supply}
+\end{equation}
+
+于是市场清算条件是
+\begin{equation}
+S^{CMO}(p)=D^{CMO}(p;M,\eta).
+\label{eq:market_clearing}
+\end{equation}
+
+均衡有效支持成本记为 $p^*(M,\eta)$。
+
+\subsection{存在与唯一性}
+
+定义
+\begin{equation}
+F(p;M,\eta)
+\equiv
+S^{CMO}(p)-D^{CMO}(p;M,\eta).
+\label{eq:F_function}
+\end{equation}
+
+\begin{proposition}[CMO 支持市场的存在与唯一性]
+如果：
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+    \item $S^{CMO}(p)$ 连续且严格上升；
+    \item $D^B(p)$ 连续且弱下降；
+    \item 对几乎所有企业，$x_i^*(M,\eta,p)$ 与
+    $P_i(E\mid M,\eta,p)$ 对 $p$ 连续且弱下降；
+    \item 存在两个价格点 $\underline p<\bar p$，使得
+    $F(\underline p;M,\eta)\le 0$ 且 $F(\bar p;M,\eta)\ge 0$，
+\end{enumerate}
+那么至少存在一个清算价格 $p^*(M,\eta)$。如果进一步
+$F(p;M,\eta)$ 严格上升，那么这个清算价格唯一。
+\end{proposition}
+
+\paragraph{证明思路。}
+因为 $F(p;M,\eta)$ 连续，且在 $\underline p$ 和 $\bar p$ 两端异号，
+由介值定理，存在 $p^*$ 使得 $F(p^*;M,\eta)=0$。如果 $F$ 严格上升，
+那么 $F$ 只能穿过零点一次，因此均衡唯一。
+
+\paragraph{经济解释。}
+唯一性本质上要求一件事：价格越高，支持供给越多，而企业想走 external
+route 的需求越少。只要这两个方向足够稳定，市场就不会出现多个互不相干的
+清算价格。
+
+\subsection{IFT：实施强度上升时，\texorpdfstring{$p^*$}{均衡支持成本}如何变化}
+
+现在看 post-MAH implementation intensity $\eta$ 的作用。
+在均衡点上有
+\[
+F\bigl(p^*(M,\eta);M,\eta\bigr)=0.
+\]
+
+如果 $F$ 在均衡点可微且 $F_p\neq 0$，由隐函数定理，
+\begin{equation}
+\frac{\dd p^*(M,\eta)}{\dd \eta}
+=
+-\frac{F_\eta(p^*;M,\eta)}{F_p(p^*;M,\eta)}.
+\label{eq:ift}
+\end{equation}
+
+由于 $F_p>0$，所以符号由 $F_\eta$ 决定。若更强的实施强度会提高
+企业走 $E$ 路线的意愿，从而使
+\[
+\frac{\partial D^{CMO}(p;M,\eta)}{\partial \eta}>0,
+\]
+那么
+\[
+F_\eta(p;M,\eta)
+=
+-\frac{\partial D^{CMO}(p;M,\eta)}{\partial \eta}<0,
+\]
+于是
+\begin{equation}
+\frac{\dd p^*(M,\eta)}{\dd \eta}>0.
+\label{eq:dpdeta_positive}
+\end{equation}
+
+\paragraph{直觉。}
+这就是说：实施越顺畅，越多项目愿意规划 external route，
+对合格 CMO 支持的需求越大，支持成本就越容易上升。
+这就是价格反馈。
+
+\paragraph{本节小结。}
+CMO 市场只需要闭合一条市场清算式：
+$S^{CMO}(p)=D^B(p)+\int a_i x_i^*P_i(E)\dd H$。
+只要供给上升、需求下降、边界条件满足，均衡存在且唯一。IFT 则告诉我们，
+$\eta$ 上升很可能推高 $p^*$。
+
+\section{离散 route-set expansion 与 \texorpdfstring{$\eta$}{实施强度}比较静态}
+
+\subsection{\texorpdfstring{$M$}{制度开放}的离散效应：新增一条路线}
+
+在给定其他 payoff 不变时，pre-MAH 与 post-MAH 的 inclusive value 可写成
+\begin{align}
+\Gamma_i(0,0,p)
+&=
+\sigma\log
+\sum_{r\in\Rset_i(0)}
+\exp(G_i^r/\sigma),
+\label{eq:gamma_pre}\\
+\Gamma_i(1,\eta,p)
+&=
+\sigma\log
+\left[
+\sum_{r\in\Rset_i(0)}
+\exp(G_i^r/\sigma)
++
+\exp(G_i^E(1,\eta,p)/\sigma)
+\right].
+\label{eq:gamma_post}
+\end{align}
+
+因此，只要 $E$ 路线在 post-MAH 下可行且 payoff 不是负无穷，就有
+\begin{equation}
+\Gamma_i(1,\eta,p)\ge \Gamma_i(0,0,p).
+\label{eq:route_set_expansion}
+\end{equation}
+
+\paragraph{解释。}
+多一条可选路线，最优选择集合只会变大，不会变小。这是 route-set expansion
+最直接的数学表达。
+
+\subsection{\texorpdfstring{$\eta$}{实施强度}的直接效应}
+
+保持 $p$ 固定时，只有 external route payoff 直接受 $\eta$ 影响：
+\begin{equation}
+\frac{\partial G_i^E}{\partial \eta}\Big|_{p}
+=
+(R_i^E+v)\frac{\partial \zeta_i^E}{\partial \eta}
+-\frac{\partial \tau_i^E}{\partial \eta}.
+\label{eq:dGE_deta_partial}
+\end{equation}
+
+因为 $\zeta_i^E=s_i\chi_i^E$，所以
+\[
+\frac{\partial \zeta_i^E}{\partial \eta}
+=
+s_i\frac{\partial \chi_i^E}{\partial \eta}.
+\]
+于是
+\begin{equation}
+\frac{\partial G_i^E}{\partial \eta}\Big|_{p}
+=
+s_i(R_i^E+v)\frac{\partial \chi_i^E}{\partial \eta}
+-\frac{\partial \tau_i^E}{\partial \eta}.
+\label{eq:dGE_deta_partial2}
+\end{equation}
+
+在常见方向下，
+$\partial\chi_i^E/\partial\eta\ge 0$，
+$\partial\tau_i^E/\partial\eta\le 0$，
+所以右边通常为正。
+
+\subsection{\texorpdfstring{$\eta$}{实施强度}对 inclusive value 的作用}
+
+由前面的关键导数 \eqref{eq:Gamma_derivative}，
+\begin{equation}
+\frac{\partial \Gamma_i}{\partial \eta}\Big|_{p}
+=
+P_i(E\mid M,\eta,p)\cdot
+\frac{\partial G_i^E}{\partial \eta}\Big|_{p}.
+\label{eq:dGamma_deta_partial}
+\end{equation}
+
+这说明：
+
+\begin{quote}
+实施强度上升并不会平均地提高所有企业的机会价值。只有那些本来就会把
+$E$ 路线当回事的企业，$\Gamma_i$ 才会有较大改善。
+\end{quote}
+
+\subsection{\texorpdfstring{$\eta$}{实施强度}对研发强度的作用}
+
+由
+$x_i^*=\frac{\beta a_i}{\kappa}\Gamma_i$，
+可得
+\begin{equation}
+\frac{\partial x_i^*}{\partial \eta}\Big|_{p}
+=
+\frac{\beta a_i}{\kappa}
+\frac{\partial \Gamma_i}{\partial \eta}\Big|_{p}
+=
+\frac{\beta a_i}{\kappa}
+P_i(E\mid M,\eta,p)
+\frac{\partial G_i^E}{\partial \eta}\Big|_{p}.
+\label{eq:dx_deta_partial}
+\end{equation}
+
+\subsection{总效应：把价格反馈也算进去}
+
+在均衡里，$p=p^*(M,\eta)$ 也会跟着 $\eta$ 动。于是
+\begin{equation}
+\frac{\dd G_i^E}{\dd \eta}
+=
+\frac{\partial G_i^E}{\partial \eta}
++
+\frac{\partial G_i^E}{\partial p}
+\frac{\dd p^*}{\dd \eta}.
+\label{eq:total_GE_eta}
+\end{equation}
+
+而
+\begin{equation}
+\frac{\partial G_i^E}{\partial p}
+=
+(R_i^E+v)\frac{\partial \zeta_i^E}{\partial p} -1.
+\label{eq:dGE_dp}
+\end{equation}
+
+通常 $\partial \zeta_i^E/\partial p\le 0$，因为支持越贵、越稀缺，
+路线实现越困难，因此
+\[
+\frac{\partial G_i^E}{\partial p}<0.
+\]
+
+于是总效应变成
+\begin{equation}
+\frac{\dd \Gamma_i}{\dd \eta}
+=
+P_i(E\mid M,\eta,p^*)
+\left[
+\frac{\partial G_i^E}{\partial \eta}
++
+\frac{\partial G_i^E}{\partial p}
+\frac{\dd p^*}{\dd \eta}
+\right].
+\label{eq:total_gamma_eta}
+\end{equation}
+
+进而
+\begin{equation}
+\frac{\dd x_i^*}{\dd \eta}
+=
+\frac{\beta a_i}{\kappa}
+\frac{\dd \Gamma_i}{\dd \eta}.
+\label{eq:total_x_eta}
+\end{equation}
+
+\subsection{attenuation 的含义}
+
+若 $\dd p^*/\dd\eta>0$，而 $\partial G_i^E/\partial p<0$，
+那么
+\[
+\frac{\partial G_i^E}{\partial p}\frac{\dd p^*}{\dd \eta}<0.
+\]
+这就是 attenuation：
+
+\begin{quote}
+更强的 MAH 实施强度一方面直接改善 external route，
+另一方面又通过支持市场推高 $p^*$，从而吃掉一部分直接收益。
+\end{quote}
+
+\paragraph{什么时候可能看不到很强的总效应。}
+哪怕 $\eta$ 提高了制度执行质量，如果某个企业：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 本来就很少会选 $E$；
+    \item 或者 $p^*$ 上升得很快；
+    \item 或者 $\mu_i^E$ 很大；
+    \item 或者转让 outside option 很强，
+\end{enumerate}
+那么最终 $\dd x_i^*/\dd\eta$ 也可能不大。
+
+\paragraph{本节小结。}
+$M$ 主要带来离散的 route-set expansion，$\eta$ 主要带来连续的实施改善。
+但一旦把 $p^*$ 的价格反馈算进去，$\eta$ 的好处会被 attenuate。
+
+\section{observed output、observed share 与 log odds 的使用条件}
+
+\subsection{路线层面的观测输出}
+
+前面已经定义了
+\[
+Y_i^{obs,r}=a_i x_i^* P_i(r)\zeta_i^r.
+\]
+其中 external retained route 的观测输出是
+\begin{equation}
+Y_i^{obs,E}(M,\eta)
+=
+a_i x_i^*(M,\eta,p^*)
+P_i(E\mid M,\eta,p^*)
+\zeta_i^E(M,\eta,p^*).
+\label{eq:obsE}
+\end{equation}
+
+\subsection{正确的 aggregate observed holder--producer share}
+
+这是本讲义中特别容易被写错的一步。若我们研究的是
+\textbf{观测到的 retained original-drug records 中 holder 与 producer 分离的份额}，
+那么正确的 aggregate observed share 不是简单平均的
+$P_i(E)$，也不是简单平均的 $P_i(E)\zeta_i^E$，
+而必须按“有多少项目流量真正走到被观测的 realized output”
+来加权。
+
+令 $\Rset_i^{ret}(M)=\Rset_i(M)\cap\{I,E\}$。先分别定义 observed entrusted
+flow 与全部 observed retained flow：
+\begin{align}
+N_E^{obs}(M,\eta)
+&=
+\int a_i x_i^*(M,\eta,p^*)P_i(E\mid M,\eta,p^*)
+\zeta_i^E(M,\eta,p^*)\dd H(i),
+\label{eq:observed_e_flow}\\
+N_{ret}^{obs}(M,\eta)
+&=
+\int a_i x_i^*(M,\eta,p^*)
+\sum_{r\in\Rset_i^{ret}(M)}
+P_i(r\mid M,\eta,p^*)\zeta_i^r(M,\eta,p^*)\dd H(i).
+\label{eq:observed_retained_flow}
+\end{align}
+于是正确的 aggregate share 是
+\begin{equation}
+Share^{HP}(M,\eta)
+=
+\frac{N_E^{obs}(M,\eta)}{N_{ret}^{obs}(M,\eta)}.
+\label{eq:aggregate_share}
+\end{equation}
+
+\paragraph{为什么这个权重要用 $a_i x_i^*P_i\zeta_i$。}
+因为真正进入数据的人次，是由下面四件事共同决定的：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 企业研发出了多少有效项目；
+    \item 这些项目有多少走路线 $r$；
+    \item 走了这条路线后有多少真正被实现；
+    \item 这些实现结果是否进入我们定义的样本口径。
+\end{enumerate}
+
+因此，观测 share 的本质是 realized-flow share，而不是 choice-probability
+share。
+
+\subsection{两路线比较下的 log odds}
+
+如果我们在一个\textbf{可比的 retained 子样本}里只比较 $I$ 与 $E$，
+那么有
+\begin{equation}
+s_i^E
+=
+\frac{\exp(G_i^E/\sigma)}
+{\exp(G_i^I/\sigma)+\exp(G_i^E/\sigma)}.
+\label{eq:two_route_share}
+\end{equation}
+
+于是
+\begin{equation}
+\log\frac{s_i^E}{1-s_i^E}
+=
+\frac{G_i^E-G_i^I}{\sigma}.
+\label{eq:logodds_basic}
+\end{equation}
+
+再把 payoff 代进去：
+\begin{align}
+G_i^E-G_i^I
+&=
+\zeta_i^E(R_i^E+v)-p^*-\tau_i^E-\mu_i^E
+\notag\\
+&\quad
+-\Bigl[\zeta_i^I(R_i^I+v)-C^I(k_i)\Bigr].
+\label{eq:payoff_gap}
+\end{align}
+
+所以 log odds 反映的是一整个\textbf{相对有效路线楔子}，
+不是某一个 primitive parameter。
+
+\subsection{什么时候 log odds 可以被认真解释}
+
+要把 log odds 用成一个有意义的经验对象，至少要满足以下条件。
+
+\begin{enumerate}[leftmargin=2em]
+    \item 比较的确实是可比 retained route。也就是分子分母都对应
+    retained internal 与 retained external，而不是把 transfer、abandonment
+    混进去。
+    \item 样本口径与理论口径一致。若数据定义的是 observed retained
+    original-drug records，就必须用对应的 realized-output 权重。
+    \item 除 external-route wedge 以外，其他系统性差异要么稳定，要么被控制。
+    否则 log odds 变化可能混入 $C^I(k_i)$、$R_i^I$、$R_i^E$、$\mu_i^E$、
+    样本构成变化等因素。
+    \item pre 和 post 必须存在法律和经济上可比的 external route，
+    否则 pre--post log odds 本身就不合法。
+\end{enumerate}
+
+\subsection{为什么 pre-MAH 零份额不能机械代入 log odds}
+
+如果 pre-MAH 时 $E$ 路线根本不存在，那么
+\[
+\Rset_i(0)=\{A,T\}\cup\{I:h_i^I=1\},
+\]
+此时不存在一个真正可比的 pre-reform entrusted retained share。
+机械地把
+\[
+s_{pre}^E=0
+\]
+代入
+\[
+\log\frac{s_{pre}^E}{1-s_{pre}^E}
+\]
+会得到 $\log(0)$，这是未定义的。
+
+因此，在 MAH 这类 route-set expansion 问题里，更稳妥的做法通常是：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 把 pre-MAH 解释成“没有 $E$ 路线”的边界状态；
+    \item 在 post-MAH 内部利用 implementation intensity $\eta$ 的横截面差异；
+    \item 若一定要构造 pre--post log odds，则只能把 pseudo count 当成
+    敏感性分析，而不能当基准事实。
+\end{enumerate}
+
+\subsection{post-MAH implementation intensity 的 log odds 规格}
+
+在更适合本模型的 post-MAH 横截面里，可以写
+\begin{equation}
+\log\frac{s_\ell^{HP}}{1-s_\ell^{HP}}
+=
+\alpha_0+\alpha_1\eta_\ell+\bm{Z}_\ell'\bm{\alpha}+u_\ell,
+\label{eq:logodds_eta}
+\end{equation}
+其中 $\ell$ 表示地区、年份、剂型、治疗领域或企业类型等 implementation cell。
+
+这个回归的合理解释是：
+
+\begin{quote}
+$\alpha_1$ 反映的是 implementation intensity 与 relative external-route
+attractiveness 之间的关系。
+\end{quote}
+
+它\textbf{不是}对 $\tau_i^E$、$\mu_i^E$、$\chi_i^E$ 中任何单一 primitive
+参数的直接识别。
+
+\paragraph{本节小结。}
+观测 share 一定要按 $a_i x_i^*P_i\zeta_i$ 加权。log odds 只有在 retained route
+可比、样本口径一致且零份额问题被妥善处理时才有明确含义。
+
+\section{\texorpdfstring{$a_i$ 与 $k_i$}{研发能力与生产能力}异质性：哪些企业最会响应 MAH}
+
+\subsection{\texorpdfstring{$a_i$}{研发能力}：研发能力高的企业为什么更敏感}
+
+由
+\[
+x_i^*=\frac{\beta a_i}{\kappa}\Gamma_i
+\]
+直接可得
+\begin{equation}
+\frac{\partial x_i^*}{\partial a_i}
+=
+\frac{\beta}{\kappa}\Gamma_i
+>0.
+\label{eq:dx_da}
+\end{equation}
+
+所以研发能力更强的企业，对任意给定的商业化机会价值都更能把机会转成研发强度。
+这意味着当 MAH 提高 $\Gamma_i$ 时，高 $a_i$ 企业的研发响应会更大。
+
+\subsection{\texorpdfstring{$k_i$}{内部生产能力}：内部生产能力弱的企业为什么更依赖 external route}
+
+看 retained external 与 retained internal 的相对吸引力：
+\begin{equation}
+\Delta_i^{EI}
+\equiv
+G_i^E-G_i^I.
+\label{eq:delta_EI}
+\end{equation}
+
+若 $R_i^r$ 与 $\zeta_i^r$ 对 $k_i$ 的直接依赖不强，则
+\begin{equation}
+\frac{\partial \Delta_i^{EI}}{\partial k_i}
+=
+\frac{\partial C^I(k_i)}{\partial k_i}
+<0.
+\label{eq:delta_k}
+\end{equation}
+
+这个式子的意思是：
+
+\begin{quote}
+内部生产能力越强，内部路线越有吸引力，external route 相对吸引力越低。
+\end{quote}
+
+因此，MAH 机制最容易作用在“研发能力高、但内部生产能力弱”的企业上。
+
+\subsection{转让 outside option 的作用}
+
+别忘了路线 $T$。如果某企业的
+\[
+S_i-\tau_i^T
+\]
+很高，那么即便 external retained route 变得更顺畅，企业也可能更愿意转让，
+而不是自己保留 holder 身份去商业化。这说明：
+
+\begin{enumerate}[leftmargin=2em]
+    \item external route 的 relevant set 不是所有企业；
+    \item 高 $a_i$、低 $k_i$ 只是必要方向，不是充分条件；
+    \item 还要看 $q_i^E$、$\mu_i^E$、$S_i-\tau_i^T$ 等对象。
+\end{enumerate}
+
+\subsection{一组清晰的横截面预测}
+
+综合起来，模型预测 MAH 的 route-friction channel 对以下企业最强：
+
+\begin{enumerate}[leftmargin=2em]
+    \item $a_i$ 高：研发能力强，商业化机会价值更容易转化成研发投入；
+    \item $k_i$ 低：内部生产路线昂贵，external retained route 更 relevant；
+    \item $q_i^E=1$：能接触到合格 CMO 支持；
+    \item $\mu_i^E$ 不太高：holder-side 剩余负担没有完全吃掉制度红利；
+    \item $S_i-\tau_i^T$ 不太高：转让 outside option 不至于压过 retained route。
+\end{enumerate}
+
+\paragraph{本节小结。}
+如果数据支持“高研发能力、低内部生产能力、且能接触合格 CMO 的企业，
+holder--producer split 和原研结果响应更强”，这与 MAH 路线机制高度一致。
+
+\section{Bellman 形式、expected stock transition 与 \texorpdfstring{$v$}{延续价值}}
+
+\subsection{为什么还需要 Bellman 视角}
+
+前面看起来已经够用了：有路线收益，有 logit，有研发一阶条件。
+但如果要严谨说明为什么 retained route 会多一个 $+v$，就需要把 stock
+的动态写出来。因为 $v$ 不是“凭空加上的奖励”，而是新增一个 retained
+产品进入未来 stock 的边际价值。
+
+\subsection{expected stock transition}
+
+记企业已有 retained product stock 为 $n_i$，折旧率或退出率为 $\delta\in(0,1)$。
+定义 retained indicator：
+\[
+\rho^I=\rho^E=1,\qquad
+\rho^T=\rho^A=0.
+\]
+
+那么给定研发强度 $x_i$，下一期的\textbf{期望} stock 转移是
+\begin{equation}
+\E[n_i' \mid n_i,x_i,M,\eta]
+=
+(1-\delta)n_i
++
+a_i x_i
+\sum_{r\in\Rset_i(M)}
+P_i(r\mid M,\eta,p^*)
+\rho^r
+\zeta_i^r(M,\eta,p^*).
+\label{eq:stock_transition}
+\end{equation}
+
+这一步要慢慢看：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 旧 stock 有一部分按 $1-\delta$ 留下来；
+    \item 新增 stock 来自本期有效项目流量 $a_i x_i$；
+    \item 但并不是所有项目都进 stock，只有 retained route 才会进；
+    \item 即使选了 retained route，也还要乘上实现概率 $\zeta_i^r$。
+\end{enumerate}
+
+\subsection{Bellman 方程}
+
+Bellman accounting 必须避免把新增 stock 的价值算两次。最清楚的做法是先写原始动态问题：
+企业支付研发成本，下一期每个 route-planning project 产生一次路线事件回报，
+并通过式 \eqref{eq:stock_transition} 改变下一期 stock。把仿射值函数代入并对路线
+选择与实现取期望以后，得到下面的\textbf{约化 Bellman 方程}：
+\begin{equation}
+V_i(n_i;M,\eta)
+=
+\pi n_i
++\beta A_i(M,\eta)
++\beta(1-\delta)v n_i
++\max_{x_i\ge 0}\left\{
+\beta a_i x_i\Gamma_i(M,\eta,p^*)
+-\frac{\kappa}{2}x_i^2
+\right\}.
+\label{eq:bellman}
+\end{equation}
+
+这里 $\pi n_i$ 是已有 retained products 的当期流收益，
+$\beta A_i+\beta(1-\delta)vn_i$ 是旧 stock 的下一期 continuation value，
+而 $\Gamma_i$ 已经包括新增项目在各路线下的事件回报和 retained 路线新增的 $v$。
+
+\paragraph{为什么这里不会 double count。}
+关键规则是：
+
+\begin{enumerate}[leftmargin=2em]
+    \item $R_i^r$ 是项目本次成功商业化时的\textbf{事件性回报}；
+    \item $v$ 是新增 retained asset 带来的\textbf{未来 stock 延续价值}；
+    \item $\pi n_i$ 是\textbf{已有 stock} 的当期流收益。
+    \item 一旦 $\Gamma_i$ 写成 $\zeta_i^r(R_i^r+v)-c_i^r$ 的 expected maximum，
+    约化 Bellman 就不能再另外加一遍包含新增 stock 的
+    $\beta\E[V_i(n_i')]$；否则同一个新增 $v$ 会被计算两次。
+\end{enumerate}
+
+因此式 \eqref{eq:bellman}只保留旧 stock 的 continuation term，并把新增项目的
+全部边际价值放在 $\Gamma_i$ 中。这三类回报不是同一个东西，不能混为一谈。
+
+\subsection{仿射值函数}
+
+若环境平稳，写成
+\begin{equation}
+V_i(n_i;M,\eta)=A_i(M,\eta)+v\,n_i.
+\label{eq:affine_value}
+\end{equation}
+
+则 $v$ 满足
+\begin{equation}
+v=\pi+\beta(1-\delta)v.
+\label{eq:v_recursion}
+\end{equation}
+
+解得
+\begin{equation}
+v=\frac{\pi}{1-\beta(1-\delta)}.
+\label{eq:v_closed_form}
+\end{equation}
+
+\paragraph{这个式子的经济意义。}
+多一个 retained product 的价值，等于它本期带来的流收益 $\pi$，
+再加上它在未来继续留在 stock 中的折现价值。只要
+$\beta(1-\delta)<1$，这个值就是有限的。
+
+\subsection{为什么 retained route payoff 要写成 \texorpdfstring{$(R_i^r+v)$}{事件回报加延续价值}}
+
+有了 \eqref{eq:v_closed_form} 以后，保留路线 payoff 里的 $+v$
+就完全有来历了：
+
+\begin{quote}
+内部生产或 retained external route 成功后，企业不只是拿到一次性事件回报，
+还把产品保留下来，进入未来 stock，因此多拿一个 continuation value。
+\end{quote}
+
+\paragraph{本节小结。}
+$v$ 来自 stock 的动态价值，而不是人为加上去的“奖励项”。
+Bellman 写清楚以后，保留路线 payoff 中的 $(R_i^r+v)$ 就有了坚实基础。
+
+\section{校准与识别：当前数据能识别什么，不能识别什么}
+
+\subsection{为什么这里必须克制}
+
+这个模型的经验任务不是“估计所有 primitive structural parameters”，
+而是用当前可行的数据，去约束一组\textbf{复合对象}。原因很简单：
+观测到的 approvals、holder--producer split、realized original-drug counts
+都已经是下游结果，它们把研发能力、路线选择、实现概率、支持成本等东西
+混在一起了。
+
+\subsection{当前数据最自然约束的对象}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}p{0.26\textwidth} X}
+\toprule
+数据矩 & 对应模型对象 & 识别边界 \\
+\midrule
+realized original-drug counts &
+$\frac{\beta a_i^2}{\kappa}\Gamma_i$ 与 realization mapping 的组合 &
+不能单独识别 $a_i$、$\kappa$、$\Gamma_i$、$\zeta_i^r$ \\
+observed holder--producer split &
+式 \eqref{eq:aggregate_share} 的 aggregate realized-flow 比率 &
+不能单独识别 $\tau_i^E$、$\mu_i^E$、$\chi_i^E$、$p^*$ \\
+不同 implementation cell 的 post-MAH log odds &
+effective external-route wedge 相对 $\sigma$ 的变化 &
+解释依赖可比 retained 子样本与控制变量 \\
+CMO 容量或合格生产支持 proxy &
+$p^*$ 的稀缺性与 attenuation 强弱 &
+若没有好 proxy，就难以精确分离价格反馈 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{一个最简单的归一化思路}
+
+假设我们只能看到 realized output 与 observed share，那么至少需要做一些归一化。
+常见的做法包括：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 归一化 $\kappa=1$；
+    \item 归一化某类基准企业在 pre-MAH 下的 $\Gamma_i=1$；
+    \item 把 $\sigma$ 看成离散选择平滑参数，先固定，再看复合楔子变化；
+    \item 把 $s_i$ 与一部分 $\chi_i^r$ 合并到复合实现项里，而不是硬拆开。
+\end{enumerate}
+
+\subsection{建议的校准步骤}
+
+\begin{enumerate}[leftmargin=2em]
+    \item 先确定样本口径。比如只看 observed retained original-drug records，
+    还是看 broader original-drug realized outcomes。
+    \item 用 post-MAH 的 holder--producer split 或 implementation gradient
+    去约束 effective external-route wedge 的相对变化。
+    \item 用 realized original-drug counts 去约束
+    $\frac{\beta a_i^2}{\kappa}\Gamma_i$ 这一类 composite scale。
+    \item 若有 CMO 稀缺度、合格生产者数量、产能 proxy，再去评估 attenuation。
+    \item 把 entry block 明确列为 future module。没有可信 firm-year
+    research-oriented entry panel 时，不要把 entry 当成基准识别来源。
+\end{enumerate}
+
+\subsection{为什么 observed share 一定要用 realized-flow 权重}
+
+如果把 observed share 错写成简单平均：
+\[
+\frac{\int P_i(E)\dd H(i)}{\int 1\dd H(i)},
+\]
+就等于把“一个几乎没有项目流量、几乎不会被观测到的企业”
+和“一个拥有大量有效项目、而且实现率很高的企业”赋予同等权重。
+这显然不对应数据里的 record share。正确做法是式
+\eqref{eq:aggregate_share} 那样，用
+$a_i x_i^*P_i\zeta_i$ 去加权。
+
+\subsection{目前不能做出的强识别声明}
+
+只靠当前这类 approval-side 或 realized-product-side 数据，不能认真声称：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 单独识别法律合规成本；
+    \item 单独识别搜索匹配成本；
+    \item 单独识别 holder-side 监督负担；
+    \item 单独识别项目真实成功概率；
+    \item 单独识别合格 CMO 支持价格；
+    \item 单独识别研究导向 entry 的真正成本分布。
+\end{enumerate}
+
+这些对象都以复合方式进入 payoff gap、route share 和 realized output。
+
+\paragraph{本节小结。}
+当前最可信的说法是：数据可以约束 composite route wedge、
+composite innovation-arrival scale 和可能的 attenuation 强弱；
+不能声称已经把所有 primitive 参数一一识别出来。
+
+\section{Jia et al.\ 2023、Barwick et al.\ 2026 与本文机制的区分}
+
+\subsection{为什么必须区分机制}
+
+如果不区分机制，读者很容易把任何 post-MAH 的原研增长都解释成
+“市场需求变大了”或者“审批更快了”。但这会把不同文献讲的经济对象混在一起。
+
+\subsection{Jia et al.\ 2023：approval-delay / regulatory-capacity 机制}
+
+Jia、Ma、Yang、Zhang（2023）强调的是 regulation for innovation，
+可把它理解成更广义的 approval-delay、regulatory-capacity 或 approval-side
+friction 变化。在我们的符号里，如果一个政策主要作用于审批速度或普遍审批成功，
+它更接近以下对象的变化：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 所有路线共享的基础成功部分 $s_i$；
+    \item 或者以时间折现形式进入的等待成本；
+    \item 或者广义的 approval probability，而不是特定 external route 的开放。
+\end{enumerate}
+
+这种机制的一个重要特征是：
+
+\begin{quote}
+它不必然预测 holder--producer split 上升，因为它未必改变 retained
+external route 的相对吸引力。
+\end{quote}
+
+\subsection{Barwick et al.\ 2026：demand / market-reward 机制}
+
+Barwick、Xia、Xia（2026）更接近 demand-side 或 market-reward-side 的解释。
+在我们的符号里，这主要体现为
+\[
+R_i^I,\ R_i^E,\ R_i^T
+\]
+这类商业化回报对象的整体上升。若 demand 变大，所有能成功商业化的路线
+都可能更有价值。
+
+这种机制的典型预测是：
+
+\begin{quote}
+原研活动可能更强，但不必然导致 holder--producer split 上升，
+因为需求扩张不是专门朝 retained external route 倾斜的。
+\end{quote}
+
+\subsection{本文 MAH 机制的特征性预测}
+
+本文强调的 MAH route-friction mechanism 主要作用于：
+
+\begin{enumerate}[leftmargin=2em]
+    \item route set：$E$ 从无到有；
+    \item route-specific friction：$\tau_i^E(M,\eta)$ 降低；
+    \item route-specific implementation：$\chi_i^E(M,\eta,p)$ 提高；
+    \item single-market price feedback：$p^*(M,\eta)$ 调整。
+\end{enumerate}
+
+所以它最鲜明的预测不是“所有创新都更强”，而是：
+
+\begin{quote}
+holder--producer separation 在相关 retained original-drug records 中更常见，
+且这种变化最强地出现在高 $a_i$、低 $k_i$、能接触合格 CMO 支持的企业上。
+\end{quote}
+
+\subsection{三种机制的对照表}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.23\textwidth} >{\raggedright\arraybackslash}p{0.21\textwidth} >{\raggedright\arraybackslash}p{0.22\textwidth} X}
+\toprule
+机制 & 在模型里主要动什么 & 对 holder--producer split 的预测 & 对原研结果的预测 \\
+\midrule
+Jia et al.\ 2023 式 approval-delay /
+regulatory-capacity 机制 &
+$s_i$、等待成本或普遍 approval friction &
+不必然上升 &
+可广泛提高项目推进和最终批准 \\
+Barwick et al.\ 2026 式 demand 机制 &
+$R_i^r$ 这类市场回报对象 &
+不必然上升 &
+若市场回报更大，原研激励更强 \\
+MAH 路线机制 &
+$\Rset_i(M)$、$\tau_i^E(M,\eta)$、
+$\chi_i^E(M,\eta,p)$、$p^*(M,\eta)$ &
+更容易上升，尤其在相关 retained sample 中 &
+对 high-$a_i$、low-$k_i$、
+external-route-relevant 企业更强 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{本节小结。}
+Jia et al.\ 2023 更像 approval-side 机制，Barwick et al.\ 2026 更像
+demand-side 机制，而本文 MAH 模型是 route-set 与 route-friction 机制。
+三者可能同时存在，但识别含义不同。
+
+\section{局限、常见误解与如何正确阅读模型}
+
+\subsection{局限}
+
+\begin{enumerate}[leftmargin=2em]
+    \item 这是部分均衡模型，不是完整行业动态均衡模型。
+    \item 只闭合 CMO 支持市场，不闭合产品市场、研发投入市场和自由进入。
+    \item $\zeta_i^r=s_i\chi_i^r$ 仍是复合对象，不是可被当前数据完全拆解的
+    primitive system。
+    \item 若缺少好的 CMO capacity proxy，很难精确识别价格反馈有多强。
+    \item 若没有 application/status panel，很难把 latent opportunity arrival
+    与 observed realized outcome 精细拆开。
+\end{enumerate}
+
+\subsection{常见误解一：把 MAH 当成一般 demand shock}
+
+这是错误的。一般 demand shock 主要推动的是 $R_i^r$ 这类市场回报对象；
+而 MAH 模型的关键，是新增 retained external route 并降低其特定摩擦。
+如果数据里 holder--producer split 上升特别明显，这更像 route-friction
+机制，而不是纯 demand 机制。
+
+\subsection{常见误解二：把 observed share 当成简单 route probability}
+
+这也是错误的。观测 share 必须对应 realized-flow share，因此要用
+$a_i x_i^*P_i(r)\zeta_i^r$ 加权，而不是只看 $P_i(r)$。
+
+\subsection{常见误解三：在 CMO 规划需求里乘上 \texorpdfstring{$\zeta_i^E$}{实现概率}}
+
+这会 double count。因为 CMO 支持需求发生在路线规划阶段，
+此时企业是在为可能的 retained external route 做准备。
+如果再乘上 $\zeta_i^E$，就把“后续是否最终 realized”
+错误地提前塞进了规划需求。
+
+\subsection{常见误解四：把 pre-MAH 的零份额直接塞进 log odds}
+
+如果 pre-MAH 根本没有可比 external route，零份额不是一个普通小概率事件，
+而是“路线集合里没有这条路”。这时应当用 route-set expansion 的解释，
+或在 post-MAH 内部利用 implementation intensity 的差异。
+
+\subsection{常见误解五：把当前校准说成 full structural identification}
+
+当前更诚实的说法只能是 mechanism calibration：数据约束复合对象，
+而不是把每个法律成本、监督成本、实现概率、支持价格都单独拆出来。
+
+\paragraph{本节小结。}
+正确阅读这套模型的方式是：把它当成一套围绕 MAH retained external route
+构建的机制框架，而不是一个什么都包的行业总模型。
+
+\section{总小结}
+
+整套模型可以用一条简明链条概括：
+
+\begin{equation}
+M\uparrow
+\Rightarrow
+\Rset_i \text{ 扩张}
+\Rightarrow
+\eta\uparrow \Rightarrow
+\tau_i^E\downarrow,\ \chi_i^E\uparrow
+\Rightarrow
+\Gamma_i\uparrow
+\Rightarrow
+x_i^*\uparrow
+\Rightarrow
+a_i x_i^*\uparrow.
+\label{eq:main_chain}
+\end{equation}
+
+但这条链条还有两层修正：
+
+\begin{enumerate}[leftmargin=2em]
+    \item 只有当企业真的把 $E$ 路线当成 relevant option 时，
+    $\partial\Gamma_i/\partial G_i^E=P_i(E)$ 才会让改革产生明显效果；
+    \item 如果更强的 external-route use 推高了 $p^*$，那么价格反馈会产生
+    attenuation。
+\end{enumerate}
+
+因此，最合理的经验预期不是“MAH 让所有企业都一样受益”，而是：
+
+\begin{quote}
+MAH 最可能提高那些高研发能力、低内部生产能力、能够接触合格 CMO、
+而且转让 outside option 不算太强的企业的原研激励；同时，
+holder--producer split 的变化应当成为这一路线机制的重要观测痕迹。
+\end{quote}
+
+\section*{参考文献（手工列出）}
+
+\begin{enumerate}[leftmargin=2em,label={[\arabic*]}]
+    \item Acemoglu, Daron, and Joshua Linn. 2004.
+    ``Market Size in Innovation: Theory and Evidence from the Pharmaceutical Industry.''
+    \textit{Quarterly Journal of Economics} 119(3): 1049--1090.
+    \item Arora, Ashish, Andrea Fosfuri, and Alfonso Gambardella. 2001.
+    \textit{Markets for Technology: The Economics of Innovation and Corporate Strategy}.
+    Cambridge, MA: MIT Press.
+    \item Barwick, Panle Jia, Hongyuan Xia, and Tianli Xia. 2026.
+    ``From Free Rider to Innovator: The Rise of China's Drug Development.''
+    NBER Working Paper No.\ 34977.
+    \item Dubois, Pierre, Olivier de Mouzon, Fiona Scott Morton, and Paul Seabright. 2015.
+    ``Market Size and Pharmaceutical Innovation.''
+    \textit{RAND Journal of Economics} 46(4): 844--871.
+    \item Gans, Joshua S., and Scott Stern. 2003.
+    ``The Product Market and the Market for Ideas:
+    Commercialization Strategies for Technology Entrepreneurs.''
+    \textit{Research Policy} 32(2): 333--350.
+    \item Jia, Ruixue, Xiao Ma, Jianan Yang, and Yiran Zhang. 2023.
+    ``Improving Regulation for Innovation: Evidence from China's Pharmaceutical Industry.''
+    NBER Working Paper No.\ 31976.
+    \item McFadden, Daniel. 1974.
+    ``Conditional Logit Analysis of Qualitative Choice Behavior.''
+    In \textit{Frontiers in Econometrics}, edited by Paul Zarembka.
+    New York: Academic Press.
+    \item National Medical Products Administration. 2019.
+    \textit{Drug Administration Law of the People's Republic of China}.
+    \item National Medical Products Administration. 2022.
+    \textit{Provisions for Drug Registration}.
+    \item National Medical Products Administration. 2022.
+    \textit{Provisions on Supervising the Implementation of the Drug Marketing Authorization Holder's Primary Responsibility for Drug Quality and Safety}.
+    \item National Medical Products Administration. 2023.
+    \textit{Announcement on Strengthening Supervision and Administration of Entrusted Production by Drug Marketing Authorization Holders}.
+    \item Schmookler, Jacob. 1966.
+    \textit{Invention and Economic Growth}. Cambridge, MA: Harvard University Press.
+    \item Teece, David J. 1986.
+    ``Profiting from Technological Innovation:
+    Implications for Integration, Collaboration, Licensing and Public Policy.''
+    \textit{Research Policy} 15(6): 285--305.
+    \item The General Office of the State Council of the People's Republic of China. 2016.
+    \textit{Pilot Plan for the Marketing Authorization Holder System}.
+\end{enumerate}
+
+\end{document}
