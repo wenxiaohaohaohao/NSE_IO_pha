@@ -78,8 +78,10 @@ $head = (& git rev-parse HEAD).Trim()
 & git push origin $branch
 if ($LASTEXITCODE -ne 0) { throw 'git push failed.' }
 
-$remoteLine = (& git ls-remote --heads origin $branch | Select-Object -First 1)
-if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($remoteLine)) {
+$remoteOutput = @(& git ls-remote --heads origin "refs/heads/$branch")
+$remoteExitCode = $LASTEXITCODE
+$remoteLine = $remoteOutput | Select-Object -First 1
+if ($remoteExitCode -ne 0 -or [string]::IsNullOrWhiteSpace($remoteLine)) {
     throw 'Could not verify the remote branch.'
 }
 $remoteHead = ($remoteLine -split '\s+')[0]

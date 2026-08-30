@@ -1,8 +1,8 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASE 1 - APPROVED`
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED`
 
-This file records only assumptions needed for Phase 1 objects and timing. It does not impose the signs of later propositions. Demand, technology, optimization, market-regularity and comparative-static assumptions must be added in their approved phases before use.
+This file records assumptions needed through the current phase. It does not impose the signs of later propositions. Technology, route-choice, project-advancement, market-regularity and equilibrium comparative-static assumptions must be added in their authorized phases before use.
 
 ## A. Institutional primitives
 
@@ -146,3 +146,56 @@ Logit route choice, inclusive value, continuous $\eta$, route-specific realizati
 | Excluded mechanisms | `A-P01-SCOPE-01`--`A-P01-SCOPE-03` |
 
 None of these assumptions directly states a later sign, cutoff, existence, uniqueness, or welfare conclusion.
+
+## G. Phase 2 demand and operating-profit assumptions
+
+### `A-P02-DEMAND-01` - Constant-elasticity residual demand
+
+Conditional on product price $p>0$ and project value shifter $q>0$, one-period residual demand is
+
+$$
+y(p;q)=Aq p^{-\varepsilon},
+$$
+
+where $A>0$ and $\varepsilon>1$. The institutional regime $M$ changes none of $A$, $q$, or $\varepsilon$.
+
+Used by: `P02-E01`--`P02-E05`.
+
+### `A-P02-PRICE-01` - Conditional static pricing domain
+
+For a fixed positive marginal manufacturing-cost input $c>0$, product price $p$ is chosen from $[c,\infty)$. Phase 2 takes $q$ and $c$ as fixed arguments. Route technologies that map $(m,k_i,p_m)$ into a value of $c$ are deferred to Phase 3.
+
+Used by: pricing FOC, feasibility, SOC, and global-maximizer proof.
+
+### `A-P02-PV-01` - Commercial survival and discounting
+
+After successful commercialization, the optimized one-period operating profit is stationary. The product remains commercially active for the next period with conditional probability $\varphi\in[0,1]$, independently of the stationary operating-profit amount, and future currency is discounted by $\beta\in(0,1)$. Hence $0\leq\beta\varphi<1$.
+
+The parameter $\varphi$ is post-commercial survival, not the pre-commercial downstream realization probability $s(q)$.
+
+Used by: `P02-E06` and `P02-E07`.
+
+### `A-P02-ACCOUNT-01` - Gross operating-value boundary
+
+Marginal cost $c$ is the only cost subtracted inside one-period operating profit. The derived $R(q,c)$ is gross of route-specific fixed organizational costs, institutional burdens, and any separately defined capacity procurement payment. Phase 3 and Phase 4 must state whether each future route cost is embedded in route-specific $c_r$ or subtracted outside $R$; the same economic cost cannot appear in both places.
+
+Used by: Phase 2 dimension and double-counting audit; binding accounting restriction for Phase 3-4.
+
+### `A-P02-POLICY-01` - Policy invariance of the Phase 2 kernel
+
+MAH does not directly shift $A$, $q$, $\varepsilon$, $\beta$, or $\varphi$. Phase 2 therefore establishes no direct $M$ comparative static. Any later change in $R$ must operate through an approved route-value or route-cost channel.
+
+Used by: Phase 2 economic-interpretation audit and `RL-08`.
+
+## H. Phase 2 assumption-use matrix
+
+| Result | Assumptions actually used | Held fixed |
+|---|---|---|
+| Demand schedule | `A-P02-DEMAND-01` | $A,q,\varepsilon$ when varying $p$ |
+| Unique interior product price | `A-P02-DEMAND-01`, `A-P02-PRICE-01` | $A,q,c,\varepsilon$ |
+| Optimized operating profit | `A-P02-DEMAND-01`, `A-P02-PRICE-01`, `A-P02-ACCOUNT-01` | $A,q,c,\varepsilon$ as appropriate |
+| $\pi_q>0$ and $\pi_c<0$ | `A-P02-DEMAND-01`, `A-P02-PRICE-01` | all parameters except the differentiated argument |
+| Convergent commercial present value | `A-P02-PV-01`, `A-P02-ACCOUNT-01` | $q,c,A,\varepsilon,\beta,\varphi$ as appropriate |
+| No direct MAH effect in Phase 2 | `A-P02-POLICY-01` | Phase 2 kernel primitives |
+
+The derivative signs are derived results, not assumptions. No route ranking, policy effect, welfare result, or equilibrium-price claim is imposed here.

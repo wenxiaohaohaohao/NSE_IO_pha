@@ -1,7 +1,7 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; INITIAL MAP`  
-This map records definitions and timing dependencies only. Items marked `DEFERRED` are obligations for later approved phases, not Phase 1 results.
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED`  
+This map records definitions, timing dependencies, and the Phase 2 conditional demand/profit block. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
 
 ## 1. Phase 1 definition ledger
 
@@ -17,7 +17,23 @@ This map records definitions and timing dependencies only. Items marked `DEFERRE
 
 No FOC, SOC, route cutoff, price equation, payoff equation, or comparative static belongs to Phase 1.
 
-## 2. Causal and timing order
+## 2. Phase 2 demand/profit ledger
+
+Every Phase 2 equation conditions on project value $q>0$ and a positive route-implied marginal cost $c>0$. Phase 2 does not yet define $c_I$ or $c_E$.
+
+| ID / LaTeX label | Object defined or result derived | Inputs already defined | Mathematical status | Proof / boundary obligation |
+|---|---|---|---|---|
+| `P02-E01` / `eq:p02-demand` | $y(p;q)=Aq p^{-\varepsilon}$ | $A,q,p,\varepsilon$ | primitive residual-demand schedule | verify units and $\varepsilon>1$ pricing boundary |
+| `P02-E02` / `eq:p02-price-foc` | derivative of $(p-c)y(p;q)$ | $A,q,p,c,\varepsilon$ | optimization-derived FOC expression | check held-fixed objects and unique sign crossing |
+| `P02-E03` / `eq:p02-optimal-price` | $p^*(c)=\varepsilon c/(\varepsilon-1)$ | `P02-E02` | optimization-derived unique maximizer | verify feasibility, SOC, and global maximum |
+| `P02-E04` / `eq:p02-operating-profit` | $\pi(q,c)=Aq(\varepsilon-1)^{\varepsilon-1}\varepsilon^{-\varepsilon}c^{1-\varepsilon}$ | `P02-E01`, `P02-E03` | optimization-derived one-period profit | verify no repeated cost and dimensions |
+| `P02-E05` / `eq:p02-profit-derivatives` | $\pi_q=\pi/q>0$, $\pi_c=(1-\varepsilon)\pi/c<0$ | `P02-E04` | algebraic derivatives | hold $A,\varepsilon$ and the other argument fixed |
+| `P02-E06` / `eq:p02-present-value` | $R(q,c)=\pi(q,c)/(1-\beta\varphi)$ | `P02-E04`, $\beta,\varphi$ | derived convergent geometric present value | verify $\beta\varphi<1$ and conditional-success interpretation |
+| `P02-E07` / `eq:p02-return-derivatives` | $R_q=R/q>0$, $R_c=(1-\varepsilon)R/c<0$ | `P02-E05`, `P02-E06` | algebraic derivatives | keep $\beta,\varphi$ fixed |
+
+The pricing control is product price $p$, not the CMO capacity price $p_m$. The derivative with respect to $c$ is a continuous conditional-cost derivative, not a derivative with respect to binary policy $M$.
+
+## 3. Causal and timing order
 
 ```text
 Predetermined distributions and characteristics
@@ -30,13 +46,20 @@ Institutional regime
 
 Stage 1: ex ante project advancement
   observed (a_i,k_i,M) + anticipated p_m^*
-      -> expected optimized project value Omega_i               [DEFERRED: Phases 2-5]
+      -> expected optimized project value Omega_i               [DEFERRED: Phases 3-5]
       -> common control x_i                                    [DEFERRED optimization: Phase 5]
       -> lambda_i^plan = a_i x_i                               [DEFINED: Phase 1]
 
 Stage 2: project realization
   planning-stage project -> draw (q,m) from F
   g is an empirical classifier only; it creates no x_ig
+
+Conditional product-market block
+  (A,q,epsilon) + route-implied marginal cost c
+      -> product demand y(p;q) and optimal product price p*(c)  [DEFINED/DERIVED: Phase 2]
+      -> one-period operating profit pi(q,c)
+      -> conditional commercial present value R(q,c)
+  route-specific mappings into c are deferred to Phase 3
 
 Stage 3: organization
   (q,m,k_i,M,p_m^*) -> route choice r_i^* in {I,E,T,A}         [DEFERRED: Phases 3-4]
@@ -54,7 +77,7 @@ Stage 5: manufacturing-service consistency
 
 Stage 5 is a simultaneous consistency condition, not a later event developers fail to anticipate.
 
-## 3. Initial fixed-point dependency
+## 4. Initial fixed-point dependency
 
 The future equilibrium loop is identified but not solved in Phase 1:
 
@@ -70,7 +93,7 @@ $$
 
 Qualified supplier decisions create the supply side. Phase 6 must introduce capacity, cost, aggregate supply, aggregate demand, solution order, and sufficient regularity. Phase 1 makes no existence, uniqueness, or price-sign claim.
 
-## 4. Allowed direct and indirect arrows
+## 5. Allowed direct and indirect arrows
 
 The only allowed direct policy arrow is
 
@@ -93,6 +116,20 @@ $$
 
 The last two arrows require Phase 4 route values and the Phase 5 optimization. An increase requires a strictly positive expected route-value gain and the later optimization conditions.
 
+Phase 2 supplies only the policy-invariant value kernel
+
+$$
+(A,q,\varepsilon,c,\beta,\varphi)
+\longrightarrow
+p^*(c)
+\longrightarrow
+\pi(q,c)
+\longrightarrow
+R(q,c).
+$$
+
+No direct arrow from $M$ to $A$, $q$, $\varepsilon$, $\beta$, or $\varphi$ is permitted. Any later policy effect on $R$ must pass through an approved route-technology mapping into $c$.
+
 The later realization chain is
 
 $$
@@ -109,7 +146,7 @@ $$
 
 This prevents ex post observed $E$ assignment from being written before $x_i$.
 
-## 5. Forbidden arrows and identities
+## 6. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -124,8 +161,12 @@ This prevents ex post observed $E$ assignment from being written before $x_i$.
 | separate $x_{ig}$ | common-control restriction |
 | observed holder-producer separation $\to x_i$ | reverses locked timing |
 | $E\equiv T$ | entrusted production retains holder rights; transfer does not |
+| $p\equiv p_m$ or $p^*\equiv p_m^*$ | product pricing and CMO capacity-market pricing are different markets and controls |
+| $R\equiv R_i^{event}$ or $R\equiv\bar R_i^E$ | legacy reduced-form returns are inactive; Phase 2 derives $R$ and Phase 12 records the crosswalk |
+| $R$ includes $F_I,F_E,\tau_E$, or CMO capacity payment a second time | $R$ is gross operating PV; route-value accounting is deferred and must subtract each distinct route cost once |
+| $\varphi\equiv s(q)$ | $\varphi$ is survival after commercialization; $s(q)$ is downstream realization before the conditional operating stream |
 
-## 6. Update rule
+## 7. Update rule
 
 Before any later Phase writes a formula, it must:
 

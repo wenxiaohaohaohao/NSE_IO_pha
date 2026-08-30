@@ -14,3 +14,14 @@ audit/phase01_compile_console.txt -text
 audit/phase01_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
 audit/phase01_compile_wrapper.tex -text
 scripts/compile_phase01.ps1 -text
+
+# Phase 2 hash-protected artifacts and reusable gate scripts.
+02_demand_profit_derivation.tex -text
+audit/phase02_gate_report.md -text
+audit/phase02_compile_console.txt -text
+audit/phase02_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
+audit/phase02_compile_wrapper.tex -text
+scripts/audit_phase02.ps1 -text
+scripts/compile_phase_module.ps1 -text
+scripts/finalize_phase.ps1 -text
+scripts/run_phase_gate.ps1 -text

@@ -1,0 +1,395 @@
+{
+    "phase":  2,
+    "expected_status":  "APPROVED",
+    "status":  "APPROVED",
+    "generated_at":  "2026-08-30T20:49:45.1123571+08:00",
+    "passed":  77,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "id":  "P02-HASH-BASE",
+                       "passed":  true,
+                       "evidence":  "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+                   },
+                   {
+                       "id":  "P02-HASH-AMD11",
+                       "passed":  true,
+                       "evidence":  "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+                   },
+                   {
+                       "id":  "P02-HASH-AMD12-IMAGE",
+                       "passed":  true,
+                       "evidence":  "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+                   },
+                   {
+                       "id":  "P02-HASH-AMD12-TEXT",
+                       "passed":  true,
+                       "evidence":  "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+                   },
+                   {
+                       "id":  "P02-HASH-EFFECTIVE",
+                       "passed":  true,
+                       "evidence":  "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+                   },
+                   {
+                       "id":  "P02-GIT-BRANCH",
+                       "passed":  true,
+                       "evidence":  "branch=codex/mah-model-rebuild"
+                   },
+                   {
+                       "id":  "P02-GIT-ENTRY-COMMIT",
+                       "passed":  true,
+                       "evidence":  "expected=7c7dad4fc2cee7325180f624a32c6f245d319aec actual=7c7dad4fc2cee7325180f624a32c6f245d319aec"
+                   },
+                   {
+                       "id":  "P02-GIT-REMOTE-TRACKING",
+                       "passed":  true,
+                       "evidence":  "head=7c7dad4fc2cee7325180f624a32c6f245d319aec remote_tracking=7c7dad4fc2cee7325180f624a32c6f245d319aec"
+                   },
+                   {
+                       "id":  "P02-MANUSCRIPT-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "changed="
+                   },
+                   {
+                       "id":  "P02-ZIP-ISOLATED",
+                       "passed":  true,
+                       "evidence":  "target-worktree zip status count=0"
+                   },
+                   {
+                       "id":  "P02-FILE-02_demand_profit_derivation.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\02_demand_profit_derivation.tex"
+                   },
+                   {
+                       "id":  "P02-FILE-phase02_preflight.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase02_preflight.md"
+                   },
+                   {
+                       "id":  "P02-FILE-phase02_independent_derivation.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase02_independent_derivation.md"
+                   },
+                   {
+                       "id":  "P02-FILE-phase02_compile_wrapper.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase02_compile_wrapper.tex"
+                   },
+                   {
+                       "id":  "P02-FILE-phase02_compile_console.txt",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase02_compile_console.txt"
+                   },
+                   {
+                       "id":  "P02-FILE-phase02_compile_wrapper.log",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase02\\phase02_compile_wrapper.log"
+                   },
+                   {
+                       "id":  "P02-FILE-phase02_compile_wrapper.pdf",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase02\\phase02_compile_wrapper.pdf"
+                   },
+                   {
+                       "id":  "P02-FILE-01_symbols_and_objects.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\01_symbols_and_objects.md"
+                   },
+                   {
+                       "id":  "P02-FILE-02_equation_dependency_map.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\02_equation_dependency_map.md"
+                   },
+                   {
+                       "id":  "P02-FILE-03_assumptions_and_scope.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\03_assumptions_and_scope.md"
+                   },
+                   {
+                       "id":  "P02-STATE-PHASE1",
+                       "passed":  true,
+                       "evidence":  "Phase 1 remains approved"
+                   },
+                   {
+                       "id":  "P02-STATE-PHASE2",
+                       "passed":  true,
+                       "evidence":  "expected_row_fragment=| 2 Demand/profit | APPROVED |"
+                   },
+                   {
+                       "id":  "P02-STATE-PHASE3",
+                       "passed":  true,
+                       "evidence":  "Phase 3 remains NOT STARTED"
+                   },
+                   {
+                       "id":  "P02-GOVERNANCE",
+                       "passed":  true,
+                       "evidence":  "standing zero-P0 authorization recorded"
+                   },
+                   {
+                       "id":  "P02-MATRIX-D01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P02-MATRIX-G01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P02-FORMAL-7E5EEAA8",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p02-demand}"
+                   },
+                   {
+                       "id":  "P02-FORMAL-93A02957",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p02-pricing-problem}"
+                   },
+                   {
+                       "id":  "P02-FORMAL-C1115D43",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p02-price-foc}"
+                   },
+                   {
+                       "id":  "P02-FORMAL-78D43FDF",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p02-optimal-price}"
+                   },
+                   {
+                       "id":  "P02-FORMAL-C1115EF0",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p02-price-soc}"
+                   },
+                   {
+                       "id":  "P02-FORMAL-342C736B",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p02-operating-profit}"
+                   },
+                   {
+                       "id":  "P02-FORMAL-33F2EF76",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p02-profit-derivatives}"
+                   },
+                   {
+                       "id":  "P02-FORMAL-A136F214",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p02-present-value}"
+                   },
+                   {
+                       "id":  "P02-FORMAL-EB5562C2",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p02-return-derivatives}"
+                   },
+                   {
+                       "id":  "P02-FORMAL-8197D78C",
+                       "passed":  true,
+                       "evidence":  "required=p^*(c)=\\frac{\\varepsilon}{\\varepsilon-1}c"
+                   },
+                   {
+                       "id":  "P02-FORMAL-C927A06A",
+                       "passed":  true,
+                       "evidence":  "required=\\frac{\\pi(q,c)}{1-\\beta\\varphi}"
+                   },
+                   {
+                       "id":  "P02-FORMAL-E94C52B2",
+                       "passed":  true,
+                       "evidence":  "required=unique global maximum"
+                   },
+                   {
+                       "id":  "P02-FORMAL-DC04F203",
+                       "passed":  true,
+                       "evidence":  "required=gross operating present value"
+                   },
+                   {
+                       "id":  "P02-FORMAL-37077A83",
+                       "passed":  true,
+                       "evidence":  "required=qualified manufacturing-service price"
+                   },
+                   {
+                       "id":  "P02-FORBID-0AFD7801",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)\\\\eta\\b match="
+                   },
+                   {
+                       "id":  "P02-FORBID-82F6707C",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)\\blogit\\b match="
+                   },
+                   {
+                       "id":  "P02-FORBID-E5A8492E",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)inclusive\\s+value match="
+                   },
+                   {
+                       "id":  "P02-FORBID-791432A3",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)representative\\s+household match="
+                   },
+                   {
+                       "id":  "P02-FORBID-25CEC871",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)\\bwelfare\\b match="
+                   },
+                   {
+                       "id":  "P02-FORBID-5C86E0FB",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)portfolio\\s+dynamics match="
+                   },
+                   {
+                       "id":  "P02-FORBID-DAC3BE57",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)firm\\s+entry match="
+                   },
+                   {
+                       "id":  "P02-FORBID-A6E89E3B",
+                       "passed":  true,
+                       "evidence":  "pattern=x_\\{ig\\} match="
+                   },
+                   {
+                       "id":  "P02-FORBID-945079FE",
+                       "passed":  true,
+                       "evidence":  "pattern=R_i\\^\\{event\\} match="
+                   },
+                   {
+                       "id":  "P02-FORBID-EB466427",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\bar\\s*R_i\\^E match="
+                   },
+                   {
+                       "id":  "P02-SYMBOL-ACTIVE-COUNT",
+                       "passed":  true,
+                       "evidence":  "37 exact-category rows through Phase 2"
+                   },
+                   {
+                       "id":  "P02-SYMBOL-3A66C329",
+                       "passed":  true,
+                       "evidence":  "required=| $A$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P02-SYMBOL-568D6B13",
+                       "passed":  true,
+                       "evidence":  "required=| $\\varepsilon$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P02-SYMBOL-BCDAD86F",
+                       "passed":  true,
+                       "evidence":  "required=| $p$ | control |"
+                   },
+                   {
+                       "id":  "P02-SYMBOL-A71DC77D",
+                       "passed":  true,
+                       "evidence":  "required=| $c$ | endogenous route-level object |"
+                   },
+                   {
+                       "id":  "P02-SYMBOL-926361A0",
+                       "passed":  true,
+                       "evidence":  "required=| $\\pi(q,c)$ | endogenous route-level object |"
+                   },
+                   {
+                       "id":  "P02-SYMBOL-171CD8B7",
+                       "passed":  true,
+                       "evidence":  "required=| $R(q,c)$ | endogenous route-level object |"
+                   },
+                   {
+                       "id":  "P02-ASSUMPTION-A-P02-DEMAND-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P02-DEMAND-01"
+                   },
+                   {
+                       "id":  "P02-ASSUMPTION-A-P02-PRICE-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P02-PRICE-01"
+                   },
+                   {
+                       "id":  "P02-ASSUMPTION-A-P02-PV-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P02-PV-01"
+                   },
+                   {
+                       "id":  "P02-ASSUMPTION-A-P02-ACCOUNT-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P02-ACCOUNT-01"
+                   },
+                   {
+                       "id":  "P02-ASSUMPTION-A-P02-POLICY-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P02-POLICY-01"
+                   },
+                   {
+                       "id":  "P02-DEPENDENCY-P02-E01",
+                       "passed":  true,
+                       "evidence":  "required=P02-E01"
+                   },
+                   {
+                       "id":  "P02-DEPENDENCY-P02-E02",
+                       "passed":  true,
+                       "evidence":  "required=P02-E02"
+                   },
+                   {
+                       "id":  "P02-DEPENDENCY-P02-E03",
+                       "passed":  true,
+                       "evidence":  "required=P02-E03"
+                   },
+                   {
+                       "id":  "P02-DEPENDENCY-P02-E04",
+                       "passed":  true,
+                       "evidence":  "required=P02-E04"
+                   },
+                   {
+                       "id":  "P02-DEPENDENCY-P02-E05",
+                       "passed":  true,
+                       "evidence":  "required=P02-E05"
+                   },
+                   {
+                       "id":  "P02-DEPENDENCY-P02-E06",
+                       "passed":  true,
+                       "evidence":  "required=P02-E06"
+                   },
+                   {
+                       "id":  "P02-DEPENDENCY-P02-E07",
+                       "passed":  true,
+                       "evidence":  "required=P02-E07"
+                   },
+                   {
+                       "id":  "P02-OPEN-ISSUES-NO-CURRENT-P0",
+                       "passed":  true,
+                       "evidence":  "no Phase 2 P0 in open issues"
+                   },
+                   {
+                       "id":  "P02-LABEL-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "duplicates="
+                   },
+                   {
+                       "id":  "P02-LATEX-FATAL",
+                       "passed":  true,
+                       "evidence":  "fatal="
+                   },
+                   {
+                       "id":  "P02-LATEX-BOXES",
+                       "passed":  true,
+                       "evidence":  "box_warnings=0"
+                   },
+                   {
+                       "id":  "P02-UTF8-CONTROL",
+                       "passed":  true,
+                       "evidence":  "bad="
+                   },
+                   {
+                       "id":  "P02-SCOPE-EXACT",
+                       "passed":  true,
+                       "evidence":  "unexpected="
+                   },
+                   {
+                       "id":  "P02-GATE-REPORT-IDS",
+                       "passed":  true,
+                       "evidence":  "missing="
+                   },
+                   {
+                       "id":  "P02-GATE-REPORT-RESULT",
+                       "passed":  true,
+                       "evidence":  "gate reports PASS and zero P0"
+                   }
+               ]
+}

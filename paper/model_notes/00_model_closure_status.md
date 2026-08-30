@@ -33,7 +33,7 @@ Legal transition:
 | Phase | Status | Main output | P0 issue | Approved to continue? |
 |---|---|---|---|---|
 | 1 Objects/timing | APPROVED | `01_primitives_and_timing.tex` | — | Yes — explicit Phase 1 approval |
-| 2 Demand/profit | NOT STARTED | `02_demand_profit_derivation.tex` | — | No |
+| 2 Demand/profit | APPROVED | `02_demand_profit_derivation.tex` | — | Yes — `EXEC-GOV-001`, zero P0 |
 | 3 Technologies | NOT STARTED | `03_internal_external_technologies.tex` | — | No |
 | 4 Routes/sorting | NOT STARTED | `04_route_values_and_sorting.tex` | — | No |
 | 5 Project advancement | NOT STARTED | `05_rd_problem.tex` | — | No |
