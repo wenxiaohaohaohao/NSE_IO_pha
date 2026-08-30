@@ -1,0 +1,230 @@
+% Phase 1 only: definitions and timing. No payoff or optimization derivation.
+\section{Primitives, Objects, and Timing}
+\label{sec:p01-primitives-timing}
+
+This section fixes the objects and information structure of the baseline before
+any payoff is constructed.  The model is a partial equilibrium of
+original-drug project advancement, commercialization organization, and
+qualified manufacturing services.  The MAH reform changes only the
+institutional feasibility or friction of retained entrusted manufacturing.
+
+\subsection{Units and populations}
+\label{subsec:p01-units-populations}
+
+Let \(\mathsf C\) denote currency units, \(\mathsf X\) project-advancement
+input units, \(\mathsf P\) the expected measure of viable planning-stage
+projects in one decision cohort, \(\mathsf K\) manufacturing
+capability/requirement units, and \(\mathsf B\) qualified manufacturing-service
+capacity units.
+
+There is a continuum \(\mathcal I\) of original-drug developers.  Developer
+characteristics follow the exogenous distribution \(H(a,k)\).  Developer \(i\)
+has research capability \(a_i>0\), measured in \(\mathsf P/\mathsf X\), and
+internal manufacturing capability \(k_i>0\), measured in \(\mathsf K\).  Its
+complete permanent baseline characteristic vector is
+\begin{equation}
+  \theta_i=(a_i,k_i).
+  \label{eq:p01-developer-type}
+\end{equation}
+These are continuous characteristics, not permanent discrete firm types.
+
+There is also a set \(\mathcal J\) of qualified manufacturing-service
+suppliers.  Supplier efficiency \(z_j>0\) follows the exogenous distribution
+\(H_C(z)\).  The supplier's capacity control and cost function are introduced
+only in Phase~6.
+
+\subsection{Project characteristics and empirical classification}
+\label{subsec:p01-projects}
+
+A viable project that reaches the route-planning stage draws commercial or
+scientific value shifter \(q>0\) and manufacturing requirement \(m>0\).  The
+latter is measured on the same \(\mathsf K\) scale as \(k_i\).  Define
+\begin{equation}
+  \omega=(q,m)\sim F(q,m),
+  \label{eq:p01-project-draw}
+\end{equation}
+where \(F\) is an exogenous joint distribution.  Thus \(q\) governs the
+project's value side, while the pair \((m,k_i)\) governs the manufacturing
+mismatch.  The institutional regime does not directly alter \(q\), \(m\), or
+\(F\).
+
+For empirical decompositions only, let
+\(g\in\{O,\mathrm{Inc}\}\) be an exogenous novelty classifier.  The label
+\(\mathrm{Inc}\) cannot be confused with internal route \(I\).  Let
+\(\rho_g\geq0\) be the class share and \(F_g(q,m)\) the conditional project
+distribution.  They satisfy
+\begin{equation}
+  \sum_{g\in\{O,\mathrm{Inc}\}}\rho_g=1,
+  \qquad
+  F(q,m)=
+  \sum_{g\in\{O,\mathrm{Inc}\}}\rho_gF_g(q,m).
+  \label{eq:p01-class-mixture}
+\end{equation}
+The classifier is not a new baseline state, and it does not create a separate
+control \(x_{ig}\).
+
+\subsection{Institutional regime and route labels}
+\label{subsec:p01-institution-routes}
+
+Let the exogenous institutional regime be \(M\in\{0,1\}\).  The value \(M=0\)
+denotes the pre-MAH regime.  The value \(M=1\) means that a developer may
+legally retain authorization while a qualified external producer manufactures
+the product.  Let \(\tau_E(M)\), measured in \(\mathsf C\) per project, denote
+the institutional barrier attached only to this retained entrusted route.  The
+baseline representation is
+\begin{equation}
+  \tau_E(0)=+\infty,
+  \qquad
+  \tau_E(1)=\bar\tau_E<+\infty,
+  \qquad
+  \bar\tau_E\geq0.
+  \label{eq:p01-institutional-wedge}
+\end{equation}
+There is no continuous implementation parameter in the baseline.
+
+The route labels are \(I\) for internal manufacturing, \(E\) for retained
+entrusted manufacturing, \(T\) for transfer or another non-retained outside
+option, and \(A\) for abandonment or indefinite delay.  If \(r_i\) denotes the
+project's route control, its institutional domain is
+\begin{equation}
+  r_i\in
+  \begin{cases}
+    \{I,T,A\}, & M=0,\\
+    \{I,E,T,A\}, & M=1.
+  \end{cases}
+  \label{eq:p01-route-domain}
+\end{equation}
+Under \(E\), the developer remains the holder; entrusted production is not a
+transfer of ownership or authorization.  The eventual optimizer is denoted by
+\(r_i^*(q,m;M,p_m)\), but route values and the argmax are deferred to
+Phase~4.
+
+\subsection{Project-advancement and realization objects}
+\label{subsec:p01-advancement-realization}
+
+Developer \(i\) chooses one common control \(x_i\geq0\), measured in
+\(\mathsf X\).  Canonically, \(x_i\) is
+\emph{original-drug innovation investment / project-advancement intensity}.
+It includes investment that advances viable original-drug projects toward a
+commercialization-relevant route-planning stage.  It is broader than pure
+clinical-development effort, but it is not basic research, basic-compound
+discovery, patent-generating effort, or patent applications.
+
+Research capability converts the control into the expected measure of viable
+planning-stage projects:
+\begin{equation}
+  \lambda_i^{\mathrm{plan}}=a_ix_i.
+  \label{eq:p01-planned-intensity}
+\end{equation}
+The control \(x_i\) has units \(\mathsf X\), so
+\(\lambda_i^{\mathrm{plan}}\) has units \(\mathsf P\).
+
+Let \(p_m\), measured in \(\mathsf C/\mathsf B\), denote a conjectured price
+of qualified manufacturing service and let \(p_m^*\) denote its future
+market-consistent value.  Let \(\Omega_i(M,p_m)\), measured in \(\mathsf C\)
+per planning-stage project, denote developer \(i\)'s expected optimized project
+value.  These objects are semantically reserved here: route values are built in
+Phases~2--4, the advancement optimization is solved in Phase~5, and the CMO
+fixed point is closed in Phase~6.
+
+Finally, let \(s(q)\in[0,1]\) be the exogenous, route-independent probability
+of downstream clinical or regulatory realization:
+\begin{equation}
+  \Pr\{\text{downstream realization}\mid q\}=s(q).
+  \label{eq:p01-downstream-probability}
+\end{equation}
+The reform does not shift \(s(q)\).  If typed observed outcomes later require a
+class-specific probability \(s_g(q)\), it is likewise exogenous and
+MAH-invariant.
+
+\subsection{Baseline timing}
+\label{subsec:p01-timing}
+
+\begin{enumerate}
+  \item[Stage 0.] \textbf{Institutional regime.}  The value of \(M\) is
+  realized and publicly observed.  It changes only the barrier or legal
+  availability of route \(E\) in
+  \eqref{eq:p01-institutional-wedge}--\eqref{eq:p01-route-domain}.
+
+  \item[Stage 1.] \textbf{Ex ante project advancement.}  Developer \(i\)
+  observes \((a_i,k_i,M)\), anticipates the market-consistent service price
+  \(p_m^*\) and future route opportunities, and chooses \(x_i\).  Equation
+  \eqref{eq:p01-planned-intensity} determines the expected measure of viable
+  projects reaching the route-planning stage.
+
+  \item[Stage 2.] \textbf{Project characteristics.}  Each planning-stage
+  project draws \((q,m)\) according to \eqref{eq:p01-project-draw}.  The
+  optional label \(g\) records an empirical class but does not create another
+  advancement choice.
+
+  \item[Stage 3.] \textbf{Commercialization organization.}  After observing
+  \((q,m)\) and the manufacturing-service price, the project chooses a route
+  from the domain in \eqref{eq:p01-route-domain}.  Actual holder--producer
+  separation is observed only if the realized route is \(E\), which occurs
+  after the Stage~1 choice.
+
+  \item[Stage 4.] \textbf{Downstream realization.}  A retained project
+  realizes downstream commercial value with the exogenous probability in
+  \eqref{eq:p01-downstream-probability}.  Planning-stage projects, route
+  assignments, and realized products are distinct objects.
+
+  \item[Stage 5.] \textbf{Manufacturing-service consistency.}  Aggregate
+  entrusted-capacity demand and qualified-capacity supply must support the same
+  \(p_m^*\) that developers anticipated.  This is a simultaneous equilibrium
+  consistency condition, not an unanticipated event occurring after Stage~4.
+\end{enumerate}
+
+Upstream scientific research and patent generation may have occurred before
+Stage~0 and may help explain predetermined \(a_i\).  They are outside the
+baseline decision timing.
+
+\subsection{Mechanism and exclusion audit}
+\label{subsec:p01-mechanism-boundary}
+
+The only direct reform arrow is
+\begin{equation}
+  M\longrightarrow \tau_E(M)
+  \quad\text{and the legal availability of route }E.
+  \label{eq:p01-only-direct-policy-arrow}
+\end{equation}
+The intended ex ante channel, conditional on the value and optimization results
+proved in later phases, is
+\begin{equation}
+  M
+  \longrightarrow
+  \text{anticipated availability/value of }E
+  \longrightarrow
+  \Omega_i
+  \longrightarrow
+  x_i^*.
+  \label{eq:p01-anticipated-channel}
+\end{equation}
+The later realization order is
+\begin{equation}
+  \begin{aligned}
+    x_i^*
+    &\longrightarrow
+    \text{planning-stage projects}
+    \longrightarrow r_i^* \\
+    &\longrightarrow
+    \text{observed holder--producer separation}
+    \longrightarrow
+    \text{realized products}.
+  \end{aligned}
+  \label{eq:p01-realization-channel}
+\end{equation}
+Equations \eqref{eq:p01-anticipated-channel} and
+\eqref{eq:p01-realization-channel} are timing and dependency statements, not
+unconditional comparative-static propositions.
+
+In particular, \(M\) does not directly change \(a_i\), \(k_i\), \(z_j\),
+\(q\), \(m\), \(F\), \(\rho_g\), \(F_g\), \(s(q)\), or \(s_g(q)\).  It does
+not directly lower \(p_m^*\).  Nothing in this section implies an increase in
+patent applications, upstream scientific research, or one novelty class
+relative to the other.
+
+The complete exact-category registry, dimensions, and forbidden
+interpretations are recorded in
+\texttt{paper/model\_notes/01\_symbols\_and\_objects.md}; the initial equation
+graph and deferred fixed point are recorded in
+\texttt{paper/model\_notes/02\_equation\_dependency\_map.md}.

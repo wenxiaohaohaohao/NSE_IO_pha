@@ -14,5 +14,6 @@
 | `DEC-SPEC-010` | Work in `D:\working_paper\DANNI_worktrees\mah-model-rebuild` from `cd5b6e4` | User-selected isolation method | LOCKED |
 | `DEC-SPEC-011` | Manuscript remains read-only through Phase 17 | Base red line and implementation plan | LOCKED |
 | `DEC-SPEC-012` | Specification v1.2 checkpoint approved; create/push its unique commit, then begin Phase 1 only | User message, 2026-08-30T13:11:40.9653412+08:00 | APPROVED |
+| `DEC-SPEC-013` / `EXEC-GOV-001` | Phase 1 is explicitly approved. For Phase 2-18, retain every internal gate and separate commit/push, but use the user's standing authorization to approve and continue whenever the completed gate has zero P0. Pause only for P0, a locked-architecture change, phase-blocking unresolved evidence, or manuscript-scope expansion. | User message, 2026-08-30; active user instruction has highest specification priority | LOCKED |
 
-The specification approval gate is satisfied. This approval authorizes the specification commit/push and the start of Phase 1; it does not approve Phase 1 results or authorize Phase 2.
+The specification approval gate and Phase 1 gate are satisfied. `EXEC-GOV-001` authorizes continuous Phase 2-18 execution without routine approval prompts, but it does not waive any audit step or any mandatory-pause condition.

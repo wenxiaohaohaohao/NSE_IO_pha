@@ -19,11 +19,20 @@ Legal transition:
 
 `NOT STARTED -> IN PROGRESS -> AUDIT FAILED / READY FOR APPROVAL -> APPROVED`
 
-Only explicit user approval can set `APPROVED`.
+`APPROVED` requires either phase-specific user approval or the user's standing authorization for a zero-P0 gate. A P0 finding, locked-architecture change, unresolved phase-blocking evidence problem, or requested manuscript-scope expansion always suspends that standing authorization and requires a new user decision.
+
+## Execution authorization
+
+- Governance decision: `EXEC-GOV-001`
+- Recorded: `2026-08-30T17:38:13.5981404+08:00`
+- Phase 1 gate: explicitly approved by the user.
+- Phase 2 through Phase 18: the user authorized continuous rigorous execution. Every internal preflight, derivation review, automated audit, compile check, gate report, separate commit and push remains mandatory.
+- Routine zero-P0 gates: record `APPROVED` under the standing authorization and continue without another prompt.
+- Mandatory pause: any P0 issue, change to locked architecture, unresolved evidence that blocks the current phase, or expansion beyond the approved manuscript-integration scope.
 
 | Phase | Status | Main output | P0 issue | Approved to continue? |
 |---|---|---|---|---|
-| 1 Objects/timing | NOT STARTED | `01_primitives_and_timing.tex` | — | No |
+| 1 Objects/timing | APPROVED | `01_primitives_and_timing.tex` | — | Yes — explicit Phase 1 approval |
 | 2 Demand/profit | NOT STARTED | `02_demand_profit_derivation.tex` | — | No |
 | 3 Technologies | NOT STARTED | `03_internal_external_technologies.tex` | — | No |
 | 4 Routes/sorting | NOT STARTED | `04_route_values_and_sorting.tex` | — | No |
@@ -46,4 +55,4 @@ Only explicit user approval can set `APPROVED`.
 
 - `paper/manuscript/` remains byte-identical to the locked base until Phase 18 approval.
 - The original checkout's modified collaborator ZIP is outside this worktree and must never enter this branch.
-- No Phase 1 formal output exists at this checkpoint.
+- Phase 1 began after the approved specification commit was pushed. Phase 2 and subsequent phases are authorized under `EXEC-GOV-001`, subject to their full internal gates and mandatory-pause conditions.

@@ -1,0 +1,290 @@
+{
+    "phase":  1,
+    "expected_status":  "READY_FOR_APPROVAL",
+    "status":  "READY_FOR_APPROVAL",
+    "generated_at":  "2026-08-30T17:19:24.6162529+08:00",
+    "passed":  56,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "id":  "P01-HASH-BASE",
+                       "passed":  true,
+                       "evidence":  "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+                   },
+                   {
+                       "id":  "P01-HASH-AMD11",
+                       "passed":  true,
+                       "evidence":  "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+                   },
+                   {
+                       "id":  "P01-HASH-AMD12-IMAGE",
+                       "passed":  true,
+                       "evidence":  "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+                   },
+                   {
+                       "id":  "P01-HASH-AMD12-TEXT",
+                       "passed":  true,
+                       "evidence":  "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+                   },
+                   {
+                       "id":  "P01-HASH-EFFECTIVE",
+                       "passed":  true,
+                       "evidence":  "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+                   },
+                   {
+                       "id":  "P01-GIT-BRANCH",
+                       "passed":  true,
+                       "evidence":  "branch=codex/mah-model-rebuild"
+                   },
+                   {
+                       "id":  "P01-GIT-SPEC-ANCESTOR",
+                       "passed":  true,
+                       "evidence":  "spec_commit=5fc7f352cb244dac09da4d4567bc331eaaa29dda ancestor_of_HEAD rc=0"
+                   },
+                   {
+                       "id":  "P01-GIT-SPEC-PUSHED",
+                       "passed":  true,
+                       "evidence":  "spec_commit=5fc7f352cb244dac09da4d4567bc331eaaa29dda ancestor_of_remote rc=0"
+                   },
+                   {
+                       "id":  "P01-MANUSCRIPT-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "manuscript diff against locked base rc=0"
+                   },
+                   {
+                       "id":  "P01-ZIP-ISOLATED",
+                       "passed":  true,
+                       "evidence":  "target-worktree zip status count=0"
+                   },
+                   {
+                       "id":  "P01-FILE-01_primitives_and_timing.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\01_primitives_and_timing.tex"
+                   },
+                   {
+                       "id":  "P01-FILE-01_symbols_and_objects.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\01_symbols_and_objects.md"
+                   },
+                   {
+                       "id":  "P01-FILE-02_equation_dependency_map.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\02_equation_dependency_map.md"
+                   },
+                   {
+                       "id":  "P01-FILE-03_assumptions_and_scope.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\03_assumptions_and_scope.md"
+                   },
+                   {
+                       "id":  "P01-FILE-phase01_preflight.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase01_preflight.md"
+                   },
+                   {
+                       "id":  "P01-FILE-phase01_compile_wrapper.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase01_compile_wrapper.tex"
+                   },
+                   {
+                       "id":  "P01-FILE-phase01_artifact_hashes.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase01_artifact_hashes.md"
+                   },
+                   {
+                       "id":  "P01-FILE-compile_phase01.ps1",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\scripts\\compile_phase01.ps1"
+                   },
+                   {
+                       "id":  "P01-FILE-phase01_compile_console.txt",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase01_compile_console.txt"
+                   },
+                   {
+                       "id":  "P01-FILE-phase01_compile_wrapper.pdf",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase01\\phase01_compile_wrapper.pdf"
+                   },
+                   {
+                       "id":  "P01-FILE-phase01_compile_wrapper.log",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase01\\phase01_compile_wrapper.log"
+                   },
+                   {
+                       "id":  "P01-NO-LATER-PHASE-FILES",
+                       "passed":  true,
+                       "evidence":  "existing="
+                   },
+                   {
+                       "id":  "P01-STATE",
+                       "passed":  true,
+                       "evidence":  "expected_row_fragment=| 1 Objects/timing | READY FOR APPROVAL |"
+                   },
+                   {
+                       "id":  "P01-PHASE2-NOT-STARTED",
+                       "passed":  true,
+                       "evidence":  "Phase 2 remains NOT STARTED"
+                   },
+                   {
+                       "id":  "P01-SPEC-APPROVED",
+                       "passed":  true,
+                       "evidence":  "specification remains approved"
+                   },
+                   {
+                       "id":  "P01-CANONICAL-X",
+                       "passed":  true,
+                       "evidence":  "canonical v1.2 interpretation appears in TeX"
+                   },
+                   {
+                       "id":  "P01-X-NOT-PATENTS",
+                       "passed":  true,
+                       "evidence":  "upstream/patent boundary stated"
+                   },
+                   {
+                       "id":  "P01-PLAN-IDENTITY",
+                       "passed":  true,
+                       "evidence":  "planning-stage intensity identity present"
+                   },
+                   {
+                       "id":  "P01-CLASS-NOTATION",
+                       "passed":  true,
+                       "evidence":  "Inc classifier is distinct from internal route I"
+                   },
+                   {
+                       "id":  "P01-COMMON-X",
+                       "passed":  true,
+                       "evidence":  "x_ig_count=1 and occurrence is an explicit prohibition"
+                   },
+                   {
+                       "id":  "P01-INSTITUTIONAL-WEDGE",
+                       "passed":  true,
+                       "evidence":  "only entrusted-route institutional wedge defined"
+                   },
+                   {
+                       "id":  "P01-ROUTE-DOMAIN",
+                       "passed":  true,
+                       "evidence":  "M=0 removes E and M=1 makes E available"
+                   },
+                   {
+                       "id":  "P01-TIMING-STAGES",
+                       "passed":  true,
+                       "evidence":  "Stages 0-5 all present exactly once"
+                   },
+                   {
+                       "id":  "P01-ANTICIPATION-CHAIN",
+                       "passed":  true,
+                       "evidence":  "anticipated E-value channel present"
+                   },
+                   {
+                       "id":  "P01-REALIZATION-CHAIN",
+                       "passed":  true,
+                       "evidence":  "later observed separation chain present"
+                   },
+                   {
+                       "id":  "P01-S-INVARIANT",
+                       "passed":  true,
+                       "evidence":  "downstream probability MAH-invariant"
+                   },
+                   {
+                       "id":  "P01-NO-FORBIDDEN-ACTIVE-MECHANISM",
+                       "passed":  true,
+                       "evidence":  "hits="
+                   },
+                   {
+                       "id":  "P01-OBJECT-CATEGORY-COUNT",
+                       "passed":  true,
+                       "evidence":  "classified_active_rows=27"
+                   },
+                   {
+                       "id":  "P01-OBJECT-CATEGORIES-EXACT",
+                       "passed":  true,
+                       "evidence":  "invalid_categories="
+                   },
+                   {
+                       "id":  "P01-DIMENSIONS",
+                       "passed":  true,
+                       "evidence":  "unit registry covers value, input, project, capability, and capacity units"
+                   },
+                   {
+                       "id":  "P01-MARKDOWN-ENCODING",
+                       "passed":  true,
+                       "evidence":  "invalid_control_chars=0"
+                   },
+                   {
+                       "id":  "P01-ASSUMPTION-IDS",
+                       "passed":  true,
+                       "evidence":  "unique_assumption_ids=17"
+                   },
+                   {
+                       "id":  "P01-NO-CONCLUSION-AS-ASSUMPTION",
+                       "passed":  true,
+                       "evidence":  "assumption discipline stated"
+                   },
+                   {
+                       "id":  "P01-DEPENDENCY-LEDGER",
+                       "passed":  true,
+                       "evidence":  "definition ledger P01-E01 through P01-E07 present"
+                   },
+                   {
+                       "id":  "P01-FIXED-POINT-DECLARED",
+                       "passed":  true,
+                       "evidence":  "p_m feedback declared and deferred to Phase 6"
+                   },
+                   {
+                       "id":  "P01-FORBIDDEN-ARROWS",
+                       "passed":  true,
+                       "evidence":  "forbidden-arrow table includes policy and timing reversals"
+                   },
+                   {
+                       "id":  "P01-LABELS-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "labels=17 unique=17"
+                   },
+                   {
+                       "id":  "P01-REFERENCES-DEFINED",
+                       "passed":  true,
+                       "evidence":  "undefined="
+                   },
+                   {
+                       "id":  "P01-LATEX-CLEAN",
+                       "passed":  true,
+                       "evidence":  "problems="
+                   },
+                   {
+                       "id":  "P01-COMPILE-EVIDENCE",
+                       "passed":  true,
+                       "evidence":  "console=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase01_compile_console.txt pdf=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase01\\phase01_compile_wrapper.pdf"
+                   },
+                   {
+                       "id":  "P01-NO-P0-OPEN-ISSUE",
+                       "passed":  true,
+                       "evidence":  "open issues contain no current P0 severity"
+                   },
+                   {
+                       "id":  "P01-WORKTREE-SCOPE",
+                       "passed":  true,
+                       "evidence":  "unexpected="
+                   },
+                   {
+                       "id":  "P01-MATRIX-D01",
+                       "passed":  true,
+                       "evidence":  "status=READY_FOR_APPROVAL"
+                   },
+                   {
+                       "id":  "P01-MATRIX-G01",
+                       "passed":  true,
+                       "evidence":  "status=READY_FOR_APPROVAL"
+                   },
+                   {
+                       "id":  "P01-GATE-REPORT-IDS",
+                       "passed":  true,
+                       "evidence":  "missing="
+                   },
+                   {
+                       "id":  "P01-GATE-REPORT-PAUSE",
+                       "passed":  true,
+                       "evidence":  "gate report records mandatory pause before Phase 2"
+                   }
+               ]
+}

@@ -1,0 +1,3 @@
+# Project-local temporary and LaTeX build directories.
+tmp/
+audit/build_phase01/

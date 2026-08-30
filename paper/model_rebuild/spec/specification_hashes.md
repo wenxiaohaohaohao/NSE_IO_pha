@@ -11,6 +11,8 @@ Approval recorded: 2026-08-30T13:11:40.9653412+08:00
 | Frozen correction v1.2 image | `1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5` |
 | Correction v1.2 transcription | `06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E` |
 | Effective specification v1.2 | `855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666` |
-| Instruction traceability matrix, specification-approved state | `3F0671ED447CB2AF07EB3DED62730A0EF7E15437A9107539B7554E644F18A98F` |
+| Instruction traceability matrix, specification-approved baseline | `3F0671ED447CB2AF07EB3DED62730A0EF7E15437A9107539B7554E644F18A98F` |
+| Instruction traceability matrix, current Phase 1 `READY_FOR_APPROVAL` state | `72EF6DE38FCE8C78B6BDA4CE4779DC5874DEFC7BA135B5462443660586DBA52D` |
+| Instruction traceability matrix, current Phase 1 `APPROVED` state | `3C3715806A83CE355E56C928E606BF7515FC6BFF59F785D69D3C59A3B64D520B` |
 
 Every Phase preflight must re-check the first five hashes. The traceability-matrix hash may change only when Phase evidence/status fields are deliberately updated.

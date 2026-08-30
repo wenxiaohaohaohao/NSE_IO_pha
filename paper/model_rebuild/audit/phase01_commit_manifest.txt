@@ -1,0 +1,24 @@
+# Phase 1 approved commit scope
+paper/model_notes/.gitattributes
+paper/model_notes/00_model_closure_status.md
+paper/model_notes/01_symbols_and_objects.md
+paper/model_notes/02_equation_dependency_map.md
+paper/model_notes/03_assumptions_and_scope.md
+paper/model_notes/07_specification_decision_log.md
+paper/model_rebuild/.gitattributes
+paper/model_rebuild/.gitignore
+paper/model_rebuild/01_primitives_and_timing.tex
+paper/model_rebuild/audit/phase01_artifact_hashes.md
+paper/model_rebuild/audit/phase01_audit_results.json
+paper/model_rebuild/audit/phase01_commit_manifest.txt
+paper/model_rebuild/audit/phase01_compile_console.txt
+paper/model_rebuild/audit/phase01_compile_wrapper.tex
+paper/model_rebuild/audit/phase01_gate_report.md
+paper/model_rebuild/audit/phase01_preflight.md
+paper/model_rebuild/scripts/audit_phase01.ps1
+paper/model_rebuild/scripts/compile_phase01.ps1
+paper/model_rebuild/scripts/finalize_phase.ps1
+paper/model_rebuild/spec/approvals/execution_governance_override_20260830.md
+paper/model_rebuild/spec/approvals/phase01_approval.md
+paper/model_rebuild/spec/instruction_traceability_matrix.csv
+paper/model_rebuild/spec/specification_hashes.md

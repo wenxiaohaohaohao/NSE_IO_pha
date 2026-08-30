@@ -1,0 +1,7 @@
+# Preserve exact bytes for hash-protected Phase 1 model notes.
+01_symbols_and_objects.md -text
+02_equation_dependency_map.md -text
+03_assumptions_and_scope.md -text
+
+# Markdown hard breaks are intentional in the model-note ledgers.
+*.md whitespace=-blank-at-eol,-blank-at-eof

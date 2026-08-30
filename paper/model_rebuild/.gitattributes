@@ -6,3 +6,11 @@ spec/instruction_traceability_matrix.csv -text
 # Markdown hard breaks and verbatim embedded Markdown are intentional here.
 *.md whitespace=-blank-at-eol,-blank-at-eof
 scripts/apply_spec_amendments.py whitespace=-blank-at-eol
+
+# Phase 1 hash-protected artifacts.
+01_primitives_and_timing.tex -text
+audit/phase01_gate_report.md -text
+audit/phase01_compile_console.txt -text
+audit/phase01_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
+audit/phase01_compile_wrapper.tex -text
+scripts/compile_phase01.ps1 -text
