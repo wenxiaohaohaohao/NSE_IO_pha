@@ -1,0 +1,8 @@
+# Hash-protected specification artifacts must retain exact bytes across checkout.
+spec/source/* -text
+spec/MAH_model_rebuild_effective_spec_v1.2.md -text
+spec/instruction_traceability_matrix.csv -text
+
+# Markdown hard breaks and verbatim embedded Markdown are intentional here.
+*.md whitespace=-blank-at-eol,-blank-at-eof
+scripts/apply_spec_amendments.py whitespace=-blank-at-eol

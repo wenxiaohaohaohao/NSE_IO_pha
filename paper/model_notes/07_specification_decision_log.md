@@ -1,0 +1,18 @@
+# 07 Specification Decision Log
+
+| Decision | Locked treatment | Basis | Status |
+|---|---|---|---|
+| `DEC-SPEC-001` | Active user instruction > v1.2 > v1.1 > base note > legacy files | User-approved implementation plan | LOCKED |
+| `DEC-SPEC-002` | Preserve immutable sources and generate a surgical effective specification; do not rewrite from a summary | User instruction and v1.1 amendment status | LOCKED |
+| `DEC-SPEC-003` | `x_i` means original-drug innovation investment / project-advancement intensity | v1.2 correction | LOCKED |
+| `DEC-SPEC-004` | `x_i` is broader than pure clinical effort but excludes patents and upstream discovery | v1.2 plus retained v1.1 boundary | LOCKED |
+| `DEC-SPEC-005` | Use `g in {O, Inc}`; route `I` remains internal production | User selection after strict review | LOCKED |
+| `DEC-SPEC-006` | Keep one common `x_i`; use exogenous `rho_g` and conditional `F_g` for novelty decomposition | v1.1 restriction plus user-approved completion | LOCKED |
+| `DEC-SPEC-007` | Separate anticipated E-option-value channel from the later realized holder-producer sequence | Locked timing and user-approved plan | LOCKED |
+| `DEC-SPEC-008` | Formal status has 18 phases; full draft is assembled in Phase 15 | Formal phase headings and user-approved correction | LOCKED |
+| `DEC-SPEC-009` | Detailed Shi Gu claims remain UNVERIFIED until page/table verification | Evidence discipline | LOCKED |
+| `DEC-SPEC-010` | Work in `D:\working_paper\DANNI_worktrees\mah-model-rebuild` from `cd5b6e4` | User-selected isolation method | LOCKED |
+| `DEC-SPEC-011` | Manuscript remains read-only through Phase 17 | Base red line and implementation plan | LOCKED |
+| `DEC-SPEC-012` | Specification v1.2 checkpoint approved; create/push its unique commit, then begin Phase 1 only | User message, 2026-08-30T13:11:40.9653412+08:00 | APPROVED |
+
+The specification approval gate is satisfied. This approval authorizes the specification commit/push and the start of Phase 1; it does not approve Phase 1 results or authorize Phase 2.

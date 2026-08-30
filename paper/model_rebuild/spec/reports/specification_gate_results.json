@@ -1,0 +1,334 @@
+{
+    "checkpoint":  "SPECIFICATION_v1.2",
+    "status":  "APPROVED",
+    "generated_at":  "2026-08-30T13:54:04.5709093+08:00",
+    "passed":  65,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "id":  "HASH-BASE",
+                       "passed":  true,
+                       "evidence":  "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+                   },
+                   {
+                       "id":  "HASH-AMD11",
+                       "passed":  true,
+                       "evidence":  "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+                   },
+                   {
+                       "id":  "HASH-AMD12-IMAGE",
+                       "passed":  true,
+                       "evidence":  "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+                   },
+                   {
+                       "id":  "HASH-AMD12-TRANSCRIPTION",
+                       "passed":  true,
+                       "evidence":  "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+                   },
+                   {
+                       "id":  "HASH-EFFECTIVE",
+                       "passed":  true,
+                       "evidence":  "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+                   },
+                   {
+                       "id":  "HASH-MATRIX-CURRENT",
+                       "passed":  true,
+                       "evidence":  "expected=3F0671ED447CB2AF07EB3DED62730A0EF7E15437A9107539B7554E644F18A98F actual=3F0671ED447CB2AF07EB3DED62730A0EF7E15437A9107539B7554E644F18A98F"
+                   },
+                   {
+                       "id":  "RED-LINES-01-28",
+                       "passed":  true,
+                       "evidence":  "found=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-A",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-A"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-B",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-B"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-C",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-C"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-D",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-D"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-E",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-E"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-F",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-F"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-G",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-G"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-H",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-H"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-I",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-I"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-J",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-J"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-K",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-K"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-L",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-L"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-M",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-M"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-N",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-N"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-O",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-O"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-P",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-P"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-Q",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-Q"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-R",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-R"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-S",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-S"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-T",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-T"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-U",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-U"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-V",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-V"
+                   },
+                   {
+                       "id":  "APPLIED-AMD11-W",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD11-W"
+                   },
+                   {
+                       "id":  "APPLIED-AMD12-01",
+                       "passed":  true,
+                       "evidence":  "construction record contains AMD12-01"
+                   },
+                   {
+                       "id":  "CANONICAL-X",
+                       "passed":  true,
+                       "evidence":  "canonical v1.2 definition present"
+                   },
+                   {
+                       "id":  "NO-CLASS-I-COLLISION",
+                       "passed":  true,
+                       "evidence":  "active novelty notation uses Inc rather than I"
+                   },
+                   {
+                       "id":  "NO-SEPARATE-XIG-FORMULA",
+                       "passed":  true,
+                       "evidence":  "no active separate-control outcome formula"
+                   },
+                   {
+                       "id":  "COMMON-X-RHO-F",
+                       "passed":  true,
+                       "evidence":  "common-control mixture identities present"
+                   },
+                   {
+                       "id":  "TIMING-ANTICIPATION",
+                       "passed":  true,
+                       "evidence":  "anticipated E-option-value chain present"
+                   },
+                   {
+                       "id":  "TIMING-REALIZATION",
+                       "passed":  true,
+                       "evidence":  "later realized assignment chain present"
+                   },
+                   {
+                       "id":  "FULL-DRAFT-PHASE15",
+                       "passed":  true,
+                       "evidence":  "full draft assigned to Phase 15 and approval-gated"
+                   },
+                   {
+                       "id":  "SHIGU-UNVERIFIED-GATE",
+                       "passed":  true,
+                       "evidence":  "detailed claims are evidence-gated"
+                   },
+                   {
+                       "id":  "MATRIX-ROW-COUNT",
+                       "passed":  true,
+                       "evidence":  "rows=119"
+                   },
+                   {
+                       "id":  "MATRIX-UNIQUE-IDS",
+                       "passed":  true,
+                       "evidence":  "unique=119 total=119"
+                   },
+                   {
+                       "id":  "MATRIX-COMPLETE-ID-SET",
+                       "passed":  true,
+                       "evidence":  "expected=119 actual=119 delta="
+                   },
+                   {
+                       "id":  "MATRIX-RL-01",
+                       "passed":  true,
+                       "evidence":  "matrix contains RL-01"
+                   },
+                   {
+                       "id":  "MATRIX-RL-28",
+                       "passed":  true,
+                       "evidence":  "matrix contains RL-28"
+                   },
+                   {
+                       "id":  "MATRIX-AMD11-A",
+                       "passed":  true,
+                       "evidence":  "matrix contains AMD11-A"
+                   },
+                   {
+                       "id":  "MATRIX-AMD11-W",
+                       "passed":  true,
+                       "evidence":  "matrix contains AMD11-W"
+                   },
+                   {
+                       "id":  "MATRIX-AMD12-01",
+                       "passed":  true,
+                       "evidence":  "matrix contains AMD12-01"
+                   },
+                   {
+                       "id":  "MATRIX-P01-D01",
+                       "passed":  true,
+                       "evidence":  "matrix contains P01-D01"
+                   },
+                   {
+                       "id":  "MATRIX-P18-G01",
+                       "passed":  true,
+                       "evidence":  "matrix contains P18-G01"
+                   },
+                   {
+                       "id":  "MATRIX-QA-PROOF-10",
+                       "passed":  true,
+                       "evidence":  "matrix contains QA-PROOF-10"
+                   },
+                   {
+                       "id":  "MATRIX-QA-ECON-08",
+                       "passed":  true,
+                       "evidence":  "matrix contains QA-ECON-08"
+                   },
+                   {
+                       "id":  "MATRIX-SUCCESS-13",
+                       "passed":  true,
+                       "evidence":  "matrix contains SUCCESS-13"
+                   },
+                   {
+                       "id":  "STATUS-18-PHASES",
+                       "passed":  true,
+                       "evidence":  "phase_rows=18"
+                   },
+                   {
+                       "id":  "STATUS-SPEC-APPROVED",
+                       "passed":  true,
+                       "evidence":  "specification checkpoint is approved"
+                   },
+                   {
+                       "id":  "STATUS-SPEC-COMMIT-AUTHORIZED",
+                       "passed":  true,
+                       "evidence":  "specification commit and push authorized"
+                   },
+                   {
+                       "id":  "STATUS-PHASE1-AUTHORIZED",
+                       "passed":  true,
+                       "evidence":  "Phase 1 authorized after specification push"
+                   },
+                   {
+                       "id":  "SPEC-APPROVAL-EVIDENCE",
+                       "passed":  true,
+                       "evidence":  "approval record=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\spec\\approvals\\specification_v1.2_approval.md"
+                   },
+                   {
+                       "id":  "STATUS-PHASE1-NOT-STARTED",
+                       "passed":  true,
+                       "evidence":  "Phase 1 remains not started"
+                   },
+                   {
+                       "id":  "STATUS-PHASE18-BLOCKED",
+                       "passed":  true,
+                       "evidence":  "Phase 18 remains blocked"
+                   },
+                   {
+                       "id":  "GIT-BRANCH",
+                       "passed":  true,
+                       "evidence":  "branch=codex/mah-model-rebuild"
+                   },
+                   {
+                       "id":  "GIT-LOCKED-BASE-ANCESTOR",
+                       "passed":  true,
+                       "evidence":  "locked_base=cd5b6e49608749e0bf32f3d9aa235a84f378347b is ancestor of HEAD rc=0"
+                   },
+                   {
+                       "id":  "MANUSCRIPT-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "git diff --quiet base -- paper/manuscript rc=0"
+                   },
+                   {
+                       "id":  "ZIP-ISOLATED",
+                       "passed":  true,
+                       "evidence":  "target-worktree zip status count=0"
+                   },
+                   {
+                       "id":  "WORKTREE-SCOPE",
+                       "passed":  true,
+                       "evidence":  "unexpected="
+                   },
+                   {
+                       "id":  "PHASE1-NOT-STARTED",
+                       "passed":  true,
+                       "evidence":  "existing_phase1_files="
+                   }
+               ]
+}
