@@ -1,6 +1,6 @@
 # 04 Proposition Checklist
 
-Phase status: PHASE 4 - APPROVED
+Phase status: PHASE 4 - APPROVED; PHASE 5 - APPROVED
 
 ## Draft P4-ORG - Organizational sorting
 
@@ -18,4 +18,33 @@ Phase status: PHASE 4 - APPROVED
 - Binary-policy boundary: \(M=0\) makes \(E\) unavailable and does not have a finite interior \(I/E\) cutoff.
 - Zero-effect cases: \(E\) below the pre-reform maximum; \(T\) or \(A\) dominates; crossing conditions fail for the project--price cell.
 - Economic interpretation: lower finite institutional burden expands the entrusted region; a higher fixed CMO price contracts it.
+- P0 issues: none identified in the draft.
+
+## Draft P5-ADV - Project-advancement response
+
+- Status: derivation draft for the Phase 5 gate; final proposition numbering
+  and proof audit are reserved for Phase 8.
+- Objects defined before statement:
+  \(\lambda_i^{\mathrm{plan}},C_X,\Omega_i,x_i^*,B_i,K_i\).
+- Assumptions used: A-P05-COST-01, A-P05-VALUE-01, A-P05-TIME-01,
+  A-P05-CHANNEL-01 and A-P05-GAP-01.
+- Fixed objects in the binary comparison: \(p_m,a_i,k_i,F\) and all
+  policy-invariant primitives.
+- Optimization: one common \(x_i\geq0\); no class-specific or
+  research-versus-development controls.
+- KKT: includes the zero-value corner and the positive-value interior FOC.
+- SOC and global result: strict concavity and a superlinear cost give a unique
+  optimizer.
+- Closed form:
+  \(x_i^*=[\beta a_i\Omega_i/\kappa]^{1/\nu}\).
+- Zero-effect case: if the entrusted option does not improve expected
+  optimized route value, the reform leaves \(x_i^*\) unchanged.
+- Strict-effect condition: a positive expected route-value gain at fixed
+  \(p_m\).
+- Policy channel: MAH changes \(x_i^*\) only through \(\Omega_i\); it does not
+  change \(a_i\), cost curvature or project characteristics.
+- Manufacturing role: \(k_i\) affects \(\Omega_i\) through route organization,
+  not project-arrival productivity or advancement cost.
+- Interpretation: \(K_i-B_i=\Omega_i\) is an appendix accounting identity, not
+  a recursive state system.
 - P0 issues: none identified in the draft.

@@ -17,5 +17,6 @@ Approval recorded: 2026-08-30T13:11:40.9653412+08:00
 | Instruction traceability matrix, current Phase 2 `APPROVED` state | `22FB41AC6CEA7C9A9BB4BB7FE6E03B36D701A0B14364CD0C4350B6EECBC209EE` |
 | Instruction traceability matrix, current Phase 3 `APPROVED` state | `07BAC43B1B8A83D4FC81C66E1AF95155CED8C5596FA1008F8F6215E0AADEC074` |
 | Instruction traceability matrix, current Phase 4 `APPROVED` state | `C56CB24109A3627D57FBDB16AB21BF66DCEC59A685A772DDC6E6A4EED01C1E2A` |
+| Instruction traceability matrix, current Phase 5 `APPROVED` state | `53EEB7FAEAAB10CDADDF6EBF63ECA4B07A0B4C817930E0CBFFFB4983A583CF75` |
 
 Every Phase preflight must re-check the first five hashes. The traceability-matrix hash may change only when Phase evidence/status fields are deliberately updated.

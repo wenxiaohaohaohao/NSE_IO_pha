@@ -1,6 +1,6 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - IN PROGRESS`
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED`
 
 This file records assumptions needed through the current phase. It does not impose the signs of later propositions. Technology, route-choice, project-advancement, market-regularity and equilibrium comparative-static assumptions must be added in their authorized phases before use.
 
@@ -333,3 +333,87 @@ Used by: cutoff comparative derivative and policy interpretation.
 | binary MAH interpretation | `A-P04-POLICY-01` |
 
 No assumption states that route $E$ is always chosen after MAH or that every project has a nonzero reform effect.
+
+## M. Phase 5 project-advancement assumptions
+
+### A-P05-COST-01 - Strictly convex common advancement cost
+
+The single common control satisfies $x_i\geq0$. Its cost is
+
+$$
+C_X(x_i)=\frac{\kappa}{1+\nu}x_i^{1+\nu},
+\qquad \kappa>0,\quad \nu>0.
+$$
+
+Thus $C_X'(x_i)=\kappa x_i^\nu$ is strictly increasing and the cost is
+strictly convex on the nonnegative domain. The case $\nu=1$ is the quadratic
+advancement-cost boundary. The function is not a research-versus-development
+allocation block.
+
+Used by: the Phase 5 objective, KKT conditions, SOC and unique optimizer.
+
+### A-P05-VALUE-01 - Finite expected optimized project value
+
+For each developer characteristic and fixed conjectured price $p_m$, the
+Phase 4 optimized value $W_i(q,m;M,p_m)$ is measurable and integrable under
+$F(q,m)$. Because abandonment has value zero and belongs to the maximization,
+$W_i\geq0$, so
+
+$$
+0\leq\Omega_i(M,p_m)
+=\int W_i(q,m;M,p_m)\,dF(q,m)<+\infty.
+$$
+
+Used by: expected-value definition, existence of a finite objective and the
+zero-value corner.
+
+### A-P05-TIME-01 - Ex ante common control at a conjectured price
+
+Developer $i$ chooses the one common $x_i$ after observing
+$(a_i,k_i,M)$ and anticipating route opportunities, but before drawing
+$(q,m)$ and before route choice. Phase 5 treats $p_m$ as fixed and conjectured.
+The feedback selecting $p_m^*$ is deferred to Phase 6.
+
+Used by: objective conditioning, expected value and fixed-price reform
+comparison.
+
+### A-P05-CHANNEL-01 - Only the expected route-value channel
+
+The institutional regime changes none of $a_i$, $k_i$, $\kappa$, $\nu$,
+$C_X$, $F(q,m)$, $q$, $m$, $s(q)$ or $s_g(q)$. It can affect
+$x_i^*$ only through $\Omega_i$, and within $\Omega_i$ only through the
+approved route-$E$ wedge. Manufacturing capability $k_i$ may affect
+$\Omega_i$ through route value and sorting, but it does not enter
+$a_ix_i$ or $C_X(x_i)$.
+
+Used by: Phase 5 causal-channel audit and the fixed-price binary comparison.
+
+### A-P05-GAP-01 - Appendix-only value-gap accounting
+
+$B_i$ and $K_i$ are accounting auxiliaries measured per marginal
+planning-stage project, with
+
+$$
+K_i=B_i+\Omega_i.
+$$
+
+They are not persistent state variables and do not define a recursive Bellman
+problem. The identity gives the downstream value gap
+$K_i-B_i=\Omega_i$ without adding a scientific-research productivity channel.
+
+Used by: the value-gap interpretation of the advancement FOC.
+
+## N. Phase 5 assumption-use matrix
+
+| Result | Assumptions actually used |
+|---|---|
+| common planned-project intensity $\lambda_i^{\mathrm{plan}}=a_ix_i$ | A-P01-FIRM-02, A-P01-TIME-01, A-P05-TIME-01 |
+| advancement cost and marginal cost | A-P05-COST-01 |
+| finite nonnegative $\Omega_i$ | A-P04-CHOICE-01, A-P05-VALUE-01 |
+| existence and uniqueness of $x_i^*$ | A-P05-COST-01, A-P05-VALUE-01 |
+| zero-value corner $x_i^*=0$ | A-P05-COST-01, A-P05-VALUE-01 |
+| fixed-price binary MAH effect | Phase 4 binary value comparison, A-P05-TIME-01, A-P05-CHANNEL-01 |
+| value-gap interpretation | A-P05-GAP-01 |
+
+No assumption states that MAH raises patent applications, upstream research,
+breakthrough innovation or every developer's advancement intensity.

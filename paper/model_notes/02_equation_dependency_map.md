@@ -1,7 +1,7 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - IN PROGRESS`  
-This map records definitions, timing dependencies, demand/profit, manufacturing technologies, and the Phase 4 deterministic route/sorting block. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED`  
+This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting and the Phase 5 project-advancement problem. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
 
 ## 1. Phase 1 definition ledger
 
@@ -65,7 +65,25 @@ The evaluated route-cost input $c$ from Phase 2 is supplied by $c_I(m,k_i)$ or $
 
 The binary policy comparison is not a derivative: $M=0$ sets $W_i^E=-\infty$, while $M=1$ supplies a finite barrier. The $\tau_E$ derivative is local within the finite-wedge domain.
 
-## 5. Causal and timing order
+## 5. Phase 5 project-advancement ledger
+
+| ID / LaTeX label | Object/result | Inputs already defined | Mathematical status | Proof / scope obligation |
+|---|---|---|---|---|
+| P05-E01 / eq:p05-planned-intensity | $\lambda_i^{\mathrm{plan}}=a_ix_i$ | $a_i,x_i$ | Phase 1 technology restated | one common control; no $x_{ig}$ |
+| P05-E02 / eq:p05-advancement-cost | $C_X(x_i)=\kappa x_i^{1+\nu}/(1+\nu)$ | $x_i,\kappa,\nu$ | primitive cost function | units, strict convexity and $\nu=1$ boundary |
+| P05-E03 / eq:p05-expected-value | $\Omega_i=\int W_i\,dF$ | Phase 1 distribution; Phase 4 optimized value | derived expectation | measurability, integrability and nonnegativity |
+| P05-E04 / eq:p05-advancement-objective | $\max_{x_i\geq0}\{\beta a_ix_i\Omega_i-C_X(x_i)\}$ | P05-E01--P05-E03 | optimization problem | $p_m$ fixed and project draw downstream |
+| P05-E05 / eq:p05-kkt | advancement KKT conditions | P05-E04 | optimization-derived | cover interior and zero-value corner |
+| P05-E06 / eq:p05-soc | objective curvature $-\kappa\nu x_i^{\nu-1}<0$ for $x_i>0$ | P05-E02 | optimization-derived | strict concavity also established globally |
+| P05-E07 / eq:p05-optimal-advancement | $x_i^*=[\beta a_i\Omega_i/\kappa]^{1/\nu}$ | P05-E05, nonnegative $\Omega_i$ | unique optimizer | units and $\Omega_i=0$ corner |
+| P05-E08 / eq:p05-binary-channel | fixed-price binary reform affects $x_i^*$ only through $\Omega_i$ | Phase 4 binary value comparison; P05-E07 | finite comparison | no derivative with respect to $M$ |
+| P05-E09 / eq:p05-value-gap | $K_i-B_i=\Omega_i$ and $C_X'=\beta a_i(K_i-B_i)$ | P05-E05, appendix auxiliaries | accounting interpretation | no recursive state or scientific-productivity channel |
+
+The expected-value and optimization arrows are now active at a fixed
+conjectured $p_m$. Aggregate CMO demand, supply and the feedback that selects
+$p_m^*$ remain deferred to Phase 6.
+
+## 6. Causal and timing order
 
 ```text
 Predetermined distributions and characteristics
@@ -78,8 +96,8 @@ Institutional regime
 
 Stage 1: ex ante project advancement
   observed (a_i,k_i,M) + anticipated p_m^*
-      -> expected optimized project value Omega_i               [DEFERRED: Phases 3-5]
-      -> common control x_i                                    [DEFERRED optimization: Phase 5]
+      -> expected optimized project value Omega_i               [DEFINED: Phase 5]
+      -> common control x_i                                    [OPTIMIZED: Phase 5]
       -> lambda_i^plan = a_i x_i                               [DEFINED: Phase 1]
 
 Stage 2: project realization
@@ -116,7 +134,7 @@ Stage 5: manufacturing-service consistency
 
 Stage 5 is a simultaneous consistency condition, not a later event developers fail to anticipate.
 
-## 6. Initial fixed-point dependency
+## 7. Initial fixed-point dependency
 
 The future equilibrium loop is identified but not solved in Phase 1:
 
@@ -132,7 +150,7 @@ $$
 
 Qualified supplier decisions create the supply side. Phase 6 must introduce capacity, cost, aggregate supply, aggregate demand, solution order, and sufficient regularity. Phase 1 makes no existence, uniqueness, or price-sign claim.
 
-## 7. Allowed direct and indirect arrows
+## 8. Allowed direct and indirect arrows
 
 The only allowed direct policy arrow is
 
@@ -154,6 +172,19 @@ x_i^*.
 $$
 
 The last two arrows require Phase 4 route values and the Phase 5 optimization. An increase requires a strictly positive expected route-value gain and the later optimization conditions.
+
+Phase 5 closes those two arrows at fixed $p_m$:
+
+$$
+\Omega_i(M,p_m)=\int W_i(q,m;M,p_m)\,dF(q,m)
+\longrightarrow
+x_i^*(M,p_m)
+=
+\left[\frac{\beta a_i\Omega_i(M,p_m)}{\kappa}\right]^{1/\nu}.
+$$
+
+The common advancement control precedes project draws and route choice. The
+reform makes no direct change to $a_i$, $\kappa$, $\nu$ or $C_X$.
 
 Phase 2 supplies only the policy-invariant value kernel
 
@@ -207,7 +238,7 @@ $$
 
 This prevents ex post observed $E$ assignment from being written before $x_i$.
 
-## 8. Forbidden arrows and identities
+## 9. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -236,8 +267,12 @@ This prevents ex post observed $E$ assignment from being written before $x_i$.
 | finite $k^*$ asserted at $M=0$ | $\tau_E(0)=+\infty$ makes $E$ unavailable; the finite cutoff theorem is a finite-wedge result |
 | $\partial k^*/\partial p_m$ treated as an equilibrium derivative | Phase 4 holds conjectured $p_m$ fixed; equilibrium feedback begins in Phase 6 |
 | $M$ differentiated as continuous | binary policy effects require finite comparisons; only the structural finite-wedge argument $\tau_E$ has a local derivative |
+| $M\to x_i^*$ outside $\Omega_i$ | Phase 5 permits only the anticipated route-value channel |
+| $k_i\to a_ix_i$ or $k_i\to C_X(x_i)$ | manufacturing capability affects project value through route organization, not advancement technology |
+| $C_R\equiv C_X$ in the baseline notation | the unified advancement-cost notation is $C_X$ |
+| $B_i$ or $K_i$ treated as recursive states | they are appendix-only value-gap accounting auxiliaries |
 
-## 9. Update rule
+## 10. Update rule
 
 Before any later Phase writes a formula, it must:
 

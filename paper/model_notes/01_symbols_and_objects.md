@@ -1,6 +1,6 @@
 # 01 Symbols and Objects
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - IN PROGRESS`  
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED`  
 Controlling specification: `paper/model_rebuild/spec/MAH_model_rebuild_effective_spec_v1.2.md`  
 Effective-spec SHA256: `855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666`
 
@@ -34,7 +34,7 @@ Subscripts $i,j$ and route labels $I,E,T,A$ are syntactic labels rather than sep
 
 One decision cohort is the project-planning time unit. Phase 2 defines product-output and within-period monetary units; Phase 3 technology costs use those same units.
 
-## 3. Active object registry through Phase 4
+## 3. Active object registry through Phase 5
 
 | Symbol | Exact category | Definition | Domain / units | First formal use | Direct MAH shift? |
 |---|---|---|---|---|---|
@@ -90,8 +90,14 @@ One decision cohort is the project-planning time unit. Phase 2 defines product-o
 | $W_i(q,m;M,p_m)$ | endogenous route-level object | optimized deterministic route value, the maximum over $I,E,T,A$ | $\mathsf{C}$ per project | Phase 4 | Indirect through the $E$ wedge only |
 | $\Delta_{IE}(k_i;q,m,M,p_m)$ | endogenous route-level object | internal-minus-entrusted value gap holding $q,m,M,p_m$ fixed | $\mathsf{C}$ per project | Phase 4 | Indirect through $W_i^E$ |
 | $k^*(q,m;p_m,M)$ | endogenous route-level object | unique conditional $I/E$ capability cutoff when finite-wedge crossing conditions hold | $\mathsf{K}$ | Phase 4 | Indirect through $\tau_E(M)$; no finite cutoff at $\tau_E=+\infty$ |
+| $\kappa$ | primitive parameter | scale of project-advancement cost | $\kappa>0$, units $\mathsf{C}/\mathsf{X}^{1+\nu}$ | Phase 5 | No |
+| $\nu$ | primitive parameter | curvature of project-advancement cost | $\nu>0$, unit $1$; $\nu=1$ is quadratic | Phase 5 | No |
+| $C_X(x_i)$ | primitive parameter | project-advancement cost function | $\mathsf{C}$ per developer and decision cohort | Phase 5 | No |
+| $x_i^*(M,p_m)$ | endogenous firm-level object | unique optimal common project-advancement intensity at a fixed conjectured CMO price | $\mathsf{X}$ | Phase 5 | Indirect only through $\Omega_i$ |
+| $B_i$ | endogenous firm-level object | appendix-only continuation-value accounting benchmark before one additional viable project reaches route planning | $\mathsf{C}/\mathsf{P}$ | Phase 5 value-gap interpretation | Indirect only through the downstream comparison; not a state |
+| $K_i$ | endogenous firm-level object | appendix-only value accounting benchmark after that project reaches route planning, $K_i=B_i+\Omega_i$ | $\mathsf{C}/\mathsf{P}$ | Phase 5 value-gap interpretation | Indirect only through $\Omega_i$; not a state |
 
-There are 52 active rows. Each has one and only one exact category.
+There are 58 active rows. Each has one and only one exact category.
 
 ## 4. Definitional identities active in Phase 1
 
@@ -148,4 +154,9 @@ Patent history may later proxy predetermined $a_i$; it is not equal to $x_i$ or 
 
 ## 7. Reserved names requiring future updates
 
-Demand, product pricing, operating value, manufacturing technologies, route values, deterministic choice and the conditional organizational cutoff are active through Phase 4. Future objects still reserved include project-advancement cost $C_X$, CMO capacity $s_j$, aggregate CMO supply/demand, and proposition-specific aggregates. Each must be added here with one category and units immediately before its first formula in an authorized later Phase.
+Demand, product pricing, operating value, manufacturing technologies, route
+values, deterministic choice, the conditional organizational cutoff and the
+common project-advancement problem are active through Phase 5. Future objects
+still reserved include CMO capacity $s_j$, aggregate CMO supply/demand, and
+proposition-specific aggregates. Each must be added here with one category and
+units immediately before its first formula in an authorized later Phase.

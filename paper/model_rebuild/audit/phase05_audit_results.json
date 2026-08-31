@@ -1,0 +1,610 @@
+{
+    "phase":  5,
+    "expected_status":  "APPROVED",
+    "status":  "APPROVED",
+    "generated_at":  "2026-08-31T10:18:20.6889455+08:00",
+    "passed":  120,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "id":  "P05-HASH-BASE",
+                       "passed":  true,
+                       "evidence":  "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+                   },
+                   {
+                       "id":  "P05-HASH-AMD11",
+                       "passed":  true,
+                       "evidence":  "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+                   },
+                   {
+                       "id":  "P05-HASH-AMD12-IMAGE",
+                       "passed":  true,
+                       "evidence":  "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+                   },
+                   {
+                       "id":  "P05-HASH-AMD12-TEXT",
+                       "passed":  true,
+                       "evidence":  "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+                   },
+                   {
+                       "id":  "P05-HASH-EFFECTIVE",
+                       "passed":  true,
+                       "evidence":  "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+                   },
+                   {
+                       "id":  "P05-GIT-BRANCH",
+                       "passed":  true,
+                       "evidence":  "branch=codex/mah-model-rebuild"
+                   },
+                   {
+                       "id":  "P05-GIT-ENTRY-COMMIT",
+                       "passed":  true,
+                       "evidence":  "head=b2e865f6a64807afbadc89bdec7b6edc659957fc"
+                   },
+                   {
+                       "id":  "P05-GIT-REMOTE-TRACKING",
+                       "passed":  true,
+                       "evidence":  "remote=b2e865f6a64807afbadc89bdec7b6edc659957fc"
+                   },
+                   {
+                       "id":  "P05-MANUSCRIPT-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "changed="
+                   },
+                   {
+                       "id":  "P05-ZIP-ISOLATED",
+                       "passed":  true,
+                       "evidence":  "count=0"
+                   },
+                   {
+                       "id":  "P05-FILE-05_rd_problem.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\05_rd_problem.tex"
+                   },
+                   {
+                       "id":  "P05-FILE-phase05_preflight.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase05_preflight.md"
+                   },
+                   {
+                       "id":  "P05-FILE-phase05_independent_derivation.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase05_independent_derivation.md"
+                   },
+                   {
+                       "id":  "P05-FILE-phase05_compile_wrapper.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase05_compile_wrapper.tex"
+                   },
+                   {
+                       "id":  "P05-FILE-phase05_compile_console.txt",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase05_compile_console.txt"
+                   },
+                   {
+                       "id":  "P05-FILE-phase05_compile_wrapper.log",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase05\\phase05_compile_wrapper.log"
+                   },
+                   {
+                       "id":  "P05-FILE-phase05_compile_wrapper.pdf",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase05\\phase05_compile_wrapper.pdf"
+                   },
+                   {
+                       "id":  "P05-FILE-01_symbols_and_objects.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\01_symbols_and_objects.md"
+                   },
+                   {
+                       "id":  "P05-FILE-02_equation_dependency_map.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\02_equation_dependency_map.md"
+                   },
+                   {
+                       "id":  "P05-FILE-03_assumptions_and_scope.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\03_assumptions_and_scope.md"
+                   },
+                   {
+                       "id":  "P05-FILE-04_proposition_checklist.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\04_proposition_checklist.md"
+                   },
+                   {
+                       "id":  "P05-STATE-PHASE4",
+                       "passed":  true,
+                       "evidence":  "Phase 4 approved"
+                   },
+                   {
+                       "id":  "P05-STATE-PHASE5",
+                       "passed":  true,
+                       "evidence":  "expected=| 5 Project advancement | APPROVED |"
+                   },
+                   {
+                       "id":  "P05-STATE-PHASE6",
+                       "passed":  true,
+                       "evidence":  "Phase 6 not started"
+                   },
+                   {
+                       "id":  "P05-GOVERNANCE",
+                       "passed":  true,
+                       "evidence":  "standing authorization present"
+                   },
+                   {
+                       "id":  "P05-MATRIX-P05-D01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P05-MATRIX-P05-G01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P05-FORMAL-B2575E80",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p05-planned-intensity}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-F15608A0",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p05-advancement-cost}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-54D3EEF8",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p05-expected-value}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-F3F4653E",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p05-advancement-objective}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-E6E35E8C",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p05-kkt}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-AFFFD94A",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p05-foc}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-AFFFD695",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p05-soc}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-6DA85BAD",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p05-optimal-advancement}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-217CFF23",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p05-binary-channel}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-36597C5A",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p05-value-gap}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-C6798B49",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p05-value-gap-foc}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-27C63F2F",
+                       "passed":  true,
+                       "evidence":  "required=\\lambda_i^{\\mathrm{plan}}=a_ix_i"
+                   },
+                   {
+                       "id":  "P05-FORMAL-75A5E403",
+                       "passed":  true,
+                       "evidence":  "required=C_X(x_i)"
+                   },
+                   {
+                       "id":  "P05-FORMAL-70B8734F",
+                       "passed":  true,
+                       "evidence":  "required=\\frac{\\kappa}{1+\\nu}x_i^{1+\\nu}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-F98D5211",
+                       "passed":  true,
+                       "evidence":  "required=\\Omega_i(M,p_m)"
+                   },
+                   {
+                       "id":  "P05-FORMAL-546FDB16",
+                       "passed":  true,
+                       "evidence":  "required=\\mathbb E_F"
+                   },
+                   {
+                       "id":  "P05-FORMAL-5C4C546E",
+                       "passed":  true,
+                       "evidence":  "required=\\max_{x_i\\geq0}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-CD86566A",
+                       "passed":  true,
+                       "evidence":  "required=\\kappa x_i^\\nu-\\beta a_i\\Omega_i(M,p_m)\\geq0"
+                   },
+                   {
+                       "id":  "P05-FORMAL-44CED6F2",
+                       "passed":  true,
+                       "evidence":  "required=-\\kappa\\nu x_i^{\\nu-1}\u003c0"
+                   },
+                   {
+                       "id":  "P05-FORMAL-7D30408A",
+                       "passed":  true,
+                       "evidence":  "required=\\frac{\\beta a_i}{\\kappa}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-BA89D5F2",
+                       "passed":  true,
+                       "evidence":  "required=\\Omega_i(1,p_m)-\\Omega_i(0,p_m)"
+                   },
+                   {
+                       "id":  "P05-FORMAL-4BEC5A67",
+                       "passed":  true,
+                       "evidence":  "required=\\frac{\\partial x_i^*}{\\partial\\Omega_i}"
+                   },
+                   {
+                       "id":  "P05-FORMAL-30EA07F8",
+                       "passed":  true,
+                       "evidence":  "required=K_i-B_i=\\Omega_i"
+                   },
+                   {
+                       "id":  "P05-FORMAL-FB72A3BC",
+                       "passed":  true,
+                       "evidence":  "required=C_X\u0027(x_i)"
+                   },
+                   {
+                       "id":  "P05-FORMAL-B001A376",
+                       "passed":  true,
+                       "evidence":  "required=MAH affects"
+                   },
+                   {
+                       "id":  "P05-FORMAL-D8ADC8A5",
+                       "passed":  true,
+                       "evidence":  "required=only through \\(\\Omega_i\\)"
+                   },
+                   {
+                       "id":  "P05-FORMAL-9299AD03",
+                       "passed":  true,
+                       "evidence":  "required=fixed-price result"
+                   },
+                   {
+                       "id":  "P05-FORMAL-C5B99C1A",
+                       "passed":  true,
+                       "evidence":  "required=not a derivative with respect to \\(M\\)"
+                   },
+                   {
+                       "id":  "P05-FORBID-82F6707C",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)\\blogit\\b match="
+                   },
+                   {
+                       "id":  "P05-FORBID-E5A8492E",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)inclusive\\s+value match="
+                   },
+                   {
+                       "id":  "P05-FORBID-8547A254",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\eta\\b match="
+                   },
+                   {
+                       "id":  "P05-FORBID-7ED2278E",
+                       "passed":  true,
+                       "evidence":  "pattern=x_i\\^R match="
+                   },
+                   {
+                       "id":  "P05-FORBID-EE985A74",
+                       "passed":  true,
+                       "evidence":  "pattern=x_i\\^D match="
+                   },
+                   {
+                       "id":  "P05-FORBID-F57D03F6",
+                       "passed":  true,
+                       "evidence":  "pattern=x_\\{i,\\s*g\\} match="
+                   },
+                   {
+                       "id":  "P05-FORBID-E923DB7C",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\Omega_\\{ig\\} match="
+                   },
+                   {
+                       "id":  "P05-FORBID-DA29FC96",
+                       "passed":  true,
+                       "evidence":  "pattern=C_R match="
+                   },
+                   {
+                       "id":  "P05-FORBID-4C3C6B2A",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\frac\\{\\\\partial[^}]*\\}\\{\\\\partial M\\} match="
+                   },
+                   {
+                       "id":  "P05-FORBID-2AA17302",
+                       "passed":  true,
+                       "evidence":  "pattern=D_m\\( match="
+                   },
+                   {
+                       "id":  "P05-FORBID-2AA1C351",
+                       "passed":  true,
+                       "evidence":  "pattern=S_m\\( match="
+                   },
+                   {
+                       "id":  "P05-FORBID-2AA14360",
+                       "passed":  true,
+                       "evidence":  "pattern=s_j\\^ match="
+                   },
+                   {
+                       "id":  "P05-FORBID-791432A3",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)representative\\s+household match="
+                   },
+                   {
+                       "id":  "P05-FORBID-0D621807",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)\\bentry\\b match="
+                   },
+                   {
+                       "id":  "P05-FORBID-25CEC871",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)\\bwelfare\\b match="
+                   },
+                   {
+                       "id":  "P05-FORBID-5C86E0FB",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)portfolio\\s+dynamics match="
+                   },
+                   {
+                       "id":  "P05-XIG-NEGATIVE-BOUNDARY",
+                       "passed":  true,
+                       "evidence":  "occurrences=1"
+                   },
+                   {
+                       "id":  "P05-V12-CANONICAL-X",
+                       "passed":  true,
+                       "evidence":  "v1.2 definition"
+                   },
+                   {
+                       "id":  "P05-NO-PATENT-IMPLICATION",
+                       "passed":  true,
+                       "evidence":  "patent boundary only"
+                   },
+                   {
+                       "id":  "P05-NO-FINANCE-BLOCK",
+                       "passed":  true,
+                       "evidence":  "financial constraint excluded"
+                   },
+                   {
+                       "id":  "P05-COMMON-CONTROL",
+                       "passed":  true,
+                       "evidence":  "single x_i"
+                   },
+                   {
+                       "id":  "P05-COST-UNIFIED",
+                       "passed":  true,
+                       "evidence":  "C_X only"
+                   },
+                   {
+                       "id":  "P05-OMEGA-NONNEGATIVE",
+                       "passed":  true,
+                       "evidence":  "abandonment bound"
+                   },
+                   {
+                       "id":  "P05-KKT-CORNER",
+                       "passed":  true,
+                       "evidence":  "corner/interior split"
+                   },
+                   {
+                       "id":  "P05-CONCAVITY-EXISTENCE",
+                       "passed":  true,
+                       "evidence":  "global optimizer"
+                   },
+                   {
+                       "id":  "P05-NU-ONE",
+                       "passed":  true,
+                       "evidence":  "mandatory nu=1 boundary"
+                   },
+                   {
+                       "id":  "P05-DIMENSIONS",
+                       "passed":  true,
+                       "evidence":  "cost and optimizer units"
+                   },
+                   {
+                       "id":  "P05-STRICT-CONDITION",
+                       "passed":  true,
+                       "evidence":  "strict and zero-effect cases"
+                   },
+                   {
+                       "id":  "P05-FIXED-VS-EQUILIBRIUM",
+                       "passed":  true,
+                       "evidence":  "price boundary"
+                   },
+                   {
+                       "id":  "P05-ONLY-OMEGA-CHANNEL",
+                       "passed":  true,
+                       "evidence":  "only expected value channel"
+                   },
+                   {
+                       "id":  "P05-K-ROLE",
+                       "passed":  true,
+                       "evidence":  "manufacturing capability boundary"
+                   },
+                   {
+                       "id":  "P05-GAP-NONRECURSIVE",
+                       "passed":  true,
+                       "evidence":  "appendix value gap only"
+                   },
+                   {
+                       "id":  "P05-SYMBOL-ACTIVE-COUNT",
+                       "passed":  true,
+                       "evidence":  "58 active objects"
+                   },
+                   {
+                       "id":  "P05-SYMBOL-FB8B0177",
+                       "passed":  true,
+                       "evidence":  "required=| $\\kappa$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P05-SYMBOL-D56285F7",
+                       "passed":  true,
+                       "evidence":  "required=| $\\nu$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P05-SYMBOL-FB292E97",
+                       "passed":  true,
+                       "evidence":  "required=| $C_X(x_i)$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P05-SYMBOL-3EC7819B",
+                       "passed":  true,
+                       "evidence":  "required=| $x_i^*(M,p_m)$ | endogenous firm-level object |"
+                   },
+                   {
+                       "id":  "P05-SYMBOL-C1AB3733",
+                       "passed":  true,
+                       "evidence":  "required=| $B_i$ | endogenous firm-level object |"
+                   },
+                   {
+                       "id":  "P05-SYMBOL-9E328780",
+                       "passed":  true,
+                       "evidence":  "required=| $K_i$ | endogenous firm-level object |"
+                   },
+                   {
+                       "id":  "P05-ASSUMPTION-A-P05-COST-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P05-COST-01"
+                   },
+                   {
+                       "id":  "P05-ASSUMPTION-A-P05-VALUE-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P05-VALUE-01"
+                   },
+                   {
+                       "id":  "P05-ASSUMPTION-A-P05-TIME-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P05-TIME-01"
+                   },
+                   {
+                       "id":  "P05-ASSUMPTION-A-P05-CHANNEL-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P05-CHANNEL-01"
+                   },
+                   {
+                       "id":  "P05-ASSUMPTION-A-P05-GAP-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P05-GAP-01"
+                   },
+                   {
+                       "id":  "P05-DEPENDENCY-P05-E01",
+                       "passed":  true,
+                       "evidence":  "required=P05-E01"
+                   },
+                   {
+                       "id":  "P05-DEPENDENCY-P05-E02",
+                       "passed":  true,
+                       "evidence":  "required=P05-E02"
+                   },
+                   {
+                       "id":  "P05-DEPENDENCY-P05-E03",
+                       "passed":  true,
+                       "evidence":  "required=P05-E03"
+                   },
+                   {
+                       "id":  "P05-DEPENDENCY-P05-E04",
+                       "passed":  true,
+                       "evidence":  "required=P05-E04"
+                   },
+                   {
+                       "id":  "P05-DEPENDENCY-P05-E05",
+                       "passed":  true,
+                       "evidence":  "required=P05-E05"
+                   },
+                   {
+                       "id":  "P05-DEPENDENCY-P05-E06",
+                       "passed":  true,
+                       "evidence":  "required=P05-E06"
+                   },
+                   {
+                       "id":  "P05-DEPENDENCY-P05-E07",
+                       "passed":  true,
+                       "evidence":  "required=P05-E07"
+                   },
+                   {
+                       "id":  "P05-DEPENDENCY-P05-E08",
+                       "passed":  true,
+                       "evidence":  "required=P05-E08"
+                   },
+                   {
+                       "id":  "P05-DEPENDENCY-P05-E09",
+                       "passed":  true,
+                       "evidence":  "required=P05-E09"
+                   },
+                   {
+                       "id":  "P05-DEPENDENCY-FEEDBACK-DEFERRED",
+                       "passed":  true,
+                       "evidence":  "CMO feedback open"
+                   },
+                   {
+                       "id":  "P05-PROPOSITION-SCOPE",
+                       "passed":  true,
+                       "evidence":  "Phase 8 finalization deferred"
+                   },
+                   {
+                       "id":  "P05-PROPOSITION-ZERO-EFFECT",
+                       "passed":  true,
+                       "evidence":  "zero case listed"
+                   },
+                   {
+                       "id":  "P05-INDEPENDENT-REVIEW",
+                       "passed":  true,
+                       "evidence":  "independent review complete"
+                   },
+                   {
+                       "id":  "P05-OPEN-ISSUES-NO-CURRENT-P0",
+                       "passed":  true,
+                       "evidence":  "no Phase 5 P0"
+                   },
+                   {
+                       "id":  "P05-LABEL-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "duplicates="
+                   },
+                   {
+                       "id":  "P05-LATEX-FATAL",
+                       "passed":  true,
+                       "evidence":  "fatal="
+                   },
+                   {
+                       "id":  "P05-LATEX-BOXES",
+                       "passed":  true,
+                       "evidence":  "box_warnings=0"
+                   },
+                   {
+                       "id":  "P05-UTF8-CONTROL",
+                       "passed":  true,
+                       "evidence":  "bad="
+                   },
+                   {
+                       "id":  "P05-SCOPE-EXACT",
+                       "passed":  true,
+                       "evidence":  "unexpected="
+                   },
+                   {
+                       "id":  "P05-GATE-REPORT-IDS",
+                       "passed":  true,
+                       "evidence":  "missing="
+                   },
+                   {
+                       "id":  "P05-GATE-REPORT-RESULT",
+                       "passed":  true,
+                       "evidence":  "gate PASS and zero P0"
+                   }
+               ]
+}
