@@ -1,6 +1,6 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED`
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED`
 
 This file records assumptions needed through the current phase. It does not impose the signs of later propositions. Technology, route-choice, project-advancement, market-regularity and equilibrium comparative-static assumptions must be added in their authorized phases before use.
 
@@ -557,3 +557,16 @@ $F_g$. No observed-outcome formula feeds back into route choice or advancement.
 No Phase 8 assumption states the proposition conclusion. Strict effects are
 reported only when their stated positive-measure or positive-demand condition
 holds; otherwise the corresponding effect may be zero.
+
+## T. Phase 9 outcome-boundary assumption use
+
+Phase 9 adds no primitive or regularity assumption. It reuses A-P01-PROJ-03,
+A-P01-PROJ-04, A-P01-TIME-01 through A-P01-TIME-03, A-P05-TIME-01 and
+A-P08-OBS-01 to keep advancement, project draws, route assignment and
+realization in their approved order.
+
+The statements that a proxy requires a measurement audit and that approval
+data do not separately identify every primitive are limitations, not model
+assumptions. Patent applications remain outside the baseline endogenous
+outcome even when patent history is later considered as a proxy for
+predetermined capability.

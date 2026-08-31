@@ -1,7 +1,7 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED`  
-This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement, the Phase 6 CMO market, the Phase 7 partial-equilibrium definition and the Phase 8 proposition stack. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED`  
+This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement, the Phase 6 CMO market, the Phase 7 partial-equilibrium definition, the Phase 8 proposition stack and the Phase 9 outcome boundary. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
 
 ## 1. Phase 1 definition ledger
 
@@ -147,7 +147,21 @@ The novelty result is one corollary of the MAH-relevant-set identity, not a
 seventh substantive proposition. The proposition stack adds no new market or
 choice control.
 
-## 9. Causal and timing order
+## 9. Phase 9 outcome-boundary ledger
+
+| ID / LaTeX label | Object/result | Inputs already defined | Mathematical status | Proof / scope obligation |
+|---|---|---|---|---|
+| P09-E01 / eq:p09-outcome-hierarchy | upstream research, project advancement, route organization and realized product are distinct | Phase 1 timing; Phase 8 outcomes | interpretation boundary | no equality or reverse timing |
+| P09-E02 / eq:p09-anticipated-chain | $M\to E$ availability/value $\to\Omega_i\to x_i$ | Phase 1 and Phase 5 | causal timing interface | anticipation precedes advancement |
+| P09-E03 / eq:p09-realized-chain | $x_i\to\Lambda_i^{plan}\to r_i^*\to$ observed separation $\to$ realized products | Phase 8 outcomes | realized timing interface | observed separation cannot cause prior $x_i$ |
+| P09-E04 / eq:p09-type-mixture | type-specific outcomes use common $x_i$ and $\rho_gF_g$ | P08-E17 | measurement identity | no $x_{ig}$ control or novelty ranking |
+| P09-E05 / eq:p09-identification-boundary | approval-side outcomes discipline composites, not each primitive separately | P08-E14--P08-E18 | identification limitation | no primitive-by-primitive claim |
+
+Phase 9 adds no FOC, derivative, control, state or market-clearing equation.
+It preserves the Phase 8 outcome formulas and states what they can and cannot
+mean empirically.
+
+## 10. Causal and timing order
 
 ```text
 Predetermined distributions and characteristics
@@ -307,7 +321,7 @@ $$
 
 This prevents ex post observed $E$ assignment from being written before $x_i$.
 
-## 12. Forbidden arrows and identities
+## 13. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -346,7 +360,7 @@ This prevents ex post observed $E$ assignment from being written before $x_i$.
 | $p_m^*$ selected before evaluating $r_i^*$ and $x_i^*$ | the price is the fixed point of their induced demand and supplier capacity |
 | a second market-clearing equation | Phase 6 closes only qualified manufacturing-service capacity |
 
-## 13. Update rule
+## 14. Update rule
 
 Before any later Phase writes a formula, it must:
 

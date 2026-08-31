@@ -1,0 +1,370 @@
+{
+    "phase":  9,
+    "expected_status":  "APPROVED",
+    "status":  "APPROVED",
+    "generated_at":  "2026-08-31T14:07:06.1532705+08:00",
+    "passed":  72,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "id":  "P09-HASH-BASE",
+                       "passed":  true,
+                       "evidence":  "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+                   },
+                   {
+                       "id":  "P09-HASH-AMD11",
+                       "passed":  true,
+                       "evidence":  "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+                   },
+                   {
+                       "id":  "P09-HASH-AMD12-IMAGE",
+                       "passed":  true,
+                       "evidence":  "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+                   },
+                   {
+                       "id":  "P09-HASH-AMD12-TEXT",
+                       "passed":  true,
+                       "evidence":  "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+                   },
+                   {
+                       "id":  "P09-HASH-EFFECTIVE",
+                       "passed":  true,
+                       "evidence":  "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+                   },
+                   {
+                       "id":  "P09-GIT-BRANCH",
+                       "passed":  true,
+                       "evidence":  "branch=codex/mah-model-rebuild"
+                   },
+                   {
+                       "id":  "P09-GIT-ENTRY",
+                       "passed":  true,
+                       "evidence":  "head=894d436a5078220ab2f897a18d565cc18a6eda65"
+                   },
+                   {
+                       "id":  "P09-GIT-REMOTE",
+                       "passed":  true,
+                       "evidence":  "remote=894d436a5078220ab2f897a18d565cc18a6eda65"
+                   },
+                   {
+                       "id":  "P09-MANUSCRIPT-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "changed="
+                   },
+                   {
+                       "id":  "P09-ZIP-ISOLATED",
+                       "passed":  true,
+                       "evidence":  "count=0"
+                   },
+                   {
+                       "id":  "P09-FILE-09_observed_outcomes.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\09_observed_outcomes.tex"
+                   },
+                   {
+                       "id":  "P09-FILE-phase09_preflight.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase09_preflight.md"
+                   },
+                   {
+                       "id":  "P09-FILE-phase09_independent_boundary_audit.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase09_independent_boundary_audit.md"
+                   },
+                   {
+                       "id":  "P09-FILE-phase09_compile_wrapper.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase09_compile_wrapper.tex"
+                   },
+                   {
+                       "id":  "P09-FILE-phase09_compile_console.txt",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase09_compile_console.txt"
+                   },
+                   {
+                       "id":  "P09-FILE-phase09_compile_wrapper.log",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase09\\phase09_compile_wrapper.log"
+                   },
+                   {
+                       "id":  "P09-FILE-phase09_compile_wrapper.pdf",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase09\\phase09_compile_wrapper.pdf"
+                   },
+                   {
+                       "id":  "P09-FILE-01_symbols_and_objects.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\01_symbols_and_objects.md"
+                   },
+                   {
+                       "id":  "P09-FILE-02_equation_dependency_map.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\02_equation_dependency_map.md"
+                   },
+                   {
+                       "id":  "P09-FILE-03_assumptions_and_scope.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\03_assumptions_and_scope.md"
+                   },
+                   {
+                       "id":  "P09-STATE-PHASE8",
+                       "passed":  true,
+                       "evidence":  "Phase 8 approved"
+                   },
+                   {
+                       "id":  "P09-STATE-PHASE9",
+                       "passed":  true,
+                       "evidence":  "expected=| 9 Outcomes/data boundary | APPROVED |"
+                   },
+                   {
+                       "id":  "P09-STATE-PHASE10",
+                       "passed":  true,
+                       "evidence":  "Phase 10 not started"
+                   },
+                   {
+                       "id":  "P09-GOVERNANCE",
+                       "passed":  true,
+                       "evidence":  "standing authorization"
+                   },
+                   {
+                       "id":  "P09-MATRIX-P09-D01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P09-MATRIX-P09-G01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P09-LABEL-eq:p09-outcome-hierarchy",
+                       "passed":  true,
+                       "evidence":  "label=eq:p09-outcome-hierarchy"
+                   },
+                   {
+                       "id":  "P09-LABEL-eq:p09-anticipated-chain",
+                       "passed":  true,
+                       "evidence":  "label=eq:p09-anticipated-chain"
+                   },
+                   {
+                       "id":  "P09-LABEL-eq:p09-realized-chain",
+                       "passed":  true,
+                       "evidence":  "label=eq:p09-realized-chain"
+                   },
+                   {
+                       "id":  "P09-LABEL-eq:p09-type-mixture",
+                       "passed":  true,
+                       "evidence":  "label=eq:p09-type-mixture"
+                   },
+                   {
+                       "id":  "P09-LABEL-eq:p09-identification-boundary",
+                       "passed":  true,
+                       "evidence":  "label=eq:p09-identification-boundary"
+                   },
+                   {
+                       "id":  "P09-EXACT-LABELS",
+                       "passed":  true,
+                       "evidence":  "count=5"
+                   },
+                   {
+                       "id":  "P09-FORMAL-7B4D3A1C",
+                       "passed":  true,
+                       "evidence":  "required=upstream research"
+                   },
+                   {
+                       "id":  "P09-FORMAL-731F050D",
+                       "passed":  true,
+                       "evidence":  "required=project advancement"
+                   },
+                   {
+                       "id":  "P09-FORMAL-DE186A25",
+                       "passed":  true,
+                       "evidence":  "required=commercialization organization"
+                   },
+                   {
+                       "id":  "P09-FORMAL-879BAFAB",
+                       "passed":  true,
+                       "evidence":  "required=realized product"
+                   },
+                   {
+                       "id":  "P09-FORMAL-5BC53D1C",
+                       "passed":  true,
+                       "evidence":  "required=anticipated availability and value of }E"
+                   },
+                   {
+                       "id":  "P09-FORMAL-D5B36D0C",
+                       "passed":  true,
+                       "evidence":  "required=observed holder--producer separation"
+                   },
+                   {
+                       "id":  "P09-FORMAL-9D8AFB29",
+                       "passed":  true,
+                       "evidence":  "required=\\rho_g"
+                   },
+                   {
+                       "id":  "P09-FORMAL-78DD1DCB",
+                       "passed":  true,
+                       "evidence":  "required=dF_g(q,m)"
+                   },
+                   {
+                       "id":  "P09-FORMAL-9B42A2F6",
+                       "passed":  true,
+                       "evidence":  "required=does not create a control \\(x_{ig}\\)"
+                   },
+                   {
+                       "id":  "P09-FORMAL-77F77537",
+                       "passed":  true,
+                       "evidence":  "required=Patent applications proxy upstream research"
+                   },
+                   {
+                       "id":  "P09-FORMAL-C6BB06CC",
+                       "passed":  true,
+                       "evidence":  "required=does not by itself falsify"
+                   },
+                   {
+                       "id":  "P09-FORMAL-EBDAAF09",
+                       "passed":  true,
+                       "evidence":  "required=only after a"
+                   },
+                   {
+                       "id":  "P09-FORMAL-EA1C3BAF",
+                       "passed":  true,
+                       "evidence":  "required=measurement audit"
+                   },
+                   {
+                       "id":  "P09-FORMAL-7761C218",
+                       "passed":  true,
+                       "evidence":  "required=do not separately identify"
+                   },
+                   {
+                       "id":  "P09-FORMAL-34A0863F",
+                       "passed":  true,
+                       "evidence":  "required=primitive-by-primitive empirical"
+                   },
+                   {
+                       "id":  "P09-FORMAL-3150FA3C",
+                       "passed":  true,
+                       "evidence":  "required=policy invariant"
+                   },
+                   {
+                       "id":  "P09-FORMAL-281EDE88",
+                       "passed":  true,
+                       "evidence":  "required=No empirical data set or"
+                   },
+                   {
+                       "id":  "P09-FORMAL-4AF28294",
+                       "passed":  true,
+                       "evidence":  "required=proxy is asserted to be available"
+                   },
+                   {
+                       "id":  "P09-FORBID-8547A254",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\eta\\b match="
+                   },
+                   {
+                       "id":  "P09-FORBID-67E235A7",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\frac\\{\\\\exp\\{ match="
+                   },
+                   {
+                       "id":  "P09-FORBID-F62084A7",
+                       "passed":  true,
+                       "evidence":  "pattern=inclusive\\s+value\\s*= match="
+                   },
+                   {
+                       "id":  "P09-FORBID-9DD6500B",
+                       "passed":  true,
+                       "evidence":  "pattern=x_\\{ig\\}\\s*= match="
+                   },
+                   {
+                       "id":  "P09-FORBID-030159FD",
+                       "passed":  true,
+                       "evidence":  "pattern=s_g\\(q;M\\) match="
+                   },
+                   {
+                       "id":  "P09-FORBID-02EAB342",
+                       "passed":  true,
+                       "evidence":  "pattern=PatentApplications\\s*\\\\uparrow match="
+                   },
+                   {
+                       "id":  "P09-FORBID-BD8D2602",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\partial\\s+M match="
+                   },
+                   {
+                       "id":  "P09-NO-NEW-SYMBOL",
+                       "passed":  true,
+                       "evidence":  "registry remains 83 rows"
+                   },
+                   {
+                       "id":  "P09-DEPENDENCY-P09-E01",
+                       "passed":  true,
+                       "evidence":  "required=P09-E01"
+                   },
+                   {
+                       "id":  "P09-DEPENDENCY-P09-E02",
+                       "passed":  true,
+                       "evidence":  "required=P09-E02"
+                   },
+                   {
+                       "id":  "P09-DEPENDENCY-P09-E03",
+                       "passed":  true,
+                       "evidence":  "required=P09-E03"
+                   },
+                   {
+                       "id":  "P09-DEPENDENCY-P09-E04",
+                       "passed":  true,
+                       "evidence":  "required=P09-E04"
+                   },
+                   {
+                       "id":  "P09-DEPENDENCY-P09-E05",
+                       "passed":  true,
+                       "evidence":  "required=P09-E05"
+                   },
+                   {
+                       "id":  "P09-NO-NEW-ASSUMPTION",
+                       "passed":  true,
+                       "evidence":  "interpretation boundary only"
+                   },
+                   {
+                       "id":  "P09-INDEPENDENT",
+                       "passed":  true,
+                       "evidence":  "independent boundary audit"
+                   },
+                   {
+                       "id":  "P09-NO-P0",
+                       "passed":  true,
+                       "evidence":  "no Phase 9 P0"
+                   },
+                   {
+                       "id":  "P09-LABEL-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "duplicates="
+                   },
+                   {
+                       "id":  "P09-LATEX-FATAL",
+                       "passed":  true,
+                       "evidence":  "fatal="
+                   },
+                   {
+                       "id":  "P09-LATEX-BOXES",
+                       "passed":  true,
+                       "evidence":  "box_warnings=0"
+                   },
+                   {
+                       "id":  "P09-SCOPE-EXACT",
+                       "passed":  true,
+                       "evidence":  "unexpected="
+                   },
+                   {
+                       "id":  "P09-GATE-IDS",
+                       "passed":  true,
+                       "evidence":  "missing="
+                   },
+                   {
+                       "id":  "P09-GATE-RESULT",
+                       "passed":  true,
+                       "evidence":  "gate PASS"
+                   }
+               ]
+}

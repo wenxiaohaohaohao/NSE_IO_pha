@@ -73,3 +73,11 @@ audit/phase08_compile_console.txt -text
 audit/phase08_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
 audit/phase08_compile_wrapper.tex -text
 scripts/audit_phase08.ps1 -text
+
+# Phase 9 hash-protected artifacts.
+09_observed_outcomes.tex -text
+audit/phase09_gate_report.md -text
+audit/phase09_compile_console.txt -text
+audit/phase09_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
+audit/phase09_compile_wrapper.tex -text
+scripts/audit_phase09.ps1 -text

@@ -40,7 +40,7 @@ Legal transition:
 | 6 CMO equilibrium | APPROVED | `06_cmo_supply_demand_equilibrium.tex` | `audit/phase06_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 7 Equilibrium definition | APPROVED | `07_equilibrium_definition.tex` | `audit/phase07_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 8 Six propositions + corollary | APPROVED | `08_required_propositions.tex`; proposition checklist | `audit/phase08_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
-| 9 Outcomes/data boundary | NOT STARTED | `09_observed_outcomes.tex` | — | No |
+| 9 Outcomes/data boundary | APPROVED | `09_observed_outcomes.tex` | `audit/phase09_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 10 Empirical mapping | NOT STARTED | `10_empirical_mapping.tex` | — | No |
 | 11 Extensions | NOT STARTED | `11_extensions_not_baseline.tex` | — | No |
 | 12 Old-to-new crosswalk | NOT STARTED | `05_old_to_new_model_crosswalk.md` | — | No |
