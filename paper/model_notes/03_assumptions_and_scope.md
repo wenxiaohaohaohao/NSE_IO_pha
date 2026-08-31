@@ -1,6 +1,6 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED`
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED`
 
 This file records assumptions needed through the current phase. It does not impose the signs of later propositions. Technology, route-choice, project-advancement, market-regularity and equilibrium comparative-static assumptions must be added in their authorized phases before use.
 
@@ -417,3 +417,84 @@ Used by: the value-gap interpretation of the advancement FOC.
 
 No assumption states that MAH raises patent applications, upstream research,
 breakthrough innovation or every developer's advancement intensity.
+
+## O. Phase 6 CMO-market assumptions
+
+### A-P06-SUPPLY-01 - Convex qualified-capacity technology
+
+For every fixed supplier efficiency $z_j$, the cost
+$\Psi(s_j;z_j)$ is twice continuously differentiable on $s_j\geq0$ and
+satisfies
+
+$$
+\Psi(0;z_j)=0,\qquad
+\Psi_s(0;z_j)=0,
+$$
+
+$$
+\Psi_s(s_j;z_j)>0\ \text{for }s_j>0,\qquad
+\Psi_{ss}(s_j;z_j)>0,\qquad
+\Psi_{sz}(s_j;z_j)<0,
+$$
+
+and $\Psi_s(s_j;z_j)\to+\infty$ as $s_j\to+\infty$.
+The distribution $H_C(z)$ is exogenous and invariant to $M$.
+
+Used by: supplier FOC/SOC, capacity response, aggregate supply continuity,
+strict monotonicity and the high-price boundary.
+
+### A-P06-BACKGROUND-01 - Background CMO demand
+
+The exogenous background-demand function $D_m^B(p_m)$ is finite,
+continuous, nonnegative and weakly decreasing on $p_m\geq0$. It satisfies
+
+$$
+D_m^B(0)>0,\qquad
+\lim_{p_m\to\infty}D_m^B(p_m)=0.
+$$
+
+This demand is outside the modeled study cohort and permits a positive CMO
+market before MAH. It is not shifted directly by $M$.
+
+Used by: total-demand definition and the low/high-price existence boundaries.
+
+### A-P06-AGG-01 - Atomless aggregation of deterministic route choice
+
+For every finite $p_m$ and $M$, the joint distribution of developer and
+project heterogeneity assigns zero mass to ties between route $E$ and its best
+alternative. The route values are continuous in $p_m$, and the family
+$a_ix_i^*(M,p_m)b(m)$ is dominated on compact price intervals by an
+integrable envelope under $H(a,k)F(q,m)$. The relevant first moments of
+$a_i$, $x_i^*$ and $b(m)$ are finite.
+
+Used by: almost-everywhere indicator convergence, dominated convergence and
+continuity of aggregate study demand.
+
+### A-P06-PRICE-01 - Price taking and single-market closure
+
+Developers and qualified suppliers take a conjectured $p_m$ as given when
+choosing routes, advancement and capacity. The equilibrium price is selected
+only by qualified-capacity market clearing. The institutional regime changes
+neither $\Psi$, $H_C$ nor $D_m^B$ directly. No entry, labor, capital,
+product-market or welfare market is closed in Phase 6.
+
+Used by: scalar fixed-point solution order and the no-direct-price-channel
+audit.
+
+## P. Phase 6 assumption-use matrix
+
+| Result | Assumptions actually used |
+|---|---|
+| unique supplier capacity | A-P06-SUPPLY-01 |
+| upward-sloping individual and aggregate supply | A-P06-SUPPLY-01 |
+| entrusted capacity per planning-stage project | Phase 3 $b(m)>0$, Phase 4 deterministic route choice |
+| study-demand continuity | A-P04-CHOICE-01, A-P06-AGG-01 |
+| study demand weakly decreases in $p_m$ | Phase 4 route values, Phase 5 optimizer, $b(m)>0$ |
+| background-demand behavior | A-P06-BACKGROUND-01 |
+| market-clearing existence | A-P06-SUPPLY-01, A-P06-BACKGROUND-01, A-P06-AGG-01 |
+| market-clearing uniqueness | strictly increasing supply and weakly decreasing total demand |
+| scalar solution order | A-P06-PRICE-01 |
+
+The model does not assume that MAH lowers $p_m^*$, that supply shifts after
+MAH, or that aggregate route demand is continuous without atomless
+heterogeneity.

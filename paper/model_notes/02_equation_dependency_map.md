@@ -1,7 +1,7 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED`  
-This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting and the Phase 5 project-advancement problem. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED`  
+This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement and the Phase 6 CMO market. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
 
 ## 1. Phase 1 definition ledger
 
@@ -79,11 +79,33 @@ The binary policy comparison is not a derivative: $M=0$ sets $W_i^E=-\infty$, wh
 | P05-E08 / eq:p05-binary-channel | fixed-price binary reform affects $x_i^*$ only through $\Omega_i$ | Phase 4 binary value comparison; P05-E07 | finite comparison | no derivative with respect to $M$ |
 | P05-E09 / eq:p05-value-gap | $K_i-B_i=\Omega_i$ and $C_X'=\beta a_i(K_i-B_i)$ | P05-E05, appendix auxiliaries | accounting interpretation | no recursive state or scientific-productivity channel |
 
-The expected-value and optimization arrows are now active at a fixed
-conjectured $p_m$. Aggregate CMO demand, supply and the feedback that selects
-$p_m^*$ remain deferred to Phase 6.
+The expected-value and optimization arrows are active at a fixed conjectured
+$p_m$. Phase 6 now uses them inside the market-clearing map that selects
+$p_m^*$.
 
-## 6. Causal and timing order
+## 6. Phase 6 CMO-market ledger
+
+| ID / LaTeX label | Object/result | Inputs already defined | Mathematical status | Proof / scope obligation |
+|---|---|---|---|---|
+| P06-E01 / eq:p06-supplier-problem | $\max_{s_j\geq0}\{p_ms_j-\Psi(s_j;z_j)\}$ | $p_m,s_j,z_j,\Psi$ | supplier optimization | KKT/SOC and no entry margin |
+| P06-E02 / eq:p06-supplier-capacity | $p_m=\Psi_s(s_j^*;z_j)$ for $p_m>0$ | P06-E01 | optimization-derived capacity | unique solution; zero-price corner |
+| P06-E03 / eq:p06-capacity-derivatives | $s_{j,p}^*=1/\Psi_{ss}>0$, $s_{j,z}^*=-\Psi_{sz}/\Psi_{ss}>0$ | P06-E02 | IFT derivatives | fixed primitives and active supplier |
+| P06-E04 / eq:p06-aggregate-supply | $S_m(p_m)=\int s_j^*(p_m,z)\,dH_C(z)$ | P06-E03, $H_C$ | derived market aggregate | continuity, strict increase and units |
+| P06-E05 / eq:p06-entrusted-capacity | $\chi_i^E=\int b(m)1\{r_i^*=E\}\,dF$ | $b,F,r_i^*$ | derived expected capacity per project | deterministic indicator; zero ties |
+| P06-E06 / eq:p06-omega-price-envelope | $\Omega_{i,p_m}=-\chi_i^E\leq0$ almost everywhere | Phase 4 route value; P06-E05 | envelope derivative | fixed $M$ and zero-tie regularity |
+| P06-E07 / eq:p06-advancement-price-response | $x_{i,p_m}^*=-x_i^*\chi_i^E/(\nu\Omega_i)\leq0$ for $\Omega_i>0$ | Phase 5 optimizer; P06-E06 | chain-rule derivative | intensive advancement-price response |
+| P06-E08 / eq:p06-study-demand | $D_m^{\mathrm{MAH}}=\int a_ix_i^*\chi_i^E\,dH$ | P05 optimizer; P06-E05--P06-E07 | derived aggregate demand | both advancement and route responses |
+| P06-E09 / eq:p06-total-demand | $D_m=D_m^B+D_m^{\mathrm{MAH}}$ | P06-E08, background demand | derived total demand | continuity and weak decrease |
+| P06-E10 / eq:p06-market-clearing | $D_m(p_m^*;M)=S_m(p_m^*)$ | P06-E04, P06-E09 | scalar equilibrium condition | existence and uniqueness |
+| P06-E11 / eq:p06-existence-boundaries | demand exceeds supply at zero and supply dominates at high price | Phase 6 regularity | sufficient boundary result | IVT plus strict excess-demand decrease |
+
+The Phase 6 solution order is explicit: for a candidate $p_m$, evaluate route
+values and deterministic choices, integrate $\Omega_i$, compute $x_i^*$ and
+entrusted capacity demand, evaluate supplier capacity, and solve the one
+scalar clearing equation. This closes the CMO-price loop without closing any
+other market.
+
+## 7. Causal and timing order
 
 ```text
 Predetermined distributions and characteristics
@@ -126,17 +148,17 @@ Stage 4: downstream realization
   route and realization -> realized product outcome            [DEFERRED: Phase 9]
 
 Stage 5: manufacturing-service consistency
-  project mass + E-route choices -> aggregate CMO demand
-  supplier technology and z_j -> aggregate CMO supply
-  demand = supply -> p_m^*                                    [DEFERRED: Phase 6]
-  p_m^* feeds back to Omega_i, x_i, and route choice
+  project mass + E-route choices -> aggregate CMO demand        [DERIVED: Phase 6]
+  supplier technology and z_j -> aggregate CMO supply           [DERIVED: Phase 6]
+  demand = supply -> p_m^*                                    [SOLVED: Phase 6]
+  p_m^* feeds back to Omega_i, x_i, and route choice             [CLOSED: Phase 6]
 ```
 
 Stage 5 is a simultaneous consistency condition, not a later event developers fail to anticipate.
 
-## 7. Initial fixed-point dependency
+## 8. CMO fixed-point dependency
 
-The future equilibrium loop is identified but not solved in Phase 1:
+The CMO equilibrium loop is
 
 $$
 p_m^*
@@ -148,9 +170,13 @@ p_m^*
 p_m^*.
 $$
 
-Qualified supplier decisions create the supply side. Phase 6 must introduce capacity, cost, aggregate supply, aggregate demand, solution order, and sufficient regularity. Phase 1 makes no existence, uniqueness, or price-sign claim.
+Phase 6 closes this loop as a scalar market-clearing equation. At each
+candidate price, all right-hand-side choices are explicit functions of that
+price. Under the Phase 6 continuity, boundary and monotonicity conditions,
+the clearing price exists and is unique. No sign is imposed on the
+cross-regime change in $p_m^*$.
 
-## 8. Allowed direct and indirect arrows
+## 9. Allowed direct and indirect arrows
 
 The only allowed direct policy arrow is
 
@@ -220,7 +246,8 @@ $$
 \{W_i,r_i^*,\Delta_{IE},k^*\}.
 $$
 
-It does not close the equilibrium feedback from aggregate entrusted demand to $p_m^*$.
+Phase 6 closes the remaining feedback from aggregate entrusted demand and
+supplier capacity to $p_m^*$.
 
 The later realization chain is
 
@@ -238,7 +265,7 @@ $$
 
 This prevents ex post observed $E$ assignment from being written before $x_i$.
 
-## 9. Forbidden arrows and identities
+## 10. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -271,8 +298,13 @@ This prevents ex post observed $E$ assignment from being written before $x_i$.
 | $k_i\to a_ix_i$ or $k_i\to C_X(x_i)$ | manufacturing capability affects project value through route organization, not advancement technology |
 | $C_R\equiv C_X$ in the baseline notation | the unified advancement-cost notation is $C_X$ |
 | $B_i$ or $K_i$ treated as recursive states | they are appendix-only value-gap accounting auxiliaries |
+| individual deterministic route choice replaced by a smooth share | Phase 6 continuity comes from atomless aggregation, not logit smoothing |
+| $M\to S_m$ as a direct supply shift | CMO technology and supplier distribution are policy invariant |
+| $M\to D_m^B$ | background demand is exogenous and policy invariant |
+| $p_m^*$ selected before evaluating $r_i^*$ and $x_i^*$ | the price is the fixed point of their induced demand and supplier capacity |
+| a second market-clearing equation | Phase 6 closes only qualified manufacturing-service capacity |
 
-## 10. Update rule
+## 11. Update rule
 
 Before any later Phase writes a formula, it must:
 

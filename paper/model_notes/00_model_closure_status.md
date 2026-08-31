@@ -37,7 +37,7 @@ Legal transition:
 | 3 Technologies | APPROVED | `03_internal_external_technologies.tex` | — | Yes — `EXEC-GOV-001`, zero P0 |
 | 4 Routes/sorting | APPROVED | `04_route_values_and_sorting.tex` | `audit/phase04_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 5 Project advancement | APPROVED | `05_rd_problem.tex` | `audit/phase05_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
-| 6 CMO equilibrium | NOT STARTED | `06_cmo_supply_demand_equilibrium.tex` | — | No |
+| 6 CMO equilibrium | APPROVED | `06_cmo_supply_demand_equilibrium.tex` | `audit/phase06_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 7 Equilibrium definition | NOT STARTED | `07_equilibrium_definition.tex` | — | No |
 | 8 Six propositions + corollary | NOT STARTED | proposition checklist/modules | — | No |
 | 9 Outcomes/data boundary | NOT STARTED | `09_observed_outcomes.tex` | — | No |

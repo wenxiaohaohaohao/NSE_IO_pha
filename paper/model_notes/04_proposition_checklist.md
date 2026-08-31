@@ -1,6 +1,6 @@
 # 04 Proposition Checklist
 
-Phase status: PHASE 4 - APPROVED; PHASE 5 - APPROVED
+Phase status: PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED
 
 ## Draft P4-ORG - Organizational sorting
 
@@ -47,4 +47,33 @@ Phase status: PHASE 4 - APPROVED; PHASE 5 - APPROVED
   not project-arrival productivity or advancement cost.
 - Interpretation: \(K_i-B_i=\Omega_i\) is an appendix accounting identity, not
   a recursive state system.
+- P0 issues: none identified in the draft.
+
+## Draft P6-CMO - CMO market existence and uniqueness
+
+- Status: derivation draft for the Phase 6 gate; final proposition numbering
+  and proof audit are reserved for Phase 8.
+- Objects defined before statement:
+  \(s_j,\Psi,s_j^*,S_m,\chi_i^E,D_m^{\mathrm{MAH}},D_m^B,D_m,p_m^*\).
+- Assumptions used: A-P06-SUPPLY-01, A-P06-BACKGROUND-01,
+  A-P06-AGG-01 and A-P06-PRICE-01.
+- Supplier optimization: unique capacity follows from strict convexity; supply
+  rises with \(p_m\) and \(z_j\).
+- Study demand: contains both the advancement response through
+  \(\Omega_i\) and the deterministic route-selection response.
+- Deterministic aggregation: aggregate continuity follows from zero-mass ties,
+  continuous heterogeneity and dominated convergence, not logit smoothing.
+- Demand monotonicity: both \(x_i^*(M,p_m)\) and
+  \(\chi_i^E(p_m;M)\) are weakly decreasing in price.
+- Existence: demand exceeds supply at zero; demand vanishes and supply becomes
+  unbounded at high prices.
+- Uniqueness: total demand is weakly decreasing and aggregate supply strictly
+  increasing.
+- Solution order: all choices are explicit functions of a candidate price,
+  leaving one scalar clearing equation.
+- Pre-MAH boundary: study demand is zero but background demand supports the
+  CMO market.
+- Price interpretation: any cross-regime price change is endogenous; supply
+  technology is not shifted by policy.
+- Scope: no entry or second market-clearing condition.
 - P0 issues: none identified in the draft.
