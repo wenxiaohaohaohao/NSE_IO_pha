@@ -35,7 +35,7 @@ Legal transition:
 | 1 Objects/timing | APPROVED | `01_primitives_and_timing.tex` | — | Yes — explicit Phase 1 approval |
 | 2 Demand/profit | APPROVED | `02_demand_profit_derivation.tex` | — | Yes — `EXEC-GOV-001`, zero P0 |
 | 3 Technologies | APPROVED | `03_internal_external_technologies.tex` | — | Yes — `EXEC-GOV-001`, zero P0 |
-| 4 Routes/sorting | NOT STARTED | `04_route_values_and_sorting.tex` | — | No |
+| 4 Routes/sorting | APPROVED | `04_route_values_and_sorting.tex` | `audit/phase04_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 5 Project advancement | NOT STARTED | `05_rd_problem.tex` | — | No |
 | 6 CMO equilibrium | NOT STARTED | `06_cmo_supply_demand_equilibrium.tex` | — | No |
 | 7 Equilibrium definition | NOT STARTED | `07_equilibrium_definition.tex` | — | No |

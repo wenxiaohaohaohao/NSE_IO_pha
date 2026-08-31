@@ -1,6 +1,6 @@
 # 01 Symbols and Objects
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED`  
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - IN PROGRESS`  
 Controlling specification: `paper/model_rebuild/spec/MAH_model_rebuild_effective_spec_v1.2.md`  
 Effective-spec SHA256: `855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666`
 
@@ -34,7 +34,7 @@ Subscripts $i,j$ and route labels $I,E,T,A$ are syntactic labels rather than sep
 
 One decision cohort is the project-planning time unit. Phase 2 defines product-output and within-period monetary units; Phase 3 technology costs use those same units.
 
-## 3. Active object registry through Phase 3
+## 3. Active object registry through Phase 4
 
 | Symbol | Exact category | Definition | Domain / units | First formal use | Direct MAH shift? |
 |---|---|---|---|---|---|
@@ -82,8 +82,16 @@ One decision cohort is the project-planning time unit. Phase 2 defines product-o
 | $b(m)$ | primitive parameter | qualified manufacturing-service capacity required by an entrusted project | positive; $\mathsf{B}$ per project | Phase 3 | No |
 | $F_E(m)$ | primitive parameter | real entrusted-route technology-transfer, validation and production-readiness cost | nonnegative; $\mathsf{C}$ per project | Phase 3 | No |
 | $\mu_E$ | primitive parameter | residual holder-side responsibility/coordination burden under entrusted manufacturing | nonnegative; $\mathsf{C}$ per project | Phase 3 | No; not removed by MAH |
+| $T(q,m)$ | primitive parameter | finite noncore transfer/out-license outside-value function | $\mathsf{C}$ per project | Phase 4 | No direct shift |
+| $W_i^I(q,m)$ | endogenous route-level object | internal-route project value | $\mathsf{C}$ per project, possibly $-\infty$ when internal production is infeasible | Phase 4 | No direct shift |
+| $W_i^E(q,m;M,p_m)$ | endogenous route-level object | retained entrusted-route project value at a conjectured CMO capacity price | $\mathsf{C}$ per project or $-\infty$ when $E$ is institutionally unavailable | Phase 4 | Yes only through $\tau_E(M)$ |
+| $W^T(q,m)$ | endogenous route-level object | non-retained transfer/out-license outside-option value | $\mathsf{C}$ per project | Phase 4 | No direct shift |
+| $W^A$ | endogenous route-level object | abandonment/indefinite-delay value normalized to zero | $\mathsf{C}$ per project | Phase 4 | No |
+| $W_i(q,m;M,p_m)$ | endogenous route-level object | optimized deterministic route value, the maximum over $I,E,T,A$ | $\mathsf{C}$ per project | Phase 4 | Indirect through the $E$ wedge only |
+| $\Delta_{IE}(k_i;q,m,M,p_m)$ | endogenous route-level object | internal-minus-entrusted value gap holding $q,m,M,p_m$ fixed | $\mathsf{C}$ per project | Phase 4 | Indirect through $W_i^E$ |
+| $k^*(q,m;p_m,M)$ | endogenous route-level object | unique conditional $I/E$ capability cutoff when finite-wedge crossing conditions hold | $\mathsf{K}$ | Phase 4 | Indirect through $\tau_E(M)$; no finite cutoff at $\tau_E=+\infty$ |
 
-There are 44 active rows. Each has one and only one exact category.
+There are 52 active rows. Each has one and only one exact category.
 
 ## 4. Definitional identities active in Phase 1
 
@@ -140,4 +148,4 @@ Patent history may later proxy predetermined $a_i$; it is not equal to $x_i$ or 
 
 ## 7. Reserved names requiring future updates
 
-Demand $y(p;q)$, product price $p$, optimized profit $\pi(q,c)$, present value $R(q,c)$, and the internal/entrusted technology primitives are active through Phase 3. Future objects still reserved include route values $W^r$, project-advancement cost $C_X$, CMO capacity $s_j$, aggregate CMO supply/demand, and the organizational cutoff. Each must be added here with one category and units immediately before its first formula in an authorized later Phase.
+Demand, product pricing, operating value, manufacturing technologies, route values, deterministic choice and the conditional organizational cutoff are active through Phase 4. Future objects still reserved include project-advancement cost $C_X$, CMO capacity $s_j$, aggregate CMO supply/demand, and proposition-specific aggregates. Each must be added here with one category and units immediately before its first formula in an authorized later Phase.

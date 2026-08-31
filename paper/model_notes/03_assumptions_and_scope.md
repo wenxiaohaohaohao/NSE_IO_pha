@@ -1,6 +1,6 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED`
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - IN PROGRESS`
 
 This file records assumptions needed through the current phase. It does not impose the signs of later propositions. Technology, route-choice, project-advancement, market-regularity and equilibrium comparative-static assumptions must be added in their authorized phases before use.
 
@@ -272,3 +272,64 @@ Used by: Phase 3 scope gate and `RL-10`.
 | No exogenous CMO scarcity relief | `A-P03-SCARCITY-01` |
 
 No Phase 3 assumption states which route is chosen, that a cutoff exists, that MAH raises project value, or that equilibrium CMO price falls.
+
+## K. Phase 4 route-choice and cutoff assumptions
+
+### `A-P04-OUTSIDE-01` - Transfer and abandonment outside options
+
+$T(q,m)$ is a finite continuous noncore outside-value function. It is not separately microfounded in the baseline and does not depend directly on $M$, $k_i$, or $p_m$. Abandonment/indefinite delay is normalized to zero.
+
+Used by: definitions of $W^T$ and $W^A$ and the optimized value maximum.
+
+### `A-P04-CHOICE-01` - Deterministic choice and negligible ties
+
+Route choice maximizes the four deterministic values over feasible routes. Continuous project/firm heterogeneity implies that exact ties have measure zero, so $r_i^*$ is single valued almost surely. No route-specific taste shock or probabilistic share is introduced.
+
+Used by: optimized value and route-choice definitions.
+
+### `A-P04-CUTOFF-01` - Finite-wedge crossing conditions
+
+For a fixed $(q,m,p_m)$ and a finite entrusted barrier $\tau_E$, the value gap $\Delta_{IE}(k;q,m,M,p_m)$ is continuous on the internally feasible capability domain. The endpoint conditions satisfy
+
+$$
+\lim_{k\downarrow\underline{k}(m)}\Delta_{IE}(k)<0,
+\qquad
+\lim_{k\to\infty}\Delta_{IE}(k)>0.
+$$
+
+Together with the derivative implied by Phase 2-3 signs, these are sufficient crossing conditions for a unique finite $I/E$ cutoff. They are not assumed to hold for every $(q,m,p_m,M)$.
+
+Used by: cutoff existence and uniqueness.
+
+### `A-P04-CUTOFF-02` - Conditional organizational interpretation
+
+The statements $k_i<k^*\Rightarrow E$ and $k_i>k^*\Rightarrow I$ apply only where $I$ and $E$ both dominate $T$ and $A$. If an outside option dominates, the $I/E$ cutoff does not determine the realized route.
+
+Used by: organizational-sorting proposition draft and zero-effect cases.
+
+### `A-P04-PRICE-01` - Fixed-price Phase 4 comparison
+
+Phase 4 treats $p_m$ as a fixed conjectured CMO capacity price when constructing route values and differentiating the cutoff. The equilibrium feedback through $p_m^*$ is deferred to Phase 6 and the fixed-price/equilibrium-price distinction must remain explicit.
+
+Used by: $\partial k^*/\partial p_m$ and scope audit.
+
+### `A-P04-POLICY-01` - Binary policy versus finite wedge derivative
+
+The reform comparison remains binary: $M=0$ makes $E$ unavailable via $\tau_E=+\infty$, while $M=1$ gives finite $\bar\tau_E$. The derivative $\partial k^*/\partial\tau_E$ is a local structural derivative within the finite-wedge domain, not a derivative with respect to binary $M$.
+
+Used by: cutoff comparative derivative and policy interpretation.
+
+## L. Phase 4 assumption-use matrix
+
+| Result | Assumptions actually used |
+|---|---|
+| $I/E/T/A$ values | approved Phase 1-3 primitives; `A-P04-OUTSIDE-01` |
+| deterministic optimized value and route | `A-P04-CHOICE-01` |
+| $\Delta_{IE,k}>0$ | `A-P03-INT-02` and Phase 2 result $R_c<0$ |
+| unique finite cutoff | `A-P04-CUTOFF-01` plus derived $\Delta_{IE,k}>0$ |
+| conditional $E/I$ sorting around cutoff | `A-P04-CUTOFF-02` |
+| $\partial k^*/\partial\tau_E<0$ | finite-wedge differentiability and $\Delta_{IE,k}>0$ |
+| $\partial k^*/\partial p_m<0$ | `A-P04-PRICE-01`, $b(m)>0$, and $\Delta_{IE,k}>0$ |
+| binary MAH interpretation | `A-P04-POLICY-01` |
+
+No assumption states that route $E$ is always chosen after MAH or that every project has a nonzero reform effect.

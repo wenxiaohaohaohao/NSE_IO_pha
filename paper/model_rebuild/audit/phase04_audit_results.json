@@ -1,0 +1,540 @@
+{
+    "phase":  4,
+    "expected_status":  "APPROVED",
+    "status":  "APPROVED",
+    "generated_at":  "2026-08-31T09:48:57.9439891+08:00",
+    "passed":  106,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "id":  "P04-HASH-BASE",
+                       "passed":  true,
+                       "evidence":  "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+                   },
+                   {
+                       "id":  "P04-HASH-AMD11",
+                       "passed":  true,
+                       "evidence":  "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+                   },
+                   {
+                       "id":  "P04-HASH-AMD12-IMAGE",
+                       "passed":  true,
+                       "evidence":  "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+                   },
+                   {
+                       "id":  "P04-HASH-AMD12-TEXT",
+                       "passed":  true,
+                       "evidence":  "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+                   },
+                   {
+                       "id":  "P04-HASH-EFFECTIVE",
+                       "passed":  true,
+                       "evidence":  "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+                   },
+                   {
+                       "id":  "P04-GIT-BRANCH",
+                       "passed":  true,
+                       "evidence":  "branch=codex/mah-model-rebuild"
+                   },
+                   {
+                       "id":  "P04-GIT-ENTRY-COMMIT",
+                       "passed":  true,
+                       "evidence":  "head=06984a993323de3bac6e63e921cd1dc9842f1672"
+                   },
+                   {
+                       "id":  "P04-GIT-REMOTE-TRACKING",
+                       "passed":  true,
+                       "evidence":  "remote=06984a993323de3bac6e63e921cd1dc9842f1672"
+                   },
+                   {
+                       "id":  "P04-MANUSCRIPT-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "changed="
+                   },
+                   {
+                       "id":  "P04-ZIP-ISOLATED",
+                       "passed":  true,
+                       "evidence":  "count=0"
+                   },
+                   {
+                       "id":  "P04-FILE-04_route_values_and_sorting.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\04_route_values_and_sorting.tex"
+                   },
+                   {
+                       "id":  "P04-FILE-phase04_preflight.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase04_preflight.md"
+                   },
+                   {
+                       "id":  "P04-FILE-phase04_independent_derivation.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase04_independent_derivation.md"
+                   },
+                   {
+                       "id":  "P04-FILE-phase04_compile_wrapper.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase04_compile_wrapper.tex"
+                   },
+                   {
+                       "id":  "P04-FILE-phase04_compile_console.txt",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase04_compile_console.txt"
+                   },
+                   {
+                       "id":  "P04-FILE-phase04_compile_wrapper.log",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase04\\phase04_compile_wrapper.log"
+                   },
+                   {
+                       "id":  "P04-FILE-phase04_compile_wrapper.pdf",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase04\\phase04_compile_wrapper.pdf"
+                   },
+                   {
+                       "id":  "P04-FILE-01_symbols_and_objects.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\01_symbols_and_objects.md"
+                   },
+                   {
+                       "id":  "P04-FILE-02_equation_dependency_map.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\02_equation_dependency_map.md"
+                   },
+                   {
+                       "id":  "P04-FILE-03_assumptions_and_scope.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\03_assumptions_and_scope.md"
+                   },
+                   {
+                       "id":  "P04-FILE-04_proposition_checklist.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\04_proposition_checklist.md"
+                   },
+                   {
+                       "id":  "P04-STATE-PHASE3",
+                       "passed":  true,
+                       "evidence":  "Phase 3 approved"
+                   },
+                   {
+                       "id":  "P04-STATE-PHASE4",
+                       "passed":  true,
+                       "evidence":  "expected=| 4 Routes/sorting | APPROVED |"
+                   },
+                   {
+                       "id":  "P04-STATE-PHASE5",
+                       "passed":  true,
+                       "evidence":  "Phase 5 not started"
+                   },
+                   {
+                       "id":  "P04-GOVERNANCE",
+                       "passed":  true,
+                       "evidence":  "standing authorization present"
+                   },
+                   {
+                       "id":  "P04-MATRIX-P04-D01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P04-MATRIX-P04-G01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P04-FORMAL-8B39B818",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p04-internal-value}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-B290F78F",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p04-entrusted-value}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-478A3F27",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p04-outside-values}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-C193CA88",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p04-optimized-value}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-8018FD56",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p04-route-choice}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-A2290A9C",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p04-binary-value-effect}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-46441CFB",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p04-value-gap}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-2A557705",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p04-gap-slope}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-FD2003BC",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p04-cutoff}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-ABDDF115",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p04-cutoff-sorting}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-73ECC69B",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p04-cutoff-derivatives}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-8C36099B",
+                       "passed":  true,
+                       "evidence":  "required=W_i^I(q,m)"
+                   },
+                   {
+                       "id":  "P04-FORMAL-2EC9A5B7",
+                       "passed":  true,
+                       "evidence":  "required=W_i^E(q,m;M,p_m)"
+                   },
+                   {
+                       "id":  "P04-FORMAL-90C0E5C0",
+                       "passed":  true,
+                       "evidence":  "required=W^T(q,m)=T(q,m)"
+                   },
+                   {
+                       "id":  "P04-FORMAL-2AA1B621",
+                       "passed":  true,
+                       "evidence":  "required=W^A=0"
+                   },
+                   {
+                       "id":  "P04-FORMAL-C87DA74C",
+                       "passed":  true,
+                       "evidence":  "required=\\max\\left\\{"
+                   },
+                   {
+                       "id":  "P04-FORMAL-740FE537",
+                       "passed":  true,
+                       "evidence":  "required=\\arg\\max_{r\\in\\{I,E,T,A\\}}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-5CD3090D",
+                       "passed":  true,
+                       "evidence":  "required=\\tau_E(0)=+\\infty"
+                   },
+                   {
+                       "id":  "P04-FORMAL-2BD1740E",
+                       "passed":  true,
+                       "evidence":  "required=\\frac{\\partial\\Delta_{IE}}{\\partial k_i}"
+                   },
+                   {
+                       "id":  "P04-FORMAL-45E11D6C",
+                       "passed":  true,
+                       "evidence":  "required=s(q)R_c\\!\\left(q,c_I(m,k_i)\\right)c_{I,k}(m,k_i)"
+                   },
+                   {
+                       "id":  "P04-FORMAL-24D6B800",
+                       "passed":  true,
+                       "evidence":  "required=-\\frac{1}{\\Delta_{IE,k}(k^*)}\u003c0"
+                   },
+                   {
+                       "id":  "P04-FORMAL-D2A975BD",
+                       "passed":  true,
+                       "evidence":  "required=-\\frac{b(m)}{\\Delta_{IE,k}(k^*)}\u003c0"
+                   },
+                   {
+                       "id":  "P04-FORMAL-D6C9E3CC",
+                       "passed":  true,
+                       "evidence":  "required=fixed-price"
+                   },
+                   {
+                       "id":  "P04-FORMAL-8BCDD71D",
+                       "passed":  true,
+                       "evidence":  "required=not an equilibrium derivative through \\(p_m^*\\)"
+                   },
+                   {
+                       "id":  "P04-FORMAL-E8FBFD25",
+                       "passed":  true,
+                       "evidence":  "required=If \\(T\\) or \\(A\\) dominates"
+                   },
+                   {
+                       "id":  "P04-FORBID-82F6707C",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)\\blogit\\b match="
+                   },
+                   {
+                       "id":  "P04-FORBID-E5A8492E",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)inclusive\\s+value match="
+                   },
+                   {
+                       "id":  "P04-FORBID-8547A254",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\eta\\b match="
+                   },
+                   {
+                       "id":  "P04-FORBID-2AA17B84",
+                       "passed":  true,
+                       "evidence":  "pattern=B_i\\( match="
+                   },
+                   {
+                       "id":  "P04-FORBID-D3C12709",
+                       "passed":  true,
+                       "evidence":  "pattern=W_i\\^r match="
+                   },
+                   {
+                       "id":  "P04-FORBID-A6E89E3B",
+                       "passed":  true,
+                       "evidence":  "pattern=x_\\{ig\\} match="
+                   },
+                   {
+                       "id":  "P04-FORBID-4C3C6B2A",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\frac\\{\\\\partial[^}]*\\}\\{\\\\partial M\\} match="
+                   },
+                   {
+                       "id":  "P04-FORBID-2AA17302",
+                       "passed":  true,
+                       "evidence":  "pattern=D_m\\( match="
+                   },
+                   {
+                       "id":  "P04-FORBID-2AA1C351",
+                       "passed":  true,
+                       "evidence":  "pattern=S_m\\( match="
+                   },
+                   {
+                       "id":  "P04-FORBID-791432A3",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)representative\\s+household match="
+                   },
+                   {
+                       "id":  "P04-FORBID-0D621807",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)\\bentry\\b match="
+                   },
+                   {
+                       "id":  "P04-FORBID-25CEC871",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)\\bwelfare\\b match="
+                   },
+                   {
+                       "id":  "P04-FORBID-5C86E0FB",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)portfolio\\s+dynamics match="
+                   },
+                   {
+                       "id":  "P04-HOLDER-RIGHTS",
+                       "passed":  true,
+                       "evidence":  "retained authorization explicit"
+                   },
+                   {
+                       "id":  "P04-COST-ONCE",
+                       "passed":  true,
+                       "evidence":  "unique accounting"
+                   },
+                   {
+                       "id":  "P04-DETERMINISTIC",
+                       "passed":  true,
+                       "evidence":  "deterministic route choice"
+                   },
+                   {
+                       "id":  "P04-OUTSIDE-CONDITIONAL",
+                       "passed":  true,
+                       "evidence":  "T/A retained"
+                   },
+                   {
+                       "id":  "P04-ZERO-EFFECT",
+                       "passed":  true,
+                       "evidence":  "zero effect admitted"
+                   },
+                   {
+                       "id":  "P04-NO-GENERIC-UNDECLARED-PAYOFF",
+                       "passed":  true,
+                       "evidence":  "four values listed explicitly"
+                   },
+                   {
+                       "id":  "P04-SYMBOL-ACTIVE-COUNT",
+                       "passed":  true,
+                       "evidence":  "52 active objects"
+                   },
+                   {
+                       "id":  "P04-SYMBOL-FD3E58F9",
+                       "passed":  true,
+                       "evidence":  "required=| $T(q,m)$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P04-SYMBOL-C00C7295",
+                       "passed":  true,
+                       "evidence":  "required=| $W_i^I(q,m)$ | endogenous route-level object |"
+                   },
+                   {
+                       "id":  "P04-SYMBOL-C0D72AB9",
+                       "passed":  true,
+                       "evidence":  "required=| $W_i^E(q,m;M,p_m)$ | endogenous route-level object |"
+                   },
+                   {
+                       "id":  "P04-SYMBOL-A65560C2",
+                       "passed":  true,
+                       "evidence":  "required=| $W^T(q,m)$ | endogenous route-level object |"
+                   },
+                   {
+                       "id":  "P04-SYMBOL-D302279C",
+                       "passed":  true,
+                       "evidence":  "required=| $W^A$ | endogenous route-level object |"
+                   },
+                   {
+                       "id":  "P04-SYMBOL-B36ECF84",
+                       "passed":  true,
+                       "evidence":  "required=| $W_i(q,m;M,p_m)$ | endogenous route-level object |"
+                   },
+                   {
+                       "id":  "P04-SYMBOL-CB8FF24B",
+                       "passed":  true,
+                       "evidence":  "required=| $\\Delta_{IE}(k_i;q,m,M,p_m)$ | endogenous route-level object |"
+                   },
+                   {
+                       "id":  "P04-SYMBOL-6454E130",
+                       "passed":  true,
+                       "evidence":  "required=| $k^*(q,m;p_m,M)$ | endogenous route-level object |"
+                   },
+                   {
+                       "id":  "P04-ASSUMPTION-A-P04-OUTSIDE-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P04-OUTSIDE-01"
+                   },
+                   {
+                       "id":  "P04-ASSUMPTION-A-P04-CHOICE-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P04-CHOICE-01"
+                   },
+                   {
+                       "id":  "P04-ASSUMPTION-A-P04-CUTOFF-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P04-CUTOFF-01"
+                   },
+                   {
+                       "id":  "P04-ASSUMPTION-A-P04-CUTOFF-02",
+                       "passed":  true,
+                       "evidence":  "required=A-P04-CUTOFF-02"
+                   },
+                   {
+                       "id":  "P04-ASSUMPTION-A-P04-PRICE-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P04-PRICE-01"
+                   },
+                   {
+                       "id":  "P04-ASSUMPTION-A-P04-POLICY-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P04-POLICY-01"
+                   },
+                   {
+                       "id":  "P04-DEPENDENCY-P04-E01",
+                       "passed":  true,
+                       "evidence":  "required=P04-E01"
+                   },
+                   {
+                       "id":  "P04-DEPENDENCY-P04-E02",
+                       "passed":  true,
+                       "evidence":  "required=P04-E02"
+                   },
+                   {
+                       "id":  "P04-DEPENDENCY-P04-E03",
+                       "passed":  true,
+                       "evidence":  "required=P04-E03"
+                   },
+                   {
+                       "id":  "P04-DEPENDENCY-P04-E04",
+                       "passed":  true,
+                       "evidence":  "required=P04-E04"
+                   },
+                   {
+                       "id":  "P04-DEPENDENCY-P04-E05",
+                       "passed":  true,
+                       "evidence":  "required=P04-E05"
+                   },
+                   {
+                       "id":  "P04-DEPENDENCY-P04-E06",
+                       "passed":  true,
+                       "evidence":  "required=P04-E06"
+                   },
+                   {
+                       "id":  "P04-DEPENDENCY-P04-E07",
+                       "passed":  true,
+                       "evidence":  "required=P04-E07"
+                   },
+                   {
+                       "id":  "P04-DEPENDENCY-P04-E08",
+                       "passed":  true,
+                       "evidence":  "required=P04-E08"
+                   },
+                   {
+                       "id":  "P04-DEPENDENCY-P04-E09",
+                       "passed":  true,
+                       "evidence":  "required=P04-E09"
+                   },
+                   {
+                       "id":  "P04-PROPOSITION-SCOPE",
+                       "passed":  true,
+                       "evidence":  "Phase 8 finalization deferred"
+                   },
+                   {
+                       "id":  "P04-PROPOSITION-ZERO-EFFECT",
+                       "passed":  true,
+                       "evidence":  "zero cases listed"
+                   },
+                   {
+                       "id":  "P04-INDEPENDENT-REVIEW",
+                       "passed":  true,
+                       "evidence":  "independent review complete"
+                   },
+                   {
+                       "id":  "P04-OPEN-ISSUES-NO-CURRENT-P0",
+                       "passed":  true,
+                       "evidence":  "no Phase 4 P0"
+                   },
+                   {
+                       "id":  "P04-LABEL-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "duplicates="
+                   },
+                   {
+                       "id":  "P04-LATEX-FATAL",
+                       "passed":  true,
+                       "evidence":  "fatal="
+                   },
+                   {
+                       "id":  "P04-LATEX-BOXES",
+                       "passed":  true,
+                       "evidence":  "box_warnings=0"
+                   },
+                   {
+                       "id":  "P04-UTF8-CONTROL",
+                       "passed":  true,
+                       "evidence":  "bad="
+                   },
+                   {
+                       "id":  "P04-SCOPE-EXACT",
+                       "passed":  true,
+                       "evidence":  "unexpected="
+                   },
+                   {
+                       "id":  "P04-GATE-REPORT-IDS",
+                       "passed":  true,
+                       "evidence":  "missing="
+                   },
+                   {
+                       "id":  "P04-GATE-REPORT-RESULT",
+                       "passed":  true,
+                       "evidence":  "gate PASS and zero P0"
+                   }
+               ]
+}

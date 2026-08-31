@@ -33,3 +33,11 @@ audit/phase03_compile_console.txt -text
 audit/phase03_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
 audit/phase03_compile_wrapper.tex -text
 scripts/audit_phase03.ps1 -text
+
+# Phase 4 hash-protected artifacts.
+04_route_values_and_sorting.tex -text
+audit/phase04_gate_report.md -text
+audit/phase04_compile_console.txt -text
+audit/phase04_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
+audit/phase04_compile_wrapper.tex -text
+scripts/audit_phase04.ps1 -text

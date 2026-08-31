@@ -1,7 +1,7 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED`  
-This map records definitions, timing dependencies, the Phase 2 demand/profit block, and the Phase 3 manufacturing technologies. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - IN PROGRESS`  
+This map records definitions, timing dependencies, demand/profit, manufacturing technologies, and the Phase 4 deterministic route/sorting block. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
 
 ## 1. Phase 1 definition ledger
 
@@ -49,7 +49,23 @@ Phase 3 defines technological and organizational primitives. It does not yet ass
 
 The evaluated route-cost input $c$ from Phase 2 is supplied by $c_I(m,k_i)$ or $c_E(m)$ only after a route is under consideration. The monetary capacity payment $p_m b(m)$ is separate from the technological marginal-cost kernel $c_E(m)$ and cannot also be embedded in it.
 
-## 4. Causal and timing order
+## 4. Phase 4 route-value and sorting ledger
+
+| ID / LaTeX label | Object/result | Inputs already defined | Mathematical status | Proof / scope obligation |
+|---|---|---|---|---|
+| `P04-E01` / `eq:p04-internal-value` | $W_i^I=s(q)R(q,c_I)-F_I$ | $s,R,c_I,F_I$ | derived route value | internal infeasibility gives $-\infty$ |
+| `P04-E02` / `eq:p04-entrusted-value` | $W_i^E=s(q)R(q,c_E)-F_E-p_mb-\mu_E-\tau_E(M)$ | Phase 1-3 external objects | derived route value at fixed $p_m$ | each cost appears once; holder rights retained |
+| `P04-E03` / `eq:p04-outside-values` | $W^T=T(q,m)$, $W^A=0$ | $T$ | outside-option definitions | no second transfer market |
+| `P04-E04` / `eq:p04-optimized-value` | $W_i=\max\{W_i^I,W_i^E,W^T,W^A\}$ | `P04-E01`--`P04-E03` | deterministic optimized value | no probabilistic route share |
+| `P04-E05` / `eq:p04-route-choice` | $r_i^*$ is the argmax over the four explicitly listed route values | `P04-E01`--`P04-E04` | deterministic choice | ties have measure zero; no undeclared generic payoff symbol |
+| `P04-E06` / `eq:p04-value-gap` | $\Delta_{IE}=W_i^I-W_i^E$ | `P04-E01`, `P04-E02` | derived value gap | hold $q,m,M,p_m$ fixed when varying $k_i$ |
+| `P04-E07` / `eq:p04-gap-slope` | $\Delta_{IE,k}=sR_c c_{I,k}-F_{I,k}>0$ | Phase 2 derivative and Phase 3 signs | derived monotonicity | feasible internal domain |
+| `P04-E08` / `eq:p04-cutoff` | unique finite $k^*$ solves $\Delta_{IE}(k^*)=0$ | `P04-E07` plus endpoint crossing | implicit definition/theorem | only when finite-wedge crossing conditions hold |
+| `P04-E09` / `eq:p04-cutoff-derivatives` | $k^*_{\tau}=-1/\Delta_k<0$, $k^*_{p_m}=-b/\Delta_k<0$ | `P04-E08`, $b>0$ | IFT derivatives | fixed conjectured $p_m$; finite $\tau_E$ |
+
+The binary policy comparison is not a derivative: $M=0$ sets $W_i^E=-\infty$, while $M=1$ supplies a finite barrier. The $\tau_E$ derivative is local within the finite-wedge domain.
+
+## 5. Causal and timing order
 
 ```text
 Predetermined distributions and characteristics
@@ -83,7 +99,9 @@ Manufacturing technology block
   M -> tau_E(M) only; no technology or CMO-supply shift
 
 Stage 3: organization
-  (q,m,k_i,M,p_m^*) -> route choice r_i^* in {I,E,T,A}         [DEFERRED: Phases 3-4]
+  Phase 2 value kernel + Phase 3 technologies/outside options
+      -> W_I,W_E,W_T,W_A -> deterministic max W_i and r_i^*   [DERIVED: Phase 4]
+  conditional I/E comparison -> Delta_IE -> capability cutoff k^*
 
 Stage 4: downstream realization
   q -> exogenous probability s(q)                              [DEFINED: Phase 1]
@@ -98,7 +116,7 @@ Stage 5: manufacturing-service consistency
 
 Stage 5 is a simultaneous consistency condition, not a later event developers fail to anticipate.
 
-## 5. Initial fixed-point dependency
+## 6. Initial fixed-point dependency
 
 The future equilibrium loop is identified but not solved in Phase 1:
 
@@ -114,7 +132,7 @@ $$
 
 Qualified supplier decisions create the supply side. Phase 6 must introduce capacity, cost, aggregate supply, aggregate demand, solution order, and sufficient regularity. Phase 1 makes no existence, uniqueness, or price-sign claim.
 
-## 6. Allowed direct and indirect arrows
+## 7. Allowed direct and indirect arrows
 
 The only allowed direct policy arrow is
 
@@ -161,6 +179,18 @@ $$
 
 and a constant retained burden $\mu_E$. Internal infeasibility is encoded by $F_I=+\infty$; no separate binary feasibility object is restored.
 
+Phase 4 closes the route-value branch at a fixed conjectured CMO price:
+
+$$
+\{R,s,c_I,F_I,c_E,b,F_E,\mu_E,\tau_E,T\}
+\longrightarrow
+\{W_i^I,W_i^E,W^T,W^A\}
+\longrightarrow
+\{W_i,r_i^*,\Delta_{IE},k^*\}.
+$$
+
+It does not close the equilibrium feedback from aggregate entrusted demand to $p_m^*$.
+
 The later realization chain is
 
 $$
@@ -177,7 +207,7 @@ $$
 
 This prevents ex post observed $E$ assignment from being written before $x_i$.
 
-## 7. Forbidden arrows and identities
+## 8. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -201,8 +231,13 @@ This prevents ex post observed $E$ assignment from being written before $x_i$.
 | $c_E(m)$ includes $p_m b(m)$ | technological marginal cost and the monetary capacity payment are distinct accounting items |
 | $\mu_E=0$ because $M=1$ | residual holder responsibility is not removed by MAH |
 | $E\equiv$ authorization transfer | the developer remains the holder under entrusted manufacturing |
+| route probability/share from a smooth random-utility formula | Phase 4 choice is deterministic; ties have measure zero |
+| $k_i<k^*\Rightarrow E$ without checking $T/A$ | cutoff sorting is conditional on $I/E$ dominating both outside options |
+| finite $k^*$ asserted at $M=0$ | $\tau_E(0)=+\infty$ makes $E$ unavailable; the finite cutoff theorem is a finite-wedge result |
+| $\partial k^*/\partial p_m$ treated as an equilibrium derivative | Phase 4 holds conjectured $p_m$ fixed; equilibrium feedback begins in Phase 6 |
+| $M$ differentiated as continuous | binary policy effects require finite comparisons; only the structural finite-wedge argument $\tau_E$ has a local derivative |
 
-## 8. Update rule
+## 9. Update rule
 
 Before any later Phase writes a formula, it must:
 
