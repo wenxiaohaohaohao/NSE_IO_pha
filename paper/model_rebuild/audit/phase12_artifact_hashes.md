@@ -1,0 +1,21 @@
+# Phase 12 Artifact Hashes
+
+Status: APPROVED
+
+| Artifact | SHA256 |
+|---|---|
+| paper/model_notes/05_old_to_new_model_crosswalk.md | DF8735D06DA3946A9548B50A1F85D83C0836154B6354C3AF7A2BE05A9971550C |
+| audit/phase12_legacy_occurrence_index.csv | BE0569A14DD63245FCD3B397329FFC9F2AF2A104592799B887CCDDE5582D5EBD |
+| audit/phase12_gate_report.md | 35104D088C4E8F3275DAE482F3AD0C9D476B3D5D42715B48B0350D2D2EF27A8A |
+| audit/phase12_independent_crosswalk_audit.md | BAA3C286E26B76E644210E3A3B6C6D3155D98BC35B810DB5A5CFCDF489F569FD |
+| audit/phase12_compile_wrapper.tex | 8DA71B7524B5094CF114F77A32DEDCB6272B797843B5BEFD022EF9E56B57A95E |
+| audit/phase12_compile_console.txt | C131AF185A9EBD9CA2850E71AC6DDA024164BF2EC6CFD55CAE3C405845EC22BA |
+| audit/phase12_audit_results.json | FE950F1BD46670A56151FCD2A3F25F14E021E20D6414B297433499A3D2A3076E |
+| scripts/audit_phase12.ps1 | 3E5DA3C918F9EB452EA21629FA25AD99CA61DA1D30D04F5CD55E854D3D8E3D37 |
+| scripts/build_phase12_legacy_inventory.ps1 | A65A67BA683BAB5610BA01750EB1102A86A9E8FEDB97F8BE445FDA0A320B3D5D |
+| spec/approvals/phase12_standing_authorization.md | 55AB485A143F1F2C113730389E75400C2CCAE8604E8925FCA0353D609AB173B2 |
+| spec/instruction_traceability_matrix.csv | 1BF27F861B5E7D63123726E0E1DA694AFC134947720049FDAD6A3B0E3E26F84C |
+
+The cumulative baseline PDF and temporary build files remain project-local on
+the D drive and are excluded from Git. The crosswalk, exhaustive legacy index,
+gate evidence, and approval state are hash-recorded above.

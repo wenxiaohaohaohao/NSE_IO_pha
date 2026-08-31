@@ -43,7 +43,7 @@ Legal transition:
 | 9 Outcomes/data boundary | APPROVED | `09_observed_outcomes.tex` | `audit/phase09_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 10 Empirical mapping | APPROVED | `10_empirical_mapping.tex` | `audit/phase10_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 11 Extensions | APPROVED | `11_extensions_not_baseline.tex` | `audit/phase11_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
-| 12 Old-to-new crosswalk | NOT STARTED | `05_old_to_new_model_crosswalk.md` | — | No |
+| 12 Old-to-new crosswalk | APPROVED | `05_old_to_new_model_crosswalk.md` | `audit/phase12_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 13 Equation dependency map | NOT STARTED | `02_equation_dependency_map.md` | — | No |
 | 14 Assumption discipline | NOT STARTED | `03_assumptions_and_scope.md` | — | No |
 | 15 Comparative statics/full draft | NOT STARTED | `08_comparative_statics.tex`; `12_full_derivation_draft.tex` | — | No |

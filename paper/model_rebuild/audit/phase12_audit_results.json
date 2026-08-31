@@ -1,0 +1,440 @@
+{
+    "phase":  12,
+    "expected_status":  "APPROVED",
+    "status":  "APPROVED",
+    "generated_at":  "2026-08-31T21:29:03.4406297+08:00",
+    "passed":  86,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "id":  "P12-HASH-BASE",
+                       "passed":  true,
+                       "evidence":  "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+                   },
+                   {
+                       "id":  "P12-HASH-AMD11",
+                       "passed":  true,
+                       "evidence":  "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+                   },
+                   {
+                       "id":  "P12-HASH-AMD12-IMAGE",
+                       "passed":  true,
+                       "evidence":  "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+                   },
+                   {
+                       "id":  "P12-HASH-AMD12-TEXT",
+                       "passed":  true,
+                       "evidence":  "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+                   },
+                   {
+                       "id":  "P12-HASH-EFFECTIVE",
+                       "passed":  true,
+                       "evidence":  "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+                   },
+                   {
+                       "id":  "P12-GIT-BRANCH",
+                       "passed":  true,
+                       "evidence":  "branch=codex/mah-model-rebuild"
+                   },
+                   {
+                       "id":  "P12-GIT-ENTRY",
+                       "passed":  true,
+                       "evidence":  "head=b06be5ac3499df9b7493081f5febde0fb68274a6"
+                   },
+                   {
+                       "id":  "P12-GIT-REMOTE",
+                       "passed":  true,
+                       "evidence":  "remote=b06be5ac3499df9b7493081f5febde0fb68274a6"
+                   },
+                   {
+                       "id":  "P12-MANUSCRIPT-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "changed="
+                   },
+                   {
+                       "id":  "P12-LEGACY-NOTES-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "changed="
+                   },
+                   {
+                       "id":  "P12-ZIP-ISOLATED",
+                       "passed":  true,
+                       "evidence":  "count=0"
+                   },
+                   {
+                       "id":  "P12-FILE-05_old_to_new_model_crosswalk.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\05_old_to_new_model_crosswalk.md"
+                   },
+                   {
+                       "id":  "P12-FILE-phase12_legacy_occurrence_index.csv",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase12_legacy_occurrence_index.csv"
+                   },
+                   {
+                       "id":  "P12-FILE-phase12_preflight.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase12_preflight.md"
+                   },
+                   {
+                       "id":  "P12-FILE-phase12_independent_crosswalk_audit.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase12_independent_crosswalk_audit.md"
+                   },
+                   {
+                       "id":  "P12-FILE-phase12_compile_wrapper.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase12_compile_wrapper.tex"
+                   },
+                   {
+                       "id":  "P12-FILE-phase12_compile_console.txt",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase12_compile_console.txt"
+                   },
+                   {
+                       "id":  "P12-FILE-phase12_compile_wrapper.log",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase12\\phase12_compile_wrapper.log"
+                   },
+                   {
+                       "id":  "P12-FILE-phase12_compile_wrapper.pdf",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase12\\phase12_compile_wrapper.pdf"
+                   },
+                   {
+                       "id":  "P12-STATE-PHASE11",
+                       "passed":  true,
+                       "evidence":  "Phase 11 approved"
+                   },
+                   {
+                       "id":  "P12-STATE-PHASE12",
+                       "passed":  true,
+                       "evidence":  "expected=| 12 Old-to-new crosswalk | APPROVED |"
+                   },
+                   {
+                       "id":  "P12-STATE-PHASE13",
+                       "passed":  true,
+                       "evidence":  "Phase 13 not started"
+                   },
+                   {
+                       "id":  "P12-MATRIX-P12-D01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P12-MATRIX-P12-G01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-01",
+                       "passed":  true,
+                       "evidence":  "required=CW-01"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-02",
+                       "passed":  true,
+                       "evidence":  "required=CW-02"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-03",
+                       "passed":  true,
+                       "evidence":  "required=CW-03"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-04",
+                       "passed":  true,
+                       "evidence":  "required=CW-04"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-05",
+                       "passed":  true,
+                       "evidence":  "required=CW-05"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-06",
+                       "passed":  true,
+                       "evidence":  "required=CW-06"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-07",
+                       "passed":  true,
+                       "evidence":  "required=CW-07"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-08",
+                       "passed":  true,
+                       "evidence":  "required=CW-08"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-09",
+                       "passed":  true,
+                       "evidence":  "required=CW-09"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-10",
+                       "passed":  true,
+                       "evidence":  "required=CW-10"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-11",
+                       "passed":  true,
+                       "evidence":  "required=CW-11"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-12",
+                       "passed":  true,
+                       "evidence":  "required=CW-12"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-13",
+                       "passed":  true,
+                       "evidence":  "required=CW-13"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-14",
+                       "passed":  true,
+                       "evidence":  "required=CW-14"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-15",
+                       "passed":  true,
+                       "evidence":  "required=CW-15"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-16",
+                       "passed":  true,
+                       "evidence":  "required=CW-16"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-17",
+                       "passed":  true,
+                       "evidence":  "required=CW-17"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-18",
+                       "passed":  true,
+                       "evidence":  "required=CW-18"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-19",
+                       "passed":  true,
+                       "evidence":  "required=CW-19"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-20",
+                       "passed":  true,
+                       "evidence":  "required=CW-20"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-21",
+                       "passed":  true,
+                       "evidence":  "required=CW-21"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-22",
+                       "passed":  true,
+                       "evidence":  "required=CW-22"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-23",
+                       "passed":  true,
+                       "evidence":  "required=CW-23"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-CW-24",
+                       "passed":  true,
+                       "evidence":  "required=CW-24"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-4F2E39B9",
+                       "passed":  true,
+                       "evidence":  "required=DELETE"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-921EFD6E",
+                       "passed":  true,
+                       "evidence":  "required=REPLACE"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-1B18FB15",
+                       "passed":  true,
+                       "evidence":  "required=RETAIN"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-AC58404E",
+                       "passed":  true,
+                       "evidence":  "required=QUARANTINE"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-174419F7",
+                       "passed":  true,
+                       "evidence":  "required=equations"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-F22DADE7",
+                       "passed":  true,
+                       "evidence":  "required=propositions"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-3FC348F1",
+                       "passed":  true,
+                       "evidence":  "required=narrative paragraphs"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-6CB2775E",
+                       "passed":  true,
+                       "evidence":  "required=calibration/empirical claims"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-3EE93EB0",
+                       "passed":  true,
+                       "evidence":  "required=appendix material"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-01BF4B3C",
+                       "passed":  true,
+                       "evidence":  "required=legacy notes"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-067F0790",
+                       "passed":  true,
+                       "evidence":  "required=Phase 18 action"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-CCE804EF",
+                       "passed":  true,
+                       "evidence":  "required=read-only"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-087B27C5",
+                       "passed":  true,
+                       "evidence":  "required=1,242"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-D0DBB9E7",
+                       "passed":  true,
+                       "evidence":  "required=no \\(x_{ig}\\)"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-4510C4EF",
+                       "passed":  true,
+                       "evidence":  "required=patent applications"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-46488811",
+                       "passed":  true,
+                       "evidence":  "required=\\(\\rho_O=0\\)"
+                   },
+                   {
+                       "id":  "P12-CROSSWALK-TEXT-E6816F71",
+                       "passed":  true,
+                       "evidence":  "required=\\(\\rho_{\\mathrm{Inc}}=0\\)"
+                   },
+                   {
+                       "id":  "P12-INVENTORY-ROWS",
+                       "passed":  true,
+                       "evidence":  "rows=1242"
+                   },
+                   {
+                       "id":  "P12-INVENTORY-IDS",
+                       "passed":  true,
+                       "evidence":  "ids=CW-01,CW-02,CW-03,CW-04,CW-05,CW-06,CW-07,CW-08,CW-09,CW-10,CW-11,CW-12,CW-13,CW-14,CW-15,CW-16,CW-17,CW-18,CW-19,CW-20,CW-21,CW-22,CW-23,CW-24"
+                   },
+                   {
+                       "id":  "P12-INVENTORY-FILES",
+                       "passed":  true,
+                       "evidence":  "file_count=13"
+                   },
+                   {
+                       "id":  "P12-INVENTORY-SOURCE-MATCH",
+                       "passed":  true,
+                       "evidence":  "mismatches="
+                   },
+                   {
+                       "id":  "P12-INVENTORY-ROLE-EQUATION",
+                       "passed":  true,
+                       "evidence":  "count=274"
+                   },
+                   {
+                       "id":  "P12-INVENTORY-ROLE-PROPOSITION",
+                       "passed":  true,
+                       "evidence":  "count=81"
+                   },
+                   {
+                       "id":  "P12-INVENTORY-ROLE-CALIBRATION_OR_EMPIRICAL",
+                       "passed":  true,
+                       "evidence":  "count=300"
+                   },
+                   {
+                       "id":  "P12-INVENTORY-ROLE-APPENDIX",
+                       "passed":  true,
+                       "evidence":  "count=570"
+                   },
+                   {
+                       "id":  "P12-INVENTORY-ROLE-LEGACY_NOTE",
+                       "passed":  true,
+                       "evidence":  "count=464"
+                   },
+                   {
+                       "id":  "P12-INDEPENDENT",
+                       "passed":  true,
+                       "evidence":  "independent crosswalk review"
+                   },
+                   {
+                       "id":  "P12-BASELINE-CLEAN-595FBC6E",
+                       "passed":  true,
+                       "evidence":  "pattern=P_\\{ir\\}\\^\\{\\\\mathrm\\{logit\\}\\} match="
+                   },
+                   {
+                       "id":  "P12-BASELINE-CLEAN-01A49AD8",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\Gamma_i\\s*\\( match="
+                   },
+                   {
+                       "id":  "P12-BASELINE-CLEAN-732ED45C",
+                       "passed":  true,
+                       "evidence":  "pattern=x_i\\^R\\s*\\+.*x_i\\^D match="
+                   },
+                   {
+                       "id":  "P12-BASELINE-CLEAN-BA9F67FC",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\eta\\\\in\\[0,1\\] match="
+                   },
+                   {
+                       "id":  "P12-BASELINE-CLEAN-2AA18824",
+                       "passed":  true,
+                       "evidence":  "pattern=N_E\\( match="
+                   },
+                   {
+                       "id":  "P12-LABEL-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "duplicates="
+                   },
+                   {
+                       "id":  "P12-LATEX-FATAL",
+                       "passed":  true,
+                       "evidence":  "fatal="
+                   },
+                   {
+                       "id":  "P12-LATEX-BOXES",
+                       "passed":  true,
+                       "evidence":  "box_warnings=0"
+                   },
+                   {
+                       "id":  "P12-SCOPE-EXACT",
+                       "passed":  true,
+                       "evidence":  "unexpected="
+                   },
+                   {
+                       "id":  "P12-GATE-IDS",
+                       "passed":  true,
+                       "evidence":  "missing="
+                   },
+                   {
+                       "id":  "P12-GATE-RESULT",
+                       "passed":  true,
+                       "evidence":  "gate PASS"
+                   }
+               ]
+}
