@@ -1,6 +1,6 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED`
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED; PHASE 10 - APPROVED`
 
 This file records assumptions needed through the current phase. It does not impose the signs of later propositions. Technology, route-choice, project-advancement, market-regularity and equilibrium comparative-static assumptions must be added in their authorized phases before use.
 
@@ -570,3 +570,15 @@ data do not separately identify every primitive are limitations, not model
 assumptions. Patent applications remain outside the baseline endogenous
 outcome even when patent history is later considered as a proxy for
 predetermined capability.
+
+## U. Phase 10 empirical-interface scope
+
+Phase 10 adds no theoretical assumption and no claim about current data
+availability. Candidate measurements are interfaces whose use is conditional
+on later validation of unit, grain, keys, coverage, provenance and construct
+validity. A proxy relationship is not an identifying equation.
+
+The anticipation and realization chains reuse the Phase 9 timing. Any future
+empirical design must keep pre-policy capability measures distinct from
+post-policy advancement and must align holder, manufacturer, product and date
+before treating a record as route $E$.

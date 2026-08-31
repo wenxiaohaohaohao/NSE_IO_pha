@@ -193,6 +193,7 @@ through Phase 6. Phase 7 adds no symbol: it collects the already defined
 objects \(p_m^*,x_i^*,r_i^*,s_j^*\) into the partial-equilibrium definition.
 Phase 8 activates only the proposition-specific value, price-comparison and
 observed-outcome objects listed above. Phase 9 adds no mathematical object; it
-fixes the interpretation and measurement boundary among those objects. Future
+fixes the interpretation and measurement boundary among those objects. Phase
+10 adds empirical interface contracts but no model object. Future model
 objects must be added here with one category and units immediately before
 their first formula in an authorized later Phase.

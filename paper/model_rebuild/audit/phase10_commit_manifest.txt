@@ -1,0 +1,19 @@
+# Phase 10 approved commit scope
+paper/model_notes/00_model_closure_status.md
+paper/model_notes/01_symbols_and_objects.md
+paper/model_notes/02_equation_dependency_map.md
+paper/model_notes/03_assumptions_and_scope.md
+paper/model_rebuild/.gitattributes
+paper/model_rebuild/10_empirical_mapping.tex
+paper/model_rebuild/audit/phase10_artifact_hashes.md
+paper/model_rebuild/audit/phase10_audit_results.json
+paper/model_rebuild/audit/phase10_commit_manifest.txt
+paper/model_rebuild/audit/phase10_compile_console.txt
+paper/model_rebuild/audit/phase10_compile_wrapper.tex
+paper/model_rebuild/audit/phase10_gate_report.md
+paper/model_rebuild/audit/phase10_independent_mapping_audit.md
+paper/model_rebuild/audit/phase10_preflight.md
+paper/model_rebuild/scripts/audit_phase10.ps1
+paper/model_rebuild/spec/approvals/phase10_standing_authorization.md
+paper/model_rebuild/spec/instruction_traceability_matrix.csv
+paper/model_rebuild/spec/specification_hashes.md

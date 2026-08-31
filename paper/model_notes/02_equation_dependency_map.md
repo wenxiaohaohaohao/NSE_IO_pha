@@ -1,7 +1,7 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED`  
-This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement, the Phase 6 CMO market, the Phase 7 partial-equilibrium definition, the Phase 8 proposition stack and the Phase 9 outcome boundary. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED; PHASE 10 - APPROVED`  
+This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement, the Phase 6 CMO market, the Phase 7 partial-equilibrium definition, the Phase 8 proposition stack, the Phase 9 outcome boundary and the Phase 10 empirical interface. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
 
 ## 1. Phase 1 definition ledger
 
@@ -161,7 +161,24 @@ Phase 9 adds no FOC, derivative, control, state or market-clearing equation.
 It preserves the Phase 8 outcome formulas and states what they can and cannot
 mean empirically.
 
-## 10. Causal and timing order
+## 10. Phase 10 empirical-interface ledger
+
+| ID / LaTeX label | Interface | Model parents | Status | Required boundary |
+|---|---|---|---|---|
+| P10-I01 | developer capability and advancement | $a_i,x_i,a_ix_i$ | future-data interface | history may proxy capability but is not current effort |
+| P10-I02 | manufacturing capability and complexity | $k_i,m$ | future-data interface | product-compatible, dated capacity evidence required |
+| P10-I03 | commercial value and outside option | $q,T(q,m)$ | future-data interface | proxies do not separately identify primitives |
+| P10-I04 | entrusted route and retained outcomes | $r_i^*=E,Y_i^{ret}$ | future-data interface | holder, manufacturer, product and date must align |
+| P10-I05 | novelty class and patent boundary | $g,\rho_gF_g$ | future-data interface | classifier only; patents outside baseline outcome |
+| P10-I06 | CMO scarcity | $p_m^*,S_m,D_m$ | future-data interface | nonprice proxies do not identify price separately |
+| P10-E01 / eq:p10-anticipated-interface | anticipated policy-value chain | P09-E02 | timing interface | observed separation cannot precede $x_i$ |
+| P10-E02 / eq:p10-realized-interface | realized project-to-product chain | P09-E03 | timing interface | planning and realized outcomes remain distinct |
+
+Every interface records units, observational grain, required join keys,
+availability status and identification limits. None claims that a data source
+has been obtained or validated.
+
+## 11. Causal and timing order
 
 ```text
 Predetermined distributions and characteristics
@@ -321,7 +338,7 @@ $$
 
 This prevents ex post observed $E$ assignment from being written before $x_i$.
 
-## 13. Forbidden arrows and identities
+## 14. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -360,7 +377,7 @@ This prevents ex post observed $E$ assignment from being written before $x_i$.
 | $p_m^*$ selected before evaluating $r_i^*$ and $x_i^*$ | the price is the fixed point of their induced demand and supplier capacity |
 | a second market-clearing equation | Phase 6 closes only qualified manufacturing-service capacity |
 
-## 14. Update rule
+## 15. Update rule
 
 Before any later Phase writes a formula, it must:
 

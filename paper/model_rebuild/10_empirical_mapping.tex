@@ -1,0 +1,206 @@
+% Phase 10 only: provisional empirical mapping interfaces.
+\section{Empirical Mapping Interface}
+\label{sec:p10-mapping}
+
+This section leaves audited insertion points for future data. It does not
+claim that any named measure is currently available, complete, validated, or
+identifying. Every interface specifies a unit, observational grain, required
+join keys, availability status, and identification limit.
+
+\subsection{Developer and project interfaces}
+\label{subsec:p10-developer-project}
+
+\subsubsection{Interface 1: Predetermined research capability \(a_i\)}
+\textit{Meaning:} pre-existing ability to generate and advance viable
+original-drug projects.
+\textit{Candidate measure:} pre-policy development history, innovative-drug
+pipeline, scientific labor, or patent history after construct validation.
+\textit{Unit:} capability index or pre-policy event rate.
+\textit{Grain:} developer by pre-policy period.
+\textit{Required keys:} stable developer identifier, source identifier, and
+event or reporting date.
+\textit{Availability:} NOT VERIFIED; no source is asserted available.
+\textit{Identification limit:} patent history may proxy predetermined
+capability, but it is not \(x_i\) and does not identify \(a_i\) separately
+without additional structure.
+
+\subsubsection{Interface 2: Advancement intensity \(x_i\)}
+\textit{Meaning:} original-drug innovation investment or
+project-advancement intensity.
+\textit{Candidate measure:} validated development-stage activity.
+\textit{Unit:} latent intensity or investment per developer-period.
+\textit{Grain:} developer by decision cohort or period.
+\textit{Required keys:} developer identifier and decision-cohort date, with a
+documented activity definition.
+\textit{Availability:} NOT DIRECTLY OBSERVED and NOT VERIFIED.
+\textit{Identification limit:} \(x_i\) is neither pure clinical effort nor
+patent applications; a candidate measure may combine multiple activities.
+
+\subsubsection{Interface 3: Planning-stage projects \(a_ix_i\)}
+\textit{Meaning:} viable projects reaching the route-planning stage.
+\textit{Candidate measure:} IND or regulatory application activity and early
+clinical milestones after a measurement audit.
+\textit{Unit:} projects or qualifying events per developer-period.
+\textit{Grain:} developer--project--event date.
+\textit{Required keys:} developer identifier, project or product identifier,
+event type, and event date.
+\textit{Availability:} NOT VERIFIED.
+\textit{Identification limit:} this is not approval or launch and does not
+separately identify \(a_i\) and \(x_i\).
+
+\subsubsection{Interface 4: Internal manufacturing capability \(k_i\)}
+\textit{Meaning:} predetermined ability to manufacture a project's required
+technology internally.
+\textit{Candidate measure:} pre-reform, project-compatible capacity evidence.
+\textit{Unit:} compatibility/capability index or physical capacity in a
+defined technology class.
+\textit{Grain:} developer--facility--technology class--date.
+\textit{Required keys:} developer, facility, technology class, product or
+requirement class, and observation date.
+\textit{Availability:} NOT VERIFIED.
+\textit{Identification limit:} licences or GMP scope alone need not measure
+usable project-compatible capacity.
+
+\subsubsection{Interface 5: Project value \(q\)}
+\textit{Meaning:} project commercial/scientific value shifter.
+\textit{Candidate measure:} therapeutic value, target value, indication, or
+market-size measures after validation.
+\textit{Unit:} standardized project-value index.
+\textit{Grain:} project--indication--reference date.
+\textit{Required keys:} project/product, indication, valuation source, and
+reference date.
+\textit{Availability:} NOT VERIFIED.
+\textit{Identification limit:} proxies discipline a value shifter; they do
+not permit a direct MAH shift in \(q\).
+
+\subsubsection{Interface 6: Manufacturing complexity \(m\)}
+\textit{Meaning:} project-specific manufacturing requirement.
+\textit{Candidate measure:} modality, dosage form, biologic/sterile status, or
+audited technical class.
+\textit{Unit:} technology class or validated complexity index.
+\textit{Grain:} project/product--manufacturing requirement.
+\textit{Required keys:} project/product identifier, modality, dosage form,
+technical class, and classification version.
+\textit{Availability:} NOT VERIFIED.
+\textit{Identification limit:} \(m\) is a project requirement, not developer
+capacity and not a policy outcome.
+
+\subsection{Route and realized-outcome interfaces}
+\label{subsec:p10-routes-outcomes}
+
+\subsubsection{Interface 7: Retained entrusted route \(r_i^*=E\)}
+\textit{Meaning:} the developer remains the holder while a qualified external
+producer manufactures.
+\textit{Candidate measure:} product-level holder differs from manufacturer.
+\textit{Unit:} binary route indicator.
+\textit{Grain:} product--holder--manufacturer--effective date.
+\textit{Required keys:} normalized holder identifier, manufacturer identifier,
+product identifier, authorization/effective date, and source provenance.
+\textit{Availability:} NOT VERIFIED.
+\textit{Identification limit:} holder, manufacturer, product and timing must
+all align; holder--manufacturer difference is not automatically route \(E\).
+
+\subsubsection{Interface 8: Realized retained outcome \(Y_i^{\mathrm{ret}}\)}
+\textit{Meaning:} realized innovative product for which the developer retains
+holder status.
+\textit{Candidate measure:} approval, launch, or marketing-licence outcome
+with holder identity.
+\textit{Unit:} product event or count.
+\textit{Grain:} developer--product--approval/launch date.
+\textit{Required keys:} developer/holder, product, event type, event date, and
+jurisdiction.
+\textit{Availability:} NOT VERIFIED.
+\textit{Identification limit:} this is a downstream realized outcome, not a
+direct observation of advancement.
+
+\subsubsection{Interface 9: Novelty class \(g\)}
+\textit{Meaning:} exogenous original-versus-incremental empirical classifier.
+\textit{Candidate measure:} verified regulatory classification.
+\textit{Unit:} categorical label \(O\) or \(\mathrm{Inc}\).
+\textit{Grain:} product/project--classification version.
+\textit{Required keys:} product/project identifier, classification rule,
+source, version, and classification date.
+\textit{Availability:} NOT VERIFIED.
+\textit{Identification limit:} the label is not a control or state, creates no
+\(x_{ig}\), and imposes no response ranking.
+
+\subsubsection{Interface 10: Patent applications}
+\textit{Meaning:} candidate upstream-research proxy outside the baseline
+endogenous outcome.
+\textit{Candidate measure:} patent applications or families after assignee
+and quality audits.
+\textit{Unit:} application/family count or quality-weighted measure.
+\textit{Grain:} assignee--patent family--application date.
+\textit{Required keys:} assignee, developer crosswalk, family identifier,
+application date, and technology class.
+\textit{Availability:} NOT VERIFIED.
+\textit{Identification limit:} a patent response neither equals \(x_i\) nor
+alone validates or falsifies the commercialization mechanism.
+
+\subsection{Market and outside-option interfaces}
+\label{subsec:p10-market-outside}
+
+\subsubsection{Interface 11: CMO price or scarcity \(p_m^*\)}
+\textit{Meaning:} equilibrium scarcity of qualified manufacturing service.
+\textit{Candidate measure:} service price if observed; otherwise audited
+capacity, density, utilization, or waiting-time proxies.
+\textit{Unit:} currency per qualified-capacity unit, or a documented proxy
+unit.
+\textit{Grain:} technology/region--market period.
+\textit{Required keys:} technology class, region, period, capacity unit, and
+supplier/source identifier.
+\textit{Availability:} PRICE DATA NOT VERIFIED; alternative proxies also
+require audit.
+\textit{Identification limit:} a nonprice scarcity proxy does not separately
+identify \(p_m^*\) or the supply and demand schedules.
+
+\subsubsection{Interface 12: Transfer outside option \(T(q,m)\)}
+\textit{Meaning:} non-retained transfer or licence value.
+\textit{Candidate measure:} future transfer/licence deal moments.
+\textit{Unit:} currency per project or standardized deal-value index.
+\textit{Grain:} project--licensor--licensee--deal date.
+\textit{Required keys:} project, licensor, licensee, deal date, deal scope,
+and disclosed value components.
+\textit{Availability:} FUTURE INTERFACE; NOT VERIFIED.
+\textit{Identification limit:} the outside option is not endogenized in the
+baseline, and incomplete deal values need not identify \(T(q,m)\).
+
+\subsection{Timing interface}
+\label{subsec:p10-timing}
+
+The theoretical anticipation channel remains
+\begin{equation}
+  M
+  \longrightarrow
+  \text{anticipated availability and value of }E
+  \longrightarrow
+  \Omega_i
+  \longrightarrow
+  x_i^*,
+  \label{eq:p10-anticipated-interface}
+\end{equation}
+whereas the realized sequence remains
+\begin{equation}
+  \begin{aligned}
+  x_i^*
+  &\longrightarrow
+  \text{planning-stage projects}
+  \longrightarrow r_i^* \\
+  &\longrightarrow
+  \text{observed holder--producer separation}
+  \longrightarrow
+  \text{realized products}.
+  \end{aligned}
+  \label{eq:p10-realized-interface}
+\end{equation}
+Future tests may examine both sequences, but an observed downstream separation
+cannot be placed before the ex ante choice of \(x_i\).
+
+\subsection{Interface conclusion}
+\label{subsec:p10-conclusion}
+
+These entries are schemas for future validated data. No empirical data set is
+asserted to be currently available. Before use, every candidate source must pass provenance,
+coverage, key-uniqueness, unit, timing, and construct-validity audits. The
+model may discipline composite moments without separately identifying every
+primitive.
