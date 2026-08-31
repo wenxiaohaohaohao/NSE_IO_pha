@@ -1,7 +1,7 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED`  
-This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement and the Phase 6 CMO market. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED`  
+This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement, the Phase 6 CMO market and the Phase 7 partial-equilibrium definition. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
 
 ## 1. Phase 1 definition ledger
 
@@ -105,7 +105,22 @@ entrusted capacity demand, evaluate supplier capacity, and solve the one
 scalar clearing equation. This closes the CMO-price loop without closing any
 other market.
 
-## 7. Causal and timing order
+## 7. Phase 7 partial-equilibrium-definition ledger
+
+| ID / LaTeX label | Object/result | Inputs already defined | Mathematical status | Proof / scope obligation |
+|---|---|---|---|---|
+| P07-E01 / eq:p07-equilibrium-collection | $\{p_m^*,x_i^*,r_i^*(q,m),s_j^*\}$ | Phase 4--6 optimal objects | equilibrium definition | exactly four families; no fifth equilibrium object |
+| P07-E02 / eq:p07-route-optimality | deterministic route optimality at $p_m^*$ | P04-E01--P04-E05, P06-E10 | inherited optimization condition | retain $I,E,T,A$ and holder rights |
+| P07-E03 / eq:p07-advancement-optimality | $x_i^*=[\beta a_i\Omega_i(M,p_m^*)/\kappa]^{1/\nu}$ | P05-E07, P06-E10 | inherited unique optimizer | common control; no $x_{ig}$ |
+| P07-E04 / eq:p07-capacity-optimality | $s_j^*\in\arg\max_{s_j\geq0}\{p_m^*s_j-\Psi(s_j;z_j)\}$ | P06-E01--P06-E03 | inherited unique optimizer | no supplier entry condition |
+| P07-E05 / eq:p07-market-clearing | $D_m(p_m^*;M)=S_m(p_m^*)$ | P06-E04, P06-E09--P06-E11 | sole equilibrium-clearing condition | no labor, capital, product or welfare clearing |
+
+Phase 7 introduces no new primitive, control or state. It only collects the
+four already classified optimal-object families and their four inherited
+conditions. Aggregate demand and supply remain functions used to determine
+$p_m^*$; they are not additional members of the equilibrium collection.
+
+## 8. Causal and timing order
 
 ```text
 Predetermined distributions and characteristics
@@ -265,7 +280,7 @@ $$
 
 This prevents ex post observed $E$ assignment from being written before $x_i$.
 
-## 10. Forbidden arrows and identities
+## 11. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -304,7 +319,7 @@ This prevents ex post observed $E$ assignment from being written before $x_i$.
 | $p_m^*$ selected before evaluating $r_i^*$ and $x_i^*$ | the price is the fixed point of their induced demand and supplier capacity |
 | a second market-clearing equation | Phase 6 closes only qualified manufacturing-service capacity |
 
-## 11. Update rule
+## 12. Update rule
 
 Before any later Phase writes a formula, it must:
 

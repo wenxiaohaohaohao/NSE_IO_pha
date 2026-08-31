@@ -1,0 +1,345 @@
+{
+    "phase":  7,
+    "expected_status":  "APPROVED",
+    "status":  "APPROVED",
+    "generated_at":  "2026-08-31T11:12:34.2498971+08:00",
+    "passed":  67,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "id":  "P07-HASH-BASE",
+                       "passed":  true,
+                       "evidence":  "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+                   },
+                   {
+                       "id":  "P07-HASH-AMD11",
+                       "passed":  true,
+                       "evidence":  "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+                   },
+                   {
+                       "id":  "P07-HASH-AMD12-IMAGE",
+                       "passed":  true,
+                       "evidence":  "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+                   },
+                   {
+                       "id":  "P07-HASH-AMD12-TEXT",
+                       "passed":  true,
+                       "evidence":  "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+                   },
+                   {
+                       "id":  "P07-HASH-EFFECTIVE",
+                       "passed":  true,
+                       "evidence":  "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+                   },
+                   {
+                       "id":  "P07-GIT-BRANCH",
+                       "passed":  true,
+                       "evidence":  "branch=codex/mah-model-rebuild"
+                   },
+                   {
+                       "id":  "P07-GIT-ENTRY",
+                       "passed":  true,
+                       "evidence":  "head=3db38d4d2530e51f56898a97da403ef930b682e5"
+                   },
+                   {
+                       "id":  "P07-GIT-REMOTE",
+                       "passed":  true,
+                       "evidence":  "remote=3db38d4d2530e51f56898a97da403ef930b682e5"
+                   },
+                   {
+                       "id":  "P07-MANUSCRIPT-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "changed="
+                   },
+                   {
+                       "id":  "P07-ZIP-ISOLATED",
+                       "passed":  true,
+                       "evidence":  "count=0"
+                   },
+                   {
+                       "id":  "P07-FILE-07_equilibrium_definition.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\07_equilibrium_definition.tex"
+                   },
+                   {
+                       "id":  "P07-FILE-phase07_preflight.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase07_preflight.md"
+                   },
+                   {
+                       "id":  "P07-FILE-phase07_independent_definition_audit.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase07_independent_definition_audit.md"
+                   },
+                   {
+                       "id":  "P07-FILE-phase07_compile_wrapper.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase07_compile_wrapper.tex"
+                   },
+                   {
+                       "id":  "P07-FILE-phase07_compile_console.txt",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase07_compile_console.txt"
+                   },
+                   {
+                       "id":  "P07-FILE-phase07_compile_wrapper.log",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase07\\phase07_compile_wrapper.log"
+                   },
+                   {
+                       "id":  "P07-FILE-phase07_compile_wrapper.pdf",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase07\\phase07_compile_wrapper.pdf"
+                   },
+                   {
+                       "id":  "P07-FILE-01_symbols_and_objects.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\01_symbols_and_objects.md"
+                   },
+                   {
+                       "id":  "P07-FILE-02_equation_dependency_map.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\02_equation_dependency_map.md"
+                   },
+                   {
+                       "id":  "P07-FILE-03_assumptions_and_scope.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\03_assumptions_and_scope.md"
+                   },
+                   {
+                       "id":  "P07-STATE-PHASE6",
+                       "passed":  true,
+                       "evidence":  "Phase 6 approved"
+                   },
+                   {
+                       "id":  "P07-STATE-PHASE7",
+                       "passed":  true,
+                       "evidence":  "expected=| 7 Equilibrium definition | APPROVED |"
+                   },
+                   {
+                       "id":  "P07-STATE-PHASE8",
+                       "passed":  true,
+                       "evidence":  "Phase 8 not started"
+                   },
+                   {
+                       "id":  "P07-GOVERNANCE",
+                       "passed":  true,
+                       "evidence":  "standing authorization"
+                   },
+                   {
+                       "id":  "P07-MATRIX-P07-D01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P07-MATRIX-P07-G01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P07-LABEL-eq:p07-equilibrium-collection",
+                       "passed":  true,
+                       "evidence":  "label=eq:p07-equilibrium-collection"
+                   },
+                   {
+                       "id":  "P07-LABEL-eq:p07-route-optimality",
+                       "passed":  true,
+                       "evidence":  "label=eq:p07-route-optimality"
+                   },
+                   {
+                       "id":  "P07-LABEL-eq:p07-advancement-optimality",
+                       "passed":  true,
+                       "evidence":  "label=eq:p07-advancement-optimality"
+                   },
+                   {
+                       "id":  "P07-LABEL-eq:p07-capacity-optimality",
+                       "passed":  true,
+                       "evidence":  "label=eq:p07-capacity-optimality"
+                   },
+                   {
+                       "id":  "P07-LABEL-eq:p07-market-clearing",
+                       "passed":  true,
+                       "evidence":  "label=eq:p07-market-clearing"
+                   },
+                   {
+                       "id":  "P07-EXACT-EQUATION-LABELS",
+                       "passed":  true,
+                       "evidence":  "labels=eq:p07-equilibrium-collection;eq:p07-route-optimality;eq:p07-advancement-optimality;eq:p07-capacity-optimality;eq:p07-market-clearing"
+                   },
+                   {
+                       "id":  "P07-FORMAL-6FF00FA6",
+                       "passed":  true,
+                       "evidence":  "required=p_m^*"
+                   },
+                   {
+                       "id":  "P07-FORMAL-6FF03032",
+                       "passed":  true,
+                       "evidence":  "required=x_i^*"
+                   },
+                   {
+                       "id":  "P07-FORMAL-8A4BCE55",
+                       "passed":  true,
+                       "evidence":  "required=r_i^*(q,m)"
+                   },
+                   {
+                       "id":  "P07-FORMAL-6FF02CCA",
+                       "passed":  true,
+                       "evidence":  "required=s_j^*"
+                   },
+                   {
+                       "id":  "P07-FORMAL-FC6B5EE8",
+                       "passed":  true,
+                       "evidence":  "required=contains exactly these four"
+                   },
+                   {
+                       "id":  "P07-FORMAL-740FE537",
+                       "passed":  true,
+                       "evidence":  "required=\\arg\\max_{r\\in\\{I,E,T,A\\}}"
+                   },
+                   {
+                       "id":  "P07-FORMAL-B0395CB1",
+                       "passed":  true,
+                       "evidence":  "required=\\Omega_i(M,p_m^*)"
+                   },
+                   {
+                       "id":  "P07-FORMAL-226FF842",
+                       "passed":  true,
+                       "evidence":  "required=\\arg\\max_{s_j\\geq0}"
+                   },
+                   {
+                       "id":  "P07-FORMAL-A2A017DC",
+                       "passed":  true,
+                       "evidence":  "required=D_m(p_m^*;M)=S_m(p_m^*)"
+                   },
+                   {
+                       "id":  "P07-FORMAL-91CABA17",
+                       "passed":  true,
+                       "evidence":  "required=not additional members"
+                   },
+                   {
+                       "id":  "P07-FORMAL-7479E45E",
+                       "passed":  true,
+                       "evidence":  "required=entry condition and no labor-market"
+                   },
+                   {
+                       "id":  "P07-FORMAL-2BF958BB",
+                       "passed":  true,
+                       "evidence":  "required=product-market aggregate"
+                   },
+                   {
+                       "id":  "P07-FORMAL-210885CD",
+                       "passed":  true,
+                       "evidence":  "required=welfare-clearing condition"
+                   },
+                   {
+                       "id":  "P07-FORBID-8547A254",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\eta\\b match="
+                   },
+                   {
+                       "id":  "P07-FORBID-67E235A7",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\frac\\{\\\\exp\\{ match="
+                   },
+                   {
+                       "id":  "P07-FORBID-4D17AEFC",
+                       "passed":  true,
+                       "evidence":  "pattern=Type-I match="
+                   },
+                   {
+                       "id":  "P07-FORBID-07B5863F",
+                       "passed":  true,
+                       "evidence":  "pattern=inclusive\\s+value match="
+                   },
+                   {
+                       "id":  "P07-FORBID-541D8048",
+                       "passed":  true,
+                       "evidence":  "pattern=representative\\s+household match="
+                   },
+                   {
+                       "id":  "P07-FORBID-5756E03B",
+                       "passed":  true,
+                       "evidence":  "pattern=capital\\s+accumulation match="
+                   },
+                   {
+                       "id":  "P07-FORBID-750A1F0E",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\max_\\{e_j match="
+                   },
+                   {
+                       "id":  "P07-NO-NEW-SYMBOL",
+                       "passed":  true,
+                       "evidence":  "symbol registry unchanged at 66 rows"
+                   },
+                   {
+                       "id":  "P07-DEPENDENCY-P07-E01",
+                       "passed":  true,
+                       "evidence":  "required=P07-E01"
+                   },
+                   {
+                       "id":  "P07-DEPENDENCY-P07-E02",
+                       "passed":  true,
+                       "evidence":  "required=P07-E02"
+                   },
+                   {
+                       "id":  "P07-DEPENDENCY-P07-E03",
+                       "passed":  true,
+                       "evidence":  "required=P07-E03"
+                   },
+                   {
+                       "id":  "P07-DEPENDENCY-P07-E04",
+                       "passed":  true,
+                       "evidence":  "required=P07-E04"
+                   },
+                   {
+                       "id":  "P07-DEPENDENCY-P07-E05",
+                       "passed":  true,
+                       "evidence":  "required=P07-E05"
+                   },
+                   {
+                       "id":  "P07-NO-NEW-ASSUMPTION",
+                       "passed":  true,
+                       "evidence":  "inheritance matrix recorded"
+                   },
+                   {
+                       "id":  "P07-INDEPENDENT",
+                       "passed":  true,
+                       "evidence":  "independent audit complete"
+                   },
+                   {
+                       "id":  "P07-NO-P0",
+                       "passed":  true,
+                       "evidence":  "no Phase 7 P0"
+                   },
+                   {
+                       "id":  "P07-LABEL-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "duplicates="
+                   },
+                   {
+                       "id":  "P07-LATEX-FATAL",
+                       "passed":  true,
+                       "evidence":  "fatal="
+                   },
+                   {
+                       "id":  "P07-LATEX-BOXES",
+                       "passed":  true,
+                       "evidence":  "box_warnings=0"
+                   },
+                   {
+                       "id":  "P07-SCOPE-EXACT",
+                       "passed":  true,
+                       "evidence":  "unexpected="
+                   },
+                   {
+                       "id":  "P07-GATE-IDS",
+                       "passed":  true,
+                       "evidence":  "missing="
+                   },
+                   {
+                       "id":  "P07-GATE-RESULT",
+                       "passed":  true,
+                       "evidence":  "gate PASS"
+                   }
+               ]
+}

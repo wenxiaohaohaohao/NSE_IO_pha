@@ -57,3 +57,11 @@ audit/phase06_compile_console.txt -text
 audit/phase06_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
 audit/phase06_compile_wrapper.tex -text
 scripts/audit_phase06.ps1 -text
+
+# Phase 7 hash-protected artifacts.
+07_equilibrium_definition.tex -text
+audit/phase07_gate_report.md -text
+audit/phase07_compile_console.txt -text
+audit/phase07_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
+audit/phase07_compile_wrapper.tex -text
+scripts/audit_phase07.ps1 -text

@@ -172,6 +172,8 @@ Patent history may later proxy predetermined $a_i$; it is not equal to $x_i$ or 
 Demand, product pricing, operating value, manufacturing technologies, route
 values, deterministic choice, the conditional organizational cutoff, the
 common project-advancement problem and the CMO supply--demand market are active
-through Phase 6. Future objects still reserved include proposition-specific
-aggregates. Each must be added here with one category and units immediately
-before its first formula in an authorized later Phase.
+through Phase 6. Phase 7 adds no symbol: it collects the already defined
+objects (p_m^*,x_i^*,r_i^*,s_j^*) into the partial-equilibrium definition.
+Future objects still reserved include proposition-specific aggregates. Each
+must be added here with one category and units immediately before its first
+formula in an authorized later Phase.

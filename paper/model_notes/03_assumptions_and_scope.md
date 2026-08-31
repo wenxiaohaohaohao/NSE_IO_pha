@@ -1,6 +1,6 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED`
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED`
 
 This file records assumptions needed through the current phase. It does not impose the signs of later propositions. Technology, route-choice, project-advancement, market-regularity and equilibrium comparative-static assumptions must be added in their authorized phases before use.
 
@@ -498,3 +498,19 @@ audit.
 The model does not assume that MAH lowers $p_m^*$, that supply shifts after
 MAH, or that aggregate route demand is continuous without atomless
 heterogeneity.
+
+## Q. Phase 7 assumption-use matrix
+
+Phase 7 adds no primitive or regularity assumption. Its equilibrium definition
+uses only results already established under the following assumptions.
+
+| Equilibrium condition | Assumptions actually inherited |
+|---|---|
+| deterministic route optimality | A-P04-CHOICE-01, A-P04-PRICE-01, A-P04-POLICY-01 |
+| unique common advancement intensity | A-P05-COST-01, A-P05-VALUE-01, A-P05-CHANNEL-01 |
+| unique qualified-supplier capacity | A-P06-SUPPLY-01, A-P06-PRICE-01 |
+| unique CMO clearing price | A-P06-SUPPLY-01, A-P06-BACKGROUND-01, A-P06-AGG-01, A-P06-PRICE-01 |
+
+The restriction to one capacity-market clearing equation is a model-closure
+boundary, not an assumed economic conclusion. No entry, firm-distribution,
+labor, capital, product-market or welfare-clearing assumption is added.
