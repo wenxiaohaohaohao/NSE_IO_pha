@@ -1,0 +1,18 @@
+# Phase 13 approved commit scope
+paper/model_notes/00_model_closure_status.md
+paper/model_notes/02_equation_dependency_map.md
+paper/model_rebuild/.gitattributes
+paper/model_rebuild/audit/phase13_artifact_hashes.md
+paper/model_rebuild/audit/phase13_audit_results.json
+paper/model_rebuild/audit/phase13_commit_manifest.txt
+paper/model_rebuild/audit/phase13_compile_console.txt
+paper/model_rebuild/audit/phase13_compile_wrapper.tex
+paper/model_rebuild/audit/phase13_equation_catalog.csv
+paper/model_rebuild/audit/phase13_gate_report.md
+paper/model_rebuild/audit/phase13_independent_dependency_audit.md
+paper/model_rebuild/audit/phase13_preflight.md
+paper/model_rebuild/scripts/audit_phase13.ps1
+paper/model_rebuild/scripts/build_phase13_equation_catalog.ps1
+paper/model_rebuild/spec/approvals/phase13_standing_authorization.md
+paper/model_rebuild/spec/instruction_traceability_matrix.csv
+paper/model_rebuild/spec/specification_hashes.md

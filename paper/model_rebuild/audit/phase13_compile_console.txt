@@ -1,0 +1,204 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/model_rebuild/audit/p
+hase13_compile_wrapper.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\application\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\application\miktex\tex/latex/base\size11.clo))
+(D:\application\miktex\tex/latex/geometry\geometry.sty
+(D:\application\miktex\tex/latex/graphics\keyval.sty)
+(D:\application\miktex\tex/generic/iftex\ifvtex.sty
+(D:\application\miktex\tex/generic/iftex\iftex.sty))
+(D:\application\miktex\tex/latex/geometry\geometry.cfg))
+(D:\application\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(D:\application\miktex\tex/latex/amsmath\amstext.sty
+(D:\application\miktex\tex/latex/amsmath\amsgen.sty))
+(D:\application\miktex\tex/latex/amsmath\amsbsy.sty)
+(D:\application\miktex\tex/latex/amsmath\amsopn.sty))
+(D:\application\miktex\tex/latex/amsfonts\amssymb.sty
+(D:\application\miktex\tex/latex/amsfonts\amsfonts.sty))
+(D:\application\miktex\tex/latex/tools\array.sty)
+(D:\application\miktex\tex/latex/l3backend\l3backend-pdftex.def)
+No file phase13_compile_wrapper.aux.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(../01_primitives_and_timing.tex
+(D:\application\miktex\tex/latex/amsfonts\umsa.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsb.fd) [1{C:/Users/dongw/AppData/Lo
+cal/MiKTeX/fonts/map/pdftex/pdftex.map}]
+
+LaTeX Warning: Reference `eq:p01-institutional-wedge' on page 2 undefined on in
+put line 147.
+
+
+LaTeX Warning: Reference `eq:p01-route-domain' on page 2 undefined on input lin
+e 147.
+
+
+LaTeX Warning: Reference `eq:p01-planned-intensity' on page 2 undefined on inpu
+t line 152.
+
+
+LaTeX Warning: Reference `eq:p01-project-draw' on page 2 undefined on input lin
+e 156.
+
+
+LaTeX Warning: Reference `eq:p01-route-domain' on page 2 undefined on input lin
+e 162.
+
+
+LaTeX Warning: Reference `eq:p01-downstream-probability' on page 2 undefined on
+ input line 168.
+
+[2]
+
+LaTeX Warning: Reference `eq:p01-anticipated-channel' on page 3 undefined on in
+put line 216.
+
+
+LaTeX Warning: Reference `eq:p01-realization-channel' on page 3 undefined on in
+put line 217.
+
+) (../02_demand_profit_derivation.tex [3]
+
+LaTeX Warning: Reference `eq:p02-price-foc' on page 4 undefined on input line 5
+4.
+
+
+LaTeX Warning: Reference `eq:p02-optimal-price' on page 4 undefined on input li
+ne 73.
+
+[4]) (../03_internal_external_technologies.tex [5] [6]
+
+LaTeX Warning: Reference `tab:p03-local-crosswalk' on page 7 undefined on input
+ line 121.
+
+) (../04_route_values_and_sorting.tex [7] [8]
+
+LaTeX Warning: Reference `eq:p04-gap-slope' on page 9 undefined on input line 1
+46.
+
+
+LaTeX Warning: Reference `eq:p04-cutoff-sorting' on page 9 undefined on input l
+ine 193.
+
+
+LaTeX Warning: Reference `eq:p04-cutoff-derivatives' on page 9 undefined on inp
+ut line 193.
+
+) (../05_rd_problem.tex [9] [10] [11]) (../06_cmo_supply_demand_equilibrium.tex
+[12] [13]) (../07_equilibrium_definition.tex [14]
+
+LaTeX Warning: Reference `eq:p07-route-optimality' on page 15 undefined on inpu
+t line 85.
+
+
+LaTeX Warning: Reference `eq:p07-market-clearing' on page 15 undefined on input
+ line 85.
+
+) (../08_required_propositions.tex [15]
+
+LaTeX Warning: Reference `eq:p08-sorting-slope' on page 16 undefined on input l
+ine 35.
+
+[16] [17] [18] [19] [20]) (../09_observed_outcomes.tex [21] [22])
+(../10_empirical_mapping.tex [23] [24]) [25] [26]
+(D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
+uild_phase13\phase13_compile_wrapper.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) <C:\Users\dongw\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1095.pk><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/ap
+plication/miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/application/mikt
+ex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/application/miktex/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb><D:/application/miktex/fonts/type1/public/amsfon
+ts/cm/cmmi6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/applicatio
+n/miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/fonts/
+type1/public/amsfonts/cm/cmr8.pfb><D:/application/miktex/fonts/type1/public/ams
+fonts/cm/cmss10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/appli
+cation/miktex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/application/miktex/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb><D:/application/miktex/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm
+/cmtt10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb>
+Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
+l_rebuild\audit\build_phase13\phase13_compile_wrapper.pdf (26 pages, 322047 byt
+es).
+Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
+model_rebuild\audit\build_phase13\phase13_compile_wrapper.log.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/model_rebuild/audit/p
+hase13_compile_wrapper.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\application\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\application\miktex\tex/latex/base\size11.clo))
+(D:\application\miktex\tex/latex/geometry\geometry.sty
+(D:\application\miktex\tex/latex/graphics\keyval.sty)
+(D:\application\miktex\tex/generic/iftex\ifvtex.sty
+(D:\application\miktex\tex/generic/iftex\iftex.sty))
+(D:\application\miktex\tex/latex/geometry\geometry.cfg))
+(D:\application\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(D:\application\miktex\tex/latex/amsmath\amstext.sty
+(D:\application\miktex\tex/latex/amsmath\amsgen.sty))
+(D:\application\miktex\tex/latex/amsmath\amsbsy.sty)
+(D:\application\miktex\tex/latex/amsmath\amsopn.sty))
+(D:\application\miktex\tex/latex/amsfonts\amssymb.sty
+(D:\application\miktex\tex/latex/amsfonts\amsfonts.sty))
+(D:\application\miktex\tex/latex/tools\array.sty)
+(D:\application\miktex\tex/latex/l3backend\l3backend-pdftex.def)
+(D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
+uild_phase13\phase13_compile_wrapper.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(../01_primitives_and_timing.tex
+(D:\application\miktex\tex/latex/amsfonts\umsa.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsb.fd) [1{C:/Users/dongw/AppData/Lo
+cal/MiKTeX/fonts/map/pdftex/pdftex.map}] [2])
+(../02_demand_profit_derivation.tex [3] [4])
+(../03_internal_external_technologies.tex [5] [6])
+(../04_route_values_and_sorting.tex [7] [8]) (../05_rd_problem.tex [9] [10]
+[11]) (../06_cmo_supply_demand_equilibrium.tex [12] [13])
+(../07_equilibrium_definition.tex [14]) (../08_required_propositions.tex
+[15] [16] [17] [18] [19] [20]) (../09_observed_outcomes.tex [21] [22])
+(../10_empirical_mapping.tex [23] [24]) [25] [26]
+(D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
+uild_phase13\phase13_compile_wrapper.aux) ) <C:\Users\dongw\AppData\Local\MiKTe
+X\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><D:/application/miktex/fonts/t
+ype1/public/amsfonts/cm/cmbx10.pfb><D:/application/miktex/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmex
+10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/app
+lication/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/application/miktex
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/application/miktex/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/c
+m/cmr10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/
+application/miktex/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/application/mi
+ktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/typ
+e1/public/amsfonts/cm/cmsy6.pfb><D:/application/miktex/fonts/type1/public/amsfo
+nts/cm/cmsy7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy8.pf
+b><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:/applicat
+ion/miktex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/application/miktex/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
+l_rebuild\audit\build_phase13\phase13_compile_wrapper.pdf (26 pages, 321715 byt
+es).
+Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
+model_rebuild\audit\build_phase13\phase13_compile_wrapper.log.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.

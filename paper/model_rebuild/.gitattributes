@@ -106,3 +106,12 @@ audit/phase12_compile_wrapper.tex -text
 audit/phase12_legacy_occurrence_index.csv -text
 scripts/audit_phase12.ps1 -text
 scripts/build_phase12_legacy_inventory.ps1 -text
+
+# Phase 13 hash-protected artifacts.
+audit/phase13_gate_report.md -text
+audit/phase13_compile_console.txt -text
+audit/phase13_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
+audit/phase13_compile_wrapper.tex -text
+audit/phase13_equation_catalog.csv -text
+scripts/audit_phase13.ps1 -text
+scripts/build_phase13_equation_catalog.ps1 -text

@@ -1,0 +1,290 @@
+{
+    "phase":  13,
+    "expected_status":  "APPROVED",
+    "status":  "APPROVED",
+    "generated_at":  "2026-08-31T23:36:02.3173734+08:00",
+    "passed":  56,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "id":  "P13-HASH-BASE",
+                       "passed":  true,
+                       "evidence":  "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+                   },
+                   {
+                       "id":  "P13-HASH-AMD11",
+                       "passed":  true,
+                       "evidence":  "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+                   },
+                   {
+                       "id":  "P13-HASH-AMD12-IMAGE",
+                       "passed":  true,
+                       "evidence":  "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+                   },
+                   {
+                       "id":  "P13-HASH-AMD12-TEXT",
+                       "passed":  true,
+                       "evidence":  "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+                   },
+                   {
+                       "id":  "P13-HASH-EFFECTIVE",
+                       "passed":  true,
+                       "evidence":  "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+                   },
+                   {
+                       "id":  "P13-GIT-BRANCH",
+                       "passed":  true,
+                       "evidence":  "branch=codex/mah-model-rebuild"
+                   },
+                   {
+                       "id":  "P13-GIT-ENTRY",
+                       "passed":  true,
+                       "evidence":  "head=a4c2a2bef96f09d62932d182c72cb6a389a88a97"
+                   },
+                   {
+                       "id":  "P13-GIT-REMOTE",
+                       "passed":  true,
+                       "evidence":  "remote=a4c2a2bef96f09d62932d182c72cb6a389a88a97"
+                   },
+                   {
+                       "id":  "P13-MANUSCRIPT-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "changed="
+                   },
+                   {
+                       "id":  "P13-ZIP-ISOLATED",
+                       "passed":  true,
+                       "evidence":  "count=0"
+                   },
+                   {
+                       "id":  "P13-FILE-02_equation_dependency_map.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\02_equation_dependency_map.md"
+                   },
+                   {
+                       "id":  "P13-FILE-phase13_equation_catalog.csv",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase13_equation_catalog.csv"
+                   },
+                   {
+                       "id":  "P13-FILE-phase13_preflight.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase13_preflight.md"
+                   },
+                   {
+                       "id":  "P13-FILE-phase13_independent_dependency_audit.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase13_independent_dependency_audit.md"
+                   },
+                   {
+                       "id":  "P13-FILE-phase13_compile_wrapper.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase13_compile_wrapper.tex"
+                   },
+                   {
+                       "id":  "P13-FILE-phase13_compile_console.txt",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase13_compile_console.txt"
+                   },
+                   {
+                       "id":  "P13-FILE-phase13_compile_wrapper.log",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase13\\phase13_compile_wrapper.log"
+                   },
+                   {
+                       "id":  "P13-FILE-phase13_compile_wrapper.pdf",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase13\\phase13_compile_wrapper.pdf"
+                   },
+                   {
+                       "id":  "P13-STATE-PHASE12",
+                       "passed":  true,
+                       "evidence":  "Phase 12 approved"
+                   },
+                   {
+                       "id":  "P13-STATE-PHASE13",
+                       "passed":  true,
+                       "evidence":  "expected=| 13 Equation dependency map | APPROVED |"
+                   },
+                   {
+                       "id":  "P13-STATE-PHASE14",
+                       "passed":  true,
+                       "evidence":  "Phase 14 not started"
+                   },
+                   {
+                       "id":  "P13-MATRIX-P13-D01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P13-MATRIX-P13-G01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P13-CATALOG-COUNT",
+                       "passed":  true,
+                       "evidence":  "rows=89"
+                   },
+                   {
+                       "id":  "P13-CATALOG-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "unique=89"
+                   },
+                   {
+                       "id":  "P13-CATALOG-PHASE-COUNTS",
+                       "passed":  true,
+                       "evidence":  "counts=1:10,2:9,3:7,4:11,5:11,6:11,7:5,8:18,9:5,10:2"
+                   },
+                   {
+                       "id":  "P13-CATALOG-SOURCE-MATCH",
+                       "passed":  true,
+                       "evidence":  "mismatches="
+                   },
+                   {
+                       "id":  "P13-LEDGER-ROWS",
+                       "passed":  true,
+                       "evidence":  "rows=89"
+                   },
+                   {
+                       "id":  "P13-LEDGER-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "labels=89 unique=89"
+                   },
+                   {
+                       "id":  "P13-LEDGER-COVERAGE",
+                       "passed":  true,
+                       "evidence":  "missing= extra="
+                   },
+                   {
+                       "id":  "P13-HEADING-SEQUENCE",
+                       "passed":  true,
+                       "evidence":  "headings=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-3E413429",
+                       "passed":  true,
+                       "evidence":  "required=Z_M(p)"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-DB074E55",
+                       "passed":  true,
+                       "evidence":  "required=candidate-price"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-6A62E934",
+                       "passed":  true,
+                       "evidence":  "required=The only feedback is the outer scalar root"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-6E18AAE5",
+                       "passed":  true,
+                       "evidence":  "required=zero-measure route ties"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-0AF625D7",
+                       "passed":  true,
+                       "evidence":  "required=integrable envelope"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-6A7A0B11",
+                       "passed":  true,
+                       "evidence":  "required=finite, continuous, nonnegative, and weakly decreasing"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-6ABF3E71",
+                       "passed":  true,
+                       "evidence":  "required=continuous and strictly increasing"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-DBF077D3",
+                       "passed":  true,
+                       "evidence":  "required=Z_M(0)\u003e0"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-C8D167AD",
+                       "passed":  true,
+                       "evidence":  "required=strict decrease of \\(Z_M\\)"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-4B9CFC9E",
+                       "passed":  true,
+                       "evidence":  "required=p_m^*(1)\\geq p_m^*(0)"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-281A719B",
+                       "passed":  true,
+                       "evidence":  "required=\\Delta\\Omega_i^{eq}"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-4FE4A484",
+                       "passed":  true,
+                       "evidence":  "required=\\Delta x_i^{eq}"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-3ED21D49",
+                       "passed":  true,
+                       "evidence":  "required=Fixed-price and equilibrium-price separation"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-E4A15986",
+                       "passed":  true,
+                       "evidence":  "required=M\\longrightarrow\\tau_E(M)"
+                   },
+                   {
+                       "id":  "P13-MAP-TEXT-A391BA6D",
+                       "passed":  true,
+                       "evidence":  "required=a second market-clearing equation"
+                   },
+                   {
+                       "id":  "P13-MAP-NO-STALE-7EA00E2D",
+                       "passed":  true,
+                       "evidence":  "forbidden=No sign is imposed on the cross-regime change"
+                   },
+                   {
+                       "id":  "P13-MAP-NO-STALE-7A604A0C",
+                       "passed":  true,
+                       "evidence":  "forbidden=allowed but not-yet-proved"
+                   },
+                   {
+                       "id":  "P13-MAP-NO-STALE-9276A3F1",
+                       "passed":  true,
+                       "evidence":  "forbidden=[DEFERRED: Phase 9]"
+                   },
+                   {
+                       "id":  "P13-INDEPENDENT",
+                       "passed":  true,
+                       "evidence":  "independent dependency audit"
+                   },
+                   {
+                       "id":  "P13-LABEL-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "duplicates="
+                   },
+                   {
+                       "id":  "P13-LATEX-FATAL",
+                       "passed":  true,
+                       "evidence":  "fatal="
+                   },
+                   {
+                       "id":  "P13-LATEX-BOXES",
+                       "passed":  true,
+                       "evidence":  "box_warnings=0"
+                   },
+                   {
+                       "id":  "P13-SCOPE-EXACT",
+                       "passed":  true,
+                       "evidence":  "unexpected="
+                   },
+                   {
+                       "id":  "P13-GATE-IDS",
+                       "passed":  true,
+                       "evidence":  "missing="
+                   },
+                   {
+                       "id":  "P13-GATE-RESULT",
+                       "passed":  true,
+                       "evidence":  "gate PASS"
+                   }
+               ]
+}

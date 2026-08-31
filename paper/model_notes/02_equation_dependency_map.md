@@ -1,7 +1,12 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED; PHASE 10 - APPROVED; PHASE 11 - APPROVED`  
-This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement, the Phase 6 CMO market, the Phase 7 partial-equilibrium definition, the Phase 8 proposition stack, the Phase 9 outcome boundary, the Phase 10 empirical interface and the Phase 11 extension quarantine. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED; PHASE 10 - APPROVED; PHASE 11 - APPROVED; PHASE 12 - APPROVED; PHASE 13 - APPROVED`  
+This map records every one of the 89 labeled equations in the Phase 1--10
+baseline, their semantic parents, timing order, mathematical status, proof
+obligations, the single CMO fixed point, and the Phase 11 extension
+quarantine. The reproducible equation-level source catalog is
+paper/model_rebuild/audit/phase13_equation_catalog.csv. No object in the
+quarantine has an arrow into the active graph.
 
 ## 1. Phase 1 definition ledger
 
@@ -14,6 +19,9 @@ This map records definitions, timing dependencies, demand/profit, manufacturing 
 | `P01-E05` / `eq:p01-planned-intensity` | $\lambda_i^{\mathrm{plan}}=a_ix_i$ | $a_i,x_i$ | technology definition | Phase 5 adds optimization for $x_i$ |
 | `P01-E06` / `eq:p01-route-domain` | feasible route labels conditional on $M$ | $M,r_i,I,E,T,A$ | choice-domain definition | Phase 4 derives $r_i^*$ from values |
 | `P01-E07` / `eq:p01-downstream-probability` | downstream probability $s(q)$ | $q,s$ | primitive probability definition | Phase 4 uses it in route values |
+| `P01-E08` / `eq:p01-only-direct-policy-arrow` | $M\to\tau_E(M)$ is the only direct policy arrow | $M,\tau_E$ | causal-scope identity | audit every later equation for forbidden direct arrows |
+| `P01-E09` / `eq:p01-anticipated-channel` | anticipated chain $M\to E$ value $\to\Omega_i\to x_i^*$ | P01-E08 plus reserved $\Omega_i$ | timing/dependency statement | closed by Phase 4--5 values and optimization |
+| `P01-E10` / `eq:p01-realization-channel` | $x_i^*\to\lambda_i^{plan}\to r_i^*\to$ separation $\to$ products | P01-E05--P01-E07 plus reserved route/outcome objects | timing/dependency statement | formalized in Phase 8--9 outcomes |
 
 No FOC, SOC, route cutoff, price equation, payoff equation, or comparative static belongs to Phase 1.
 
@@ -24,12 +32,14 @@ Every Phase 2 equation conditions on project value $q>0$ and a positive route-im
 | ID / LaTeX label | Object defined or result derived | Inputs already defined | Mathematical status | Proof / boundary obligation |
 |---|---|---|---|---|
 | `P02-E01` / `eq:p02-demand` | $y(p;q)=Aq p^{-\varepsilon}$ | $A,q,p,\varepsilon$ | primitive residual-demand schedule | verify units and $\varepsilon>1$ pricing boundary |
-| `P02-E02` / `eq:p02-price-foc` | derivative of $(p-c)y(p;q)$ | $A,q,p,c,\varepsilon$ | optimization-derived FOC expression | check held-fixed objects and unique sign crossing |
-| `P02-E03` / `eq:p02-optimal-price` | $p^*(c)=\varepsilon c/(\varepsilon-1)$ | `P02-E02` | optimization-derived unique maximizer | verify feasibility, SOC, and global maximum |
-| `P02-E04` / `eq:p02-operating-profit` | $\pi(q,c)=Aq(\varepsilon-1)^{\varepsilon-1}\varepsilon^{-\varepsilon}c^{1-\varepsilon}$ | `P02-E01`, `P02-E03` | optimization-derived one-period profit | verify no repeated cost and dimensions |
-| `P02-E05` / `eq:p02-profit-derivatives` | $\pi_q=\pi/q>0$, $\pi_c=(1-\varepsilon)\pi/c<0$ | `P02-E04` | algebraic derivatives | hold $A,\varepsilon$ and the other argument fixed |
-| `P02-E06` / `eq:p02-present-value` | $R(q,c)=\pi(q,c)/(1-\beta\varphi)$ | `P02-E04`, $\beta,\varphi$ | derived convergent geometric present value | verify $\beta\varphi<1$ and conditional-success interpretation |
-| `P02-E07` / `eq:p02-return-derivatives` | $R_q=R/q>0$, $R_c=(1-\varepsilon)R/c<0$ | `P02-E05`, `P02-E06` | algebraic derivatives | keep $\beta,\varphi$ fixed |
+| `P02-E02` / `eq:p02-pricing-problem` | $\max_{p>0}(p-c)y(p;q)$ | P02-E01 and conditional marginal cost $c$ | optimization problem | product price is not CMO price |
+| `P02-E03` / `eq:p02-price-foc` | derivative of $(p-c)y(p;q)$ | P02-E01--P02-E02 | optimization-derived FOC expression | check held-fixed objects and unique sign crossing |
+| `P02-E04` / `eq:p02-optimal-price` | $p^*(c)=\varepsilon c/(\varepsilon-1)$ | P02-E03 | optimization-derived candidate | verify feasibility and global maximum |
+| `P02-E05` / `eq:p02-price-soc` | objective curvature at $p^*(c)$ is negative | P02-E01--P02-E04 | optimization-derived SOC | $\varepsilon>1$, $A,q,c>0$ |
+| `P02-E06` / `eq:p02-operating-profit` | $\pi(q,c)=Aq(\varepsilon-1)^{\varepsilon-1}\varepsilon^{-\varepsilon}c^{1-\varepsilon}$ | P02-E01, P02-E04 | optimization-derived one-period profit | verify no repeated cost and dimensions |
+| `P02-E07` / `eq:p02-profit-derivatives` | $\pi_q=\pi/q>0$, $\pi_c=(1-\varepsilon)\pi/c<0$ | P02-E06 | algebraic derivatives | hold $A,\varepsilon$ and the other argument fixed |
+| `P02-E08` / `eq:p02-present-value` | $R(q,c)=\pi(q,c)/(1-\beta\varphi)$ | P02-E06, $\beta,\varphi$ | derived convergent geometric present value | verify $\beta\varphi<1$ and conditional-success interpretation |
+| `P02-E09` / `eq:p02-return-derivatives` | $R_q=R/q>0$, $R_c=(1-\varepsilon)R/c<0$ | P02-E07--P02-E08 | algebraic derivatives | keep $\beta,\varphi$ fixed |
 
 The pricing control is product price $p$, not the CMO capacity price $p_m$. The derivative with respect to $c$ is a continuous conditional-cost derivative, not a derivative with respect to binary policy $M$.
 
@@ -58,10 +68,12 @@ The evaluated route-cost input $c$ from Phase 2 is supplied by $c_I(m,k_i)$ or $
 | `P04-E03` / `eq:p04-outside-values` | $W^T=T(q,m)$, $W^A=0$ | $T$ | outside-option definitions | no second transfer market |
 | `P04-E04` / `eq:p04-optimized-value` | $W_i=\max\{W_i^I,W_i^E,W^T,W^A\}$ | `P04-E01`--`P04-E03` | deterministic optimized value | no probabilistic route share |
 | `P04-E05` / `eq:p04-route-choice` | $r_i^*$ is the argmax over the four explicitly listed route values | `P04-E01`--`P04-E04` | deterministic choice | ties have measure zero; no undeclared generic payoff symbol |
-| `P04-E06` / `eq:p04-value-gap` | $\Delta_{IE}=W_i^I-W_i^E$ | `P04-E01`, `P04-E02` | derived value gap | hold $q,m,M,p_m$ fixed when varying $k_i$ |
-| `P04-E07` / `eq:p04-gap-slope` | $\Delta_{IE,k}=sR_c c_{I,k}-F_{I,k}>0$ | Phase 2 derivative and Phase 3 signs | derived monotonicity | feasible internal domain |
-| `P04-E08` / `eq:p04-cutoff` | unique finite $k^*$ solves $\Delta_{IE}(k^*)=0$ | `P04-E07` plus endpoint crossing | implicit definition/theorem | only when finite-wedge crossing conditions hold |
-| `P04-E09` / `eq:p04-cutoff-derivatives` | $k^*_{\tau}=-1/\Delta_k<0$, $k^*_{p_m}=-b/\Delta_k<0$ | `P04-E08`, $b>0$ | IFT derivatives | fixed conjectured $p_m$; finite $\tau_E$ |
+| `P04-E06` / `eq:p04-binary-value-effect` | $W_i(1,p_m)-W_i(0,p_m)\ge0$ from adding finite \(E\) at fixed price | P04-E01--P04-E05 and P01-E04 | finite max comparison | zero unless \(E\) beats the old maximum |
+| `P04-E07` / `eq:p04-value-gap` | $\Delta_{IE}=W_i^I-W_i^E$ | P04-E01--P04-E02 | derived value gap | hold $q,m,M,p_m$ fixed when varying $k_i$ |
+| `P04-E08` / `eq:p04-gap-slope` | $\Delta_{IE,k}=sR_c c_{I,k}-F_{I,k}>0$ | P02-E09 and Phase 3 signs | derived monotonicity | feasible internal domain |
+| `P04-E09` / `eq:p04-cutoff` | unique finite $k^*$ solves $\Delta_{IE}(k^*)=0$ | P04-E08 plus endpoint crossing | implicit definition/theorem | only when finite-wedge crossing conditions hold |
+| `P04-E10` / `eq:p04-cutoff-sorting` | \(k_i<k^*\Rightarrow E\), \(k_i>k^*\Rightarrow I\) conditional on \(I/E\) dominating \(T/A\) | P04-E07--P04-E09 | deterministic sorting implication | outside options must be checked |
+| `P04-E11` / `eq:p04-cutoff-derivatives` | $k^*_{\tau}=-1/\Delta_k<0$, $k^*_{p_m}=-b/\Delta_k<0$ | P04-E09, $b>0$ | IFT derivatives | fixed conjectured $p_m$; finite $\tau_E$ |
 
 The binary policy comparison is not a derivative: $M=0$ sets $W_i^E=-\infty$, while $M=1$ supplies a finite barrier. The $\tau_E$ derivative is local within the finite-wedge domain.
 
@@ -74,10 +86,12 @@ The binary policy comparison is not a derivative: $M=0$ sets $W_i^E=-\infty$, wh
 | P05-E03 / eq:p05-expected-value | $\Omega_i=\int W_i\,dF$ | Phase 1 distribution; Phase 4 optimized value | derived expectation | measurability, integrability and nonnegativity |
 | P05-E04 / eq:p05-advancement-objective | $\max_{x_i\geq0}\{\beta a_ix_i\Omega_i-C_X(x_i)\}$ | P05-E01--P05-E03 | optimization problem | $p_m$ fixed and project draw downstream |
 | P05-E05 / eq:p05-kkt | advancement KKT conditions | P05-E04 | optimization-derived | cover interior and zero-value corner |
-| P05-E06 / eq:p05-soc | objective curvature $-\kappa\nu x_i^{\nu-1}<0$ for $x_i>0$ | P05-E02 | optimization-derived | strict concavity also established globally |
-| P05-E07 / eq:p05-optimal-advancement | $x_i^*=[\beta a_i\Omega_i/\kappa]^{1/\nu}$ | P05-E05, nonnegative $\Omega_i$ | unique optimizer | units and $\Omega_i=0$ corner |
-| P05-E08 / eq:p05-binary-channel | fixed-price binary reform affects $x_i^*$ only through $\Omega_i$ | Phase 4 binary value comparison; P05-E07 | finite comparison | no derivative with respect to $M$ |
-| P05-E09 / eq:p05-value-gap | $K_i-B_i=\Omega_i$ and $C_X'=\beta a_i(K_i-B_i)$ | P05-E05, appendix auxiliaries | accounting interpretation | no recursive state or scientific-productivity channel |
+| P05-E06 / eq:p05-foc | \(\kappa x_i^\nu=\beta a_i\Omega_i\) for an interior solution | P05-E04--P05-E05 | optimization-derived FOC | \(\Omega_i>0\) interior |
+| P05-E07 / eq:p05-soc | objective curvature $-\kappa\nu x_i^{\nu-1}<0$ for $x_i>0$ | P05-E02 | optimization-derived SOC | strict concavity also established globally |
+| P05-E08 / eq:p05-optimal-advancement | $x_i^*=[\beta a_i\Omega_i/\kappa]^{1/\nu}$ | P05-E05--P05-E07, nonnegative $\Omega_i$ | unique optimizer | units and $\Omega_i=0$ corner |
+| P05-E09 / eq:p05-binary-channel | fixed-price binary reform affects $x_i^*$ only through $\Omega_i$ | P04-E06; P05-E08 | finite comparison | no derivative with respect to $M$ |
+| P05-E10 / eq:p05-value-gap | $K_i-B_i=\Omega_i$ | P05-E03 and appendix auxiliaries | accounting interpretation | no recursive state |
+| P05-E11 / eq:p05-value-gap-foc | \(C_X'(x_i)=\beta a_i(K_i-B_i)\) | P05-E06, P05-E10 | equivalent FOC interpretation | no scientific-productivity channel |
 
 The expected-value and optimization arrows are active at a fixed conjectured
 $p_m$. Phase 6 now uses them inside the market-clearing map that selects
@@ -232,7 +246,7 @@ Stage 3: organization
 
 Stage 4: downstream realization
   q -> exogenous probability s(q)                              [DEFINED: Phase 1]
-  route and realization -> realized product outcome            [DEFERRED: Phase 9]
+  route and realization -> realized product outcome            [DERIVED: Phase 8; BOUNDED: Phase 9]
 
 Stage 5: manufacturing-service consistency
   project mass + E-route choices -> aggregate CMO demand        [DERIVED: Phase 6]
@@ -243,27 +257,61 @@ Stage 5: manufacturing-service consistency
 
 Stage 5 is a simultaneous consistency condition, not a later event developers fail to anticipate.
 
-## 8. CMO fixed-point dependency
+## 13. Complete CMO fixed point and solution order
 
-The CMO equilibrium loop is
+For each regime \(M\), define the candidate-price excess-demand map
+
+$$
+Z_M(p)
+=
+D_m^B(p)
++\int a_i x_i^*(M,p)\chi_i^E(p;M)\,dH(a,k)
+-\int s_j^*(p,z)\,dH_C(z).
+$$
+
+Every object on the right is a single-valued function of the candidate price.
+The complete loop is
 
 $$
 p_m^*
 \longrightarrow
-\left(\Omega_i,x_i^*,r_i^*\right)
+\left(W_i^E,r_i^*,\Omega_i,x_i^*,\chi_i^E,s_j^*\right)
 \longrightarrow
-\text{aggregate entrusted-capacity demand}
+\left(D_m,S_m,Z_M\right)
 \longrightarrow
 p_m^*.
 $$
 
-Phase 6 closes this loop as a scalar market-clearing equation. At each
-candidate price, all right-hand-side choices are explicit functions of that
-price. Under the Phase 6 continuity, boundary and monotonicity conditions,
-the clearing price exists and is unique. No sign is imposed on the
-cross-regime change in $p_m^*$.
+The acyclic evaluation inside one candidate-price call is:
 
-## 9. Allowed direct and indirect arrows
+1. evaluate \(W_i^I,W_i^E,W^T,W^A\);
+2. take the deterministic maximum to obtain \(r_i^*\) and \(W_i\);
+3. integrate \(W_i\) to obtain \(\Omega_i\);
+4. apply the unique advancement optimizer to obtain \(x_i^*\);
+5. integrate \(b(m)1\{r_i^*=E\}\) to obtain \(\chi_i^E\), then aggregate
+   \(D_m^{MAH}\) and add \(D_m^B\);
+6. solve each supplier problem to obtain \(s_j^*\), then aggregate \(S_m\);
+7. find the unique zero \(Z_M(p_m^*)=0\); and
+8. evaluate \(\{x_i^*,r_i^*,s_j^*\}\) at that price.
+
+There is no inner circularity after conditioning on \(p\). The only feedback is the outer scalar root.
+
+Existence and uniqueness use all of the following:
+
+- zero-measure route ties and an integrable envelope, so deterministic
+  individual choices aggregate to continuous demand;
+- \(D_m\) finite, continuous, nonnegative, and weakly decreasing;
+- \(S_m\) continuous and strictly increasing, with \(S_m(0)=0\);
+- \(D_m^B(0)>0\), hence \(Z_M(0)>0\);
+- \(D_m(p;M)\to0\) and \(S_m(p)\to+\infty\), hence
+  \(Z_M(p)<0\) for sufficiently large \(p\); and
+- strict decrease of \(Z_M\), which turns existence into uniqueness.
+
+Failure of a boundary, continuity, integrability, or strict-monotonicity
+condition is a closure failure, not an invitation to select an arbitrary
+price.
+
+## 14. Allowed direct and indirect arrows
 
 The only allowed direct policy arrow is
 
@@ -272,7 +320,7 @@ M\longrightarrow\tau_E(M)
 \quad\text{and the legal availability/friction of route }E.
 $$
 
-The allowed but not-yet-proved ex ante chain is
+The approved and proved ex ante dependency chain is
 
 $$
 M
@@ -284,7 +332,9 @@ M
 x_i^*.
 $$
 
-The last two arrows require Phase 4 route values and the Phase 5 optimization. An increase requires a strictly positive expected route-value gain and the later optimization conditions.
+The last two arrows are closed by Phase 4 route values and the Phase 5
+optimization. A strict fixed-price increase requires positive expected value
+on a positive-measure MAH-relevant set.
 
 Phase 5 closes those two arrows at fixed $p_m$:
 
@@ -352,7 +402,52 @@ $$
 
 This prevents ex post observed $E$ assignment from being written before $x_i$.
 
-## 15. Forbidden arrows and identities
+## 15. Fixed-price and equilibrium-price separation
+
+At a common fixed price \(p\), the binary route-set comparison gives
+
+$$
+0\leq
+\Omega_i(1,p)-\Omega_i(0,p)
+\quad\Longrightarrow\quad
+0\leq x_i^*(1,p)-x_i^*(0,p).
+$$
+
+This is the direct option-value comparison. It is not yet an equilibrium
+comparison.
+
+With the approved baseline demand and unchanged supply,
+
+$$
+D_m(p;1)\geq D_m(p;0)
+\quad\Longrightarrow\quad
+p_m^*(1)\geq p_m^*(0),
+$$
+
+strictly when post-MAH study demand is positive at the pre-MAH price. The
+higher equilibrium capacity price weakly attenuates the direct gain:
+
+$$
+0
+\leq
+\Delta\Omega_i^{eq}
+\leq
+\Delta\Omega_i^{dir},
+\qquad
+0
+\leq
+\Delta x_i^{eq}
+\leq
+\Delta x_i^{dir}.
+$$
+
+Therefore the baseline does impose a conditional weak price ordering; what it
+forbids is a direct policy assumption that \(p_m^*\) falls. Local
+\(\partial/\partial p_m\) or \(\partial/\partial\tau_E\) derivatives hold
+continuous arguments fixed as stated. The binary regime \(M\) is compared by
+finite differences only.
+
+## 16. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -391,7 +486,7 @@ This prevents ex post observed $E$ assignment from being written before $x_i$.
 | $p_m^*$ selected before evaluating $r_i^*$ and $x_i^*$ | the price is the fixed point of their induced demand and supplier capacity |
 | a second market-clearing equation | Phase 6 closes only qualified manufacturing-service capacity |
 
-## 16. Update rule
+## 17. Update rule
 
 Before any later Phase writes a formula, it must:
 
