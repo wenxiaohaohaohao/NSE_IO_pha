@@ -89,3 +89,11 @@ audit/phase10_compile_console.txt -text
 audit/phase10_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
 audit/phase10_compile_wrapper.tex -text
 scripts/audit_phase10.ps1 -text
+
+# Phase 11 hash-protected artifacts.
+11_extensions_not_baseline.tex -text
+audit/phase11_gate_report.md -text
+audit/phase11_compile_console.txt -text
+audit/phase11_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
+audit/phase11_compile_wrapper.tex -text
+scripts/audit_phase11.ps1 -text

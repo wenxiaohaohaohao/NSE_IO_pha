@@ -197,3 +197,8 @@ fixes the interpretation and measurement boundary among those objects. Phase
 10 adds empirical interface contracts but no model object. Future model
 objects must be added here with one category and units immediately before
 their first formula in an authorized later Phase.
+
+Phase 11 extension notation is deliberately excluded from the 83-row active
+baseline registry. Every such symbol is defined locally in
+11_extensions_not_baseline.tex and is inactive unless a later, separate
+approval activates the corresponding extension.

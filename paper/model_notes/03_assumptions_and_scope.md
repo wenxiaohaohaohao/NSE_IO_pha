@@ -1,6 +1,6 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED; PHASE 10 - APPROVED`
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED; PHASE 10 - APPROVED; PHASE 11 - APPROVED`
 
 This file records assumptions needed through the current phase. It does not impose the signs of later propositions. Technology, route-choice, project-advancement, market-regularity and equilibrium comparative-static assumptions must be added in their authorized phases before use.
 
@@ -582,3 +582,16 @@ The anticipation and realization chains reuse the Phase 9 timing. Any future
 empirical design must keep pre-policy capability measures distinct from
 post-policy advancement and must align holder, manufacturer, product and date
 before treating a record as route $E$.
+
+## V. Phase 11 extension quarantine
+
+Phase 11 adds no baseline assumption. Its local assumptions and notation are
+conditional placeholders inside an extension-only file. They cannot be cited
+by a baseline proof, added to the active symbol registry, or used to reinterpret
+an approved proposition without a separate user-approved architecture change.
+
+The smooth-choice block leaves deterministic sorting as the theoretical
+baseline. Route-specific realization cannot make MAH raise $\chi^E$ by
+assumption. Transfer, dynamics, matching and research-versus-development
+allocation remain unimplemented unless their stated activation evidence and
+approval are supplied.

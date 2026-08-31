@@ -1,0 +1,325 @@
+{
+    "phase":  11,
+    "expected_status":  "APPROVED",
+    "status":  "APPROVED",
+    "generated_at":  "2026-08-31T15:21:26.7865836+08:00",
+    "passed":  63,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "id":  "P11-HASH-BASE",
+                       "passed":  true,
+                       "evidence":  "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+                   },
+                   {
+                       "id":  "P11-HASH-AMD11",
+                       "passed":  true,
+                       "evidence":  "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+                   },
+                   {
+                       "id":  "P11-HASH-AMD12-IMAGE",
+                       "passed":  true,
+                       "evidence":  "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+                   },
+                   {
+                       "id":  "P11-HASH-AMD12-TEXT",
+                       "passed":  true,
+                       "evidence":  "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+                   },
+                   {
+                       "id":  "P11-HASH-EFFECTIVE",
+                       "passed":  true,
+                       "evidence":  "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+                   },
+                   {
+                       "id":  "P11-GIT-BRANCH",
+                       "passed":  true,
+                       "evidence":  "branch=codex/mah-model-rebuild"
+                   },
+                   {
+                       "id":  "P11-GIT-ENTRY",
+                       "passed":  true,
+                       "evidence":  "head=2f124ad1972b089d2e54acc967e4818066fc4308"
+                   },
+                   {
+                       "id":  "P11-GIT-REMOTE",
+                       "passed":  true,
+                       "evidence":  "remote=2f124ad1972b089d2e54acc967e4818066fc4308"
+                   },
+                   {
+                       "id":  "P11-MANUSCRIPT-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "changed="
+                   },
+                   {
+                       "id":  "P11-ZIP-ISOLATED",
+                       "passed":  true,
+                       "evidence":  "count=0"
+                   },
+                   {
+                       "id":  "P11-FILE-11_extensions_not_baseline.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\11_extensions_not_baseline.tex"
+                   },
+                   {
+                       "id":  "P11-FILE-phase11_preflight.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase11_preflight.md"
+                   },
+                   {
+                       "id":  "P11-FILE-phase11_independent_isolation_audit.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase11_independent_isolation_audit.md"
+                   },
+                   {
+                       "id":  "P11-FILE-phase11_compile_wrapper.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase11_compile_wrapper.tex"
+                   },
+                   {
+                       "id":  "P11-FILE-phase11_compile_console.txt",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase11_compile_console.txt"
+                   },
+                   {
+                       "id":  "P11-FILE-phase11_compile_wrapper.log",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase11\\phase11_compile_wrapper.log"
+                   },
+                   {
+                       "id":  "P11-FILE-phase11_compile_wrapper.pdf",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase11\\phase11_compile_wrapper.pdf"
+                   },
+                   {
+                       "id":  "P11-FILE-01_symbols_and_objects.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\01_symbols_and_objects.md"
+                   },
+                   {
+                       "id":  "P11-FILE-02_equation_dependency_map.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\02_equation_dependency_map.md"
+                   },
+                   {
+                       "id":  "P11-FILE-03_assumptions_and_scope.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\03_assumptions_and_scope.md"
+                   },
+                   {
+                       "id":  "P11-STATE-PHASE10",
+                       "passed":  true,
+                       "evidence":  "Phase 10 approved"
+                   },
+                   {
+                       "id":  "P11-STATE-PHASE11",
+                       "passed":  true,
+                       "evidence":  "expected=| 11 Extensions | APPROVED |"
+                   },
+                   {
+                       "id":  "P11-STATE-PHASE12",
+                       "passed":  true,
+                       "evidence":  "Phase 12 not started"
+                   },
+                   {
+                       "id":  "P11-MATRIX-P11-D01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P11-MATRIX-P11-G01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P11-BLOCK-COUNT",
+                       "passed":  true,
+                       "evidence":  "numbers=1,2,3,4,5,6"
+                   },
+                   {
+                       "id":  "P11-FORMAL-BF889AFC",
+                       "passed":  true,
+                       "evidence":  "required=Smooth route choice"
+                   },
+                   {
+                       "id":  "P11-FORMAL-5F1B9B94",
+                       "passed":  true,
+                       "evidence":  "required=Route-specific implementation"
+                   },
+                   {
+                       "id":  "P11-FORMAL-36955B53",
+                       "passed":  true,
+                       "evidence":  "required=Transfer-market microfoundation"
+                   },
+                   {
+                       "id":  "P11-FORMAL-A8F541BC",
+                       "passed":  true,
+                       "evidence":  "required=Dynamic firm evolution"
+                   },
+                   {
+                       "id":  "P11-FORMAL-D97A17A6",
+                       "passed":  true,
+                       "evidence":  "required=Multi-CMO matching"
+                   },
+                   {
+                       "id":  "P11-FORMAL-C0024096",
+                       "passed":  true,
+                       "evidence":  "required=Research-versus-development allocation"
+                   },
+                   {
+                       "id":  "P11-FORMAL-C5B6AA14",
+                       "passed":  true,
+                       "evidence":  "required=Quarantine rule"
+                   },
+                   {
+                       "id":  "P11-FORMAL-3259FDE9",
+                       "passed":  true,
+                       "evidence":  "required=inactive in the"
+                   },
+                   {
+                       "id":  "P11-FORMAL-3B34991A",
+                       "passed":  true,
+                       "evidence":  "required=separate approval"
+                   },
+                   {
+                       "id":  "P11-FORMAL-1880A5FC",
+                       "passed":  true,
+                       "evidence":  "required=Deterministic"
+                   },
+                   {
+                       "id":  "P11-FORMAL-7EA1EE3E",
+                       "passed":  true,
+                       "evidence":  "required=\\not\\Rightarrow"
+                   },
+                   {
+                       "id":  "P11-FORMAL-B11EC8D0",
+                       "passed":  true,
+                       "evidence":  "required=No Bellman equation"
+                   },
+                   {
+                       "id":  "P11-FORMAL-B5ED7A24",
+                       "passed":  true,
+                       "evidence":  "required=match-level data"
+                   },
+                   {
+                       "id":  "P11-FORMAL-E06A0CF6",
+                       "passed":  true,
+                       "evidence":  "required=implemented here:"
+                   },
+                   {
+                       "id":  "P11-FORMAL-8CC32F34",
+                       "passed":  true,
+                       "evidence":  "required=not import this"
+                   },
+                   {
+                       "id":  "P11-DEPENDENCY-P11-X01",
+                       "passed":  true,
+                       "evidence":  "required=P11-X01"
+                   },
+                   {
+                       "id":  "P11-DEPENDENCY-P11-X02",
+                       "passed":  true,
+                       "evidence":  "required=P11-X02"
+                   },
+                   {
+                       "id":  "P11-DEPENDENCY-P11-X03",
+                       "passed":  true,
+                       "evidence":  "required=P11-X03"
+                   },
+                   {
+                       "id":  "P11-DEPENDENCY-P11-X04",
+                       "passed":  true,
+                       "evidence":  "required=P11-X04"
+                   },
+                   {
+                       "id":  "P11-DEPENDENCY-P11-X05",
+                       "passed":  true,
+                       "evidence":  "required=P11-X05"
+                   },
+                   {
+                       "id":  "P11-DEPENDENCY-P11-X06",
+                       "passed":  true,
+                       "evidence":  "required=P11-X06"
+                   },
+                   {
+                       "id":  "P11-SYMBOL-QUARANTINE",
+                       "passed":  true,
+                       "evidence":  "extension symbols inactive"
+                   },
+                   {
+                       "id":  "P11-ASSUMPTION-QUARANTINE",
+                       "passed":  true,
+                       "evidence":  "no baseline assumption"
+                   },
+                   {
+                       "id":  "P11-INDEPENDENT",
+                       "passed":  true,
+                       "evidence":  "independent audit"
+                   },
+                   {
+                       "id":  "P11-NO-P0",
+                       "passed":  true,
+                       "evidence":  "no Phase 11 P0"
+                   },
+                   {
+                       "id":  "P11-BASELINE-CLEAN-595FBC6E",
+                       "passed":  true,
+                       "evidence":  "pattern=P_\\{ir\\}\\^\\{\\\\mathrm\\{logit\\}\\} match="
+                   },
+                   {
+                       "id":  "P11-BASELINE-CLEAN-F83FC340",
+                       "passed":  true,
+                       "evidence":  "pattern=U_\\{ir\\}=W_\\{ir\\}\\+ match="
+                   },
+                   {
+                       "id":  "P11-BASELINE-CLEAN-6711EAFC",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\chi\\^I\\(q,m\\)\\s*= match="
+                   },
+                   {
+                       "id":  "P11-BASELINE-CLEAN-8DC8CFE8",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\chi\\^E\\(q,m\\)\\s*= match="
+                   },
+                   {
+                       "id":  "P11-BASELINE-CLEAN-0C46C98A",
+                       "passed":  true,
+                       "evidence":  "pattern=V\\([^)]*\\)\\s*=.*\\\\max match="
+                   },
+                   {
+                       "id":  "P11-BASELINE-CLEAN-732ED45C",
+                       "passed":  true,
+                       "evidence":  "pattern=x_i\\^R\\s*\\+.*x_i\\^D match="
+                   },
+                   {
+                       "id":  "P11-LABEL-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "duplicates="
+                   },
+                   {
+                       "id":  "P11-LATEX-FATAL",
+                       "passed":  true,
+                       "evidence":  "fatal="
+                   },
+                   {
+                       "id":  "P11-LATEX-BOXES",
+                       "passed":  true,
+                       "evidence":  "box_warnings=0"
+                   },
+                   {
+                       "id":  "P11-SCOPE-EXACT",
+                       "passed":  true,
+                       "evidence":  "unexpected="
+                   },
+                   {
+                       "id":  "P11-GATE-IDS",
+                       "passed":  true,
+                       "evidence":  "missing="
+                   },
+                   {
+                       "id":  "P11-GATE-RESULT",
+                       "passed":  true,
+                       "evidence":  "gate PASS"
+                   }
+               ]
+}

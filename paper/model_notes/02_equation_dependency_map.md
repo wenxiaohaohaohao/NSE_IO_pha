@@ -1,7 +1,7 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED; PHASE 10 - APPROVED`  
-This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement, the Phase 6 CMO market, the Phase 7 partial-equilibrium definition, the Phase 8 proposition stack, the Phase 9 outcome boundary and the Phase 10 empirical interface. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED; PHASE 10 - APPROVED; PHASE 11 - APPROVED`  
+This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement, the Phase 6 CMO market, the Phase 7 partial-equilibrium definition, the Phase 8 proposition stack, the Phase 9 outcome boundary, the Phase 10 empirical interface and the Phase 11 extension quarantine. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
 
 ## 1. Phase 1 definition ledger
 
@@ -178,7 +178,21 @@ Every interface records units, observational grain, required join keys,
 availability status and identification limits. None claims that a data source
 has been obtained or validated.
 
-## 11. Causal and timing order
+## 11. Phase 11 extension-quarantine ledger
+
+| ID | Optional block | Local notation | Baseline dependency status | Activation requirement |
+|---|---|---|---|---|
+| P11-X01 | smooth route choice | $\epsilon_{ir},\sigma,P_{ir}^{logit}$ | INACTIVE; deterministic $r_i^*$ unchanged | quantitative share need, data and separate approval |
+| P11-X02 | route-specific implementation | $\chi^I,\chi^E$ | INACTIVE; baseline $s(q)$ unchanged | institutional/data justification and separate approval |
+| P11-X03 | transfer microfoundation | bargaining/adoption primitives for $T$ | INACTIVE; $T(q,m)$ remains primitive | separate transfer-market design and approval |
+| P11-X04 | dynamic evolution | genuine state and transition law | INACTIVE; no Bellman in baseline | research question, observed transition and approval |
+| P11-X05 | multi-CMO matching | match/search primitives | INACTIVE; scalar CMO market unchanged | match-level data and separate approval |
+| P11-X06 | research/development allocation | $x_i^R,x_i^D$ | INACTIVE; common $x_i$ unchanged | separate approval and financial-constraint boundary review |
+
+There is no arrow from any P11-X object back into the Phase 1--10 baseline
+dependency graph. The extension file is not imported by a baseline module.
+
+## 12. Causal and timing order
 
 ```text
 Predetermined distributions and characteristics
@@ -338,7 +352,7 @@ $$
 
 This prevents ex post observed $E$ assignment from being written before $x_i$.
 
-## 14. Forbidden arrows and identities
+## 15. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -377,7 +391,7 @@ This prevents ex post observed $E$ assignment from being written before $x_i$.
 | $p_m^*$ selected before evaluating $r_i^*$ and $x_i^*$ | the price is the fixed point of their induced demand and supplier capacity |
 | a second market-clearing equation | Phase 6 closes only qualified manufacturing-service capacity |
 
-## 15. Update rule
+## 16. Update rule
 
 Before any later Phase writes a formula, it must:
 
