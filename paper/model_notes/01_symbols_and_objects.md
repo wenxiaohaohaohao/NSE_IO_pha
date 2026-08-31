@@ -1,6 +1,6 @@
 # 01 Symbols and Objects
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED`  
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED`  
 Controlling specification: `paper/model_rebuild/spec/MAH_model_rebuild_effective_spec_v1.2.md`  
 Effective-spec SHA256: `855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666`
 
@@ -32,9 +32,9 @@ Subscripts $i,j$ and route labels $I,E,T,A$ are syntactic labels rather than sep
 | $\mathsf{B}$ | qualified manufacturing-service capacity units |
 | $1$ | dimensionless index, label, probability, or distribution mass |
 
-One decision cohort is the Phase 1 time unit. Phase 2 must define product-output and within-period monetary units before demand and operating-profit formulas are introduced.
+One decision cohort is the project-planning time unit. Phase 2 defines product-output and within-period monetary units; Phase 3 technology costs use those same units.
 
-## 3. Active object registry through Phase 2
+## 3. Active object registry through Phase 3
 
 | Symbol | Exact category | Definition | Domain / units | First formal use | Direct MAH shift? |
 |---|---|---|---|---|---|
@@ -75,8 +75,15 @@ One decision cohort is the Phase 1 time unit. Phase 2 must define product-output
 | $p^*(c)$ | endogenous route-level object | unique profit-maximizing product price conditional on marginal cost | $\mathsf{C}/\mathsf{Y}$ | Phase 2 | No; distinct from $p_m^*$ |
 | $\pi(q,c)$ | endogenous route-level object | optimized one-period operating profit before route-specific fixed organizational costs | $\mathsf{C}$ per operating period | Phase 2 | Indirect only through a later route-cost mapping |
 | $R(q,c)$ | endogenous route-level object | present value of the optimized operating-profit stream conditional on successful commercialization | $\mathsf{C}$ per commercially active product | Phase 2 | Indirect only through a later route-cost mapping |
+| $c_I(m,k_i)$ | primitive parameter | internal-route technological marginal manufacturing-cost function on the feasible internal domain | positive; $\mathsf{C}/\mathsf{Y}$ | Phase 3 | No |
+| $F_I(m,k_i)$ | primitive parameter | internal production-readiness/setup-cost function, extended to $+\infty$ when internal production is infeasible | $\mathsf{C}$ per project or $+\infty$ | Phase 3 | No |
+| $\underline{k}(m)$ | primitive parameter | minimum internal manufacturing capability required for an internally produced project of requirement $m$ | positive; units $\mathsf{K}$ | Phase 3 | No |
+| $c_E(m)$ | primitive parameter | technological marginal manufacturing-cost kernel under qualified external production | positive; $\mathsf{C}/\mathsf{Y}$ | Phase 3 | No |
+| $b(m)$ | primitive parameter | qualified manufacturing-service capacity required by an entrusted project | positive; $\mathsf{B}$ per project | Phase 3 | No |
+| $F_E(m)$ | primitive parameter | real entrusted-route technology-transfer, validation and production-readiness cost | nonnegative; $\mathsf{C}$ per project | Phase 3 | No |
+| $\mu_E$ | primitive parameter | residual holder-side responsibility/coordination burden under entrusted manufacturing | nonnegative; $\mathsf{C}$ per project | Phase 3 | No; not removed by MAH |
 
-There are 37 active rows. Each has one and only one exact category.
+There are 44 active rows. Each has one and only one exact category.
 
 ## 4. Definitional identities active in Phase 1
 
@@ -133,4 +140,4 @@ Patent history may later proxy predetermined $a_i$; it is not equal to $x_i$ or 
 
 ## 7. Reserved names requiring future updates
 
-Demand $y(p;q)$, product price $p$, optimized profit $\pi(q,c)$, and present value $R(q,c)$ are active from Phase 2. Future objects still reserved include route-specific manufacturing-cost functions, route values $W^r$, project-advancement cost $C_X$, CMO capacity $s_j$, aggregate CMO supply/demand, and the organizational cutoff. Each must be added here with one category and units immediately before its first formula in an authorized later Phase.
+Demand $y(p;q)$, product price $p$, optimized profit $\pi(q,c)$, present value $R(q,c)$, and the internal/entrusted technology primitives are active through Phase 3. Future objects still reserved include route values $W^r$, project-advancement cost $C_X$, CMO capacity $s_j$, aggregate CMO supply/demand, and the organizational cutoff. Each must be added here with one category and units immediately before its first formula in an authorized later Phase.

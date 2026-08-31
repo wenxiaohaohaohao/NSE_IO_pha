@@ -1,7 +1,7 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED`  
-This map records definitions, timing dependencies, and the Phase 2 conditional demand/profit block. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED`  
+This map records definitions, timing dependencies, the Phase 2 demand/profit block, and the Phase 3 manufacturing technologies. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
 
 ## 1. Phase 1 definition ledger
 
@@ -33,7 +33,23 @@ Every Phase 2 equation conditions on project value $q>0$ and a positive route-im
 
 The pricing control is product price $p$, not the CMO capacity price $p_m$. The derivative with respect to $c$ is a continuous conditional-cost derivative, not a derivative with respect to binary policy $M$.
 
-## 3. Causal and timing order
+## 3. Phase 3 manufacturing-technology ledger
+
+Phase 3 defines technological and organizational primitives. It does not yet assemble route values or select a route.
+
+| ID / LaTeX label | Object defined | Inputs already defined | Mathematical status | Boundary / later obligation |
+|---|---|---|---|---|
+| `P03-E01` / `eq:p03-internal-cost` | $c_I(m,k_i)>0$ with $c_{I,m}>0$, $c_{I,k}<0$ on the feasible domain | $m,k_i$ | primitive technology function and shape restrictions | Phase 4 composes $R(q,c_I)$ |
+| `P03-E02` / `eq:p03-internal-setup` | $F_I(m,k_i)$ with $F_{I,m}>0$, $F_{I,k}<0$ when feasible and $+\infty$ if $k_i<\underline{k}(m)$ | $m,k_i,\underline{k}$ | primitive setup technology plus feasibility convention | verify the internal-infeasibility limit |
+| `P03-E03` / `eq:p03-external-cost` | $c_E(m)>0$ | $m$ | primitive qualified-external marginal-cost kernel | Phase 4 composes $R(q,c_E)$ |
+| `P03-E04` / `eq:p03-capacity-requirement` | $b(m)>0$, $b'(m)>0$ | $m$ | primitive physical capacity requirement | Phase 4 prices it once; Phase 6 aggregates it |
+| `P03-E05` / `eq:p03-external-fixed-cost` | $F_E(m)\geq0$ | $m$ | primitive real validation/readiness cost | Phase 4 subtracts once |
+| `P03-E06` / `eq:p03-holder-burden` | $\mu_E\geq0$ | none | primitive retained holder-side burden | not removed by policy |
+| `P03-E07` / `eq:p03-policy-invariance` | only $\tau_E(M)$ changes with $M$; all technology primitives are invariant | Phase 1 policy wedge and Phase 3 functions | scope/causal restriction | Phase 4 applies the wedge to route $E$ |
+
+The evaluated route-cost input $c$ from Phase 2 is supplied by $c_I(m,k_i)$ or $c_E(m)$ only after a route is under consideration. The monetary capacity payment $p_m b(m)$ is separate from the technological marginal-cost kernel $c_E(m)$ and cannot also be embedded in it.
+
+## 4. Causal and timing order
 
 ```text
 Predetermined distributions and characteristics
@@ -59,7 +75,12 @@ Conditional product-market block
       -> product demand y(p;q) and optimal product price p*(c)  [DEFINED/DERIVED: Phase 2]
       -> one-period operating profit pi(q,c)
       -> conditional commercial present value R(q,c)
-  route-specific mappings into c are deferred to Phase 3
+  internal mapping c_I(m,k_i) and external mapping c_E(m)       [DEFINED: Phase 3]
+
+Manufacturing technology block
+  (m,k_i) -> c_I(m,k_i), F_I(m,k_i), internal feasibility      [DEFINED: Phase 3]
+  m -> c_E(m), b(m), F_E(m); retained burden mu_E              [DEFINED: Phase 3]
+  M -> tau_E(M) only; no technology or CMO-supply shift
 
 Stage 3: organization
   (q,m,k_i,M,p_m^*) -> route choice r_i^* in {I,E,T,A}         [DEFERRED: Phases 3-4]
@@ -77,7 +98,7 @@ Stage 5: manufacturing-service consistency
 
 Stage 5 is a simultaneous consistency condition, not a later event developers fail to anticipate.
 
-## 4. Initial fixed-point dependency
+## 5. Initial fixed-point dependency
 
 The future equilibrium loop is identified but not solved in Phase 1:
 
@@ -93,7 +114,7 @@ $$
 
 Qualified supplier decisions create the supply side. Phase 6 must introduce capacity, cost, aggregate supply, aggregate demand, solution order, and sufficient regularity. Phase 1 makes no existence, uniqueness, or price-sign claim.
 
-## 5. Allowed direct and indirect arrows
+## 6. Allowed direct and indirect arrows
 
 The only allowed direct policy arrow is
 
@@ -130,6 +151,16 @@ $$
 
 No direct arrow from $M$ to $A$, $q$, $\varepsilon$, $\beta$, or $\varphi$ is permitted. Any later policy effect on $R$ must pass through an approved route-technology mapping into $c$.
 
+Phase 3 adds the policy-invariant technology arrows
+
+$$
+(m,k_i)\longrightarrow\{c_I,F_I,\text{ internal feasible domain}\},
+\qquad
+m\longrightarrow\{c_E,b,F_E\},
+$$
+
+and a constant retained burden $\mu_E$. Internal infeasibility is encoded by $F_I=+\infty$; no separate binary feasibility object is restored.
+
 The later realization chain is
 
 $$
@@ -146,7 +177,7 @@ $$
 
 This prevents ex post observed $E$ assignment from being written before $x_i$.
 
-## 6. Forbidden arrows and identities
+## 7. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -165,8 +196,13 @@ This prevents ex post observed $E$ assignment from being written before $x_i$.
 | $R\equiv R_i^{event}$ or $R\equiv\bar R_i^E$ | legacy reduced-form returns are inactive; Phase 2 derives $R$ and Phase 12 records the crosswalk |
 | $R$ includes $F_I,F_E,\tau_E$, or CMO capacity payment a second time | $R$ is gross operating PV; route-value accounting is deferred and must subtract each distinct route cost once |
 | $\varphi\equiv s(q)$ | $\varphi$ is survival after commercialization; $s(q)$ is downstream realization before the conditional operating stream |
+| $M\to c_I,F_I,c_E,b,F_E,\mu_E,k_i,m$ | MAH changes the institutional route wedge only, not technology or characteristics |
+| $M\to p_m^*\downarrow$ through an assumed scarcity relief | CMO price and scarcity are endogenous Phase 6 outcomes |
+| $c_E(m)$ includes $p_m b(m)$ | technological marginal cost and the monetary capacity payment are distinct accounting items |
+| $\mu_E=0$ because $M=1$ | residual holder responsibility is not removed by MAH |
+| $E\equiv$ authorization transfer | the developer remains the holder under entrusted manufacturing |
 
-## 7. Update rule
+## 8. Update rule
 
 Before any later Phase writes a formula, it must:
 

@@ -1,6 +1,6 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED`
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED`
 
 This file records assumptions needed through the current phase. It does not impose the signs of later propositions. Technology, route-choice, project-advancement, market-regularity and equilibrium comparative-static assumptions must be added in their authorized phases before use.
 
@@ -199,3 +199,76 @@ Used by: Phase 2 economic-interpretation audit and `RL-08`.
 | No direct MAH effect in Phase 2 | `A-P02-POLICY-01` | Phase 2 kernel primitives |
 
 The derivative signs are derived results, not assumptions. No route ranking, policy effect, welfare result, or equilibrium-price claim is imposed here.
+
+## I. Phase 3 manufacturing-technology assumptions
+
+### `A-P03-INT-01` - Internal feasibility through setup cost
+
+There is a positive capability threshold $\underline{k}(m)$ measured in $\mathsf K$. Internal production is technologically feasible only when $k_i\geq\underline{k}(m)$. The baseline encodes infeasibility by
+
+$$
+F_I(m,k_i)=+\infty
+\quad\text{for }k_i<\underline{k}(m),
+$$
+
+rather than by a separate binary feasibility primitive.
+
+Used by: `P03-E02`; later route-domain boundary in Phase 4.
+
+### `A-P03-INT-02` - Internal technology shape on its feasible domain
+
+For $k_i\geq\underline{k}(m)$, $c_I(m,k_i)>0$ and $F_I(m,k_i)$ is finite. Both functions are differentiable on the interior of that domain and satisfy
+
+$$
+c_{I,m}>0,\qquad c_{I,k}<0,
+\qquad
+F_{I,m}>0,\qquad F_{I,k}<0.
+$$
+
+These are primitive technology shape restrictions. They do not by themselves state a route ranking or sorting result.
+
+Used by: `P03-E01`, `P03-E02`; Phase 4 derivatives after route values are defined.
+
+### `A-P03-EXT-01` - Qualified external production technology
+
+Qualified external production has positive technological marginal-cost kernel $c_E(m)>0$. An entrusted project requires $b(m)>0$ units of qualified manufacturing-service capacity, with $b'(m)>0$. The functions depend on project manufacturing requirement $m$, not on developer capability $k_i$.
+
+Used by: `P03-E03`, `P03-E04`.
+
+### `A-P03-EXT-02` - External readiness cost and retained burden
+
+$F_E(m)\geq0$ is a real technology-transfer, validation and production-readiness cost. $\mu_E\geq0$ is a residual holder-side responsibility/coordination burden. Neither is a payment for CMO capacity and neither is embedded in $c_E(m)$.
+
+Used by: `P03-E05`, `P03-E06`; binding accounting separation for Phase 4.
+
+### `A-P03-HOLDER-01` - Entrusted production retains holder rights
+
+Under route $E$, a qualified external producer manufactures while the developer remains the authorization holder and retains holder responsibility. Route $E$ is technologically and organizationally distinct from internal route $I$ and from non-retained transfer route $T$.
+
+Used by: Phase 3 organizational distinction and `RL-11`.
+
+### `A-P03-POLICY-01` - Technology invariance and single institutional wedge
+
+The institutional regime $M$ changes only $\tau_E(M)$ and the resulting legal feasibility/friction of route $E$. It does not shift $c_I$, $F_I$, $\underline{k}$, $c_E$, $b$, $F_E$, $\mu_E$, $a_i$, $k_i$, $q$, $m$, $s(q)$, or $s_g(q)$.
+
+Used by: `P03-E07` and the Phase 3 red-line audit.
+
+### `A-P03-SCARCITY-01` - CMO scarcity remains endogenous and deferred
+
+Phase 3 defines the physical capacity requirement $b(m)$ but no CMO supply, demand, price-clearing or scarcity-relief equation. The price $p_m^*$ remains an endogenous Phase 6 object and is not directly shifted by $M$.
+
+Used by: Phase 3 scope gate and `RL-10`.
+
+## J. Phase 3 assumption-use matrix
+
+| Definition / boundary | Assumptions actually used |
+|---|---|
+| Internal marginal cost and setup technology | `A-P03-INT-01`, `A-P03-INT-02` |
+| Internal infeasibility at low capability | `A-P03-INT-01` |
+| External marginal-cost kernel and capacity requirement | `A-P03-EXT-01` |
+| External readiness and holder-side costs | `A-P03-EXT-02` |
+| $I/E/T$ organizational distinction | `A-P03-HOLDER-01` |
+| Only direct MAH wedge is $\tau_E(M)$ | `A-P03-POLICY-01` |
+| No exogenous CMO scarcity relief | `A-P03-SCARCITY-01` |
+
+No Phase 3 assumption states which route is chosen, that a cutoff exists, that MAH raises project value, or that equilibrium CMO price falls.

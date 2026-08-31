@@ -25,3 +25,11 @@ scripts/audit_phase02.ps1 -text
 scripts/compile_phase_module.ps1 -text
 scripts/finalize_phase.ps1 -text
 scripts/run_phase_gate.ps1 -text
+
+# Phase 3 hash-protected artifacts.
+03_internal_external_technologies.tex -text
+audit/phase03_gate_report.md -text
+audit/phase03_compile_console.txt -text
+audit/phase03_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
+audit/phase03_compile_wrapper.tex -text
+scripts/audit_phase03.ps1 -text

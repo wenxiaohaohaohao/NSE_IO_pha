@@ -1,0 +1,455 @@
+{
+    "phase":  3,
+    "expected_status":  "APPROVED",
+    "status":  "APPROVED",
+    "generated_at":  "2026-08-31T09:14:02.8863442+08:00",
+    "passed":  89,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "id":  "P03-HASH-BASE",
+                       "passed":  true,
+                       "evidence":  "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+                   },
+                   {
+                       "id":  "P03-HASH-AMD11",
+                       "passed":  true,
+                       "evidence":  "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+                   },
+                   {
+                       "id":  "P03-HASH-AMD12-IMAGE",
+                       "passed":  true,
+                       "evidence":  "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+                   },
+                   {
+                       "id":  "P03-HASH-AMD12-TEXT",
+                       "passed":  true,
+                       "evidence":  "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+                   },
+                   {
+                       "id":  "P03-HASH-EFFECTIVE",
+                       "passed":  true,
+                       "evidence":  "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+                   },
+                   {
+                       "id":  "P03-GIT-BRANCH",
+                       "passed":  true,
+                       "evidence":  "branch=codex/mah-model-rebuild"
+                   },
+                   {
+                       "id":  "P03-GIT-ENTRY-COMMIT",
+                       "passed":  true,
+                       "evidence":  "head=cb7e5f544caf640205eb7d7ec994da39cb47b259"
+                   },
+                   {
+                       "id":  "P03-GIT-REMOTE-TRACKING",
+                       "passed":  true,
+                       "evidence":  "remote=cb7e5f544caf640205eb7d7ec994da39cb47b259"
+                   },
+                   {
+                       "id":  "P03-MANUSCRIPT-READ-ONLY",
+                       "passed":  true,
+                       "evidence":  "changed="
+                   },
+                   {
+                       "id":  "P03-ZIP-ISOLATED",
+                       "passed":  true,
+                       "evidence":  "count=0"
+                   },
+                   {
+                       "id":  "P03-FILE-03_internal_external_technologies.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\03_internal_external_technologies.tex"
+                   },
+                   {
+                       "id":  "P03-FILE-phase03_preflight.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase03_preflight.md"
+                   },
+                   {
+                       "id":  "P03-FILE-phase03_independent_technology_audit.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase03_independent_technology_audit.md"
+                   },
+                   {
+                       "id":  "P03-FILE-phase03_compile_wrapper.tex",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase03_compile_wrapper.tex"
+                   },
+                   {
+                       "id":  "P03-FILE-phase03_compile_console.txt",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase03_compile_console.txt"
+                   },
+                   {
+                       "id":  "P03-FILE-phase03_compile_wrapper.log",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase03\\phase03_compile_wrapper.log"
+                   },
+                   {
+                       "id":  "P03-FILE-phase03_compile_wrapper.pdf",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase03\\phase03_compile_wrapper.pdf"
+                   },
+                   {
+                       "id":  "P03-FILE-01_symbols_and_objects.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\01_symbols_and_objects.md"
+                   },
+                   {
+                       "id":  "P03-FILE-02_equation_dependency_map.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\02_equation_dependency_map.md"
+                   },
+                   {
+                       "id":  "P03-FILE-03_assumptions_and_scope.md",
+                       "passed":  true,
+                       "evidence":  "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\03_assumptions_and_scope.md"
+                   },
+                   {
+                       "id":  "P03-STATE-PHASE2",
+                       "passed":  true,
+                       "evidence":  "Phase 2 approved"
+                   },
+                   {
+                       "id":  "P03-STATE-PHASE3",
+                       "passed":  true,
+                       "evidence":  "expected=| 3 Technologies | APPROVED |"
+                   },
+                   {
+                       "id":  "P03-STATE-PHASE4",
+                       "passed":  true,
+                       "evidence":  "Phase 4 not started"
+                   },
+                   {
+                       "id":  "P03-GOVERNANCE",
+                       "passed":  true,
+                       "evidence":  "standing authorization present"
+                   },
+                   {
+                       "id":  "P03-MATRIX-P03-D01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P03-MATRIX-P03-G01",
+                       "passed":  true,
+                       "evidence":  "status=APPROVED approval=YES"
+                   },
+                   {
+                       "id":  "P03-FORMAL-78C30A51",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p03-internal-cost}"
+                   },
+                   {
+                       "id":  "P03-FORMAL-18B10301",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p03-internal-setup}"
+                   },
+                   {
+                       "id":  "P03-FORMAL-4EB53F73",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p03-external-cost}"
+                   },
+                   {
+                       "id":  "P03-FORMAL-50149118",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p03-capacity-requirement}"
+                   },
+                   {
+                       "id":  "P03-FORMAL-3F164382",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p03-external-fixed-cost}"
+                   },
+                   {
+                       "id":  "P03-FORMAL-5CB5668B",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p03-holder-burden}"
+                   },
+                   {
+                       "id":  "P03-FORMAL-16427BF3",
+                       "passed":  true,
+                       "evidence":  "required=\\label{eq:p03-policy-invariance}"
+                   },
+                   {
+                       "id":  "P03-FORMAL-B6B2BD58",
+                       "passed":  true,
+                       "evidence":  "required=\\label{tab:p03-local-crosswalk}"
+                   },
+                   {
+                       "id":  "P03-FORMAL-9A059A27",
+                       "passed":  true,
+                       "evidence":  "required=F_I(m,k_i)=+\\infty"
+                   },
+                   {
+                       "id":  "P03-FORMAL-3659CB09",
+                       "passed":  true,
+                       "evidence":  "required=c_{I,m}(m,k_i)\u003e0"
+                   },
+                   {
+                       "id":  "P03-FORMAL-5C6FF601",
+                       "passed":  true,
+                       "evidence":  "required=c_{I,k}(m,k_i)\u003c0"
+                   },
+                   {
+                       "id":  "P03-FORMAL-68E13B44",
+                       "passed":  true,
+                       "evidence":  "required=F_{I,m}(m,k_i)\u003e0"
+                   },
+                   {
+                       "id":  "P03-FORMAL-8EF7663C",
+                       "passed":  true,
+                       "evidence":  "required=F_{I,k}(m,k_i)\u003c0"
+                   },
+                   {
+                       "id":  "P03-FORMAL-AB39510B",
+                       "passed":  true,
+                       "evidence":  "required=b\u0027(m)\u003e0"
+                   },
+                   {
+                       "id":  "P03-FORMAL-44A8E51B",
+                       "passed":  true,
+                       "evidence":  "required=developer remains the authorization holder"
+                   },
+                   {
+                       "id":  "P03-FORMAL-C46EE090",
+                       "passed":  true,
+                       "evidence":  "required=not eliminated by MAH"
+                   },
+                   {
+                       "id":  "P03-FORMAL-D58D031C",
+                       "passed":  true,
+                       "evidence":  "required=does not construct those values"
+                   },
+                   {
+                       "id":  "P03-FORMAL-C12C8760",
+                       "passed":  true,
+                       "evidence":  "required=monetary capacity payment \\(p_m b(m)\\)"
+                   },
+                   {
+                       "id":  "P03-FORBID-82F6707C",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)\\blogit\\b match="
+                   },
+                   {
+                       "id":  "P03-FORBID-E5A8492E",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)inclusive\\s+value match="
+                   },
+                   {
+                       "id":  "P03-FORBID-791432A3",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)representative\\s+household match="
+                   },
+                   {
+                       "id":  "P03-FORBID-25CEC871",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)\\bwelfare\\b match="
+                   },
+                   {
+                       "id":  "P03-FORBID-5C86E0FB",
+                       "passed":  true,
+                       "evidence":  "pattern=(?i)portfolio\\s+dynamics match="
+                   },
+                   {
+                       "id":  "P03-FORBID-A6E89E3B",
+                       "passed":  true,
+                       "evidence":  "pattern=x_\\{ig\\} match="
+                   },
+                   {
+                       "id":  "P03-FORBID-B9467AC9",
+                       "passed":  true,
+                       "evidence":  "pattern=W_i\\^[IE] match="
+                   },
+                   {
+                       "id":  "P03-FORBID-E044710E",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\max_\\{r match="
+                   },
+                   {
+                       "id":  "P03-FORBID-2AA17302",
+                       "passed":  true,
+                       "evidence":  "pattern=D_m\\( match="
+                   },
+                   {
+                       "id":  "P03-FORBID-2AA1C351",
+                       "passed":  true,
+                       "evidence":  "pattern=S_m\\( match="
+                   },
+                   {
+                       "id":  "P03-FORBID-4C3C6B2A",
+                       "passed":  true,
+                       "evidence":  "pattern=\\\\frac\\{\\\\partial[^}]*\\}\\{\\\\partial M\\} match="
+                   },
+                   {
+                       "id":  "P03-ETA-REMOVAL-ONLY",
+                       "passed":  true,
+                       "evidence":  "occurrences=1"
+                   },
+                   {
+                       "id":  "P03-NO-BINARY-FEASIBILITY-OBJECT",
+                       "passed":  true,
+                       "evidence":  "infinity convention used"
+                   },
+                   {
+                       "id":  "P03-NO-ROUTE-VALUE-ASSEMBLY",
+                       "passed":  true,
+                       "evidence":  "no route-value equations"
+                   },
+                   {
+                       "id":  "P03-NO-CMO-CLEARING",
+                       "passed":  true,
+                       "evidence":  "CMO clearing deferred"
+                   },
+                   {
+                       "id":  "P03-SYMBOL-ACTIVE-COUNT",
+                       "passed":  true,
+                       "evidence":  "44 active objects"
+                   },
+                   {
+                       "id":  "P03-SYMBOL-65F03B42",
+                       "passed":  true,
+                       "evidence":  "required=| $c_I(m,k_i)$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P03-SYMBOL-1CA14971",
+                       "passed":  true,
+                       "evidence":  "required=| $F_I(m,k_i)$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P03-SYMBOL-C0279137",
+                       "passed":  true,
+                       "evidence":  "required=| $\\underline{k}(m)$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P03-SYMBOL-88FE6879",
+                       "passed":  true,
+                       "evidence":  "required=| $c_E(m)$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P03-SYMBOL-62936268",
+                       "passed":  true,
+                       "evidence":  "required=| $b(m)$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P03-SYMBOL-42C70D40",
+                       "passed":  true,
+                       "evidence":  "required=| $F_E(m)$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P03-SYMBOL-047999C2",
+                       "passed":  true,
+                       "evidence":  "required=| $\\mu_E$ | primitive parameter |"
+                   },
+                   {
+                       "id":  "P03-ASSUMPTION-A-P03-INT-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P03-INT-01"
+                   },
+                   {
+                       "id":  "P03-ASSUMPTION-A-P03-INT-02",
+                       "passed":  true,
+                       "evidence":  "required=A-P03-INT-02"
+                   },
+                   {
+                       "id":  "P03-ASSUMPTION-A-P03-EXT-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P03-EXT-01"
+                   },
+                   {
+                       "id":  "P03-ASSUMPTION-A-P03-EXT-02",
+                       "passed":  true,
+                       "evidence":  "required=A-P03-EXT-02"
+                   },
+                   {
+                       "id":  "P03-ASSUMPTION-A-P03-HOLDER-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P03-HOLDER-01"
+                   },
+                   {
+                       "id":  "P03-ASSUMPTION-A-P03-POLICY-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P03-POLICY-01"
+                   },
+                   {
+                       "id":  "P03-ASSUMPTION-A-P03-SCARCITY-01",
+                       "passed":  true,
+                       "evidence":  "required=A-P03-SCARCITY-01"
+                   },
+                   {
+                       "id":  "P03-DEPENDENCY-P03-E01",
+                       "passed":  true,
+                       "evidence":  "required=P03-E01"
+                   },
+                   {
+                       "id":  "P03-DEPENDENCY-P03-E02",
+                       "passed":  true,
+                       "evidence":  "required=P03-E02"
+                   },
+                   {
+                       "id":  "P03-DEPENDENCY-P03-E03",
+                       "passed":  true,
+                       "evidence":  "required=P03-E03"
+                   },
+                   {
+                       "id":  "P03-DEPENDENCY-P03-E04",
+                       "passed":  true,
+                       "evidence":  "required=P03-E04"
+                   },
+                   {
+                       "id":  "P03-DEPENDENCY-P03-E05",
+                       "passed":  true,
+                       "evidence":  "required=P03-E05"
+                   },
+                   {
+                       "id":  "P03-DEPENDENCY-P03-E06",
+                       "passed":  true,
+                       "evidence":  "required=P03-E06"
+                   },
+                   {
+                       "id":  "P03-DEPENDENCY-P03-E07",
+                       "passed":  true,
+                       "evidence":  "required=P03-E07"
+                   },
+                   {
+                       "id":  "P03-OPEN-ISSUES-NO-CURRENT-P0",
+                       "passed":  true,
+                       "evidence":  "no Phase 3 P0"
+                   },
+                   {
+                       "id":  "P03-LABEL-UNIQUE",
+                       "passed":  true,
+                       "evidence":  "duplicates="
+                   },
+                   {
+                       "id":  "P03-LATEX-FATAL",
+                       "passed":  true,
+                       "evidence":  "fatal="
+                   },
+                   {
+                       "id":  "P03-LATEX-BOXES",
+                       "passed":  true,
+                       "evidence":  "box_warnings=0"
+                   },
+                   {
+                       "id":  "P03-UTF8-CONTROL",
+                       "passed":  true,
+                       "evidence":  "bad="
+                   },
+                   {
+                       "id":  "P03-SCOPE-EXACT",
+                       "passed":  true,
+                       "evidence":  "unexpected="
+                   },
+                   {
+                       "id":  "P03-GATE-REPORT-IDS",
+                       "passed":  true,
+                       "evidence":  "missing="
+                   },
+                   {
+                       "id":  "P03-GATE-REPORT-RESULT",
+                       "passed":  true,
+                       "evidence":  "gate PASS and zero P0"
+                   }
+               ]
+}

@@ -1,0 +1,100 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/model_rebuild/audit/p
+hase03_compile_wrapper.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\application\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\application\miktex\tex/latex/base\size11.clo))
+(D:\application\miktex\tex/latex/geometry\geometry.sty
+(D:\application\miktex\tex/latex/graphics\keyval.sty)
+(D:\application\miktex\tex/generic/iftex\ifvtex.sty
+(D:\application\miktex\tex/generic/iftex\iftex.sty))
+(D:\application\miktex\tex/latex/geometry\geometry.cfg))
+(D:\application\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(D:\application\miktex\tex/latex/amsmath\amstext.sty
+(D:\application\miktex\tex/latex/amsmath\amsgen.sty))
+(D:\application\miktex\tex/latex/amsmath\amsbsy.sty)
+(D:\application\miktex\tex/latex/amsmath\amsopn.sty))
+(D:\application\miktex\tex/latex/amsfonts\amssymb.sty
+(D:\application\miktex\tex/latex/amsfonts\amsfonts.sty))
+(D:\application\miktex\tex/latex/tools\array.sty)
+(D:\application\miktex\tex/latex/l3backend\l3backend-pdftex.def)
+(D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
+uild_phase03\phase03_compile_wrapper.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(../03_internal_external_technologies.tex
+(D:\application\miktex\tex/latex/amsfonts\umsa.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsb.fd) [1{C:/Users/dongw/AppData/Lo
+cal/MiKTeX/fonts/map/pdftex/pdftex.map}]) [2]
+(D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
+uild_phase03\phase03_compile_wrapper.aux) ) <C:\Users\dongw\AppData\Local\MiKTe
+X\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><D:/application/miktex/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb><D:/application/miktex/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/appli
+cation/miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/f
+onts/type1/public/amsfonts/cm/cmss10.pfb><D:/application/miktex/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
+l_rebuild\audit\build_phase03\phase03_compile_wrapper.pdf (2 pages, 117512 byte
+s).
+Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
+model_rebuild\audit\build_phase03\phase03_compile_wrapper.log.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/model_rebuild/audit/p
+hase03_compile_wrapper.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\application\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\application\miktex\tex/latex/base\size11.clo))
+(D:\application\miktex\tex/latex/geometry\geometry.sty
+(D:\application\miktex\tex/latex/graphics\keyval.sty)
+(D:\application\miktex\tex/generic/iftex\ifvtex.sty
+(D:\application\miktex\tex/generic/iftex\iftex.sty))
+(D:\application\miktex\tex/latex/geometry\geometry.cfg))
+(D:\application\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(D:\application\miktex\tex/latex/amsmath\amstext.sty
+(D:\application\miktex\tex/latex/amsmath\amsgen.sty))
+(D:\application\miktex\tex/latex/amsmath\amsbsy.sty)
+(D:\application\miktex\tex/latex/amsmath\amsopn.sty))
+(D:\application\miktex\tex/latex/amsfonts\amssymb.sty
+(D:\application\miktex\tex/latex/amsfonts\amsfonts.sty))
+(D:\application\miktex\tex/latex/tools\array.sty)
+(D:\application\miktex\tex/latex/l3backend\l3backend-pdftex.def)
+(D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
+uild_phase03\phase03_compile_wrapper.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(../03_internal_external_technologies.tex
+(D:\application\miktex\tex/latex/amsfonts\umsa.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsb.fd) [1{C:/Users/dongw/AppData/Lo
+cal/MiKTeX/fonts/map/pdftex/pdftex.map}]) [2]
+(D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
+uild_phase03\phase03_compile_wrapper.aux) ) <C:\Users\dongw\AppData\Local\MiKTe
+X\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><D:/application/miktex/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb><D:/application/miktex/fonts/type1/public/am
+sfonts/cm/cmmi10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/appli
+cation/miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/f
+onts/type1/public/amsfonts/cm/cmss10.pfb><D:/application/miktex/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
+l_rebuild\audit\build_phase03\phase03_compile_wrapper.pdf (2 pages, 117512 byte
+s).
+Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
+model_rebuild\audit\build_phase03\phase03_compile_wrapper.log.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.
