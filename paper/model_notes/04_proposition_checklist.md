@@ -1,10 +1,10 @@
 # 04 Proposition Checklist
 
-Phase status: PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED
+Phase status: PHASE 4--8 - APPROVED
 
-## Draft P4-ORG - Organizational sorting
+## Proposition 1 - Organizational sorting
 
-- Status: draft for Phase 4 gate; final proposition numbering and proof audit are reserved for Phase 8.
+- Status: formal Phase 8 proof and independent audit complete.
 - Objects defined before statement: \(W_i^I,W_i^E,W^T,W^A,W_i,r_i^*,\Delta_{IE},k^*\).
 - Assumptions used: A-P02-PV-01, A-P03-INT-01, A-P03-INT-02, A-P04-CHOICE-01, A-P04-CUTOFF-01, A-P04-CUTOFF-02, A-P04-PRICE-01, A-P04-POLICY-01.
 - Fixed objects in capability derivative: \(q,m,M,p_m\).
@@ -20,10 +20,9 @@ Phase status: PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED
 - Economic interpretation: lower finite institutional burden expands the entrusted region; a higher fixed CMO price contracts it.
 - P0 issues: none identified in the draft.
 
-## Draft P5-ADV - Project-advancement response
+## Proposition 3 - Project-advancement response and firm heterogeneity
 
-- Status: derivation draft for the Phase 5 gate; final proposition numbering
-  and proof audit are reserved for Phase 8.
+- Status: formal Phase 8 proof and independent audit complete.
 - Objects defined before statement:
   \(\lambda_i^{\mathrm{plan}},C_X,\Omega_i,x_i^*,B_i,K_i\).
 - Assumptions used: A-P05-COST-01, A-P05-VALUE-01, A-P05-TIME-01,
@@ -43,16 +42,22 @@ Phase status: PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED
   \(p_m\).
 - Policy channel: MAH changes \(x_i^*\) only through \(\Omega_i\); it does not
   change \(a_i\), cost curvature or project characteristics.
+- Research-capability scaling: holding route-value objects fixed,
+  \(\partial\Delta x_i/\partial a_i=\Delta x_i/(\nu a_i)>0\) for a positive
+  response.
+- Manufacturing-capability sufficient conditions: \(\Omega_i^0\) weakly rises,
+  \(\Delta\Omega_i\) weakly falls, and \(\nu\geq1\) makes the advancement
+  transformation concave; together these imply \(\Delta x_i\) weakly falls in
+  \(k_i\). No sign is claimed for \(0<\nu<1\) without another bound.
 - Manufacturing role: \(k_i\) affects \(\Omega_i\) through route organization,
   not project-arrival productivity or advancement cost.
 - Interpretation: \(K_i-B_i=\Omega_i\) is an appendix accounting identity, not
   a recursive state system.
 - P0 issues: none identified in the draft.
 
-## Draft P6-CMO - CMO market existence and uniqueness
+## Proposition 4 - CMO market existence and uniqueness
 
-- Status: derivation draft for the Phase 6 gate; final proposition numbering
-  and proof audit are reserved for Phase 8.
+- Status: formal Phase 8 proof and independent audit complete.
 - Objects defined before statement:
   \(s_j,\Psi,s_j^*,S_m,\chi_i^E,D_m^{\mathrm{MAH}},D_m^B,D_m,p_m^*\).
 - Assumptions used: A-P06-SUPPLY-01, A-P06-BACKGROUND-01,
@@ -77,3 +82,72 @@ Phase status: PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED
   technology is not shifted by policy.
 - Scope: no entry or second market-clearing condition.
 - P0 issues: none identified in the draft.
+
+## Proposition 2 - MAH-relevant project set
+
+- Status: formal Phase 8 proof and independent audit complete.
+- Objects defined before statement: \(W_i^0,W_i^1,\mathcal C_i\).
+- Assumptions used: A-P04-CHOICE-01 and A-P04-POLICY-01.
+- Fixed objects: developer, project draw and support price.
+- Identity: \(W_i^1-W_i^0=[W_i^E-W_i^0]_+\).
+- Relevant set: strict gain occurs exactly on
+  \(\mathcal C_i(p_m)=\{(q,m):W_i^E>W_i^0\}\).
+- Zero-effect cases: entrusted value does not beat the old maximum; the set is
+  null; or CMO price is prohibitive.
+- Interpretation: adding route \(E\) preserves the old choice-set value.
+- P0 issues: none identified.
+
+## Corollary - Novelty composition is theoretically ambiguous
+
+- Status: formal Phase 8 proof and independent audit complete.
+- Status in hierarchy: corollary of Proposition 2, not a seventh proposition.
+- Objects defined before statement: \(\Omega_{ig}^0,\Omega_{ig}^1,\Delta\Omega_{ig}\).
+- Common-control restriction: one \(x_i\); no \(x_{ig}\).
+- Mixture identity: \(\Delta\Omega_i=\sum_g\rho_g\Delta\Omega_{ig}\).
+- Ranking: neither original nor incremental class is ordered without explicit
+  primitive restrictions; reverse-support examples establish ambiguity.
+- Boundary cases: \(\rho_O=0\), \(\rho_{\mathrm{Inc}}=0\), and either class gain
+  equal to zero.
+- P0 issues: none identified.
+
+## Proposition 5 - CMO scarcity attenuation
+
+- Status: formal Phase 8 proof and independent audit complete.
+- Fixed objects: policy-invariant supply, supplier distribution and background
+  demand; compare \(p_m^0=p_m^*(0)\) with \(p_m^1=p_m^*(1)\).
+- Price result: \(p_m^1\geq p_m^0\), strict if post-MAH study demand is positive
+  at \(p_m^0\).
+- Value bound:
+  \(0\leq\Delta\Omega_i^{eq}\leq\Delta\Omega_i^{dir}\).
+- Advancement bound:
+  \(0\leq\Delta x_i^{eq}\leq\Delta x_i^{dir}\).
+- Zero-effect cases: no new demand; no entrusted advantage; or perfectly
+  elastic supply at a common price.
+- Interpretation: scarcity attenuates a gain but cannot reduce the old
+  choice-set value.
+- P0 issues: none identified.
+
+## Proposition 6 - Planning-stage and observed outcomes
+
+- Status: formal Phase 8 proof and independent audit complete.
+- Objects defined before statement:
+  \(\Lambda_i^{plan},Y_i^{ret},Y_i^E,Y_{ig}^{ret},Q_i^{ret,h}\).
+- Timing: common advancement precedes project draw, route assignment and
+  observed holder--producer separation.
+- Common-control restriction: type-specific outcomes use \(\rho_gF_g\) and
+  the same \(x_i^*\).
+- Exact decomposition: advancement/planning-arrival component plus retained
+  route-composition component.
+- Realization boundary: \(s(q)\) and \(s_g(q)\) are policy invariant.
+- Zero/ambiguity cases: either class may have zero response; neither novelty
+  ranking is imposed.
+- Interpretation: the outcome formulas do not make patent generation,
+  upstream research or downstream success a direct policy outcome.
+- P0 issues: none identified.
+
+## Count and scope audit
+
+- Substantive propositions: exactly 6.
+- Corollaries: exactly 1.
+- Additional substantive propositions: 0.
+- New baseline markets or controls: 0.

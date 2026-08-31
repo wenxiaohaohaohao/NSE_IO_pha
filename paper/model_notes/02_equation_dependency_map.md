@@ -1,7 +1,7 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED`  
-This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement, the Phase 6 CMO market and the Phase 7 partial-equilibrium definition. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED`  
+This map records definitions, timing dependencies, demand/profit, manufacturing technologies, deterministic route/sorting, project advancement, the Phase 6 CMO market, the Phase 7 partial-equilibrium definition and the Phase 8 proposition stack. Items marked `DEFERRED` are obligations for later authorized phases, not current results.
 
 ## 1. Phase 1 definition ledger
 
@@ -120,7 +120,34 @@ four already classified optimal-object families and their four inherited
 conditions. Aggregate demand and supply remain functions used to determine
 $p_m^*$; they are not additional members of the equilibrium collection.
 
-## 8. Causal and timing order
+## 8. Phase 8 proposition ledger
+
+| ID / LaTeX label | Object/result | Inputs already defined | Mathematical status | Proof / scope obligation |
+|---|---|---|---|---|
+| P08-E01 / eq:p08-sorting-slope | $\Delta_{IE,k}>0$ | P04-E06--P04-E07 | inherited derivative inside Proposition 1 | fixed $q,m,M,p_m$ and feasible internal domain |
+| P08-E02 / eq:p08-old-new-values | $W_i^0=\max\{W_i^I,W^T,0\}$ and $W_i^1=\max\{W_i^0,W_i^E\}$ | Phase 4 route values | definitions for Proposition 2 | fixed support price |
+| P08-E03 / eq:p08-positive-part-gain | $W_i^1-W_i^0=[W_i^E-W_i^0]_+$ | P08-E02 | max identity | direct gain only on relevant set |
+| P08-E04 / eq:p08-relevant-set | $\mathcal C_i(p_m)=\{(q,m):W_i^E>W_i^0\}$ | P08-E02--P08-E03 | set definition | strict fixed-price gain |
+| P08-E05 / eq:p08-expected-gain | $\Delta\Omega_i=\int[W_i^E-W_i^0]_+dF$ | P08-E03 | derived expectation | finite comparison, no $M$ derivative |
+| P08-E06 / eq:p08-advancement-change | closed-form $\Delta x_i$ from $\Omega_i^1=\Omega_i^0+\Delta\Omega_i$ | P05-E07, P08-E05 | derived finite response | strict iff expected gain is positive |
+| P08-E07 / eq:p08-capability-response | $\partial\Delta x_i/\partial a_i=\Delta x_i/(\nu a_i)$ | P08-E06 | conditional derivative | hold route-value objects fixed |
+| P08-E08 / eq:p08-manufacturing-response | $\Delta x_i$ weakly decreases in $k_i$ under $\nu\geq1$ and inherited monotonicities | P04-E07, P08-E05--P08-E06 | sufficient comparative result | no unconditional sign for $\nu<1$ |
+| P08-E09 / eq:p08-class-gain | $\Delta\Omega_{ig}=E_{F_g}[W_i^E-W_i^0]_+$ | class mixture and P08-E03 | corollary identity | no cross-class ordering without primitives |
+| P08-E10 / eq:p08-excess-demand | $Z_M(p_m)=D_m(p_m;M)-S_m(p_m)$ | P06-E04, P06-E09 | proof device for Proposition 4 | continuous and strictly decreasing |
+| P08-E11 / eq:p08-price-order | $p_m^1\geq p_m^0$ | P08-E10 plus positive post-MAH study demand | equilibrium comparison | strict only with positive demand at $p_m^0$ |
+| P08-E12 / eq:p08-scarcity-value-bounds | $0\leq\Delta\Omega_i^{eq}\leq\Delta\Omega_i^{dir}$ | $W_{E,p_m}=-b(m)$, P08-E11 | pointwise/integrated inequality | old route set remains available |
+| P08-E13 / eq:p08-scarcity-advancement-bounds | $0\leq\Delta x_i^{eq}\leq\Delta x_i^{dir}$ | P05-E07, P08-E12 | monotone transformation | fixed baseline value |
+| P08-E14 / eq:p08-planning-arrival | $\Lambda_i^{plan}=a_ix_i^*$ | P01-E05 evaluated at optimum | derived equilibrium arrival intensity | not patent generation |
+| P08-E15 / eq:p08-retained-outcome | $Y_i^{ret}$ | P08-E14, $s$, deterministic route choice | derived observed outcome | no direct policy shift in $s$ |
+| P08-E16 / eq:p08-entrusted-outcome | $Y_i^E$ | P08-E14, $s$, route $E$ indicator | derived observed outcome | holder--producer separation only |
+| P08-E17 / eq:p08-type-outcome | $Y_{ig}^{ret}$ | common $x_i^*$, $\rho_gF_g$, $s_g$ | derived class contribution | no $x_{ig}$ and no sign ranking |
+| P08-E18 / eq:p08-outcome-decomposition | $\Delta Y_i^{ret}=a_i\Delta x_iQ_i^{ret,0}+a_ix_i^1\Delta Q_i^{ret}$ | P08-E15 | exact algebraic decomposition | advancement versus retained-route composition |
+
+The novelty result is one corollary of the MAH-relevant-set identity, not a
+seventh substantive proposition. The proposition stack adds no new market or
+choice control.
+
+## 9. Causal and timing order
 
 ```text
 Predetermined distributions and characteristics
@@ -280,7 +307,7 @@ $$
 
 This prevents ex post observed $E$ assignment from being written before $x_i$.
 
-## 11. Forbidden arrows and identities
+## 12. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -319,7 +346,7 @@ This prevents ex post observed $E$ assignment from being written before $x_i$.
 | $p_m^*$ selected before evaluating $r_i^*$ and $x_i^*$ | the price is the fixed point of their induced demand and supplier capacity |
 | a second market-clearing equation | Phase 6 closes only qualified manufacturing-service capacity |
 
-## 12. Update rule
+## 13. Update rule
 
 Before any later Phase writes a formula, it must:
 

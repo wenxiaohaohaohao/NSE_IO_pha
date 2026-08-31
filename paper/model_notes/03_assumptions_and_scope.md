@@ -1,6 +1,6 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED`
+Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED`
 
 This file records assumptions needed through the current phase. It does not impose the signs of later propositions. Technology, route-choice, project-advancement, market-regularity and equilibrium comparative-static assumptions must be added in their authorized phases before use.
 
@@ -514,3 +514,46 @@ uses only results already established under the following assumptions.
 The restriction to one capacity-market clearing equation is a model-closure
 boundary, not an assumed economic conclusion. No entry, firm-distribution,
 labor, capital, product-market or welfare-clearing assumption is added.
+
+## R. Phase 8 proposition-specific sufficient conditions
+
+### A-P08-HET-01 - Manufacturing-capability response
+
+For the sufficient result that the fixed-price advancement response weakly
+decreases with internal manufacturing capability, impose $\nu\geq1$ while
+holding $a_i$, the support price and all exogenous primitives fixed. Phase 4
+already implies that $W_i^I$ is nondecreasing in $k_i$, while $W_i^E$, $W^T$
+and $W^A$ do not increase with $k_i$ under the locked route-value structure.
+Hence $\Omega_i^0$ is nondecreasing and $\Delta\Omega_i$ is nonincreasing in
+$k_i$. The curvature restriction makes $t^{1/\nu}$ concave, which is the
+additional sufficient condition required to sign the level response.
+
+This restriction is proposition-specific. For $0<\nu<1$, the model does not
+assert the sign of $\partial\Delta x_i/\partial k_i$ without an additional
+bound on the baseline-value effect.
+
+### A-P08-OBS-01 - Observed-outcome integration
+
+The downstream probabilities $s(q)$ and, when the exogenous novelty
+classification is used, $s_g(q)$ are measurable, lie in $[0,1]$, and are
+invariant to $M$. The route indicators are those of the deterministic baseline
+and the existing domination conditions permit integration under $F$ and
+$F_g$. No observed-outcome formula feeds back into route choice or advancement.
+
+## S. Phase 8 assumption-use matrix
+
+| Result | Assumptions actually used |
+|---|---|
+| Proposition 1 sorting | A-P03-INT-01, A-P03-INT-02, A-P04-CUTOFF-01, A-P04-CUTOFF-02 |
+| Proposition 2 relevant set | A-P04-CHOICE-01, A-P04-POLICY-01 |
+| Proposition 3 gain iff response | A-P05-COST-01, A-P05-VALUE-01, A-P05-CHANNEL-01 |
+| Proposition 3 capability scaling | route values independent of $a_i$; A-P05-COST-01 |
+| Proposition 3 manufacturing heterogeneity | A-P08-HET-01 plus Phase 4 monotonicity |
+| novelty-composition corollary | A-P01-PROJ-03 and no additional cross-class ordering |
+| Proposition 4 CMO existence/uniqueness | A-P06-SUPPLY-01, A-P06-BACKGROUND-01, A-P06-AGG-01, A-P06-PRICE-01 |
+| Proposition 5 scarcity attenuation | Proposition 4 conditions, policy-invariant supply/background demand, $b(m)>0$ |
+| Proposition 6 observed outcomes | A-P01-TIME-01, A-P05-TIME-01, A-P08-OBS-01 |
+
+No Phase 8 assumption states the proposition conclusion. Strict effects are
+reported only when their stated positive-measure or positive-demand condition
+holds; otherwise the corresponding effect may be zero.
