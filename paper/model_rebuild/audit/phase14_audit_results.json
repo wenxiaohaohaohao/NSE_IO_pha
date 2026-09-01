@@ -1,0 +1,365 @@
+{
+  "phase": 14,
+  "expected_status": "APPROVED",
+  "status": "APPROVED",
+  "generated_at": "2026-09-01T11:45:05.8616810+08:00",
+  "passed": 71,
+  "failed": 0,
+  "checks": [
+    {
+      "id": "P14-HASH-BASE",
+      "passed": true,
+      "evidence": "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+    },
+    {
+      "id": "P14-HASH-AMD11",
+      "passed": true,
+      "evidence": "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+    },
+    {
+      "id": "P14-HASH-AMD12-IMAGE",
+      "passed": true,
+      "evidence": "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+    },
+    {
+      "id": "P14-HASH-AMD12-TEXT",
+      "passed": true,
+      "evidence": "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+    },
+    {
+      "id": "P14-HASH-EFFECTIVE",
+      "passed": true,
+      "evidence": "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+    },
+    {
+      "id": "P14-GIT-BRANCH",
+      "passed": true,
+      "evidence": "branch=codex/mah-model-rebuild"
+    },
+    {
+      "id": "P14-GIT-ENTRY",
+      "passed": true,
+      "evidence": "head=802963da6a7634f71aabac128069cdc51affdd77"
+    },
+    {
+      "id": "P14-GIT-REMOTE",
+      "passed": true,
+      "evidence": "remote=802963da6a7634f71aabac128069cdc51affdd77"
+    },
+    {
+      "id": "P14-MANUSCRIPT-READ-ONLY",
+      "passed": true,
+      "evidence": "changed="
+    },
+    {
+      "id": "P14-ZIP-ISOLATED",
+      "passed": true,
+      "evidence": "count=0"
+    },
+    {
+      "id": "P14-FILE-03_assumptions_and_scope.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\03_assumptions_and_scope.md"
+    },
+    {
+      "id": "P14-FILE-04_proposition_checklist.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\04_proposition_checklist.md"
+    },
+    {
+      "id": "P14-FILE-phase14_preflight.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase14_preflight.md"
+    },
+    {
+      "id": "P14-FILE-phase14_independent_assumption_audit.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase14_independent_assumption_audit.md"
+    },
+    {
+      "id": "P14-FILE-phase14_compile_wrapper.tex",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase14_compile_wrapper.tex"
+    },
+    {
+      "id": "P14-FILE-phase14_compile_console.txt",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase14_compile_console.txt"
+    },
+    {
+      "id": "P14-FILE-phase14_compile_wrapper.log",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase14\\phase14_compile_wrapper.log"
+    },
+    {
+      "id": "P14-FILE-phase14_compile_wrapper.pdf",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase14\\phase14_compile_wrapper.pdf"
+    },
+    {
+      "id": "P14-STATE-P13",
+      "passed": true,
+      "evidence": "Phase 13 approved"
+    },
+    {
+      "id": "P14-STATE-P14",
+      "passed": true,
+      "evidence": "expected=| 14 Assumption discipline | APPROVED |"
+    },
+    {
+      "id": "P14-STATE-P15",
+      "passed": true,
+      "evidence": "Phase 15 not started"
+    },
+    {
+      "id": "P14-MATRIX-P14-D01",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P14-MATRIX-P14-G01",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P14-FOUR-BLOCKS",
+      "passed": true,
+      "evidence": "headings=## A. Demand and commercial-return assumptions;## B. Manufacturing technology assumptions;## C. Project-advancement assumptions;## D. CMO-market regularity assumptions"
+    },
+    {
+      "id": "P14-CANONICAL-COUNT",
+      "passed": true,
+      "evidence": "count=18"
+    },
+    {
+      "id": "P14-CANONICAL-EXACT",
+      "passed": true,
+      "evidence": "ids=A-DEM-01,A-DEM-02,A-DEM-03,B-MFG-01,B-MFG-02,B-MFG-03,B-MFG-04,B-MFG-05,C-ADV-01,C-ADV-02,C-ADV-03,C-ADV-04,C-ADV-05,C-ADV-06,D-CMO-01,D-CMO-02,D-CMO-03,D-CMO-04"
+    },
+    {
+      "id": "P14-LEGACY-COUNT",
+      "passed": true,
+      "evidence": "count=46"
+    },
+    {
+      "id": "P14-LEGACY-EXACT",
+      "passed": true,
+      "evidence": "all legacy IDs mapped"
+    },
+    {
+      "id": "P14-NO-ORPHAN-LEGACY",
+      "passed": true,
+      "evidence": "orphans="
+    },
+    {
+      "id": "P14-PROP-MATRIX-COUNT",
+      "passed": true,
+      "evidence": "rows=7"
+    },
+    {
+      "id": "P14-PROP-Proposition-1",
+      "passed": true,
+      "evidence": "token=Proposition 1:"
+    },
+    {
+      "id": "P14-PROP-Proposition-2",
+      "passed": true,
+      "evidence": "token=Proposition 2:"
+    },
+    {
+      "id": "P14-PROP-Proposition-3",
+      "passed": true,
+      "evidence": "token=Proposition 3:"
+    },
+    {
+      "id": "P14-PROP-Proposition-4",
+      "passed": true,
+      "evidence": "token=Proposition 4:"
+    },
+    {
+      "id": "P14-PROP-Proposition-5",
+      "passed": true,
+      "evidence": "token=Proposition 5:"
+    },
+    {
+      "id": "P14-PROP-Proposition-6",
+      "passed": true,
+      "evidence": "token=Proposition 6:"
+    },
+    {
+      "id": "P14-PROP-Novelty-corollary",
+      "passed": true,
+      "evidence": "token=Novelty corollary"
+    },
+    {
+      "id": "P14-TEXT-67D8DE27",
+      "passed": true,
+      "evidence": "required=Primitive"
+    },
+    {
+      "id": "P14-TEXT-4E2B635E",
+      "passed": true,
+      "evidence": "required=Maintained regularity"
+    },
+    {
+      "id": "P14-TEXT-7A481FF3",
+      "passed": true,
+      "evidence": "required=Optimization-derived"
+    },
+    {
+      "id": "P14-TEXT-D0C1ABA3",
+      "passed": true,
+      "evidence": "required=Derived conclusion"
+    },
+    {
+      "id": "P14-TEXT-B0C218AE",
+      "passed": true,
+      "evidence": "required=Architecture restriction"
+    },
+    {
+      "id": "P14-TEXT-EC19C203",
+      "passed": true,
+      "evidence": "required=original-drug innovation investment /"
+    },
+    {
+      "id": "P14-TEXT-66787834",
+      "passed": true,
+      "evidence": "required=project-advancement intensity"
+    },
+    {
+      "id": "P14-TEXT-5DA1D89B",
+      "passed": true,
+      "evidence": "required=not patent applications"
+    },
+    {
+      "id": "P14-TEXT-8E7D089B",
+      "passed": true,
+      "evidence": "required=There is no \\(x_{ig}\\)"
+    },
+    {
+      "id": "P14-TEXT-ED3E3DAE",
+      "passed": true,
+      "evidence": "required=no ordering of class-specific reform gains"
+    },
+    {
+      "id": "P14-TEXT-0EA0E7D0",
+      "passed": true,
+      "evidence": "required=Fixed candidate price and equilibrium price"
+    },
+    {
+      "id": "P14-TEXT-008CD07C",
+      "passed": true,
+      "evidence": "required=No class ranking or patent increase"
+    },
+    {
+      "id": "P14-TEXT-77977B7A",
+      "passed": true,
+      "evidence": "required=Failure of a sufficient condition"
+    },
+    {
+      "id": "P14-TEXT-600FE488",
+      "passed": true,
+      "evidence": "required=one common \\(x_i\\)"
+    },
+    {
+      "id": "P14-NO-CONCLUSION-EEC3BD93",
+      "passed": true,
+      "evidence": "forbidden=MAH raises patent applications"
+    },
+    {
+      "id": "P14-NO-CONCLUSION-7E1C52F8",
+      "passed": true,
+      "evidence": "forbidden=patent applications increase"
+    },
+    {
+      "id": "P14-NO-CONCLUSION-0C66E7E1",
+      "passed": true,
+      "evidence": "forbidden=route E is always chosen"
+    },
+    {
+      "id": "P14-NO-CONCLUSION-8FC28315",
+      "passed": true,
+      "evidence": "forbidden=assume that the cutoff exists"
+    },
+    {
+      "id": "P14-NO-CONCLUSION-3DADE12A",
+      "passed": true,
+      "evidence": "forbidden=assume p_m^*(1)"
+    },
+    {
+      "id": "P14-NO-CONCLUSION-681BB6AF",
+      "passed": true,
+      "evidence": "forbidden=\\partial x_i/\\partial M"
+    },
+    {
+      "id": "P14-NO-CONCLUSION-59031620",
+      "passed": true,
+      "evidence": "forbidden=x_{ig}\\geq0"
+    },
+    {
+      "id": "P14-NO-CONCLUSION-7758C038",
+      "passed": true,
+      "evidence": "forbidden=\\Delta\\Omega_{iO}>\\Delta\\Omega_{i\\mathrm{Inc}}"
+    },
+    {
+      "id": "P14-CHECKLIST-CANONICAL",
+      "passed": true,
+      "evidence": "no legacy IDs"
+    },
+    {
+      "id": "P14-CHECKLIST-A-DEM-01",
+      "passed": true,
+      "evidence": "required=A-DEM-01"
+    },
+    {
+      "id": "P14-CHECKLIST-B-MFG-05",
+      "passed": true,
+      "evidence": "required=B-MFG-05"
+    },
+    {
+      "id": "P14-CHECKLIST-C-ADV-06",
+      "passed": true,
+      "evidence": "required=C-ADV-06"
+    },
+    {
+      "id": "P14-CHECKLIST-D-CMO-04",
+      "passed": true,
+      "evidence": "required=D-CMO-04"
+    },
+    {
+      "id": "P14-CHECKLIST-ARCH-07",
+      "passed": true,
+      "evidence": "required=ARCH-07"
+    },
+    {
+      "id": "P14-INDEPENDENT",
+      "passed": true,
+      "evidence": "independent audit"
+    },
+    {
+      "id": "P14-LATEX-FATAL",
+      "passed": true,
+      "evidence": "fatal="
+    },
+    {
+      "id": "P14-LATEX-BOXES",
+      "passed": true,
+      "evidence": "box_warnings=0"
+    },
+    {
+      "id": "P14-SCOPE-EXACT",
+      "passed": true,
+      "evidence": "unexpected="
+    },
+    {
+      "id": "P14-GATE-IDS",
+      "passed": true,
+      "evidence": "missing="
+    },
+    {
+      "id": "P14-GATE-RESULT",
+      "passed": true,
+      "evidence": "gate PASS"
+    }
+  ]
+}

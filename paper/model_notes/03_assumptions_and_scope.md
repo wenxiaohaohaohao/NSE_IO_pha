@@ -1,597 +1,360 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED; PHASE 10 - APPROVED; PHASE 11 - APPROVED`
+Phase status: `PHASE 1--14 - APPROVED`
 
-This file records assumptions needed through the current phase. It does not impose the signs of later propositions. Technology, route-choice, project-advancement, market-regularity and equilibrium comparative-static assumptions must be added in their authorized phases before use.
+This is the authoritative Phase 14 assumption ledger. Earlier phase-specific
+IDs remain stable aliases for traceability, but the four blocks below are the
+only active assumption taxonomy. Architecture restrictions, definitions,
+optimization results and proposition conclusions are recorded separately and
+must not be promoted into assumptions.
 
-## A. Institutional primitives
+## 1. Classification rule
 
-### `A-P01-INST-01` - Binary institutional regime
-
-$M\in\{0,1\}$ is exogenous. $M=0$ is pre-MAH; $M=1$ makes retained holder-producer separation legally available.
-
-Used by: Phase 1 timing and route feasibility.
-
-### `A-P01-INST-02` - Single direct policy wedge
-
-The only direct baseline policy channel is
-
-$$
-\tau_E(0)=+\infty,
-\qquad
-\tau_E(1)=\bar\tau_E<+\infty.
-$$
-
-The finite $\bar\tau_E$ is a primitive post-MAH burden, not a second implementation index.
-
-Used by: Phase 1 institutional definition. No payoff effect is derived yet.
-
-### `A-P01-INST-03` - Retained authorization
-
-Under $E$, the developer remains the holder and a qualified external producer manufactures. Route $E$ is not ownership or authorization transfer.
-
-Used by: Phase 1 route taxonomy.
-
-## B. Developer and supplier characteristics
-
-### `A-P01-FIRM-01` - Continuous developer heterogeneity
-
-Developers $i\in\mathcal I$ have predetermined $\theta_i=(a_i,k_i)$, with $a_i>0$ and $k_i>0$, distributed according to exogenous $H(a,k)$. No permanent discrete firm type is imposed.
-
-### `A-P01-FIRM-02` - Distinct firm-characteristic roles
-
-$a_i$ converts advancement input into planning-stage projects. $k_i$ measures internal manufacturing capability. Neither is directly changed by $M$.
-
-Used by: $\lambda_i^{\mathrm{plan}}=a_ix_i$ and timing interpretation.
-
-### `A-P01-FIRM-03` - Qualified supplier heterogeneity
-
-Qualified suppliers $j\in\mathcal J$ have predetermined efficiency $z_j>0$ distributed according to exogenous $H_C(z)$. Capacity optimization is deferred to Phase 6.
-
-## C. Project characteristics and empirical classifier
-
-### `A-P01-PROJ-01` - Post-investment project draw
-
-After $x_i$ is chosen, each viable planning-stage project draws $\omega=(q,m)$ from exogenous $F(q,m)$. The distribution is invariant to $M$ and $x_i$.
-
-### `A-P01-PROJ-02` - Distinct project roles
-
-$q>0$ is a commercial/scientific value shifter. $m>0$ is a manufacturing requirement on the same scale as $k_i$. MAH directly changes neither.
-
-### `A-P01-PROJ-03` - Novelty decomposition without a new control
-
-When needed, $g\in\{O,\mathrm{Inc}\}$ is an exogenous classifier with $\rho_g\geq0$, $\sum_g\rho_g=1$, and
-
-$$
-F(q,m)=\sum_g\rho_gF_g(q,m).
-$$
-
-The baseline retains one common $x_i$. The class label creates no $x_{ig}$ and imposes no ordering of class-specific reform gains.
-
-### `A-P01-PROJ-04` - Exogenous downstream realization
-
-$s(q)\in[0,1]$ is route independent and MAH invariant. If later typed outcomes use $s_g(q)$, it is also exogenous and MAH invariant. Neither function is patent generation.
-
-## D. Information and timing
-
-### `A-P01-TIME-01` - Information before advancement
-
-Developer $i$ observes $M$ and $(a_i,k_i)$ before choosing $x_i\geq0$. It conditions the decision on anticipated $p_m^*$ and expected future route values, solved jointly in later phases.
-
-### `A-P01-TIME-02` - Advancement precedes project and route realization
-
-The common $x_i$ is chosen before $(q,m)$ is drawn and before route choice. Realized holder-producer separation cannot be a causal event preceding $x_i$.
-
-### `A-P01-TIME-03` - Anticipation versus realization
-
-The permissible ex ante chain is
-
-$$
-M
-\longrightarrow
-\text{anticipated availability/value of }E
-\longrightarrow
-\Omega_i
-\longrightarrow
-x_i.
-$$
-
-The later realization chain is
-
-$$
-x_i
-\longrightarrow
-\text{planning-stage projects}
-\longrightarrow
-r_i^*
-\longrightarrow
-\text{observed holder-producer separation}
-\longrightarrow
-\text{realized products}.
-$$
-
-These are timing restrictions, not Phase 1 comparative-static proofs.
-
-### `A-P01-TIME-04` - Equilibrium consistency is not a later shock
-
-Stage 5 determines a $p_m^*$ jointly consistent with decisions made using that anticipated price. Stage 5 is an equilibrium condition, not a chronological policy shock after downstream realization.
-
-## E. Scope exclusions
-
-### `A-P01-SCOPE-01` - Partial-equilibrium boundary
-
-No entry, exit, labor-market clearing, capital-market clearing, product-market aggregate clearing, representative household, portfolio dynamics, or welfare object is included.
-
-### `A-P01-SCOPE-02` - Innovation-object boundary
-
-$x_i$ is original-drug innovation investment / project-advancement intensity. It is broader than pure clinical-development effort but excludes upstream basic research, basic-compound discovery, patent-generating effort, and patent applications.
-
-### `A-P01-SCOPE-03` - Baseline/extension boundary
-
-Logit route choice, inclusive value, continuous $\eta$, route-specific realization, transfer-market microfoundation, matching, dynamic evolution, and research-versus-development allocation are not baseline Phase 1 objects.
-
-## F. Phase 1 assumption-use matrix
-
-| Definition or timing claim | Assumptions actually used |
-|---|---|
-| Developer characteristic vector | `A-P01-FIRM-01`, `A-P01-FIRM-02` |
-| Supplier population | `A-P01-FIRM-03` |
-| Project draw and mismatch roles | `A-P01-PROJ-01`, `A-P01-PROJ-02` |
-| Novelty mixture identity | `A-P01-PROJ-03` |
-| Institutional route availability | `A-P01-INST-01`, `A-P01-INST-02`, `A-P01-INST-03` |
-| $\lambda_i^{\mathrm{plan}}=a_ix_i$ | `A-P01-FIRM-02`, `A-P01-TIME-01` |
-| Advancement before route realization | `A-P01-TIME-02`, `A-P01-TIME-03` |
-| Downstream realization timing | `A-P01-PROJ-04` |
-| Anticipated equilibrium price in Stage 1 | `A-P01-TIME-01`, `A-P01-TIME-04` |
-| Excluded mechanisms | `A-P01-SCOPE-01`--`A-P01-SCOPE-03` |
-
-None of these assumptions directly states a later sign, cutoff, existence, uniqueness, or welfare conclusion.
-
-## G. Phase 2 demand and operating-profit assumptions
-
-### `A-P02-DEMAND-01` - Constant-elasticity residual demand
-
-Conditional on product price $p>0$ and project value shifter $q>0$, one-period residual demand is
-
-$$
-y(p;q)=Aq p^{-\varepsilon},
-$$
-
-where $A>0$ and $\varepsilon>1$. The institutional regime $M$ changes none of $A$, $q$, or $\varepsilon$.
-
-Used by: `P02-E01`--`P02-E05`.
-
-### `A-P02-PRICE-01` - Conditional static pricing domain
-
-For a fixed positive marginal manufacturing-cost input $c>0$, product price $p$ is chosen from $[c,\infty)$. Phase 2 takes $q$ and $c$ as fixed arguments. Route technologies that map $(m,k_i,p_m)$ into a value of $c$ are deferred to Phase 3.
-
-Used by: pricing FOC, feasibility, SOC, and global-maximizer proof.
-
-### `A-P02-PV-01` - Commercial survival and discounting
-
-After successful commercialization, the optimized one-period operating profit is stationary. The product remains commercially active for the next period with conditional probability $\varphi\in[0,1]$, independently of the stationary operating-profit amount, and future currency is discounted by $\beta\in(0,1)$. Hence $0\leq\beta\varphi<1$.
-
-The parameter $\varphi$ is post-commercial survival, not the pre-commercial downstream realization probability $s(q)$.
-
-Used by: `P02-E06` and `P02-E07`.
-
-### `A-P02-ACCOUNT-01` - Gross operating-value boundary
-
-Marginal cost $c$ is the only cost subtracted inside one-period operating profit. The derived $R(q,c)$ is gross of route-specific fixed organizational costs, institutional burdens, and any separately defined capacity procurement payment. Phase 3 and Phase 4 must state whether each future route cost is embedded in route-specific $c_r$ or subtracted outside $R$; the same economic cost cannot appear in both places.
-
-Used by: Phase 2 dimension and double-counting audit; binding accounting restriction for Phase 3-4.
-
-### `A-P02-POLICY-01` - Policy invariance of the Phase 2 kernel
-
-MAH does not directly shift $A$, $q$, $\varepsilon$, $\beta$, or $\varphi$. Phase 2 therefore establishes no direct $M$ comparative static. Any later change in $R$ must operate through an approved route-value or route-cost channel.
-
-Used by: Phase 2 economic-interpretation audit and `RL-08`.
-
-## H. Phase 2 assumption-use matrix
-
-| Result | Assumptions actually used | Held fixed |
+| Status | Meaning | May be cited as an assumption? |
 |---|---|---|
-| Demand schedule | `A-P02-DEMAND-01` | $A,q,\varepsilon$ when varying $p$ |
-| Unique interior product price | `A-P02-DEMAND-01`, `A-P02-PRICE-01` | $A,q,c,\varepsilon$ |
-| Optimized operating profit | `A-P02-DEMAND-01`, `A-P02-PRICE-01`, `A-P02-ACCOUNT-01` | $A,q,c,\varepsilon$ as appropriate |
-| $\pi_q>0$ and $\pi_c<0$ | `A-P02-DEMAND-01`, `A-P02-PRICE-01` | all parameters except the differentiated argument |
-| Convergent commercial present value | `A-P02-PV-01`, `A-P02-ACCOUNT-01` | $q,c,A,\varepsilon,\beta,\varphi$ as appropriate |
-| No direct MAH effect in Phase 2 | `A-P02-POLICY-01` | Phase 2 kernel primitives |
+| Primitive | Exogenous object, functional form, support or technology supplied by the model | Yes, through its canonical ID |
+| Maintained regularity | Smoothness, integrability, endpoint or atomlessness condition needed for a stated theorem | Yes, only for the result named in its scope |
+| Optimization-derived | FOC, SOC, envelope derivative, best response or value comparison proved from primitives | No |
+| Derived conclusion | Cutoff, sorting, policy effect, equilibrium price order or outcome effect proved in a proposition | No |
+| Architecture restriction | Timing, ownership, policy-channel, accounting, baseline/extension or partial-equilibrium boundary | No; cite the `ARCH-*` ID as a scope guard |
 
-The derivative signs are derived results, not assumptions. No route ranking, policy effect, welfare result, or equilibrium-price claim is imposed here.
+The model therefore never assumes a route choice, a positive reform effect,
+an original-versus-incremental ranking, a patent increase, a cutoff, or an
+equilibrium-price sign. Such statements must be proved or reported as
+ambiguous/zero when their sufficient conditions fail.
 
-## I. Phase 3 manufacturing-technology assumptions
+## A. Demand and commercial-return assumptions
 
-### `A-P03-INT-01` - Internal feasibility through setup cost
+### `A-DEM-01` - Residual demand and parameter domain
 
-There is a positive capability threshold $\underline{k}(m)$ measured in $\mathsf K$. Internal production is technologically feasible only when $k_i\geq\underline{k}(m)$. The baseline encodes infeasibility by
+**Type:** primitive.
 
-$$
-F_I(m,k_i)=+\infty
-\quad\text{for }k_i<\underline{k}(m),
-$$
+For product price \(p>0\) and project value shifter \(q>0\), residual demand is
 
-rather than by a separate binary feasibility primitive.
+\[
+y(p;q)=Aq p^{-\varepsilon},
+\qquad A>0,\quad \varepsilon>1.
+\]
 
-Used by: `P03-E02`; later route-domain boundary in Phase 4.
+The policy regime does not change \(A,q,\varepsilon\). The derivative signs,
+markup and optimized-profit formula are optimization-derived, not assumed.
 
-### `A-P03-INT-02` - Internal technology shape on its feasible domain
+### `A-DEM-02` - Conditional pricing domain
 
-For $k_i\geq\underline{k}(m)$, $c_I(m,k_i)>0$ and $F_I(m,k_i)$ is finite. Both functions are differentiable on the interior of that domain and satisfy
+**Type:** primitive decision domain.
 
-$$
-c_{I,m}>0,\qquad c_{I,k}<0,
-\qquad
+For fixed marginal manufacturing cost \(c>0\), the product price is chosen
+from \(p\in[c,\infty)\). Route technologies supply the value of \(c\); the
+pricing problem does not itself contain route fixed costs or CMO capacity
+payments.
+
+### `A-DEM-03` - Stationary commercial present value
+
+**Type:** primitive stochastic environment.
+
+Future currency is discounted by \(\beta\in(0,1)\), and a commercialized
+product remains active next period with conditional probability
+\(\varphi\in[0,1)\). Thus \(\beta\varphi<1\). This \(\varphi\) is commercial
+survival, not the pre-commercial realization probability \(s(q)\).
+
+## B. Manufacturing technology assumptions
+
+### `B-MFG-01` - Internal feasibility and capability domain
+
+**Type:** primitive technology.
+
+Developer capability \(k_i>0\) and project manufacturing requirement \(m>0\)
+share the same capability scale. A positive threshold
+\(\underline{k}(m)\) defines internal feasibility. The setup cost is encoded as
+\(F_I(m,k_i)=+\infty\) when \(k_i<\underline{k}(m)\); no second feasibility
+indicator is introduced.
+
+### `B-MFG-02` - Internal technology shape
+
+**Type:** primitive technology restriction.
+
+On the interior of the feasible domain, \(c_I(m,k)>0\) and \(F_I(m,k)\) is
+finite and differentiable, with
+
+\[
+c_{I,m}>0,\qquad c_{I,k}<0,\qquad
 F_{I,m}>0,\qquad F_{I,k}<0.
-$$
+\]
 
-These are primitive technology shape restrictions. They do not by themselves state a route ranking or sorting result.
+These signs describe technology. The induced sign of a value derivative and
+the sorting result are derived.
 
-Used by: `P03-E01`, `P03-E02`; Phase 4 derivatives after route values are defined.
+### `B-MFG-03` - Qualified external technology
 
-### `A-P03-EXT-01` - Qualified external production technology
+**Type:** primitive technology.
 
-Qualified external production has positive technological marginal-cost kernel $c_E(m)>0$. An entrusted project requires $b(m)>0$ units of qualified manufacturing-service capacity, with $b'(m)>0$. The functions depend on project manufacturing requirement $m$, not on developer capability $k_i$.
+External production has \(c_E(m)>0\), requires \(b(m)>0\) units of qualified
+CMO capacity with \(b'(m)>0\), and has readiness cost \(F_E(m)\geq0\) plus
+holder-side burden \(\mu_E\geq0\). These objects do not depend on developer
+capability and are distinct from the capacity payment \(p_m b(m)\).
 
-Used by: `P03-E03`, `P03-E04`.
+### `B-MFG-04` - Deterministic route choice regularity
 
-### `A-P03-EXT-02` - External readiness cost and retained burden
+**Type:** maintained regularity.
 
-$F_E(m)\geq0$ is a real technology-transfer, validation and production-readiness cost. $\mu_E\geq0$ is a residual holder-side responsibility/coordination burden. Neither is a payment for CMO capacity and neither is embedded in $c_E(m)$.
+The noncore transfer value \(T(q,m)\) is finite and continuous, abandonment is
+normalized to zero, and route choice maximizes the deterministic values of
+\(I,E,T,A\). Continuous firm/project heterogeneity makes exact route ties a
+zero-measure event. This condition makes the maximizer single valued almost
+surely; it does not assume which route wins.
 
-Used by: `P03-E05`, `P03-E06`; binding accounting separation for Phase 4.
+### `B-MFG-05` - Proposition-specific cutoff crossing
 
-### `A-P03-HOLDER-01` - Entrusted production retains holder rights
+**Type:** maintained sufficient condition for Proposition 1 only.
 
-Under route $E$, a qualified external producer manufactures while the developer remains the authorization holder and retains holder responsibility. Route $E$ is technologically and organizationally distinct from internal route $I$ and from non-retained transfer route $T$.
+At a fixed finite \((q,m,p_m,\tau_E)\), the gap
+\(\Delta_{IE}(k)\) is continuous on the internally feasible domain and obeys
 
-Used by: Phase 3 organizational distinction and `RL-11`.
-
-### `A-P03-POLICY-01` - Technology invariance and single institutional wedge
-
-The institutional regime $M$ changes only $\tau_E(M)$ and the resulting legal feasibility/friction of route $E$. It does not shift $c_I$, $F_I$, $\underline{k}$, $c_E$, $b$, $F_E$, $\mu_E$, $a_i$, $k_i$, $q$, $m$, $s(q)$, or $s_g(q)$.
-
-Used by: `P03-E07` and the Phase 3 red-line audit.
-
-### `A-P03-SCARCITY-01` - CMO scarcity remains endogenous and deferred
-
-Phase 3 defines the physical capacity requirement $b(m)$ but no CMO supply, demand, price-clearing or scarcity-relief equation. The price $p_m^*$ remains an endogenous Phase 6 object and is not directly shifted by $M$.
-
-Used by: Phase 3 scope gate and `RL-10`.
-
-## J. Phase 3 assumption-use matrix
-
-| Definition / boundary | Assumptions actually used |
-|---|---|
-| Internal marginal cost and setup technology | `A-P03-INT-01`, `A-P03-INT-02` |
-| Internal infeasibility at low capability | `A-P03-INT-01` |
-| External marginal-cost kernel and capacity requirement | `A-P03-EXT-01` |
-| External readiness and holder-side costs | `A-P03-EXT-02` |
-| $I/E/T$ organizational distinction | `A-P03-HOLDER-01` |
-| Only direct MAH wedge is $\tau_E(M)$ | `A-P03-POLICY-01` |
-| No exogenous CMO scarcity relief | `A-P03-SCARCITY-01` |
-
-No Phase 3 assumption states which route is chosen, that a cutoff exists, that MAH raises project value, or that equilibrium CMO price falls.
-
-## K. Phase 4 route-choice and cutoff assumptions
-
-### `A-P04-OUTSIDE-01` - Transfer and abandonment outside options
-
-$T(q,m)$ is a finite continuous noncore outside-value function. It is not separately microfounded in the baseline and does not depend directly on $M$, $k_i$, or $p_m$. Abandonment/indefinite delay is normalized to zero.
-
-Used by: definitions of $W^T$ and $W^A$ and the optimized value maximum.
-
-### `A-P04-CHOICE-01` - Deterministic choice and negligible ties
-
-Route choice maximizes the four deterministic values over feasible routes. Continuous project/firm heterogeneity implies that exact ties have measure zero, so $r_i^*$ is single valued almost surely. No route-specific taste shock or probabilistic share is introduced.
-
-Used by: optimized value and route-choice definitions.
-
-### `A-P04-CUTOFF-01` - Finite-wedge crossing conditions
-
-For a fixed $(q,m,p_m)$ and a finite entrusted barrier $\tau_E$, the value gap $\Delta_{IE}(k;q,m,M,p_m)$ is continuous on the internally feasible capability domain. The endpoint conditions satisfy
-
-$$
+\[
 \lim_{k\downarrow\underline{k}(m)}\Delta_{IE}(k)<0,
 \qquad
 \lim_{k\to\infty}\Delta_{IE}(k)>0.
-$$
+\]
 
-Together with the derivative implied by Phase 2-3 signs, these are sufficient crossing conditions for a unique finite $I/E$ cutoff. They are not assumed to hold for every $(q,m,p_m,M)$.
+These endpoint restrictions guarantee that a crossing exists once the strict
+slope has been derived from `A-DEM-01` and `B-MFG-02`. They do not assume the
+cutoff or sorting conclusion, and they need not hold for every project-price
+cell.
 
-Used by: cutoff existence and uniqueness.
+## C. Project-advancement assumptions
 
-### `A-P04-CUTOFF-02` - Conditional organizational interpretation
+### `C-ADV-01` - Common advancement control and cost
 
-The statements $k_i<k^*\Rightarrow E$ and $k_i>k^*\Rightarrow I$ apply only where $I$ and $E$ both dominate $T$ and $A$. If an outside option dominates, the $I/E$ cutoff does not determine the realized route.
+**Type:** primitive technology and decision domain.
 
-Used by: organizational-sorting proposition draft and zero-effect cases.
+Each developer has \(a_i>0\), uses one common \(x_i\), restricts it to
+\(x_i\geq0\), and incurs
 
-### `A-P04-PRICE-01` - Fixed-price Phase 4 comparison
-
-Phase 4 treats $p_m$ as a fixed conjectured CMO capacity price when constructing route values and differentiating the cutoff. The equilibrium feedback through $p_m^*$ is deferred to Phase 6 and the fixed-price/equilibrium-price distinction must remain explicit.
-
-Used by: $\partial k^*/\partial p_m$ and scope audit.
-
-### `A-P04-POLICY-01` - Binary policy versus finite wedge derivative
-
-The reform comparison remains binary: $M=0$ makes $E$ unavailable via $\tau_E=+\infty$, while $M=1$ gives finite $\bar\tau_E$. The derivative $\partial k^*/\partial\tau_E$ is a local structural derivative within the finite-wedge domain, not a derivative with respect to binary $M$.
-
-Used by: cutoff comparative derivative and policy interpretation.
-
-## L. Phase 4 assumption-use matrix
-
-| Result | Assumptions actually used |
-|---|---|
-| $I/E/T/A$ values | approved Phase 1-3 primitives; `A-P04-OUTSIDE-01` |
-| deterministic optimized value and route | `A-P04-CHOICE-01` |
-| $\Delta_{IE,k}>0$ | `A-P03-INT-02` and Phase 2 result $R_c<0$ |
-| unique finite cutoff | `A-P04-CUTOFF-01` plus derived $\Delta_{IE,k}>0$ |
-| conditional $E/I$ sorting around cutoff | `A-P04-CUTOFF-02` |
-| $\partial k^*/\partial\tau_E<0$ | finite-wedge differentiability and $\Delta_{IE,k}>0$ |
-| $\partial k^*/\partial p_m<0$ | `A-P04-PRICE-01`, $b(m)>0$, and $\Delta_{IE,k}>0$ |
-| binary MAH interpretation | `A-P04-POLICY-01` |
-
-No assumption states that route $E$ is always chosen after MAH or that every project has a nonzero reform effect.
-
-## M. Phase 5 project-advancement assumptions
-
-### A-P05-COST-01 - Strictly convex common advancement cost
-
-The single common control satisfies $x_i\geq0$. Its cost is
-
-$$
+\[
 C_X(x_i)=\frac{\kappa}{1+\nu}x_i^{1+\nu},
 \qquad \kappa>0,\quad \nu>0.
-$$
+\]
 
-Thus $C_X'(x_i)=\kappa x_i^\nu$ is strictly increasing and the cost is
-strictly convex on the nonnegative domain. The case $\nu=1$ is the quadratic
-advancement-cost boundary. The function is not a research-versus-development
-allocation block.
+The canonical meaning of \(x_i\) is original-drug innovation investment /
+project-advancement intensity. It is broader than pure clinical-development
+effort but is not patent applications, patent effort, basic research, or
+upstream scientific discovery. The optimal \(x_i^*\) is derived.
 
-Used by: the Phase 5 objective, KKT conditions, SOC and unique optimizer.
+### `C-ADV-02` - Exogenous project draw and finite route value
 
-### A-P05-VALUE-01 - Finite expected optimized project value
+**Type:** primitive distribution plus maintained integrability.
 
-For each developer characteristic and fixed conjectured price $p_m$, the
-Phase 4 optimized value $W_i(q,m;M,p_m)$ is measurable and integrable under
-$F(q,m)$. Because abandonment has value zero and belongs to the maximization,
-$W_i\geq0$, so
+After \(x_i\) is chosen, a planning-stage project draws
+\(\omega=(q,m)\sim F\), where \(F\) is invariant to policy and advancement.
+For each developer and fixed candidate \(p_m\), optimized route value \(W_i\)
+is measurable and integrable. Because abandonment is available,
 
-$$
-0\leq\Omega_i(M,p_m)
-=\int W_i(q,m;M,p_m)\,dF(q,m)<+\infty.
-$$
+\[
+0\leq\Omega_i(M,p_m)=\int W_i(q,m;M,p_m)\,dF(q,m)<\infty.
+\]
 
-Used by: expected-value definition, existence of a finite objective and the
-zero-value corner.
+### `C-ADV-03` - Ex ante timing and anticipated price
 
-### A-P05-TIME-01 - Ex ante common control at a conjectured price
+**Type:** information/timing restriction.
 
-Developer $i$ chooses the one common $x_i$ after observing
-$(a_i,k_i,M)$ and anticipating route opportunities, but before drawing
-$(q,m)$ and before route choice. Phase 5 treats $p_m$ as fixed and conjectured.
-The feedback selecting $p_m^*$ is deferred to Phase 6.
+The developer observes \(M,(a_i,k_i)\), anticipates route opportunities and
+the equilibrium-consistent CMO price, then chooses \(x_i\) before the project
+draw and route assignment. Realized holder-producer separation cannot be a
+causal event preceding \(x_i\).
 
-Used by: objective conditioning, expected value and fixed-price reform
-comparison.
+### `C-ADV-04` - Novelty mixture without a class-specific control
 
-### A-P05-CHANNEL-01 - Only the expected route-value channel
+**Type:** primitive empirical decomposition.
 
-The institutional regime changes none of $a_i$, $k_i$, $\kappa$, $\nu$,
-$C_X$, $F(q,m)$, $q$, $m$, $s(q)$ or $s_g(q)$. It can affect
-$x_i^*$ only through $\Omega_i$, and within $\Omega_i$ only through the
-approved route-$E$ wedge. Manufacturing capability $k_i$ may affect
-$\Omega_i$ through route value and sorting, but it does not enter
-$a_ix_i$ or $C_X(x_i)$.
+For \(g\in\{O,\mathrm{Inc}\}\), exogenous shares and conditional distributions
+satisfy
 
-Used by: Phase 5 causal-channel audit and the fixed-price binary comparison.
+\[
+\rho_g\geq0,
+\quad \sum_g\rho_g=1,
+\quad F=\sum_g\rho_gF_g,
+\quad \Omega_i=\sum_g\rho_g\Omega_{ig}.
+\]
 
-### A-P05-GAP-01 - Appendix-only value-gap accounting
+There is no \(x_{ig}\), and no ordering of class-specific reform gains is
+imposed.
 
-$B_i$ and $K_i$ are accounting auxiliaries measured per marginal
-planning-stage project, with
+### `C-ADV-05` - Exogenous downstream realization
 
-$$
-K_i=B_i+\Omega_i.
-$$
+**Type:** primitive measurement/outcome mapping.
 
-They are not persistent state variables and do not define a recursive Bellman
-problem. The identity gives the downstream value gap
-$K_i-B_i=\Omega_i$ without adding a scientific-research productivity channel.
+The measurable functions \(s(q)\) and, when the novelty decomposition is used,
+\(s_g(q)\), lie in \([0,1]\), are route-independent where specified, and are
+invariant to policy. They do not represent patent generation and do not feed
+back into advancement or route choice.
 
-Used by: the value-gap interpretation of the advancement FOC.
+### `C-ADV-06` - Capability-response curvature
 
-## N. Phase 5 assumption-use matrix
+**Type:** maintained sufficient condition for the manufacturing-capability
+part of Proposition 3 only.
 
-| Result | Assumptions actually used |
+Impose \(\nu\geq1\) when signing the level response of \(\Delta x_i\) to
+internal capability while holding \(a_i\), candidate price and exogenous
+primitives fixed. For \(0<\nu<1\), no sign is claimed without an additional
+bound. This restriction does not assume the sign of the response itself.
+
+## D. CMO-market regularity assumptions
+
+### `D-CMO-01` - Qualified-capacity supply
+
+**Type:** primitive technology plus regularity.
+
+For fixed supplier efficiency \(z_j>0\), \(\Psi(s_j;z_j)\) is twice
+continuously differentiable on \(s_j\geq0\), satisfies
+
+\[
+\Psi(0;z_j)=\Psi_s(0;z_j)=0,
+\quad \Psi_s>0\ (s_j>0),
+\quad \Psi_{ss}>0,
+\quad \Psi_{sz}<0,
+\]
+
+and \(\Psi_s\to\infty\) as \(s_j\to\infty\). The supplier distribution
+\(H_C(z)\) is exogenous and policy invariant. The unique capacity best response
+and upward-sloping supply are optimization-derived.
+
+### `D-CMO-02` - Background CMO demand
+
+**Type:** primitive demand regularity.
+
+\(D_m^B(p_m)\) is finite, continuous, nonnegative and weakly decreasing,
+with \(D_m^B(0)>0\) and \(D_m^B(p_m)\to0\) as \(p_m\to\infty\). It belongs to
+the background market, is outside the study cohort, and is policy invariant.
+
+### `D-CMO-03` - Deterministic aggregation regularity
+
+**Type:** maintained regularity.
+
+At every finite candidate price, firm/project heterogeneity assigns zero mass
+to route ties. Route values are continuous in price, relevant first moments
+are finite, and \(a_ix_i^*(M,p_m)b(m)\) admits an integrable envelope on
+compact price intervals. These conditions justify aggregate continuity by
+dominated convergence; they do not replace deterministic choice with logit.
+
+### `D-CMO-04` - Single-market price-taking closure
+
+**Type:** maintained equilibrium architecture.
+
+Developers and suppliers take a candidate \(p_m\) as given. The equilibrium
+price is selected only by qualified-capacity market clearing. Supply
+technology, supplier heterogeneity and background demand are not shifted by
+policy. No entry, labor, capital, product-market or welfare market is closed.
+
+## 2. Architecture guards (not assumptions)
+
+| ID | Binding restriction |
 |---|---|
-| common planned-project intensity $\lambda_i^{\mathrm{plan}}=a_ix_i$ | A-P01-FIRM-02, A-P01-TIME-01, A-P05-TIME-01 |
-| advancement cost and marginal cost | A-P05-COST-01 |
-| finite nonnegative $\Omega_i$ | A-P04-CHOICE-01, A-P05-VALUE-01 |
-| existence and uniqueness of $x_i^*$ | A-P05-COST-01, A-P05-VALUE-01 |
-| zero-value corner $x_i^*=0$ | A-P05-COST-01, A-P05-VALUE-01 |
-| fixed-price binary MAH effect | Phase 4 binary value comparison, A-P05-TIME-01, A-P05-CHANNEL-01 |
-| value-gap interpretation | A-P05-GAP-01 |
+| `ARCH-01` | \(M\in\{0,1\}\) acts directly only through \(\tau_E(0)=+\infty\), \(\tau_E(1)=\bar\tau_E<\infty\); no direct shift of technology, project draws, realization, supply or background demand |
+| `ARCH-02` | Under \(E\), the developer remains the holder; \(E\neq T\) and retained rights are not transferred |
+| `ARCH-03` | Anticipation precedes \(x_i\); planning, project draw, route assignment, observed separation and realized products follow in that order |
+| `ARCH-04` | Baseline is partial equilibrium and excludes entry, welfare, portfolio dynamics, representative households and additional market clearing |
+| `ARCH-05` | \(x_i\) has the v1.2 meaning and cannot be interpreted as patent applications or upstream research |
+| `ARCH-06` | Binary policy comparisons, finite-wedge derivatives, fixed-price derivatives and equilibrium-price comparisons are distinct operations |
+| `ARCH-07` | One common \(x_i\); \(g\in\{O,\mathrm{Inc}\}\) is only an empirical classifier and creates no new control |
+| `ARCH-08` | Marginal, fixed, readiness, holder-side and CMO-capacity costs are accounted for once and only once |
+| `ARCH-09` | Logit, inclusive value, continuous \(\eta\), matching, dynamics, route-specific realization and research-versus-development allocation remain extension-only |
 
-No assumption states that MAH raises patent applications, upstream research,
-breakthrough innovation or every developer's advancement intensity.
+## 3. Proposition--assumption matrix
 
-## O. Phase 6 CMO-market assumptions
+Definition parents and architecture guards are reported separately so that the
+matrix does not mislabel them as economic assumptions.
 
-### A-P06-SUPPLY-01 - Convex qualified-capacity technology
+| Result | Canonical assumptions actually used | Definition/derived parents | Architecture guards | Sufficient/strict condition and zero-effect boundary |
+|---|---|---|---|---|
+| Proposition 1: organizational sorting | `A-DEM-01`, `A-DEM-03`; `B-MFG-01`, `B-MFG-02`, `B-MFG-04`, `B-MFG-05` | derived \(R_c<0\), route values and \(\Delta_{IE,k}>0\) | `ARCH-02`, `ARCH-06`, `ARCH-08` | Endpoint crossing is cell-specific; sorting applies only where \(I,E\) beat \(T,A\); otherwise no cutoff-based route conclusion |
+| Proposition 2: MAH-relevant set | `B-MFG-04` | deterministic maximum and old choice-set value \(W_i^0\) | `ARCH-01`, `ARCH-06` | Strict gain iff \(W_i^E>W_i^0\); null relevant set or prohibitive price gives zero effect |
+| Proposition 3: advancement and heterogeneity | `C-ADV-01`, `C-ADV-02`, `C-ADV-03`; additionally `B-MFG-02`, `C-ADV-06` only for manufacturing-capability scaling | route-value gain and strictly concave advancement objective | `ARCH-01`, `ARCH-05`, `ARCH-06`, `ARCH-07` | \(\Delta\Omega_i>0\) gives a strict fixed-price response; zero gain gives zero response; no capability sign for \(0<\nu<1\) without another bound |
+| Novelty corollary | `C-ADV-04`, `C-ADV-05` | mixture identity | `ARCH-05`, `ARCH-07` | No cross-class order; includes \(\rho_O=0\), \(\rho_{\mathrm{Inc}}=0\), and either class gain equal to zero |
+| Proposition 4: CMO existence and uniqueness | `B-MFG-03`; `D-CMO-01`--`D-CMO-04` | supplier best responses and aggregate demand derived at a candidate price | `ARCH-04`, `ARCH-06` | Existence uses low/high-price boundaries; uniqueness uses strictly increasing supply and weakly decreasing total demand |
+| Proposition 5: scarcity attenuation | `B-MFG-03`; `D-CMO-01`--`D-CMO-04` | Proposition 4 and nonnegative study demand | `ARCH-01`, `ARCH-06` | Strict price increase requires positive post-MAH study demand at the old price; no demand, no entrusted advantage, or perfectly elastic supply gives the stated zero/common-price boundary |
+| Proposition 6: planning and observed outcomes | `B-MFG-04`; `C-ADV-02`--`C-ADV-05` | common \(x_i^*\), deterministic route indicator and outcome integrals | `ARCH-03`, `ARCH-05`, `ARCH-07` | Realization is policy invariant; either novelty class may have zero effect and no patent outcome is implied |
 
-For every fixed supplier efficiency $z_j$, the cost
-$\Psi(s_j;z_j)$ is twice continuously differentiable on $s_j\geq0$ and
-satisfies
+## 4. Derived results that cannot be cited as assumptions
 
-$$
-\Psi(0;z_j)=0,\qquad
-\Psi_s(0;z_j)=0,
-$$
-
-$$
-\Psi_s(s_j;z_j)>0\ \text{for }s_j>0,\qquad
-\Psi_{ss}(s_j;z_j)>0,\qquad
-\Psi_{sz}(s_j;z_j)<0,
-$$
-
-and $\Psi_s(s_j;z_j)\to+\infty$ as $s_j\to+\infty$.
-The distribution $H_C(z)$ is exogenous and invariant to $M$.
-
-Used by: supplier FOC/SOC, capacity response, aggregate supply continuity,
-strict monotonicity and the high-price boundary.
-
-### A-P06-BACKGROUND-01 - Background CMO demand
-
-The exogenous background-demand function $D_m^B(p_m)$ is finite,
-continuous, nonnegative and weakly decreasing on $p_m\geq0$. It satisfies
-
-$$
-D_m^B(0)>0,\qquad
-\lim_{p_m\to\infty}D_m^B(p_m)=0.
-$$
-
-This demand is outside the modeled study cohort and permits a positive CMO
-market before MAH. It is not shifted directly by $M$.
-
-Used by: total-demand definition and the low/high-price existence boundaries.
-
-### A-P06-AGG-01 - Atomless aggregation of deterministic route choice
-
-For every finite $p_m$ and $M$, the joint distribution of developer and
-project heterogeneity assigns zero mass to ties between route $E$ and its best
-alternative. The route values are continuous in $p_m$, and the family
-$a_ix_i^*(M,p_m)b(m)$ is dominated on compact price intervals by an
-integrable envelope under $H(a,k)F(q,m)$. The relevant first moments of
-$a_i$, $x_i^*$ and $b(m)$ are finite.
-
-Used by: almost-everywhere indicator convergence, dominated convergence and
-continuity of aggregate study demand.
-
-### A-P06-PRICE-01 - Price taking and single-market closure
-
-Developers and qualified suppliers take a conjectured $p_m$ as given when
-choosing routes, advancement and capacity. The equilibrium price is selected
-only by qualified-capacity market clearing. The institutional regime changes
-neither $\Psi$, $H_C$ nor $D_m^B$ directly. No entry, labor, capital,
-product-market or welfare market is closed in Phase 6.
-
-Used by: scalar fixed-point solution order and the no-direct-price-channel
-audit.
-
-## P. Phase 6 assumption-use matrix
-
-| Result | Assumptions actually used |
+| Derived object or sign | Derivation source |
 |---|---|
-| unique supplier capacity | A-P06-SUPPLY-01 |
-| upward-sloping individual and aggregate supply | A-P06-SUPPLY-01 |
-| entrusted capacity per planning-stage project | Phase 3 $b(m)>0$, Phase 4 deterministic route choice |
-| study-demand continuity | A-P04-CHOICE-01, A-P06-AGG-01 |
-| study demand weakly decreases in $p_m$ | Phase 4 route values, Phase 5 optimizer, $b(m)>0$ |
-| background-demand behavior | A-P06-BACKGROUND-01 |
-| market-clearing existence | A-P06-SUPPLY-01, A-P06-BACKGROUND-01, A-P06-AGG-01 |
-| market-clearing uniqueness | strictly increasing supply and weakly decreasing total demand |
-| scalar solution order | A-P06-PRICE-01 |
+| Unique product price, pricing SOC, \(R_q>0\), \(R_c<0\) | Phase 2 optimization under `A-DEM-01`--`A-DEM-03` |
+| \(\Delta_{IE,k}>0\), cutoff uniqueness and sorting | Phase 4 from `A-DEM-01`, `B-MFG-02`, `B-MFG-05` |
+| \(W_i^1-W_i^0=[W_i^E-W_i^0]_+\geq0\) | deterministic choice-set expansion in Phase 4/8 |
+| \(x_i^*=[\beta a_i\Omega_i/\kappa]^{1/\nu}\) | Phase 5 KKT/SOC under `C-ADV-01`--`C-ADV-03` |
+| Supply increasing, study demand weakly decreasing | Phase 6 best responses and route/advancement response |
+| CMO equilibrium existence/uniqueness | Phase 6/8 under `D-CMO-01`--`D-CMO-04` |
+| \(p_m^*(1)\geq p_m^*(0)\) and scarcity attenuation | Phase 8 equilibrium comparison, not a policy primitive |
+| Novelty ranking is ambiguous | Phase 8 reverse-support construction under `C-ADV-04` |
 
-The model does not assume that MAH lowers $p_m^*$, that supply shifts after
-MAH, or that aggregate route demand is continuous without atomless
-heterogeneity.
+## 5. Legacy-ID alias ledger
 
-## Q. Phase 7 assumption-use matrix
+Every old ID remains resolvable, but it does not create an additional
+assumption category.
 
-Phase 7 adds no primitive or regularity assumption. Its equilibrium definition
-uses only results already established under the following assumptions.
-
-| Equilibrium condition | Assumptions actually inherited |
+| Legacy ID | Canonical assumption or guard |
 |---|---|
-| deterministic route optimality | A-P04-CHOICE-01, A-P04-PRICE-01, A-P04-POLICY-01 |
-| unique common advancement intensity | A-P05-COST-01, A-P05-VALUE-01, A-P05-CHANNEL-01 |
-| unique qualified-supplier capacity | A-P06-SUPPLY-01, A-P06-PRICE-01 |
-| unique CMO clearing price | A-P06-SUPPLY-01, A-P06-BACKGROUND-01, A-P06-AGG-01, A-P06-PRICE-01 |
+| `A-P01-FIRM-01` | `C-ADV-01`, `D-CMO-03` |
+| `A-P01-FIRM-02` | `B-MFG-01`, `C-ADV-01`, `ARCH-01` |
+| `A-P01-FIRM-03` | `D-CMO-01` |
+| `A-P01-INST-01` | `ARCH-01` |
+| `A-P01-INST-02` | `ARCH-01` |
+| `A-P01-INST-03` | `ARCH-02` |
+| `A-P01-PROJ-01` | `C-ADV-02` |
+| `A-P01-PROJ-02` | `A-DEM-01`, `B-MFG-01` |
+| `A-P01-PROJ-03` | `C-ADV-04`, `ARCH-07` |
+| `A-P01-PROJ-04` | `C-ADV-05` |
+| `A-P01-SCOPE-01` | `ARCH-04` |
+| `A-P01-SCOPE-02` | `ARCH-05` |
+| `A-P01-SCOPE-03` | `ARCH-09` |
+| `A-P01-TIME-01` | `C-ADV-03`, `ARCH-03` |
+| `A-P01-TIME-02` | `C-ADV-03`, `ARCH-03` |
+| `A-P01-TIME-03` | `ARCH-03` |
+| `A-P01-TIME-04` | `D-CMO-04`, `ARCH-06` |
+| `A-P02-ACCOUNT-01` | `ARCH-08` |
+| `A-P02-DEMAND-01` | `A-DEM-01` |
+| `A-P02-POLICY-01` | `ARCH-01` |
+| `A-P02-PRICE-01` | `A-DEM-02` |
+| `A-P02-PV-01` | `A-DEM-03` |
+| `A-P03-EXT-01` | `B-MFG-03` |
+| `A-P03-EXT-02` | `B-MFG-03`, `ARCH-08` |
+| `A-P03-HOLDER-01` | `ARCH-02` |
+| `A-P03-INT-01` | `B-MFG-01` |
+| `A-P03-INT-02` | `B-MFG-02` |
+| `A-P03-POLICY-01` | `ARCH-01` |
+| `A-P03-SCARCITY-01` | `D-CMO-04`, `ARCH-06` |
+| `A-P04-CHOICE-01` | `B-MFG-04` |
+| `A-P04-CUTOFF-01` | `B-MFG-05` |
+| `A-P04-CUTOFF-02` | `B-MFG-04` |
+| `A-P04-OUTSIDE-01` | `B-MFG-04` |
+| `A-P04-POLICY-01` | `ARCH-01`, `ARCH-06` |
+| `A-P04-PRICE-01` | `ARCH-06` |
+| `A-P05-CHANNEL-01` | `ARCH-01`, `ARCH-05` |
+| `A-P05-COST-01` | `C-ADV-01` |
+| `A-P05-GAP-01` | `ARCH-08` |
+| `A-P05-TIME-01` | `C-ADV-03` |
+| `A-P05-VALUE-01` | `C-ADV-02` |
+| `A-P06-AGG-01` | `D-CMO-03` |
+| `A-P06-BACKGROUND-01` | `D-CMO-02` |
+| `A-P06-PRICE-01` | `D-CMO-04`, `ARCH-04`, `ARCH-06` |
+| `A-P06-SUPPLY-01` | `D-CMO-01` |
+| `A-P08-HET-01` | `C-ADV-06` |
+| `A-P08-OBS-01` | `C-ADV-05` |
 
-The restriction to one capacity-market clearing equation is a model-closure
-boundary, not an assumed economic conclusion. No entry, firm-distribution,
-labor, capital, product-market or welfare-clearing assumption is added.
+Legacy references in earlier approved files are therefore non-orphaned. New
+work must cite canonical IDs.
 
-## R. Phase 8 proposition-specific sufficient conditions
+## 6. Assumption discipline audit rules
 
-### A-P08-HET-01 - Manufacturing-capability response
-
-For the sufficient result that the fixed-price advancement response weakly
-decreases with internal manufacturing capability, impose $\nu\geq1$ while
-holding $a_i$, the support price and all exogenous primitives fixed. Phase 4
-already implies that $W_i^I$ is nondecreasing in $k_i$, while $W_i^E$, $W^T$
-and $W^A$ do not increase with $k_i$ under the locked route-value structure.
-Hence $\Omega_i^0$ is nondecreasing and $\Delta\Omega_i$ is nonincreasing in
-$k_i$. The curvature restriction makes $t^{1/\nu}$ concave, which is the
-additional sufficient condition required to sign the level response.
-
-This restriction is proposition-specific. For $0<\nu<1$, the model does not
-assert the sign of $\partial\Delta x_i/\partial k_i$ without an additional
-bound on the baseline-value effect.
-
-### A-P08-OBS-01 - Observed-outcome integration
-
-The downstream probabilities $s(q)$ and, when the exogenous novelty
-classification is used, $s_g(q)$ are measurable, lie in $[0,1]$, and are
-invariant to $M$. The route indicators are those of the deterministic baseline
-and the existing domination conditions permit integration under $F$ and
-$F_g$. No observed-outcome formula feeds back into route choice or advancement.
-
-## S. Phase 8 assumption-use matrix
-
-| Result | Assumptions actually used |
-|---|---|
-| Proposition 1 sorting | A-P03-INT-01, A-P03-INT-02, A-P04-CUTOFF-01, A-P04-CUTOFF-02 |
-| Proposition 2 relevant set | A-P04-CHOICE-01, A-P04-POLICY-01 |
-| Proposition 3 gain iff response | A-P05-COST-01, A-P05-VALUE-01, A-P05-CHANNEL-01 |
-| Proposition 3 capability scaling | route values independent of $a_i$; A-P05-COST-01 |
-| Proposition 3 manufacturing heterogeneity | A-P08-HET-01 plus Phase 4 monotonicity |
-| novelty-composition corollary | A-P01-PROJ-03 and no additional cross-class ordering |
-| Proposition 4 CMO existence/uniqueness | A-P06-SUPPLY-01, A-P06-BACKGROUND-01, A-P06-AGG-01, A-P06-PRICE-01 |
-| Proposition 5 scarcity attenuation | Proposition 4 conditions, policy-invariant supply/background demand, $b(m)>0$ |
-| Proposition 6 observed outcomes | A-P01-TIME-01, A-P05-TIME-01, A-P08-OBS-01 |
-
-No Phase 8 assumption states the proposition conclusion. Strict effects are
-reported only when their stated positive-measure or positive-demand condition
-holds; otherwise the corresponding effect may be zero.
-
-## T. Phase 9 outcome-boundary assumption use
-
-Phase 9 adds no primitive or regularity assumption. It reuses A-P01-PROJ-03,
-A-P01-PROJ-04, A-P01-TIME-01 through A-P01-TIME-03, A-P05-TIME-01 and
-A-P08-OBS-01 to keep advancement, project draws, route assignment and
-realization in their approved order.
-
-The statements that a proxy requires a measurement audit and that approval
-data do not separately identify every primitive are limitations, not model
-assumptions. Patent applications remain outside the baseline endogenous
-outcome even when patent history is later considered as a proxy for
-predetermined capability.
-
-## U. Phase 10 empirical-interface scope
-
-Phase 10 adds no theoretical assumption and no claim about current data
-availability. Candidate measurements are interfaces whose use is conditional
-on later validation of unit, grain, keys, coverage, provenance and construct
-validity. A proxy relationship is not an identifying equation.
-
-The anticipation and realization chains reuse the Phase 9 timing. Any future
-empirical design must keep pre-policy capability measures distinct from
-post-policy advancement and must align holder, manufacturer, product and date
-before treating a record as route $E$.
-
-## V. Phase 11 extension quarantine
-
-Phase 11 adds no baseline assumption. Its local assumptions and notation are
-conditional placeholders inside an extension-only file. They cannot be cited
-by a baseline proof, added to the active symbol registry, or used to reinterpret
-an approved proposition without a separate user-approved architecture change.
-
-The smooth-choice block leaves deterministic sorting as the theoretical
-baseline. Route-specific realization cannot make MAH raise $\chi^E$ by
-assumption. Transfer, dynamics, matching and research-versus-development
-allocation remain unimplemented unless their stated activation evidence and
-approval are supplied.
+1. Each new maintained condition must enter exactly one of Blocks A--D and
+   state whether it is primitive or proposition-specific regularity.
+2. An optimization-derived sign must cite its FOC/envelope argument rather
+   than appear in an assumption row.
+3. A binary \(M\) comparison cannot be written as a derivative with respect to
+   \(M\).
+4. Fixed candidate price and equilibrium price must be named explicitly.
+5. No class ranking or patent increase can be introduced without a separately
+   approved architecture change and external evidence.
+6. Extension-only assumptions cannot be cited by a baseline proposition.
+7. Failure of a sufficient condition yields an unsigned or zero-effect case;
+   it does not authorize a stronger conclusion.

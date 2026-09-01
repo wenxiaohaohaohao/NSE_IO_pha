@@ -45,7 +45,7 @@ Legal transition:
 | 11 Extensions | APPROVED | `11_extensions_not_baseline.tex` | `audit/phase11_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 12 Old-to-new crosswalk | APPROVED | `05_old_to_new_model_crosswalk.md` | `audit/phase12_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 13 Equation dependency map | APPROVED | `02_equation_dependency_map.md` | `audit/phase13_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
-| 14 Assumption discipline | NOT STARTED | `03_assumptions_and_scope.md` | — | No |
+| 14 Assumption discipline | APPROVED | `03_assumptions_and_scope.md` | `audit/phase14_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 15 Comparative statics/full draft | NOT STARTED | `08_comparative_statics.tex`; `12_full_derivation_draft.tex` | — | No |
 | 16 Main/appendix candidates | NOT STARTED | `13_main_text_model_candidate.tex`; `14_appendix_model_candidate.tex` | — | No |
 | 17 Consistency audit | NOT STARTED | `07_consistency_audit.md` | — | No |

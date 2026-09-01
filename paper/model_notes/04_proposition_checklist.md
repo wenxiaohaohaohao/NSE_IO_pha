@@ -1,12 +1,19 @@
 # 04 Proposition Checklist
 
-Phase status: PHASE 4--8 - APPROVED
+Phase status: PHASE 4--8 - APPROVED; PHASE 14 ASSUMPTION AUDIT - APPROVED
+
+Canonical assumption IDs below are controlled by
+`03_assumptions_and_scope.md`. Earlier `A-Pxx-*` IDs remain traceable aliases
+but are no longer the active taxonomy. Architecture guards are listed
+separately and are not counted as economic assumptions.
 
 ## Proposition 1 - Organizational sorting
 
 - Status: formal Phase 8 proof and independent audit complete.
 - Objects defined before statement: \(W_i^I,W_i^E,W^T,W^A,W_i,r_i^*,\Delta_{IE},k^*\).
-- Assumptions used: A-P02-PV-01, A-P03-INT-01, A-P03-INT-02, A-P04-CHOICE-01, A-P04-CUTOFF-01, A-P04-CUTOFF-02, A-P04-PRICE-01, A-P04-POLICY-01.
+- Assumptions used: A-DEM-01, A-DEM-03; B-MFG-01, B-MFG-02, B-MFG-04,
+  B-MFG-05.
+- Architecture guards: ARCH-02, ARCH-06, ARCH-08.
 - Fixed objects in capability derivative: \(q,m,M,p_m\).
 - Sufficient crossing conditions: continuous \(\Delta_{IE}\), negative lower-end limit, positive upper-end limit.
 - Derived monotonicity: \(\Delta_{IE,k}=sR_c c_{I,k}-F_{I,k}>0\).
@@ -25,8 +32,9 @@ Phase status: PHASE 4--8 - APPROVED
 - Status: formal Phase 8 proof and independent audit complete.
 - Objects defined before statement:
   \(\lambda_i^{\mathrm{plan}},C_X,\Omega_i,x_i^*,B_i,K_i\).
-- Assumptions used: A-P05-COST-01, A-P05-VALUE-01, A-P05-TIME-01,
-  A-P05-CHANNEL-01 and A-P05-GAP-01.
+- Assumptions used: C-ADV-01, C-ADV-02 and C-ADV-03; B-MFG-02 and
+  C-ADV-06 only for the manufacturing-capability sufficient result.
+- Architecture guards: ARCH-01, ARCH-05, ARCH-06, ARCH-07.
 - Fixed objects in the binary comparison: \(p_m,a_i,k_i,F\) and all
   policy-invariant primitives.
 - Optimization: one common \(x_i\geq0\); no class-specific or
@@ -60,8 +68,8 @@ Phase status: PHASE 4--8 - APPROVED
 - Status: formal Phase 8 proof and independent audit complete.
 - Objects defined before statement:
   \(s_j,\Psi,s_j^*,S_m,\chi_i^E,D_m^{\mathrm{MAH}},D_m^B,D_m,p_m^*\).
-- Assumptions used: A-P06-SUPPLY-01, A-P06-BACKGROUND-01,
-  A-P06-AGG-01 and A-P06-PRICE-01.
+- Assumptions used: B-MFG-03 and D-CMO-01--D-CMO-04.
+- Architecture guards: ARCH-04, ARCH-06.
 - Supplier optimization: unique capacity follows from strict convexity; supply
   rises with \(p_m\) and \(z_j\).
 - Study demand: contains both the advancement response through
@@ -87,7 +95,8 @@ Phase status: PHASE 4--8 - APPROVED
 
 - Status: formal Phase 8 proof and independent audit complete.
 - Objects defined before statement: \(W_i^0,W_i^1,\mathcal C_i\).
-- Assumptions used: A-P04-CHOICE-01 and A-P04-POLICY-01.
+- Assumptions used: B-MFG-04.
+- Architecture guards: ARCH-01, ARCH-06.
 - Fixed objects: developer, project draw and support price.
 - Identity: \(W_i^1-W_i^0=[W_i^E-W_i^0]_+\).
 - Relevant set: strict gain occurs exactly on
@@ -103,6 +112,8 @@ Phase status: PHASE 4--8 - APPROVED
 - Status in hierarchy: corollary of Proposition 2, not a seventh proposition.
 - Objects defined before statement: \(\Omega_{ig}^0,\Omega_{ig}^1,\Delta\Omega_{ig}\).
 - Common-control restriction: one \(x_i\); no \(x_{ig}\).
+- Assumptions used: C-ADV-04, C-ADV-05.
+- Architecture guards: ARCH-05, ARCH-07.
 - Mixture identity: \(\Delta\Omega_i=\sum_g\rho_g\Delta\Omega_{ig}\).
 - Ranking: neither original nor incremental class is ordered without explicit
   primitive restrictions; reverse-support examples establish ambiguity.
@@ -115,6 +126,8 @@ Phase status: PHASE 4--8 - APPROVED
 - Status: formal Phase 8 proof and independent audit complete.
 - Fixed objects: policy-invariant supply, supplier distribution and background
   demand; compare \(p_m^0=p_m^*(0)\) with \(p_m^1=p_m^*(1)\).
+- Assumptions used: B-MFG-03 and D-CMO-01--D-CMO-04.
+- Architecture guards: ARCH-01, ARCH-06.
 - Price result: \(p_m^1\geq p_m^0\), strict if post-MAH study demand is positive
   at \(p_m^0\).
 - Value bound:
@@ -132,6 +145,8 @@ Phase status: PHASE 4--8 - APPROVED
 - Status: formal Phase 8 proof and independent audit complete.
 - Objects defined before statement:
   \(\Lambda_i^{plan},Y_i^{ret},Y_i^E,Y_{ig}^{ret},Q_i^{ret,h}\).
+- Assumptions used: B-MFG-04 and C-ADV-02--C-ADV-05.
+- Architecture guards: ARCH-03, ARCH-05, ARCH-07.
 - Timing: common advancement precedes project draw, route assignment and
   observed holder--producer separation.
 - Common-control restriction: type-specific outcomes use \(\rho_gF_g\) and
@@ -151,3 +166,6 @@ Phase status: PHASE 4--8 - APPROVED
 - Corollaries: exactly 1.
 - Additional substantive propositions: 0.
 - New baseline markets or controls: 0.
+- Proposition rows with canonical assumptions: 6.
+- Novelty corollary rows with canonical assumptions: 1.
+- Proposition conclusions written as assumptions: 0.
