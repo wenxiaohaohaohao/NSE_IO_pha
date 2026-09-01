@@ -1,6 +1,6 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED; PHASE 7 - APPROVED; PHASE 8 - APPROVED; PHASE 9 - APPROVED; PHASE 10 - APPROVED; PHASE 11 - APPROVED; PHASE 12 - APPROVED; PHASE 13 - APPROVED`  
+Phase status: `PHASES 1--17 - APPROVED`  
 This map records every one of the 89 labeled equations in the Phase 1--10
 baseline, their semantic parents, timing order, mathematical status, proof
 obligations, the single CMO fixed point, and the Phase 11 extension
@@ -17,7 +17,7 @@ quarantine has an arrow into the active graph.
 | `P01-E03` / `eq:p01-class-mixture` | $F=\sum_g\rho_gF_g$, $\sum_g\rho_g=1$ | $g,\rho_g,F_g$ | distribution identity | verify valid mixture weights |
 | `P01-E04` / `eq:p01-institutional-wedge` | $\tau_E(0)=+\infty$, $\tau_E(1)=\bar\tau_E<+\infty$ | $M,\tau_E,\bar\tau_E$ | primitive institutional definition | Phase 3 verifies no second policy channel |
 | `P01-E05` / `eq:p01-planned-intensity` | $\lambda_i^{\mathrm{plan}}=a_ix_i$ | $a_i,x_i$ | technology definition | Phase 5 adds optimization for $x_i$ |
-| `P01-E06` / `eq:p01-route-domain` | feasible route labels conditional on $M$ | $M,r_i,I,E,T,A$ | choice-domain definition | Phase 4 derives $r_i^*$ from values |
+| `P01-E06` / `eq:p01-route-domain` | common route-label domain $\{I,E,T,A\}$; effective pre-MAH exclusion of $E$ is encoded by P01-E04 | $r_i,I,E,T,A$; P01-E04 | choice-domain definition | Phase 4 derives $r_i^*$ and $W_i^E=-\infty$ at $M=0$ |
 | `P01-E07` / `eq:p01-downstream-probability` | downstream probability $s(q)$ | $q,s$ | primitive probability definition | Phase 4 uses it in route values |
 | `P01-E08` / `eq:p01-only-direct-policy-arrow` | $M\to\tau_E(M)$ is the only direct policy arrow | $M,\tau_E$ | causal-scope identity | audit every later equation for forbidden direct arrows |
 | `P01-E09` / `eq:p01-anticipated-channel` | anticipated chain $M\to E$ value $\to\Omega_i\to x_i^*$ | P01-E08 plus reserved $\Omega_i$ | timing/dependency statement | closed by Phase 4--5 values and optimization |
@@ -215,7 +215,8 @@ Predetermined distributions and characteristics
   F(q,m), {rho_g,F_g} -> project draws (q,m) and optional class g
 
 Institutional regime
-  M -> tau_E(M) / legal availability of retained entrusted route E
+  M -> tau_E(M), whose infinite/finite value encodes the effective
+  availability of retained entrusted route E
 
 Stage 1: ex ante project advancement
   observed (a_i,k_i,M) + anticipated p_m^*
@@ -317,7 +318,7 @@ The only allowed direct policy arrow is
 
 $$
 M\longrightarrow\tau_E(M)
-\quad\text{and the legal availability/friction of route }E.
+\quad\text{whose infinite/finite value encodes route }E\text{ availability}.
 $$
 
 The approved and proved ex ante dependency chain is

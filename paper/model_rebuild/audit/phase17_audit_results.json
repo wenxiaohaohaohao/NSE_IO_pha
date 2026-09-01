@@ -1,0 +1,850 @@
+{
+  "phase": 17,
+  "expected_status": "APPROVED",
+  "status": "APPROVED",
+  "generated_at": "2026-09-01T20:10:02.5513266+08:00",
+  "passed": 168,
+  "failed": 0,
+  "checks": [
+    {
+      "id": "P17-HASH-BASE",
+      "passed": true,
+      "evidence": "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+    },
+    {
+      "id": "P17-HASH-AMD11",
+      "passed": true,
+      "evidence": "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+    },
+    {
+      "id": "P17-HASH-AMD12-IMAGE",
+      "passed": true,
+      "evidence": "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+    },
+    {
+      "id": "P17-HASH-AMD12-TEXT",
+      "passed": true,
+      "evidence": "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+    },
+    {
+      "id": "P17-HASH-EFFECTIVE",
+      "passed": true,
+      "evidence": "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+    },
+    {
+      "id": "P17-HASH-MAIN-CORRECTED",
+      "passed": true,
+      "evidence": "expected=3FCF59EB25CA82055B456CC2C49CFA25C71D44E3F031295AE33856340CA2737F actual=3FCF59EB25CA82055B456CC2C49CFA25C71D44E3F031295AE33856340CA2737F"
+    },
+    {
+      "id": "P17-HASH-APPENDIX-CORRECTED",
+      "passed": true,
+      "evidence": "expected=B1FB0C2D597A69DEA66D8E3CE6E4DCC99C90EE93239B85E045347D830D4CC2C5 actual=B1FB0C2D597A69DEA66D8E3CE6E4DCC99C90EE93239B85E045347D830D4CC2C5"
+    },
+    {
+      "id": "P17-HASH-P01-CORRECTED",
+      "passed": true,
+      "evidence": "expected=C4C2A969E9A73F8794F8E2374087A885BEA16F30BA56B5AFBED4F5031B8EA95F actual=C4C2A969E9A73F8794F8E2374087A885BEA16F30BA56B5AFBED4F5031B8EA95F"
+    },
+    {
+      "id": "P17-HASH-P02-CORRECTED",
+      "passed": true,
+      "evidence": "expected=989F8F276ADB70946C7C8FCB5F135707B320313C7F3D59BB3FC25344B8996D96 actual=989F8F276ADB70946C7C8FCB5F135707B320313C7F3D59BB3FC25344B8996D96"
+    },
+    {
+      "id": "P17-HASH-P08CS-CORRECTED",
+      "passed": true,
+      "evidence": "expected=A6CAE721D6A461BE4CACCB9C6FDCB8662A70230661877917C406E0A60C0C23AE actual=A6CAE721D6A461BE4CACCB9C6FDCB8662A70230661877917C406E0A60C0C23AE"
+    },
+    {
+      "id": "P17-HASH-P09-CORRECTED",
+      "passed": true,
+      "evidence": "expected=36B097553E748F9D1F4725FE387912AE5DAEBA437834ECAD2B27357E4575CEDD actual=36B097553E748F9D1F4725FE387912AE5DAEBA437834ECAD2B27357E4575CEDD"
+    },
+    {
+      "id": "P17-HASH-P10-CORRECTED",
+      "passed": true,
+      "evidence": "expected=ACF434D4D3E99ED9D2D0D71FB78EBF49CF3036AB4D6DBA4DC32B5A75F4903F8A actual=ACF434D4D3E99ED9D2D0D71FB78EBF49CF3036AB4D6DBA4DC32B5A75F4903F8A"
+    },
+    {
+      "id": "P17-GIT-BRANCH",
+      "passed": true,
+      "evidence": "branch=codex/mah-model-rebuild"
+    },
+    {
+      "id": "P17-GIT-ENTRY",
+      "passed": true,
+      "evidence": "head=8d0ef8902d88f129e3ac3be41fcca6416f869398"
+    },
+    {
+      "id": "P17-GIT-REMOTE",
+      "passed": true,
+      "evidence": "remote=8d0ef8902d88f129e3ac3be41fcca6416f869398"
+    },
+    {
+      "id": "P17-MANUSCRIPT-READ-ONLY",
+      "passed": true,
+      "evidence": "changed="
+    },
+    {
+      "id": "P17-ZIP-ISOLATED",
+      "passed": true,
+      "evidence": "count=0"
+    },
+    {
+      "id": "P17-FILE-00_model_closure_status.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\00_model_closure_status.md"
+    },
+    {
+      "id": "P17-FILE-01_symbols_and_objects.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\01_symbols_and_objects.md"
+    },
+    {
+      "id": "P17-FILE-02_equation_dependency_map.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\02_equation_dependency_map.md"
+    },
+    {
+      "id": "P17-FILE-07_consistency_audit.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\07_consistency_audit.md"
+    },
+    {
+      "id": "P17-FILE-08_shigu_empirical_boundary_check.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\08_shigu_empirical_boundary_check.md"
+    },
+    {
+      "id": "P17-FILE-13_main_text_model_candidate.tex",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\13_main_text_model_candidate.tex"
+    },
+    {
+      "id": "P17-FILE-14_appendix_model_candidate.tex",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\14_appendix_model_candidate.tex"
+    },
+    {
+      "id": "P17-FILE-12_full_derivation_draft.tex",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\12_full_derivation_draft.tex"
+    },
+    {
+      "id": "P17-FILE-phase17_preflight.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase17_preflight.md"
+    },
+    {
+      "id": "P17-FILE-phase17_p1_corrections.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase17_p1_corrections.md"
+    },
+    {
+      "id": "P17-FILE-phase17_pdf_render_audit.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase17_pdf_render_audit.md"
+    },
+    {
+      "id": "P17-FILE-build_phase17_occurrence_catalog.ps1",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\scripts\\build_phase17_occurrence_catalog.ps1"
+    },
+    {
+      "id": "P17-FILE-compile_phase17_candidates.ps1",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\scripts\\compile_phase17_candidates.ps1"
+    },
+    {
+      "id": "P17-BUILD-phase17_occurrence_catalog.csv",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase17_occurrence_catalog.csv"
+    },
+    {
+      "id": "P17-BUILD-phase17_compile_console.txt",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase17_compile_console.txt"
+    },
+    {
+      "id": "P17-BUILD-13_main_text_model_candidate.pdf",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase17\\13_main_text_model_candidate.pdf"
+    },
+    {
+      "id": "P17-BUILD-13_main_text_model_candidate.log",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase17\\13_main_text_model_candidate.log"
+    },
+    {
+      "id": "P17-BUILD-14_appendix_model_candidate.pdf",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase17\\14_appendix_model_candidate.pdf"
+    },
+    {
+      "id": "P17-BUILD-14_appendix_model_candidate.log",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase17\\14_appendix_model_candidate.log"
+    },
+    {
+      "id": "P17-BUILD-12_full_derivation_draft.pdf",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase17\\12_full_derivation_draft.pdf"
+    },
+    {
+      "id": "P17-BUILD-12_full_derivation_draft.log",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase17\\12_full_derivation_draft.log"
+    },
+    {
+      "id": "P17-STATE-P16",
+      "passed": true,
+      "evidence": "Phase 16 approved"
+    },
+    {
+      "id": "P17-STATE-P17",
+      "passed": true,
+      "evidence": "expected=| 17 Consistency audit | APPROVED |"
+    },
+    {
+      "id": "P17-STATE-P18",
+      "passed": true,
+      "evidence": "Phase 18 blocked"
+    },
+    {
+      "id": "P17-MATRIX-P17-D01",
+      "passed": true,
+      "evidence": "rows=1 status=APPROVED approval=YES"
+    },
+    {
+      "id": "P17-MATRIX-P17-G01",
+      "passed": true,
+      "evidence": "rows=1 status=APPROVED approval=YES"
+    },
+    {
+      "id": "P17-CATALOG-TOTAL",
+      "passed": true,
+      "evidence": "rows=1489"
+    },
+    {
+      "id": "P17-CATALOG-M",
+      "passed": true,
+      "evidence": "expected=135 actual=135"
+    },
+    {
+      "id": "P17-CATALOG-tau_E",
+      "passed": true,
+      "evidence": "expected=31 actual=31"
+    },
+    {
+      "id": "P17-CATALOG-p_m",
+      "passed": true,
+      "evidence": "expected=295 actual=295"
+    },
+    {
+      "id": "P17-CATALOG-a_i",
+      "passed": true,
+      "evidence": "expected=173 actual=173"
+    },
+    {
+      "id": "P17-CATALOG-k_i",
+      "passed": true,
+      "evidence": "expected=79 actual=79"
+    },
+    {
+      "id": "P17-CATALOG-q",
+      "passed": true,
+      "evidence": "expected=230 actual=230"
+    },
+    {
+      "id": "P17-CATALOG-m",
+      "passed": true,
+      "evidence": "expected=232 actual=232"
+    },
+    {
+      "id": "P17-CATALOG-s(q)",
+      "passed": true,
+      "evidence": "expected=34 actual=34"
+    },
+    {
+      "id": "P17-CATALOG-W_I",
+      "passed": true,
+      "evidence": "expected=13 actual=13"
+    },
+    {
+      "id": "P17-CATALOG-W_E",
+      "passed": true,
+      "evidence": "expected=30 actual=30"
+    },
+    {
+      "id": "P17-CATALOG-W_T",
+      "passed": true,
+      "evidence": "expected=10 actual=10"
+    },
+    {
+      "id": "P17-CATALOG-Omega_i",
+      "passed": true,
+      "evidence": "expected=88 actual=88"
+    },
+    {
+      "id": "P17-CATALOG-x_i",
+      "passed": true,
+      "evidence": "expected=139 actual=139"
+    },
+    {
+      "id": "P17-CATALOG-CLASSIFIED",
+      "passed": true,
+      "evidence": "empty_rows=0"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-13_main_text_model_candidate.tex",
+      "passed": true,
+      "evidence": "required=13_main_text_model_candidate.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-14_appendix_model_candidate.tex",
+      "passed": true,
+      "evidence": "required=14_appendix_model_candidate.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-01_primitives_and_timing.tex",
+      "passed": true,
+      "evidence": "required=01_primitives_and_timing.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-02_demand_profit_derivation.tex",
+      "passed": true,
+      "evidence": "required=02_demand_profit_derivation.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-03_internal_external_technologies.tex",
+      "passed": true,
+      "evidence": "required=03_internal_external_technologies.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-04_route_values_and_sorting.tex",
+      "passed": true,
+      "evidence": "required=04_route_values_and_sorting.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-05_rd_problem.tex",
+      "passed": true,
+      "evidence": "required=05_rd_problem.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-06_cmo_supply_demand_equilibrium.tex",
+      "passed": true,
+      "evidence": "required=06_cmo_supply_demand_equilibrium.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-07_equilibrium_definition.tex",
+      "passed": true,
+      "evidence": "required=07_equilibrium_definition.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-08_required_propositions.tex",
+      "passed": true,
+      "evidence": "required=08_required_propositions.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-08_comparative_statics.tex",
+      "passed": true,
+      "evidence": "required=08_comparative_statics.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-09_observed_outcomes.tex",
+      "passed": true,
+      "evidence": "required=09_observed_outcomes.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-10_empirical_mapping.tex",
+      "passed": true,
+      "evidence": "required=10_empirical_mapping.tex"
+    },
+    {
+      "id": "P17-CATALOG-SOURCE-11_extensions_not_baseline.tex",
+      "passed": true,
+      "evidence": "required=11_extensions_not_baseline.tex"
+    },
+    {
+      "id": "P17-CATALOG-FULL-DRAFT-CONTAINER",
+      "passed": true,
+      "evidence": "full draft container explicitly scanned; zero standalone matches"
+    },
+    {
+      "id": "P17-SYMBOL-6DD7CDCE",
+      "passed": true,
+      "evidence": "required=PHASES 1--17 - APPROVED"
+    },
+    {
+      "id": "P17-SYMBOL-963C07B1",
+      "passed": true,
+      "evidence": "required=Active object registry through Phase 17"
+    },
+    {
+      "id": "P17-SYMBOL-0714DBC1",
+      "passed": true,
+      "evidence": "required=institutional regime"
+    },
+    {
+      "id": "P17-SYMBOL-04EF2DCB",
+      "passed": true,
+      "evidence": "required=research capability"
+    },
+    {
+      "id": "P17-SYMBOL-E1BA9670",
+      "passed": true,
+      "evidence": "required=internal manufacturing capability"
+    },
+    {
+      "id": "P17-SYMBOL-D322DD07",
+      "passed": true,
+      "evidence": "required=project commercial/scientific value shifter"
+    },
+    {
+      "id": "P17-SYMBOL-6F6BB496",
+      "passed": true,
+      "evidence": "required=manufacturing requirement/complexity"
+    },
+    {
+      "id": "P17-SYMBOL-F12D1267",
+      "passed": true,
+      "evidence": "required=downstream realization probability"
+    },
+    {
+      "id": "P17-SYMBOL-7B9053A5",
+      "passed": true,
+      "evidence": "required=retained entrusted-route project value"
+    },
+    {
+      "id": "P17-SYMBOL-27DB740D",
+      "passed": true,
+      "evidence": "required=expected optimized value per route-planning-stage project"
+    },
+    {
+      "id": "P17-SYMBOL-68C3F244",
+      "passed": true,
+      "evidence": "required=original-drug innovation investment / project-advancement intensity"
+    },
+    {
+      "id": "P17-ONE-ROUTE-DOMAIN",
+      "passed": true,
+      "evidence": "common label domain"
+    },
+    {
+      "id": "P17-ONE-POLICY-CHANNEL",
+      "passed": true,
+      "evidence": "availability encoded by wedge"
+    },
+    {
+      "id": "P17-MAP-ROUTE-DOMAIN",
+      "passed": true,
+      "evidence": "dependency map aligned"
+    },
+    {
+      "id": "P17-MAP-ONE-POLICY-CHANNEL",
+      "passed": true,
+      "evidence": "dependency map uses one wedge that encodes availability"
+    },
+    {
+      "id": "P17-NO-ACTIVE-5D322B3D",
+      "passed": true,
+      "evidence": "pattern=P_\\{ir\\}\\^\\{\\\\mathrm\\{logit\\}\\} count=0"
+    },
+    {
+      "id": "P17-NO-ACTIVE-D73239D1",
+      "passed": true,
+      "evidence": "pattern=\\\\Gamma count=0"
+    },
+    {
+      "id": "P17-NO-ACTIVE-F22C773F",
+      "passed": true,
+      "evidence": "pattern=x_i\\^R count=0"
+    },
+    {
+      "id": "P17-NO-ACTIVE-B022CA2A",
+      "passed": true,
+      "evidence": "pattern=x_i\\^D count=0"
+    },
+    {
+      "id": "P17-NO-ACTIVE-F23CDCE8",
+      "passed": true,
+      "evidence": "pattern=\\\\frac\\{\\\\partial[^\\r\\n]*\\}\\{\\\\partial M\\} count=0"
+    },
+    {
+      "id": "P17-NO-ACTIVE-F103B107",
+      "passed": true,
+      "evidence": "pattern=M\\s*\\\\longrightarrow\\s*(a_i|k_i|q|m|s\\(q\\)|p_m|c_I|c_E|F_I|F_E) count=0"
+    },
+    {
+      "id": "P17-ETA-NEGATIVE-CROSSWALK",
+      "passed": true,
+      "evidence": "single eta occurrence is deletion crosswalk"
+    },
+    {
+      "id": "P17-MAIN-AB19AF4F",
+      "passed": true,
+      "evidence": "required=At a fixed \\(p_m\\)"
+    },
+    {
+      "id": "P17-MAIN-D94BC88E",
+      "passed": true,
+      "evidence": "required=D_m(p_m^*;M)=S_m(p_m^*)"
+    },
+    {
+      "id": "P17-MAIN-D01752F1",
+      "passed": true,
+      "evidence": "required=Fixed-price comparisons and equilibrium-price"
+    },
+    {
+      "id": "P17-MAIN-76300747",
+      "passed": true,
+      "evidence": "required=only through \\(\\Omega_i\\)"
+    },
+    {
+      "id": "P17-MAIN-238510E3",
+      "passed": true,
+      "evidence": "required=Holder--producer separation is observed only after route assignment"
+    },
+    {
+      "id": "P17-MAIN-94CEA7DF",
+      "passed": true,
+      "evidence": "required=no original-versus-incremental ranking"
+    },
+    {
+      "id": "P17-MAIN-A3D6852F",
+      "passed": true,
+      "evidence": "required=applications are not a baseline endogenous outcome"
+    },
+    {
+      "id": "P17-PHI-DOMAIN",
+      "passed": true,
+      "evidence": "open_upper_bound=6 closed_upper_bound=0"
+    },
+    {
+      "id": "P17-PHI-LIMIT",
+      "passed": true,
+      "evidence": "endpoint treated as limit under frozen domain"
+    },
+    {
+      "id": "P17-PATENT-MEASUREMENT",
+      "passed": true,
+      "evidence": "patent boundary corrected"
+    },
+    {
+      "id": "P17-PATENT-INTERFACE-BOUNDARY",
+      "passed": true,
+      "evidence": "Phase 10 uses the same patent/upstream-research construct boundary"
+    },
+    {
+      "id": "P17-APPENDIX-EVIDENCE-WORDING",
+      "passed": true,
+      "evidence": "evidence wording narrowed"
+    },
+    {
+      "id": "P17-APPENDIX-NO-BINDING-INFERENCE",
+      "passed": true,
+      "evidence": "entry and financing boundaries separated"
+    },
+    {
+      "id": "P17-APPENDIX-ONE-POLICY-CHANNEL",
+      "passed": true,
+      "evidence": "appendix uses one wedge that encodes effective availability"
+    },
+    {
+      "id": "P17-EVIDENCE-NO-FINANCE-REQUIREMENT",
+      "passed": true,
+      "evidence": "finance inference bounded"
+    },
+    {
+      "id": "P17-EVIDENCE-TRIAL-WORDING",
+      "passed": true,
+      "evidence": "trial wording precise"
+    },
+    {
+      "id": "P17-EXTENSION-ACTIVE-ONLY",
+      "passed": true,
+      "evidence": "quarantined mechanisms"
+    },
+    {
+      "id": "P17-EXTENSION-LAST",
+      "passed": true,
+      "evidence": "boundary=1015 extension=3972"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C01",
+      "passed": true,
+      "evidence": "required=P17-C01"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C02",
+      "passed": true,
+      "evidence": "required=P17-C02"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C03",
+      "passed": true,
+      "evidence": "required=P17-C03"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C04",
+      "passed": true,
+      "evidence": "required=P17-C04"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C05",
+      "passed": true,
+      "evidence": "required=P17-C05"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C06",
+      "passed": true,
+      "evidence": "required=P17-C06"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C07",
+      "passed": true,
+      "evidence": "required=P17-C07"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C08",
+      "passed": true,
+      "evidence": "required=P17-C08"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C09",
+      "passed": true,
+      "evidence": "required=P17-C09"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C10",
+      "passed": true,
+      "evidence": "required=P17-C10"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C11",
+      "passed": true,
+      "evidence": "required=P17-C11"
+    },
+    {
+      "id": "P17-CORRECTION-P17-C12",
+      "passed": true,
+      "evidence": "required=P17-C12"
+    },
+    {
+      "id": "P17-CORRECTIONS-CLOSED",
+      "passed": true,
+      "evidence": "all P1 corrected"
+    },
+    {
+      "id": "P17-CONSISTENCY-D313B547",
+      "passed": true,
+      "evidence": "required=Exhaustive core-object ledger"
+    },
+    {
+      "id": "P17-CONSISTENCY-8F7D522A",
+      "passed": true,
+      "evidence": "required=Policy-channel audit"
+    },
+    {
+      "id": "P17-CONSISTENCY-AF019AA5",
+      "passed": true,
+      "evidence": "required=Fixed-price and equilibrium-price audit"
+    },
+    {
+      "id": "P17-CONSISTENCY-801CC926",
+      "passed": true,
+      "evidence": "required=Timing and observed-outcome audit"
+    },
+    {
+      "id": "P17-CONSISTENCY-9F3F4455",
+      "passed": true,
+      "evidence": "required=Retained route versus transfer audit"
+    },
+    {
+      "id": "P17-CONSISTENCY-B7A02E3B",
+      "passed": true,
+      "evidence": "required=Baseline and extension quarantine"
+    },
+    {
+      "id": "P17-CONSISTENCY-02418053",
+      "passed": true,
+      "evidence": "required=Innovation and empirical-language audit"
+    },
+    {
+      "id": "P17-CONSISTENCY-C3002E05",
+      "passed": true,
+      "evidence": "required=Answers to the sixteen mandatory questions"
+    },
+    {
+      "id": "P17-CONSISTENCY-F4662597",
+      "passed": true,
+      "evidence": "required=Compilation, labels, and protected scope"
+    },
+    {
+      "id": "P17-CONSISTENCY-3FDEBCEE",
+      "passed": true,
+      "evidence": "required=Candidate P0: 0"
+    },
+    {
+      "id": "P17-CONSISTENCY-1BD8A9E4",
+      "passed": true,
+      "evidence": "required=Candidate P1 remaining: 0"
+    },
+    {
+      "id": "P17-CONSISTENCY-18749BA4",
+      "passed": true,
+      "evidence": "required=Phase 17 consistency result:"
+    },
+    {
+      "id": "P17-CONSISTENCY-686695FC",
+      "passed": true,
+      "evidence": "required=1,489 rows"
+    },
+    {
+      "id": "P17-CONSISTENCY-4D00FD2B",
+      "passed": true,
+      "evidence": "required=P1 corrected during Phase 17: 12"
+    },
+    {
+      "id": "P17-QUESTION-01",
+      "passed": true,
+      "evidence": "question=1"
+    },
+    {
+      "id": "P17-QUESTION-02",
+      "passed": true,
+      "evidence": "question=2"
+    },
+    {
+      "id": "P17-QUESTION-03",
+      "passed": true,
+      "evidence": "question=3"
+    },
+    {
+      "id": "P17-QUESTION-04",
+      "passed": true,
+      "evidence": "question=4"
+    },
+    {
+      "id": "P17-QUESTION-05",
+      "passed": true,
+      "evidence": "question=5"
+    },
+    {
+      "id": "P17-QUESTION-06",
+      "passed": true,
+      "evidence": "question=6"
+    },
+    {
+      "id": "P17-QUESTION-07",
+      "passed": true,
+      "evidence": "question=7"
+    },
+    {
+      "id": "P17-QUESTION-08",
+      "passed": true,
+      "evidence": "question=8"
+    },
+    {
+      "id": "P17-QUESTION-09",
+      "passed": true,
+      "evidence": "question=9"
+    },
+    {
+      "id": "P17-QUESTION-10",
+      "passed": true,
+      "evidence": "question=10"
+    },
+    {
+      "id": "P17-QUESTION-11",
+      "passed": true,
+      "evidence": "question=11"
+    },
+    {
+      "id": "P17-QUESTION-12",
+      "passed": true,
+      "evidence": "question=12"
+    },
+    {
+      "id": "P17-QUESTION-13",
+      "passed": true,
+      "evidence": "question=13"
+    },
+    {
+      "id": "P17-QUESTION-14",
+      "passed": true,
+      "evidence": "question=14"
+    },
+    {
+      "id": "P17-QUESTION-15",
+      "passed": true,
+      "evidence": "question=15"
+    },
+    {
+      "id": "P17-QUESTION-16",
+      "passed": true,
+      "evidence": "question=16"
+    },
+    {
+      "id": "P17-MAIN-LABELS-UNIQUE",
+      "passed": true,
+      "evidence": "duplicates="
+    },
+    {
+      "id": "P17-APPENDIX-LABELS-UNIQUE",
+      "passed": true,
+      "evidence": "duplicates="
+    },
+    {
+      "id": "P17-LATEX-13_main_text_model_candidate",
+      "passed": true,
+      "evidence": "fatal= boxes=0"
+    },
+    {
+      "id": "P17-LATEX-14_appendix_model_candidate",
+      "passed": true,
+      "evidence": "fatal= boxes=0"
+    },
+    {
+      "id": "P17-LATEX-12_full_derivation_draft",
+      "passed": true,
+      "evidence": "fatal= boxes=0"
+    },
+    {
+      "id": "P17-PDF-13_main_text_model_candidate",
+      "passed": true,
+      "evidence": "line=Pages:           4"
+    },
+    {
+      "id": "P17-PDF-14_appendix_model_candidate",
+      "passed": true,
+      "evidence": "line=Pages:           33"
+    },
+    {
+      "id": "P17-PDF-12_full_derivation_draft",
+      "passed": true,
+      "evidence": "line=Pages:           36"
+    },
+    {
+      "id": "P17-PDF-RENDER-AUDIT",
+      "passed": true,
+      "evidence": "four correction-bearing appendix pages visually audited"
+    },
+    {
+      "id": "P17-SCOPE-EXACT",
+      "passed": true,
+      "evidence": "unexpected="
+    },
+    {
+      "id": "P17-GATE-IDS",
+      "passed": true,
+      "evidence": "missing="
+    },
+    {
+      "id": "P17-GATE-RESULT",
+      "passed": true,
+      "evidence": "gate PASS"
+    }
+  ]
+}

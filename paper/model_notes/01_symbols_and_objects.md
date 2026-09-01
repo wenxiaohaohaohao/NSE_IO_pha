@@ -1,6 +1,6 @@
 # 01 Symbols and Objects
 
-Phase status: `PHASE 1 - APPROVED; PHASE 2 - APPROVED; PHASE 3 - APPROVED; PHASE 4 - APPROVED; PHASE 5 - APPROVED; PHASE 6 - APPROVED`  
+Phase status: `PHASES 1--17 - APPROVED`  
 Controlling specification: `paper/model_rebuild/spec/MAH_model_rebuild_effective_spec_v1.2.md`  
 Effective-spec SHA256: `855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666`
 
@@ -41,7 +41,7 @@ individual firm's choice.
 
 One decision cohort is the project-planning time unit. Phase 2 defines product-output and within-period monetary units; Phase 3 technology costs use those same units.
 
-## 3. Active object registry through Phase 6
+## 3. Active object registry through Phase 17
 
 | Symbol | Exact category | Definition | Domain / units | First formal use | Direct MAH shift? |
 |---|---|---|---|---|---|
@@ -75,7 +75,7 @@ One decision cohort is the project-planning time unit. Phase 2 defines product-o
 | $A$ | primitive parameter | residual product-market size/scale shifter | $A>0$, units $\mathsf{Y}^{1-\varepsilon}\mathsf{C}^{\varepsilon}$ per operating period | Phase 2 | No; `RL-08` |
 | $\varepsilon$ | primitive parameter | absolute constant elasticity of residual product demand | $\varepsilon>1$, unit $1$ | Phase 2 | No; `RL-08` |
 | $\beta$ | primitive parameter | one-period discount factor | $\beta\in(0,1)$, unit $1$ | Phase 2 | No |
-| $\varphi$ | primitive parameter | conditional probability that an already commercialized product remains active for the next operating period | $\varphi\in[0,1]$, unit $1$ | Phase 2 | No; distinct from $s(q)$ |
+| $\varphi$ | primitive parameter | conditional probability that an already commercialized product remains active for the next operating period | $\varphi\in[0,1)$, unit $1$ | Phase 2 | No; distinct from $s(q)$ |
 | $p$ | control | product price in the conditional static pricing problem | $p\geq c$, units $\mathsf{C}/\mathsf{Y}$ | Phase 2 | No; distinct from $p_m$ |
 | $c$ | endogenous route-level object | positive marginal manufacturing-cost input produced by a route technology; Phase 2 holds it fixed and Phase 3 supplies the route mapping | $c>0$, units $\mathsf{C}/\mathsf{Y}$ | Phase 2 conditional argument; Phase 3 route mapping | No direct shift |
 | $y(p;q)$ | endogenous route-level object | residual product demand conditional on product price and project value | $\mathsf{Y}$ per operating period | Phase 2 | No direct shift |

@@ -1,0 +1,27 @@
+# Phase 17 approved commit scope
+paper/model_notes/00_model_closure_status.md
+paper/model_notes/01_symbols_and_objects.md
+paper/model_notes/02_equation_dependency_map.md
+paper/model_notes/07_consistency_audit.md
+paper/model_notes/08_shigu_empirical_boundary_check.md
+paper/model_rebuild/01_primitives_and_timing.tex
+paper/model_rebuild/02_demand_profit_derivation.tex
+paper/model_rebuild/09_observed_outcomes.tex
+paper/model_rebuild/10_empirical_mapping.tex
+paper/model_rebuild/13_main_text_model_candidate.tex
+paper/model_rebuild/14_appendix_model_candidate.tex
+paper/model_rebuild/audit/phase17_artifact_hashes.md
+paper/model_rebuild/audit/phase17_audit_results.json
+paper/model_rebuild/audit/phase17_commit_manifest.txt
+paper/model_rebuild/audit/phase17_compile_console.txt
+paper/model_rebuild/audit/phase17_gate_report.md
+paper/model_rebuild/audit/phase17_occurrence_catalog.csv
+paper/model_rebuild/audit/phase17_p1_corrections.md
+paper/model_rebuild/audit/phase17_pdf_render_audit.md
+paper/model_rebuild/audit/phase17_preflight.md
+paper/model_rebuild/scripts/audit_phase17.ps1
+paper/model_rebuild/scripts/build_phase17_occurrence_catalog.ps1
+paper/model_rebuild/scripts/compile_phase17_candidates.ps1
+paper/model_rebuild/spec/approvals/phase17_standing_authorization.md
+paper/model_rebuild/spec/instruction_traceability_matrix.csv
+paper/model_rebuild/spec/specification_hashes.md

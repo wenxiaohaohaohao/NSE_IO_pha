@@ -85,15 +85,14 @@ There is no continuous implementation parameter in the baseline.
 The route labels are \(I\) for internal manufacturing, \(E\) for retained
 entrusted manufacturing, \(T\) for transfer or another non-retained outside
 option, and \(A\) for abandonment or indefinite delay.  If \(r_i\) denotes the
-project's route control, its institutional domain is
+project's route control, its common label domain is
 \begin{equation}
-  r_i\in
-  \begin{cases}
-    \{I,T,A\}, & M=0,\\
-    \{I,E,T,A\}, & M=1.
-  \end{cases}
+  r_i\in\{I,E,T,A\}.
   \label{eq:p01-route-domain}
 \end{equation}
+Effective pre-MAH unavailability of \(E\) is encoded solely by
+\(\tau_E(0)=+\infty\), which gives \(W_i^E=-\infty\) once route values are
+assembled.  Thus the common label domain is not a second policy channel.
 Under \(E\), the developer remains the holder; entrusted production is not a
 transfer of ownership or authorization.  The eventual optimizer is denoted by
 \(r_i^*(q,m;M,p_m)\), but route values and the argmax are deferred to
@@ -142,9 +141,9 @@ MAH-invariant.
 
 \begin{enumerate}
   \item[Stage 0.] \textbf{Institutional regime.}  The value of \(M\) is
-  realized and publicly observed.  It changes only the barrier or legal
-  availability of route \(E\) in
-  \eqref{eq:p01-institutional-wedge}--\eqref{eq:p01-route-domain}.
+  realized and publicly observed.  It changes only the institutional barrier
+  in \eqref{eq:p01-institutional-wedge}; the infinite/finite wedge encodes the
+  effective unavailability/availability of route \(E\).
 
   \item[Stage 1.] \textbf{Ex ante project advancement.}  Developer \(i\)
   observes \((a_i,k_i,M)\), anticipates the market-consistent service price
@@ -184,7 +183,7 @@ baseline decision timing.
 The only direct reform arrow is
 \begin{equation}
   M\longrightarrow \tau_E(M)
-  \quad\text{and the legal availability of route }E.
+  \quad\text{whose infinite/finite value encodes route }E\text{ availability}.
   \label{eq:p01-only-direct-policy-arrow}
 \end{equation}
 The intended ex ante channel, conditional on the value and optimization results

@@ -103,7 +103,7 @@ derivative with respect to the binary institutional regime.
 \label{subsec:p02-present-value}
 
 Let \(\beta\in(0,1)\) be the one-period discount factor. Conditional on an
-already commercialized product, let \(\varphi\in[0,1]\) be the probability
+already commercialized product, let \(\varphi\in[0,1)\) be the probability
 that it remains commercially active for one more period. The parameter
 \(\varphi\) is not the downstream realization probability \(s(q)\): the
 latter applies before the operating stream begins and is introduced into
@@ -140,9 +140,10 @@ The Phase~2 kernel satisfies the following checks:
   \(1-\varepsilon<0\).
   \item If \(\varphi=0\), the commercial stream lasts one period in
   expectation and \(R(q,c)=\pi(q,c)\).
-  \item If \(\varphi=1\), then
-  \(R(q,c)=\pi(q,c)/(1-\beta)\), which remains finite because
-  \(\beta<1\).
+  \item As \(\varphi\uparrow1\),
+  \(R(q,c)\to\pi(q,c)/(1-\beta)\), which remains finite because
+  \(\beta<1\). The endpoint is a limiting check, not an admissible value
+  under the frozen primitive domain \(\varphi\in[0,1)\).
   \item The restriction \(\varepsilon>1\) is necessary for a finite interior
   markup price under this residual-demand specification.
 \end{enumerate}

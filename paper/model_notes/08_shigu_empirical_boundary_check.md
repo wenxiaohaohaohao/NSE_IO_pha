@@ -46,8 +46,8 @@ checkpoint for this identified paper version.
 | Stronger response among firms without production facilities | Baseline heterogeneity prediction: low internal manufacturing capability can enlarge the value of the retained entrusted route. |
 | More clinical trials | Consistent with higher project advancement and more projects reaching commercialization-relevant planning, but clinical trials are an empirical proxy and not definitionally equal to `x_i`. |
 | First-stage rather than later-stage trial response | Heterogeneity/timing test outside the one-stage baseline; a phase-specific development technology would be an extension. |
-| Patent decline and financial-resource split | Outside the baseline. Explaining it requires the inactive research-versus-development allocation extension and a financial constraint. |
-| Granted/core patents do not significantly decline | Evidence that research and project-advancement margins can diverge; not a baseline prediction about patents. |
+| Patent decline and financial-resource split | Outside the baseline. A structural explanation may use a separately approved research-versus-development allocation or financing extension, but the reduced-form heterogeneity does not identify or require a binding financial constraint. |
+| Granted/core patents do not significantly decline | Evidence that patenting proxies and project-advancement proxies can diverge; not a baseline prediction about patents and not a direct measure of upstream research. |
 | Original/incremental/biological response pattern | Empirical heterogeneity test using `g` and conditional distributions. The baseline imposes no class ranking and uses no class-specific control. |
 | Pure-researcher transition into development | Entry/extensive-margin evidence outside the fixed-population partial-equilibrium baseline. It can motivate a separately approved entry extension. |
 
@@ -84,9 +84,10 @@ candidates. They remain read-only until Phase 18.
 The appendix candidate may state:
 
 > Shi Gu (2024) documents that allowing production outsourcing can raise
-> clinical development while patent applications need not rise, and can fall
+> clinical-trial registrations while patent applications need not rise, and
+> can fall
 > among firms with fewer financial resources. This establishes that
-> development and upstream research are distinct empirical margins.
+> clinical-trial and patenting margins can diverge.
 
 It may also report, with the precision limits above, that the paper finds
 the clinical-trial response concentrated in initial-stage and incrementally

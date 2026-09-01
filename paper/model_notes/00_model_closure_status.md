@@ -50,7 +50,7 @@ Legal transition:
 | 14 Assumption discipline | APPROVED | `03_assumptions_and_scope.md` | `audit/phase14_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 15 Comparative statics/full draft | APPROVED | `08_comparative_statics.tex`; `12_full_derivation_draft.tex` | `audit/phase15_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 16 Main/appendix candidates | APPROVED | `13_main_text_model_candidate.tex`; `14_appendix_model_candidate.tex` | `audit/phase16_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
-| 17 Consistency audit | NOT STARTED | `07_consistency_audit.md` | — | No |
+| 17 Consistency audit | APPROVED | `07_consistency_audit.md` | `audit/phase17_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0; Phase 18 requires separate explicit approval |
 | 18 Manuscript integration | BLOCKED | manuscript and final build | — | No |
 
 ## Scope protection
