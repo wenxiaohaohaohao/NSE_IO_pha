@@ -1,4 +1,4 @@
-% Phase 1 only: definitions and timing. No payoff or optimization derivation.
+% Definitions and timing. No payoff or optimization derivation.
 \section{Primitives, Objects, and Timing}
 \label{sec:p01-primitives-timing}
 
@@ -31,7 +31,7 @@ These are continuous characteristics, not permanent discrete firm types.
 There is also a set \(\mathcal J\) of qualified manufacturing-service
 suppliers.  Supplier efficiency \(z_j>0\) follows the exogenous distribution
 \(H_C(z)\).  The supplier's capacity control and cost function are introduced
-only in Phase~6.
+when the qualified manufacturing-service market is defined below.
 
 \subsection{Project characteristics and empirical classification}
 \label{subsec:p01-projects}
@@ -95,8 +95,8 @@ Effective pre-MAH unavailability of \(E\) is encoded solely by
 assembled.  Thus the common label domain is not a second policy channel.
 Under \(E\), the developer remains the holder; entrusted production is not a
 transfer of ownership or authorization.  The eventual optimizer is denoted by
-\(r_i^*(q,m;M,p_m)\), but route values and the argmax are deferred to
-Phase~4.
+\(r_i^*(q,m;M,p_m)\), but route values and the argmax are defined in the
+organizational-sorting section below.
 
 \subsection{Project-advancement and realization objects}
 \label{subsec:p01-advancement-realization}
@@ -122,9 +122,9 @@ Let \(p_m\), measured in \(\mathsf C/\mathsf B\), denote a conjectured price
 of qualified manufacturing service and let \(p_m^*\) denote its future
 market-consistent value.  Let \(\Omega_i(M,p_m)\), measured in \(\mathsf C\)
 per planning-stage project, denote developer \(i\)'s expected optimized project
-value.  These objects are semantically reserved here: route values are built in
-Phases~2--4, the advancement optimization is solved in Phase~5, and the CMO
-fixed point is closed in Phase~6.
+value.  These objects are semantically reserved here: the sections below first
+build route values, then solve the advancement problem, and finally close the
+CMO fixed point.
 
 Finally, let \(s(q)\in[0,1]\) be the exogenous, route-independent probability
 of downstream clinical or regulatory realization:
@@ -177,7 +177,7 @@ Upstream scientific research and patent generation may have occurred before
 Stage~0 and may help explain predetermined \(a_i\).  They are outside the
 baseline decision timing.
 
-\subsection{Mechanism and exclusion audit}
+\subsection{Mechanism and exclusion boundaries}
 \label{subsec:p01-mechanism-boundary}
 
 The only direct reform arrow is
@@ -187,7 +187,7 @@ The only direct reform arrow is
   \label{eq:p01-only-direct-policy-arrow}
 \end{equation}
 The intended ex ante channel, conditional on the value and optimization results
-proved in later phases, is
+derived below, is
 \begin{equation}
   M
   \longrightarrow
@@ -222,8 +222,6 @@ not directly lower \(p_m^*\).  Nothing in this section implies an increase in
 patent applications, upstream scientific research, or one novelty class
 relative to the other.
 
-The complete exact-category registry, dimensions, and forbidden
-interpretations are recorded in
-\texttt{paper/model\_notes/01\_symbols\_and\_objects.md}; the initial equation
-graph and deferred fixed point are recorded in
-\texttt{paper/model\_notes/02\_equation\_dependency\_map.md}.
+The exact-category registry, dimensions, and forbidden interpretations are
+fixed by the definitions above.  The equilibrium section below closes the
+deferred fixed point without adding another policy channel.

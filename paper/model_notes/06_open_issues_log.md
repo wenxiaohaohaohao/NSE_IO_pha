@@ -20,19 +20,27 @@
 - Escalation rule: closed. Reopen only if later prose exceeds the recorded
   evidence or cites a different paper version without a new version audit.
 
-## OPEN — ISSUE-SPEC-002
+## RESOLVED — ISSUE-SPEC-002
 
 - ID: `ISSUE-SPEC-002`
 - Phase: Phase 12 and Phase 18
 - Equation/object: legacy manuscript and `research_notes/model_notes/`
-- Severity now: `P1-SCHEDULED-CROSSWALK`
+- Severity now: `CLOSED-INTEGRATION`
 - Issue: The locked manuscript still uses logit, inclusive value, continuous `eta`, generic R&D terminology and the old closure stack.
 - Why it matters economically: These objects conflict with the new deterministic baseline.
 - Why it matters mathematically: Old equations and propositions cannot be mixed with the rebuilt modules.
 - Candidate resolutions: complete Phase 12 dependency crosswalk; replace only approved model/directly dependent text in Phase 18.
 - Preferred resolution: follow the scheduled Phase 12/18 process while keeping legacy files read-only beforehand.
+- Resolution: Phase 12 completed the exhaustive dependency crosswalk while the
+  legacy manuscript remained read-only. After separate explicit Phase 18
+  approval and a byte-preserving pre-integration backup, Phase 18 replaced the
+  old active model and directly dependent prose with the deterministic baseline,
+  rebuilt both final PDFs, and passed the scope, theory, evidence, notation,
+  reference, compilation, and visual audits with no remaining P0 or P1.
+- Resolution date: 2026-09-01
 - Does this alter the locked architecture? `NO`
-- Approval required before change? `YES`, at Phase 18
+- Approval required before change? `YES`; explicit Phase 18 approval received
+  on 2026-09-01
 
 ## Closed specification decisions
 

@@ -51,10 +51,12 @@ Legal transition:
 | 15 Comparative statics/full draft | APPROVED | `08_comparative_statics.tex`; `12_full_derivation_draft.tex` | `audit/phase15_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 16 Main/appendix candidates | APPROVED | `13_main_text_model_candidate.tex`; `14_appendix_model_candidate.tex` | `audit/phase16_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 17 Consistency audit | APPROVED | `07_consistency_audit.md` | `audit/phase17_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0; Phase 18 requires separate explicit approval |
-| 18 Manuscript integration | BLOCKED | manuscript and final build | — | No |
+| 18 Manuscript integration | APPROVED | manuscript and final build | `audit/phase18_gate_report.md` | Yes — explicit Phase 18 approval; zero P0/P1 |
 
 ## Scope protection
 
-- `paper/manuscript/` remains byte-identical to the locked base until Phase 18 approval.
+- `paper/manuscript/` was byte-identical to the locked base through the
+  Phase 18 approval checkpoint. A verified pre-integration backup now permits
+  the bounded manuscript changes specified for Phase 18.
 - The original checkout's modified collaborator ZIP is outside this worktree and must never enter this branch.
 - Phase 1 began after the approved specification commit was pushed. Phase 2 and subsequent phases are authorized under `EXEC-GOV-001`, subject to their full internal gates and mandatory-pause conditions.

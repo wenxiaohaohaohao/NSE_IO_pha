@@ -1,11 +1,11 @@
-% Phase 2 only: demand, product pricing, operating profit, and commercial PV.
+% Demand, product pricing, operating profit, and commercial PV.
 \section{Demand and Operating Profit}
 \label{sec:p02-demand-profit}
 
 This section derives the commercial value kernel used by later manufacturing
 routes. It conditions on a project value shifter \(q>0\) and a positive
 marginal manufacturing cost \(c>0\). The route technologies that generate
-\(c\) are deliberately deferred to Phase~3. Product price \(p\) is distinct
+\(c\) are defined in the next section. Product price \(p\) is distinct
 from the qualified manufacturing-service price \(p_m\).
 
 Let \(\mathsf Y\) denote physical product-output units per operating period.
@@ -106,8 +106,8 @@ Let \(\beta\in(0,1)\) be the one-period discount factor. Conditional on an
 already commercialized product, let \(\varphi\in[0,1)\) be the probability
 that it remains commercially active for one more period. The parameter
 \(\varphi\) is not the downstream realization probability \(s(q)\): the
-latter applies before the operating stream begins and is introduced into
-route values only in a later phase.
+latter applies before the operating stream begins and enters the route values
+defined below.
 
 With a stationary conditional operating profit, the expected present value is
 the convergent geometric sum
@@ -132,7 +132,7 @@ non-differentiated argument fixed,
 \subsection{Boundary and accounting checks}
 \label{subsec:p02-boundary-accounting}
 
-The Phase~2 kernel satisfies the following checks:
+The commercial-value kernel satisfies the following checks:
 \begin{enumerate}
   \item As \(q\downarrow0\), both \(\pi(q,c)\) and \(R(q,c)\) converge to
   zero.
@@ -154,10 +154,10 @@ Route-specific fixed organizational costs, the institutional burden on route
 \(E\), and any separately defined qualified-capacity payment are absent from
 \(R\); later route-value equations must specify whether each manufacturing
 cost is embedded in a route-specific marginal cost or subtracted separately,
-and must not do both. All legacy reduced-form return symbols are inactive in
-the rebuilt baseline; their deletion and replacement by the chain
-\(y\rightarrow\pi\rightarrow R\) is recorded in the Phase~12 crosswalk.
+and must not do both. Reduced-form return shortcuts are inactive in the
+baseline; the model uses only the explicit chain
+\(y\rightarrow\pi\rightarrow R\).
 
 Nothing in this section gives MAH a direct effect on \(A\), \(q\),
-\(\varepsilon\), \(\beta\), or \(\varphi\). Thus Phase~2 establishes a
+\(\varepsilon\), \(\beta\), or \(\varphi\). Thus this section establishes a
 policy-invariant commercial value kernel, not a policy comparative static.

@@ -1,11 +1,11 @@
-% Phase 5 only: common project-advancement problem and value-gap foundation.
+% Common project-advancement problem and value-gap foundation.
 \section{Project Development and Advancement}
 \label{sec:p05-project-advancement}
 
 This section solves the ex ante advancement decision at a fixed conjectured
 qualified manufacturing-service price \(p_m\). It uses the deterministic
-optimized route value from Phase~4. CMO market consistency and the feedback
-that selects \(p_m^*\) remain deferred to Phase~6.
+optimized route value defined above. CMO market consistency and the feedback
+that selects \(p_m^*\) are imposed in the capacity-market section below.
 
 \subsection{Innovation-object boundary and planned-project technology}
 \label{subsec:p05-technology}
@@ -60,7 +60,7 @@ For developer \(i\), institutional regime \(M\), and fixed conjectured price
 \end{equation}
 The subscript \(i\) includes the dependence of route value on developer
 characteristics, especially manufacturing capability \(k_i\). Because the
-Phase~4 maximum contains abandonment with value zero,
+route-value maximum contains abandonment with value zero,
 \(W_i(q,m;M,p_m)\geq0\). Under the stated integrability condition,
 \[
   0\leq\Omega_i(M,p_m)<+\infty.
@@ -132,7 +132,7 @@ solution has units \(\mathsf X\).
 \subsection{Fixed-price binary MAH channel}
 \label{subsec:p05-binary-channel}
 
-At a fixed \(p_m\), Phase~4 implies the pointwise weak ordering
+At a fixed \(p_m\), deterministic route choice implies the pointwise weak ordering
 \[
   W_i(q,m;1,p_m)\geq W_i(q,m;0,p_m).
 \]
@@ -175,10 +175,10 @@ the cost function, nor the project distribution. MAH affects
 \(\Omega_i\) through route values and sorting, not through
 \(a_ix_i\) or \(C_X(x_i)\).
 
-\subsection{Appendix-oriented downstream value gap}
+\subsection{Downstream project-value gap}
 \label{subsec:p05-value-gap}
 
-For the later appendix split, let \(B_i\) denote the continuation-value
+For a useful value decomposition, let \(B_i\) denote the continuation-value
 benchmark before one additional viable project reaches route planning, and
 let \(K_i\) denote value after it reaches that stage. Define
 \begin{equation}
@@ -199,7 +199,7 @@ auxiliaries \(B_i\) and \(K_i\) are not recursive state variables, and the
 identity does not claim that MAH directly raises scientific-research
 productivity.
 
-\subsection{Scope audit}
+\subsection{Scope boundary}
 \label{subsec:p05-scope}
 
 The baseline contains one common \(x_i\), one cost function \(C_X\), and one

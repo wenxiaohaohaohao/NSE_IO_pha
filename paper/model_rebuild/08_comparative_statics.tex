@@ -1,4 +1,4 @@
-% Phase 15 only: complete comparative statics and mandatory boundary checks.
+% Complete comparative statics and mandatory boundary checks.
 \section{Comparative Statics and Boundary Cases}
 \label{sec:p15-comparative-statics}
 
@@ -27,7 +27,7 @@ and commercial present value. Project value \(q\), marginal manufacturing cost
 single argument named in each derivative. These are conditional product-market
 calculations; neither \(M\) nor \(p_m^*\) is varied.
 
-The Phase~2 solution and operating profit can be written as
+The pricing solution and operating profit derived above can be written as
 \[
   p^*(c)=\frac{\varepsilon}{\varepsilon-1}c,
   \qquad
@@ -75,7 +75,7 @@ The signs use \(A,q,c>0\), \(\varepsilon>1\),
 \(\beta\in(0,1)\), and \(\varphi\in[0,1)\). The price derivative is
 dimensionless; \(R_q\) and \(R_c\) have currency per unit of their respective
 arguments. A change in \(\beta\) has no continuation-value effect when
-\(\varphi=0\). None of these derivatives is a policy effect unless an approved
+\(\varphi=0\). None of these derivatives is a policy effect unless a specified
 route technology changes the cost argument supplied to \(R\).
 
 \paragraph{Economic interpretation and empirical prediction.}
@@ -130,7 +130,7 @@ This finite comparison adds an option without changing the old route values.
 It is strict only on \(\mathcal C_i(p_m)\).
 
 \paragraph{Sufficient conditions and zero effects.}
-The cutoff signs require internal feasibility, the Phase~3 technology signs,
+The cutoff signs require internal feasibility, the maintained technology signs,
 finite \((\tau_E,p_m)\), strict \(\Delta_{IE,k}>0\), and endpoint crossing.
 If crossing fails, no interior cutoff is asserted. If \(T\) or \(A\) dominates,
 the \(I/E\) cutoff does not determine the realized route. If
@@ -159,7 +159,7 @@ fixed. In particular, route-value objects are held fixed when \(a_i\) or
 \(\kappa\) is varied. The formulas apply at \(\Omega_i>0\); the
 \(\Omega_i=0\) corner is handled separately.
 
-Differentiation of the Phase~5 FOC gives
+Differentiation of the advancement FOC gives
 \begin{equation}
   \frac{\partial x_i^*}{\partial\Omega_i}
   =
@@ -415,7 +415,7 @@ projects advanced and from downstream realization. Product-level holder and
 manufacturer records can test the assignment prediction. Patent applications
 are not an outcome in these expressions.
 
-\subsection{Mandatory limiting-case audit}
+\subsection{Mandatory limiting cases}
 \label{subsec:p15-boundaries}
 
 \paragraph{Internal capability \(k_i\to\infty\).}
@@ -507,8 +507,9 @@ ranking follows from the baseline.
 \subsection{Comparative-static scope conclusion}
 \label{subsec:p15-scope}
 
-All central signs above follow from the four Phase~14 assumption blocks and
-the deterministic option-value structure. The module adds no route, control,
+All central signs above follow from the maintained primitive, technology,
+market, and mapping assumptions and
+the deterministic option-value structure. This section adds no route, control,
 state, market, welfare object, patent outcome, logit share, inclusive value or
 continuous implementation index. Its finite policy chain is
 \[

@@ -1,0 +1,1475 @@
+=== MAIN MANUSCRIPT BUILD ===
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = "C.UTF-8",
+	LC_CTYPE = "C.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MONETARY = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Initial Win CP for (console input, console output, system): (CP936, CP65001, CP936)
+I changed them all to CP936
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 15 June 2025. Version 4.87.
+No existing .aux file, so I'll make a simple one, and require run of *latex.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'pdflatex' forced or previously required:
+    Reason or flag: 'Initial setup'
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model"  "D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_model.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_
+indicator_friction_model.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\application\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\application\miktex\tex/latex/base\size12.clo))
+(D:\application\miktex\tex/latex/geometry\geometry.sty
+(D:\application\miktex\tex/latex/graphics\keyval.sty)
+(D:\application\miktex\tex/generic/iftex\ifvtex.sty
+(D:\application\miktex\tex/generic/iftex\iftex.sty))
+(D:\application\miktex\tex/latex/geometry\geometry.cfg))
+(D:\application\miktex\tex/latex/base\fontenc.sty)
+(D:\application\miktex\tex/latex/base\inputenc.sty)
+(D:\application\miktex\tex/latex/lm\lmodern.sty)
+(D:\application\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(D:\application\miktex\tex/latex/amsmath\amstext.sty
+(D:\application\miktex\tex/latex/amsmath\amsgen.sty))
+(D:\application\miktex\tex/latex/amsmath\amsbsy.sty)
+(D:\application\miktex\tex/latex/amsmath\amsopn.sty))
+(D:\application\miktex\tex/latex/amsfonts\amssymb.sty
+(D:\application\miktex\tex/latex/amsfonts\amsfonts.sty))
+(D:\application\miktex\tex/latex/amscls\amsthm.sty)
+(D:\application\miktex\tex/latex/mathtools\mathtools.sty
+(D:\application\miktex\tex/latex/tools\calc.sty)
+(D:\application\miktex\tex/latex/mathtools\mhsetup.sty))
+(D:\application\miktex\tex/latex/tools\bm.sty)
+(D:\application\miktex\tex/latex/booktabs\booktabs.sty)
+(D:\application\miktex\tex/latex/tools\array.sty)
+(D:\application\miktex\tex/latex/tools\tabularx.sty)
+(D:\application\miktex\tex/latex/enumitem\enumitem.sty)
+(D:\application\miktex\tex/latex/setspace\setspace.sty)
+(D:\application\miktex\tex/latex/natbib\natbib.sty)
+(D:\application\miktex\tex/latex/hyperref\hyperref.sty
+(D:\application\miktex\tex/latex/kvsetkeys\kvsetkeys.sty)
+(D:\application\miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty)
+(D:\application\miktex\tex/generic/pdfescape\pdfescape.sty
+(D:\application\miktex\tex/generic/ltxcmds\ltxcmds.sty)
+(D:\application\miktex\tex/generic/pdftexcmds\pdftexcmds.sty
+(D:\application\miktex\tex/generic/infwarerr\infwarerr.sty)))
+(D:\application\miktex\tex/latex/hycolor\hycolor.sty)
+(D:\application\miktex\tex/latex/hyperref\nameref.sty
+(D:\application\miktex\tex/latex/refcount\refcount.sty)
+(D:\application\miktex\tex/generic/gettitlestring\gettitlestring.sty
+(D:\application\miktex\tex/latex/kvoptions\kvoptions.sty)))
+(D:\application\miktex\tex/latex/etoolbox\etoolbox.sty)
+(D:\application\miktex\tex/generic/stringenc\stringenc.sty)
+(D:\application\miktex\tex/latex/hyperref\pd1enc.def)
+(D:\application\miktex\tex/generic/intcalc\intcalc.sty)
+(D:\application\miktex\tex/latex/hyperref\puenc.def)
+(D:\application\miktex\tex/latex/url\url.sty)
+(D:\application\miktex\tex/generic/bitset\bitset.sty
+(D:\application\miktex\tex/generic/bigintcalc\bigintcalc.sty)))
+(D:\application\miktex\tex/latex/hyperref\hpdftex.def
+(D:\application\miktex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(D:\application\miktex\tex/generic/uniquecounter\uniquecounter.sty)))
+(D:\application\miktex\tex/latex/lm\t1lmr.fd)
+(D:\application\miktex\tex/latex/l3backend\l3backend-pdftex.def)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(D:\application\miktex\tex/latex/graphics\graphicx.sty
+(D:\application\miktex\tex/latex/graphics\graphics.sty
+(D:\application\miktex\tex/latex/graphics\trig.sty)
+(D:\application\miktex\tex/latex/graphics-cfg\graphics.cfg)
+(D:\application\miktex\tex/latex/graphics-def\pdftex.def
+(D:\application\miktex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+))) (D:\application\miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+(D:\application\miktex\tex/latex/00miktex\epstopdf-sys.cfg)))
+(D:\application\miktex\tex/latex/graphics\color.sty
+(D:\application\miktex\tex/latex/graphics-cfg\color.cfg)
+(D:\application\miktex\tex/latex/graphics\mathcolor.ltx))
+(D:\application\miktex\tex/latex/lm\ot1lmr.fd)
+(D:\application\miktex\tex/latex/lm\omllmm.fd)
+(D:\application\miktex\tex/latex/lm\omslmsy.fd)
+(D:\application\miktex\tex/latex/lm\omxlmex.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsa.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsb.fd)
+
+Package natbib Warning: Citation `Schmookler1966' on page 1 undefined on input 
+line 77.
+
+
+Package natbib Warning: Citation `AcemogluLinn2004' on page 1 undefined on inpu
+t line 77.
+
+
+Package natbib Warning: Citation `Finkelstein2004' on page 1 undefined on input
+ line 77.
+
+
+Package natbib Warning: Citation `DuboisDeMouzonScottMortonSeabright2015' on pa
+ge 1 undefined on input line 77.
+
+
+Package natbib Warning: Citation `BudishRoinWilliams2015' on page 1 undefined o
+n input line 77.
+
+
+Package natbib Warning: Citation `Teece1986' on page 1 undefined on input line 
+80.
+
+
+Package natbib Warning: Citation `AroraFosfuriGambardella2001' on page 1 undefi
+ned on input line 80.
+
+
+Package natbib Warning: Citation `GansStern2003' on page 1 undefined on input l
+ine 80.
+
+[1{C:/Users/dongw/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/applicat
+ion/miktex/fonts/enc/dvips/lm/lm-ec.enc}]
+
+Package natbib Warning: Citation `JiaMaYangZhang2023' on page 2 undefined on in
+put line 85.
+
+
+Package natbib Warning: Citation `BarwickXiaXia2026' on page 2 undefined on inp
+ut line 88.
+
+
+Package natbib Warning: Citation `Gu2024' on page 2 undefined on input line 96.
+
+
+[2{D:/application/miktex/fonts/enc/dvips/lm/lm-mathit.enc}{D:/application/mikte
+x/fonts/enc/dvips/lm/lm-mathsy.enc}]
+
+Package natbib Warning: Citation `NMPARegistration2022' on page 3 undefined on 
+input line 143.
+
+
+Package natbib Warning: Citation `StateCouncilMAHPilot2016' on page 3 undefined
+ on input line 150.
+
+
+Package natbib Warning: Citation `CFDAMAHImplementation2016' on page 3 undefine
+d on input line 150.
+
+
+Package natbib Warning: Citation `DrugAdministrationLaw2019' on page 3 undefine
+d on input line 153.
+
+
+Package natbib Warning: Citation `NMPAHolderResponsibility2022' on page 3 undef
+ined on input line 156.
+
+
+Package natbib Warning: Citation `NMPAManufacturing2022' on page 3 undefined on
+ input line 156.
+
+
+Package natbib Warning: Citation `NMPAEntrustedProduction2023' on page 3 undefi
+ned on input line 156.
+
+[3{D:/application/miktex/fonts/enc/dvips/lm/lm-rm.enc}] [4{D:/application/mikte
+x/fonts/enc/dvips/lm/lm-mathex.enc}] [5] [6] [7] [8] [9]
+No file mah_route_indicator_friction_model.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `mah_route_indicator_friction_model.out' h
+as changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )<D:/application/miktex/fonts/type1/public/lm/lmbx10.pfb><D:/application/mikte
+x/fonts/type1/public/lm/lmbx12.pfb><D:/application/miktex/fonts/type1/public/lm
+/lmex10.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi10.pfb><D:/applica
+tion/miktex/fonts/type1/public/lm/lmmi12.pfb><D:/application/miktex/fonts/type1
+/public/lm/lmmi6.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi7.pfb><D:
+/application/miktex/fonts/type1/public/lm/lmmi8.pfb><D:/application/miktex/font
+s/type1/public/lm/lmr10.pfb><D:/application/miktex/fonts/type1/public/lm/lmr12.
+pfb><D:/application/miktex/fonts/type1/public/lm/lmr17.pfb><D:/application/mikt
+ex/fonts/type1/public/lm/lmr7.pfb><D:/application/miktex/fonts/type1/public/lm/
+lmr8.pfb><D:/application/miktex/fonts/type1/public/lm/lmri12.pfb><D:/applicatio
+n/miktex/fonts/type1/public/lm/lmsy10.pfb><D:/application/miktex/fonts/type1/pu
+blic/lm/lmsy7.pfb><D:/application/miktex/fonts/type1/public/lm/lmsy8.pfb>
+Output written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\buil
+d\mah_route_indicator_friction_model\mah_route_indicator_friction_model.pdf (9 
+pages, 310014 bytes).
+Transcript written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\
+build\mah_route_indicator_friction_model\mah_route_indicator_friction_model.log
+.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Getting log file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.log'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.fls'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.log'
+Latexmk: Missing bbl file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.bbl' in following:
+ No file mah_route_indicator_friction_model.bbl.
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.bbl' for 'pdflatex'
+Create bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Found bibliography file(s):
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_refs.bib
+Latexmk: applying rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model'...
+Rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model':  Reasons for rerun
+Category 'other':
+  Rerun of 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model' forced or previously required:
+    Reason or flag: 'Initial set up of rule'
+
+------------
+Run number 1 of rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model'
+------------
+Latexmk: Change directory to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/'.
+To assist finding of files in document directory, I set
+  BIBINPUTS='D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript;D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model;D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\manuscript'
+  BSTINPUTS='D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript;D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\manuscript'.
+------------
+Running 'bibtex  "mah_route_indicator_friction_model.aux"'
+------------
+This is BibTeX, Version 0.99e (MiKTeX 25.12)
+The top-level auxiliary file: mah_route_indicator_friction_model.aux
+The style file: aer.bst
+Database file #1: mah_route_indicator_friction_refs.bib
+bibtex: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Change directory back to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.aux
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.bbl
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.out
+
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model"  "D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_model.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_
+indicator_friction_model.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\application\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\application\miktex\tex/latex/base\size12.clo))
+(D:\application\miktex\tex/latex/geometry\geometry.sty
+(D:\application\miktex\tex/latex/graphics\keyval.sty)
+(D:\application\miktex\tex/generic/iftex\ifvtex.sty
+(D:\application\miktex\tex/generic/iftex\iftex.sty))
+(D:\application\miktex\tex/latex/geometry\geometry.cfg))
+(D:\application\miktex\tex/latex/base\fontenc.sty)
+(D:\application\miktex\tex/latex/base\inputenc.sty)
+(D:\application\miktex\tex/latex/lm\lmodern.sty)
+(D:\application\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(D:\application\miktex\tex/latex/amsmath\amstext.sty
+(D:\application\miktex\tex/latex/amsmath\amsgen.sty))
+(D:\application\miktex\tex/latex/amsmath\amsbsy.sty)
+(D:\application\miktex\tex/latex/amsmath\amsopn.sty))
+(D:\application\miktex\tex/latex/amsfonts\amssymb.sty
+(D:\application\miktex\tex/latex/amsfonts\amsfonts.sty))
+(D:\application\miktex\tex/latex/amscls\amsthm.sty)
+(D:\application\miktex\tex/latex/mathtools\mathtools.sty
+(D:\application\miktex\tex/latex/tools\calc.sty)
+(D:\application\miktex\tex/latex/mathtools\mhsetup.sty))
+(D:\application\miktex\tex/latex/tools\bm.sty)
+(D:\application\miktex\tex/latex/booktabs\booktabs.sty)
+(D:\application\miktex\tex/latex/tools\array.sty)
+(D:\application\miktex\tex/latex/tools\tabularx.sty)
+(D:\application\miktex\tex/latex/enumitem\enumitem.sty)
+(D:\application\miktex\tex/latex/setspace\setspace.sty)
+(D:\application\miktex\tex/latex/natbib\natbib.sty)
+(D:\application\miktex\tex/latex/hyperref\hyperref.sty
+(D:\application\miktex\tex/latex/kvsetkeys\kvsetkeys.sty)
+(D:\application\miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty)
+(D:\application\miktex\tex/generic/pdfescape\pdfescape.sty
+(D:\application\miktex\tex/generic/ltxcmds\ltxcmds.sty)
+(D:\application\miktex\tex/generic/pdftexcmds\pdftexcmds.sty
+(D:\application\miktex\tex/generic/infwarerr\infwarerr.sty)))
+(D:\application\miktex\tex/latex/hycolor\hycolor.sty)
+(D:\application\miktex\tex/latex/hyperref\nameref.sty
+(D:\application\miktex\tex/latex/refcount\refcount.sty)
+(D:\application\miktex\tex/generic/gettitlestring\gettitlestring.sty
+(D:\application\miktex\tex/latex/kvoptions\kvoptions.sty)))
+(D:\application\miktex\tex/latex/etoolbox\etoolbox.sty)
+(D:\application\miktex\tex/generic/stringenc\stringenc.sty)
+(D:\application\miktex\tex/latex/hyperref\pd1enc.def)
+(D:\application\miktex\tex/generic/intcalc\intcalc.sty)
+(D:\application\miktex\tex/latex/hyperref\puenc.def)
+(D:\application\miktex\tex/latex/url\url.sty)
+(D:\application\miktex\tex/generic/bitset\bitset.sty
+(D:\application\miktex\tex/generic/bigintcalc\bigintcalc.sty)))
+(D:\application\miktex\tex/latex/hyperref\hpdftex.def
+(D:\application\miktex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(D:\application\miktex\tex/generic/uniquecounter\uniquecounter.sty)))
+(D:\application\miktex\tex/latex/lm\t1lmr.fd)
+(D:\application\miktex\tex/latex/l3backend\l3backend-pdftex.def)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(D:\application\miktex\tex/latex/graphics\graphicx.sty
+(D:\application\miktex\tex/latex/graphics\graphics.sty
+(D:\application\miktex\tex/latex/graphics\trig.sty)
+(D:\application\miktex\tex/latex/graphics-cfg\graphics.cfg)
+(D:\application\miktex\tex/latex/graphics-def\pdftex.def
+(D:\application\miktex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+))) (D:\application\miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+(D:\application\miktex\tex/latex/00miktex\epstopdf-sys.cfg)))
+(D:\application\miktex\tex/latex/graphics\color.sty
+(D:\application\miktex\tex/latex/graphics-cfg\color.cfg)
+(D:\application\miktex\tex/latex/graphics\mathcolor.ltx))
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.out)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.out)
+(D:\application\miktex\tex/latex/lm\ot1lmr.fd)
+(D:\application\miktex\tex/latex/lm\omllmm.fd)
+(D:\application\miktex\tex/latex/lm\omslmsy.fd)
+(D:\application\miktex\tex/latex/lm\omxlmex.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsa.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsb.fd)
+
+Package natbib Warning: Citation `Schmookler1966' on page 1 undefined on input 
+line 77.
+
+
+Package natbib Warning: Citation `AcemogluLinn2004' on page 1 undefined on inpu
+t line 77.
+
+
+Package natbib Warning: Citation `Finkelstein2004' on page 1 undefined on input
+ line 77.
+
+
+Package natbib Warning: Citation `DuboisDeMouzonScottMortonSeabright2015' on pa
+ge 1 undefined on input line 77.
+
+
+Package natbib Warning: Citation `BudishRoinWilliams2015' on page 1 undefined o
+n input line 77.
+
+
+Package natbib Warning: Citation `Teece1986' on page 1 undefined on input line 
+80.
+
+
+Package natbib Warning: Citation `AroraFosfuriGambardella2001' on page 1 undefi
+ned on input line 80.
+
+
+Package natbib Warning: Citation `GansStern2003' on page 1 undefined on input l
+ine 80.
+
+[1{C:/Users/dongw/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/applicat
+ion/miktex/fonts/enc/dvips/lm/lm-ec.enc}]
+
+Package natbib Warning: Citation `JiaMaYangZhang2023' on page 2 undefined on in
+put line 85.
+
+
+Package natbib Warning: Citation `BarwickXiaXia2026' on page 2 undefined on inp
+ut line 88.
+
+
+Package natbib Warning: Citation `Gu2024' on page 2 undefined on input line 96.
+
+
+[2{D:/application/miktex/fonts/enc/dvips/lm/lm-mathit.enc}{D:/application/mikte
+x/fonts/enc/dvips/lm/lm-mathsy.enc}]
+
+Package natbib Warning: Citation `NMPARegistration2022' on page 3 undefined on 
+input line 143.
+
+
+Package natbib Warning: Citation `StateCouncilMAHPilot2016' on page 3 undefined
+ on input line 150.
+
+
+Package natbib Warning: Citation `CFDAMAHImplementation2016' on page 3 undefine
+d on input line 150.
+
+
+Package natbib Warning: Citation `DrugAdministrationLaw2019' on page 3 undefine
+d on input line 153.
+
+
+Package natbib Warning: Citation `NMPAHolderResponsibility2022' on page 3 undef
+ined on input line 156.
+
+
+Package natbib Warning: Citation `NMPAManufacturing2022' on page 3 undefined on
+ input line 156.
+
+
+Package natbib Warning: Citation `NMPAEntrustedProduction2023' on page 3 undefi
+ned on input line 156.
+
+[3{D:/application/miktex/fonts/enc/dvips/lm/lm-rm.enc}] [4{D:/application/mikte
+x/fonts/enc/dvips/lm/lm-mathex.enc}] [5] [6] [7] [8] [9]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.bbl
+(D:\application\miktex\tex/latex/lm\t1lmtt.fd) [10])
+
+Package natbib Warning: There were undefined citations.
+
+[11]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+) )<D:/application/miktex/fonts/type1/public/lm/lmbx10.pfb><D:/application/mikt
+ex/fonts/type1/public/lm/lmbx12.pfb><D:/application/miktex/fonts/type1/public/l
+m/lmex10.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi10.pfb><D:/applic
+ation/miktex/fonts/type1/public/lm/lmmi12.pfb><D:/application/miktex/fonts/type
+1/public/lm/lmmi6.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi7.pfb><D
+:/application/miktex/fonts/type1/public/lm/lmmi8.pfb><D:/application/miktex/fon
+ts/type1/public/lm/lmr10.pfb><D:/application/miktex/fonts/type1/public/lm/lmr12
+.pfb><D:/application/miktex/fonts/type1/public/lm/lmr17.pfb><D:/application/mik
+tex/fonts/type1/public/lm/lmr7.pfb><D:/application/miktex/fonts/type1/public/lm
+/lmr8.pfb><D:/application/miktex/fonts/type1/public/lm/lmri12.pfb><D:/applicati
+on/miktex/fonts/type1/public/lm/lmsy10.pfb><D:/application/miktex/fonts/type1/p
+ublic/lm/lmsy7.pfb><D:/application/miktex/fonts/type1/public/lm/lmsy8.pfb><D:/a
+pplication/miktex/fonts/type1/public/lm/lmtt12.pfb>
+Output written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\buil
+d\mah_route_indicator_friction_model\mah_route_indicator_friction_model.pdf (11
+ pages, 361148 bytes).
+Transcript written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\
+build\mah_route_indicator_friction_model\mah_route_indicator_friction_model.log
+.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Getting log file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.log'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.fls'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.log'
+Latexmk: Found input bbl file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.bbl' for 'pdflatex'
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Found bibliography file(s):
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_refs.bib
+Latexmk: applying rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model'...
+Rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model':  Reasons for rerun
+Changed files or newly in use/created:
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.aux
+
+------------
+Run number 2 of rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model'
+------------
+Latexmk: Change directory to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/'.
+To assist finding of files in document directory, I set
+  BIBINPUTS='D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript;D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model;D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\manuscript'
+  BSTINPUTS='D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript;D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\manuscript'.
+------------
+Running 'bibtex  "mah_route_indicator_friction_model.aux"'
+------------
+bibtex: major issue: So far, you have not checked for MiKTeX updates.
+This is BibTeX, Version 0.99e (MiKTeX 25.12)
+The top-level auxiliary file: mah_route_indicator_friction_model.aux
+The style file: aer.bst
+Database file #1: mah_route_indicator_friction_refs.bib
+Latexmk: Change directory back to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.aux
+
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model"  "D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_model.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_
+indicator_friction_model.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\application\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\application\miktex\tex/latex/base\size12.clo))
+(D:\application\miktex\tex/latex/geometry\geometry.sty
+(D:\application\miktex\tex/latex/graphics\keyval.sty)
+(D:\application\miktex\tex/generic/iftex\ifvtex.sty
+(D:\application\miktex\tex/generic/iftex\iftex.sty))
+(D:\application\miktex\tex/latex/geometry\geometry.cfg))
+(D:\application\miktex\tex/latex/base\fontenc.sty)
+(D:\application\miktex\tex/latex/base\inputenc.sty)
+(D:\application\miktex\tex/latex/lm\lmodern.sty)
+(D:\application\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(D:\application\miktex\tex/latex/amsmath\amstext.sty
+(D:\application\miktex\tex/latex/amsmath\amsgen.sty))
+(D:\application\miktex\tex/latex/amsmath\amsbsy.sty)
+(D:\application\miktex\tex/latex/amsmath\amsopn.sty))
+(D:\application\miktex\tex/latex/amsfonts\amssymb.sty
+(D:\application\miktex\tex/latex/amsfonts\amsfonts.sty))
+(D:\application\miktex\tex/latex/amscls\amsthm.sty)
+(D:\application\miktex\tex/latex/mathtools\mathtools.sty
+(D:\application\miktex\tex/latex/tools\calc.sty)
+(D:\application\miktex\tex/latex/mathtools\mhsetup.sty))
+(D:\application\miktex\tex/latex/tools\bm.sty)
+(D:\application\miktex\tex/latex/booktabs\booktabs.sty)
+(D:\application\miktex\tex/latex/tools\array.sty)
+(D:\application\miktex\tex/latex/tools\tabularx.sty)
+(D:\application\miktex\tex/latex/enumitem\enumitem.sty)
+(D:\application\miktex\tex/latex/setspace\setspace.sty)
+(D:\application\miktex\tex/latex/natbib\natbib.sty)
+(D:\application\miktex\tex/latex/hyperref\hyperref.sty
+(D:\application\miktex\tex/latex/kvsetkeys\kvsetkeys.sty)
+(D:\application\miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty)
+(D:\application\miktex\tex/generic/pdfescape\pdfescape.sty
+(D:\application\miktex\tex/generic/ltxcmds\ltxcmds.sty)
+(D:\application\miktex\tex/generic/pdftexcmds\pdftexcmds.sty
+(D:\application\miktex\tex/generic/infwarerr\infwarerr.sty)))
+(D:\application\miktex\tex/latex/hycolor\hycolor.sty)
+(D:\application\miktex\tex/latex/hyperref\nameref.sty
+(D:\application\miktex\tex/latex/refcount\refcount.sty)
+(D:\application\miktex\tex/generic/gettitlestring\gettitlestring.sty
+(D:\application\miktex\tex/latex/kvoptions\kvoptions.sty)))
+(D:\application\miktex\tex/latex/etoolbox\etoolbox.sty)
+(D:\application\miktex\tex/generic/stringenc\stringenc.sty)
+(D:\application\miktex\tex/latex/hyperref\pd1enc.def)
+(D:\application\miktex\tex/generic/intcalc\intcalc.sty)
+(D:\application\miktex\tex/latex/hyperref\puenc.def)
+(D:\application\miktex\tex/latex/url\url.sty)
+(D:\application\miktex\tex/generic/bitset\bitset.sty
+(D:\application\miktex\tex/generic/bigintcalc\bigintcalc.sty)))
+(D:\application\miktex\tex/latex/hyperref\hpdftex.def
+(D:\application\miktex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(D:\application\miktex\tex/generic/uniquecounter\uniquecounter.sty)))
+(D:\application\miktex\tex/latex/lm\t1lmr.fd)
+(D:\application\miktex\tex/latex/l3backend\l3backend-pdftex.def)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(D:\application\miktex\tex/latex/graphics\graphicx.sty
+(D:\application\miktex\tex/latex/graphics\graphics.sty
+(D:\application\miktex\tex/latex/graphics\trig.sty)
+(D:\application\miktex\tex/latex/graphics-cfg\graphics.cfg)
+(D:\application\miktex\tex/latex/graphics-def\pdftex.def
+(D:\application\miktex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+))) (D:\application\miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+(D:\application\miktex\tex/latex/00miktex\epstopdf-sys.cfg)))
+(D:\application\miktex\tex/latex/graphics\color.sty
+(D:\application\miktex\tex/latex/graphics-cfg\color.cfg)
+(D:\application\miktex\tex/latex/graphics\mathcolor.ltx))
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.out)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.out)
+(D:\application\miktex\tex/latex/lm\ot1lmr.fd)
+(D:\application\miktex\tex/latex/lm\omllmm.fd)
+(D:\application\miktex\tex/latex/lm\omslmsy.fd)
+(D:\application\miktex\tex/latex/lm\omxlmex.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsa.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsb.fd) [1{C:/Users/dongw/AppData/Lo
+cal/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/application/miktex/fonts/enc/dvips/l
+m/lm-ec.enc}] [2{D:/application/miktex/fonts/enc/dvips/lm/lm-mathit.enc}{D:/app
+lication/miktex/fonts/enc/dvips/lm/lm-mathsy.enc}] [3{D:/application/miktex/fon
+ts/enc/dvips/lm/lm-rm.enc}] [4{D:/application/miktex/fonts/enc/dvips/lm/lm-math
+ex.enc}] [5] [6] [7] [8] [9] [10]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.bbl
+(D:\application\miktex\tex/latex/lm\t1lmtt.fd) [11]) [12]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )<D:/application/miktex/fonts/type1/public/lm/lmbx10.pfb><D:/application/mikte
+x/fonts/type1/public/lm/lmbx12.pfb><D:/application/miktex/fonts/type1/public/lm
+/lmex10.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi10.pfb><D:/applica
+tion/miktex/fonts/type1/public/lm/lmmi12.pfb><D:/application/miktex/fonts/type1
+/public/lm/lmmi6.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi7.pfb><D:
+/application/miktex/fonts/type1/public/lm/lmmi8.pfb><D:/application/miktex/font
+s/type1/public/lm/lmr10.pfb><D:/application/miktex/fonts/type1/public/lm/lmr12.
+pfb><D:/application/miktex/fonts/type1/public/lm/lmr17.pfb><D:/application/mikt
+ex/fonts/type1/public/lm/lmr7.pfb><D:/application/miktex/fonts/type1/public/lm/
+lmr8.pfb><D:/application/miktex/fonts/type1/public/lm/lmri12.pfb><D:/applicatio
+n/miktex/fonts/type1/public/lm/lmsy10.pfb><D:/application/miktex/fonts/type1/pu
+blic/lm/lmsy7.pfb><D:/application/miktex/fonts/type1/public/lm/lmsy8.pfb><D:/ap
+plication/miktex/fonts/type1/public/lm/lmtt12.pfb>
+Output written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\buil
+d\mah_route_indicator_friction_model\mah_route_indicator_friction_model.pdf (12
+ pages, 369697 bytes).
+Transcript written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\
+build\mah_route_indicator_friction_model\mah_route_indicator_friction_model.log
+.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Getting log file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.log'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.fls'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.log'
+Latexmk: Found input bbl file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.bbl' for 'pdflatex'
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Found bibliography file(s):
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_refs.bib
+Latexmk: applying rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model'...
+Rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model':  Reasons for rerun
+Changed files or newly in use/created:
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.aux
+
+------------
+Run number 3 of rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model'
+------------
+Latexmk: Change directory to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/'.
+To assist finding of files in document directory, I set
+  BIBINPUTS='D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript;D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model;D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\manuscript'
+  BSTINPUTS='D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript;D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\manuscript'.
+------------
+Running 'bibtex  "mah_route_indicator_friction_model.aux"'
+------------
+This is BibTeX, Version 0.99e (MiKTeX 25.12)
+The top-level auxiliary file: mah_route_indicator_friction_model.aux
+The style file: aer.bst
+Database file #1: mah_route_indicator_friction_refs.bib
+bibtex: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Change directory back to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.aux
+
+------------
+Run number 4 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model"  "D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_model.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_
+indicator_friction_model.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\application\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\application\miktex\tex/latex/base\size12.clo))
+(D:\application\miktex\tex/latex/geometry\geometry.sty
+(D:\application\miktex\tex/latex/graphics\keyval.sty)
+(D:\application\miktex\tex/generic/iftex\ifvtex.sty
+(D:\application\miktex\tex/generic/iftex\iftex.sty))
+(D:\application\miktex\tex/latex/geometry\geometry.cfg))
+(D:\application\miktex\tex/latex/base\fontenc.sty)
+(D:\application\miktex\tex/latex/base\inputenc.sty)
+(D:\application\miktex\tex/latex/lm\lmodern.sty)
+(D:\application\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(D:\application\miktex\tex/latex/amsmath\amstext.sty
+(D:\application\miktex\tex/latex/amsmath\amsgen.sty))
+(D:\application\miktex\tex/latex/amsmath\amsbsy.sty)
+(D:\application\miktex\tex/latex/amsmath\amsopn.sty))
+(D:\application\miktex\tex/latex/amsfonts\amssymb.sty
+(D:\application\miktex\tex/latex/amsfonts\amsfonts.sty))
+(D:\application\miktex\tex/latex/amscls\amsthm.sty)
+(D:\application\miktex\tex/latex/mathtools\mathtools.sty
+(D:\application\miktex\tex/latex/tools\calc.sty)
+(D:\application\miktex\tex/latex/mathtools\mhsetup.sty))
+(D:\application\miktex\tex/latex/tools\bm.sty)
+(D:\application\miktex\tex/latex/booktabs\booktabs.sty)
+(D:\application\miktex\tex/latex/tools\array.sty)
+(D:\application\miktex\tex/latex/tools\tabularx.sty)
+(D:\application\miktex\tex/latex/enumitem\enumitem.sty)
+(D:\application\miktex\tex/latex/setspace\setspace.sty)
+(D:\application\miktex\tex/latex/natbib\natbib.sty)
+(D:\application\miktex\tex/latex/hyperref\hyperref.sty
+(D:\application\miktex\tex/latex/kvsetkeys\kvsetkeys.sty)
+(D:\application\miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty)
+(D:\application\miktex\tex/generic/pdfescape\pdfescape.sty
+(D:\application\miktex\tex/generic/ltxcmds\ltxcmds.sty)
+(D:\application\miktex\tex/generic/pdftexcmds\pdftexcmds.sty
+(D:\application\miktex\tex/generic/infwarerr\infwarerr.sty)))
+(D:\application\miktex\tex/latex/hycolor\hycolor.sty)
+(D:\application\miktex\tex/latex/hyperref\nameref.sty
+(D:\application\miktex\tex/latex/refcount\refcount.sty)
+(D:\application\miktex\tex/generic/gettitlestring\gettitlestring.sty
+(D:\application\miktex\tex/latex/kvoptions\kvoptions.sty)))
+(D:\application\miktex\tex/latex/etoolbox\etoolbox.sty)
+(D:\application\miktex\tex/generic/stringenc\stringenc.sty)
+(D:\application\miktex\tex/latex/hyperref\pd1enc.def)
+(D:\application\miktex\tex/generic/intcalc\intcalc.sty)
+(D:\application\miktex\tex/latex/hyperref\puenc.def)
+(D:\application\miktex\tex/latex/url\url.sty)
+(D:\application\miktex\tex/generic/bitset\bitset.sty
+(D:\application\miktex\tex/generic/bigintcalc\bigintcalc.sty)))
+(D:\application\miktex\tex/latex/hyperref\hpdftex.def
+(D:\application\miktex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(D:\application\miktex\tex/generic/uniquecounter\uniquecounter.sty)))
+(D:\application\miktex\tex/latex/lm\t1lmr.fd)
+(D:\application\miktex\tex/latex/l3backend\l3backend-pdftex.def)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(D:\application\miktex\tex/latex/graphics\graphicx.sty
+(D:\application\miktex\tex/latex/graphics\graphics.sty
+(D:\application\miktex\tex/latex/graphics\trig.sty)
+(D:\application\miktex\tex/latex/graphics-cfg\graphics.cfg)
+(D:\application\miktex\tex/latex/graphics-def\pdftex.def
+(D:\application\miktex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+))) (D:\application\miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+(D:\application\miktex\tex/latex/00miktex\epstopdf-sys.cfg)))
+(D:\application\miktex\tex/latex/graphics\color.sty
+(D:\application\miktex\tex/latex/graphics-cfg\color.cfg)
+(D:\application\miktex\tex/latex/graphics\mathcolor.ltx))
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.out)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.out)
+(D:\application\miktex\tex/latex/lm\ot1lmr.fd)
+(D:\application\miktex\tex/latex/lm\omllmm.fd)
+(D:\application\miktex\tex/latex/lm\omslmsy.fd)
+(D:\application\miktex\tex/latex/lm\omxlmex.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsa.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsb.fd) [1{C:/Users/dongw/AppData/Lo
+cal/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/application/miktex/fonts/enc/dvips/l
+m/lm-ec.enc}] [2{D:/application/miktex/fonts/enc/dvips/lm/lm-mathit.enc}{D:/app
+lication/miktex/fonts/enc/dvips/lm/lm-mathsy.enc}] [3{D:/application/miktex/fon
+ts/enc/dvips/lm/lm-rm.enc}] [4{D:/application/miktex/fonts/enc/dvips/lm/lm-math
+ex.enc}] [5] [6] [7] [8] [9] [10]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.bbl
+(D:\application\miktex\tex/latex/lm\t1lmtt.fd) [11]) [12]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model\mah_route_indicator_friction_model.aux) )<D:/application/mi
+ktex/fonts/type1/public/lm/lmbx10.pfb><D:/application/miktex/fonts/type1/public
+/lm/lmbx12.pfb><D:/application/miktex/fonts/type1/public/lm/lmex10.pfb><D:/appl
+ication/miktex/fonts/type1/public/lm/lmmi10.pfb><D:/application/miktex/fonts/ty
+pe1/public/lm/lmmi12.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi6.pfb
+><D:/application/miktex/fonts/type1/public/lm/lmmi7.pfb><D:/application/miktex/
+fonts/type1/public/lm/lmmi8.pfb><D:/application/miktex/fonts/type1/public/lm/lm
+r10.pfb><D:/application/miktex/fonts/type1/public/lm/lmr12.pfb><D:/application/
+miktex/fonts/type1/public/lm/lmr17.pfb><D:/application/miktex/fonts/type1/publi
+c/lm/lmr7.pfb><D:/application/miktex/fonts/type1/public/lm/lmr8.pfb><D:/applica
+tion/miktex/fonts/type1/public/lm/lmri12.pfb><D:/application/miktex/fonts/type1
+/public/lm/lmsy10.pfb><D:/application/miktex/fonts/type1/public/lm/lmsy7.pfb><D
+:/application/miktex/fonts/type1/public/lm/lmsy8.pfb><D:/application/miktex/fon
+ts/type1/public/lm/lmtt12.pfb>
+Output written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\buil
+d\mah_route_indicator_friction_model\mah_route_indicator_friction_model.pdf (12
+ pages, 369697 bytes).
+Transcript written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\
+build\mah_route_indicator_friction_model\mah_route_indicator_friction_model.log
+.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Getting log file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.log'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.fls'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.log'
+Latexmk: Found input bbl file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.bbl'
+Latexmk: Log file says output to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.bbl' for 'pdflatex'
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Found bibliography file(s):
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_refs.bib
+Latexmk: All targets (D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model/mah_route_indicator_friction_model.pdf) are up-to-date
+Reverting Windows console CPs to (in,out) = (936,65001)
+
+latexmk: major issue: So far, you have not checked for MiKTeX updates.
+Build succeeded. PDF written to: D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\output\mah_route_indicator_friction_model.pdf
+Intermediate files kept in: D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indicator_friction_model
+=== TECHNICAL APPENDIX BUILD ===
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = "C.UTF-8",
+	LC_CTYPE = "C.UTF-8",
+	LC_NUMERIC = (unset),
+	LC_COLLATE = (unset),
+	LC_TIME = (unset),
+	LC_MONETARY = (unset),
+	LANG = "C.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Initial Win CP for (console input, console output, system): (CP936, CP65001, CP936)
+I changed them all to CP936
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 15 June 2025. Version 4.87.
+No existing .aux file, so I'll make a simple one, and require run of *latex.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'pdflatex' forced or previously required:
+    Reason or flag: 'Initial setup'
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix"  "D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_model_appendix.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_
+indicator_friction_model_appendix.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\application\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\application\miktex\tex/latex/base\size11.clo))
+(D:\application\miktex\tex/latex/geometry\geometry.sty
+(D:\application\miktex\tex/latex/graphics\keyval.sty)
+(D:\application\miktex\tex/generic/iftex\ifvtex.sty
+(D:\application\miktex\tex/generic/iftex\iftex.sty))
+(D:\application\miktex\tex/latex/geometry\geometry.cfg))
+(D:\application\miktex\tex/latex/base\fontenc.sty)
+(D:\application\miktex\tex/latex/base\inputenc.sty)
+(D:\application\miktex\tex/latex/lm\lmodern.sty)
+(D:\application\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(D:\application\miktex\tex/latex/amsmath\amstext.sty
+(D:\application\miktex\tex/latex/amsmath\amsgen.sty))
+(D:\application\miktex\tex/latex/amsmath\amsbsy.sty)
+(D:\application\miktex\tex/latex/amsmath\amsopn.sty))
+(D:\application\miktex\tex/latex/amsfonts\amssymb.sty
+(D:\application\miktex\tex/latex/amsfonts\amsfonts.sty))
+(D:\application\miktex\tex/latex/amscls\amsthm.sty)
+(D:\application\miktex\tex/latex/mathtools\mathtools.sty
+(D:\application\miktex\tex/latex/tools\calc.sty)
+(D:\application\miktex\tex/latex/mathtools\mhsetup.sty))
+(D:\application\miktex\tex/latex/tools\bm.sty)
+(D:\application\miktex\tex/latex/booktabs\booktabs.sty)
+(D:\application\miktex\tex/latex/tools\longtable.sty)
+(D:\application\miktex\tex/latex/tools\array.sty)
+(D:\application\miktex\tex/latex/tools\tabularx.sty)
+(D:\application\miktex\tex/latex/enumitem\enumitem.sty)
+(D:\application\miktex\tex/latex/setspace\setspace.sty)
+(D:\application\miktex\tex/latex/natbib\natbib.sty)
+(D:\application\miktex\tex/latex/hyperref\hyperref.sty
+(D:\application\miktex\tex/latex/kvsetkeys\kvsetkeys.sty)
+(D:\application\miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty)
+(D:\application\miktex\tex/generic/pdfescape\pdfescape.sty
+(D:\application\miktex\tex/generic/ltxcmds\ltxcmds.sty)
+(D:\application\miktex\tex/generic/pdftexcmds\pdftexcmds.sty
+(D:\application\miktex\tex/generic/infwarerr\infwarerr.sty)))
+(D:\application\miktex\tex/latex/hycolor\hycolor.sty)
+(D:\application\miktex\tex/latex/hyperref\nameref.sty
+(D:\application\miktex\tex/latex/refcount\refcount.sty)
+(D:\application\miktex\tex/generic/gettitlestring\gettitlestring.sty
+(D:\application\miktex\tex/latex/kvoptions\kvoptions.sty)))
+(D:\application\miktex\tex/latex/etoolbox\etoolbox.sty)
+(D:\application\miktex\tex/generic/stringenc\stringenc.sty)
+(D:\application\miktex\tex/latex/hyperref\pd1enc.def)
+(D:\application\miktex\tex/generic/intcalc\intcalc.sty)
+(D:\application\miktex\tex/latex/hyperref\puenc.def)
+(D:\application\miktex\tex/latex/url\url.sty)
+(D:\application\miktex\tex/generic/bitset\bitset.sty
+(D:\application\miktex\tex/generic/bigintcalc\bigintcalc.sty)))
+(D:\application\miktex\tex/latex/hyperref\hpdftex.def
+(D:\application\miktex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(D:\application\miktex\tex/generic/uniquecounter\uniquecounter.sty)))
+(D:\application\miktex\tex/latex/lm\t1lmr.fd)
+(D:\application\miktex\tex/latex/l3backend\l3backend-pdftex.def)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(D:\application\miktex\tex/latex/graphics\graphicx.sty
+(D:\application\miktex\tex/latex/graphics\graphics.sty
+(D:\application\miktex\tex/latex/graphics\trig.sty)
+(D:\application\miktex\tex/latex/graphics-cfg\graphics.cfg)
+(D:\application\miktex\tex/latex/graphics-def\pdftex.def
+(D:\application\miktex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+))) (D:\application\miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+(D:\application\miktex\tex/latex/00miktex\epstopdf-sys.cfg)))
+(D:\application\miktex\tex/latex/graphics\color.sty
+(D:\application\miktex\tex/latex/graphics-cfg\color.cfg)
+(D:\application\miktex\tex/latex/graphics\mathcolor.ltx))
+(D:\application\miktex\tex/latex/lm\ot1lmr.fd)
+(D:\application\miktex\tex/latex/lm\omllmm.fd)
+(D:\application\miktex\tex/latex/lm\omslmsy.fd)
+(D:\application\miktex\tex/latex/lm\omxlmex.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsa.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsb.fd) [1{C:/Users/dongw/AppData/Lo
+cal/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/application/miktex/fonts/enc/dvips/l
+m/lm-ec.enc}]
+No file mah_route_indicator_friction_model_appendix.toc.
+[2] (../model_rebuild/01_primitives_and_timing.tex
+(D:\application\miktex\tex/latex/lm\ot1lmss.fd) [3{D:/application/miktex/fonts/
+enc/dvips/lm/lm-mathit.enc}{D:/application/miktex/fonts/enc/dvips/lm/lm-mathsy.
+enc}{D:/application/miktex/fonts/enc/dvips/lm/lm-rm.enc}{D:/application/miktex/
+fonts/enc/dvips/lm/lm-mathex.enc}]
+
+LaTeX Warning: Reference `eq:p01-institutional-wedge' on page 4 undefined on in
+put line 145.
+
+
+LaTeX Warning: Reference `eq:p01-planned-intensity' on page 4 undefined on inpu
+t line 151.
+
+
+LaTeX Warning: Reference `eq:p01-project-draw' on page 4 undefined on input lin
+e 155.
+
+[4]
+
+LaTeX Warning: Reference `eq:p01-route-domain' on page 5 undefined on input lin
+e 161.
+
+
+LaTeX Warning: Reference `eq:p01-downstream-probability' on page 5 undefined on
+ input line 167.
+
+
+LaTeX Warning: Reference `eq:p01-anticipated-channel' on page 5 undefined on in
+put line 215.
+
+
+LaTeX Warning: Reference `eq:p01-realization-channel' on page 5 undefined on in
+put line 216.
+
+) (../model_rebuild/02_demand_profit_derivation.tex [5]
+
+LaTeX Warning: Reference `eq:p02-price-foc' on page 6 undefined on input line 5
+4.
+
+
+LaTeX Warning: Reference `eq:p02-optimal-price' on page 6 undefined on input li
+ne 73.
+
+[6]) (../model_rebuild/03_internal_external_technologies.tex [7]
+(D:\application\miktex\tex/latex/lm\ts1lmr.fd))
+(../model_rebuild/04_route_values_and_sorting.tex [8{D:/application/miktex/font
+s/enc/dvips/lm/lm-ts1.enc}] [9]
+
+LaTeX Warning: Reference `eq:p04-gap-slope' on page 10 undefined on input line 
+146.
+
+
+LaTeX Warning: Reference `eq:p04-cutoff-sorting' on page 10 undefined on input 
+line 193.
+
+
+LaTeX Warning: Reference `eq:p04-cutoff-derivatives' on page 10 undefined on in
+put line 193.
+
+[10]) (../model_rebuild/05_rd_problem.tex [11] [12])
+(../model_rebuild/06_cmo_supply_demand_equilibrium.tex [13] [14])
+(../model_rebuild/07_equilibrium_definition.tex [15]
+
+LaTeX Warning: Reference `eq:p07-route-optimality' on page 16 undefined on inpu
+t line 85.
+
+
+LaTeX Warning: Reference `eq:p07-market-clearing' on page 16 undefined on input
+ line 85.
+
+) (../model_rebuild/08_required_propositions.tex [16]
+
+LaTeX Warning: Reference `eq:p08-sorting-slope' on page 17 undefined on input l
+ine 37.
+
+[17] [18] [19] [20]) (../model_rebuild/08_comparative_statics.tex [21] [22]
+[23]
+
+LaTeX Warning: Reference `eq:p15-equilibrium-ift' on page 24 undefined on input
+ line 291.
+
+[24] [25] [26]) (../model_rebuild/09_observed_outcomes.tex [27]) [28]
+
+Package natbib Warning: Citation `Gu2024' on page 29 undefined on input line 10
+4.
+
+
+Package natbib Warning: Citation `Gu2024' on page 29 undefined on input line 12
+5.
+
+(../model_rebuild/11_extensions_not_baseline.tex [29]) [30]
+No file mah_route_indicator_friction_model_appendix.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `mah_route_indicator_friction_model_append
+ix.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )<D:/application/miktex/fonts/type1/public/lm/lmbx10.pfb><D:/application/mikte
+x/fonts/type1/public/lm/lmbx12.pfb><D:/application/miktex/fonts/type1/public/lm
+/lmex10.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi10.pfb><D:/applica
+tion/miktex/fonts/type1/public/lm/lmmi5.pfb><D:/application/miktex/fonts/type1/
+public/lm/lmmi7.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi8.pfb><D:/
+application/miktex/fonts/type1/public/lm/lmr10.pfb><D:/application/miktex/fonts
+/type1/public/lm/lmr17.pfb><D:/application/miktex/fonts/type1/public/lm/lmr7.pf
+b><D:/application/miktex/fonts/type1/public/lm/lmri10.pfb><D:/application/mikte
+x/fonts/type1/public/lm/lmss10.pfb><D:/application/miktex/fonts/type1/public/lm
+/lmsy10.pfb><D:/application/miktex/fonts/type1/public/lm/lmsy5.pfb><D:/applicat
+ion/miktex/fonts/type1/public/lm/lmsy7.pfb><D:/application/miktex/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb>
+Output written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\buil
+d\mah_route_indicator_friction_model_appendix\mah_route_indicator_friction_mode
+l_appendix.pdf (30 pages, 415370 bytes).
+Transcript written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\
+build\mah_route_indicator_friction_model_appendix\mah_route_indicator_friction_
+model_appendix.log.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Getting log file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.log'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.fls'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.log'
+Latexmk: Missing input file 'mah_route_indicator_friction_model_appendix.toc' message in .log file:
+  No file mah_route_indicator_friction_model_appendix.toc.
+Latexmk: Missing bbl file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.bbl' in following:
+ No file mah_route_indicator_friction_model_appendix.bbl.
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.bbl' for 'pdflatex'
+Create bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Found bibliography file(s):
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_refs.bib
+Latexmk: applying rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix'...
+Rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix':  Reasons for rerun
+Category 'other':
+  Rerun of 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix' forced or previously required:
+    Reason or flag: 'Initial set up of rule'
+
+------------
+Run number 1 of rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix'
+------------
+Latexmk: Change directory to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/'.
+To assist finding of files in document directory, I set
+  BIBINPUTS='D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript;D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix;D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\manuscript'
+  BSTINPUTS='D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript;D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\manuscript'.
+------------
+Running 'bibtex  "mah_route_indicator_friction_model_appendix.aux"'
+------------
+This is BibTeX, Version 0.99e (MiKTeX 25.12)
+The top-level auxiliary file: mah_route_indicator_friction_model_appendix.aux
+The style file: aer.bst
+Database file #1: mah_route_indicator_friction_refs.bib
+bibtex: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Change directory back to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.aux
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.bbl
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.out
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.toc
+
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix"  "D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_model_appendix.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_
+indicator_friction_model_appendix.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\application\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\application\miktex\tex/latex/base\size11.clo))
+(D:\application\miktex\tex/latex/geometry\geometry.sty
+(D:\application\miktex\tex/latex/graphics\keyval.sty)
+(D:\application\miktex\tex/generic/iftex\ifvtex.sty
+(D:\application\miktex\tex/generic/iftex\iftex.sty))
+(D:\application\miktex\tex/latex/geometry\geometry.cfg))
+(D:\application\miktex\tex/latex/base\fontenc.sty)
+(D:\application\miktex\tex/latex/base\inputenc.sty)
+(D:\application\miktex\tex/latex/lm\lmodern.sty)
+(D:\application\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(D:\application\miktex\tex/latex/amsmath\amstext.sty
+(D:\application\miktex\tex/latex/amsmath\amsgen.sty))
+(D:\application\miktex\tex/latex/amsmath\amsbsy.sty)
+(D:\application\miktex\tex/latex/amsmath\amsopn.sty))
+(D:\application\miktex\tex/latex/amsfonts\amssymb.sty
+(D:\application\miktex\tex/latex/amsfonts\amsfonts.sty))
+(D:\application\miktex\tex/latex/amscls\amsthm.sty)
+(D:\application\miktex\tex/latex/mathtools\mathtools.sty
+(D:\application\miktex\tex/latex/tools\calc.sty)
+(D:\application\miktex\tex/latex/mathtools\mhsetup.sty))
+(D:\application\miktex\tex/latex/tools\bm.sty)
+(D:\application\miktex\tex/latex/booktabs\booktabs.sty)
+(D:\application\miktex\tex/latex/tools\longtable.sty)
+(D:\application\miktex\tex/latex/tools\array.sty)
+(D:\application\miktex\tex/latex/tools\tabularx.sty)
+(D:\application\miktex\tex/latex/enumitem\enumitem.sty)
+(D:\application\miktex\tex/latex/setspace\setspace.sty)
+(D:\application\miktex\tex/latex/natbib\natbib.sty)
+(D:\application\miktex\tex/latex/hyperref\hyperref.sty
+(D:\application\miktex\tex/latex/kvsetkeys\kvsetkeys.sty)
+(D:\application\miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty)
+(D:\application\miktex\tex/generic/pdfescape\pdfescape.sty
+(D:\application\miktex\tex/generic/ltxcmds\ltxcmds.sty)
+(D:\application\miktex\tex/generic/pdftexcmds\pdftexcmds.sty
+(D:\application\miktex\tex/generic/infwarerr\infwarerr.sty)))
+(D:\application\miktex\tex/latex/hycolor\hycolor.sty)
+(D:\application\miktex\tex/latex/hyperref\nameref.sty
+(D:\application\miktex\tex/latex/refcount\refcount.sty)
+(D:\application\miktex\tex/generic/gettitlestring\gettitlestring.sty
+(D:\application\miktex\tex/latex/kvoptions\kvoptions.sty)))
+(D:\application\miktex\tex/latex/etoolbox\etoolbox.sty)
+(D:\application\miktex\tex/generic/stringenc\stringenc.sty)
+(D:\application\miktex\tex/latex/hyperref\pd1enc.def)
+(D:\application\miktex\tex/generic/intcalc\intcalc.sty)
+(D:\application\miktex\tex/latex/hyperref\puenc.def)
+(D:\application\miktex\tex/latex/url\url.sty)
+(D:\application\miktex\tex/generic/bitset\bitset.sty
+(D:\application\miktex\tex/generic/bigintcalc\bigintcalc.sty)))
+(D:\application\miktex\tex/latex/hyperref\hpdftex.def
+(D:\application\miktex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(D:\application\miktex\tex/generic/uniquecounter\uniquecounter.sty)))
+(D:\application\miktex\tex/latex/lm\t1lmr.fd)
+(D:\application\miktex\tex/latex/l3backend\l3backend-pdftex.def)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(D:\application\miktex\tex/latex/graphics\graphicx.sty
+(D:\application\miktex\tex/latex/graphics\graphics.sty
+(D:\application\miktex\tex/latex/graphics\trig.sty)
+(D:\application\miktex\tex/latex/graphics-cfg\graphics.cfg)
+(D:\application\miktex\tex/latex/graphics-def\pdftex.def
+(D:\application\miktex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+))) (D:\application\miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+(D:\application\miktex\tex/latex/00miktex\epstopdf-sys.cfg)))
+(D:\application\miktex\tex/latex/graphics\color.sty
+(D:\application\miktex\tex/latex/graphics-cfg\color.cfg)
+(D:\application\miktex\tex/latex/graphics\mathcolor.ltx))
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.out)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.out)
+(D:\application\miktex\tex/latex/lm\ot1lmr.fd)
+(D:\application\miktex\tex/latex/lm\omllmm.fd)
+(D:\application\miktex\tex/latex/lm\omslmsy.fd)
+(D:\application\miktex\tex/latex/lm\omxlmex.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsa.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsb.fd) [1{C:/Users/dongw/AppData/Lo
+cal/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/application/miktex/fonts/enc/dvips/l
+m/lm-ec.enc}]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.toc
+[2]) [3] (../model_rebuild/01_primitives_and_timing.tex
+(D:\application\miktex\tex/latex/lm\ot1lmss.fd) [4{D:/application/miktex/fonts/
+enc/dvips/lm/lm-mathit.enc}{D:/application/miktex/fonts/enc/dvips/lm/lm-mathsy.
+enc}{D:/application/miktex/fonts/enc/dvips/lm/lm-rm.enc}{D:/application/miktex/
+fonts/enc/dvips/lm/lm-mathex.enc}] [5])
+(../model_rebuild/02_demand_profit_derivation.tex [6] [7])
+(../model_rebuild/03_internal_external_technologies.tex [8]
+(D:\application\miktex\tex/latex/lm\ts1lmr.fd))
+(../model_rebuild/04_route_values_and_sorting.tex [9{D:/application/miktex/font
+s/enc/dvips/lm/lm-ts1.enc}] [10] [11]) (../model_rebuild/05_rd_problem.tex
+[12] [13]) (../model_rebuild/06_cmo_supply_demand_equilibrium.tex [14] [15])
+(../model_rebuild/07_equilibrium_definition.tex [16])
+(../model_rebuild/08_required_propositions.tex [17] [18] [19] [20] [21])
+(../model_rebuild/08_comparative_statics.tex [22] [23] [24] [25] [26] [27])
+(../model_rebuild/09_observed_outcomes.tex [28]) [29]
+
+Package natbib Warning: Citation `Gu2024' on page 30 undefined on input line 10
+4.
+
+
+Package natbib Warning: Citation `Gu2024' on page 30 undefined on input line 12
+5.
+
+(../model_rebuild/11_extensions_not_baseline.tex [30]) [31]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.bbl)
+
+Package natbib Warning: There were undefined citations.
+
+[32]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )<D:/application/miktex/fonts/type1/public/lm/lmbx10.pfb><D:/application/mikte
+x/fonts/type1/public/lm/lmbx12.pfb><D:/application/miktex/fonts/type1/public/lm
+/lmex10.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi10.pfb><D:/applica
+tion/miktex/fonts/type1/public/lm/lmmi5.pfb><D:/application/miktex/fonts/type1/
+public/lm/lmmi7.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi8.pfb><D:/
+application/miktex/fonts/type1/public/lm/lmr10.pfb><D:/application/miktex/fonts
+/type1/public/lm/lmr17.pfb><D:/application/miktex/fonts/type1/public/lm/lmr7.pf
+b><D:/application/miktex/fonts/type1/public/lm/lmri10.pfb><D:/application/mikte
+x/fonts/type1/public/lm/lmss10.pfb><D:/application/miktex/fonts/type1/public/lm
+/lmsy10.pfb><D:/application/miktex/fonts/type1/public/lm/lmsy5.pfb><D:/applicat
+ion/miktex/fonts/type1/public/lm/lmsy7.pfb><D:/application/miktex/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb>
+Output written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\buil
+d\mah_route_indicator_friction_model_appendix\mah_route_indicator_friction_mode
+l_appendix.pdf (32 pages, 469887 bytes).
+Transcript written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\
+build\mah_route_indicator_friction_model_appendix\mah_route_indicator_friction_
+model_appendix.log.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Getting log file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.log'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.fls'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.log'
+Latexmk: Found input bbl file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.bbl'
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.bbl' for 'pdflatex'
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Found bibliography file(s):
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_refs.bib
+Latexmk: applying rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix'...
+Rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix':  Reasons for rerun
+Changed files or newly in use/created:
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.aux
+
+------------
+Run number 2 of rule 'bibtex D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix'
+------------
+Latexmk: Change directory to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/'.
+To assist finding of files in document directory, I set
+  BIBINPUTS='D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript;D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix;D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\manuscript'
+  BSTINPUTS='D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript;D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\manuscript'.
+------------
+Running 'bibtex  "mah_route_indicator_friction_model_appendix.aux"'
+------------
+This is BibTeX, Version 0.99e (MiKTeX 25.12)
+The top-level auxiliary file: mah_route_indicator_friction_model_appendix.aux
+The style file: aer.bst
+Database file #1: mah_route_indicator_friction_refs.bib
+bibtex: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Change directory back to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.aux
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.toc
+
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix"  "D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_model_appendix.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_
+indicator_friction_model_appendix.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(D:\application\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\application\miktex\tex/latex/base\size11.clo))
+(D:\application\miktex\tex/latex/geometry\geometry.sty
+(D:\application\miktex\tex/latex/graphics\keyval.sty)
+(D:\application\miktex\tex/generic/iftex\ifvtex.sty
+(D:\application\miktex\tex/generic/iftex\iftex.sty))
+(D:\application\miktex\tex/latex/geometry\geometry.cfg))
+(D:\application\miktex\tex/latex/base\fontenc.sty)
+(D:\application\miktex\tex/latex/base\inputenc.sty)
+(D:\application\miktex\tex/latex/lm\lmodern.sty)
+(D:\application\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(D:\application\miktex\tex/latex/amsmath\amstext.sty
+(D:\application\miktex\tex/latex/amsmath\amsgen.sty))
+(D:\application\miktex\tex/latex/amsmath\amsbsy.sty)
+(D:\application\miktex\tex/latex/amsmath\amsopn.sty))
+(D:\application\miktex\tex/latex/amsfonts\amssymb.sty
+(D:\application\miktex\tex/latex/amsfonts\amsfonts.sty))
+(D:\application\miktex\tex/latex/amscls\amsthm.sty)
+(D:\application\miktex\tex/latex/mathtools\mathtools.sty
+(D:\application\miktex\tex/latex/tools\calc.sty)
+(D:\application\miktex\tex/latex/mathtools\mhsetup.sty))
+(D:\application\miktex\tex/latex/tools\bm.sty)
+(D:\application\miktex\tex/latex/booktabs\booktabs.sty)
+(D:\application\miktex\tex/latex/tools\longtable.sty)
+(D:\application\miktex\tex/latex/tools\array.sty)
+(D:\application\miktex\tex/latex/tools\tabularx.sty)
+(D:\application\miktex\tex/latex/enumitem\enumitem.sty)
+(D:\application\miktex\tex/latex/setspace\setspace.sty)
+(D:\application\miktex\tex/latex/natbib\natbib.sty)
+(D:\application\miktex\tex/latex/hyperref\hyperref.sty
+(D:\application\miktex\tex/latex/kvsetkeys\kvsetkeys.sty)
+(D:\application\miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty)
+(D:\application\miktex\tex/generic/pdfescape\pdfescape.sty
+(D:\application\miktex\tex/generic/ltxcmds\ltxcmds.sty)
+(D:\application\miktex\tex/generic/pdftexcmds\pdftexcmds.sty
+(D:\application\miktex\tex/generic/infwarerr\infwarerr.sty)))
+(D:\application\miktex\tex/latex/hycolor\hycolor.sty)
+(D:\application\miktex\tex/latex/hyperref\nameref.sty
+(D:\application\miktex\tex/latex/refcount\refcount.sty)
+(D:\application\miktex\tex/generic/gettitlestring\gettitlestring.sty
+(D:\application\miktex\tex/latex/kvoptions\kvoptions.sty)))
+(D:\application\miktex\tex/latex/etoolbox\etoolbox.sty)
+(D:\application\miktex\tex/generic/stringenc\stringenc.sty)
+(D:\application\miktex\tex/latex/hyperref\pd1enc.def)
+(D:\application\miktex\tex/generic/intcalc\intcalc.sty)
+(D:\application\miktex\tex/latex/hyperref\puenc.def)
+(D:\application\miktex\tex/latex/url\url.sty)
+(D:\application\miktex\tex/generic/bitset\bitset.sty
+(D:\application\miktex\tex/generic/bigintcalc\bigintcalc.sty)))
+(D:\application\miktex\tex/latex/hyperref\hpdftex.def
+(D:\application\miktex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(D:\application\miktex\tex/generic/uniquecounter\uniquecounter.sty)))
+(D:\application\miktex\tex/latex/lm\t1lmr.fd)
+(D:\application\miktex\tex/latex/l3backend\l3backend-pdftex.def)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(D:\application\miktex\tex/latex/graphics\graphicx.sty
+(D:\application\miktex\tex/latex/graphics\graphics.sty
+(D:\application\miktex\tex/latex/graphics\trig.sty)
+(D:\application\miktex\tex/latex/graphics-cfg\graphics.cfg)
+(D:\application\miktex\tex/latex/graphics-def\pdftex.def
+(D:\application\miktex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+))) (D:\application\miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+(D:\application\miktex\tex/latex/00miktex\epstopdf-sys.cfg)))
+(D:\application\miktex\tex/latex/graphics\color.sty
+(D:\application\miktex\tex/latex/graphics-cfg\color.cfg)
+(D:\application\miktex\tex/latex/graphics\mathcolor.ltx))
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.out)
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.out)
+(D:\application\miktex\tex/latex/lm\ot1lmr.fd)
+(D:\application\miktex\tex/latex/lm\omllmm.fd)
+(D:\application\miktex\tex/latex/lm\omslmsy.fd)
+(D:\application\miktex\tex/latex/lm\omxlmex.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsa.fd)
+(D:\application\miktex\tex/latex/amsfonts\umsb.fd) [1{C:/Users/dongw/AppData/Lo
+cal/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/application/miktex/fonts/enc/dvips/l
+m/lm-ec.enc}]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.toc
+[2]) [3] (../model_rebuild/01_primitives_and_timing.tex
+(D:\application\miktex\tex/latex/lm\ot1lmss.fd) [4{D:/application/miktex/fonts/
+enc/dvips/lm/lm-mathit.enc}{D:/application/miktex/fonts/enc/dvips/lm/lm-mathsy.
+enc}{D:/application/miktex/fonts/enc/dvips/lm/lm-rm.enc}{D:/application/miktex/
+fonts/enc/dvips/lm/lm-mathex.enc}] [5])
+(../model_rebuild/02_demand_profit_derivation.tex [6] [7])
+(../model_rebuild/03_internal_external_technologies.tex [8]
+(D:\application\miktex\tex/latex/lm\ts1lmr.fd))
+(../model_rebuild/04_route_values_and_sorting.tex [9{D:/application/miktex/font
+s/enc/dvips/lm/lm-ts1.enc}] [10] [11]) (../model_rebuild/05_rd_problem.tex
+[12] [13]) (../model_rebuild/06_cmo_supply_demand_equilibrium.tex [14] [15])
+(../model_rebuild/07_equilibrium_definition.tex [16])
+(../model_rebuild/08_required_propositions.tex [17] [18] [19] [20] [21])
+(../model_rebuild/08_comparative_statics.tex [22] [23] [24] [25] [26] [27])
+(../model_rebuild/09_observed_outcomes.tex [28]) [29]
+(../model_rebuild/11_extensions_not_baseline.tex [30]) [31]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.bbl)
+[32]
+(D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indic
+ator_friction_model_appendix\mah_route_indicator_friction_model_appendix.aux) )
+<D:/application/miktex/fonts/type1/public/lm/lmbx10.pfb><D:/application/miktex/
+fonts/type1/public/lm/lmbx12.pfb><D:/application/miktex/fonts/type1/public/lm/l
+mex10.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi10.pfb><D:/applicati
+on/miktex/fonts/type1/public/lm/lmmi5.pfb><D:/application/miktex/fonts/type1/pu
+blic/lm/lmmi7.pfb><D:/application/miktex/fonts/type1/public/lm/lmmi8.pfb><D:/ap
+plication/miktex/fonts/type1/public/lm/lmr10.pfb><D:/application/miktex/fonts/t
+ype1/public/lm/lmr17.pfb><D:/application/miktex/fonts/type1/public/lm/lmr7.pfb>
+<D:/application/miktex/fonts/type1/public/lm/lmri10.pfb><D:/application/miktex/
+fonts/type1/public/lm/lmss10.pfb><D:/application/miktex/fonts/type1/public/lm/l
+msy10.pfb><D:/application/miktex/fonts/type1/public/lm/lmsy5.pfb><D:/applicatio
+n/miktex/fonts/type1/public/lm/lmsy7.pfb><D:/application/miktex/fonts/type1/pub
+lic/amsfonts/symbols/msbm10.pfb>
+Output written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\buil
+d\mah_route_indicator_friction_model_appendix\mah_route_indicator_friction_mode
+l_appendix.pdf (32 pages, 470454 bytes).
+Transcript written on D:/working_paper\DANNI_worktrees\mah-model-rebuild\paper\
+build\mah_route_indicator_friction_model_appendix\mah_route_indicator_friction_
+model_appendix.log.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Getting log file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.log'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.fls'
+Latexmk: Examining 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.log'
+Latexmk: Found input bbl file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.bbl'
+Latexmk: Log file says output to 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.bbl' for 'pdflatex'
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+kpsewhich: major issue: So far, you have not checked for MiKTeX updates.
+Latexmk: Found bibliography file(s):
+  D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/manuscript/mah_route_indicator_friction_refs.bib
+Reverting Windows console CPs to (in,out) = (936,65001)
+Latexmk: All targets (D:/working_paper/DANNI_worktrees/mah-model-rebuild/paper/build/mah_route_indicator_friction_model_appendix/mah_route_indicator_friction_model_appendix.pdf) are up-to-date
+
+latexmk: major issue: So far, you have not checked for MiKTeX updates.
+Build succeeded. PDF written to: D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\output\mah_route_indicator_friction_model_appendix.pdf
+Intermediate files kept in: D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\build\mah_route_indicator_friction_model_appendix
