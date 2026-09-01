@@ -1,0 +1,128 @@
+% Internal and entrusted manufacturing technologies.
+\section{Internal and Entrusted Manufacturing Technologies}
+\label{sec:p03-technologies}
+
+This section defines the manufacturing primitives that later enter route
+values. It does not construct those values, choose a route, or clear the
+qualified manufacturing-service market. All technology primitives are
+invariant to the MAH regime. The only direct institutional wedge remains
+\(\tau_E(M)\).
+
+\subsection{Internal manufacturing}
+\label{subsec:p03-internal}
+
+For a project with manufacturing requirement \(m>0\) and a developer with
+internal manufacturing capability \(k_i>0\), let
+\begin{equation}
+  c_I(m,k_i)>0,
+  \qquad
+  c_{I,m}(m,k_i)>0,
+  \qquad
+  c_{I,k}(m,k_i)<0
+  \quad\text{when internal production is feasible}.
+  \label{eq:p03-internal-cost}
+\end{equation}
+The function \(c_I\) is technological marginal manufacturing cost, measured
+in \(\mathsf C/\mathsf Y\). A more demanding project raises this cost, while
+greater internal capability lowers it on the feasible domain.
+
+Internal production also requires a project-level production-readiness/setup
+cost \(F_I(m,k_i)\), measured in \(\mathsf C\). Let
+\(\underline{k}(m)>0\) be the minimum capability needed for an internally
+produced project with requirement \(m\). The feasibility convention is
+\begin{equation}
+  \begin{gathered}
+    0\leq F_I(m,k_i)<+\infty,\quad
+    F_{I,m}(m,k_i)>0,\quad F_{I,k}(m,k_i)<0
+    \quad\text{if }k_i\geq\underline{k}(m),\\
+    F_I(m,k_i)=+\infty
+    \quad\text{if }k_i<\underline{k}(m).
+  \end{gathered}
+  \label{eq:p03-internal-setup}
+\end{equation}
+Thus low internal capability makes route \(I\) unavailable through an
+infinite setup cost. No separate binary internal-feasibility primitive is
+retained.
+
+\subsection{Qualified external production}
+\label{subsec:p03-external}
+
+Under entrusted manufacturing, a qualified external producer uses the
+technological marginal-cost kernel
+\begin{equation}
+  c_E(m)>0,
+  \label{eq:p03-external-cost}
+\end{equation}
+also measured in \(\mathsf C/\mathsf Y\). This kernel does not depend on the
+developer's internal capability \(k_i\): manufacturing is performed by the
+qualified external producer.
+
+An entrusted project requires
+\begin{equation}
+  b(m)>0,
+  \qquad b'(m)>0,
+  \label{eq:p03-capacity-requirement}
+\end{equation}
+units of qualified manufacturing-service capacity. The object \(b(m)\) is a
+physical capacity requirement in \(\mathsf B\) per project. It is not a route
+share, a supply curve, or an exogenous measure of scarcity relief.
+
+The real technology-transfer, validation, and production-readiness cost is
+\begin{equation}
+  F_E(m)\geq0,
+  \label{eq:p03-external-fixed-cost}
+\end{equation}
+measured in \(\mathsf C\) per project. In addition, the developer bears a
+residual holder-side responsibility and coordination burden
+\begin{equation}
+  \mu_E\geq0.
+  \label{eq:p03-holder-burden}
+\end{equation}
+The burden \(\mu_E\) is not eliminated by MAH.
+
+The accounting roles are distinct. The technological marginal cost \(c_E(m)\)
+is the input to the operating-value kernel derived above. The separate
+monetary capacity payment \(p_m b(m)\), the readiness cost \(F_E(m)\), the
+holder burden \(\mu_E\), and the institutional barrier \(\tau_E(M)\) are not
+embedded in \(c_E(m)\). Each can therefore enter a later route value at most
+once.
+
+\subsection{Organizational and institutional distinction}
+\label{subsec:p03-organization}
+
+Routes \(I\) and \(E\) are technologically and organizationally distinct:
+\begin{itemize}
+  \item under \(I\), the developer remains the holder and manufactures using
+  its own capability \(k_i\);
+  \item under \(E\), the developer remains the authorization holder, retains
+  holder responsibility, and a qualified external producer manufactures;
+  \item route \(E\) is not the transfer or out-licensing route \(T\), under
+  which the retained holder--producer organization is not used.
+\end{itemize}
+
+The only direct policy object is
+\begin{equation}
+  M\in\{0,1\},
+  \qquad
+  \tau_E(0)=+\infty,
+  \qquad
+  \tau_E(1)=\bar\tau_E<+\infty.
+  \label{eq:p03-policy-invariance}
+\end{equation}
+The regime does not change \(c_I\), \(F_I\), \(\underline{k}\), \(c_E\),
+\(b\), \(F_E\), \(\mu_E\), \(a_i\), \(k_i\), \(q\), \(m\), \(s(q)\), or
+\(s_g(q)\). In particular, this technology block does not posit a fall in
+\(p_m^*\) or an outward shift of CMO supply. Price and capacity are equilibrium
+objects determined in the qualified manufacturing-service market below.
+
+\subsection{Boundary checks}
+\label{subsec:p03-boundaries}
+
+If \(k_i<\underline{k}(m)\), internal production is infeasible because
+\(F_I=+\infty\); this is the required low-capability boundary. Increasing
+\(k_i\) within the feasible domain lowers both internal marginal and setup
+costs, while increasing \(m\) raises both. The entrusted technology does not
+use \(k_i\), but a larger \(m\) strictly raises its qualified-capacity
+requirement \(b(m)\). None of these statements is a route-choice result:
+route values, outside options, and deterministic sorting are defined in the
+next section.

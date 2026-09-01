@@ -1,0 +1,12 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Gu]{Gu}{2024}{Gu2024}
+{\bf Gu, Shi}, ``Production Outsourcing and Innovation: Evidence from China's
+  Pharmaceutical Industry,'' Working Paper SSRN 4770849, Kellogg School of
+  Management, Northwestern University 2024.
+\newblock August 22, 2024 version.
+
+\end{thebibliography}

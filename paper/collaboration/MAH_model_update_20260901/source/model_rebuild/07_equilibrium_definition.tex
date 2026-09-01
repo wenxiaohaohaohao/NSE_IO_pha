@@ -1,0 +1,91 @@
+% Definition of the baseline MAH partial equilibrium.
+\section{Baseline MAH Partial Equilibrium}
+\label{sec:p07-equilibrium}
+
+Fix the institutional regime \(M\in\{0,1\}\), the developer distribution
+\(H(a,k)\), the project distribution \(F(q,m)\), the qualified-supplier
+distribution \(H_C(z)\), and all other exogenous primitives introduced above.
+A baseline MAH partial equilibrium is the collection
+\begin{equation}
+  \boxed{
+  \left\{
+    p_m^*,\;
+    x_i^*,\;
+    r_i^*(q,m),\;
+    s_j^*
+  \right\}_{i,j}}
+  .
+  \label{eq:p07-equilibrium-collection}
+\end{equation}
+The suppressed arguments are \(x_i^*=x_i^*(M,p_m^*)\),
+\(r_i^*(q,m)=r_i^*(q,m;M,p_m^*)\), and
+\(s_j^*=s_j^*(p_m^*,z_j)\). The collection contains exactly these four
+families of endogenous optimal objects.
+
+It satisfies the following four conditions.
+
+\paragraph{1. Optimal commercialization route.}
+For every planning-stage project--developer pair outside the zero-measure tie
+set,
+\begin{equation}
+  r_i^*(q,m;M,p_m^*)
+  \in
+  \arg\max_{r\in\{I,E,T,A\}}
+  \left\{
+    W_i^I(q,m),
+    W_i^E(q,m;M,p_m^*),
+    W^T(q,m),
+    W^A
+  \right\},
+  \label{eq:p07-route-optimality}
+\end{equation}
+with route \(E\) unavailable when \(M=0\). This is the deterministic route
+choice defined above; route \(E\) retains holder rights and is not route \(T\).
+
+\paragraph{2. Optimal project advancement.}
+For every developer \(i\), the common project-advancement control is
+\begin{equation}
+  x_i^*(M,p_m^*)
+  =
+  \left[
+    \frac{\beta a_i\Omega_i(M,p_m^*)}{\kappa}
+  \right]^{1/\nu},
+  \label{eq:p07-advancement-optimality}
+\end{equation}
+including the zero-value corner \(x_i^*=0\). There is no class-specific
+\(x_{ig}\) control.
+
+\paragraph{3. Optimal qualified-supplier capacity.}
+For every qualified supplier \(j\),
+\begin{equation}
+  s_j^*(p_m^*,z_j)
+  \in
+  \arg\max_{s_j\geq0}
+  \left\{
+    p_m^*s_j-\Psi(s_j;z_j)
+  \right\}.
+  \label{eq:p07-capacity-optimality}
+\end{equation}
+Strict convexity of \(\Psi\) makes this capacity choice unique. Supplier entry
+is not a margin of the model.
+
+\paragraph{4. Qualified-capacity market clearing.}
+The price \(p_m^*\) is the unique solution to
+\begin{equation}
+  D_m(p_m^*;M)=S_m(p_m^*).
+  \label{eq:p07-market-clearing}
+\end{equation}
+The qualified-capacity existence and uniqueness conditions apply. The demand and supply
+functions determine the price but are not additional members of the
+equilibrium collection.
+
+\subsection{Closure boundary}
+\label{subsec:p07-closure-boundary}
+
+Equations~\eqref{eq:p07-route-optimality}--\eqref{eq:p07-market-clearing}
+close only commercialization route choice, common project advancement,
+qualified-supplier capacity, and the manufacturing-service price. There is no
+entry condition and no labor-market, capital-market, product-market aggregate,
+firm-distribution, or welfare-clearing condition. Product price \(p^*(c)\)
+remains a conditional firm-level optimum from the pricing problem, not a second
+market-clearing price.

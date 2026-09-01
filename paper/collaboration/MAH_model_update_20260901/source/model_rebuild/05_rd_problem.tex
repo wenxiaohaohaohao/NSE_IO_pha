@@ -1,0 +1,210 @@
+% Common project-advancement problem and value-gap foundation.
+\section{Project Development and Advancement}
+\label{sec:p05-project-advancement}
+
+This section solves the ex ante advancement decision at a fixed conjectured
+qualified manufacturing-service price \(p_m\). It uses the deterministic
+optimized route value defined above. CMO market consistency and the feedback
+that selects \(p_m^*\) are imposed in the capacity-market section below.
+
+\subsection{Innovation-object boundary and planned-project technology}
+\label{subsec:p05-technology}
+
+Developer \(i\) chooses one common control \(x_i\geq0\). Its canonical meaning
+is original-drug innovation investment / project-advancement intensity. It is
+broader than pure clinical-development effort, but it is not patent
+applications, patent-generating effort, basic research, or upstream scientific
+discovery. There is no class-specific control \(x_{ig}\).
+
+Predetermined project-advancement productivity \(a_i>0\) converts the control
+into the expected measure of viable projects reaching route planning:
+\begin{equation}
+  \lambda_i^{\mathrm{plan}}=a_ix_i.
+  \label{eq:p05-planned-intensity}
+\end{equation}
+The control has units \(\mathsf X\), and \(a_i\) has units
+\(\mathsf P/\mathsf X\), so
+\(\lambda_i^{\mathrm{plan}}\) has units \(\mathsf P\).
+
+The advancement-cost function is
+\begin{equation}
+  C_X(x_i)
+  =
+  \frac{\kappa}{1+\nu}x_i^{1+\nu},
+  \qquad
+  \kappa>0,\quad \nu>0.
+  \label{eq:p05-advancement-cost}
+\end{equation}
+Here \(\kappa\) has units
+\(\mathsf C/\mathsf X^{1+\nu}\), so \(C_X\) is measured in currency
+per developer and decision cohort. Its marginal cost is
+\(C_X'(x_i)=\kappa x_i^\nu\). The boundary \(\nu=1\) gives a quadratic
+advancement cost.
+
+\subsection{Expected optimized project value}
+\label{subsec:p05-expected-value}
+
+For developer \(i\), institutional regime \(M\), and fixed conjectured price
+\(p_m\), define
+\begin{equation}
+  \begin{aligned}
+  \Omega_i(M,p_m)
+  &=
+  \mathbb E_F\!\left[
+    W_i(q,m;M,p_m)
+  \right]\\
+  &=
+  \int W_i(q,m;M,p_m)\,dF(q,m).
+  \end{aligned}
+  \label{eq:p05-expected-value}
+\end{equation}
+The subscript \(i\) includes the dependence of route value on developer
+characteristics, especially manufacturing capability \(k_i\). Because the
+route-value maximum contains abandonment with value zero,
+\(W_i(q,m;M,p_m)\geq0\). Under the stated integrability condition,
+\[
+  0\leq\Omega_i(M,p_m)<+\infty.
+\]
+This expectation replaces the old theoretical-baseline inclusive-value
+object; no random-utility aggregation is used.
+
+\subsection{Ex ante advancement problem}
+\label{subsec:p05-problem}
+
+The developer solves
+\begin{equation}
+  \max_{x_i\geq0}
+  \left\{
+    \beta a_ix_i\Omega_i(M,p_m)
+    -
+    \frac{\kappa}{1+\nu}x_i^{1+\nu}
+  \right\}.
+  \label{eq:p05-advancement-objective}
+\end{equation}
+The decision precedes the \((q,m)\) draw and downstream route choice.
+Conditional on \(M,p_m,a_i,k_i\), the expected value
+\(\Omega_i(M,p_m)\) is therefore fixed with respect to the individual
+choice \(x_i\).
+
+The necessary and sufficient Kuhn--Tucker conditions are
+\begin{equation}
+  \begin{gathered}
+  x_i\geq0,\qquad
+  \kappa x_i^\nu-\beta a_i\Omega_i(M,p_m)\geq0,\\
+  x_i\left[
+    \kappa x_i^\nu-\beta a_i\Omega_i(M,p_m)
+  \right]=0.
+  \end{gathered}
+  \label{eq:p05-kkt}
+\end{equation}
+For an interior solution, the FOC is
+\begin{equation}
+  \kappa x_i^\nu
+  =
+  \beta a_i\Omega_i(M,p_m).
+  \label{eq:p05-foc}
+\end{equation}
+For \(x_i>0\), the objective's second derivative is
+\begin{equation}
+  -\kappa\nu x_i^{\nu-1}<0.
+  \label{eq:p05-soc}
+\end{equation}
+More generally, \(x_i^{1+\nu}\) is strictly convex on the nonnegative
+domain for every \(\nu>0\). Hence the objective is strictly concave.
+Its superlinear cost dominates the linear benefit as \(x_i\to\infty\), so a
+unique maximizer exists.
+
+The unique optimal common advancement intensity is
+\begin{equation}
+  x_i^*(M,p_m)
+  =
+  \left[
+    \frac{\beta a_i}{\kappa}
+    \Omega_i(M,p_m)
+  \right]^{1/\nu}.
+  \label{eq:p05-optimal-advancement}
+\end{equation}
+If \(\Omega_i=0\), the formula gives the unique corner \(x_i^*=0\).
+If \(\Omega_i>0\), the solution is interior. Dimensionally,
+\(\beta a_i\Omega_i/\kappa\) has units \(\mathsf X^\nu\), so the
+solution has units \(\mathsf X\).
+
+\subsection{Fixed-price binary MAH channel}
+\label{subsec:p05-binary-channel}
+
+At a fixed \(p_m\), deterministic route choice implies the pointwise weak ordering
+\[
+  W_i(q,m;1,p_m)\geq W_i(q,m;0,p_m).
+\]
+Taking expectations gives the finite policy comparison
+\begin{equation}
+  \Omega_i(1,p_m)-\Omega_i(0,p_m)
+  =
+  \int
+  \left[
+    W_i(q,m;1,p_m)-W_i(q,m;0,p_m)
+  \right]dF(q,m)
+  \geq0.
+  \label{eq:p05-binary-channel}
+\end{equation}
+For positive \(\Omega_i\),
+\[
+  \frac{\partial x_i^*}{\partial\Omega_i}
+  =
+  \frac{1}{\nu}
+  \left(\frac{\beta a_i}{\kappa}\right)^{1/\nu}
+  \Omega_i^{1/\nu-1}
+  >0.
+\]
+Thus, at fixed \(p_m\),
+\[
+  \Omega_i(1,p_m)>\Omega_i(0,p_m)
+  \quad\Longleftrightarrow\quad
+  x_i^*(1,p_m)>x_i^*(0,p_m).
+\]
+The strict inequality in expected value requires a positive-probability set
+of projects for which the newly feasible entrusted route strictly improves
+the pre-reform maximum. Otherwise both expected value and advancement can
+have a zero reform effect.
+
+This is a binary finite comparison, not a derivative with respect to \(M\).
+It is also a fixed-price result, not the equilibrium-price comparative static
+through \(p_m^*\). The regime changes neither \(a_i\), \(\kappa\), \(\nu\),
+the cost function, nor the project distribution. MAH affects
+\(x_i^*\) only through \(\Omega_i\). Manufacturing capability \(k_i\) affects
+\(\Omega_i\) through route values and sorting, not through
+\(a_ix_i\) or \(C_X(x_i)\).
+
+\subsection{Downstream project-value gap}
+\label{subsec:p05-value-gap}
+
+For a useful value decomposition, let \(B_i\) denote the continuation-value
+benchmark before one additional viable project reaches route planning, and
+let \(K_i\) denote value after it reaches that stage. Define
+\begin{equation}
+  K_i=B_i+\Omega_i,
+  \qquad
+  K_i-B_i=\Omega_i.
+  \label{eq:p05-value-gap}
+\end{equation}
+Substituting this accounting identity into the interior FOC gives
+\begin{equation}
+  C_X'(x_i)
+  =
+  \beta a_i(K_i-B_i).
+  \label{eq:p05-value-gap-foc}
+\end{equation}
+This is an Akcigit-style downstream project-value interpretation. The
+auxiliaries \(B_i\) and \(K_i\) are not recursive state variables, and the
+identity does not claim that MAH directly raises scientific-research
+productivity.
+
+\subsection{Scope boundary}
+\label{subsec:p05-scope}
+
+The baseline contains one common \(x_i\), one cost function \(C_X\), and one
+expected optimized project value \(\Omega_i\). It contains no separate
+research and development controls, no binding financial constraint, no
+patent outcome, no novelty-class-specific control, and no CMO market-clearing
+condition. Project advancement is ex ante; route choice and observed
+holder--producer separation are downstream.
