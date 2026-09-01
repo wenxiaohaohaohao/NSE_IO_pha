@@ -2,18 +2,23 @@
 
 Recorded: 2026-09-01 Asia/Shanghai  
 Phase entry commit: `aae9b14fdbdd7da94dfd6ea3c88d5e1da815cb2d`  
-Final gate: `APPROVED`; automated audit `97 PASS / 0 FAIL`
+Phase 18 closeout commit: `eb7013b5211f72dd2e4be25e839e39222f98cf33`  
+Final gate: `APPROVED`; automated audit `97 PASS / 0 FAIL`  
+Current artifact update: user-requested post-closeout title change; focused
+title/build/render audit `PASS`
 
-SHA256 values below were computed after the final approved-state compilation
-and audit. This file intentionally does not hash itself.
+SHA256 values below reflect the current branch after the title-only update.
+Unchanged model-audit artifacts retain their Phase 18 values; the original
+closeout artifact set remains recoverable at commit `eb7013b`. This file
+intentionally does not hash itself.
 
 | Artifact | Bytes | SHA256 |
 |---|---:|---|
-| `paper/manuscript/mah_route_indicator_friction_model.tex` | 23,952 | `FA7BE384865642E59D52B3804AA8514C8E8D85276084A11345B3B918A0968E6F` |
-| `paper/manuscript/mah_route_indicator_friction_model_appendix.tex` | 5,973 | `7809341DFE70F635D1536241CC9BA706EB2DCB506870C2CE86D608CBDDB0BB9A` |
+| `paper/manuscript/mah_route_indicator_friction_model.tex` | 23,975 | `726ABAD3771491E4D1057EF589E83A507277CBDE6844EF45894E9C2747791240` |
+| `paper/manuscript/mah_route_indicator_friction_model_appendix.tex` | 5,996 | `6EAB0E5B6243B1B1D52900744185C94DDD76049F11DDC98FFFFF85C298BD54B3` |
 | `paper/manuscript/mah_route_indicator_friction_refs.bib` | 9,591 | `2246F1D2C58026C7B9B61565D6A5266AF8931F18B7E2445F58B9E21DE4D510C7` |
-| `paper/output/mah_route_indicator_friction_model.pdf` | 369,697 | `18B778A3FDC6F447969EDA58D552F60261CF26C2ABA46CCBEE2F98CE2E10AD02` |
-| `paper/output/mah_route_indicator_friction_model_appendix.pdf` | 470,454 | `A6EFFEE49416467AE88E5F1F7C4BC953B4B2F9805484CD64A028DC41019D44C0` |
+| `paper/output/mah_route_indicator_friction_model.pdf` | 370,891 | `C3981C18D6DD2C0610C7D597D77795DD651AFE621079902A6BA9EC5CCE293FEC` |
+| `paper/output/mah_route_indicator_friction_model_appendix.pdf` | 471,135 | `E44FD6909CADA274159CCA03B9FE8D73CAF5E7782BAF5BC22BD9471C77623625` |
 | `paper/model_rebuild/spec/MAH_model_rebuild_effective_spec_v1.2.md` | 56,222 | `855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666` |
 | `paper/model_rebuild/spec/instruction_traceability_matrix.csv` | 39,347 | `A89FE6B71D91449718F166DF6A5A317683057AF7F9C668C8F98208F10CC07FF0` |
 | `paper/model_rebuild/spec/specification_hashes.md` | 3,629 | `9D2EFDAAA334188D67C0C3EC105ED87DFBE51886AE34CFDFBC9ED55171FEAC54` |
@@ -32,6 +37,7 @@ and audit. This file intentionally does not hash itself.
 | `paper/model_rebuild/backups/phase18_preintegration/BACKUP_MANIFEST.md` | 1,743 | `72B37EDBE95556B09D80FE1AF8EF0CF601091D591AB933D1D32853D58BD7CA29` |
 | `paper/model_rebuild/scripts/audit_phase18.ps1` | 24,952 | `0BC1C74F29BB5FC9E4BD3FABEEBF32D24CE61A132B11D6597A11942536D05D10` |
 | `paper/model_rebuild/audit/phase18_commit_manifest.txt` | 2,525 | `DB2884D9C341FB13289222331976785A212F6C21194E9A2526C8EB574CA0E56A` |
+| `paper/model_rebuild/audit/post_phase18_title_update_20260901.md` | 1,812 | `A5EBA5235E1942D0B658F9D4765DAD28CF859B618817417889DF2749A6466396` |
 
 The six pre-integration backup copies are separately covered by
 `BACKUP_MANIFEST.md`, which records source/backup byte identity.
