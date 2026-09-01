@@ -1,3 +1,7 @@
 # Project-local temporary and LaTeX build directories.
 tmp/
 audit/build_phase*/
+
+# Local primary-source evidence retained on the D-drive worktree only.
+evidence/*.pdf
+evidence/*_extracted.txt

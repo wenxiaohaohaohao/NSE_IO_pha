@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array,longtable}
+\usepackage[hidelinks]{hyperref}
+
+\title{MAH Model Rebuild: Technical Appendix Candidate}
+\author{}
+\date{Phase 16}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This appendix candidate preserves the full derivational density of the
+approved Phase 15 draft. It records primitives, pricing, route-payoff
+accounting, deterministic sorting, project advancement, qualified-capacity
+equilibrium, propositions, comparative statics, observed outcomes, and
+explicitly quarantined extensions.
+\end{abstract}
+
+\tableofcontents
+
+\input{01_primitives_and_timing.tex}
+\input{02_demand_profit_derivation.tex}
+\input{03_internal_external_technologies.tex}
+\input{04_route_values_and_sorting.tex}
+\input{05_rd_problem.tex}
+\input{06_cmo_supply_demand_equilibrium.tex}
+\input{07_equilibrium_definition.tex}
+\input{08_required_propositions.tex}
+\input{08_comparative_statics.tex}
+\input{09_observed_outcomes.tex}
+
+\section{Research versus Development: Boundary of the Baseline}
+\label{sec:p16a-research-development-boundary}
+
+MAH directly changes downstream commercialization options through the legal
+availability and finite institutional wedge of retained entrusted
+manufacturing. The common control \(x_i\) is original-drug innovation
+investment / project-advancement intensity. It is broader than pure clinical
+effort, but excludes upstream patent-generating research, basic-compound
+discovery, and patent applications. Accordingly, the baseline permits
+\[
+  M
+  \longrightarrow
+  \text{anticipated availability/value of }E
+  \longrightarrow
+  \Omega_i
+  \longrightarrow
+  x_i^*,
+\]
+but it does not imply that MAH raises patent applications.
+
+This distinction is empirically relevant. Gu (2024) documents that the
+reform permitting production outsourcing raises clinical trials among
+innovators without production facilities, while patent applications decline
+among firms with fewer financial resources and do not significantly decline
+for firms with more resources.\footnote{Shi Gu,
+\textit{Production Outsourcing and Innovation: Evidence from China's
+Pharmaceutical Industry}, August 22, 2024 version, SSRN 4770849. See
+Table II on p.~45, Table III on p.~46, and Table IV on p.~47. The
+page/table audit and frozen-source hash are in
+\texttt{paper/model\_notes/08\_shigu\_empirical\_boundary\_check.md}.}
+Granted- and core-patent proxies do not show a statistically significant
+decline (Table V, p.~48). These findings show that downstream development and
+upstream research are distinct empirical margins.
+
+The same paper reports that the trial response is concentrated in the first
+stage (Table VIII, p.~51) and in incrementally innovative chemical drugs
+rather than originally innovative chemical drugs, while originally
+innovative biological drugs show a smaller positive point estimate
+(Table VII, p.~50). The author describes these cross-class patterns as more
+pronounced for incremental projects, but no formal cross-column equality test
+is reported. They therefore motivate heterogeneity tests; they are not
+restrictions imposed on the present baseline. In particular, the common
+\(x_i\), exogenous shares \(\rho_g\), and conditional distributions \(F_g\)
+remain compatible with either class responding more, less, or not at all.
+
+Gu (2024) also finds that pure researchers become more likely to initiate a
+first clinical trial and enter development (Table IX, p.~52). That result is
+an extensive-margin transition. Entry, a binding financial constraint, and a
+resource-allocation problem between separate research and development
+controls are outside the present fixed-population partial equilibrium. They
+can be studied only through separately approved extensions.
+
+\input{11_extensions_not_baseline.tex}
+
+\end{document}

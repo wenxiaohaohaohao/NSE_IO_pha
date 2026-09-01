@@ -1,0 +1,22 @@
+# Phase 16 approved commit scope
+paper/model_notes/00_model_closure_status.md
+paper/model_notes/06_open_issues_log.md
+paper/model_notes/08_shigu_empirical_boundary_check.md
+paper/model_rebuild/.gitignore
+paper/model_rebuild/13_main_text_model_candidate.tex
+paper/model_rebuild/14_appendix_model_candidate.tex
+paper/model_rebuild/audit/phase16_artifact_hashes.md
+paper/model_rebuild/audit/phase16_audit_results.json
+paper/model_rebuild/audit/phase16_commit_manifest.txt
+paper/model_rebuild/audit/phase16_compile_console.txt
+paper/model_rebuild/audit/phase16_gate_report.md
+paper/model_rebuild/audit/phase16_independent_split_audit.md
+paper/model_rebuild/audit/phase16_pdf_render_audit.md
+paper/model_rebuild/audit/phase16_preflight.md
+paper/model_rebuild/audit/phase16_split_ledger.md
+paper/model_rebuild/evidence/shigu_2024_ssrn_4770849_manifest.md
+paper/model_rebuild/scripts/audit_phase16.ps1
+paper/model_rebuild/scripts/compile_phase16_candidates.ps1
+paper/model_rebuild/spec/approvals/phase16_standing_authorization.md
+paper/model_rebuild/spec/instruction_traceability_matrix.csv
+paper/model_rebuild/spec/specification_hashes.md

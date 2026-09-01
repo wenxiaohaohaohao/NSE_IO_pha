@@ -1,19 +1,24 @@
 # 06 Open Issues Log
 
-## OPEN — ISSUE-SPEC-001
+## RESOLVED — ISSUE-SPEC-001
 
 - ID: `ISSUE-SPEC-001`
 - Phase: Specification checkpoint; blocking gate at Phase 16 and Phase 18
 - Equation/object: Shi Gu (2024) empirical-boundary claims
-- Severity now: `P1-EVIDENCE`
+- Severity now: `CLOSED-EVIDENCE`
 - Issue: The SSRN abstract verifies the core clinical-development/patent/incremental boundary, but the supplied v1.1 details on first-stage trials, high-value/granted/core patents, original biological drugs, and pure-researcher transitions have not yet been verified by page and table in the formal paper PDF.
 - Why it matters economically: These details determine which heterogeneity claims may be presented as established evidence rather than extension motivation.
 - Why it matters mathematically: It does not change Phase 1-15 derivations, but it constrains interpretation of class-specific outcomes and the Phase 16 boundary subsection.
-- Candidate resolutions: obtain the official paper PDF; record version, page/table and exact result; mark each claim VERIFIED, PARTIALLY VERIFIED, CONTRADICTED, or UNVERIFIED.
-- Preferred resolution: full primary-source verification before Phase 16.
+- Resolution: the user identified the August 22, 2024, 74-page paper PDF.
+  `paper/model_notes/08_shigu_empirical_boundary_check.md` records source
+  provenance, SHA256, pages 1, 19--26, and Tables II--IX on PDF pages
+  45--52. All seven required details are verified; the two cross-class
+  comparisons retain an explicit no-equality-test precision limit.
+- Resolution date: 2026-09-01
 - Does this alter the locked architecture? `NO`
 - Approval required before change? `NO` for verification; `YES` for any resulting architecture change
-- Escalation rule: unresolved status becomes a P0 blocker at Phase 16 and Phase 18.
+- Escalation rule: closed. Reopen only if later prose exceeds the recorded
+  evidence or cites a different paper version without a new version audit.
 
 ## OPEN — ISSUE-SPEC-002
 

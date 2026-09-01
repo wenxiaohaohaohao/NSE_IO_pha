@@ -1,0 +1,620 @@
+{
+  "phase": 16,
+  "expected_status": "APPROVED",
+  "status": "APPROVED",
+  "generated_at": "2026-09-01T15:11:05.6069100+08:00",
+  "passed": 122,
+  "failed": 0,
+  "checks": [
+    {
+      "id": "P16-HASH-BASE",
+      "passed": true,
+      "evidence": "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+    },
+    {
+      "id": "P16-HASH-AMD11",
+      "passed": true,
+      "evidence": "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+    },
+    {
+      "id": "P16-HASH-AMD12-IMAGE",
+      "passed": true,
+      "evidence": "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+    },
+    {
+      "id": "P16-HASH-AMD12-TEXT",
+      "passed": true,
+      "evidence": "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+    },
+    {
+      "id": "P16-HASH-EFFECTIVE",
+      "passed": true,
+      "evidence": "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+    },
+    {
+      "id": "P16-HASH-SHIGU-PDF",
+      "passed": true,
+      "evidence": "expected=A13D5D1D3DE3A0E4E0D15D5DBF428F2F395C9B95E960C7B3C97652CBC8D9EAEB actual=A13D5D1D3DE3A0E4E0D15D5DBF428F2F395C9B95E960C7B3C97652CBC8D9EAEB"
+    },
+    {
+      "id": "P16-GIT-BRANCH",
+      "passed": true,
+      "evidence": "branch=codex/mah-model-rebuild"
+    },
+    {
+      "id": "P16-GIT-ENTRY",
+      "passed": true,
+      "evidence": "head=a181ff874a53371d2dfc775e0df2cb60b409641c"
+    },
+    {
+      "id": "P16-GIT-REMOTE",
+      "passed": true,
+      "evidence": "remote=a181ff874a53371d2dfc775e0df2cb60b409641c"
+    },
+    {
+      "id": "P16-MANUSCRIPT-READ-ONLY",
+      "passed": true,
+      "evidence": "changed="
+    },
+    {
+      "id": "P16-ZIP-ISOLATED",
+      "passed": true,
+      "evidence": "count=0"
+    },
+    {
+      "id": "P16-FILE-13_main_text_model_candidate.tex",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\13_main_text_model_candidate.tex"
+    },
+    {
+      "id": "P16-FILE-14_appendix_model_candidate.tex",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\14_appendix_model_candidate.tex"
+    },
+    {
+      "id": "P16-FILE-08_shigu_empirical_boundary_check.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\08_shigu_empirical_boundary_check.md"
+    },
+    {
+      "id": "P16-FILE-shigu_2024_ssrn_4770849_manifest.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\evidence\\shigu_2024_ssrn_4770849_manifest.md"
+    },
+    {
+      "id": "P16-FILE-shigu_2024_ssrn_4770849.pdf",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\evidence\\shigu_2024_ssrn_4770849.pdf"
+    },
+    {
+      "id": "P16-FILE-shigu_2024_ssrn_4770849_extracted.txt",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\evidence\\shigu_2024_ssrn_4770849_extracted.txt"
+    },
+    {
+      "id": "P16-FILE-phase16_preflight.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase16_preflight.md"
+    },
+    {
+      "id": "P16-FILE-phase16_split_ledger.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase16_split_ledger.md"
+    },
+    {
+      "id": "P16-FILE-phase16_independent_split_audit.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase16_independent_split_audit.md"
+    },
+    {
+      "id": "P16-FILE-phase16_pdf_render_audit.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase16_pdf_render_audit.md"
+    },
+    {
+      "id": "P16-FILE-compile_phase16_candidates.ps1",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\scripts\\compile_phase16_candidates.ps1"
+    },
+    {
+      "id": "P16-FILE-phase16_compile_console.txt",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase16_compile_console.txt"
+    },
+    {
+      "id": "P16-BUILD-13_main_text_model_candidate.log",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase16\\13_main_text_model_candidate.log"
+    },
+    {
+      "id": "P16-BUILD-13_main_text_model_candidate.pdf",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase16\\13_main_text_model_candidate.pdf"
+    },
+    {
+      "id": "P16-BUILD-14_appendix_model_candidate.log",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase16\\14_appendix_model_candidate.log"
+    },
+    {
+      "id": "P16-BUILD-14_appendix_model_candidate.pdf",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase16\\14_appendix_model_candidate.pdf"
+    },
+    {
+      "id": "P16-STATE-P15",
+      "passed": true,
+      "evidence": "Phase 15 approved"
+    },
+    {
+      "id": "P16-STATE-P16",
+      "passed": true,
+      "evidence": "expected=| 16 Main/appendix candidates | APPROVED |"
+    },
+    {
+      "id": "P16-STATE-P17",
+      "passed": true,
+      "evidence": "Phase 17 not started"
+    },
+    {
+      "id": "P16-MATRIX-P16-D01",
+      "passed": true,
+      "evidence": "rows=1 status=APPROVED approval=YES"
+    },
+    {
+      "id": "P16-MATRIX-P16-G01",
+      "passed": true,
+      "evidence": "rows=1 status=APPROVED approval=YES"
+    },
+    {
+      "id": "P16-EVIDENCE-MANIFEST-160CD5E3",
+      "passed": true,
+      "evidence": "required=A13D5D1D3DE3A0E4E0D15D5DBF428F2F395C9B95E960C7B3C97652CBC8D9EAEB"
+    },
+    {
+      "id": "P16-EVIDENCE-MANIFEST-E34F9456",
+      "passed": true,
+      "evidence": "required=August 22, 2024"
+    },
+    {
+      "id": "P16-EVIDENCE-MANIFEST-1E12E54C",
+      "passed": true,
+      "evidence": "required=74"
+    },
+    {
+      "id": "P16-EVIDENCE-MANIFEST-8278B089",
+      "passed": true,
+      "evidence": "required=2,705,436"
+    },
+    {
+      "id": "P16-EVIDENCE-PDF-IGNORED",
+      "passed": true,
+      "evidence": "result=paper/model_rebuild/evidence/shigu_2024_ssrn_4770849.pdf"
+    },
+    {
+      "id": "P16-EVIDENCE-TEXT-IGNORED",
+      "passed": true,
+      "evidence": "result=paper/model_rebuild/evidence/shigu_2024_ssrn_4770849_extracted.txt"
+    },
+    {
+      "id": "P16-EVIDENCE-SG-04",
+      "passed": true,
+      "evidence": "rows=1 expected=VERIFIED"
+    },
+    {
+      "id": "P16-EVIDENCE-SG-07",
+      "passed": true,
+      "evidence": "rows=1 expected=VERIFIED"
+    },
+    {
+      "id": "P16-EVIDENCE-SG-01",
+      "passed": true,
+      "evidence": "rows=1 expected=VERIFIED"
+    },
+    {
+      "id": "P16-EVIDENCE-SG-06",
+      "passed": true,
+      "evidence": "rows=1 expected=VERIFIED WITH PRECISION LIMIT"
+    },
+    {
+      "id": "P16-EVIDENCE-SG-02",
+      "passed": true,
+      "evidence": "rows=1 expected=VERIFIED"
+    },
+    {
+      "id": "P16-EVIDENCE-SG-03",
+      "passed": true,
+      "evidence": "rows=1 expected=VERIFIED"
+    },
+    {
+      "id": "P16-EVIDENCE-SG-05",
+      "passed": true,
+      "evidence": "rows=1 expected=VERIFIED WITH PRECISION LIMIT"
+    },
+    {
+      "id": "P16-EVIDENCE-TEXT-380BF2A4",
+      "passed": true,
+      "evidence": "required=Table II"
+    },
+    {
+      "id": "P16-EVIDENCE-TEXT-4098C52C",
+      "passed": true,
+      "evidence": "required=Table IX"
+    },
+    {
+      "id": "P16-EVIDENCE-TEXT-A1C8E94B",
+      "passed": true,
+      "evidence": "required=PDF pages 45--52"
+    },
+    {
+      "id": "P16-EVIDENCE-TEXT-02B30311",
+      "passed": true,
+      "evidence": "required=No formal cross-column equality test"
+    },
+    {
+      "id": "P16-EVIDENCE-TEXT-1E146CF3",
+      "passed": true,
+      "evidence": "required=There are no remaining `UNVERIFIED` v1.1 claims"
+    },
+    {
+      "id": "P16-EVIDENCE-TEXT-4B8BDE30",
+      "passed": true,
+      "evidence": "required=patent applications"
+    },
+    {
+      "id": "P16-EVIDENCE-TEXT-3CAE2996",
+      "passed": true,
+      "evidence": "required=outside the MAH baseline endogenous outcomes"
+    },
+    {
+      "id": "P16-EVIDENCE-TEXT-0F5E4034",
+      "passed": true,
+      "evidence": "required=architecture change follows"
+    },
+    {
+      "id": "P16-EVIDENCE-ISSUE-CLOSED",
+      "passed": true,
+      "evidence": "ISSUE-SPEC-001 closed"
+    },
+    {
+      "id": "P16-MAIN-TEXT-6D04343C",
+      "passed": true,
+      "evidence": "required=\\subsection{Environment and timing}"
+    },
+    {
+      "id": "P16-MAIN-TEXT-AA2FC8E7",
+      "passed": true,
+      "evidence": "required=\\subsection{Commercialization technologies}"
+    },
+    {
+      "id": "P16-MAIN-TEXT-D8FDB9C2",
+      "passed": true,
+      "evidence": "required=\\subsection{Organization and project advancement}"
+    },
+    {
+      "id": "P16-MAIN-TEXT-D15F9FC9",
+      "passed": true,
+      "evidence": "required=\\subsection{Qualified manufacturing-service equilibrium}"
+    },
+    {
+      "id": "P16-MAIN-TEXT-19650F6F",
+      "passed": true,
+      "evidence": "required=\\subsection{Main predictions}"
+    },
+    {
+      "id": "P16-MAIN-TEXT-9176505A",
+      "passed": true,
+      "evidence": "required=project-advancement intensity"
+    },
+    {
+      "id": "P16-MAIN-TEXT-B28870EA",
+      "passed": true,
+      "evidence": "required=excludes basic research"
+    },
+    {
+      "id": "P16-MAIN-TEXT-21D40832",
+      "passed": true,
+      "evidence": "required=patent-generating effort"
+    },
+    {
+      "id": "P16-MAIN-TEXT-B077FE68",
+      "passed": true,
+      "evidence": "required=M\\in\\{0,1\\}"
+    },
+    {
+      "id": "P16-MAIN-TEXT-6299CAC9",
+      "passed": true,
+      "evidence": "required=\\tau_E(0)=+\\infty"
+    },
+    {
+      "id": "P16-MAIN-TEXT-30F82B26",
+      "passed": true,
+      "evidence": "required=\\arg\\max_{r\\in\\{I,E,T,A\\}}"
+    },
+    {
+      "id": "P16-MAIN-TEXT-E7AB5518",
+      "passed": true,
+      "evidence": "required=only through \\(\\Omega_i\\)"
+    },
+    {
+      "id": "P16-MAIN-TEXT-BB308D2F",
+      "passed": true,
+      "evidence": "required=fixed \\(p_m\\)"
+    },
+    {
+      "id": "P16-MAIN-TEXT-EE7C7000",
+      "passed": true,
+      "evidence": "required=At equilibrium"
+    },
+    {
+      "id": "P16-MAIN-TEXT-255E6881",
+      "passed": true,
+      "evidence": "required=\\rho_gF_g(q,m)"
+    },
+    {
+      "id": "P16-MAIN-TEXT-FC724ABC",
+      "passed": true,
+      "evidence": "required=no original-versus-incremental ranking"
+    },
+    {
+      "id": "P16-MAIN-TEXT-B88CC94A",
+      "passed": true,
+      "evidence": "required=applications are not a baseline endogenous outcome"
+    },
+    {
+      "id": "P16-MAIN-EQOBJ-4FCD5FC1",
+      "passed": true,
+      "evidence": "required=p_m^*"
+    },
+    {
+      "id": "P16-MAIN-EQOBJ-2EA0DA05",
+      "passed": true,
+      "evidence": "required=x_i^*"
+    },
+    {
+      "id": "P16-MAIN-EQOBJ-F239A9A1",
+      "passed": true,
+      "evidence": "required=r_i^*(q,m)"
+    },
+    {
+      "id": "P16-MAIN-EQOBJ-C4854E3C",
+      "passed": true,
+      "evidence": "required=s_j^*"
+    },
+    {
+      "id": "P16-MAIN-NO-9B88576C",
+      "passed": true,
+      "evidence": "forbidden=\\eta"
+    },
+    {
+      "id": "P16-MAIN-NO-C6A5AC92",
+      "passed": true,
+      "evidence": "forbidden=P_{ir}^{\\mathrm{logit}}"
+    },
+    {
+      "id": "P16-MAIN-NO-D86AB808",
+      "passed": true,
+      "evidence": "forbidden=x_i^R"
+    },
+    {
+      "id": "P16-MAIN-NO-A2CDE096",
+      "passed": true,
+      "evidence": "forbidden=x_i^D"
+    },
+    {
+      "id": "P16-MAIN-NO-0500D791",
+      "passed": true,
+      "evidence": "forbidden=\\Gamma"
+    },
+    {
+      "id": "P16-MAIN-NO-406ADC9C",
+      "passed": true,
+      "evidence": "forbidden=\\frac{\\partial M"
+    },
+    {
+      "id": "P16-MAIN-NO-34469B96",
+      "passed": true,
+      "evidence": "forbidden=\\partial x_i^*/\\partial M"
+    },
+    {
+      "id": "P16-MAIN-NO-EXTRA-CLOSURE",
+      "passed": true,
+      "evidence": "no additional baseline closure"
+    },
+    {
+      "id": "P16-APPENDIX-INPUTS",
+      "passed": true,
+      "evidence": "inputs=01_primitives_and_timing.tex;02_demand_profit_derivation.tex;03_internal_external_technologies.tex;04_route_values_and_sorting.tex;05_rd_problem.tex;06_cmo_supply_demand_equilibrium.tex;07_equilibrium_definition.tex;08_required_propositions.tex;08_comparative_statics.tex;09_observed_outcomes.tex;11_extensions_not_baseline.tex"
+    },
+    {
+      "id": "P16-APPENDIX-TEXT-DA18667B",
+      "passed": true,
+      "evidence": "required=Research versus Development: Boundary of the Baseline"
+    },
+    {
+      "id": "P16-APPENDIX-TEXT-2EE16001",
+      "passed": true,
+      "evidence": "required=August 22, 2024 version"
+    },
+    {
+      "id": "P16-APPENDIX-TEXT-97ADE430",
+      "passed": true,
+      "evidence": "required=Table II on p.~45"
+    },
+    {
+      "id": "P16-APPENDIX-TEXT-59192A0B",
+      "passed": true,
+      "evidence": "required=Table IV on p.~47"
+    },
+    {
+      "id": "P16-APPENDIX-TEXT-035B3DC5",
+      "passed": true,
+      "evidence": "required=Table V, p.~48"
+    },
+    {
+      "id": "P16-APPENDIX-TEXT-7FA92BB5",
+      "passed": true,
+      "evidence": "required=Table VIII, p.~51"
+    },
+    {
+      "id": "P16-APPENDIX-TEXT-95B02B5F",
+      "passed": true,
+      "evidence": "required=Table VII, p.~50"
+    },
+    {
+      "id": "P16-APPENDIX-TEXT-5C5B061E",
+      "passed": true,
+      "evidence": "required=Table IX, p.~52"
+    },
+    {
+      "id": "P16-APPENDIX-TEXT-62088BF6",
+      "passed": true,
+      "evidence": "required=no formal cross-column equality test"
+    },
+    {
+      "id": "P16-APPENDIX-TEXT-58577065",
+      "passed": true,
+      "evidence": "required=outside the present fixed-population partial equilibrium"
+    },
+    {
+      "id": "P16-APPENDIX-TEXT-D0D94840",
+      "passed": true,
+      "evidence": "required=\\input{11_extensions_not_baseline.tex}"
+    },
+    {
+      "id": "P16-APPENDIX-QUARANTINE-ORDER",
+      "passed": true,
+      "evidence": "boundary=1015 extensions=3781"
+    },
+    {
+      "id": "P16-MAIN-LABELS-UNIQUE",
+      "passed": true,
+      "evidence": "duplicates="
+    },
+    {
+      "id": "P16-APPENDIX-LABELS-UNIQUE",
+      "passed": true,
+      "evidence": "duplicates="
+    },
+    {
+      "id": "P16-SPLIT-E43F22CA",
+      "passed": true,
+      "evidence": "required=approved Phase"
+    },
+    {
+      "id": "P16-SPLIT-4ECAC3DE",
+      "passed": true,
+      "evidence": "required=1--15 inputs"
+    },
+    {
+      "id": "P16-SPLIT-C86162E3",
+      "passed": true,
+      "evidence": "required=## Main-text candidate"
+    },
+    {
+      "id": "P16-SPLIT-2B61800D",
+      "passed": true,
+      "evidence": "required=## Appendix candidate"
+    },
+    {
+      "id": "P16-SPLIT-274BC47C",
+      "passed": true,
+      "evidence": "required=Evidence-boundary addition"
+    },
+    {
+      "id": "P16-SPLIT-E40531DF",
+      "passed": true,
+      "evidence": "required=not activate"
+    },
+    {
+      "id": "P16-SPLIT-DC846629",
+      "passed": true,
+      "evidence": "required=not a mathematical appendix component"
+    },
+    {
+      "id": "P16-INDEPENDENT-A2F217C8",
+      "passed": true,
+      "evidence": "required=Source and evidence integrity"
+    },
+    {
+      "id": "P16-INDEPENDENT-D20A9F58",
+      "passed": true,
+      "evidence": "required=Main-text candidate audit"
+    },
+    {
+      "id": "P16-INDEPENDENT-3CECB69D",
+      "passed": true,
+      "evidence": "required=Appendix candidate audit"
+    },
+    {
+      "id": "P16-INDEPENDENT-CB02AA94",
+      "passed": true,
+      "evidence": "required=Compilation and scope"
+    },
+    {
+      "id": "P16-INDEPENDENT-63AC63D5",
+      "passed": true,
+      "evidence": "required=P0: 0"
+    },
+    {
+      "id": "P16-INDEPENDENT-C1431CF0",
+      "passed": true,
+      "evidence": "required=P1: 0"
+    },
+    {
+      "id": "P16-INDEPENDENT-AFC14B00",
+      "passed": true,
+      "evidence": "required=Independent gate: `PASS`"
+    },
+    {
+      "id": "P16-RENDER",
+      "passed": true,
+      "evidence": "candidate render sample passed"
+    },
+    {
+      "id": "P16-MAIN-LATEX-FATAL",
+      "passed": true,
+      "evidence": "fatal="
+    },
+    {
+      "id": "P16-MAIN-LATEX-BOXES",
+      "passed": true,
+      "evidence": "box_warnings=0"
+    },
+    {
+      "id": "P16-APPENDIX-LATEX-FATAL",
+      "passed": true,
+      "evidence": "fatal="
+    },
+    {
+      "id": "P16-APPENDIX-LATEX-BOXES",
+      "passed": true,
+      "evidence": "box_warnings=0"
+    },
+    {
+      "id": "P16-MAIN-PDF-PAGES",
+      "passed": true,
+      "evidence": "line=Pages:           4"
+    },
+    {
+      "id": "P16-APPENDIX-PDF-PAGES",
+      "passed": true,
+      "evidence": "line=Pages:           33"
+    },
+    {
+      "id": "P16-SCOPE-EXACT",
+      "passed": true,
+      "evidence": "unexpected="
+    },
+    {
+      "id": "P16-GATE-IDS",
+      "passed": true,
+      "evidence": "missing="
+    },
+    {
+      "id": "P16-GATE-RESULT",
+      "passed": true,
+      "evidence": "gate PASS"
+    }
+  ]
+}

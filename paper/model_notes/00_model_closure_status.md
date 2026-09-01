@@ -11,7 +11,9 @@
 - Phase 1 authorized: `Yes`
 - User approval recorded: `2026-08-30T13:11:40.9653412+08:00`
 - Current P0 issues: `None`
-- Deferred evidence issue: detailed Shi Gu claims remain `UNVERIFIED` and block Phase 16/18 claims if unresolved
+- Shi Gu evidence checkpoint: resolved from the user-identified August 22,
+  2024 PDF; the two cross-class comparisons retain a no-equality-test
+  precision limit
 
 ## Phase state machine
 
@@ -47,7 +49,7 @@ Legal transition:
 | 13 Equation dependency map | APPROVED | `02_equation_dependency_map.md` | `audit/phase13_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 14 Assumption discipline | APPROVED | `03_assumptions_and_scope.md` | `audit/phase14_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 15 Comparative statics/full draft | APPROVED | `08_comparative_statics.tex`; `12_full_derivation_draft.tex` | `audit/phase15_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
-| 16 Main/appendix candidates | NOT STARTED | `13_main_text_model_candidate.tex`; `14_appendix_model_candidate.tex` | — | No |
+| 16 Main/appendix candidates | APPROVED | `13_main_text_model_candidate.tex`; `14_appendix_model_candidate.tex` | `audit/phase16_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0 |
 | 17 Consistency audit | NOT STARTED | `07_consistency_audit.md` | — | No |
 | 18 Manuscript integration | BLOCKED | manuscript and final build | — | No |
 
