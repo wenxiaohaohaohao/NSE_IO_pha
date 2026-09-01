@@ -447,7 +447,40 @@ forbids is a direct policy assumption that \(p_m^*\) falls. Local
 continuous arguments fixed as stated. The binary regime \(M\) is compared by
 finite differences only.
 
-## 16. Forbidden arrows and identities
+## 16. Phase 15 comparative-static equation ledger
+
+Phase 15 adds no primitive or equilibrium condition. It differentiates or
+forms finite comparisons of already defined objects. Every local derivative
+below names a continuous argument; every \(M\) result is a finite comparison.
+
+| ID / LaTeX label | Left-hand object | Direct parents | Status | Required validation |
+|---|---|---|---|---|
+| P15-E01 / eq:p15-price-profit-derivatives | \(p_c^*,\pi_q,\pi_c\) | P02-E04, P02-E06 | optimization-derived comparative static | hold the other demand/cost arguments fixed; check units and \(\varepsilon>1\) |
+| P15-E02 / eq:p15-return-derivatives | \(R_q,R_c\) | P02-E06, P02-E07 | optimization-derived comparative static | preserve gross-return accounting and \(1-\beta\varphi>0\) |
+| P15-E03 / eq:p15-gap-capability | \(\Delta_{IE,k}\) | P04-E07, P02-E08, P03-E01--P03-E02 | route-value derivative | operating-cost term weakly positive; setup-cost term strictly positive |
+| P15-E04 / eq:p15-cutoff-derivatives | \(k_{\tau_E}^*,k_{p_m}^*\) | P04-E08, P15-E03 | finite-wedge implicit derivatives | hold \(q,m\) and the other continuous argument fixed; not a binary-\(M\) derivative |
+| P15-E05 / eq:p15-fixed-project-gain | \(W_i(1,p_m)-W_i(0,p_m)\) | P08-E02--P08-E03 | fixed-price finite policy comparison | positive-part identity; zero outside \(\mathcal C_i(p_m)\) |
+| P15-E06 / eq:p15-advancement-partials | \(x_{\Omega}^*,x_a^*,x_\kappa^*\) | P05-E09 | optimization-derived partials | \(\Omega_i>0\); hold route value fixed when varying \(a_i,\kappa\) |
+| P15-E07 / eq:p15-advancement-price | \(x_{p_m}^*\) | P06-E06--P06-E07, P15-E06 | fixed-candidate-price derivative | almost everywhere envelope; zero when \(\chi_i^E=0\) |
+| P15-E08 / eq:p15-fixed-advancement-gain | \(\Delta x_i(p_m)\) | P08-E05--P08-E06 | fixed-price finite policy comparison | strict iff \(\Delta\Omega_i(p_m)>0\) |
+| P15-E09 / eq:p15-supplier-partials | \(s_{j,p_m}^*,s_{j,z}^*\) | P06-E02--P06-E03 | supplier best-response derivatives | use \(\Psi_{ss}>0,\Psi_{sz}<0\) |
+| P15-E10 / eq:p15-study-demand-slope | \(D_{m,p}^{\mathrm{MAH}}\) | P06-E05--P06-E08, P15-E07 | aggregate price derivative | include advancement and deterministic-route terms; use atomless aggregation |
+| P15-E11 / eq:p15-equilibrium-ift | \(dp_m^*\) | P06-E10, P08-E10 | continuous equilibrium perturbation | denominator \(S_{m,p}-D_{m,p}>0\); never apply to binary \(M\) |
+| P15-E12 / eq:p15-equilibrium-price-order | \(p_m^1-p_m^0\) | P06-E10, P08-E11 | equilibrium finite policy comparison | strict iff post-MAH study demand is positive at \(p_m^0\) |
+| P15-E13 / eq:p15-value-attenuation | \(\Delta\Omega_i^{eq},\Delta\Omega_i^{dir}\) | P15-E12, P06-E06 | equilibrium versus fixed-price bound | use \(W_{i,p_m}^E=-b(m)<0\) pointwise |
+| P15-E14 / eq:p15-advancement-attenuation | \(\Delta x_i^{eq},\Delta x_i^{dir}\) | P15-E13, P05-E09 | equilibrium versus fixed-price bound | advancement mapping strictly increasing in the value gain |
+| P15-E15 / eq:p15-planning-change | \(\Delta\Lambda_i^{plan}\) | P08-E14, P15-E14 | equilibrium finite outcome comparison | predetermined \(a_i>0\) |
+| P15-E16 / eq:p15-retained-outcome-change | \(\Delta Y_i^{ret}\) | P08-E15, P08-E18, P15-E14 | exact outcome decomposition | separate advancement and retained-route composition |
+| P15-E17 / eq:p15-infinite-price-boundary | \(\lim_{p_m\to\infty}W_i(1,p_m)\) | P04-E02, P08-E03 | limiting-case result | \(b(m)>0\); preserve \(W_i^0\) |
+| P15-E18 / eq:p15-zero-advantage-boundary | \(\Delta\Omega_i,\Delta x_i\) | P15-E05, P15-E08 | zero-effect boundary | entrusted value never exceeds old maximum |
+| P15-E19 / eq:p15-quadratic-boundary | \(x_i^*,\Delta x_i\) at \(\nu=1\) | P05-E09, P15-E08 | curvature boundary | verify exact linear mapping |
+| P15-E20 / eq:p15-novelty-boundary | \(\Delta\Omega_i=\sum_g\rho_g\Delta\Omega_{ig}\) | P08-E09 | mixture boundary | check both zero-share cases and no fixed class ranking |
+
+The assembled `12_full_derivation_draft.tex` inputs every approved Phase 1--11
+module plus `08_comparative_statics.tex`. It creates no equation of its own and
+no new dependency edge.
+
+## 17. Forbidden arrows and identities
 
 | Forbidden statement | Reason / controlling requirement |
 |---|---|
@@ -486,7 +519,7 @@ finite differences only.
 | $p_m^*$ selected before evaluating $r_i^*$ and $x_i^*$ | the price is the fixed point of their induced demand and supplier capacity |
 | a second market-clearing equation | Phase 6 closes only qualified manufacturing-service capacity |
 
-## 17. Update rule
+## 18. Update rule
 
 Before any later Phase writes a formula, it must:
 

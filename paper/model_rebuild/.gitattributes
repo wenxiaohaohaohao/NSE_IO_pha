@@ -122,3 +122,15 @@ audit/phase14_compile_console.txt -text
 audit/phase14_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
 audit/phase14_compile_wrapper.tex -text
 scripts/audit_phase14.ps1 -text
+
+# Phase 15 hash-protected artifacts.
+08_comparative_statics.tex -text
+12_full_derivation_draft.tex -text
+audit/phase15_gate_report.md -text
+audit/phase15_compile_console.txt -text
+audit/phase15_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
+audit/phase15_compile_wrapper.tex -text
+audit/phase15_full_compile_console.txt -text
+audit/phase15_full_compile_console.txt whitespace=-blank-at-eol,-blank-at-eof
+scripts/audit_phase15.ps1 -text
+scripts/compile_phase15_full_draft.ps1 -text

@@ -1,0 +1,605 @@
+{
+  "phase": 15,
+  "expected_status": "APPROVED",
+  "status": "APPROVED",
+  "generated_at": "2026-09-01T12:44:53.5862627+08:00",
+  "passed": 119,
+  "failed": 0,
+  "checks": [
+    {
+      "id": "P15-HASH-BASE",
+      "passed": true,
+      "evidence": "expected=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24 actual=F6C11377D71E4E25D40FFB8AC9FE2EA7AA051AD7E123BA7E3A32DBA895342B24"
+    },
+    {
+      "id": "P15-HASH-AMD11",
+      "passed": true,
+      "evidence": "expected=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9 actual=D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9"
+    },
+    {
+      "id": "P15-HASH-AMD12-IMAGE",
+      "passed": true,
+      "evidence": "expected=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5 actual=1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5"
+    },
+    {
+      "id": "P15-HASH-AMD12-TEXT",
+      "passed": true,
+      "evidence": "expected=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E actual=06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E"
+    },
+    {
+      "id": "P15-HASH-EFFECTIVE",
+      "passed": true,
+      "evidence": "expected=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666 actual=855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666"
+    },
+    {
+      "id": "P15-GIT-BRANCH",
+      "passed": true,
+      "evidence": "branch=codex/mah-model-rebuild"
+    },
+    {
+      "id": "P15-GIT-ENTRY",
+      "passed": true,
+      "evidence": "head=90cb8b867209f3776d14571544c8a29a70632a03"
+    },
+    {
+      "id": "P15-GIT-REMOTE",
+      "passed": true,
+      "evidence": "remote=90cb8b867209f3776d14571544c8a29a70632a03"
+    },
+    {
+      "id": "P15-MANUSCRIPT-READ-ONLY",
+      "passed": true,
+      "evidence": "changed="
+    },
+    {
+      "id": "P15-ZIP-ISOLATED",
+      "passed": true,
+      "evidence": "count=0"
+    },
+    {
+      "id": "P15-FILE-08_comparative_statics.tex",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\08_comparative_statics.tex"
+    },
+    {
+      "id": "P15-FILE-12_full_derivation_draft.tex",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\12_full_derivation_draft.tex"
+    },
+    {
+      "id": "P15-FILE-08_required_propositions.tex",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\08_required_propositions.tex"
+    },
+    {
+      "id": "P15-FILE-02_equation_dependency_map.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_notes\\02_equation_dependency_map.md"
+    },
+    {
+      "id": "P15-FILE-phase15_preflight.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase15_preflight.md"
+    },
+    {
+      "id": "P15-FILE-phase15_independent_derivation_audit.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase15_independent_derivation_audit.md"
+    },
+    {
+      "id": "P15-FILE-phase15_pdf_render_audit.md",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase15_pdf_render_audit.md"
+    },
+    {
+      "id": "P15-FILE-phase15_compile_wrapper.tex",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase15_compile_wrapper.tex"
+    },
+    {
+      "id": "P15-FILE-phase15_compile_console.txt",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase15_compile_console.txt"
+    },
+    {
+      "id": "P15-FILE-phase15_full_compile_console.txt",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\phase15_full_compile_console.txt"
+    },
+    {
+      "id": "P15-FILE-phase15_compile_wrapper.log",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase15\\phase15_compile_wrapper.log"
+    },
+    {
+      "id": "P15-FILE-phase15_compile_wrapper.pdf",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase15\\phase15_compile_wrapper.pdf"
+    },
+    {
+      "id": "P15-FILE-12_full_derivation_draft.log",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase15_full\\12_full_derivation_draft.log"
+    },
+    {
+      "id": "P15-FILE-12_full_derivation_draft.pdf",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\audit\\build_phase15_full\\12_full_derivation_draft.pdf"
+    },
+    {
+      "id": "P15-FILE-compile_phase15_full_draft.ps1",
+      "passed": true,
+      "evidence": "path=D:\\working_paper\\DANNI_worktrees\\mah-model-rebuild\\paper\\model_rebuild\\scripts\\compile_phase15_full_draft.ps1"
+    },
+    {
+      "id": "P15-STATE-P14",
+      "passed": true,
+      "evidence": "Phase 14 approved"
+    },
+    {
+      "id": "P15-STATE-P15",
+      "passed": true,
+      "evidence": "expected=| 15 Comparative statics/full draft | APPROVED |"
+    },
+    {
+      "id": "P15-STATE-P16",
+      "passed": true,
+      "evidence": "Phase 16 not started"
+    },
+    {
+      "id": "P15-MATRIX-P15-D01",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-P15-G01",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-PROOF-01",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-PROOF-02",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-PROOF-03",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-PROOF-04",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-PROOF-05",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-PROOF-06",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-PROOF-07",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-PROOF-08",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-PROOF-09",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-PROOF-10",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-ECON-01",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-ECON-02",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-ECON-03",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-ECON-04",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-ECON-05",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-ECON-06",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-ECON-07",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-MATRIX-QA-ECON-08",
+      "passed": true,
+      "evidence": "rows=1"
+    },
+    {
+      "id": "P15-LABEL-COUNT",
+      "passed": true,
+      "evidence": "count=20"
+    },
+    {
+      "id": "P15-LABEL-UNIQUE",
+      "passed": true,
+      "evidence": "unique=20"
+    },
+    {
+      "id": "P15-MAP-ROW-COUNT",
+      "passed": true,
+      "evidence": "count=20"
+    },
+    {
+      "id": "P15-MAP-COVERAGE",
+      "passed": true,
+      "evidence": "missing= extra="
+    },
+    {
+      "id": "P15-MAP-PARENT-8FF32EF7",
+      "passed": true,
+      "evidence": "required=P15-E08 / eq:p15-fixed-advancement-gain"
+    },
+    {
+      "id": "P15-MAP-PARENT-B217A46A",
+      "passed": true,
+      "evidence": "required=P08-E05--P08-E06"
+    },
+    {
+      "id": "P15-MAP-PARENT-DD83099E",
+      "passed": true,
+      "evidence": "required=P15-E11 / eq:p15-equilibrium-ift"
+    },
+    {
+      "id": "P15-MAP-PARENT-FE340DA3",
+      "passed": true,
+      "evidence": "required=P06-E10, P08-E10"
+    },
+    {
+      "id": "P15-MAP-PARENT-C4C485CE",
+      "passed": true,
+      "evidence": "required=P15-E16 / eq:p15-retained-outcome-change"
+    },
+    {
+      "id": "P15-MAP-PARENT-33CCEB16",
+      "passed": true,
+      "evidence": "required=P08-E15, P08-E18, P15-E14"
+    },
+    {
+      "id": "P15-MAP-PARENT-2CBB9A2E",
+      "passed": true,
+      "evidence": "required=P15-E20 / eq:p15-novelty-boundary"
+    },
+    {
+      "id": "P15-MAP-PARENT-0DBD3945",
+      "passed": true,
+      "evidence": "required=P08-E09"
+    },
+    {
+      "id": "P15-FULL-INPUTS",
+      "passed": true,
+      "evidence": "inputs=01_primitives_and_timing.tex;02_demand_profit_derivation.tex;03_internal_external_technologies.tex;04_route_values_and_sorting.tex;05_rd_problem.tex;06_cmo_supply_demand_equilibrium.tex;07_equilibrium_definition.tex;08_required_propositions.tex;08_comparative_statics.tex;09_observed_outcomes.tex;10_empirical_mapping.tex;11_extensions_not_baseline.tex"
+    },
+    {
+      "id": "P15-FULL-NOT-CANDIDATE",
+      "passed": true,
+      "evidence": "full draft boundary"
+    },
+    {
+      "id": "P15-SECTION-88083683",
+      "passed": true,
+      "evidence": "required=Commercial pricing and return"
+    },
+    {
+      "id": "P15-SECTION-FD6425C5",
+      "passed": true,
+      "evidence": "required=Commercialization-route choice at fixed CMO price"
+    },
+    {
+      "id": "P15-SECTION-62667245",
+      "passed": true,
+      "evidence": "required=Project advancement at fixed CMO price"
+    },
+    {
+      "id": "P15-SECTION-CFEBC2B8",
+      "passed": true,
+      "evidence": "required=CMO supply, demand, and continuous equilibrium derivatives"
+    },
+    {
+      "id": "P15-SECTION-E417DAE8",
+      "passed": true,
+      "evidence": "required=Binary reform at the equilibrium CMO price"
+    },
+    {
+      "id": "P15-SECTION-E3EDFCDE",
+      "passed": true,
+      "evidence": "required=Planning-stage and realized-product finite comparisons"
+    },
+    {
+      "id": "P15-SECTION-84C03835",
+      "passed": true,
+      "evidence": "required=Mandatory limiting-case audit"
+    },
+    {
+      "id": "P15-TEXT-81ECB3A9",
+      "passed": true,
+      "evidence": "required=Object and held-fixed variables"
+    },
+    {
+      "id": "P15-TEXT-22873C06",
+      "passed": true,
+      "evidence": "required=Supplier object and held-fixed variables"
+    },
+    {
+      "id": "P15-TEXT-78D76B0B",
+      "passed": true,
+      "evidence": "required=Object and finite comparison"
+    },
+    {
+      "id": "P15-TEXT-1986560F",
+      "passed": true,
+      "evidence": "required=Economic interpretation and empirical prediction"
+    },
+    {
+      "id": "P15-TEXT-95EBCC77",
+      "passed": true,
+      "evidence": "required=Interpretation and prediction"
+    },
+    {
+      "id": "P15-TEXT-C043B11B",
+      "passed": true,
+      "evidence": "required=Sufficient conditions and zero effects"
+    },
+    {
+      "id": "P15-TEXT-430422B5",
+      "passed": true,
+      "evidence": "required=Conditions and zero effects"
+    },
+    {
+      "id": "P15-TEXT-162FABBB",
+      "passed": true,
+      "evidence": "required=There is no derivative with respect to binary \\(M\\)"
+    },
+    {
+      "id": "P15-TEXT-31071F81",
+      "passed": true,
+      "evidence": "required=This formula is not applied to binary \\(M\\)"
+    },
+    {
+      "id": "P15-TEXT-C785DBD7",
+      "passed": true,
+      "evidence": "required=fixed-candidate-price derivative"
+    },
+    {
+      "id": "P15-TEXT-CE4D90C3",
+      "passed": true,
+      "evidence": "required=equilibrium CMO-price feedback"
+    },
+    {
+      "id": "P15-TEXT-D641B1A9",
+      "passed": true,
+      "evidence": "required=\\Delta_{IE,k}"
+    },
+    {
+      "id": "P15-TEXT-45EEB317",
+      "passed": true,
+      "evidence": "required=k_i\\to\\infty"
+    },
+    {
+      "id": "P15-TEXT-9559BA1C",
+      "passed": true,
+      "evidence": "required=k_i<\\underline{k}(m)"
+    },
+    {
+      "id": "P15-TEXT-336A4CB6",
+      "passed": true,
+      "evidence": "required=M=0"
+    },
+    {
+      "id": "P15-TEXT-C80B0D0E",
+      "passed": true,
+      "evidence": "required=p_m\\to\\infty"
+    },
+    {
+      "id": "P15-TEXT-9DC368D7",
+      "passed": true,
+      "evidence": "required=Zero entrusted-route advantage"
+    },
+    {
+      "id": "P15-TEXT-867A7AC3",
+      "passed": true,
+      "evidence": "required=Perfectly elastic CMO supply"
+    },
+    {
+      "id": "P15-TEXT-27F0985E",
+      "passed": true,
+      "evidence": "required=For \\(\\nu=1\\)"
+    },
+    {
+      "id": "P15-TEXT-55B2EA35",
+      "passed": true,
+      "evidence": "required=If \\(\\rho_O=0\\)"
+    },
+    {
+      "id": "P15-TEXT-9D46C2E7",
+      "passed": true,
+      "evidence": "required=if \\(\\rho_{\\mathrm{Inc}}=0\\)"
+    },
+    {
+      "id": "P15-TEXT-6528CC58",
+      "passed": true,
+      "evidence": "required=supports of positive entrusted surplus reverses their ordering"
+    },
+    {
+      "id": "P15-TEXT-B3FB1337",
+      "passed": true,
+      "evidence": "required=not upstream research"
+    },
+    {
+      "id": "P15-TEXT-B006CBC1",
+      "passed": true,
+      "evidence": "required=manufacturer records can test the assignment prediction"
+    },
+    {
+      "id": "P15-NO-FORBIDDEN-53D76F2D",
+      "passed": true,
+      "evidence": "forbidden=\\frac{\\partial M"
+    },
+    {
+      "id": "P15-NO-FORBIDDEN-3DBF263D",
+      "passed": true,
+      "evidence": "forbidden=\\partial x_i^*/\\partial M"
+    },
+    {
+      "id": "P15-NO-FORBIDDEN-5C21CB1E",
+      "passed": true,
+      "evidence": "forbidden=\\partial p_m^*/\\partial M"
+    },
+    {
+      "id": "P15-NO-FORBIDDEN-73762692",
+      "passed": true,
+      "evidence": "forbidden=M\\Rightarrow innovation"
+    },
+    {
+      "id": "P15-NO-FORBIDDEN-FBD69840",
+      "passed": true,
+      "evidence": "forbidden=x_{ig}\\geq0"
+    },
+    {
+      "id": "P15-NO-FORBIDDEN-DD4D0E45",
+      "passed": true,
+      "evidence": "forbidden=p\\equiv p_m"
+    },
+    {
+      "id": "P15-NO-FORBIDDEN-26A1054E",
+      "passed": true,
+      "evidence": "forbidden=\\Delta\\Omega_{iO}>\\Delta\\Omega_{i\\mathrm{Inc}}\\quad\\text{always}"
+    },
+    {
+      "id": "P15-P8-CORRECTION",
+      "passed": true,
+      "evidence": "P1 wording corrected"
+    },
+    {
+      "id": "P15-INDEPENDENT-6A723B09",
+      "passed": true,
+      "evidence": "required=Product pricing"
+    },
+    {
+      "id": "P15-INDEPENDENT-5CB781AD",
+      "passed": true,
+      "evidence": "required=Project advancement"
+    },
+    {
+      "id": "P15-INDEPENDENT-41E2B083",
+      "passed": true,
+      "evidence": "required=Qualified-capacity supply"
+    },
+    {
+      "id": "P15-INDEPENDENT-C2D878F3",
+      "passed": true,
+      "evidence": "required=Dimension audit"
+    },
+    {
+      "id": "P15-INDEPENDENT-5DACBD8E",
+      "passed": true,
+      "evidence": "required=Mandatory boundary audit"
+    },
+    {
+      "id": "P15-INDEPENDENT-FEB1167B",
+      "passed": true,
+      "evidence": "required=no P0"
+    },
+    {
+      "id": "P15-INDEPENDENT-AB2C35D2",
+      "passed": true,
+      "evidence": "required=P1 wording"
+    },
+    {
+      "id": "P15-INDEPENDENT-7EEB6593",
+      "passed": true,
+      "evidence": "required=Phase 15 P1 remains"
+    },
+    {
+      "id": "P15-RENDER-AUDIT",
+      "passed": true,
+      "evidence": "seven-page render sample passed"
+    },
+    {
+      "id": "P15-ALL-LABELS-UNIQUE",
+      "passed": true,
+      "evidence": "duplicates="
+    },
+    {
+      "id": "P15-WRAPPER-LATEX-FATAL",
+      "passed": true,
+      "evidence": "fatal="
+    },
+    {
+      "id": "P15-WRAPPER-LATEX-BOXES",
+      "passed": true,
+      "evidence": "box_warnings=0"
+    },
+    {
+      "id": "P15-FULL-LATEX-FATAL",
+      "passed": true,
+      "evidence": "fatal="
+    },
+    {
+      "id": "P15-FULL-LATEX-BOXES",
+      "passed": true,
+      "evidence": "box_warnings=0"
+    },
+    {
+      "id": "P15-PDF-PAGES",
+      "passed": true,
+      "evidence": "line=Pages:           36"
+    },
+    {
+      "id": "P15-SCOPE-EXACT",
+      "passed": true,
+      "evidence": "unexpected="
+    },
+    {
+      "id": "P15-GATE-IDS",
+      "passed": true,
+      "evidence": "missing="
+    },
+    {
+      "id": "P15-GATE-RESULT",
+      "passed": true,
+      "evidence": "gate PASS"
+    }
+  ]
+}
