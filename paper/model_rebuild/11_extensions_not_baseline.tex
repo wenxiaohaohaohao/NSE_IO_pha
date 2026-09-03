@@ -3,9 +3,11 @@
 \label{sec:p11-extensions}
 
 \textbf{Separation rule.} Every object in this section is inactive in the
-baseline. None enters its symbols, assumptions, equilibrium, propositions, or
-empirical mapping. Activating any block would require a distinct model
-specification with its own assumptions, proofs, and data justification.
+baseline. None enters baseline symbols, assumptions, equilibrium, or
+propositions. Five blocks remain only documented possibilities. Following
+explicit approval on 2026-09-03, Extension 6 is formalized in the separate
+module \texttt{15\_research\_development\_patent\_extension.tex}, with its
+own assumptions, proofs, CMO-price feedback, and empirical boundaries.
 
 \subsection{Extension 1: Smooth route choice}
 \label{subsec:p11-smooth-choice}
@@ -78,23 +80,21 @@ qualified-capacity market at \(p_m^*\).
 \subsection{Extension 6: Research-versus-development allocation}
 \label{subsec:p11-research-development}
 
-An optional, separately specified block may use two controls: upstream research
-\(x_i^R\) and project development \(x_i^D\). A resource or financing
-constraint might link them. The block could be used to study
-\(x_i^D\uparrow\) together with \(x_i^R\downarrow\). The block is not
-implemented here: no constraint, objective, FOC, patent-production function,
-or policy sign is specified.
+This block is now activated only as a separately tagged extension. It uses
+upstream research \(x_i^R\), project development \(x_i^D\), a common resource
+ceiling, and an explicit patent-production equation. The complete objective,
+KKT system, slack/binding comparative statics, binary-policy mapping, and
+boundary cases appear in Section~\ref{sec:erd-extension}.
 
-Activation requires a separate decision because it adds a control dimension,
-can shift the paper toward financial constraints, and overlaps with the
-empirical mechanism studied by Shi Gu. The baseline retains one common
-\(x_i\), commercialization organization, retained authorization,
-manufacturing-capability matching, and CMO scarcity.
+The baseline continues to retain one common \(x_i\), commercialization
+organization, retained authorization, manufacturing-capability matching, and
+CMO scarcity. No baseline result cites \(x_i^R\), \(x_i^D\), the resource
+ceiling, or the patent-production equation.
 
 \subsection{Isolation conclusion}
 \label{subsec:p11-isolation}
 
-The six optional blocks are documented so that future work has explicit
-insertion points. They remain inactive and cannot be cited as baseline
-mechanisms or assumptions. Conversely, the baseline does not import this
-file or depend on any extension-only symbol.
+The first five optional blocks remain inactive. The sixth is active only in
+its standalone extension and cannot be cited as a baseline mechanism or
+assumption. Conversely, the baseline does not depend on any extension-only
+symbol or equation.

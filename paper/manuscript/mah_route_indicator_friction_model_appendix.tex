@@ -25,6 +25,8 @@
 \newtheorem{corollary}{Corollary}
 \newtheorem{remark}{Remark}
 \newtheorem{definition}{Definition}
+\newtheorem{extensionproposition}{Extension Proposition}
+\newtheorem{extensioncorollary}{Extension Corollary}
 
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\1}{\mathbf{1}}
@@ -66,8 +68,10 @@ The baseline has one binary policy channel, \(M\to\tau_E(M)\), one common
 control \(x_i\), deterministic choice among \(I,E,T,A\), route-independent
 downstream success, and one scalar qualified-capacity equilibrium. It contains
 no entry, product-market, labor, capital, portfolio, dynamic-firm, or welfare
-closure. The final section documents possible extensions behind an explicit
-strict separation from the baseline; none of those objects is used by the baseline.
+closure. The final sections document extensions behind an explicit strict
+separation from the baseline. Five remain inactive. A separately approved
+research--development allocation block is fully formalized, but none of its
+objects is used by the baseline.
 
 \input{../model_rebuild/01_primitives_and_timing.tex}
 \input{../model_rebuild/02_demand_profit_derivation.tex}
@@ -126,12 +130,15 @@ with either class responding more, less, or not at all.
 initiate a first clinical trial and enter development (Table IX, p.~52).
 That result is an extensive-margin transition outside the present
 fixed-population partial equilibrium and may motivate a separately specified
-entry extension. Heterogeneity by financial resources may likewise motivate
-financing or research-versus-development allocation extensions, but the
-evidence neither identifies nor requires a binding constraint. None of these
-mechanisms enters the baseline.
+entry extension. Heterogeneity by financial resources motivates the
+separately specified research-versus-development allocation extension below.
+That extension gives conditions under which a binding resource ceiling
+generates more development and fewer patent applications. The evidence does
+not itself identify the constraint's KKT multiplier, and none of these
+extension objects enters the baseline.
 
 \input{../model_rebuild/11_extensions_not_baseline.tex}
+\input{../model_rebuild/15_research_development_patent_extension.tex}
 
 \clearpage
 \bibliographystyle{aer}

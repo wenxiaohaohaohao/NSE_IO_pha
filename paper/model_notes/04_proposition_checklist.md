@@ -169,3 +169,78 @@ separately and are not counted as economic assumptions.
 - Proposition rows with canonical assumptions: 6.
 - Novelty corollary rows with canonical assumptions: 1.
 - Proposition conclusions written as assumptions: 0.
+
+## Separately activated extension results (2026-09-03)
+
+These results do not alter the count of six baseline propositions and one
+baseline novelty corollary.
+
+### Extension Proposition 1 - Slack-resource response
+
+- Status: formal statement and proof complete.
+- File: `15_research_development_patent_extension.tex`.
+- Assumptions used: `E-RD-01`--`E-RD-04`.
+- Fixed object: candidate CMO price; differentiation is with respect to the
+  continuous value argument $\Omega_i$, not binary $M$.
+- FOC/SOC: the two interior FOCs form a linear system; the determinant
+  $\Delta_i>0$ is exactly the negative-definite-Hessian condition.
+- Result: $\partial x_i^{D,u}/\partial\Omega_i>0$ and
+  $\partial x_i^{R,u}/\partial\Omega_i\geq0$.
+- Zero case: the research derivative is zero when $\gamma_i=0$.
+- Boundary: corners give one-sided KKT inequalities; a regime switch requires
+  direct finite comparison.
+
+### Extension Proposition 2 - Binding-resource reallocation
+
+- Status: formal statement and proof complete.
+- File: `15_research_development_patent_extension.tex`.
+- Assumptions used: `E-RD-01`--`E-RD-05`.
+- Fixed object: local interior binding regime with
+  $x_i^R+x_i^D=\bar X_i$ and $\varpi_i>0$.
+- Result: under $a_i>\gamma_i(x_i^D-x_i^R)$,
+  $\partial x_i^D/\partial\Omega_i>0$ and
+  $\partial x_i^R/\partial\Omega_i<0$.
+- Project-mass check: despite reallocation,
+  $\partial N_i^*/\partial\Omega_i$ equals a nonnegative squared term divided
+  by a positive denominator.
+- Zero/ambiguity cases: equality gives no local reallocation; reversing the
+  sufficient condition reverses the allocation signs; failure does not
+  authorize a patent-decline claim.
+
+### Extension Corollary 1 - Patent sign
+
+- Status: formal statement complete.
+- Assumptions used: `E-RD-01`--`E-RD-06` plus a strict net equilibrium value
+  gain.
+- Mapping: $P_i^A=h_i(x_i^R)$ with $h_i'>0$.
+- Slack result: patents weakly rise and are locally unchanged at
+  $\gamma_i=0$.
+- Binding result: patents fall under the development-biased condition.
+- Finite-policy discipline: if the resource regime changes between $M=0$ and
+  $M=1$, compute the two closed-form/KKT solutions directly.
+- Quality boundary: an unchanged granted/core-patent margin requires an
+  additional local-inelasticity composition condition; it is not a general
+  corollary.
+
+### Extension CMO closure result
+
+- Status: derivation complete; no new numbered proposition needed.
+- Assumptions used: `E-RD-07` plus the baseline CMO regularity conditions.
+- Demand replacement: $a_ix_i^*$ becomes
+  $N_i^*=(a_i+\gamma_i x_i^{R,*})x_i^{D,*}$.
+- Regime-switch check: revealed preference proves $N_i^*$ is nondecreasing in
+  $\Omega_i$ without differentiating through the kink.
+- Market result: study demand remains weakly decreasing in the candidate CMO
+  price, so the same strictly increasing supply schedule selects at most one
+  price.
+- Scope: no second market clearing, direct supply shift, or welfare closure.
+
+## Combined count and scope audit
+
+- Baseline substantive propositions: 6.
+- Baseline corollaries: 1.
+- Separately labeled extension propositions: 2.
+- Separately labeled extension corollaries: 1.
+- New baseline propositions or controls: 0.
+- New extension controls: 2, activated by explicit user approval.
+- Unconditional patent-sign claims: 0.

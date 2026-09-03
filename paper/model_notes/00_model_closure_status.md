@@ -53,6 +53,25 @@ Legal transition:
 | 17 Consistency audit | APPROVED | `07_consistency_audit.md` | `audit/phase17_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0; Phase 18 requires separate explicit approval |
 | 18 Manuscript integration | APPROVED | manuscript and final build | `audit/phase18_gate_report.md` | Yes — explicit Phase 18 approval; zero P0/P1 |
 
+## Post-Phase-18 approved extension
+
+- Extension: research--development resource allocation and patent response.
+- User authorization: explicit selection of the second option on 2026-09-03.
+- Baseline status: unchanged; all six baseline propositions, the common
+  baseline $x_i$, and the single CMO market remain intact.
+- Formal module:
+  `paper/model_rebuild/15_research_development_patent_extension.tex`.
+- Added extension objects: $x_i^R,x_i^D,\bar X_i,N_i,P_i^A$ and their
+  extension-only primitives/multipliers.
+- Closure: two-control strictly concave KKT problem plus the same scalar CMO
+  market. No capital-market clearing equation is added.
+- Patent prediction: conditional. A binding resource ceiling and the
+  development-biased value-shift condition generate development up and
+  patents down after a strict equilibrium increase in $\Omega_i$; a slack
+  resource constraint does not generate research crowd-out.
+- Historical Phase 1--18 candidates, gates, frozen specification, and audit
+  evidence remain unchanged.
+
 ## Scope protection
 
 - `paper/manuscript/` was byte-identical to the locked base through the
@@ -60,3 +79,6 @@ Legal transition:
   the bounded manuscript changes specified for Phase 18.
 - The original checkout's modified collaborator ZIP is outside this worktree and must never enter this branch.
 - Phase 1 began after the approved specification commit was pushed. Phase 2 and subsequent phases are authorized under `EXEC-GOV-001`, subject to their full internal gates and mandatory-pause conditions.
+- The 2026-09-03 extension authorization applies only to the separately
+  tagged post-Phase-18 module and corresponding current-manuscript text. It
+  does not reopen or rewrite the frozen phase artifacts.

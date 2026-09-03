@@ -37,6 +37,7 @@ individual firm's choice.
 | $\mathsf{P}$ | expected measure of viable planning-stage projects in one cohort |
 | $\mathsf{K}$ | manufacturing capability/requirement units |
 | $\mathsf{B}$ | qualified manufacturing-service capacity units |
+| $\mathsf{PA}$ | expected patent-application count units |
 | $1$ | dimensionless index, label, probability, or distribution mass |
 
 One decision cohort is the project-planning time unit. Phase 2 defines product-output and within-period monetary units; Phase 3 technology costs use those same units.
@@ -201,4 +202,34 @@ their first formula in an authorized later Phase.
 Phase 11 extension notation is deliberately excluded from the 83-row active
 baseline registry. Every such symbol is defined locally in
 11_extensions_not_baseline.tex and is inactive unless a later, separate
-approval activates the corresponding extension.
+approval activates the corresponding extension. The user separately approved
+the research--development allocation extension on 2026-09-03. Its objects are
+registered below and remain outside the 83-object baseline count.
+
+## 8. Activated extension-only object registry
+
+| Symbol | Exact category | Definition | Domain / units | Direct MAH shift? |
+|---|---|---|---|---|
+| $x_i^R$ | control | upstream research allocation in the separate research--development extension | $x_i^R\geq0$, units $\mathsf X$ | No; responds only through the optimization problem |
+| $x_i^D$ | control | development / project-advancement allocation in the extension; counterpart of baseline $x_i$ only when the extension is active | $x_i^D\geq0$, units $\mathsf X$ | No; responds only through $\Omega_i$ |
+| $\bar X_i$ | exogenous firm characteristic | within-cohort innovation-resource ceiling shared by research and development | $\bar X_i>0$, units $\mathsf X$ | No |
+| $\gamma_i$ | exogenous firm characteristic | research--development complementarity in planning-stage project production | $\gamma_i\geq0$, units $\mathsf P/\mathsf X^2$ | No |
+| $u_i$ | exogenous firm characteristic | private marginal value of upstream research before its quadratic cost | $u_i>0$, units $\mathsf C/\mathsf X$ | No |
+| $\kappa_{Ri}$ | exogenous firm characteristic | quadratic curvature of upstream-research cost | $\kappa_{Ri}>0$, units $\mathsf C/\mathsf X^2$ | No |
+| $\kappa_{Di}$ | exogenous firm characteristic | quadratic curvature of development cost in the extension | $\kappa_{Di}>0$, units $\mathsf C/\mathsf X^2$ | No |
+| $N_i(x_i^R,x_i^D)$ | endogenous firm-level object | extension planning-stage project mass, $(a_i+\gamma_i x_i^R)x_i^D$ | units $\mathsf P$ | Indirect through optimized allocations |
+| $t_i$ | endogenous firm-level object | discounted project value argument, $t_i=\beta\Omega_i$ | units $\mathsf C/\mathsf P$ | Indirect through $\Omega_i$ only |
+| $\Delta_i(t_i)$ | endogenous firm-level object | extension concavity index, $\kappa_{Ri}\kappa_{Di}-(t_i\gamma_i)^2$ | units $\mathsf C^2/\mathsf X^4$ | Indirect through $t_i$ |
+| $\varpi_i$ | endogenous firm-level object | KKT multiplier on $x_i^R+x_i^D\leq\bar X_i$ | nonnegative, units $\mathsf C/\mathsf X$ | Indirect only |
+| $\zeta_i^R,\zeta_i^D$ | endogenous firm-level object | KKT multipliers on nonnegativity of research and development | nonnegative, units $\mathsf C/\mathsf X$ | Indirect only |
+| $h_i(\cdot)$ | primitive parameter | patent-application production/measurement function in the extension | maps $\mathsf X$ to $\mathsf{PA}$ | No direct shift |
+| $P_i^A$ | derived observed outcome | expected patent applications, $h_i(x_i^R)$ | units $\mathsf{PA}$ | Indirect through $x_i^R$ only |
+| $P_i^H,P_i^L$ | derived observed outcome | optional high- and low-value components of patent applications used only for the composition boundary | units $\mathsf{PA}$ | Indirect only |
+| $D_{m,RD}^{\mathrm{MAH}}$ | endogenous firm-level object | extension study-related CMO demand using $N_i^*$ in place of $a_ix_i^*$ | units $\mathsf B$ | Indirect through route value and optimized allocations |
+| $p_{m,RD}^h$ | equilibrium price | CMO clearing price under the extension in regime $h\in\{0,1\}$ | units $\mathsf C/\mathsf B$ | Endogenous; no direct shift |
+| $\Delta\Omega_{i,RD}^{\mathrm{eq}}$ | endogenous firm-level object | finite equilibrium value gain under the extension's CMO fixed point | units $\mathsf C/\mathsf P$ | Indirect through route $E$ and CMO price |
+
+No entry in this table changes the meaning or count of baseline objects. In
+particular, $x_i^R$ is not $x_i$, patent applications are not
+$\lambda_i^{\mathrm{plan}}$, and $\bar X_i$ is distinct from the appendix-only
+continuation benchmark $B_i$ and CMO capacity unit $\mathsf B$.

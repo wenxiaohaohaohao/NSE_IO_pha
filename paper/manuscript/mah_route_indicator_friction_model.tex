@@ -54,10 +54,15 @@ qualified manufacturing services is endogenous. Reform effects are confined
 to project--developer pairs for which the new route improves on the best old
 option and can be attenuated by service scarcity. The baseline does not treat
 MAH as a demand, scientific-productivity, downstream-success, or patenting
-shock, and it imposes no original-versus-incremental response ranking.
+shock, and it imposes no original-versus-incremental response ranking. A
+separate resource-allocation extension endogenizes upstream research and
+patent applications. It predicts that a strict commercialization-value gain
+raises development but can reduce research and patenting when a common
+innovation-resource constraint binds; without that constraint, research does
+not fall.
 \end{abstract}
 
-\noindent\textit{Keywords:} MAH; original-drug innovation; commercialization frictions; entrusted production; route choice.\\
+\noindent\textit{Keywords:} MAH; pharmaceutical innovation; commercialization frictions; entrusted production; resource allocation; patenting.\\
 \noindent\textit{JEL codes:} D22; L65; O31; O38; I18.
 
 \section{Introduction}
@@ -98,9 +103,10 @@ outsourcing raises clinical-trial registrations among innovators without
 production facilities, while patent applications fall among firms with fewer
 financial resources. The paper also reports heterogeneous responses across
 development stages and drug classes. These findings motivate empirical
-heterogeneity tests, but they do not make patenting a baseline outcome here,
-do not impose an original-versus-incremental ranking, and do not import a
-financial-constraint mechanism into the model.
+heterogeneity tests and the separate resource-allocation extension developed
+below. The extension makes patent applications endogenous without turning
+them into a baseline outcome or a direct MAH shock. It also preserves the
+baseline's refusal to impose an original-versus-incremental ranking.
 
 For a development-economics audience, the relevant bottleneck is a regulated
 complementary asset. MAH can relax a manufacturing bottleneck for
@@ -125,8 +131,9 @@ interfaces for project-level organization, retained outcomes, and service
 scarcity without claiming that approval-side data separately identify every
 primitive friction.
 
-The model is presented in two layers. The main text gives the shortest
-complete version needed for the paper's argument. The technical appendix
+The model is presented in three layers. The main text gives the shortest
+complete commercialization baseline, then adds a separately tagged
+research--development allocation extension. The technical appendix
 records primitives, payoff accounting, pricing derivations, deterministic
 sorting, project advancement, qualified-capacity equilibrium, comparative
 statics, observed outcomes, and explicitly separated extensions.
@@ -463,6 +470,108 @@ mixture \(\rho_gF_g\). The baseline permits either class to have a zero or
 larger response and imposes no original-versus-incremental ranking. Patent
 applications are not a baseline endogenous outcome.
 
+\section{Extension: Research--Development Allocation and Patenting}
+\label{sec:main-rd-extension}
+
+The baseline establishes how MAH changes the anticipated value of advancing
+a viable project, but deliberately does not divide innovation resources
+between upstream research and downstream development. This section adds that
+division without changing the route model. The route block continues to
+supply \(\Omega_i(M,p_m)\), and \(M\) continues to act directly only through
+the institutional wedge \(\tau_E(M)\). The extension replaces the baseline
+control \(x_i\) with two extension-only controls: upstream research
+\(x_i^R\) and development / project advancement \(x_i^D\).
+
+Let \(\bar X_i\) denote a fixed innovation-resource ceiling and let
+\(\gamma_i\geq0\) measure research--development complementarity. Conditional
+on the anticipated route value \(\Omega_i\), the developer solves
+\begin{equation}
+  \begin{aligned}
+  \max_{x_i^R,x_i^D\geq0}\quad
+  &u_i x_i^R-\frac{\kappa_{Ri}}2(x_i^R)^2
+  +\beta\Omega_i(a_i+\gamma_i x_i^R)x_i^D
+  -\frac{\kappa_{Di}}2(x_i^D)^2,\\
+  \text{subject to}\quad&x_i^R+x_i^D\leq\bar X_i.
+  \end{aligned}
+  \label{eq:main-rd-objective}
+\end{equation}
+The planning-stage project mass is
+\(N_i=(a_i+\gamma_i x_i^R)x_i^D\). The resource ceiling represents financing
+or managerial resources available within the cohort; a firm is constrained
+only when its KKT multiplier is positive. The appendix gives the full KKT
+system and assumes the extension-specific curvature condition
+\(\kappa_{Ri}\kappa_{Di}>(\beta\Omega_i\gamma_i)^2\), which makes the problem
+strictly concave.
+
+The resource regime determines the research response. At an interior slack
+solution,
+\begin{equation}
+  \frac{\partial x_i^{D,u}}{\partial\Omega_i}>0,
+  \qquad
+  \frac{\partial x_i^{R,u}}{\partial\Omega_i}\geq0,
+  \label{eq:main-rd-slack-signs}
+\end{equation}
+where the second inequality is strict when \(\gamma_i>0\) and becomes zero
+when \(\gamma_i=0\). An unconstrained firm can therefore expand development
+without cutting research.
+
+At an interior binding solution, \(x_i^R+x_i^D=\bar X_i\), and the KKT system
+instead gives
+\begin{equation}
+  \frac{\partial x_i^{R,b}}{\partial\Omega_i}
+  =
+  \frac{\beta[\gamma_i(x_i^{D,b}-x_i^{R,b})-a_i]}
+       {\kappa_{Ri}+\kappa_{Di}
+        +2\beta\Omega_i\gamma_i},
+  \qquad
+  \frac{\partial x_i^{D,b}}{\partial\Omega_i}
+  =-\frac{\partial x_i^{R,b}}{\partial\Omega_i}.
+  \label{eq:main-rd-binding-signs}
+\end{equation}
+Hence, if
+\begin{equation}
+  a_i>\gamma_i(x_i^{D,b}-x_i^{R,b}),
+  \label{eq:main-rd-development-bias}
+\end{equation}
+the increase in commercialization value shifts a fixed resource toward
+development: \(x_i^D\) rises and \(x_i^R\) falls. This is a sufficient
+development-biased value-shift condition, not an assumed patent sign. If it
+fails, the research response is unsigned by this mechanism.
+
+Patent applications become an explicit extension outcome through
+\begin{equation}
+  P_i^A=h_i(x_i^R),
+  \qquad h_i'(x_i^R)>0.
+  \label{eq:main-rd-patents}
+\end{equation}
+Thus a constrained firm satisfying
+\eqref{eq:main-rd-development-bias} has more development and fewer patent
+applications after a strict equilibrium increase in \(\Omega_i\). A slack
+firm has more development and weakly more patenting; patenting is locally
+unchanged when \(\gamma_i=0\). A decline concentrated in low-value
+applications while granted or core patents remain statistically unchanged is
+compatible with the extension if the high-value patent margin is locally
+inelastic to the marginal reallocation. That additional composition
+condition is not an unconditional model prediction.
+
+CMO scarcity remains part of the result. In the extension, study-related CMO
+demand replaces \(a_ix_i^*\) by \(N_i^*\). Optimal \(N_i^*\) is
+nondecreasing in \(\Omega_i\), including across a slack/binding switch, so
+the demand schedule remains weakly decreasing in the candidate CMO price.
+The same single market-clearing equation therefore determines the service
+price. The patent signs above apply to the finite binary MAH comparison only
+when the equilibrium value gain remains strict; scarcity may attenuate it to
+zero.
+
+This extension explains the central resource-heterogeneity pattern in
+\citet{Gu2024}: development can rise while patent applications fall for
+resource-constrained firms, whereas development need not crowd out research
+for firms with slack resources. It does not assume that observed balance-sheet
+groups reveal the KKT multiplier, does not equate patent applications with
+research, and does not build in the paper's original-versus-incremental
+ranking. The full derivation and boundary cases are in the Technical
+Appendix.
+
 \section{Empirical Predictions and Mapping Boundaries}
 
 The deterministic model yields three conditional predictions. First, among
@@ -483,7 +592,9 @@ effective date are aligned. Approval or launch records are realized-product
 outcomes, not direct observations of \(x_i\). Clinical milestones may proxy
 project advancement only when their status and timing are measured consistently.
 Patent applications are a separate patenting margin and are not a baseline
-endogenous outcome.
+endogenous outcome. They become endogenous only in the extension through
+\(P_i^A=h_i(x_i^R)\), conditional on a validated link between upstream
+research allocation and measured applications.
 
 \begin{table}[htbp]
 \centering
@@ -500,6 +611,8 @@ Route \(r_i^*=E\) & Product-level holder differs from manufacturer, with time-co
 Retained outcome \(Y_i^{\mathrm{ret}}\) & Approval or launch with developer/holder identity & Combines advancement, project mix, deterministic route assignment, and \(s(q)\); it does not identify these primitives separately. \\
 CMO scarcity \(p_m^*\) & Service price, or consistently measured capacity, utilization, density, waiting-time, or participation proxy & A nonprice proxy does not identify the price or the supply and demand schedules separately. \\
 Novelty class \(g\) & Versioned regulatory classification \(O\) or \(\mathrm{Inc}\) & The classifier creates no \(x_{ig}\) and imposes no response ranking. \\
+Extension research and patents \(x_i^R,P_i^A\) & Upstream research expenditure/activity and audited patent applications or families & The patent measure is not research itself; the sign requires the extension's resource-regime and value-shift conditions. \\
+Extension resource constraint & Predetermined financing or managerial-resource measures & An observed resource proxy does not identify a positive KKT multiplier; regime classification requires additional evidence or estimation. \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -537,9 +650,10 @@ response.
 These entries are interfaces for future validated data. No data set is
 asserted here to be available, complete, or identifying. Before use, a source
 must pass provenance, coverage, key-uniqueness, unit, timing, and
-construct-validity checks. Entry, route-specific realization, smooth route
-choice, and research-versus-development allocation remain separate
-extensions rather than baseline calibration objects.
+construct-validity checks. Entry, route-specific realization, and smooth
+route choice remain undeveloped extensions. Research-versus-development
+allocation is now a formal but separate extension rather than a baseline
+calibration object.
 
 \section{Conclusion}
 
@@ -552,10 +666,14 @@ can raise \(p_m^*\) and attenuate the fixed-price gain. Project advancement
 therefore rises only for the MAH-relevant set and need not rise for every
 developer or novelty class. Observed holder--producer separation and realized
 products occur after advancement and organizational assignment. Patent
-applications and upstream scientific research are outside the baseline, and
-the model makes no welfare claim. This deliberately narrow partial-equilibrium
-structure keeps the paper focused on commercialization organization,
-manufacturing mismatch, retained authorization, and CMO scarcity.
+applications and upstream scientific research remain outside the baseline.
+The separate allocation extension shows why a strict commercialization-value
+gain can raise development while reducing research and patenting when a
+common resource constraint binds, but not when resources are slack. The
+model makes no welfare claim. This layered partial-equilibrium structure
+keeps the baseline focused on commercialization organization, manufacturing
+mismatch, retained authorization, and CMO scarcity while making the patent
+boundary an explicit conditional prediction rather than an omission.
 
 \clearpage
 \bibliographystyle{aer}

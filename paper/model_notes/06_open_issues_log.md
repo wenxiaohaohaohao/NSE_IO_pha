@@ -48,3 +48,32 @@
 - `CLOSED-SPEC-002`: common `x_i` retained; novelty decomposition uses `rho_g F_g` rather than `x_ig`.
 - `CLOSED-SPEC-003`: empirical timing chain split into anticipated option value and later realized assignment.
 - `CLOSED-SPEC-004`: the status table is expanded to formal Phase 1-18 and full draft assembly is assigned to Phase 15.
+
+## RESOLVED — ISSUE-EXT-001
+
+- ID: `ISSUE-EXT-001`
+- Phase: post-Phase-18 separately approved extension
+- Equation/object: $x_i^R,x_i^D,\bar X_i,P_i^A$
+- Severity now: `CLOSED-MODELLED`
+- Issue: The approved baseline could distinguish project advancement from
+  patents but did not endogenize a patent response or explain why development
+  and patent applications may move in opposite directions.
+- Resolution: on 2026-09-03 the user explicitly selected the full
+  research-versus-development allocation option. The new extension specifies
+  a two-control objective, common resource ceiling, complete KKT system,
+  strict-concavity condition, slack/binding comparative statics, patent
+  production equation, CMO-price feedback, and evidence/identification
+  boundaries.
+- Core result: a strict increase in $\Omega_i$ raises development and reduces
+  research/patenting when the resource ceiling binds and
+  $a_i>\gamma_i(x_i^D-x_i^R)$. With slack resources, development rises and
+  research weakly rises instead.
+- Why this is not avoidance of Gu (2024): the extension directly rationalizes
+  the documented constrained-firm patent decline while stating the conditions
+  under which it does and does not follow.
+- Remaining empirical limitation: observed financial-resource groups do not
+  directly identify the KKT multiplier, and patent applications do not
+  directly identify upstream research.
+- Does this alter the locked baseline architecture? `NO`; it activates an
+  explicitly reserved, separately approved extension.
+- Current P0 issue: none.

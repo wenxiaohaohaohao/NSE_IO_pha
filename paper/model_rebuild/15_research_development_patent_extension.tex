@@ -1,0 +1,382 @@
+% Post-Phase-18 extension, activated by explicit user approval on 2026-09-03.
+\section{Extension: Resource Allocation Between Research and Development}
+\label{sec:erd-extension}
+
+\subsection{Separation from the commercialization baseline}
+\label{subsec:erd-separation}
+
+This section activates only the research-versus-development block previewed
+in Section~\ref{subsec:p11-research-development}. It does not alter the
+commercialization baseline. In particular, the institutional regime still
+acts directly only through \(M\mapsto\tau_E(M)\), route choice remains
+deterministic, and \(\Omega_i(M,p_m)\) continues to be the expected optimized
+value per route-planning-stage project supplied by the baseline route block.
+The baseline control \(x_i\) is not retroactively redefined. When this
+extension is activated, it is replaced by two extension-only controls:
+upstream research allocation \(x_i^R\) and development / project-advancement
+allocation \(x_i^D\). Thus \(x_i^D\), rather than \(x_i^R\), is the analogue
+of baseline project advancement.
+
+The extension addresses a distinct question. It asks how an increase in
+anticipated commercialization value reallocates a finite innovation resource
+between research and development, and when that reallocation can make patent
+applications fall even though development rises. It does not make patenting
+a direct policy target or a direct component of the MAH route wedge.
+
+\subsection{Technology, resource constraint, and objective}
+\label{subsec:erd-problem}
+
+Both allocations are measured in normalized innovation-resource units
+\(\mathsf X\). Developer \(i\) has a resource ceiling
+\(\bar X_i>0\). The expected measure of projects reaching the route-planning
+stage is
+\begin{equation}
+  N_i(x_i^R,x_i^D)
+  =
+  \left(a_i+\gamma_i x_i^R\right)x_i^D,
+  \qquad \gamma_i\geq0,
+  \label{eq:erd-project-technology}
+\end{equation}
+where \(a_i>0\) remains predetermined and \(\gamma_i\) measures
+research--development complementarity. The extension does not permit a
+direct policy shift in either object.
+
+For a fixed candidate CMO price and hence a fixed value
+\(\Omega_i=\Omega_i(M,p_m)\), the developer solves
+\begin{equation}
+  \begin{aligned}
+  \max_{x_i^R,x_i^D\geq0}\quad
+  \mathcal V_i
+  ={}&
+  u_i x_i^R-\frac{\kappa_{Ri}}{2}(x_i^R)^2
+  +\beta\Omega_i
+       \left(a_i+\gamma_i x_i^R\right)x_i^D
+  -\frac{\kappa_{Di}}{2}(x_i^D)^2,\\
+  \text{subject to}\quad
+  &x_i^R+x_i^D\leq\bar X_i,
+  \end{aligned}
+  \label{eq:erd-objective}
+\end{equation}
+where \(u_i>0\), \(\kappa_{Ri}>0\), and \(\kappa_{Di}>0\) are policy-invariant.
+The first two terms summarize the private value and convex organizational
+cost of upstream research. The fourth term is the convex organizational cost
+of development. The resource ceiling is separate from those real costs: it
+captures financing or managerial resources that cannot be expanded within
+the decision cohort. Consequently, a positive multiplier on the ceiling,
+not merely a low observed resource proxy, defines a constrained firm in the
+model.
+
+Let
+\begin{equation}
+  t_i=\beta\Omega_i,
+  \qquad
+  \Delta_i(t_i)
+  =\kappa_{Ri}\kappa_{Di}-(t_i\gamma_i)^2.
+  \label{eq:erd-concavity-index}
+\end{equation}
+The maintained extension condition is \(\Delta_i(t)>0\) for every value
+\(t=\beta\Omega_i(M,p_m)\) reached in the comparison. This makes the Hessian
+of \(\mathcal V_i\) negative definite. Together with the compact feasible
+set, it yields a unique optimizer. This restriction is an extension-specific
+curvature condition, not a baseline assumption.
+
+\subsection{KKT system}
+\label{subsec:erd-kkt}
+
+Let \(\varpi_i\geq0\) be the multiplier on the common resource ceiling, and
+let \(\zeta_i^R,\zeta_i^D\geq0\) be the nonnegativity multipliers. The complete
+KKT system is
+\begin{align}
+  u_i-\kappa_{Ri}x_i^R+t_i\gamma_i x_i^D
+  -\varpi_i+\zeta_i^R&=0,
+  \label{eq:erd-kkt-research}\\
+  t_i(a_i+\gamma_i x_i^R)-\kappa_{Di}x_i^D
+  -\varpi_i+\zeta_i^D&=0,
+  \label{eq:erd-kkt-development}\\
+  \varpi_i(\bar X_i-x_i^R-x_i^D)&=0,
+  \label{eq:erd-kkt-budget}\\
+  \zeta_i^R x_i^R=\zeta_i^D x_i^D&=0,
+  \label{eq:erd-kkt-nonnegative}
+\end{align}
+together with primal and dual feasibility. Strict concavity makes these
+conditions sufficient as well as necessary.
+
+The sign results below concern interior allocations. At a nonnegativity
+corner, the corresponding strict sign becomes weak and is governed by the
+one-sided KKT inequality. If a reform moves a firm across the slack/binding
+boundary, the two regime formulas must be evaluated as a finite comparison;
+one may not differentiate through the kink.
+
+\subsection{Slack resources: development rises and research does not fall}
+\label{subsec:erd-slack}
+
+Suppose the unconstrained optimizer is interior and satisfies
+\(x_i^R+x_i^D<\bar X_i\). Then \(\varpi_i=0\), and the unique solution is
+\begin{align}
+  x_i^{R,u}(t_i)
+  &=
+  \frac{\kappa_{Di}u_i+t_i^2\gamma_i a_i}
+       {\Delta_i(t_i)},
+  \label{eq:erd-slack-research}\\
+  x_i^{D,u}(t_i)
+  &=
+  \frac{t_i(\gamma_i u_i+\kappa_{Ri}a_i)}
+       {\Delta_i(t_i)}.
+  \label{eq:erd-slack-development}
+\end{align}
+
+\begin{extensionproposition}[Slack-resource response]
+\label{prop:erd-slack}
+Hold the candidate CMO price fixed and vary the continuous argument
+\(\Omega_i\). At an interior slack solution satisfying
+\(\Delta_i(t_i)>0\),
+\begin{align}
+  \frac{\partial x_i^{R,u}}{\partial\Omega_i}
+  &=
+  \frac{2\beta t_i\gamma_i\kappa_{Di}
+        (a_i\kappa_{Ri}+\gamma_i u_i)}
+       {\Delta_i(t_i)^2}
+  \geq0,
+  \label{eq:erd-slack-research-cs}\\
+  \frac{\partial x_i^{D,u}}{\partial\Omega_i}
+  &=
+  \frac{\beta(\gamma_i u_i+\kappa_{Ri}a_i)
+        [\kappa_{Ri}\kappa_{Di}+t_i^2\gamma_i^2]}
+       {\Delta_i(t_i)^2}
+  >0.
+  \label{eq:erd-slack-development-cs}
+\end{align}
+The research response is strict when \(\gamma_i>0\), and is zero when
+\(\gamma_i=0\).
+\end{extensionproposition}
+
+\begin{proof}
+With \(\varpi_i=\zeta_i^R=\zeta_i^D=0\), equations
+\eqref{eq:erd-kkt-research}--\eqref{eq:erd-kkt-development} are a two-by-two
+linear system with coefficient determinant \(\Delta_i(t_i)>0\). Inversion
+gives \eqref{eq:erd-slack-research}--\eqref{eq:erd-slack-development}.
+Differentiating those expressions with respect to \(t_i\), then using
+\(\partial t_i/\partial\Omega_i=\beta\), gives
+\eqref{eq:erd-slack-research-cs}--\eqref{eq:erd-slack-development-cs}.
+All factors have the stated signs. The result is a derivative with respect to
+the continuous value argument \(\Omega_i\), not a derivative with respect to
+binary policy \(M\).
+\end{proof}
+
+Thus an unconstrained firm does not need to finance more development by
+reducing research. If research raises the productivity of development, both
+allocations rise. If that complementarity is absent, development rises while
+research remains locally unchanged.
+
+\subsection{Binding resources: development can crowd out research}
+\label{subsec:erd-binding}
+
+Suppose instead that the unique optimizer is interior and the resource
+constraint binds. This occurs when the unconstrained demand for the two
+activities exceeds \(\bar X_i\), subject to the resulting constrained
+allocation remaining interior. Using \(x_i^D=\bar X_i-x_i^R\) and equating
+the two interior marginal conditions yields
+\begin{align}
+  x_i^{R,b}(t_i)
+  &=
+  \frac{u_i+\kappa_{Di}\bar X_i
+        +t_i(\gamma_i\bar X_i-a_i)}
+       {\kappa_{Ri}+\kappa_{Di}+2t_i\gamma_i},
+  \label{eq:erd-binding-research}\\
+  x_i^{D,b}(t_i)&=\bar X_i-x_i^{R,b}(t_i).
+  \label{eq:erd-binding-development}
+\end{align}
+
+\begin{extensionproposition}[Binding-resource reallocation]
+\label{prop:erd-binding}
+At an interior binding solution,
+\begin{align}
+  \frac{\partial x_i^{R,b}}{\partial\Omega_i}
+  &=
+  \frac{\beta[\gamma_i(x_i^{D,b}-x_i^{R,b})-a_i]}
+       {\kappa_{Ri}+\kappa_{Di}+2t_i\gamma_i},
+  \label{eq:erd-binding-research-cs}\\
+  \frac{\partial x_i^{D,b}}{\partial\Omega_i}
+  &=-\frac{\partial x_i^{R,b}}{\partial\Omega_i}.
+  \label{eq:erd-binding-development-cs}
+\end{align}
+Therefore, under the development-biased value-shift condition
+\begin{equation}
+  a_i>\gamma_i(x_i^{D,b}-x_i^{R,b}),
+  \label{eq:erd-development-biased-condition}
+\end{equation}
+an increase in anticipated commercialization value strictly raises
+development and strictly reduces research. If equality holds, there is no
+local reallocation. If the inequality is reversed, the allocation signs are
+reversed and the extension does not predict a patent decline.
+\end{extensionproposition}
+
+\begin{proof}
+Differentiate the difference between the two interior KKT equations while
+using \(dx_i^D=-dx_i^R\). This gives
+\[
+  [\kappa_{Ri}+\kappa_{Di}+2t_i\gamma_i],dx_i^R
+  =
+  [\gamma_i(x_i^D-x_i^R)-a_i],dt_i.
+\]
+Substituting \(dt_i=\beta\,d\Omega_i\) proves
+\eqref{eq:erd-binding-research-cs}--\eqref{eq:erd-binding-development-cs}.
+The denominator is strictly positive, so condition
+\eqref{eq:erd-development-biased-condition} determines the signs.
+\end{proof}
+
+Although the two allocations move in opposite directions, the optimal
+planning-stage project mass is weakly increasing in commercialization value.
+At an interior binding allocation,
+\begin{equation}
+  \frac{\partial N_i^*}{\partial\Omega_i}
+  =
+  \frac{\beta[a_i-\gamma_i(x_i^{D,b}-x_i^{R,b})]^2}
+       {\kappa_{Ri}+\kappa_{Di}+2t_i\gamma_i}
+  \geq0.
+  \label{eq:erd-binding-project-mass}
+\end{equation}
+This identity separates the development response from the research response:
+project advancement can rise even when upstream research falls.
+
+\subsection{Patent applications and the evidence boundary}
+\label{subsec:erd-patents}
+
+To create an explicit patent margin, let the expected flow of patent
+applications be
+\begin{equation}
+  P_i^A=h_i(x_i^R),
+  \qquad h_i'(x_i^R)>0.
+  \label{eq:erd-patent-production}
+\end{equation}
+This is a measurement/production equation for the extension. It does not say
+that every unit of research produces a patent, that every patent has equal
+value, or that observed applications identify \(x_i^R\) without error.
+
+\begin{extensioncorollary}[Patent sign]
+\label{cor:erd-patent-sign}
+Consider two policy regimes whose equilibrium route values satisfy
+\(\Omega_i^1>\Omega_i^0\).
+
+\begin{enumerate}
+  \item If the firm is interior and resource-slack throughout the comparison,
+  then \(P_i^{A,1}\geq P_i^{A,0}\), with a strict inequality when
+  \(\gamma_i>0\).
+  \item If the firm is interior and resource-constrained throughout the
+  comparison and condition
+  \eqref{eq:erd-development-biased-condition} holds along the comparison
+  path, then
+  \(x_i^{D,1}>x_i^{D,0}\) and \(P_i^{A,1}<P_i^{A,0}\).
+\end{enumerate}
+
+If the resource regime changes between the two policy states, if the net
+value gain is zero, or if the development-biased condition fails, the patent
+sign must be computed from the finite solutions and is not signed by this
+corollary.
+\end{extensioncorollary}
+
+The evidence that granted or core patents do not significantly decline is
+also compatible with, but not forced by, this extension. For example, write
+\(P_i^A=P_i^H+P_i^L\). If the high-value component is locally inelastic to
+the marginal research reallocation while \(dP_i^L/dx_i^R>0\), the decline is
+concentrated in low-value applications and \(P_i^H\) need not change. This is
+an additional measurement/composition condition. It is not a theorem that
+all high-value patents are protected.
+
+\subsection{CMO-price feedback and the binary MAH comparison}
+\label{subsec:erd-cmo-feedback}
+
+The policy remains binary. Its effect must therefore be evaluated by the
+finite equilibrium value comparison, not by differentiating with respect to
+\(M\). The extension changes study-related CMO demand because the planning
+mass is now \(N_i^*\):
+\begin{equation}
+  D_{m,RD}^{\mathrm{MAH}}(p_m;M)
+  =
+  \int
+  N_i^*(M,p_m)\chi_i^E(p_m;M)\,dH(a,k),
+  \label{eq:erd-cmo-demand}
+\end{equation}
+where \(\chi_i^E\) is the baseline expected qualified capacity per
+planning-stage project. Supplier behavior, background demand, and the single
+market-clearing condition are unchanged.
+
+The optimized \(N_i^*\) is nondecreasing in \(\Omega_i\), including across a
+slack/binding switch. To see this without differentiating through the kink,
+apply revealed preference to two values \(\Omega_i'<\Omega_i''\). Adding the
+two optimality inequalities gives
+\[
+  \beta(\Omega_i''-\Omega_i')
+  [N_i^*(\Omega_i'')-N_i^*(\Omega_i')]
+  \geq0.
+\]
+Because the baseline envelope gives \(\partial\Omega_i/\partial p_m
+=-\chi_i^E\leq0\), and \(\chi_i^E\) is also weakly decreasing in the
+candidate price, equation \eqref{eq:erd-cmo-demand} remains weakly decreasing
+in \(p_m\) under the baseline aggregation regularity. Strictly increasing
+supply therefore continues to select at most one CMO price. The extension
+adds no second market-clearing condition.
+
+Let \(p_{m,RD}^h\) denote the resulting CMO equilibrium in regime
+\(h\in\{0,1\}\), and define the net equilibrium value gain
+\begin{equation}
+  \Delta\Omega_{i,RD}^{\mathrm{eq}}
+  =
+  \Omega_i(1,p_{m,RD}^1)
+  -\Omega_i(0,p_{m,RD}^0).
+  \label{eq:erd-equilibrium-value-gain}
+\end{equation}
+The baseline choice-set argument implies
+\(\Delta\Omega_{i,RD}^{\mathrm{eq}}\geq0\); scarcity can attenuate the gain
+and can reduce it to zero. Propositions~\ref{prop:erd-slack} and
+\ref{prop:erd-binding}, and Corollary~\ref{cor:erd-patent-sign}, map into an
+MAH prediction only when this net gain is strict and their resource-regime
+conditions hold.
+
+\subsection{Interpretation for Gu (2024) and remaining non-predictions}
+\label{subsec:erd-gu-mapping}
+
+The extension rationalizes the joint pattern documented by \citet{Gu2024}
+without changing the commercialization baseline. Firms with a positive
+resource multiplier can respond to a strict MAH-induced commercialization
+value gain by shifting a fixed resource toward development, raising
+development-stage activity while reducing upstream research and patent
+applications. Firms with slack resources raise development without crowding
+out research; when \(\gamma_i=0\), their research and patent applications are
+locally unchanged. This creates a sharp resource-heterogeneity prediction.
+Observed balance-sheet resource groups remain proxies, however: they do not
+directly reveal \(\varpi_i\).
+
+The original/incremental class \(g\in\{O,\mathrm{Inc}\}\) remains an exogenous
+classifier with common developer-level allocations \(x_i^R,x_i^D\). The
+allocation block imposes no class ranking. Class-specific route and realized
+outcomes continue to use \(\rho_gF_g\); a stronger incremental response
+requires the incremental conditional distribution to place more mass on
+projects receiving a strict route-value or observed-outcome gain. The
+extension therefore accommodates, but does not assume, the class pattern in
+Gu (2024). Likewise, transition from a pure researcher into development is
+an extensive-margin entry/state-transition question and remains outside this
+fixed-population extension.
+
+The principal boundary cases are:
+
+\begin{itemize}
+  \item if \(\Delta\Omega_{i,RD}^{\mathrm{eq}}=0\), MAH causes no allocation
+  or patent response through this channel;
+  \item if \(\gamma_i=0\), slack-firm research is unchanged, whereas a
+  binding firm reallocates toward development whenever \(a_i>0\);
+  \item as \(\bar X_i\) becomes sufficiently large, the resource constraint
+  becomes slack and the crowd-out result disappears;
+  \item at a nonnegativity corner or a slack/binding regime switch, strict
+  local formulas are replaced by KKT inequalities or direct finite
+  comparison;
+  \item if \(h_i'=0\) over the observed range, research can change without a
+  measured patent-count response; and
+  \item failure of the curvature or development-biased condition removes the
+  corresponding sign claim rather than reversing it by assumption.
+\end{itemize}
+
+Accordingly, the model now has an explicit patent prediction in this
+extension, but not an unconditional one: the sign depends on whether the
+common resource constraint binds and on the direction of the marginal value
+shift.

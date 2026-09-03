@@ -46,7 +46,7 @@ checkpoint for this identified paper version.
 | Stronger response among firms without production facilities | Baseline heterogeneity prediction: low internal manufacturing capability can enlarge the value of the retained entrusted route. |
 | More clinical trials | Consistent with higher project advancement and more projects reaching commercialization-relevant planning, but clinical trials are an empirical proxy and not definitionally equal to `x_i`. |
 | First-stage rather than later-stage trial response | Heterogeneity/timing test outside the one-stage baseline; a phase-specific development technology would be an extension. |
-| Patent decline and financial-resource split | Outside the baseline. A structural explanation may use a separately approved research-versus-development allocation or financing extension, but the reduced-form heterogeneity does not identify or require a binding financial constraint. |
+| Patent decline and financial-resource split | Outside the baseline but now formally rationalized in the separately approved research-versus-development allocation extension. A negative patent sign requires a binding model resource ceiling and a development-biased value shift; the reduced-form resource split does not itself identify the KKT multiplier. |
 | Granted/core patents do not significantly decline | Evidence that patenting proxies and project-advancement proxies can diverge; not a baseline prediction about patents and not a direct measure of upstream research. |
 | Original/incremental/biological response pattern | Empirical heterogeneity test using `g` and conditional distributions. The baseline imposes no class ranking and uses no class-specific control. |
 | Pure-researcher transition into development | Entry/extensive-margin evidence outside the fixed-population partial-equilibrium baseline. It can motivate a separately approved entry extension. |
@@ -61,6 +61,9 @@ without implying
 
 It does not authorize a financial constraint, separate `x_i^R` and `x_i^D`
 controls, or any fixed original-versus-incremental ranking in the baseline.
+On 2026-09-03, the user separately authorized those two controls and a common
+resource ceiling in an explicitly isolated extension. That authorization does
+not change this baseline boundary.
 
 ## 4. Current-manuscript conflict audit
 
@@ -109,3 +112,26 @@ The candidate may not:
 All seven required detailed claims have primary-source page/table evidence.
 The two cross-class comparisons retain explicit inference limits. No
 architecture change follows from this verification.
+
+## 7. Post-Phase-18 extension mapping
+
+The separately approved extension in
+`paper/model_rebuild/15_research_development_patent_extension.tex` now gives a
+formal model counterpart to `SG-01`, `SG-03`, and the resource heterogeneity
+in `SG-04`:
+
+1. the baseline route block supplies a finite equilibrium increase in
+   anticipated commercialization value $\Delta\Omega_{i,RD}^{eq}$;
+2. a slack resource constraint raises development without reducing research;
+3. a binding resource constraint plus
+   $a_i>\gamma_i(x_i^D-x_i^R)$ reallocates the fixed resource toward
+   development and away from upstream research; and
+4. $P_i^A=h_i(x_i^R)$ with $h_i'>0$ maps the research decline into fewer
+   patent applications.
+
+The high-value/granted/core-patent non-decline in `SG-04` requires an
+additional local composition condition; it is compatible with but not forced
+by the extension. The drug-class comparisons in `SG-05`--`SG-06` remain
+conditional on $\rho_gF_g$ and impose no fixed ranking. The pure-researcher
+transition in `SG-07` remains an extensive-margin extension outside the
+fixed-population allocation block.

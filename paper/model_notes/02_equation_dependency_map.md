@@ -4,7 +4,10 @@ Phase status: `PHASES 1--17 - APPROVED`
 This map records every one of the 89 labeled equations in the Phase 1--10
 baseline, their semantic parents, timing order, mathematical status, proof
 obligations, the single CMO fixed point, and the Phase 11 extension
-quarantine. The reproducible equation-level source catalog is
+quarantine. It separately records the research--development allocation
+extension approved on 2026-09-03; those equations do not change the baseline
+count or feed back into a baseline proposition. The reproducible baseline
+equation-level source catalog is
 paper/model_rebuild/audit/phase13_equation_catalog.csv. No object in the
 quarantine has an arrow into the active graph.
 
@@ -201,10 +204,47 @@ has been obtained or validated.
 | P11-X03 | transfer microfoundation | bargaining/adoption primitives for $T$ | INACTIVE; $T(q,m)$ remains primitive | separate transfer-market design and approval |
 | P11-X04 | dynamic evolution | genuine state and transition law | INACTIVE; no Bellman in baseline | research question, observed transition and approval |
 | P11-X05 | multi-CMO matching | match/search primitives | INACTIVE; scalar CMO market unchanged | match-level data and separate approval |
-| P11-X06 | research/development allocation | $x_i^R,x_i^D$ | INACTIVE; common $x_i$ unchanged | separate approval and financial-constraint boundary review |
+| P11-X06 | research/development allocation | $x_i^R,x_i^D$ | ACTIVE-SEPARATE as of 2026-09-03; common baseline $x_i$ unchanged | formal module, KKT audit, patent mapping, and financial-constraint boundary review completed separately |
 
 There is no arrow from any P11-X object back into the Phase 1--10 baseline
 dependency graph. The extension file is not imported by a baseline module.
+
+## 11A. Activated research--development extension ledger
+
+| ID / LaTeX label | Object/result | Direct parents | Mathematical status | Required validation |
+|---|---|---|---|---|
+| ERD-E01 / `eq:erd-project-technology` | $N_i=(a_i+\gamma_i x_i^R)x_i^D$ | baseline $a_i$; extension $\gamma_i,x_i^R,x_i^D$ | extension primitive technology | units; no direct policy shift in $a_i$ or $\gamma_i$ |
+| ERD-E02 / `eq:erd-objective` | two-control resource-allocation problem | ERD-E01; baseline $\beta,\Omega_i$; extension payoff/cost primitives | extension optimization problem | resource ceiling distinct from real costs and from baseline $B_i$ |
+| ERD-E03 / `eq:erd-concavity-index` | $\Delta_i=\kappa_{Ri}\kappa_{Di}-(\beta\Omega_i\gamma_i)^2$ | ERD-E02 | sufficient strict-concavity condition | positive throughout relevant value support |
+| ERD-E04--E07 / `eq:erd-kkt-*` | complete KKT system | ERD-E02--E03 | optimization-derived necessary and sufficient conditions | primal/dual feasibility and all complementary-slackness equations |
+| ERD-E08--E09 / `eq:erd-slack-*` | closed-form slack allocations | ERD-E04--E07 with $\varpi_i=0$ | optimization-derived solution | interior and $x_i^R+x_i^D<\bar X_i$ |
+| ERD-E10--E11 / `eq:erd-slack-*-cs` | slack value derivatives | ERD-E08--E09 | continuous-$\Omega_i$ derivatives | development positive; research weakly positive and zero at $\gamma_i=0$ |
+| ERD-E12--E13 / `eq:erd-binding-*` | closed-form binding allocations | ERD-E04--E07 and $x_i^R+x_i^D=\bar X_i$ | optimization-derived solution | interior allocation and positive resource multiplier |
+| ERD-E14--E15 / `eq:erd-binding-*-cs` | binding reallocation derivatives | ERD-E12--E13 | continuous-$\Omega_i$ derivatives | equal and opposite because total resource is fixed |
+| ERD-E16 / `eq:erd-development-biased-condition` | sufficient sign condition | ERD-E14--E15 | proposition-specific condition | failure removes patent-decline sign |
+| ERD-E17 / `eq:erd-binding-project-mass` | $N_{i,\Omega}^*\geq0$ at a binding optimum | ERD-E01, ERD-E14--E16 | optimization-derived identity | squared numerator; not assumed monotonicity |
+| ERD-E18 / `eq:erd-patent-production` | $P_i^A=h_i(x_i^R)$ | extension research control and $h_i$ | extension measurement/production equation | $h_i'>0$ for strict sign; patents do not identify research directly |
+| ERD-E19 / `eq:erd-cmo-demand` | $D_{m,RD}^{MAH}=\int N_i^*\chi_i^E\,dH$ | ERD-E01--E17; baseline $\chi_i^E,H$ | extension aggregate demand | $N_i^*$ monotone by revealed preference; one CMO market only |
+| ERD-E20 / `eq:erd-equilibrium-value-gain` | finite equilibrium $\Delta\Omega_{i,RD}^{eq}$ | ERD-E19 and baseline route choice/CMO clearing | binary-policy finite comparison | no derivative with respect to $M$; signs require strict net value gain |
+
+The activated extension graph is
+
+```text
+baseline route block: (M, p_m) -> Omega_i(M,p_m)
+                                  |
+                                  v
+extension primitives + resource ceiling -> (x_i^{R,*}, x_i^{D,*})
+                                          -> N_i^*
+                                          -> P_i^A = h_i(x_i^{R,*})
+
+N_i^* + baseline E-route capacity use -> extension CMO demand
+                                      -> same scalar CMO clearing price
+                                      -> Omega_i(M,p_m)
+```
+
+The final arrow closes the extension's scalar CMO fixed point. There is no
+arrow from $x_i^R$, $x_i^D$, $\bar X_i$, or $P_i^A$ into a baseline equation
+or any of the six baseline propositions.
 
 ## 12. Causal and timing order
 
@@ -492,6 +532,10 @@ no new dependency edge.
 | direct $M\to p_m^*\downarrow$ | $p_m^*$ is endogenous; `RL-10` |
 | $x_i\equiv$ clinical-development effort | v1.2 says $x_i$ is broader |
 | $x_i\equiv$ patent applications | patents are outside the baseline outcome; `RL-21`--`RL-23` |
+| $x_i^R\equiv x_i$ or $x_i^D\equiv x_i$ within the baseline | the two controls exist only when the separately approved extension replaces the baseline advancement problem |
+| $M\to x_i^R$, $M\to x_i^D$, or $M\to P_i^A$ directly | even in the extension, policy acts through $\tau_E$, route value, $\Omega_i$, and the resource-allocation KKT system |
+| observed low financial resources $\equiv\varpi_i>0$ | balance-sheet groups are proxies and do not directly identify a binding model constraint |
+| extension patent decline without `E-RD-05` or a strict net $\Delta\Omega_{i,RD}^{eq}$ | the negative sign is conditional, not automatic |
 | $g=\mathrm{Inc}\equiv I$ | empirical class and internal route differ |
 | separate $x_{ig}$ | common-control restriction |
 | observed holder-producer separation $\to x_i$ | reverses locked timing |
@@ -528,4 +572,6 @@ Before any later Phase writes a formula, it must:
 2. add only assumptions actually used to `03_assumptions_and_scope.md`;
 3. add the equation and its parents to this ledger;
 4. mark each deferred arrow it closes and feedback loop it leaves open;
-5. preserve the forbidden-arrow table unless the user approves an architecture change.
+5. preserve the forbidden-arrow table unless the user approves an architecture change; and
+6. keep activated extension equations in their separate ledger rather than
+   incrementing or rewriting the frozen 89-equation baseline catalog.
