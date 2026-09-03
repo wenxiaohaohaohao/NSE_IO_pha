@@ -1,0 +1,12 @@
+package=MAH_model_update_20260903_financing
+date=2026-09-03
+branch=codex/mah-model-rebuild
+model_commit=059ffb825ec13fd9e650c025d630311c566baae8
+title=Regulatory Separation and Pharmaceutical Innovation: Evidence from China's MAH Reform
+main_pdf_pages=14
+main_pdf_sha256=3A1DBB1A669EDF3E0CD755CE36BDA79621E3ACC3AB7B409A92D375562B11D35F
+appendix_pdf_pages=35
+appendix_pdf_sha256=453A14D4791E806BEE53567596F75C49792E2A7C6B9BC4DDA6021726DE8ED3DF
+financing_note_sha256=C139AE0B795A26851573438891F3CA30AABF46832B3CF97B22FF19138C4B61F9
+baseline_prediction=commercialization organization and financing corridor
+patent_prediction=none in active baseline

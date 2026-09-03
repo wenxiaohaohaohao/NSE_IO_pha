@@ -1,0 +1,275 @@
+% Route values, deterministic choice, and conditional sorting.
+\section{Route Values and Organizational Sorting}
+\label{sec:p04-route-sorting}
+
+This section composes the commercial-value kernel with the internal and
+entrusted manufacturing technologies defined above. It treats the qualified
+manufacturing-service price \(p_m\) as fixed and conjectured. Market
+consistency for \(p_m^*\) is imposed in the capacity-market section below.
+
+\subsection{Route values}
+\label{subsec:p04-route-values}
+
+The economic value of internal production is
+\begin{equation}
+  W_i^I(q,m)
+  =
+  s(q)R\!\left(q,c_I(m,k_i)\right)
+  -
+  F_I(m,k_i).
+  \label{eq:p04-internal-value}
+\end{equation}
+Its financing-adjusted value is
+\begin{equation}
+  \widetilde W_i^I(q,m;\ell_i)
+  =
+  \begin{cases}
+    W_i^I(q,m), & J_I(m,k_i)\leq\ell_i,\\
+    -\infty, & J_I(m,k_i)>\ell_i.
+  \end{cases}
+  \label{eq:p04-finance-adjusted-internal}
+\end{equation}
+
+At a conjectured CMO capacity price \(p_m\), retained entrusted manufacturing
+has value
+\begin{equation}
+  \begin{aligned}
+  W_i^E(q,m;M,p_m)
+  ={}&
+  s(q)R\!\left(q,c_E(m)\right)
+  -F_E(m)-p_m b(m)\\
+  &-\mu_E-\tau_E(M).
+  \end{aligned}
+  \label{eq:p04-entrusted-value}
+\end{equation}
+The developer remains the authorization holder under \(E\); the qualified
+external producer manufactures. Each route cost is subtracted exactly once.
+In particular, \(p_m b(m)\) is not contained in \(c_E(m)\).
+The financing-adjusted entrusted value is
+\begin{equation}
+  \widetilde W_i^E(q,m;M,p_m,\ell_i)
+  =
+  \begin{cases}
+    W_i^E(q,m;M,p_m), & J_E(m)\leq\ell_i,\\
+    -\infty, & J_E(m)>\ell_i.
+  \end{cases}
+  \label{eq:p04-finance-adjusted-entrusted}
+\end{equation}
+Neither \(J_I\) nor \(J_E\) is subtracted from route value: each is a
+liquidity threshold, not a second copy of a real cost.
+
+Let the noncore transfer/out-license outside value be a finite continuous
+function \(T(q,m)\), and normalize abandonment or indefinite delay to zero:
+\begin{equation}
+  W^T(q,m)=T(q,m),
+  \qquad
+  W^A=0.
+  \label{eq:p04-outside-values}
+\end{equation}
+No separate transfer market is added.
+
+\subsection{Deterministic route choice}
+\label{subsec:p04-deterministic-choice}
+
+The optimized value of a planning-stage project is
+\begin{equation}
+  \widetilde W_i(q,m;M,p_m,\ell_i)
+  =
+  \max\left\{
+    \widetilde W_i^I(q,m;\ell_i),
+    \widetilde W_i^E(q,m;M,p_m,\ell_i),
+    W^T(q,m),
+    W^A
+  \right\}.
+  \label{eq:p04-optimized-value}
+\end{equation}
+The route choice is
+\begin{equation}
+  r_i^*(q,m;M,p_m,\ell_i)
+  =
+  \arg\max_{r\in\{I,E,T,A\}}
+  \begin{cases}
+    \widetilde W_i^I(q,m;\ell_i), & r=I,\\
+    \widetilde W_i^E(q,m;M,p_m,\ell_i), & r=E,\\
+    W^T(q,m), & r=T,\\
+    W^A, & r=A.
+  \end{cases}
+  \label{eq:p04-route-choice}
+\end{equation}
+Continuous project and developer heterogeneity makes exact ties a
+measure-zero event, so the choice is single valued almost surely. This is a
+deterministic comparison; it generates no probabilistic route share.
+
+When \(M=0\), \(\tau_E(0)=+\infty\) implies
+\(\widetilde W_i^E=-\infty\).
+At fixed \(p_m\), the binary reform comparison is therefore
+\begin{equation}
+  \begin{aligned}
+  W_i^0(q,m;\ell_i)
+  &=\max\{\widetilde W_i^I(q,m;\ell_i),W^T(q,m),0\},\\
+  W_i^1(q,m;p_m,\ell_i)
+  &=\max\{W_i^0(q,m;\ell_i),
+    \widetilde W_i^E(q,m;1,p_m,\ell_i)\},\\
+  W_i^1-W_i^0
+  &=[\widetilde W_i^E-W_i^0]_+\geq0.
+  \end{aligned}
+  \label{eq:p04-binary-value-effect}
+\end{equation}
+The gain is exactly zero, and MAH has zero project-value and route-choice
+effect, whenever the newly
+feasible entrusted value fails to exceed the best pre-reform route.
+
+\subsection{Internal--entrusted value gap}
+\label{subsec:p04-value-gap}
+
+For fixed \(q,m,M,p_m\), define
+\begin{align}
+  \Delta_{IE}(k_i;q,m,M,p_m)
+  &=
+  W_i^I(q,m)-W_i^E(q,m;M,p_m) \notag\\
+  &=
+  s(q)\!\left[
+    R\!\left(q,c_I(m,k_i)\right)
+    -R\!\left(q,c_E(m)\right)
+  \right]
+  -F_I(m,k_i) \notag\\
+  &\quad
+  +F_E(m)+p_m b(m)+\mu_E+\tau_E(M).
+  \label{eq:p04-value-gap}
+\end{align}
+Conditional on both retained routes being financially feasible, only the
+internal technology terms in the economic value gap vary with \(k_i\).
+Holding \(q,m,M,p_m\) fixed,
+\begin{equation}
+  \frac{\partial\Delta_{IE}}{\partial k_i}
+  =
+  s(q)R_c\!\left(q,c_I(m,k_i)\right)c_{I,k}(m,k_i)
+  -
+  F_{I,k}(m,k_i)
+  >0.
+  \label{eq:p04-gap-slope}
+\end{equation}
+The first term is weakly positive because \(s(q)\geq0\),
+\(R_c<0\), and \(c_{I,k}<0\); the second is strictly positive because
+\(F_{I,k}<0\). Hence the entire derivative is strictly positive, including
+the boundary case \(s(q)=0\).
+
+\subsection{Conditional organizational cutoff}
+\label{subsec:p04-cutoff}
+
+Consider a finite entrusted barrier and fix \(\ell_i\) such that route \(E\)
+is financeable. Since \(J_{I,k}<0\), the set of capabilities at which route
+\(I\) is also financeable is an upper interval. On a connected portion of
+that common-financeability set, suppose the continuous value gap satisfies the
+endpoint crossing conditions
+\[
+  \Delta_{IE}(k_L)<0,
+  \qquad
+  \Delta_{IE}(k_H)>0,
+  \qquad k_L<k_H.
+\]
+Continuity gives existence of a root, and
+\eqref{eq:p04-gap-slope} gives strict monotonicity and therefore uniqueness.
+Denote the unique root by
+\begin{equation}
+  \Delta_{IE}\!\left(k^*(q,m;p_m,M);q,m,M,p_m\right)=0.
+  \label{eq:p04-cutoff}
+\end{equation}
+Conditional on both routes being financeable and both dominating transfer and
+abandonment,
+\begin{equation}
+  k_i<k^*\Rightarrow r_i^*=E,
+  \qquad
+  k_i>k^*\Rightarrow r_i^*=I.
+  \label{eq:p04-cutoff-sorting}
+\end{equation}
+If \(T\) or \(A\) dominates, the \(I/E\) cutoff does not determine the
+realized route.
+
+For a finite wedge, let the arguments \(\tau_E\) and \(p_m\) vary locally
+while holding \(q,m\) fixed. Since
+\[
+  \frac{\partial\Delta_{IE}}{\partial\tau_E}=1,
+  \qquad
+  \frac{\partial\Delta_{IE}}{\partial p_m}=b(m)>0,
+\]
+the implicit-function theorem yields
+\begin{equation}
+  \frac{\partial k^*}{\partial\tau_E}
+  =
+  -\frac{1}{\Delta_{IE,k}(k^*)}<0,
+  \qquad
+  \frac{\partial k^*}{\partial p_m}
+  =
+  -\frac{b(m)}{\Delta_{IE,k}(k^*)}<0.
+  \label{eq:p04-cutoff-derivatives}
+\end{equation}
+A lower finite institutional barrier raises \(k^*\), expanding the
+entrusted-production region \(k_i<k^*\). A higher fixed CMO price lowers
+\(k^*\), contracting that region. The second derivative is a fixed-price
+comparative static, not an equilibrium derivative through \(p_m^*\).
+
+\subsection{Financing corridor and MAH-relevant set}
+\label{subsec:p04-financing-corridor}
+
+The financing-adjusted MAH-relevant set is
+\begin{equation}
+  \mathcal C_i(p_m,\ell_i)
+  =
+  \left\{(q,m):
+  J_E(m)\leq\ell_i,\quad
+  W_i^E(q,m;1,p_m)>W_i^0(q,m;\ell_i)
+  \right\}.
+  \label{eq:p04-finance-relevant-set}
+\end{equation}
+The fixed-price gain is strict exactly on this set.
+
+For a fixed \((q,m,k_i,p_m)\), suppose the locally relevant capital ordering
+\begin{equation}
+  J_E(m)<J_I(m,k_i)
+  \label{eq:p04-capital-ordering}
+\end{equation}
+holds. This is a proposition-specific condition for research-oriented or
+low-internal-capability developers, not a global assumption. Financing
+capacity then creates three regions:
+\begin{enumerate}
+  \item \(\ell_i<J_E(m)\): neither retained route is financeable and MAH has
+  no project-value effect;
+  \item \(J_E(m)\leq\ell_i<J_I(m,k_i)\): entrusted production is financeable
+  but internalization is not. The MAH gain is strict if and only if
+  \(W_i^E>\max\{W^T,0\}\);
+  \item \(\ell_i\geq J_I(m,k_i)\): both retained routes are financeable and
+  the gain is \([W_i^E-\max\{W_i^I,W^T,0\}]_+\).
+\end{enumerate}
+The treatment effect can therefore rise at the lower corridor boundary and
+fall, remain positive, or become zero when internalization returns to the old
+choice set. It has no global monotonic sign in \(\ell_i\). By contrast, within
+either fixed regime, a larger \(\ell_i\) weakly expands the feasible choice
+set and weakly raises optimized project value.
+
+\subsection{Organizational sorting result}
+\label{subsec:p04-sorting-proposition}
+
+Suppose the commercial-value and technology restrictions above hold, both
+retained routes are financeable, the entrusted barrier is finite, the
+endpoint crossing conditions hold on the common-financeability interval, and
+ties have measure zero. Then the internal-minus-entrusted economic value gap
+is strictly increasing in developer manufacturing capability, a unique finite
+\(I/E\) cutoff exists, and the conditional sorting and implicit derivatives in
+\eqref{eq:p04-cutoff-sorting}--\eqref{eq:p04-cutoff-derivatives} follow.
+The proposition is conditional: it does not displace the valid transfer and
+abandonment outside options.
+
+\subsection{Zero-effect and non-tautology boundary}
+\label{subsec:p04-zero-effect}
+
+The route comparison is not tautological. Internal value and its financing
+threshold depend on
+developer capability through \(c_I\) and \(F_I\); entrusted value instead uses
+qualified-external technology, a physical capacity requirement, a retained
+holder burden, its own financing threshold, and the institutional wedge. MAH
+can nevertheless have zero effect when \(E\) is not financeable, remains below
+the pre-reform maximum, when \(T\) or \(A\) dominates, or when the relevant
+project--firm pair lies outside the finite cutoff-crossing region. No smooth
+random-utility term, inclusive-value object, borrowing decision, or
+probabilistic route share is used.

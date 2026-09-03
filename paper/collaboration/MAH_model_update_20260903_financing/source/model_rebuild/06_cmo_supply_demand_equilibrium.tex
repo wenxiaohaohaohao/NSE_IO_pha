@@ -1,0 +1,230 @@
+% Qualified-capacity supply, demand, and scalar market clearing.
+\section{Qualified Manufacturing-Service Market}
+\label{sec:p06-cmo-market}
+
+This section closes only the market for qualified manufacturing-service
+capacity. Developers and qualified suppliers take a conjectured price \(p_m\)
+as given when making their individual choices. The market-consistent price
+\(p_m^*\) is then selected by one scalar clearing equation. No entry, labor,
+capital, product-market, or welfare market is added.
+
+\subsection{Qualified-capacity supply}
+\label{subsec:p06-supply}
+
+Qualified supplier \(j\), with predetermined efficiency \(z_j\), chooses
+capacity \(s_j\geq0\) to solve
+\begin{equation}
+  \max_{s_j\geq0}
+  \left\{
+    p_ms_j-\Psi(s_j;z_j)
+  \right\}.
+  \label{eq:p06-supplier-problem}
+\end{equation}
+Capacity has units \(\mathsf B\) per decision cohort, \(p_m\) has units
+\(\mathsf C/\mathsf B\), and \(\Psi\) has units \(\mathsf C\).
+
+For every \(z_j\), assume
+\[
+  \Psi(0;z_j)=0,\qquad \Psi_s(0;z_j)=0,
+\]
+\[
+  \Psi_s>0\ \text{for }s_j>0,\qquad
+  \Psi_{ss}>0,\qquad
+  \Psi_{sz}<0,
+\]
+and \(\Psi_s(s_j;z_j)\to+\infty\) as \(s_j\to+\infty\).
+At \(p_m=0\), the unique optimum is \(s_j^*=0\). For \(p_m>0\), the
+solution is interior and satisfies
+\begin{equation}
+  p_m=\Psi_s\!\left(s_j^*(p_m,z_j);z_j\right).
+  \label{eq:p06-supplier-capacity}
+\end{equation}
+The objective's second derivative is
+\(-\Psi_{ss}<0\), so the capacity choice is unique. The
+implicit-function theorem gives
+\begin{equation}
+  \frac{\partial s_j^*}{\partial p_m}
+  =
+  \frac{1}{\Psi_{ss}}>0,
+  \qquad
+  \frac{\partial s_j^*}{\partial z_j}
+  =
+  -\frac{\Psi_{sz}}{\Psi_{ss}}>0.
+  \label{eq:p06-capacity-derivatives}
+\end{equation}
+
+Aggregate qualified-capacity supply is
+\begin{equation}
+  S_m(p_m)
+  =
+  \int s_j^*(p_m,z)\,dH_C(z).
+  \label{eq:p06-aggregate-supply}
+\end{equation}
+Under the stated integrability conditions, \(S_m\) is continuous and
+strictly increasing, \(S_m(0)=0\), and
+\(S_m(p_m)\to+\infty\) as \(p_m\to+\infty\). Supply technology and
+\(H_C\) are invariant to \(M\); MAH creates no direct supply shift.
+
+\subsection{Entrusted-capacity demand per planning-stage project}
+\label{subsec:p06-project-demand}
+
+At a candidate price \(p_m\), define developer \(i\)'s expected qualified
+capacity per planning-stage project as
+\begin{equation}
+  \chi_i^E(p_m;M,\ell_i)
+  =
+  \int
+  b(m)
+  \mathbf 1
+  \left\{
+    r_i^*(q,m;M,p_m,\ell_i)=E
+  \right\}
+  dF(q,m).
+  \label{eq:p06-entrusted-capacity}
+\end{equation}
+This is an integral of deterministic route choices, not a probabilistic
+route-share formula.
+
+The entrusted value falls with price at slope \(-b(m)<0\), while the other
+route values do not contain \(p_m\). Consequently, for each project the set
+of prices at which \(E\) is chosen is an interval from below: once a higher
+price makes \(E\) lose to another route, a still higher price cannot restore
+it. Hence \(\chi_i^E(p_m;M,\ell_i)\) is weakly decreasing in \(p_m\).
+The financing indicator \(\mathbf 1\{J_E(m)\leq\ell_i\}\) does not depend on
+price.
+
+Away from the measure-zero set of route ties, the envelope derivative of the
+optimized project value is
+\[
+  \frac{\partial \widetilde W_i(q,m;M,p_m,\ell_i)}{\partial p_m}
+  =
+  -b(m)
+  \mathbf 1\{r_i^*(q,m;M,p_m,\ell_i)=E\}.
+\]
+Dominated convergence then gives
+\begin{equation}
+  \frac{\partial\Omega_i(M,p_m)}{\partial p_m}
+  =
+  -\chi_i^E(p_m;M,\ell_i)
+  \leq0
+  \quad\text{almost everywhere in }p_m.
+  \label{eq:p06-omega-price-envelope}
+\end{equation}
+For \(\Omega_i>0\), the advancement optimizer therefore satisfies
+\begin{equation}
+  \frac{\partial x_i^*(M,p_m)}{\partial p_m}
+  =
+  -\frac{x_i^*(M,p_m)}
+  {\nu\Omega_i(M,p_m)}
+  \chi_i^E(p_m;M,\ell_i)
+  \leq0.
+  \label{eq:p06-advancement-price-response}
+\end{equation}
+At the zero-value corner, \(x_i^*=0\); globally the optimal advancement
+intensity remains weakly decreasing in \(p_m\).
+
+\subsection{Aggregate demand}
+\label{subsec:p06-demand}
+
+Developer \(i\)'s expected qualified-capacity demand is
+\[
+  a_ix_i^*(M,p_m)\chi_i^E(p_m;M,\ell_i).
+\]
+Aggregating over developer heterogeneity gives study-related demand
+\begin{equation}
+  D_m^{\mathrm{MAH}}(p_m;M)
+  =
+  \int
+  a_ix_i^*(M,p_m)\chi_i^E(p_m;M,\ell_i)
+  dH(a,k,\ell).
+  \label{eq:p06-study-demand}
+\end{equation}
+This expression contains both price feedbacks required by the model:
+\(x_i^*\) responds through expected project value, and
+\(\chi_i^E\) responds through deterministic route selection.
+
+Both factors are nonnegative and weakly decreasing in \(p_m\), so
+\(D_m^{\mathrm{MAH}}\) is weakly decreasing. Individual route indicators can
+jump at a cutoff. Aggregate demand is nevertheless continuous: when
+\(p_m^n\to p_m\), route indicators converge for every project--developer
+pair except the zero-measure route-tie set, \(x_i^*\) is continuous through
+\(\Omega_i\), and the common integrable envelope permits dominated
+convergence. The joint distribution also assigns zero mass to the financing
+thresholds \(\ell_i=J_I(m,k_i)\) and \(\ell_i=J_E(m)\). Thus aggregate
+regularity comes from continuous heterogeneity, not smooth random utility.
+
+Let \(D_m^B(p_m)\) be finite, continuous, nonnegative, weakly decreasing
+background demand with
+\[
+  D_m^B(0)>0,
+  \qquad
+  \lim_{p_m\to\infty}D_m^B(p_m)=0.
+\]
+It is policy invariant and allows a CMO market to exist before MAH. Total
+demand is
+\begin{equation}
+  D_m(p_m;M)
+  =
+  D_m^B(p_m)
+  +
+  D_m^{\mathrm{MAH}}(p_m;M).
+  \label{eq:p06-total-demand}
+\end{equation}
+It is finite, continuous, nonnegative, and weakly decreasing.
+
+\subsection{Market clearing, existence, and uniqueness}
+\label{subsec:p06-clearing}
+
+The qualified-capacity market clears at
+\begin{equation}
+  D_m(p_m^*;M)=S_m(p_m^*).
+  \label{eq:p06-market-clearing}
+\end{equation}
+At zero price,
+\begin{equation}
+  D_m(0;M)\geq D_m^B(0)>0=S_m(0).
+  \label{eq:p06-existence-boundaries}
+\end{equation}
+As \(p_m\to\infty\), \(W_i^E\to-\infty\) pointwise because
+\(b(m)>0\), so \(\chi_i^E\to0\) and study-related demand tends to zero
+under the integrable envelope. Background demand also tends to zero, whereas
+aggregate supply tends to infinity. Continuity therefore gives at least one
+positive clearing price.
+
+Total demand is weakly decreasing and aggregate supply is strictly
+increasing. Their difference is strictly decreasing, so the clearing price
+is unique.
+
+\subsection{Closed scalar solution order}
+\label{subsec:p06-solution-order}
+
+For each regime \(M\), the equilibrium can be computed without an unresolved
+cycle:
+\begin{enumerate}
+  \item conjecture \(p_m\);
+  \item evaluate financing feasibility, route values, and deterministic
+  \(r_i^*(q,m;M,p_m,\ell_i)\);
+  \item integrate \(\Omega_i(M,p_m)\) and compute \(x_i^*(M,p_m)\);
+  \item integrate \(\chi_i^E\) and \(D_m^{\mathrm{MAH}}\);
+  \item solve supplier capacity and aggregate \(S_m(p_m)\);
+  \item find the unique zero of \(D_m(p_m;M)-S_m(p_m)\).
+\end{enumerate}
+Every object on the right side is a function of the candidate price, leaving
+one scalar equation in \(p_m\).
+
+When \(M=0\), route \(E\) is unavailable, so
+\(D_m^{\mathrm{MAH}}(p_m;0)=0\); background demand still supports the market.
+When \(M=1\), study demand is nonnegative and supply is unchanged. Hence the
+post-MAH clearing price is weakly above the pre-MAH price, and it is strictly
+higher if study demand is positive at the pre-MAH price. This is an endogenous
+scarcity-price response, not a direct policy shift in \(p_m^*\) or CMO
+technology.
+
+\subsection{Scope boundary}
+\label{subsec:p06-scope}
+
+This section closes qualified manufacturing-service capacity only. It introduces
+no supplier entry, no direct policy supply shift, no logit route smoothing,
+and no additional market-clearing condition. The price response is generated
+jointly by supplier optimization, deterministic route selection, project
+advancement, and scalar market clearing.
