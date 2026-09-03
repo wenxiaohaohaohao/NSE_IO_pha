@@ -1,0 +1,529 @@
+% Complete comparative statics and mandatory boundary checks.
+\section{Comparative Statics and Boundary Cases}
+\label{sec:p15-comparative-statics}
+
+This section distinguishes four operations that cannot be interchanged:
+\begin{enumerate}
+  \item a derivative with respect to a continuous primitive at a fixed
+  candidate CMO price \(p_m\);
+  \item a derivative with respect to a continuous primitive after the CMO
+  market clears at \(p_m^*\);
+  \item a finite comparison between the binary regimes \(M=0\) and \(M=1\);
+  \item a limiting-case calculation.
+\end{enumerate}
+There is no derivative with respect to binary \(M\). Before each economic
+interpretation, the mathematical margin is named as commercial return,
+commercialization-route choice, project advancement, the CMO price, or
+realized product output. Upstream research and patent generation are not
+endogenous margins of the baseline.
+
+\subsection{Commercial pricing and return}
+\label{subsec:p15-commercial-return}
+
+\paragraph{Object and held-fixed variables.}
+The differentiated objects are the optimized product price, operating profit,
+and commercial present value. Project value \(q\), marginal manufacturing cost
+\(c\), and the demand and discount primitives are held fixed except for the
+single argument named in each derivative. These are conditional product-market
+calculations; neither \(M\) nor \(p_m^*\) is varied.
+
+The pricing solution and operating profit derived above can be written as
+\[
+  p^*(c)=\frac{\varepsilon}{\varepsilon-1}c,
+  \qquad
+  \pi(q,c)
+  =
+  \frac{Aq}{\varepsilon}
+  \left(\frac{\varepsilon}{\varepsilon-1}c\right)^{1-\varepsilon}.
+\]
+Direct differentiation gives
+\begin{equation}
+  \frac{\partial p^*}{\partial c}
+  =
+  \frac{\varepsilon}{\varepsilon-1}>1,
+  \qquad
+  \frac{\partial\pi}{\partial q}
+  =
+  \frac{\pi}{q}>0,
+  \qquad
+  \frac{\partial\pi}{\partial c}
+  =
+  (1-\varepsilon)\frac{\pi}{c}<0.
+  \label{eq:p15-price-profit-derivatives}
+\end{equation}
+Since \(R(q,c)=\pi(q,c)/(1-\beta\varphi)\),
+\begin{equation}
+  R_q=\frac{R}{q}>0,
+  \qquad
+  R_c=(1-\varepsilon)\frac{R}{c}<0,
+  \label{eq:p15-return-derivatives}
+\end{equation}
+and, holding \(\pi\) fixed,
+\[
+  R_\beta
+  =
+  \frac{\varphi\pi}{(1-\beta\varphi)^2}\geq0,
+  \qquad
+  R_\varphi
+  =
+  \frac{\beta\pi}{(1-\beta\varphi)^2}>0.
+\]
+The first inequality is an equality when \(\varphi=0\).
+
+\paragraph{Sufficient conditions, dimensions, and zero effects.}
+The signs use \(A,q,c>0\), \(\varepsilon>1\),
+\(\beta\in(0,1)\), and \(\varphi\in[0,1)\). The price derivative is
+dimensionless; \(R_q\) and \(R_c\) have currency per unit of their respective
+arguments. A change in \(\beta\) has no continuation-value effect when
+\(\varphi=0\). None of these derivatives is a policy effect unless a specified
+route technology changes the cost argument supplied to \(R\).
+
+\paragraph{Economic interpretation and empirical prediction.}
+This is a commercial-return margin. Higher manufacturing cost is passed
+through to the product price and lowers optimized commercial value, while a
+higher project-value shifter raises it. The empirical prediction is conditional
+cost pass-through and lower commercial return for more costly manufacturing,
+not a claim about patenting or upstream research.
+
+\subsection{Commercialization-route choice at fixed CMO price}
+\label{subsec:p15-route-choice}
+
+\paragraph{Object and held-fixed variables.}
+The object is the internal-minus-entrusted value gap and its conditional
+capability cutoff. Hold \((q,m)\), all technologies and outside options fixed.
+For capability derivatives also hold finite \((\tau_E,p_m)\) fixed. For each
+implicit cutoff derivative, vary only the continuous argument displayed.
+
+On the internally feasible domain,
+\begin{equation}
+  \Delta_{IE,k}
+  =
+  s(q)R_c(q,c_I)c_{I,k}-F_{I,k}>0.
+  \label{eq:p15-gap-capability}
+\end{equation}
+The operating-cost component is weakly positive and may be zero when
+\(s(q)=0\); the setup-cost component is strictly positive. Under the
+cell-specific crossing condition, the implicit-function theorem gives
+\begin{equation}
+  \left.\frac{\partial k^*}{\partial\tau_E}\right|_{q,m,p_m}
+  =
+  -\frac{1}{\Delta_{IE,k}(k^*)}<0,
+  \qquad
+  \left.\frac{\partial k^*}{\partial p_m}\right|_{q,m,\tau_E}
+  =
+  -\frac{b(m)}{\Delta_{IE,k}(k^*)}<0.
+  \label{eq:p15-cutoff-derivatives}
+\end{equation}
+Both are continuous-argument derivatives inside the finite-wedge domain.
+They are not derivatives with respect to \(M\), and the second is not an
+equilibrium-price effect.
+
+\paragraph{Binary policy comparison.}
+Let \(W_i^0=\max\{W_i^I,W^T,0\}\). At any fixed finite \(p_m\),
+\begin{equation}
+  W_i(q,m;1,p_m)-W_i(q,m;0,p_m)
+  =
+  [W_i^E(q,m;1,p_m)-W_i^0(q,m)]_+\geq0.
+  \label{eq:p15-fixed-project-gain}
+\end{equation}
+This finite comparison adds an option without changing the old route values.
+It is strict only on \(\mathcal C_i(p_m)\).
+
+\paragraph{Sufficient conditions and zero effects.}
+The cutoff signs require internal feasibility, the maintained technology signs,
+finite \((\tau_E,p_m)\), strict \(\Delta_{IE,k}>0\), and endpoint crossing.
+If crossing fails, no interior cutoff is asserted. If \(T\) or \(A\) dominates,
+the \(I/E\) cutoff does not determine the realized route. If
+\(W_i^E\leq W_i^0\), the finite policy gain is zero.
+
+\paragraph{Economic interpretation and empirical prediction.}
+This is a commercialization-route margin. Better internal manufacturing
+capability makes internal production relatively more attractive; a lower
+finite entrusted-route burden expands the capability region using \(E\), while
+a higher fixed CMO price contracts it. The empirical prediction is sorting of
+holder--manufacturer organization by predetermined manufacturing capability
+and project requirement, conditional on outside options.
+
+\subsection{Project advancement at fixed CMO price}
+\label{subsec:p15-advancement-fixed-price}
+
+\paragraph{Object and held-fixed variables.}
+The object is the unique common project-advancement intensity
+\[
+  x_i^*(M,p_m)
+  =
+  \left[\frac{\beta a_i\Omega_i(M,p_m)}{\kappa}\right]^{1/\nu}.
+\]
+Each partial derivative below holds \(M,p_m,\nu\) and all unlisted primitives
+fixed. In particular, route-value objects are held fixed when \(a_i\) or
+\(\kappa\) is varied. The formulas apply at \(\Omega_i>0\); the
+\(\Omega_i=0\) corner is handled separately.
+
+Differentiation of the advancement FOC gives
+\begin{equation}
+  \frac{\partial x_i^*}{\partial\Omega_i}
+  =
+  \frac{x_i^*}{\nu\Omega_i}>0,
+  \qquad
+  \frac{\partial x_i^*}{\partial a_i}
+  =
+  \frac{x_i^*}{\nu a_i}>0,
+  \qquad
+  \frac{\partial x_i^*}{\partial\kappa}
+  =
+  -\frac{x_i^*}{\nu\kappa}<0.
+  \label{eq:p15-advancement-partials}
+\end{equation}
+The corresponding elasticities are \(1/\nu,1/\nu,-1/\nu\).
+Because the optimized project value obeys the deterministic envelope,
+\(\Omega_{i,p_m}=-\chi_i^E\) almost everywhere, so
+\begin{equation}
+  \left.\frac{\partial x_i^*}{\partial p_m}\right|_M
+  =
+  -\frac{x_i^*}{\nu\Omega_i}\chi_i^E
+  \leq0.
+  \label{eq:p15-advancement-price}
+\end{equation}
+This is a fixed-candidate-price derivative and already includes both the
+intensive value effect and deterministic route-envelope effect inside
+\(\Omega_i\).
+
+For binary \(M\), define at a common support price
+\[
+  \Delta\Omega_i(p_m)
+  =
+  \int[W_i^E(q,m;1,p_m)-W_i^0(q,m)]_+\,dF.
+\]
+The correct policy calculation is the finite difference
+\begin{equation}
+  \Delta x_i(p_m)
+  =
+  \left(\frac{\beta a_i}{\kappa}\right)^{1/\nu}
+  \left[
+    (\Omega_i^0+\Delta\Omega_i(p_m))^{1/\nu}
+    -(\Omega_i^0)^{1/\nu}
+  \right]
+  \geq0.
+  \label{eq:p15-fixed-advancement-gain}
+\end{equation}
+It is strict if and only if \(\Delta\Omega_i(p_m)>0\).
+
+\paragraph{Sufficient conditions and zero effects.}
+The partials require \(\Omega_i>0\). At the zero-value corner, \(x_i^*=0\);
+global monotonicity follows directly from the closed form. Higher \(a_i\)
+scales a positive response but cannot create one when the entrusted surplus is
+zero. The weak price effect is zero when no project uses \(E\), so
+\(\chi_i^E=0\). The manufacturing-capability ordering of the level response
+additionally uses \(\nu\geq1\); no such sign is claimed for
+\(0<\nu<1\) without another bound.
+
+\paragraph{Economic interpretation and empirical prediction.}
+This is development-stage project advancement, not upstream research.
+Expected commercialization value raises the return to advancing viable
+projects; higher advancement productivity amplifies a positive value gain,
+whereas a steeper cost scale reduces the chosen intensity. The prediction is
+a larger project-advancement response among high-\(a_i\) developers for which
+entrusted manufacturing adds value, especially when internal manufacturing
+capability is weak under the stated curvature condition. No patent-application
+response follows mechanically.
+
+\subsection{CMO supply, demand, and continuous equilibrium derivatives}
+\label{subsec:p15-cmo-continuous}
+
+\paragraph{Supplier object and held-fixed variables.}
+For a supplier with \(p_m>0\), vary only candidate price or efficiency while
+holding the other argument and the cost function fixed. Implicit
+differentiation of \(p_m=\Psi_s(s_j^*;z_j)\) gives
+\begin{equation}
+  \frac{\partial s_j^*}{\partial p_m}
+  =
+  \frac{1}{\Psi_{ss}}>0,
+  \qquad
+  \frac{\partial s_j^*}{\partial z_j}
+  =
+  -\frac{\Psi_{sz}}{\Psi_{ss}}>0.
+  \label{eq:p15-supplier-partials}
+\end{equation}
+These are capacity-supply derivatives; policy does not shift
+\(\Psi\) or \(z_j\).
+
+\paragraph{Study-demand object.}
+At differentiability points of the aggregated deterministic-choice functions,
+\begin{equation}
+  \frac{\partial D_m^{\mathrm{MAH}}}{\partial p_m}
+  =
+  \int a_i
+  \left[
+    \frac{\partial x_i^*}{\partial p_m}\chi_i^E
+    +
+    x_i^*\frac{\partial\chi_i^E}{\partial p_m}
+  \right]dH(a,k)
+  \leq0.
+  \label{eq:p15-study-demand-slope}
+\end{equation}
+The first term is the project-value/advancement response; the second is the
+commercialization-route response. Where a classical derivative does not
+exist, the global weak decrease follows from monotonicity and atomless
+aggregation.
+
+\paragraph{Continuous equilibrium perturbation.}
+Consider an infinitesimal continuous, non-policy perturbation. Let
+\(dD_m\) and \(dS_m\) denote its direct demand and supply shifts at a fixed
+price. Hold every other primitive fixed. Differentiating
+\(Z(p_m)=D_m(p_m)-S_m(p_m)=0\) at the unique equilibrium gives
+\(S_{m,p}-D_{m,p}>0\) and
+\begin{equation}
+  dp_m^*
+  =
+  \frac{dD_m-dS_m}
+       {S_{m,p}-D_{m,p}}.
+  \label{eq:p15-equilibrium-ift}
+\end{equation}
+A demand-increasing shifter raises the equilibrium price when supply is not
+shifted; a supply-increasing shifter lowers it when demand is not shifted.
+This formula is not applied to binary \(M\).
+
+\paragraph{Sufficient conditions, dimensions, and zero effects.}
+The supplier signs use \(\Psi_{ss}>0\) and \(\Psi_{sz}<0\). The aggregate
+price derivative uses differentiability and the same strict excess-demand
+slope that ensures uniqueness. It is zero when the perturbation changes
+neither demand nor supply at the equilibrium. Equation
+\eqref{eq:p15-equilibrium-ift} is dimensionally a change in CMO price.
+
+\paragraph{Interpretation and prediction.}
+These are CMO capacity and equilibrium-price margins. A higher capacity price
+induces more qualified supply but reduces study demand through both fewer
+entrusted assignments and weaker project advancement. The prediction is an
+upward-sloping supply response and a scarcity price that responds positively
+to continuous demand pressure, conditional on unchanged supply technology.
+
+\subsection{Binary reform at the equilibrium CMO price}
+\label{subsec:p15-equilibrium-policy}
+
+\paragraph{Object and finite comparison.}
+Let \(p_m^h=p_m^*(h)\) for \(h\in\{0,1\}\). Supply technology, the supplier
+distribution, and background demand are held fixed. Since
+\(D_m^{\mathrm{MAH}}(p_m;0)=0\), market clearing at \(p_m^0\) implies
+\[
+  Z_1(p_m^0)=D_m^{\mathrm{MAH}}(p_m^0;1)\geq0.
+\]
+Strict monotonicity of \(Z_1\) therefore gives the finite comparison
+\begin{equation}
+  p_m^1\geq p_m^0,
+  \qquad
+  p_m^1>p_m^0
+  \ \Longleftrightarrow\
+  D_m^{\mathrm{MAH}}(p_m^0;1)>0.
+  \label{eq:p15-equilibrium-price-order}
+\end{equation}
+No derivative with respect to \(M\) is used.
+
+Define the fixed-price direct gain and the equilibrium gain as
+\[
+  \Delta\Omega_i^{\mathrm{dir}}
+  =
+  \int[W_i^E(q,m;1,p_m^0)-W_i^0(q,m)]_+\,dF,
+\]
+\[
+  \Delta\Omega_i^{\mathrm{eq}}
+  =
+  \int[W_i^E(q,m;1,p_m^1)-W_i^0(q,m)]_+\,dF.
+\]
+Because \(W_{i,p_m}^E=-b(m)<0\), the price order yields
+\begin{equation}
+  0\leq\Delta\Omega_i^{\mathrm{eq}}
+  \leq\Delta\Omega_i^{\mathrm{dir}}.
+  \label{eq:p15-value-attenuation}
+\end{equation}
+Applying the strictly increasing advancement mapping to these value gains
+gives
+\begin{equation}
+  0\leq\Delta x_i^{\mathrm{eq}}
+  \leq\Delta x_i^{\mathrm{dir}}.
+  \label{eq:p15-advancement-attenuation}
+\end{equation}
+
+\paragraph{Conditions and zero effects.}
+The price order requires policy-invariant supply/background demand and
+nonnegative post-reform study demand. Strictness requires positive study
+demand at \(p_m^0\). A developer's equilibrium gain is zero when the
+entrusted option remains below its old-route maximum at \(p_m^1\). Scarcity
+can eliminate an incremental gain but cannot lower the old choice-set value.
+
+\paragraph{Economic interpretation and empirical prediction.}
+This is an equilibrium CMO-price feedback on project advancement. New
+entrusted-route demand bids up scarce qualified capacity, so a fixed-price
+calculation overstates the equilibrium value and advancement response. The
+prediction is a weak post-reform increase in the CMO capacity price when the
+study cohort creates positive demand and a smaller project response in markets
+with less elastic capacity supply.
+
+\subsection{Planning-stage and realized-product finite comparisons}
+\label{subsec:p15-outcomes}
+
+\paragraph{Objects and held-fixed primitives.}
+The objects are planning-stage project intensity and realized retained-product
+outcomes, evaluated at the regime-specific equilibrium. Predetermined
+\(a_i\), project distributions, realization probabilities, technologies and
+outside options are held fixed. The regime changes only route availability and
+the endogenous CMO price.
+
+Planning-stage intensity satisfies the exact finite difference
+\begin{equation}
+  \Delta\Lambda_i^{\mathrm{plan}}
+  =
+  a_i\Delta x_i^{\mathrm{eq}}\geq0.
+  \label{eq:p15-planning-change}
+\end{equation}
+Let
+\[
+  Q_i^{\mathrm{ret},h}
+  =
+  \int s(q)
+  [\mathbf 1\{r_i^{*,h}=I\}+\mathbf 1\{r_i^{*,h}=E\}]\,dF.
+\]
+Adding route \(E\) cannot remove an old option. If \(E\) wins, it is retained;
+if it does not win, the old maximizer is unchanged. Hence
+\(Q_i^{\mathrm{ret},1}\geq Q_i^{\mathrm{ret},0}\). The exact decomposition is
+\begin{equation}
+  \Delta Y_i^{\mathrm{ret}}
+  =
+  a_i(x_i^1-x_i^0)Q_i^{\mathrm{ret},0}
+  +
+  a_ix_i^1
+  (Q_i^{\mathrm{ret},1}-Q_i^{\mathrm{ret},0})
+  \geq0.
+  \label{eq:p15-retained-outcome-change}
+\end{equation}
+The first term is project advancement; the second is retained-route
+composition. The same decomposition applies within class \(g\) using
+\(\rho_gF_g\) and the common \(x_i\), not a class-specific control.
+
+\paragraph{Sufficient conditions and zero effects.}
+A strict planning-stage increase requires a positive equilibrium expected-value
+gain. A strict retained-product increase requires a positive advancement term
+or positive-measure movement from \(T/A\) into \(E\) with positive realization
+weight. Reassignment from \(I\) to \(E\) raises observed holder--producer
+separation but, by itself, does not change the retained total. If advancement
+and route indicators are unchanged, every displayed outcome change is zero.
+
+\paragraph{Economic interpretation and empirical prediction.}
+These are planning-stage and realized-product margins. The model predicts that
+retained holder--producer separation can rise after route \(E\) becomes
+available, and separates that assignment change from the number of viable
+projects advanced and from downstream realization. Product-level holder and
+manufacturer records can test the assignment prediction. Patent applications
+are not an outcome in these expressions.
+
+\subsection{Mandatory limiting cases}
+\label{subsec:p15-boundaries}
+
+\paragraph{Internal capability \(k_i\to\infty\).}
+On the feasible domain, \(\Delta_{IE,k}>0\), so increasing capability weakly
+favors \(I\) relative to \(E\). Under the maintained upper-end crossing
+condition, \(\Delta_{IE}>0\) for sufficiently large \(k_i\). This is a relative
+route-value statement; \(T\) or \(A\) may still dominate both.
+
+\paragraph{Prohibitive internal capability.}
+If \(k_i<\underline{k}(m)\), then \(F_I(m,k_i)=+\infty\) and
+\(W_i^I=-\infty\). Route \(I\) is infeasible rather than merely unattractive.
+
+\paragraph{Pre-MAH regime.}
+When \(M=0\), \(\tau_E(0)=+\infty\), so \(W_i^E=-\infty\),
+\(\chi_i^E=0\), and \(D_m^{\mathrm{MAH}}=0\). The old route set and background
+CMO market remain.
+
+\paragraph{Infinite CMO price.}
+Because \(b(m)>0\),
+\[
+  \lim_{p_m\to\infty}W_i^E(q,m;1,p_m)=-\infty.
+\]
+Thus \(E\) ceases to be optimal and
+\begin{equation}
+  \lim_{p_m\to\infty}
+  W_i(q,m;1,p_m)
+  =
+  W_i^0(q,m).
+  \label{eq:p15-infinite-price-boundary}
+\end{equation}
+The newly added option disappears economically but cannot reduce the old
+route-set value.
+
+\paragraph{Zero entrusted-route advantage.}
+If \(W_i^E(q,m;1,p_m)\leq W_i^0(q,m)\) for every draw, then
+\begin{equation}
+  \Delta\Omega_i(p_m)=0,
+  \qquad
+  \Delta x_i(p_m)=0.
+  \label{eq:p15-zero-advantage-boundary}
+\end{equation}
+At the equilibrium price, the same conclusion applies when the inequality
+holds at \(p_m^1\).
+
+\paragraph{Perfectly elastic CMO supply.}
+If qualified capacity is available at the common administered/competitive
+price \(\bar p_m\) in both regimes, then
+\[
+  p_m^1=p_m^0=\bar p_m,
+  \qquad
+  \Delta\Omega_i^{\mathrm{eq}}=\Delta\Omega_i^{\mathrm{dir}},
+  \qquad
+  \Delta x_i^{\mathrm{eq}}=\Delta x_i^{\mathrm{dir}}.
+\]
+The equilibrium attenuation channel disappears. This is a boundary outside
+the strictly increasing-supply condition used for uniqueness, not a claim
+that baseline supply is perfectly elastic.
+
+\paragraph{Quadratic advancement cost.}
+For \(\nu=1\),
+\begin{equation}
+  x_i^*(M,p_m)
+  =
+  \frac{\beta a_i}{\kappa}\Omega_i(M,p_m),
+  \qquad
+  \Delta x_i
+  =
+  \frac{\beta a_i}{\kappa}\Delta\Omega_i.
+  \label{eq:p15-quadratic-boundary}
+\end{equation}
+The value response is exactly linear.
+
+\paragraph{Novelty-share boundaries and no fixed ranking.}
+The common-control decomposition is
+\begin{equation}
+  \Delta\Omega_i
+  =
+  \rho_O\Delta\Omega_{iO}
+  +
+  \rho_{\mathrm{Inc}}\Delta\Omega_{i\mathrm{Inc}}.
+  \label{eq:p15-novelty-boundary}
+\end{equation}
+If \(\rho_O=0\), the original-oriented class contributes zero to the aggregate;
+if \(\rho_{\mathrm{Inc}}=0\), the incremental class contributes zero. Either
+conditional gain may be zero while the other is positive. Reversing the class
+supports of positive entrusted surplus reverses their ordering, so no fixed
+ranking follows from the baseline.
+
+\subsection{Comparative-static scope conclusion}
+\label{subsec:p15-scope}
+
+All central signs above follow from the maintained primitive, technology,
+market, and mapping assumptions and
+the deterministic option-value structure. This section adds no route, control,
+state, market, welfare object, patent outcome, logit share, inclusive value or
+continuous implementation index. Its finite policy chain is
+\[
+  \begin{aligned}
+  M
+  &\longrightarrow
+  \text{availability of retained entrusted manufacturing}
+  \longrightarrow
+  \Omega_i \\
+  &\longrightarrow
+  x_i^*
+  \longrightarrow
+  \text{planning, route, and realized-product objects}.
+  \end{aligned}
+\]
+with the endogenous CMO price attenuating, rather than directly causing, the
+project-value response.

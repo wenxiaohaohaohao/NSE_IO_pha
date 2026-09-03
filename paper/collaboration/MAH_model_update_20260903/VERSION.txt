@@ -1,0 +1,9 @@
+Package: MAH_model_update_20260903
+Title: Regulatory Separation and Pharmaceutical Innovation: Evidence from China's MAH Reform
+Version date: 2026-09-03
+Branch: codex/mah-model-rebuild
+Source commit: 28da4281cd0d34d8400f997edef18227aef6baf5
+Model rebuild status: Specification update and Phases 1-18 approved; separate research-development/patent extension approved and implemented
+Formal main manuscript: 14 pages
+Formal technical appendix: 38 pages
+Package status: independently compiled and validated from packaged sources

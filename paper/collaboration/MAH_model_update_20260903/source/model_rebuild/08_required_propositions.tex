@@ -1,0 +1,502 @@
+% Six substantive propositions and one novelty corollary.
+\section{Required Baseline Propositions}
+\label{sec:p08-propositions}
+
+This section states exactly six substantive propositions. The novelty result
+is a corollary of the MAH-relevant-project-set identity, not a seventh
+substantive proposition. All policy comparisons are finite comparisons between
+\(M=0\) and \(M=1\); the binary regime is never differentiated.
+
+\subsection{Proposition 1: Organizational sorting}
+\label{prop:p08-sorting}
+
+\paragraph{Assumptions and fixed objects.}
+Fix a project \((q,m)\), a finite institutional wedge, regime \(M=1\), and a
+conjectured support price \(p_m<\infty\). Hold all primitives except internal
+manufacturing capability \(k_i\) fixed. On the internally feasible domain,
+use the technology signs and endpoint-crossing conditions stated above.
+
+\paragraph{Claim.}
+The internal-minus-entrusted value gap is strictly increasing in \(k_i\):
+\begin{equation}
+  \frac{\partial\Delta_{IE}(k_i;q,m,M,p_m)}{\partial k_i}
+  =
+  s(q)R_c(q,c_I)c_{I,k}(m,k_i)-F_{I,k}(m,k_i)
+  >0.
+  \label{eq:p08-sorting-slope}
+\end{equation}
+If the gap is negative at the lower feasible endpoint and positive at the
+upper endpoint, there is a unique \(k^*(q,m;p_m,M)\). Conditional on both
+\(I\) and \(E\) dominating \(T\) and \(A\), developers below the cutoff use
+\(E\) and developers above it use \(I\).
+
+\paragraph{Proof.}
+The commercial-value kernel gives \(R_c<0\), while the internal technology
+gives \(c_{I,k}<0\) and \(F_{I,k}<0\).
+The operating-cost term on the right side of
+\eqref{eq:p08-sorting-slope} is weakly positive (and is zero when
+\(s(q)=0\)), while the setup-cost term is strictly positive. Their sum is
+therefore strictly positive. Continuity and endpoint crossing give existence
+by the intermediate value theorem; strict monotonicity gives uniqueness. The sign of
+the gap on either side of its unique zero gives the conditional sorting
+statement. The comparison with \(T/A\) is required because an \(I/E\) ranking
+alone does not establish the globally selected route.
+
+\paragraph{Sufficient conditions and zero-effect cases.}
+The endpoint-crossing conditions are sufficient, not primitive conclusions.
+If they fail, a finite interior cutoff need not exist. If
+\(k_i<\underline{k}(m)\), internal production is infeasible. As
+\(k_i\rightarrow\infty\), the maintained technology signs weakly favor
+internal production relative to entrusted production. At \(M=0\), route \(E\)
+is unavailable and there is no finite pre-MAH \(I/E\) cutoff.
+
+\paragraph{Economic interpretation.}
+Internal capability reduces both internal operating cost and setup burden.
+Entrusted production is most useful to developers for which those internal
+advantages are weak, but it is selected only when it also beats transfer or
+delay. The result is organizational sorting, not a permanent firm-type
+taxonomy.
+
+\subsection{Proposition 2: The MAH-relevant project set}
+\label{prop:p08-relevant-set}
+
+\paragraph{Assumptions and fixed objects.}
+Fix developer \(i\), project draw \((q,m)\), and support price \(p_m\).
+The old route set is \(I,T,A\); post-MAH adds \(E\) without removing an old
+option. Route values retain the definitions given above.
+
+\paragraph{Definitions and claim.}
+Define
+\begin{equation}
+  W_i^0(q,m)
+  =
+  \max\{W_i^I(q,m),W^T(q,m),0\},
+  \qquad
+  W_i^1(q,m;p_m)
+  =
+  \max\{W_i^0(q,m),W_i^E(q,m;1,p_m)\}.
+  \label{eq:p08-old-new-values}
+\end{equation}
+Then
+\begin{equation}
+  W_i^1(q,m;p_m)-W_i^0(q,m)
+  =
+  \left[W_i^E(q,m;1,p_m)-W_i^0(q,m)\right]_+.
+  \label{eq:p08-positive-part-gain}
+\end{equation}
+The MAH-relevant project set is
+\begin{equation}
+  \mathcal C_i(p_m)
+  =
+  \left\{(q,m):
+  W_i^E(q,m;1,p_m)>W_i^0(q,m)\right\}.
+  \label{eq:p08-relevant-set}
+\end{equation}
+Only project draws in this set receive a strict direct value gain at the fixed
+support price.
+
+\paragraph{Proof.}
+For any real numbers \(a,b\),
+\(\max\{a,b\}-a=[b-a]_+\). Apply the identity with
+\(a=W_i^0\) and \(b=W_i^E\). The gain is strictly positive exactly where the
+argument of the positive-part operator is positive, which is precisely
+\(\mathcal C_i(p_m)\).
+
+\paragraph{Sufficient conditions and zero-effect cases.}
+A project receives a strict gain if and only if entrusted value strictly
+exceeds internal value, transfer value, and abandonment value at the support
+price. If \(W_i^E\leq W_i^0\), the project gain is zero. If this inequality
+holds for all project draws, \(\mathcal C_i(p_m)\) is empty up to null sets.
+As \(p_m\rightarrow\infty\), \(W_i^E\rightarrow-\infty\), so the old value is
+preserved and the relevant set becomes empty.
+
+\paragraph{Economic interpretation.}
+MAH matters only where retained entrusted manufacturing beats every option
+already available. The reform does not raise the value of projects that were
+already better served internally, transferred, or delayed.
+
+\subsection{Proposition 3: Project advancement and firm heterogeneity}
+\label{prop:p08-advancement}
+
+\paragraph{Assumptions and fixed objects.}
+Fix a support price \(p_m\), policy-invariant primitives, and developer
+characteristics except for the characteristic varied in each comparison.
+Route values do not depend on research capability \(a_i\). For the
+manufacturing-capability result, additionally impose the proposition-specific
+sufficient condition \(\nu\geq1\).
+
+\paragraph{Proof: expected value and advancement response.}
+Let
+\(\Omega_i^h(p_m)=\int W_i^h(q,m;p_m)\,dF(q,m)\) for
+\(h\in\{0,1\}\), with the irrelevant \(p_m\) argument suppressed for
+\(h=0\). Proposition~2 implies
+\begin{equation}
+  \Delta\Omega_i(p_m)
+  \equiv
+  \Omega_i^1(p_m)-\Omega_i^0
+  =
+  \int
+  \left[W_i^E(q,m;1,p_m)-W_i^0(q,m)\right]_+
+  dF(q,m)
+  \geq0.
+  \label{eq:p08-expected-gain}
+\end{equation}
+The common advancement response is
+\begin{equation}
+  \Delta x_i(p_m)
+  =
+  \left(\frac{\beta a_i}{\kappa}\right)^{1/\nu}
+  \left[
+    \left(\Omega_i^0+\Delta\Omega_i(p_m)\right)^{1/\nu}
+    -
+    \left(\Omega_i^0\right)^{1/\nu}
+  \right].
+  \label{eq:p08-advancement-change}
+\end{equation}
+Because \(t^{1/\nu}\) is strictly increasing for every \(\nu>0\),
+\[
+  \Delta x_i(p_m)>0
+  \quad\Longleftrightarrow\quad
+  \Delta\Omega_i(p_m)>0.
+\]
+
+\paragraph{Research-capability scaling.}
+Holding \(k_i,p_m,\Omega_i^0,\Delta\Omega_i\) and all primitives fixed, a
+positive response satisfies
+\begin{equation}
+  \frac{\partial\Delta x_i(p_m)}{\partial a_i}
+  =
+  \frac{\Delta x_i(p_m)}{\nu a_i}
+  >0.
+  \label{eq:p08-capability-response}
+\end{equation}
+Thus the level response is stronger at higher \(a_i\) whenever the
+MAH-relevant set has positive expected surplus.
+
+\paragraph{Capability result.}
+The internal value is nondecreasing in \(k_i\), whereas the other old route
+values and entrusted value are independent of \(k_i\). Therefore
+\(\Omega_i^0(k_i)\) is nondecreasing and
+\(\Delta\Omega_i(k_i;p_m)\) is nonincreasing. When \(\nu\geq1\),
+\(h(t)=t^{1/\nu}\) is increasing and concave, so
+\(h(u+d)-h(u)\) is nondecreasing in \(d\) and nonincreasing in \(u\).
+Applying this result to \(u=\Omega_i^0(k_i)\) and
+\(d=\Delta\Omega_i(k_i;p_m)\) yields
+\begin{equation}
+  k_i'\geq k_i
+  \quad\Longrightarrow\quad
+  \Delta x_i(k_i';p_m)
+  \leq
+  \Delta x_i(k_i;p_m),
+  \qquad \nu\geq1.
+  \label{eq:p08-manufacturing-response}
+\end{equation}
+The inequality is strict when the entrusted surplus falls on a
+positive-measure set; for \(\nu>1\), a strict rise in positive baseline value
+also makes the concavity channel strict. For \(0<\nu<1\), no sign is asserted
+without an additional bound.
+
+\paragraph{Zero-effect and boundary cases.}
+If the relevant set is null or entrusted advantage is zero, then
+\(\Delta\Omega_i=\Delta x_i=0\). At \(\nu=1\),
+\[
+  x_i^*=\frac{\beta a_i}{\kappa}\Omega_i,
+  \qquad
+  \Delta x_i=\frac{\beta a_i}{\kappa}\Delta\Omega_i,
+\]
+so manufacturing heterogeneity operates entirely through the expected value
+gain. A high \(a_i\) does not create a response when the value gain is zero.
+
+\paragraph{Economic interpretation.}
+Research capability scales how strongly a given increase in the value of
+advancing projects changes the level of advancement. Weak internal
+manufacturing capability makes retained outsourcing more likely to add value.
+The resulting response is strongest for high-\(a_i\), low- or
+intermediate-\(k_i\) developers under the stated curvature condition. This
+does not imply more patent applications, basic research, scientific
+discovery, or breakthrough novelty.
+
+\subsection{Corollary: Novelty composition is ambiguous}
+\label{cor:p08-novelty}
+
+\paragraph{Assumptions and fixed objects.}
+Fix developer \(i\) and support price \(p_m\). The class
+\(g\in\{O,\mathrm{Inc}\}\) is an exogenous classifier, not a control or state.
+The same \(x_i\) applies to both classes.
+
+\paragraph{Claim and proof.}
+Define
+\(\Omega_{ig}^0=E_{F_g}[W_i^0]\) and
+\(\Omega_{ig}^1=E_{F_g}[\max\{W_i^0,W_i^E\}]\). Then
+\begin{equation}
+  \Delta\Omega_{ig}
+  =
+  E_{F_g}
+  \left[
+    \left(W_i^E-W_i^0\right)_+
+  \right],
+  \qquad
+  \Delta\Omega_i
+  =
+  \sum_{g\in\{O,\mathrm{Inc}\}}\rho_g\Delta\Omega_{ig}.
+  \label{eq:p08-class-gain}
+\end{equation}
+The positive-part identity proves the first equality; the mixture identity
+for \(F\) proves the second. The baseline imposes no restriction ordering the
+two conditional distributions of entrusted surplus. A support on which only
+class \(O\) has positive entrusted surplus gives
+\(\Delta\Omega_{iO}>\Delta\Omega_{i\mathrm{Inc}}\); interchanging the class
+supports reverses the ranking. Hence neither ordering follows from the
+baseline.
+
+\paragraph{Zero-effect and boundary cases.}
+If \(\rho_O=0\), class \(O\) contributes zero to the aggregate gain; if
+\(\rho_{\mathrm{Inc}}=0\), class \(\mathrm{Inc}\) contributes zero. A
+conditional class gain may be zero even when the other is positive.
+
+\paragraph{Economic interpretation.}
+Different novelty classes may have different manufacturing requirements,
+commercial values, success probabilities, costs, or outside options. Only
+explicit primitive differences can order their responses. No empirical
+original-versus-incremental ranking is hard-coded into the theory.
+
+\subsection{Proposition 4: CMO equilibrium existence and uniqueness}
+\label{prop:p08-cmo-existence}
+
+\paragraph{Assumptions and fixed objects.}
+Fix \(M\) and all exogenous distributions and primitives. Use the maintained
+market conditions: continuous weakly decreasing finite demand, continuous strictly
+increasing supply, positive background demand at zero, vanishing demand at
+high price, and unbounded high-price supply.
+
+\paragraph{Claim.}
+There exists a unique qualified-capacity clearing price
+\(p_m^*(M)>0\).
+
+\paragraph{Proof.}
+Define excess demand
+\begin{equation}
+  Z_M(p_m)
+  =
+  D_m(p_m;M)-S_m(p_m).
+  \label{eq:p08-excess-demand}
+\end{equation}
+It is continuous. At zero,
+\(Z_M(0)\geq D_m^B(0)>0\). At sufficiently high prices, total demand tends to
+zero and supply is unbounded, so \(Z_M(p_m)<0\). The intermediate value
+theorem gives a positive root. Because demand is weakly decreasing and supply
+strictly increasing, \(Z_M\) is strictly decreasing; the root is unique.
+
+\paragraph{Sufficient conditions and zero-effect cases.}
+Strictly increasing supply is sufficient for uniqueness even when demand has
+flat regions. At \(M=0\), study-related entrusted demand is zero, but
+background demand supports a positive pre-MAH price. If background demand at
+zero were absent, the positive-price conclusion would not follow from these
+conditions; that is outside the maintained baseline.
+
+\paragraph{Economic interpretation.}
+The capacity price coordinates deterministic entrusted-route demand,
+project advancement, and supplier capacity through one scalar market. Its
+existence does not require logit smoothing, supplier entry, or another market.
+
+\subsection{Proposition 5: CMO scarcity attenuation}
+\label{prop:p08-scarcity}
+
+\paragraph{Assumptions and fixed objects.}
+Let \(p_m^0=p_m^*(0)\) and \(p_m^1=p_m^*(1)\). Hold qualified-supply
+technology, supplier distribution and background demand fixed across regimes.
+The reform adds nonnegative entrusted-route study demand; old routes remain
+available.
+
+\paragraph{Proof: equilibrium price comparison.}
+At the pre-MAH price,
+\[
+  Z_1(p_m^0)
+  =
+  D_m^{\mathrm{MAH}}(p_m^0;1)
+  \geq0,
+\]
+because background demand equals supply at \(p_m^0\). Since \(Z_1\) is
+strictly decreasing and vanishes at \(p_m^1\),
+\begin{equation}
+  p_m^1\geq p_m^0,
+  \quad\text{with strict inequality if}\quad
+  D_m^{\mathrm{MAH}}(p_m^0;1)>0.
+  \label{eq:p08-price-order}
+\end{equation}
+
+\paragraph{Value attenuation.}
+Define the fixed-price and equilibrium-price gains by
+\[
+  \Delta\Omega_i^{\mathrm{dir}}
+  =
+  \int
+  [W_i^E(q,m;1,p_m^0)-W_i^0(q,m)]_+
+  dF,
+\]
+\[
+  \Delta\Omega_i^{\mathrm{eq}}
+  =
+  \int
+  [W_i^E(q,m;1,p_m^1)-W_i^0(q,m)]_+
+  dF.
+\]
+Since \(W_{i,p_m}^E=-b(m)<0\) and
+\(p_m^1\geq p_m^0\), the integrand in the equilibrium expression is
+pointwise no larger. Both integrands are nonnegative, so
+\begin{equation}
+  0
+  \leq
+  \Delta\Omega_i^{\mathrm{eq}}
+  \leq
+  \Delta\Omega_i^{\mathrm{dir}}.
+  \label{eq:p08-scarcity-value-bounds}
+\end{equation}
+
+\paragraph{Advancement attenuation.}
+For a fixed pre-MAH value \(\Omega_i^0\), the mapping
+\[
+  d\longmapsto
+  \left(\frac{\beta a_i}{\kappa}\right)^{1/\nu}
+  [(\Omega_i^0+d)^{1/\nu}-(\Omega_i^0)^{1/\nu}]
+\]
+is nonnegative and strictly increasing for \(d\geq0\). Therefore
+\begin{equation}
+  0
+  \leq
+  \Delta x_i^{\mathrm{eq}}
+  \leq
+  \Delta x_i^{\mathrm{dir}}.
+  \label{eq:p08-scarcity-advancement-bounds}
+\end{equation}
+
+\paragraph{Zero-effect and boundary cases.}
+If study demand is zero at \(p_m^0\), the price need not rise. If supply is
+perfectly elastic at a common \(\bar p_m\), then
+\(p_m^1=p_m^0=\bar p_m\) and attenuation disappears. If a high equilibrium
+price eliminates entrusted advantage for developer \(i\), its equilibrium
+gain is zero. Even then the old route-set value is preserved: scarcity can
+attenuate the positive reform gain but cannot make access to the enlarged
+choice set privately worse.
+
+\paragraph{Economic interpretation.}
+New demand for qualified external capacity bids up its scarcity price. This
+reduces the value of the entrusted option relative to a fixed-price policy
+calculation and tempers project advancement. The price response is endogenous;
+MAH does not directly reduce scarcity or shift supply.
+
+\subsection{Proposition 6: Planning-stage and observed outcomes}
+\label{prop:p08-outcomes}
+
+\paragraph{Assumptions and fixed objects.}
+Fix a regime and its equilibrium objects. The common \(x_i^*\) is selected
+before project characteristics and route assignment. The downstream
+probabilities \(s(q)\) and \(s_g(q)\) are exogenous and policy invariant.
+All integrals use the deterministic route choices evaluated in the same
+regime.
+
+\paragraph{Planning-stage projects.}
+The equilibrium intensity at which viable projects reach the stage relevant
+for commercialization is
+\begin{equation}
+  \Lambda_i^{\mathrm{plan}}
+  =
+  a_ix_i^*.
+  \label{eq:p08-planning-arrival}
+\end{equation}
+This is the planning-stage technology
+\(\lambda_i^{\mathrm{plan}}=a_ix_i\) evaluated at the advancement optimizer.
+
+\paragraph{Observed retained outcomes.}
+Within the paper's original-drug domain, expected realized outcomes for which
+the developer remains the holder are
+\begin{equation}
+  Y_i^{\mathrm{ret}}
+  =
+  a_ix_i^*
+  \int
+  s(q)
+  \left[
+    \mathbf 1\{r_i^*=I\}
+    +
+    \mathbf 1\{r_i^*=E\}
+  \right]
+  dF(q,m).
+  \label{eq:p08-retained-outcome}
+\end{equation}
+Expected realized outcomes with retained holder--producer separation are
+\begin{equation}
+  Y_i^E
+  =
+  a_ix_i^*
+  \int
+  s(q)\mathbf 1\{r_i^*=E\}
+  dF(q,m).
+  \label{eq:p08-entrusted-outcome}
+\end{equation}
+For \(g\in\{O,\mathrm{Inc}\}\), the class contribution to retained
+outcomes is
+\begin{equation}
+  Y_{ig}^{\mathrm{ret}}
+  =
+  a_ix_i^*\rho_g
+  \int
+  s_g(q)
+  \left[
+    \mathbf 1\{r_i^*=I\}
+    +
+    \mathbf 1\{r_i^*=E\}
+  \right]
+  dF_g(q,m).
+  \label{eq:p08-type-outcome}
+\end{equation}
+There is one common \(x_i^*\), not an \(x_{ig}\) control.
+
+\paragraph{Proof and exact decomposition.}
+Let
+\[
+  Q_i^{\mathrm{ret},h}
+  =
+  \int s(q)
+  [\mathbf 1\{r_i^{*,h}=I\}+\mathbf 1\{r_i^{*,h}=E\}]
+  dF
+\]
+and let \(x_i^h=x_i^*(h,p_m^h)\). Adding and subtracting
+\(a_ix_i^1Q_i^{\mathrm{ret},0}\) gives
+\begin{equation}
+  \Delta Y_i^{\mathrm{ret}}
+  =
+  a_i(x_i^1-x_i^0)Q_i^{\mathrm{ret},0}
+  +
+  a_ix_i^1
+  (Q_i^{\mathrm{ret},1}-Q_i^{\mathrm{ret},0}).
+  \label{eq:p08-outcome-decomposition}
+\end{equation}
+The first term is the project-advancement/planning-arrival component. The
+second is the retained-route composition component. Reassignment from \(I\)
+to \(E\) can raise \(Y_i^E\) without changing the retained total; movement
+from \(T/A\) to \(E\) can raise both.
+
+\paragraph{Zero-effect and ambiguity cases.}
+If advancement and all route indicators are unchanged, observed outcomes are
+unchanged. A class-specific outcome can have zero change while the other
+changes. The baseline allows
+\(\Delta Y_{iO}^{\mathrm{ret}}=0<
+\Delta Y_{i\mathrm{Inc}}^{\mathrm{ret}}\) and the reverse; it imposes no
+ranking. If \(\rho_g=0\), that class contributes zero to the aggregate.
+
+\paragraph{Economic interpretation.}
+The model separates investment in advancing viable projects, their arrival at
+the commercialization-relevant planning stage, organizational assignment, and
+realized products. Holder--producer separation is observed only after route
+assignment. None of these expressions makes patent generation endogenous or
+lets MAH directly change downstream realization probabilities.
+
+\subsection{Scope conclusion}
+\label{subsec:p08-scope}
+
+The six propositions and the novelty corollary exhaust the baseline results
+established in this section. They add no market, no entry margin, no welfare object, no
+logit route share, no class-specific advancement control, and no direct policy
+effect on research capability, project draws, manufacturing technology,
+capacity supply, or downstream realization.

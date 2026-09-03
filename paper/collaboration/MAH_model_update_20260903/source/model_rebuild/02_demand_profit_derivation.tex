@@ -1,0 +1,163 @@
+% Demand, product pricing, operating profit, and commercial PV.
+\section{Demand and Operating Profit}
+\label{sec:p02-demand-profit}
+
+This section derives the commercial value kernel used by later manufacturing
+routes. It conditions on a project value shifter \(q>0\) and a positive
+marginal manufacturing cost \(c>0\). The route technologies that generate
+\(c\) are defined in the next section. Product price \(p\) is distinct
+from the qualified manufacturing-service price \(p_m\).
+
+Let \(\mathsf Y\) denote physical product-output units per operating period.
+Both \(p\) and \(c\) are measured in \(\mathsf C/\mathsf Y\), demand is
+measured in \(\mathsf Y\) per period, one-period operating profit in
+\(\mathsf C\) per period, and present value in \(\mathsf C\) per commercially
+active product.
+
+\subsection{Residual demand and the pricing problem}
+\label{subsec:p02-demand-pricing}
+
+Residual demand for a successfully commercialized project is
+\begin{equation}
+  y(p;q)=Aq p^{-\varepsilon},
+  \qquad A>0,\quad q>0,\quad \varepsilon>1.
+  \label{eq:p02-demand}
+\end{equation}
+The scale \(A\), project shifter \(q\), and elasticity \(\varepsilon\) are
+exogenous to the institutional regime. Conditional on \(q\) and \(c\), the
+developer chooses product price from \(p\in[c,\infty)\):
+\begin{equation}
+  \max_{p\geq c}\;(p-c)Aq p^{-\varepsilon}.
+  \label{eq:p02-pricing-problem}
+\end{equation}
+Holding \(A,q,c,\varepsilon\) fixed, the derivative with respect to the
+product price is
+\begin{align}
+  \frac{\partial}{\partial p}
+  \left[(p-c)Aq p^{-\varepsilon}\right]
+  &=Aq p^{-\varepsilon}
+    -\varepsilon Aq(p-c)p^{-\varepsilon-1} \notag\\
+  &=Aq p^{-\varepsilon-1}
+    \left[\varepsilon c-(\varepsilon-1)p\right].
+  \label{eq:p02-price-foc}
+\end{align}
+Since \(Aq p^{-\varepsilon-1}>0\), the derivative has the sign of the
+bracketed affine term. That term crosses zero exactly once, giving
+\begin{equation}
+  p^*(c)=\frac{\varepsilon}{\varepsilon-1}c.
+  \label{eq:p02-optimal-price}
+\end{equation}
+Because \(\varepsilon>1\), \(p^*(c)>c\), so the solution is feasible and
+interior.
+
+For an independent second-order check, differentiate
+\eqref{eq:p02-price-foc}. At the stationary point, the term multiplying the
+derivative of \(p^{-\varepsilon-1}\) vanishes, leaving
+\begin{equation}
+  \left.
+  \frac{\partial^2}{\partial p^2}
+  \left[(p-c)Aq p^{-\varepsilon}\right]
+  \right|_{p=p^*(c)}
+  =-Aq(\varepsilon-1)
+   \left[p^*(c)\right]^{-\varepsilon-1}<0.
+  \label{eq:p02-price-soc}
+\end{equation}
+The solution is also the unique global maximum. At the lower boundary
+\(p=c\), profit is zero and the derivative is positive. The derivative is
+positive below \(p^*(c)\) and negative above it, while profit converges to zero
+as \(p\) tends to infinity. Hence there is no competing boundary maximum.
+
+\subsection{Optimized one-period operating profit}
+\label{subsec:p02-operating-profit}
+
+Substituting \eqref{eq:p02-optimal-price} into the objective gives
+\begin{align}
+  \pi(q,c)
+  &=\left(\frac{c}{\varepsilon-1}\right)
+    Aq\left(\frac{\varepsilon c}{\varepsilon-1}\right)^{-\varepsilon}
+    \notag\\
+  &=Aq
+    \frac{(\varepsilon-1)^{\varepsilon-1}}
+         {\varepsilon^{\varepsilon}}
+    c^{1-\varepsilon}.
+  \label{eq:p02-operating-profit}
+\end{align}
+The units are consistent: the price--cost margin is in
+\(\mathsf C/\mathsf Y\), demand is in \(\mathsf Y\) per period, and their
+product is in \(\mathsf C\) per period.
+
+Holding \(A,\varepsilon\), and the non-differentiated argument fixed,
+\begin{equation}
+  \frac{\partial\pi(q,c)}{\partial q}
+  =\frac{\pi(q,c)}{q}>0,
+  \qquad
+  \frac{\partial\pi(q,c)}{\partial c}
+  =(1-\varepsilon)\frac{\pi(q,c)}{c}<0.
+  \label{eq:p02-profit-derivatives}
+\end{equation}
+The cost elasticity of optimized operating profit is \(1-\varepsilon\).
+These are continuous conditional derivatives in \(q\) and \(c\), not a
+derivative with respect to the binary institutional regime.
+
+\subsection{Present value conditional on commercialization}
+\label{subsec:p02-present-value}
+
+Let \(\beta\in(0,1)\) be the one-period discount factor. Conditional on an
+already commercialized product, let \(\varphi\in[0,1)\) be the probability
+that it remains commercially active for one more period. The parameter
+\(\varphi\) is not the downstream realization probability \(s(q)\): the
+latter applies before the operating stream begins and enters the route values
+defined below.
+
+With a stationary conditional operating profit, the expected present value is
+the convergent geometric sum
+\begin{align}
+  R(q,c)
+  &=\sum_{t=0}^{\infty}(\beta\varphi)^t\pi(q,c) \notag\\
+  &=\frac{\pi(q,c)}{1-\beta\varphi},
+  \qquad 0\leq\beta\varphi<1.
+  \label{eq:p02-present-value}
+\end{align}
+Consequently, holding \(\beta,\varphi,A,\varepsilon\) and the
+non-differentiated argument fixed,
+\begin{equation}
+  \frac{\partial R(q,c)}{\partial q}
+  =\frac{R(q,c)}{q}>0,
+  \qquad
+  \frac{\partial R(q,c)}{\partial c}
+  =(1-\varepsilon)\frac{R(q,c)}{c}<0.
+  \label{eq:p02-return-derivatives}
+\end{equation}
+
+\subsection{Boundary and accounting checks}
+\label{subsec:p02-boundary-accounting}
+
+The commercial-value kernel satisfies the following checks:
+\begin{enumerate}
+  \item As \(q\downarrow0\), both \(\pi(q,c)\) and \(R(q,c)\) converge to
+  zero.
+  \item As \(c\to\infty\), both values converge to zero because
+  \(1-\varepsilon<0\).
+  \item If \(\varphi=0\), the commercial stream lasts one period in
+  expectation and \(R(q,c)=\pi(q,c)\).
+  \item As \(\varphi\uparrow1\),
+  \(R(q,c)\to\pi(q,c)/(1-\beta)\), which remains finite because
+  \(\beta<1\). The endpoint is a limiting check, not an admissible value
+  under the frozen primitive domain \(\varphi\in[0,1)\).
+  \item The restriction \(\varepsilon>1\) is necessary for a finite interior
+  markup price under this residual-demand specification.
+\end{enumerate}
+
+The object \(R(q,c)\) is gross operating present value. The marginal cost
+\(c\) is subtracted exactly once through the operating margin \(p-c\).
+Route-specific fixed organizational costs, the institutional burden on route
+\(E\), and any separately defined qualified-capacity payment are absent from
+\(R\); later route-value equations must specify whether each manufacturing
+cost is embedded in a route-specific marginal cost or subtracted separately,
+and must not do both. Reduced-form return shortcuts are inactive in the
+baseline; the model uses only the explicit chain
+\(y\rightarrow\pi\rightarrow R\).
+
+Nothing in this section gives MAH a direct effect on \(A\), \(q\),
+\(\varepsilon\), \(\beta\), or \(\varphi\). Thus this section establishes a
+policy-invariant commercial value kernel, not a policy comparative static.
