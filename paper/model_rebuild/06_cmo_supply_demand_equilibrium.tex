@@ -71,13 +71,13 @@ strictly increasing, \(S_m(0)=0\), and
 At a candidate price \(p_m\), define developer \(i\)'s expected qualified
 capacity per planning-stage project as
 \begin{equation}
-  \chi_i^E(p_m;M)
+  \chi_i^E(p_m;M,\ell_i)
   =
   \int
   b(m)
   \mathbf 1
   \left\{
-    r_i^*(q,m;M,p_m)=E
+    r_i^*(q,m;M,p_m,\ell_i)=E
   \right\}
   dF(q,m).
   \label{eq:p06-entrusted-capacity}
@@ -89,21 +89,23 @@ The entrusted value falls with price at slope \(-b(m)<0\), while the other
 route values do not contain \(p_m\). Consequently, for each project the set
 of prices at which \(E\) is chosen is an interval from below: once a higher
 price makes \(E\) lose to another route, a still higher price cannot restore
-it. Hence \(\chi_i^E(p_m;M)\) is weakly decreasing in \(p_m\).
+it. Hence \(\chi_i^E(p_m;M,\ell_i)\) is weakly decreasing in \(p_m\).
+The financing indicator \(\mathbf 1\{J_E(m)\leq\ell_i\}\) does not depend on
+price.
 
 Away from the measure-zero set of route ties, the envelope derivative of the
 optimized project value is
 \[
-  \frac{\partial W_i(q,m;M,p_m)}{\partial p_m}
+  \frac{\partial \widetilde W_i(q,m;M,p_m,\ell_i)}{\partial p_m}
   =
   -b(m)
-  \mathbf 1\{r_i^*(q,m;M,p_m)=E\}.
+  \mathbf 1\{r_i^*(q,m;M,p_m,\ell_i)=E\}.
 \]
 Dominated convergence then gives
 \begin{equation}
   \frac{\partial\Omega_i(M,p_m)}{\partial p_m}
   =
-  -\chi_i^E(p_m;M)
+  -\chi_i^E(p_m;M,\ell_i)
   \leq0
   \quad\text{almost everywhere in }p_m.
   \label{eq:p06-omega-price-envelope}
@@ -114,7 +116,7 @@ For \(\Omega_i>0\), the advancement optimizer therefore satisfies
   =
   -\frac{x_i^*(M,p_m)}
   {\nu\Omega_i(M,p_m)}
-  \chi_i^E(p_m;M)
+  \chi_i^E(p_m;M,\ell_i)
   \leq0.
   \label{eq:p06-advancement-price-response}
 \end{equation}
@@ -126,15 +128,15 @@ intensity remains weakly decreasing in \(p_m\).
 
 Developer \(i\)'s expected qualified-capacity demand is
 \[
-  a_ix_i^*(M,p_m)\chi_i^E(p_m;M).
+  a_ix_i^*(M,p_m)\chi_i^E(p_m;M,\ell_i).
 \]
 Aggregating over developer heterogeneity gives study-related demand
 \begin{equation}
   D_m^{\mathrm{MAH}}(p_m;M)
   =
   \int
-  a_ix_i^*(M,p_m)\chi_i^E(p_m;M)
-  dH(a,k).
+  a_ix_i^*(M,p_m)\chi_i^E(p_m;M,\ell_i)
+  dH(a,k,\ell).
   \label{eq:p06-study-demand}
 \end{equation}
 This expression contains both price feedbacks required by the model:
@@ -145,10 +147,11 @@ Both factors are nonnegative and weakly decreasing in \(p_m\), so
 \(D_m^{\mathrm{MAH}}\) is weakly decreasing. Individual route indicators can
 jump at a cutoff. Aggregate demand is nevertheless continuous: when
 \(p_m^n\to p_m\), route indicators converge for every project--developer
-pair except the zero-measure tie set, \(x_i^*\) is continuous through
+pair except the zero-measure route-tie set, \(x_i^*\) is continuous through
 \(\Omega_i\), and the common integrable envelope permits dominated
-convergence. Thus aggregate regularity comes from continuous heterogeneity,
-not smooth random utility.
+convergence. The joint distribution also assigns zero mass to the financing
+thresholds \(\ell_i=J_I(m,k_i)\) and \(\ell_i=J_E(m)\). Thus aggregate
+regularity comes from continuous heterogeneity, not smooth random utility.
 
 Let \(D_m^B(p_m)\) be finite, continuous, nonnegative, weakly decreasing
 background demand with
@@ -199,7 +202,8 @@ For each regime \(M\), the equilibrium can be computed without an unresolved
 cycle:
 \begin{enumerate}
   \item conjecture \(p_m\);
-  \item evaluate route values and deterministic \(r_i^*(q,m;M,p_m)\);
+  \item evaluate financing feasibility, route values, and deterministic
+  \(r_i^*(q,m;M,p_m,\ell_i)\);
   \item integrate \(\Omega_i(M,p_m)\) and compute \(x_i^*(M,p_m)\);
   \item integrate \(\chi_i^E\) and \(D_m^{\mathrm{MAH}}\);
   \item solve supplier capacity and aggregate \(S_m(p_m)\);

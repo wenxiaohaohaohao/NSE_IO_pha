@@ -61,7 +61,35 @@ requirement class, and observation date.
 \textit{Identification limit:} licences or GMP scope alone need not measure
 usable project-compatible capacity.
 
-\subsubsection{Interface 5: Project value \texorpdfstring{\(q\)}{project-value index}}
+\subsubsection{Interface 5: Predetermined financing capacity \texorpdfstring{\(\ell_i\)}{ell(i)}}
+\textit{Meaning:} pre-policy liquidity or financing capacity available for
+commercialization-stage organizational commitments.
+\textit{Candidate measure:} validated pre-policy registered or paid-in
+capital, cash or liquid assets, leverage or debt capacity, listed status,
+VC/PE backing, parent-company backing, or external-financing history.
+\textit{Unit:} currency commitment or a documented capacity index.
+\textit{Grain:} developer--reporting period, measured before reform exposure.
+\textit{Required keys:} stable developer identifier, reporting date, measure
+definition, source, and currency/unit normalization.
+\textit{Availability:} NOT VERIFIED; no named source is asserted available.
+\textit{Identification limit:} post-reform financial outcomes cannot define
+baseline \(\ell_i\); a proxy does not imply that MAH changes financing supply.
+
+\subsubsection{Interface 6: Route financing requirements \texorpdfstring{\(J_I,J_E\)}{J(I), J(E)}}
+\textit{Meaning:} up-front commitment needed to organize internal or retained
+entrusted manufacturing.
+\textit{Candidate measure:} audited facility build/acquisition/upgrade and
+validation commitments for \(J_I\), and audited transfer, validation,
+contracting, and holder-preparation commitments for \(J_E\).
+\textit{Unit:} currency commitment per developer--project--route.
+\textit{Grain:} developer--project--route--commitment date.
+\textit{Required keys:} developer, project/product, route, commitment type,
+date, amount, and source provenance.
+\textit{Availability:} NOT VERIFIED.
+\textit{Identification limit:} these are liquidity thresholds, not additional
+real costs; observed expenditure must not be added again to \(F_I\) or \(F_E\).
+
+\subsubsection{Interface 7: Project value \texorpdfstring{\(q\)}{project-value index}}
 \textit{Meaning:} project commercial/scientific value shifter.
 \textit{Candidate measure:} therapeutic value, target value, indication, or
 market-size measures after validation.
@@ -73,7 +101,7 @@ reference date.
 \textit{Identification limit:} proxies discipline a value shifter; they do
 not permit a direct MAH shift in \(q\).
 
-\subsubsection{Interface 6: Manufacturing complexity \texorpdfstring{\(m\)}{complexity index}}
+\subsubsection{Interface 8: Manufacturing complexity \texorpdfstring{\(m\)}{complexity index}}
 \textit{Meaning:} project-specific manufacturing requirement.
 \textit{Candidate measure:} modality, dosage form, biologic/sterile status, or
 audited technical class.
@@ -88,7 +116,7 @@ capacity and not a policy outcome.
 \subsection{Route and realized-outcome interfaces}
 \label{subsec:p10-routes-outcomes}
 
-\subsubsection{Interface 7: Retained entrusted route \texorpdfstring{\(r_i^*=E\)}{retained route E}}
+\subsubsection{Interface 9: Retained entrusted route \texorpdfstring{\(r_i^*=E\)}{retained route E}}
 \textit{Meaning:} the developer remains the holder while a qualified external
 producer manufactures.
 \textit{Candidate measure:} product-level holder differs from manufacturer.
@@ -100,7 +128,7 @@ product identifier, authorization/effective date, and source provenance.
 \textit{Identification limit:} holder, manufacturer, product and timing must
 all align; holder--manufacturer difference is not automatically route \(E\).
 
-\subsubsection{Interface 8: Realized retained outcome \texorpdfstring{\(Y_i^{\mathrm{ret}}\)}{retained outcome}}
+\subsubsection{Interface 10: Realized retained outcome \texorpdfstring{\(Y_i^{\mathrm{ret}}\)}{retained outcome}}
 \textit{Meaning:} realized innovative product for which the developer retains
 holder status.
 \textit{Candidate measure:} approval, launch, or marketing-licence outcome
@@ -113,7 +141,7 @@ jurisdiction.
 \textit{Identification limit:} this is a downstream realized outcome, not a
 direct observation of advancement.
 
-\subsubsection{Interface 9: Novelty class \texorpdfstring{\(g\)}{novelty class}}
+\subsubsection{Interface 11: Novelty class \texorpdfstring{\(g\)}{novelty class}}
 \textit{Meaning:} exogenous original-versus-incremental empirical classifier.
 \textit{Candidate measure:} verified regulatory classification.
 \textit{Unit:} categorical label \(O\) or \(\mathrm{Inc}\).
@@ -124,7 +152,7 @@ source, version, and classification date.
 \textit{Identification limit:} the label is not a control or state, creates no
 \(x_{ig}\), and imposes no response ranking.
 
-\subsubsection{Interface 10: Patent applications}
+\subsubsection{Interface 12: Patent applications}
 \textit{Meaning:} candidate patenting-side signal outside the baseline
 endogenous outcome. It may reflect upstream research activity after construct
 validation, but it is not a direct observation of upstream research.
@@ -137,14 +165,13 @@ application date, and technology class.
 \textit{Availability:} NOT VERIFIED.
 \textit{Identification limit:} a patent response neither equals \(x_i\) nor
 directly identifies upstream research, and it does not alone validate or
-falsify the commercialization mechanism. In the separately approved
-research--development extension, \(P_i^A=h_i(x_i^R)\) is an explicit
-conditional mapping; it does not alter this baseline interface.
+falsify the commercialization mechanism. The revised model assigns no patent
+response sign.
 
 \subsection{Market and outside-option interfaces}
 \label{subsec:p10-market-outside}
 
-\subsubsection{Interface 11: CMO price or scarcity \texorpdfstring{\(p_m^*\)}{equilibrium CMO price}}
+\subsubsection{Interface 13: CMO price or scarcity \texorpdfstring{\(p_m^*\)}{equilibrium CMO price}}
 \textit{Meaning:} equilibrium scarcity of qualified manufacturing service.
 \textit{Candidate measure:} service price if observed; otherwise audited
 capacity, density, utilization, or waiting-time proxies.
@@ -158,7 +185,7 @@ require audit.
 \textit{Identification limit:} a nonprice scarcity proxy does not separately
 identify \(p_m^*\) or the supply and demand schedules.
 
-\subsubsection{Interface 12: Transfer outside option \texorpdfstring{\(T(q,m)\)}{transfer value}}
+\subsubsection{Interface 14: Transfer outside option \texorpdfstring{\(T(q,m)\)}{transfer value}}
 \textit{Meaning:} non-retained transfer or licence value.
 \textit{Candidate measure:} future transfer/licence deal moments.
 \textit{Unit:} currency per project or standardized deal-value index.
@@ -176,7 +203,7 @@ The theoretical anticipation channel remains
 \begin{equation}
   M
   \longrightarrow
-  \text{anticipated availability and value of }E
+  \text{anticipated availability and finance-adjusted value of }E
   \longrightarrow
   \Omega_i
   \longrightarrow
@@ -199,6 +226,19 @@ whereas the realized sequence remains
 \end{equation}
 Future tests may examine both sequences, but an observed downstream separation
 cannot be placed before the ex ante choice of \(x_i\).
+
+The central financing interaction is
+\[
+  M
+  \times
+  \text{weak internal manufacturing capability}
+  \times
+  \text{limited/intermediate pre-policy financing capacity}.
+\]
+The first outcome is whether the authorization holder and manufacturer differ
+at the product level. Next come advancement through development stages and
+retained realized products.
+Patent applications remain outside this baseline prediction.
 
 \subsection{Interface conclusion}
 \label{subsec:p10-conclusion}

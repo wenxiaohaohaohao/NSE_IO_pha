@@ -5,20 +5,22 @@
 
 \title{MAH Model Rebuild: Main-Text Model Candidate}
 \author{}
-\date{Phase 16}
+\date{Post-Phase-18 financing revision, September 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This candidate is the restrained main-text split of the approved Phase 15
-derivation draft. The MAH reform makes retained entrusted manufacturing
+This candidate is the restrained main-text representation of the current
+financing-adjusted derivation. The MAH reform makes retained entrusted manufacturing
 legally available by changing one institutional wedge. Developers choose one
 common project-advancement intensity before project characteristics and
 organizational routes are realized. Route choice is deterministic, and the
 price of qualified manufacturing services is endogenous. The baseline
-contains neither patent-generating research nor a fixed ranking between
-original and incremental project responses.
+adds predetermined commercialization financing capacity only as a route
+feasibility margin. MAH changes organizational technology rather than finance
+supply. The baseline contains neither patent-generating research nor a fixed
+ranking between original and incremental project responses.
 \end{abstract}
 
 \setcounter{section}{2}
@@ -29,8 +31,9 @@ original and incremental project responses.
 \label{subsec:p16m-environment}
 
 There is a continuum of developers. Developer \(i\) has predetermined
-research capability \(a_i>0\) and internal manufacturing capability
-\(k_i>0\), distributed according to \(H(a,k)\). A viable project that reaches
+research capability \(a_i>0\), internal manufacturing capability \(k_i>0\),
+and commercialization financing capacity \(\ell_i>0\), distributed according
+to the joint distribution \(H(a,k,\ell)\). A viable project that reaches
 commercialization-relevant planning draws value \(q>0\) and manufacturing
 requirement \(m>0\) from the exogenous distribution \(F(q,m)\). For empirical
 decompositions only,
@@ -68,8 +71,9 @@ viable projects reaching route planning is
 \end{equation}
 
 Timing is as follows. First, \(M\) is observed and developers anticipate the
-market-consistent qualified-service price. Second, they choose \(x_i\).
-Third, planning-stage projects draw \((q,m)\) and choose a route. Fourth,
+market-consistent qualified-service price. Second, after observing
+\((a_i,k_i,\ell_i,M)\), they choose \(x_i\). Third, planning-stage projects
+draw \((q,m)\), check route financing requirements, and choose a route. Fourth,
 downstream realization occurs with exogenous probability \(s(q)\). Finally,
 aggregate capacity demand and supply must validate the anticipated service
 price. The last step is an equilibrium consistency condition, not a late
@@ -103,15 +107,16 @@ The appendix derives the FOC, SOC, and accounting. In particular,
 
 Internal production uses marginal cost \(c_I(m,k_i)\), with
 \(c_{I,m}>0\) and \(c_{I,k}<0\), and setup cost \(F_I(m,k_i)\), with
-\(F_{I,m}>0\) and \(F_{I,k}<0\) on the feasible domain. Internal production
-is unavailable when \(k_i<\underline{k}(m)\), represented by
-\(F_I(m,k_i)=+\infty\). Its route value is
+\(F_{I,m}>0\) and \(F_{I,k}<0\). Its route value is
 \begin{equation}
   W_i^I(q,m)
   =
   s(q)R\!\left(q,c_I(m,k_i)\right)-F_I(m,k_i).
   \label{eq:p16m-internal}
 \end{equation}
+It requires a liquidity commitment \(J_I(m,k_i)>0\), with
+\(J_{I,m}>0\) and \(J_{I,k}<0\), and is financially feasible if and only if
+\(J_I(m,k_i)\leq\ell_i\).
 
 Entrusted production uses external marginal cost \(c_E(m)\), requires
 \(b(m)>0\) units of qualified capacity with \(b'(m)>0\), incurs setup cost
@@ -126,7 +131,9 @@ qualified-capacity price \(p_m\),
   \end{aligned}
   \label{eq:p16m-entrusted}
 \end{equation}
-Each monetary cost enters once. The transfer and abandonment values are
+It requires \(J_E(m)>0\), with \(J_E'(m)>0\), and is financially feasible if
+and only if \(J_E(m)\leq\ell_i\). The \(J\)'s are liquidity requirements, not
+additional costs. Each monetary cost enters once. The transfer and abandonment values are
 \begin{equation}
   W^T(q,m)=T(q,m),
   \qquad
@@ -134,18 +141,23 @@ Each monetary cost enters once. The transfer and abandonment values are
   \label{eq:p16m-outside}
 \end{equation}
 
+Define \(\widetilde W_i^I=W_i^I\) when \(J_I\leq\ell_i\) and
+\(-\infty\) otherwise, and define
+\(\widetilde W_i^E=W_i^E\) when \(J_E\leq\ell_i\) and \(-\infty\) otherwise.
+MAH changes none of \(\ell_i,J_I,J_E\).
+
 \subsection{Organization and project advancement}
 \label{subsec:p16m-organization}
 
 At a fixed \(p_m\), the project chooses deterministically:
 \begin{equation}
   \begin{aligned}
-  W_i(q,m;M,p_m)
+  \widetilde W_i(q,m;M,p_m,\ell_i)
   &=
-  \max\{W_i^I,W_i^E,W^T,W^A\},\\
-  r_i^*(q,m;M,p_m)
+  \max\{\widetilde W_i^I,\widetilde W_i^E,W^T,W^A\},\\
+  r_i^*(q,m;M,p_m,\ell_i)
   &\in
-  \arg\max_{r\in\{I,E,T,A\}} W_i^r.
+  \arg\max_{r\in\{I,E,T,A\}} \widetilde W_i^r.
   \end{aligned}
   \label{eq:p16m-route-choice}
 \end{equation}
@@ -164,13 +176,14 @@ The internal-minus-entrusted gap is
   \end{aligned}
   \label{eq:p16m-gap}
 \end{equation}
-Holding \((q,m,M,p_m)\) fixed on the internally feasible domain,
+Holding \((q,m,M,p_m)\) fixed conditional on both retained routes being
+financeable,
 \[
   \Delta_{IE,k}
   =
   s(q)R_c\!\left(q,c_I\right)c_{I,k}-F_{I,k}>0.
 \]
-When the endpoint crossing conditions hold, a unique conditional cutoff
+When the endpoint crossing conditions hold on the common-financeability set, a unique conditional cutoff
 \(k^*(q,m;p_m,M)\) satisfies \(\Delta_{IE}(k^*)=0\). Conditional on \(I\)
 and \(E\) dominating \(T\) and \(A\), developers below the cutoff select
 \(E\), while those above it select \(I\). Transfer and abandonment remain
@@ -180,7 +193,7 @@ Expected optimized value per planning-stage project is
 \begin{equation}
   \Omega_i(M,p_m)
   =
-  \int W_i(q,m;M,p_m)\,dF(q,m).
+  \int \widetilde W_i(q,m;M,p_m,\ell_i)\,dF(q,m).
   \label{eq:p16m-omega}
 \end{equation}
 Developer \(i\) solves
@@ -225,9 +238,9 @@ With \(\Psi_{ss}>0\), positive-price capacity is uniquely determined by
 
 Expected entrusted capacity per planning-stage project is
 \begin{equation}
-  \chi_i^E(p_m;M)
+  \chi_i^E(p_m;M,\ell_i)
   =
-  \int b(m)\mathbf 1\{r_i^*(q,m;M,p_m)=E\}\,dF(q,m).
+  \int b(m)\mathbf 1\{r_i^*(q,m;M,p_m,\ell_i)=E\}\,dF(q,m).
   \label{eq:p16m-project-demand}
 \end{equation}
 Study-related and total demand are
@@ -235,7 +248,7 @@ Study-related and total demand are
   \begin{aligned}
   D_m^{\mathrm{MAH}}(p_m;M)
   &=
-  \int a_ix_i^*(M,p_m)\chi_i^E(p_m;M)\,dH(a,k),\\
+  \int a_ix_i^*(M,p_m)\chi_i^E(p_m;M,\ell_i)\,dH(a,k,\ell),\\
   D_m(p_m;M)
   &=D_m^B(p_m)+D_m^{\mathrm{MAH}}(p_m;M).
   \end{aligned}
@@ -281,11 +294,13 @@ selects internal production. Lower entrusted-route friction expands the
 entrusted region; a higher fixed CMO price contracts it.
 
 \paragraph{MAH-relevant projects and advancement.}
-The reform has a zero effect whenever the newly feasible \(E\) value does not
-exceed the best old route. Otherwise it raises expected project value and,
-at fixed service price, raises common project advancement. The response is
-larger where the entrusted value gain is larger; MAH does not change
-\(a_i\), project quality, or the advancement-cost function.
+The reform has a zero effect whenever \(E\) is not financeable or its value
+does not exceed the best financeable old route. Under the local ordering
+\(J_E<J_I\), the interval \(J_E\leq\ell_i<J_I\) is the financing corridor in
+which retained outsourcing is financeable but internalization is not. The
+reform response need not be globally monotone in \(\ell_i\), because higher
+financing also restores internalization as an old option. MAH does not change
+\(a_i\), \(\ell_i\), project quality, or the advancement-cost function.
 
 \paragraph{CMO equilibrium and scarcity.}
 The qualified-capacity price is unique. Reform-induced entrusted demand can

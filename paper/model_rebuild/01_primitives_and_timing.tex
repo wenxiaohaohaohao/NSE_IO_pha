@@ -15,15 +15,22 @@ Let \(\mathsf C\) denote currency units, \(\mathsf X\) project-advancement
 input units, \(\mathsf P\) the expected measure of viable planning-stage
 projects in one decision cohort, \(\mathsf K\) manufacturing
 capability/requirement units, and \(\mathsf B\) qualified manufacturing-service
-capacity units.
+capacity units. Commercialization financing capacity and requirements are
+one-time monetary commitments measured in \(\mathsf C\), but they are stocks
+of fundable liquidity rather than additional payoff costs.
 
 There is a continuum \(\mathcal I\) of original-drug developers.  Developer
-characteristics follow the exogenous distribution \(H(a,k)\).  Developer \(i\)
+characteristics follow the exogenous joint distribution \(H(a,k,\ell)\), with
+no independence restriction. Developer \(i\)
 has research capability \(a_i>0\), measured in \(\mathsf P/\mathsf X\), and
-internal manufacturing capability \(k_i>0\), measured in \(\mathsf K\).  Its
+internal manufacturing capability \(k_i>0\), measured in \(\mathsf K\). It
+also has predetermined commercialization-stage financing capacity
+\(\ell_i>0\), measured in \(\mathsf C\). Financing capacity is the largest
+up-front organizational commitment the developer can fund; it is neither
+research productivity nor manufacturing know-how. Its
 complete permanent baseline characteristic vector is
 \begin{equation}
-  \theta_i=(a_i,k_i).
+  \theta_i=(a_i,k_i,\ell_i).
   \label{eq:p01-developer-type}
 \end{equation}
 These are continuous characteristics, not permanent discrete firm types.
@@ -95,7 +102,7 @@ Effective pre-MAH unavailability of \(E\) is encoded solely by
 assembled.  Thus the common label domain is not a second policy channel.
 Under \(E\), the developer remains the holder; entrusted production is not a
 transfer of ownership or authorization.  The eventual optimizer is denoted by
-\(r_i^*(q,m;M,p_m)\), but route values and the argmax are defined in the
+\(r_i^*(q,m;M,p_m,\ell_i)\), but route values and the argmax are defined in the
 organizational-sorting section below.
 
 \subsection{Project-advancement and realization objects}
@@ -146,7 +153,7 @@ MAH-invariant.
   effective unavailability/availability of route \(E\).
 
   \item[Stage 1.] \textbf{Ex ante project advancement.}  Developer \(i\)
-  observes \((a_i,k_i,M)\), anticipates the market-consistent service price
+  observes \((a_i,k_i,\ell_i,M)\), anticipates the market-consistent service price
   \(p_m^*\) and future route opportunities, and chooses \(x_i\).  Equation
   \eqref{eq:p01-planned-intensity} determines the expected measure of viable
   projects reaching the route-planning stage.
@@ -157,8 +164,10 @@ MAH-invariant.
   advancement choice.
 
   \item[Stage 3.] \textbf{Commercialization organization.}  After observing
-  \((q,m)\) and the manufacturing-service price, the project chooses a route
-  from the domain in \eqref{eq:p01-route-domain}.  Actual holder--producer
+  \((q,m)\) and the manufacturing-service price, the developer checks each
+  retained route's up-front financing requirement against \(\ell_i\), then
+  chooses a route from the domain in \eqref{eq:p01-route-domain}. There is no
+  borrowing or separate financing decision. Actual holder--producer
   separation is observed only if the realized route is \(E\), which occurs
   after the Stage~1 choice.
 
@@ -216,9 +225,10 @@ Equations \eqref{eq:p01-anticipated-channel} and
 \eqref{eq:p01-realization-channel} are timing and dependency statements, not
 unconditional comparative-static propositions.
 
-In particular, \(M\) does not directly change \(a_i\), \(k_i\), \(z_j\),
+In particular, \(M\) does not directly change \(a_i\), \(k_i\), \(\ell_i\), \(z_j\),
 \(q\), \(m\), \(F\), \(\rho_g\), \(F_g\), \(s(q)\), or \(s_g(q)\).  It does
-not directly lower \(p_m^*\).  Nothing in this section implies an increase in
+not directly change route financing requirements and does not directly lower
+\(p_m^*\). Nothing in this section implies an increase in
 patent applications, upstream scientific research, or one novelty class
 relative to the other.
 

@@ -1,0 +1,27 @@
+# Finance-adjusted Route Values
+
+The active route values are
+
+\[
+\widetilde W_i^I=
+\begin{cases}W_i^I,&J_I(m,k_i)\le\ell_i,\\-\infty,&J_I(m,k_i)>\ell_i,
+\end{cases}
+\qquad
+\widetilde W_i^E=
+\begin{cases}W_i^E,&J_E(m)\le\ell_i,\\-\infty,&J_E(m)>\ell_i.
+\end{cases}
+\]
+
+The developer chooses the deterministic maximum of
+\(\{\widetilde W_i^I,\widetilde W_i^E,W^T,0\}\). Financing is checked after
+the project draw and before route choice; there is no borrowing decision.
+
+Conditional on both retained routes being financeable, the previous
+single-crossing result survives:
+
+\[
+\partial_k(W_i^I-W_i^E)=s(q)R_c(q,c_I)c_{I,k}-F_{I,k}>0.
+\]
+
+Financeability is therefore a first-stage screen; the value comparison is a
+second-stage sorting problem.

@@ -1,5 +1,25 @@
 # 06 Open Issues Log
 
+## RESOLVED — ISSUE-POST18-FIN-001
+
+- ID: `ISSUE-POST18-FIN-001`
+- Scope: post-Phase-18 commercialization-financing revision
+- Severity now: `CLOSED-IMPLEMENTED`
+- Issue: the previous model treated very low internal manufacturing capability
+  as hard technological infeasibility and did not distinguish manufacturing
+  capability from capacity to finance commercialization commitments.
+- Resolution: add predetermined $\ell_i$, finite $F_I$, liquidity thresholds
+  $J_I,J_E$, finance-adjusted route values, and the financing-corridor result.
+  MAH does not shift financing supply or directly constrain $x_i$.
+- Mathematical qualification: within a fixed regime, higher $\ell_i$ weakly
+  expands the feasible set; the reform treatment effect has no global
+  monotone sign and may be nondifferentiable at financeability thresholds.
+- Scope consequence: the earlier research--development/patent extension is
+  archived and inactive, so patents are not predicted by the current baseline.
+- P0 status: none after accounting, nesting, monotonicity, compilation, and
+  source-scope audits.
+- Resolution date: 2026-09-03
+
 ## RESOLVED — ISSUE-SPEC-001
 
 - ID: `ISSUE-SPEC-001`

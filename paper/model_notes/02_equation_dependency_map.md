@@ -1,12 +1,11 @@
 # 02 Equation Dependency Map
 
-Phase status: `PHASES 1--17 - APPROVED`  
+Phase status: `PHASES 1--18 APPROVED; FINANCING REVISION ACTIVE`  
 This map records every one of the 89 labeled equations in the Phase 1--10
 baseline, their semantic parents, timing order, mathematical status, proof
 obligations, the single CMO fixed point, and the Phase 11 extension
-quarantine. It separately records the research--development allocation
-extension approved on 2026-09-03; those equations do not change the baseline
-count or feed back into a baseline proposition. The reproducible baseline
+quarantine. The former research--development allocation extension is retained
+below only as a historical, superseded ledger and has no active arrow. The reproducible baseline
 equation-level source catalog is
 paper/model_rebuild/audit/phase13_equation_catalog.csv. No object in the
 quarantine has an arrow into the active graph.
@@ -15,7 +14,7 @@ quarantine has an arrow into the active graph.
 
 | ID / planned LaTeX label | Object defined | Inputs already defined | Mathematical status | First proof obligation |
 |---|---|---|---|---|
-| `P01-E01` / `eq:p01-developer-type` | $\theta_i=(a_i,k_i)$ | $a_i,k_i$ | definition | none |
+| `P01-E01` / `eq:p01-developer-type` | $\theta_i=(a_i,k_i,\ell_i)$ | $a_i,k_i,\ell_i$ | definition | none |
 | `P01-E02` / `eq:p01-project-draw` | $\omega=(q,m)\sim F(q,m)$ | $q,m,F$ | definition/distribution statement | none |
 | `P01-E03` / `eq:p01-class-mixture` | $F=\sum_g\rho_gF_g$, $\sum_g\rho_g=1$ | $g,\rho_g,F_g$ | distribution identity | verify valid mixture weights |
 | `P01-E04` / `eq:p01-institutional-wedge` | $\tau_E(0)=+\infty$, $\tau_E(1)=\bar\tau_E<+\infty$ | $M,\tau_E,\bar\tau_E$ | primitive institutional definition | Phase 3 verifies no second policy channel |
@@ -53,7 +52,9 @@ Phase 3 defines technological and organizational primitives. It does not yet ass
 | ID / LaTeX label | Object defined | Inputs already defined | Mathematical status | Boundary / later obligation |
 |---|---|---|---|---|
 | `P03-E01` / `eq:p03-internal-cost` | $c_I(m,k_i)>0$ with $c_{I,m}>0$, $c_{I,k}<0$ on the feasible domain | $m,k_i$ | primitive technology function and shape restrictions | Phase 4 composes $R(q,c_I)$ |
-| `P03-E02` / `eq:p03-internal-setup` | $F_I(m,k_i)$ with $F_{I,m}>0$, $F_{I,k}<0$ when feasible and $+\infty$ if $k_i<\underline{k}(m)$ | $m,k_i,\underline{k}$ | primitive setup technology plus feasibility convention | verify the internal-infeasibility limit |
+| `P03-E02` / `eq:p03-internal-setup` | finite $F_I(m,k_i)$ with $F_{I,m}>0$, $F_{I,k}<0$ | $m,k_i$ | primitive real setup technology | verify cost is subtracted once |
+| `P03-E08` / `eq:p03-internal-financing` | $J_I(m,k_i)>0$, $J_{I,m}>0$, $J_{I,k}<0$ | $m,k_i$ | primitive liquidity requirement | financeable iff $J_I\le\ell_i$; never subtracted |
+| `P03-E09` / `eq:p03-entrusted-financing` | $J_E(m)>0$, $J_E'(m)>0$ | $m$ | primitive liquidity requirement | financeable iff $J_E\le\ell_i$; never subtracted |
 | `P03-E03` / `eq:p03-external-cost` | $c_E(m)>0$ | $m$ | primitive qualified-external marginal-cost kernel | Phase 4 composes $R(q,c_E)$ |
 | `P03-E04` / `eq:p03-capacity-requirement` | $b(m)>0$, $b'(m)>0$ | $m$ | primitive physical capacity requirement | Phase 4 prices it once; Phase 6 aggregates it |
 | `P03-E05` / `eq:p03-external-fixed-cost` | $F_E(m)\geq0$ | $m$ | primitive real validation/readiness cost | Phase 4 subtracts once |
@@ -66,11 +67,11 @@ The evaluated route-cost input $c$ from Phase 2 is supplied by $c_I(m,k_i)$ or $
 
 | ID / LaTeX label | Object/result | Inputs already defined | Mathematical status | Proof / scope obligation |
 |---|---|---|---|---|
-| `P04-E01` / `eq:p04-internal-value` | $W_i^I=s(q)R(q,c_I)-F_I$ | $s,R,c_I,F_I$ | derived route value | internal infeasibility gives $-\infty$ |
+| `P04-E01` / `eq:p04-internal-value` | $W_i^I=s(q)R(q,c_I)-F_I$ | $s,R,c_I,F_I$ | derived route value | real cost counted once |
 | `P04-E02` / `eq:p04-entrusted-value` | $W_i^E=s(q)R(q,c_E)-F_E-p_mb-\mu_E-\tau_E(M)$ | Phase 1-3 external objects | derived route value at fixed $p_m$ | each cost appears once; holder rights retained |
 | `P04-E03` / `eq:p04-outside-values` | $W^T=T(q,m)$, $W^A=0$ | $T$ | outside-option definitions | no second transfer market |
-| `P04-E04` / `eq:p04-optimized-value` | $W_i=\max\{W_i^I,W_i^E,W^T,W^A\}$ | `P04-E01`--`P04-E03` | deterministic optimized value | no probabilistic route share |
-| `P04-E05` / `eq:p04-route-choice` | $r_i^*$ is the argmax over the four explicitly listed route values | `P04-E01`--`P04-E04` | deterministic choice | ties have measure zero; no undeclared generic payoff symbol |
+| `P04-E04` / `eq:p04-optimized-value` | $\widetilde W_i=\max\{\widetilde W_i^I,\widetilde W_i^E,W^T,W^A\}$ | `P03-E08`--`P03-E09`, `P04-E01`--`P04-E03` | finance-adjusted deterministic value | no probabilistic route share or financing choice |
+| `P04-E05` / `eq:p04-route-choice` | $r_i^*(q,m;M,p_m,\ell_i)$ is the argmax over the four finance-adjusted values | `P04-E01`--`P04-E04` | deterministic choice | ties and financing thresholds have measure zero in aggregation |
 | `P04-E06` / `eq:p04-binary-value-effect` | $W_i(1,p_m)-W_i(0,p_m)\ge0$ from adding finite \(E\) at fixed price | P04-E01--P04-E05 and P01-E04 | finite max comparison | zero unless \(E\) beats the old maximum |
 | `P04-E07` / `eq:p04-value-gap` | $\Delta_{IE}=W_i^I-W_i^E$ | P04-E01--P04-E02 | derived value gap | hold $q,m,M,p_m$ fixed when varying $k_i$ |
 | `P04-E08` / `eq:p04-gap-slope` | $\Delta_{IE,k}=sR_c c_{I,k}-F_{I,k}>0$ | P02-E09 and Phase 3 signs | derived monotonicity | feasible internal domain |
@@ -86,7 +87,7 @@ The binary policy comparison is not a derivative: $M=0$ sets $W_i^E=-\infty$, wh
 |---|---|---|---|---|
 | P05-E01 / eq:p05-planned-intensity | $\lambda_i^{\mathrm{plan}}=a_ix_i$ | $a_i,x_i$ | Phase 1 technology restated | one common control; no $x_{ig}$ |
 | P05-E02 / eq:p05-advancement-cost | $C_X(x_i)=\kappa x_i^{1+\nu}/(1+\nu)$ | $x_i,\kappa,\nu$ | primitive cost function | units, strict convexity and $\nu=1$ boundary |
-| P05-E03 / eq:p05-expected-value | $\Omega_i=\int W_i\,dF$ | Phase 1 distribution; Phase 4 optimized value | derived expectation | measurability, integrability and nonnegativity |
+| P05-E03 / eq:p05-expected-value | $\Omega_i(M,p_m)=\int \widetilde W_i(q,m;M,p_m,\ell_i)\,dF$ | Phase 1 distribution; Phase 4 finance-adjusted value | derived expectation | measurability, integrability and nonnegativity; $i$ carries $\ell_i$ |
 | P05-E04 / eq:p05-advancement-objective | $\max_{x_i\geq0}\{\beta a_ix_i\Omega_i-C_X(x_i)\}$ | P05-E01--P05-E03 | optimization problem | $p_m$ fixed and project draw downstream |
 | P05-E05 / eq:p05-kkt | advancement KKT conditions | P05-E04 | optimization-derived | cover interior and zero-value corner |
 | P05-E06 / eq:p05-foc | \(\kappa x_i^\nu=\beta a_i\Omega_i\) for an interior solution | P05-E04--P05-E05 | optimization-derived FOC | \(\Omega_i>0\) interior |
@@ -144,7 +145,7 @@ $p_m^*$; they are not additional members of the equilibrium collection.
 | P08-E01 / eq:p08-sorting-slope | $\Delta_{IE,k}>0$ | P04-E06--P04-E07 | inherited derivative inside Proposition 1 | fixed $q,m,M,p_m$ and feasible internal domain |
 | P08-E02 / eq:p08-old-new-values | $W_i^0=\max\{W_i^I,W^T,0\}$ and $W_i^1=\max\{W_i^0,W_i^E\}$ | Phase 4 route values | definitions for Proposition 2 | fixed support price |
 | P08-E03 / eq:p08-positive-part-gain | $W_i^1-W_i^0=[W_i^E-W_i^0]_+$ | P08-E02 | max identity | direct gain only on relevant set |
-| P08-E04 / eq:p08-relevant-set | $\mathcal C_i(p_m)=\{(q,m):W_i^E>W_i^0\}$ | P08-E02--P08-E03 | set definition | strict fixed-price gain |
+| P08-E04 / eq:p08-relevant-set | $\mathcal C_i(p_m,\ell_i)=\{(q,m):J_E\le\ell_i,\ W_i^E>W_i^0\}$ | P08-E02--P08-E03 and financing screen | set definition | strict fixed-price gain |
 | P08-E05 / eq:p08-expected-gain | $\Delta\Omega_i=\int[W_i^E-W_i^0]_+dF$ | P08-E03 | derived expectation | finite comparison, no $M$ derivative |
 | P08-E06 / eq:p08-advancement-change | closed-form $\Delta x_i$ from $\Omega_i^1=\Omega_i^0+\Delta\Omega_i$ | P05-E07, P08-E05 | derived finite response | strict iff expected gain is positive |
 | P08-E07 / eq:p08-capability-response | $\partial\Delta x_i/\partial a_i=\Delta x_i/(\nu a_i)$ | P08-E06 | conditional derivative | hold route-value objects fixed |
@@ -204,12 +205,15 @@ has been obtained or validated.
 | P11-X03 | transfer microfoundation | bargaining/adoption primitives for $T$ | INACTIVE; $T(q,m)$ remains primitive | separate transfer-market design and approval |
 | P11-X04 | dynamic evolution | genuine state and transition law | INACTIVE; no Bellman in baseline | research question, observed transition and approval |
 | P11-X05 | multi-CMO matching | match/search primitives | INACTIVE; scalar CMO market unchanged | match-level data and separate approval |
-| P11-X06 | research/development allocation | $x_i^R,x_i^D$ | ACTIVE-SEPARATE as of 2026-09-03; common baseline $x_i$ unchanged | formal module, KKT audit, patent mapping, and financial-constraint boundary review completed separately |
+| P11-X06 | research/development allocation | $x_i^R,x_i^D$ | INACTIVE-SUPERSEDED on 2026-09-03 by the commercialization-financing revision | archived source only; no formal document imports it |
 
 There is no arrow from any P11-X object back into the Phase 1--10 baseline
 dependency graph. The extension file is not imported by a baseline module.
 
-## 11A. Activated research--development extension ledger
+## 11A. Historical superseded research--development extension ledger
+
+The following rows document the dependency structure of the archived source;
+they are not active equations and cannot support a current manuscript claim.
 
 | ID / LaTeX label | Object/result | Direct parents | Mathematical status | Required validation |
 |---|---|---|---|---|
@@ -227,7 +231,7 @@ dependency graph. The extension file is not imported by a baseline module.
 | ERD-E19 / `eq:erd-cmo-demand` | $D_{m,RD}^{MAH}=\int N_i^*\chi_i^E\,dH$ | ERD-E01--E17; baseline $\chi_i^E,H$ | extension aggregate demand | $N_i^*$ monotone by revealed preference; one CMO market only |
 | ERD-E20 / `eq:erd-equilibrium-value-gain` | finite equilibrium $\Delta\Omega_{i,RD}^{eq}$ | ERD-E19 and baseline route choice/CMO clearing | binary-policy finite comparison | no derivative with respect to $M$; signs require strict net value gain |
 
-The activated extension graph is
+The retired historical extension graph was
 
 ```text
 baseline route block: (M, p_m) -> Omega_i(M,p_m)
@@ -242,15 +246,15 @@ N_i^* + baseline E-route capacity use -> extension CMO demand
                                       -> Omega_i(M,p_m)
 ```
 
-The final arrow closes the extension's scalar CMO fixed point. There is no
+This graph is no longer part of either formal document. There is no active
 arrow from $x_i^R$, $x_i^D$, $\bar X_i$, or $P_i^A$ into a baseline equation
-or any of the six baseline propositions.
+or proposition.
 
 ## 12. Causal and timing order
 
 ```text
 Predetermined distributions and characteristics
-  H(a,k) -> (a_i,k_i)
+  H(a,k,ell) -> (a_i,k_i,ell_i)
   H_C(z) -> z_j
   F(q,m), {rho_g,F_g} -> project draws (q,m) and optional class g
 
@@ -259,7 +263,7 @@ Institutional regime
   availability of retained entrusted route E
 
 Stage 1: ex ante project advancement
-  observed (a_i,k_i,M) + anticipated p_m^*
+  observed (a_i,k_i,ell_i,M) + anticipated p_m^*
       -> expected optimized project value Omega_i               [DEFINED: Phase 5]
       -> common control x_i                                    [OPTIMIZED: Phase 5]
       -> lambda_i^plan = a_i x_i                               [DEFINED: Phase 1]
@@ -306,7 +310,7 @@ $$
 Z_M(p)
 =
 D_m^B(p)
-+\int a_i x_i^*(M,p)\chi_i^E(p;M)\,dH(a,k)
++\int a_i x_i^*(M,p)\chi_i^E(p;M)\,dH(a,k,\ell)
 -\int s_j^*(p,z)\,dH_C(z).
 $$
 
@@ -380,7 +384,8 @@ on a positive-measure MAH-relevant set.
 Phase 5 closes those two arrows at fixed $p_m$:
 
 $$
-\Omega_i(M,p_m)=\int W_i(q,m;M,p_m)\,dF(q,m)
+\Omega_i(M,p_m)
+=\int \widetilde W_i(q,m;M,p_m,\ell_i)\,dF(q,m)
 \longrightarrow
 x_i^*(M,p_m)
 =
@@ -388,7 +393,8 @@ x_i^*(M,p_m)
 $$
 
 The common advancement control precedes project draws and route choice. The
-reform makes no direct change to $a_i$, $\kappa$, $\nu$ or $C_X$.
+reform makes no direct change to $a_i$, $\ell_i$, $J_I$, $J_E$, $\kappa$,
+$\nu$ or $C_X$.
 
 Phase 2 supplies only the policy-invariant value kernel
 
@@ -407,12 +413,14 @@ No direct arrow from $M$ to $A$, $q$, $\varepsilon$, $\beta$, or $\varphi$ is pe
 Phase 3 adds the policy-invariant technology arrows
 
 $$
-(m,k_i)\longrightarrow\{c_I,F_I,\text{ internal feasible domain}\},
+(m,k_i)\longrightarrow\{c_I,F_I,J_I\},
 \qquad
-m\longrightarrow\{c_E,b,F_E\},
+m\longrightarrow\{c_E,b,F_E,J_E\},
 $$
 
-and a constant retained burden $\mu_E$. Internal infeasibility is encoded by $F_I=+\infty$; no separate binary feasibility object is restored.
+and a constant retained burden $\mu_E$. The comparisons $J_I\leq\ell_i$ and
+$J_E\leq\ell_i$ screen route financeability; neither requirement is subtracted
+from value or cleared in a finance market.
 
 Phase 4 closes the route-value branch at a fixed conjectured CMO price:
 
@@ -500,7 +508,7 @@ below names a continuous argument; every \(M\) result is a finite comparison.
 | P15-E02 / eq:p15-return-derivatives | \(R_q,R_c\) | P02-E06, P02-E07 | optimization-derived comparative static | preserve gross-return accounting and \(1-\beta\varphi>0\) |
 | P15-E03 / eq:p15-gap-capability | \(\Delta_{IE,k}\) | P04-E07, P02-E08, P03-E01--P03-E02 | route-value derivative | operating-cost term weakly positive; setup-cost term strictly positive |
 | P15-E04 / eq:p15-cutoff-derivatives | \(k_{\tau_E}^*,k_{p_m}^*\) | P04-E08, P15-E03 | finite-wedge implicit derivatives | hold \(q,m\) and the other continuous argument fixed; not a binary-\(M\) derivative |
-| P15-E05 / eq:p15-fixed-project-gain | \(W_i(1,p_m)-W_i(0,p_m)\) | P08-E02--P08-E03 | fixed-price finite policy comparison | positive-part identity; zero outside \(\mathcal C_i(p_m)\) |
+| P15-E05 / eq:p15-fixed-project-gain | \(W_i(1,p_m)-W_i(0,p_m)\) | P08-E02--P08-E03 | fixed-price finite policy comparison | positive-part identity; zero outside \(\mathcal C_i(p_m,\ell_i)\) |
 | P15-E06 / eq:p15-advancement-partials | \(x_{\Omega}^*,x_a^*,x_\kappa^*\) | P05-E09 | optimization-derived partials | \(\Omega_i>0\); hold route value fixed when varying \(a_i,\kappa\) |
 | P15-E07 / eq:p15-advancement-price | \(x_{p_m}^*\) | P06-E06--P06-E07, P15-E06 | fixed-candidate-price derivative | almost everywhere envelope; zero when \(\chi_i^E=0\) |
 | P15-E08 / eq:p15-fixed-advancement-gain | \(\Delta x_i(p_m)\) | P08-E05--P08-E06 | fixed-price finite policy comparison | strict iff \(\Delta\Omega_i(p_m)>0\) |
