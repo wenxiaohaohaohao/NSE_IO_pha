@@ -1,0 +1,325 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+
+\title{MAH Model Rebuild: Main-Text Model Candidate}
+\author{}
+\date{Recentered organizational baseline, September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This candidate is the restrained main-text split of the approved Phase 15
+derivation draft. The MAH reform makes retained entrusted manufacturing
+legally available by changing one institutional wedge. Developers choose one
+common project-advancement intensity before project characteristics and
+organizational routes are realized. Route choice is deterministic, and the
+price of qualified manufacturing services is endogenous. The baseline
+contains neither patent-generating research nor a fixed ranking between
+original and incremental project responses.
+\end{abstract}
+
+\setcounter{section}{2}
+\section{Model}
+\label{sec:p16m-model}
+
+\subsection{Environment and timing}
+\label{subsec:p16m-environment}
+
+There is a continuum of developers. Developer \(i\) has predetermined
+project-advancement capability \(a_i>0\) and internal manufacturing capability
+\(k_i>0\), distributed according to \(H(a,k)\). A viable project that reaches
+commercialization-relevant planning draws value \(q>0\) and manufacturing
+requirement \(m>0\) from the exogenous distribution \(F(q,m)\). For empirical
+decompositions only,
+\[
+  F(q,m)=\sum_{g\in\{O,\mathrm{Inc}\}}\rho_gF_g(q,m),
+  \qquad
+  \rho_g\geq0,\quad \sum_g\rho_g=1.
+\]
+The class label \(g\) creates no class-specific control.
+
+The institutional regime is \(M\in\{0,1\}\). The pre-MAH regime sets the
+barrier to retained entrusted manufacturing at infinity; the MAH regime
+makes it finite:
+\begin{equation}
+  \tau_E(0)=+\infty,
+  \qquad
+  \tau_E(1)=\bar\tau_E<+\infty,
+  \qquad \bar\tau_E\geq0.
+  \label{eq:p16m-policy}
+\end{equation}
+The available routes are internal manufacturing \(I\), retained entrusted
+manufacturing \(E\), non-retained transfer \(T\), and abandonment or delay
+\(A\). Under \(E\), the developer remains the authorization holder and a
+qualified external producer manufactures. Thus \(E\) is not transfer.
+
+Before project characteristics and routes are realized, developer \(i\)
+chooses one common \(x_i\geq0\), interpreted as original-drug innovation
+investment / project-advancement intensity. It is broader than pure clinical
+development, but excludes basic research, compound discovery,
+patent-generating effort, and patent applications. The expected measure of
+viable projects reaching route planning is
+\begin{equation}
+  \lambda_i^{\mathrm{plan}}=a_ix_i.
+  \label{eq:p16m-planning}
+\end{equation}
+
+Timing is as follows. First, \(M\) is observed and developers anticipate the
+market-consistent qualified-service price. Second, they choose \(x_i\).
+Third, planning-stage projects draw \((q,m)\) and choose a route. Fourth,
+downstream realization occurs with exogenous probability \(s(q)\). Finally,
+aggregate capacity demand and supply must validate the anticipated service
+price. The last step is an equilibrium consistency condition, not a late
+unanticipated shock. Upstream research and patent generation may help
+determine the predetermined \(a_i\), but they are outside the baseline
+decision problem.
+
+\subsection{Commercialization technologies}
+\label{subsec:p16m-technologies}
+
+Conditional on successful commercialization, residual demand is
+\(y(p;q)=Aqp^{-\varepsilon}\), where \(A>0\) and \(\varepsilon>1\).
+Product-price optimization gives
+\[
+  p^*(c)=\frac{\varepsilon}{\varepsilon-1}c
+\]
+and the gross operating present value
+\begin{equation}
+  R(q,c)
+  =
+  \frac{Aq}{1-\beta\varphi}
+  \frac{(\varepsilon-1)^{\varepsilon-1}}
+       {\varepsilon^\varepsilon}
+  c^{1-\varepsilon},
+  \qquad
+  \beta\in(0,1),\quad \varphi\in[0,1).
+  \label{eq:p16m-return}
+\end{equation}
+The appendix derives the FOC, SOC, and accounting. In particular,
+\(R_q>0\) and \(R_c<0\).
+
+Internal production uses marginal cost \(c_I(m,k_i)\), with
+\(c_{I,m}>0\) and \(c_{I,k}<0\), and setup cost \(F_I(m,k_i)\), with
+\(F_{I,m}>0\) and \(F_{I,k}<0\). Both are finite for every \(k_i>0\).
+Weak existing capability therefore makes building, acquiring, validating, or
+adapting internal capacity expensive without making internalization
+permanently impossible. Its route value is
+\begin{equation}
+  W_i^I(q,m)
+  =
+  s(q)R\!\left(q,c_I(m,k_i)\right)-F_I(m,k_i).
+  \label{eq:p16m-internal}
+\end{equation}
+
+Entrusted production uses external marginal cost \(c_E(m)\), requires
+\(b(m)>0\) units of qualified capacity with \(b'(m)>0\), incurs setup cost
+\(F_E(m)\), and leaves the holder with burden \(\mu_E\geq0\). At the
+qualified-capacity price \(p_m\),
+\begin{equation}
+  \begin{aligned}
+  W_i^E(q,m;M,p_m)
+  ={}&
+  s(q)R\!\left(q,c_E(m)\right)-F_E(m)-p_mb(m)\\
+  &-\mu_E-\tau_E(M).
+  \end{aligned}
+  \label{eq:p16m-entrusted}
+\end{equation}
+Each monetary cost enters once. The transfer and abandonment values are
+\begin{equation}
+  W^T(q,m)=T(q,m),
+  \qquad
+  W^A=0.
+  \label{eq:p16m-outside}
+\end{equation}
+
+\subsection{Organization and project advancement}
+\label{subsec:p16m-organization}
+
+At a fixed \(p_m\), the project chooses deterministically:
+\begin{equation}
+  \begin{aligned}
+  W_i(q,m;M,p_m)
+  &=
+  \max\{W_i^I,W_i^E,W^T,W^A\},\\
+  r_i^*(q,m;M,p_m)
+  &\in
+  \arg\max_{r\in\{I,E,T,A\}} W_i^r.
+  \end{aligned}
+  \label{eq:p16m-route-choice}
+\end{equation}
+Continuous heterogeneity makes ties a zero-measure event; no logit or
+inclusive value is used.
+
+The internal-minus-entrusted gap is
+\begin{equation}
+  \begin{aligned}
+  \Delta_{IE}(k_i)
+  ={}&
+  s(q)\!\left[
+  R\!\left(q,c_I(m,k_i)\right)-R\!\left(q,c_E(m)\right)
+  \right]-F_I(m,k_i)\\
+  &+F_E(m)+p_mb(m)+\mu_E+\tau_E(M).
+  \end{aligned}
+  \label{eq:p16m-gap}
+\end{equation}
+Holding \((q,m,M,p_m)\) fixed on the internally feasible domain,
+\[
+  \Delta_{IE,k}
+  =
+  s(q)R_c\!\left(q,c_I\right)c_{I,k}-F_{I,k}>0.
+\]
+When the endpoint crossing conditions hold, a unique conditional cutoff
+\(k^*(q,m;p_m,M)\) satisfies \(\Delta_{IE}(k^*)=0\). Conditional on \(I\)
+and \(E\) dominating \(T\) and \(A\), developers below the cutoff select
+\(E\), while those above it select \(I\). Transfer and abandonment remain
+valid outside options.
+
+Expected optimized value per planning-stage project is
+\begin{equation}
+  \Omega_i(M,p_m)
+  =
+  \int W_i(q,m;M,p_m)\,dF(q,m).
+  \label{eq:p16m-omega}
+\end{equation}
+Developer \(i\) solves
+\begin{equation}
+  \max_{x_i\geq0}
+  \left\{
+  \beta a_ix_i\Omega_i(M,p_m)
+  -
+  \frac{\kappa}{1+\nu}x_i^{1+\nu}
+  \right\},
+  \qquad \kappa>0,\quad \nu>0.
+  \label{eq:p16m-advancement-problem}
+\end{equation}
+Strict concavity gives the unique solution
+\begin{equation}
+  x_i^*(M,p_m)
+  =
+  \left[
+  \frac{\beta a_i}{\kappa}\Omega_i(M,p_m)
+  \right]^{1/\nu},
+  \label{eq:p16m-advancement}
+\end{equation}
+including \(x_i^*=0\) when \(\Omega_i=0\). The binary reform affects
+\(x_i^*\) only through \(\Omega_i\). At a fixed \(p_m\), its effect is
+strict only if \(E\) improves on the pre-MAH maximum on a
+positive-probability project set.
+
+\subsection{Qualified manufacturing-service equilibrium}
+\label{subsec:p16m-cmo}
+
+Qualified supplier \(j\), with efficiency \(z_j\), chooses capacity
+\(s_j\geq0\):
+\begin{equation}
+  \max_{s_j\geq0}\{p_ms_j-\Psi(s_j;z_j)\}.
+  \label{eq:p16m-supplier}
+\end{equation}
+With \(\Psi_{ss}>0\), positive-price capacity is uniquely determined by
+\(p_m=\Psi_s(s_j^*;z_j)\), and aggregate supply is
+\[
+  S_m(p_m)=\int s_j^*(p_m,z)\,dH_C(z).
+\]
+
+Expected entrusted capacity per planning-stage project is
+\begin{equation}
+  \chi_i^E(p_m;M)
+  =
+  \int b(m)\mathbf 1\{r_i^*(q,m;M,p_m)=E\}\,dF(q,m).
+  \label{eq:p16m-project-demand}
+\end{equation}
+Study-related and total demand are
+\begin{equation}
+  \begin{aligned}
+  D_m^{\mathrm{MAH}}(p_m;M)
+  &=
+  \int a_ix_i^*(M,p_m)\chi_i^E(p_m;M)\,dH(a,k),\\
+  D_m(p_m;M)
+  &=D_m^B(p_m)+D_m^{\mathrm{MAH}}(p_m;M).
+  \end{aligned}
+  \label{eq:p16m-demand}
+\end{equation}
+The demand expression includes both feedbacks: price changes expected value
+and hence advancement, and it changes deterministic route selection.
+Continuous heterogeneity makes aggregate demand continuous even though
+individual indicators can jump.
+
+The qualified-capacity market clears at the unique price
+\begin{equation}
+  D_m(p_m^*;M)=S_m(p_m^*).
+  \label{eq:p16m-clearing}
+\end{equation}
+Supply is strictly increasing and demand weakly decreasing. Positive
+background demand gives excess demand at zero, while entrusted and
+background demand vanish and supply diverges at high prices. These conditions
+give existence and uniqueness. If post-MAH study demand is positive at the
+old price, \(p_m^*(1)>p_m^*(0)\): CMO scarcity attenuates the reform rather
+than amplifying it through a direct price reduction.
+
+The baseline partial equilibrium contains exactly
+\begin{equation}
+  \left\{
+  p_m^*,\;
+  x_i^*,\;
+  r_i^*(q,m),\;
+  s_j^*
+  \right\}_{i,j}.
+  \label{eq:p16m-equilibrium}
+\end{equation}
+No entry, labor, capital, product-market aggregate, or welfare closure is
+added.
+
+\subsection{Main predictions}
+\label{subsec:p16m-predictions}
+
+\paragraph{Organizational sorting.}
+Conditional on \(I\) and \(E\) dominating the outside options, low internal
+manufacturing capability selects entrusted production and high capability
+selects internal production. Lower entrusted-route friction expands the
+entrusted region; a higher fixed CMO price contracts it.
+
+\paragraph{MAH-relevant projects and advancement.}
+The reform has a zero effect whenever the newly feasible \(E\) value does not
+exceed the best old route. Otherwise it raises expected project value and,
+at fixed service price, raises common project advancement. The response is
+larger where the entrusted value gain is larger; MAH does not change
+\(a_i\), project quality, or the advancement-cost function.
+
+\paragraph{CMO equilibrium and scarcity.}
+The qualified-capacity price is unique. Reform-induced entrusted demand can
+raise this price, weakly reducing the direct fixed-price gains in project
+value and advancement. Fixed-price comparisons and equilibrium-price
+comparisons are therefore distinct.
+
+\paragraph{Planning, organization, and observed outcomes.}
+At equilibrium,
+\[
+  \Lambda_i^{\mathrm{plan}}=a_ix_i^*,
+\]
+while expected realized retained outcomes are
+\begin{equation}
+  Y_i^{\mathrm{ret}}
+  =
+  a_ix_i^*
+  \int s(q)
+  \left[
+  \mathbf 1\{r_i^*=I\}
+  +
+  \mathbf 1\{r_i^*=E\}
+  \right]dF(q,m).
+  \label{eq:p16m-retained-outcome}
+\end{equation}
+Thus observed outcomes can change through advancement or route composition.
+Holder--producer separation is observed only after route assignment and
+cannot cause the earlier \(x_i\) choice.
+
+\paragraph{Novelty composition.}
+For \(g\in\{O,\mathrm{Inc}\}\), outcomes use the same \(x_i^*\) and the
+mixture \(\rho_gF_g\). The baseline permits either class to have a zero or
+larger response and imposes no original-versus-incremental ranking. Patent
+applications are not a baseline endogenous outcome.
+
+\end{document}

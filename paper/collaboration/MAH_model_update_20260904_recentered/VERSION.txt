@@ -1,0 +1,13 @@
+package=MAH_model_update_20260904_recentered
+date=2026-09-04
+branch=codex/mah-model-rebuild
+model_commit=a5f7b1463c3b4e2d508c6ec2eb51772b30bc24a1
+title=Regulatory Separation and Pharmaceutical Innovation: Evidence from China's MAH Reform
+main_pdf_pages=14
+main_pdf_sha256=F4F323E21ABF33E0074DFF2EC70322013355B090ED134A4542464E038F4BC2C6
+appendix_pdf_pages=35
+appendix_pdf_sha256=1F0BA232EA1B884046754EFA056DA302CE17A5BAEA850E4A687378DB5896FFE3
+recenter_note_sha256=78FE720E4BEEE624FFF3DDF0E1D51CD7FE773178BBE4740E7951B39DDDD0E45E
+baseline_prediction=commercialization organization and capability-based sorting
+finance_status=inactive appendix extension
+patent_prediction=none in active baseline
