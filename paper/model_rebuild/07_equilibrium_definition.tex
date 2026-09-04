@@ -3,7 +3,7 @@
 \label{sec:p07-equilibrium}
 
 Fix the institutional regime \(M\in\{0,1\}\), the developer distribution
-\(H(a,k,\ell)\), the project distribution \(F(q,m)\), the qualified-supplier
+\(H(a,k)\), the project distribution \(F(q,m)\), the qualified-supplier
 distribution \(H_C(z)\), and all other exogenous primitives introduced above.
 A baseline MAH partial equilibrium is the collection
 \begin{equation}
@@ -18,7 +18,7 @@ A baseline MAH partial equilibrium is the collection
   \label{eq:p07-equilibrium-collection}
 \end{equation}
 The suppressed arguments are \(x_i^*=x_i^*(M,p_m^*)\),
-\(r_i^*(q,m)=r_i^*(q,m;M,p_m^*,\ell_i)\), and
+\(r_i^*(q,m)=r_i^*(q,m;M,p_m^*)\), and
 \(s_j^*=s_j^*(p_m^*,z_j)\). The collection contains exactly these four
 families of endogenous optimal objects.
 
@@ -28,12 +28,12 @@ It satisfies the following four conditions.
 For every planning-stage project--developer pair outside the zero-measure tie
 set,
 \begin{equation}
-  r_i^*(q,m;M,p_m^*,\ell_i)
+  r_i^*(q,m;M,p_m^*)
   \in
   \arg\max_{r\in\{I,E,T,A\}}
   \left\{
-    \widetilde W_i^I(q,m;\ell_i),
-    \widetilde W_i^E(q,m;M,p_m^*,\ell_i),
+    W_i^I(q,m),
+    W_i^E(q,m;M,p_m^*),
     W^T(q,m),
     W^A
   \right\},
@@ -41,8 +41,7 @@ set,
 \end{equation}
 with route \(E\) unavailable when \(M=0\). This is the deterministic route
 choice defined above; route \(E\) retains holder rights and is not route \(T\).
-There is no financing choice: \(\ell_i\) is predetermined and only screens
-the two retained routes against \(J_I\) and \(J_E\).
+There is no finance-market or route-financeability condition in the baseline.
 
 \paragraph{2. Optimal project advancement.}
 For every developer \(i\), the common project-advancement control is

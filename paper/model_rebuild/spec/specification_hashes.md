@@ -10,6 +10,7 @@ Approval recorded: 2026-08-30T13:11:40.9653412+08:00
 | Frozen amendment v1.1 | `D76856241E460D31087AB60690E85D5681806E53BD42991F725458727CCD1EA9` |
 | Frozen correction v1.2 image | `1C0035AB49A5FF5C207CB71C1E3F04CFAC4E333BEDDAB73841D2A72F603723E5` |
 | Frozen post-Phase-18 financing revision note | `C139AE0B795A26851573438891F3CA30AABF46832B3CF97B22FF19138C4B61F9` |
+| Frozen post-Phase-18 recentering note | `78FE720E4BEEE624FFF3DDF0E1D51CD7FE773178BBE4740E7951B39DDDD0E45E` |
 | Correction v1.2 transcription | `06AF48B2D853EA82F7176505D2ACA4D0CBFE06E5DB52C18026308196FE85E48E` |
 | Effective specification v1.2 | `855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666` |
 | Instruction traceability matrix, specification-approved baseline | `3F0671ED447CB2AF07EB3DED62730A0EF7E15437A9107539B7554E644F18A98F` |
@@ -33,4 +34,6 @@ Approval recorded: 2026-08-30T13:11:40.9653412+08:00
 | Instruction traceability matrix, current Phase 17 `APPROVED` state | `BE367A4E9C36DB8C63CA2D812459B27D3ECFAA186C4F8AE6E8B06493E55F192D` |
 | Instruction traceability matrix, current Phase 18 `APPROVED` state | `A89FE6B71D91449718F166DF6A5A317683057AF7F9C668C8F98208F10CC07FF0` |
 
-Every Phase preflight must re-check the first five hashes. The traceability-matrix hash may change only when Phase evidence/status fields are deliberately updated.
+Every future revision preflight must re-check all frozen-source hashes,
+including the recentering note. The traceability-matrix hash may change only
+when evidence/status fields are deliberately updated.

@@ -1,6 +1,6 @@
 # 03 Assumptions and Scope
 
-Phase status: `PHASES 1--18 APPROVED; FINANCING REVISION ACTIVE`
+Phase status: `PHASE 1--14 - APPROVED`
 
 This is the authoritative Phase 14 assumption ledger. Earlier phase-specific
 IDs remain stable aliases for traceability, but the four blocks below are the
@@ -59,27 +59,26 @@ survival, not the pre-commercial realization probability \(s(q)\).
 
 ## B. Manufacturing technology assumptions
 
-### `B-MFG-01` - Finite internal technology and financing screen
+### `B-MFG-01` - Internal capability domain
 
 **Type:** primitive technology.
 
 Developer capability \(k_i>0\) and project manufacturing requirement \(m>0\)
-share the same capability scale. Internal setup cost \(F_I(m,k_i)\) is finite.
-Internal organization requires the up-front, currency-denominated liquidity
-commitment \(J_I(m,k_i)>0\), and is financeable exactly when
-\(J_I(m,k_i)\leq\ell_i\). The requirement is not an additional payoff cost.
+share the same capability scale. Internal production is technologically
+available for every positive \(k_i\). Weak capability raises the finite real
+costs \(c_I(m,k_i)\) and \(F_I(m,k_i)\); it does not trigger a hard feasibility
+indicator or a positive capability cutoff.
 
 ### `B-MFG-02` - Internal technology shape
 
 **Type:** primitive technology restriction.
 
-On the baseline domain, \(c_I(m,k)>0\), \(F_I(m,k)>0\), and
-\(J_I(m,k)>0\) are finite and differentiable, with
+For every \(k>0\), \(c_I(m,k)>0\) and \(F_I(m,k)\geq0\) are finite and
+differentiable, with
 
 \[
 c_{I,m}>0,\qquad c_{I,k}<0,\qquad
-F_{I,m}>0,\qquad F_{I,k}<0,\qquad
-J_{I,m}>0,\qquad J_{I,k}<0.
+F_{I,m}>0,\qquad F_{I,k}<0.
 \]
 
 These signs describe technology. The induced sign of a value derivative and
@@ -91,11 +90,8 @@ the sorting result are derived.
 
 External production has \(c_E(m)>0\), requires \(b(m)>0\) units of qualified
 CMO capacity with \(b'(m)>0\), and has readiness cost \(F_E(m)\geq0\) plus
-holder-side burden \(\mu_E\geq0\). It also requires an up-front liquidity
-commitment \(J_E(m)>0\), with \(J_E'(m)>0\), and is financeable exactly when
-\(J_E(m)\leq\ell_i\). The requirement is not subtracted from value. These
-objects do not depend on developer capability and are distinct from the
-capacity payment \(p_m b(m)\).
+holder-side burden \(\mu_E\geq0\). These objects do not depend on developer
+capability and are distinct from the capacity payment \(p_m b(m)\).
 
 ### `B-MFG-04` - Deterministic route choice regularity
 
@@ -111,21 +107,21 @@ surely; it does not assume which route wins.
 
 **Type:** maintained sufficient condition for Proposition 1 only.
 
-At a fixed finite \((q,m,p_m,\tau_E)\), conditional on both retained routes
-being financeable, the gap \(\Delta_{IE}(k)\) is continuous on the relevant
-capability interval and obeys
+At a fixed finite \((q,m,p_m,\tau_E)\), the gap
+\(\Delta_{IE}(k)\) is continuous on \(k>0\) and there exist finite
+\(0<k_L<k_H\) such that
 
 \[
-\Delta_{IE}(\underline k_c)<0,
+\Delta_{IE}(k_L)<0,
 \qquad
-\Delta_{IE}(\overline k_c)>0
+\Delta_{IE}(k_H)>0.
 \]
 
-for proposition-specific finite endpoints
-\(0<\underline k_c<\overline k_c<\infty\). These restrictions guarantee a
-crossing once the strict slope has been derived from `A-DEM-01` and
-`B-MFG-02`. They do not reintroduce physical infeasibility, assume the cutoff,
-or need to hold for every project-price cell.
+These finite-point restrictions guarantee that a crossing exists once the
+strict slope has been derived from `A-DEM-01` and `B-MFG-02`. They do not
+assume a hard feasibility cutoff or the sorting conclusion, and they need not
+hold for every project-price cell. An optional continuous limit as
+\(k\downarrow0\) may motivate the low-capability endpoint but is not required.
 
 ## C. Project-advancement assumptions
 
@@ -156,19 +152,17 @@ For each developer and fixed candidate \(p_m\), optimized route value \(W_i\)
 is measurable and integrable. Because abandonment is available,
 
 \[
-0\leq\Omega_i(M,p_m)
-=\int \widetilde W_i(q,m;M,p_m,\ell_i)\,dF(q,m)<\infty.
+0\leq\Omega_i(M,p_m)=\int W_i(q,m;M,p_m)\,dF(q,m)<\infty.
 \]
 
 ### `C-ADV-03` - Ex ante timing and anticipated price
 
 **Type:** information/timing restriction.
 
-The developer observes \(M,(a_i,k_i,\ell_i)\), anticipates route opportunities
-and the equilibrium-consistent CMO price, then chooses \(x_i\) before the
-project draw. After \((q,m)\) is realized, financeability is checked and a
-route is selected. There is no financing decision stage. Realized
-holder-producer separation cannot be a causal event preceding \(x_i\).
+The developer observes \(M,(a_i,k_i)\), anticipates route opportunities and
+the equilibrium-consistent CMO price, then chooses \(x_i\) before the project
+draw and route assignment. Realized holder-producer separation cannot be a
+causal event preceding \(x_i\).
 
 ### `C-ADV-04` - Novelty mixture without a class-specific control
 
@@ -238,13 +232,11 @@ the background market, is outside the study cohort, and is policy invariant.
 
 **Type:** maintained regularity.
 
-At every finite candidate price, the joint developer/project distribution
-assigns zero mass to route ties and to financing thresholds
-\(J_I=\ell_i\), \(J_E=\ell_i\). Route values are continuous in price, relevant
-first moments are finite, and \(a_ix_i^*(M,p_m)b(m)\) admits an integrable
-envelope on compact price intervals. These conditions justify aggregate
-continuity by dominated convergence over \(F\) and \(H(a,k,\ell)\); they do
-not replace deterministic choice with logit.
+At every finite candidate price, firm/project heterogeneity assigns zero mass
+to route ties. Route values are continuous in price, relevant first moments
+are finite, and \(a_ix_i^*(M,p_m)b(m)\) admits an integrable envelope on
+compact price intervals. These conditions justify aggregate continuity by
+dominated convergence; they do not replace deterministic choice with logit.
 
 ### `D-CMO-04` - Single-market price-taking closure
 
@@ -259,7 +251,7 @@ policy. No entry, labor, capital, product-market or welfare market is closed.
 
 | ID | Binding restriction |
 |---|---|
-| `ARCH-01` | \(M\in\{0,1\}\) acts directly only through \(\tau_E(0)=+\infty\), \(\tau_E(1)=\bar\tau_E<\infty\); no direct shift of \(\ell_i,J_I,J_E\), technology, project draws, realization, supply or background demand |
+| `ARCH-01` | \(M\in\{0,1\}\) acts directly only through \(\tau_E(0)=+\infty\), \(\tau_E(1)=\bar\tau_E<\infty\); no direct shift of technology, project draws, realization, supply or background demand |
 | `ARCH-02` | Under \(E\), the developer remains the holder; \(E\neq T\) and retained rights are not transferred |
 | `ARCH-03` | Anticipation precedes \(x_i\); planning, project draw, route assignment, observed separation and realized products follow in that order |
 | `ARCH-04` | Baseline is partial equilibrium and excludes entry, welfare, portfolio dynamics, representative households and additional market clearing |
@@ -267,8 +259,7 @@ policy. No entry, labor, capital, product-market or welfare market is closed.
 | `ARCH-06` | Binary policy comparisons, finite-wedge derivatives, fixed-price derivatives and equilibrium-price comparisons are distinct operations |
 | `ARCH-07` | One common \(x_i\); \(g\in\{O,\mathrm{Inc}\}\) is only an empirical classifier and creates no new control |
 | `ARCH-08` | Marginal, fixed, readiness, holder-side and CMO-capacity costs are accounted for once and only once |
-| `ARCH-09` | Logit, inclusive value, continuous \(\eta\), matching, dynamics, route-specific realization, research-versus-development allocation, and patent production remain inactive extensions |
-| `ARCH-10` | \(J_I,J_E\) are liquidity requirements used only for feasibility and are not subtracted from route value; no finance-market equilibrium is added |
+| `ARCH-09` | Logit, inclusive value, continuous \(\eta\), matching, dynamics, route-specific realization and research-versus-development allocation remain extension-only |
 
 ## 3. Proposition--assumption matrix
 
@@ -277,9 +268,9 @@ matrix does not mislabel them as economic assumptions.
 
 | Result | Canonical assumptions actually used | Definition/derived parents | Architecture guards | Sufficient/strict condition and zero-effect boundary |
 |---|---|---|---|---|
-| Proposition 1: organizational feasibility and sorting | `A-DEM-01`, `A-DEM-03`; `B-MFG-01`--`B-MFG-05` | financeability indicators, derived \(R_c<0\), route values and \(\Delta_{IE,k}>0\) | `ARCH-02`, `ARCH-06`, `ARCH-08`, `ARCH-10` | Sorting applies conditional on both retained routes being financeable and beating \(T,A\); endpoint crossing is cell-specific |
-| Proposition 2: MAH-relevant set and financing corridor | `B-MFG-01`, `B-MFG-03`, `B-MFG-04` | deterministic maximum and finance-adjusted old value \(W_i^0\) | `ARCH-01`, `ARCH-06`, `ARCH-10` | Strict gain iff \(J_E\le\ell_i\) and \(W_i^E>W_i^0\); no global treatment-effect sign in \(\ell_i\) |
-| Proposition 3: advancement and heterogeneity | `C-ADV-01`, `C-ADV-02`, `C-ADV-03`; additionally `B-MFG-02`, `C-ADV-06` only for manufacturing-capability scaling | finance-adjusted route-value gain and strictly concave advancement objective | `ARCH-01`, `ARCH-05`, `ARCH-06`, `ARCH-07`, `ARCH-10` | \(\Delta\Omega_i>0\) gives a strict fixed-price response; the treatment effect has no global monotone sign in \(\ell_i\) |
+| Proposition 1: organizational sorting | `A-DEM-01`, `A-DEM-03`; `B-MFG-01`, `B-MFG-02`, `B-MFG-04`, `B-MFG-05` | derived \(R_c<0\), route values and \(\Delta_{IE,k}>0\) | `ARCH-02`, `ARCH-06`, `ARCH-08` | Endpoint crossing is cell-specific; sorting applies only where \(I,E\) beat \(T,A\); otherwise no cutoff-based route conclusion |
+| Proposition 2: MAH-relevant set | `B-MFG-04` | deterministic maximum and old choice-set value \(W_i^0\) | `ARCH-01`, `ARCH-06` | Strict gain iff \(W_i^E>W_i^0\); null relevant set or prohibitive price gives zero effect |
+| Proposition 3: advancement and heterogeneity | `C-ADV-01`, `C-ADV-02`, `C-ADV-03`; additionally `B-MFG-02`, `C-ADV-06` only for manufacturing-capability scaling | route-value gain and strictly concave advancement objective | `ARCH-01`, `ARCH-05`, `ARCH-06`, `ARCH-07` | \(\Delta\Omega_i>0\) gives a strict fixed-price response; zero gain gives zero response; no capability sign for \(0<\nu<1\) without another bound |
 | Novelty corollary | `C-ADV-04`, `C-ADV-05` | mixture identity | `ARCH-05`, `ARCH-07` | No cross-class order; includes \(\rho_O=0\), \(\rho_{\mathrm{Inc}}=0\), and either class gain equal to zero |
 | Proposition 4: CMO existence and uniqueness | `B-MFG-03`; `D-CMO-01`--`D-CMO-04` | supplier best responses and aggregate demand derived at a candidate price | `ARCH-04`, `ARCH-06` | Existence uses low/high-price boundaries; uniqueness uses strictly increasing supply and weakly decreasing total demand |
 | Proposition 5: scarcity attenuation | `B-MFG-03`; `D-CMO-01`--`D-CMO-04` | Proposition 4 and nonnegative study demand | `ARCH-01`, `ARCH-06` | Strict price increase requires positive post-MAH study demand at the old price; no demand, no entrusted advantage, or perfectly elastic supply gives the stated zero/common-price boundary |
@@ -364,22 +355,26 @@ work must cite canonical IDs.
 3. A binary \(M\) comparison cannot be written as a derivative with respect to
    \(M\).
 4. Fixed candidate price and equilibrium price must be named explicitly.
-5. No class ranking or baseline patent response may be introduced. The former
+5. No class ranking or baseline patent response can be introduced without a
+   separately approved architecture change and external evidence. The former
    research--development/patent extension is archived and inactive.
 6. Extension-only assumptions cannot be cited by a baseline proposition.
 7. Failure of a sufficient condition yields an unsigned or zero-effect case;
    it does not authorize a stronger conclusion.
 
-## 7. Financing-revision audit additions
+## 7. Inactive financing-extension assumptions
 
-- Within a fixed institutional regime, larger \(\ell_i\) weakly expands the
-  route set and therefore weakly raises \(\Omega_i^h\) and \(x_i^{*,h}\).
-- The reform treatment effects \(\Delta\Omega_i(\ell_i)\) and
-  \(\Delta x_i(\ell_i)\) have no global monotone sign because \(\ell_i\) can
-  restore the old internal route as well as the new entrusted route.
-- At the financeability thresholds, derivatives with respect to \(\ell_i\)
-  need not exist; finite comparisons govern the corridor result.
-- When \(\ell_i\ge\max\{J_I,J_E\}\) on the relevant support, financeability
-  never binds and the preceding commercialization model is nested exactly.
-- `E-RD-01`--`E-RD-07` are historical, inactive assumptions preserved only in
-  the archived superseded module; they cannot support an active claim.
+These assumptions are quarantined in
+`15_financing_commercialization_extension.tex`. They do not enter any
+baseline proposition, baseline route value, advancement equation, or CMO
+market-clearing condition.
+
+| ID | Extension-only content | Baseline boundary |
+|---|---|---|
+| `E-FIN-01` | Predetermined financing capacity $\ell_i>0$ may be added to an extension type $\theta_i^F=(a_i,k_i,\ell_i)$ | Baseline type remains $\theta_i=(a_i,k_i)$ |
+| `E-FIN-02` | $J_I(m,k_i)>0$ and $J_E(m)>0$ measure peak liquidity needs | They are thresholds, not real costs, and are never subtracted from payoffs |
+| `E-FIN-03` | A local $J_E<J_I$ condition can define a financing corridor | No global ordering is imposed and no corridor exists in the baseline |
+| `E-FIN-04` | If $\ell_i\geq\max\{J_I,J_E\}$ for all relevant pairs, finance-adjusted values equal ordinary route values | This nesting returns exactly to the active organizational baseline |
+| `E-FIN-05` | Pre-policy finance measures may be tested as secondary heterogeneity | Promotion requires an independent post-control prediction for holder--manufacturer separation and new user authorization |
+
+No financing-extension assumption may be cited to prove a baseline result.

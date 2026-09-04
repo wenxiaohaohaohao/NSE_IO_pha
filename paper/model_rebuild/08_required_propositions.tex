@@ -12,18 +12,12 @@ substantive proposition. All policy comparisons are finite comparisons between
 
 \paragraph{Assumptions and fixed objects.}
 Fix a project \((q,m)\), a finite institutional wedge, regime \(M=1\), and a
-conjectured support price \(p_m<\infty\). Fix financing capacity \(\ell_i\)
-and hold all primitives except internal manufacturing capability \(k_i\)
-fixed. Use the technology and financing-requirement signs and the
-endpoint-crossing conditions stated above.
+conjectured support price \(p_m<\infty\). Hold all primitives except internal
+manufacturing capability \(k_i\) fixed. On the internally feasible domain,
+use the technology signs and endpoint-crossing conditions stated above.
 
 \paragraph{Claim.}
-Internal production is financeable exactly when
-\(J_I(m,k_i)\leq\ell_i\); entrusted production is financeable exactly when
-\(J_E(m)\leq\ell_i\), in addition to being institutionally available. Since
-\(J_{I,k}<0\), stronger internal capability expands the internal-financeability
-set. Conditional on both retained routes being financeable, the economic
-internal-minus-entrusted value gap is strictly increasing in \(k_i\):
+The internal-minus-entrusted value gap is strictly increasing in \(k_i\):
 \begin{equation}
   \frac{\partial\Delta_{IE}(k_i;q,m,M,p_m)}{\partial k_i}
   =
@@ -31,18 +25,13 @@ internal-minus-entrusted value gap is strictly increasing in \(k_i\):
   >0.
   \label{eq:p08-sorting-slope}
 \end{equation}
-If the gap crosses from negative to positive on a connected interval where
-both retained routes are financeable, there is a unique
-\(k^*(q,m;p_m,M)\). Conditional on both \(I\) and \(E\) dominating \(T\) and
-\(A\), developers below the cutoff use \(E\) and developers above it use
-\(I\).
+If the gap is negative at the lower feasible endpoint and positive at the
+upper endpoint, there is a unique \(k^*(q,m;p_m,M)\). Conditional on both
+\(I\) and \(E\) dominating \(T\) and \(A\), developers below the cutoff use
+\(E\) and developers above it use \(I\).
 
 \paragraph{Proof.}
-The feasibility statements follow from the definitions of
-\(\widetilde W_i^I\) and \(\widetilde W_i^E\). The sign \(J_{I,k}<0\) implies
-that if internalization is financeable at \(k_i\), it remains financeable at
-any higher capability holding \((m,\ell_i)\) fixed. Conditional on both routes
-being financeable, the commercial-value kernel gives \(R_c<0\), while the internal technology
+The commercial-value kernel gives \(R_c<0\), while the internal technology
 gives \(c_{I,k}<0\) and \(F_{I,k}<0\).
 The operating-cost term on the right side of
 \eqref{eq:p08-sorting-slope} is weakly positive (and is zero when
@@ -55,17 +44,15 @@ alone does not establish the globally selected route.
 
 \paragraph{Sufficient conditions and zero-effect cases.}
 The endpoint-crossing conditions are sufficient, not primitive conclusions.
-If they fail, a finite interior cutoff need not exist. If
-\(J_I(m,k_i)>\ell_i\), internal production is financially infeasible even
-though its technological payoff remains finite. A low-\(k_i\) developer with
-sufficiently high \(\ell_i\) can still internalize. As
+If they fail, a finite interior cutoff need not exist. At low positive
+\(k_i\), internal production remains feasible in principle but may be
+arbitrarily unattractive because \(c_I\) and \(F_I\) are high. As
 \(k_i\rightarrow\infty\), the maintained technology signs weakly favor
-internal production and reduce its financing requirement. At \(M=0\), route
-\(E\) is unavailable and there is no finite pre-MAH \(I/E\) cutoff.
+internal production relative to entrusted production. At \(M=0\), route \(E\)
+is unavailable and there is no finite pre-MAH \(I/E\) cutoff.
 
 \paragraph{Economic interpretation.}
-Internal capability reduces internal operating cost, setup burden, and the
-amount of up-front commitment that must be financed.
+Internal capability reduces both internal operating cost and setup burden.
 Entrusted production is most useful to developers for which those internal
 advantages are weak, but it is selected only when it also beats transfer or
 delay. The result is organizational sorting, not a permanent firm-type
@@ -75,39 +62,35 @@ taxonomy.
 \label{prop:p08-relevant-set}
 
 \paragraph{Assumptions and fixed objects.}
-Fix developer \(i\), its predetermined financing capacity \(\ell_i\), project
-draw \((q,m)\), and support price \(p_m\).
+Fix developer \(i\), project draw \((q,m)\), and support price \(p_m\).
 The old route set is \(I,T,A\); post-MAH adds \(E\) without removing an old
 option. Route values retain the definitions given above.
 
 \paragraph{Definitions and claim.}
 Define
-\begin{align}
-  W_i^0(q,m;\ell_i)
-  &=
-  \max\{\widetilde W_i^I(q,m;\ell_i),W^T(q,m),0\},
-  \label{eq:p08-old-value}\\
-  W_i^1(q,m;p_m,\ell_i)
-  &=
-  \max\{W_i^0(q,m;\ell_i),
-  \widetilde W_i^E(q,m;1,p_m,\ell_i)\}.
+\begin{equation}
+  W_i^0(q,m)
+  =
+  \max\{W_i^I(q,m),W^T(q,m),0\},
+  \qquad
+  W_i^1(q,m;p_m)
+  =
+  \max\{W_i^0(q,m),W_i^E(q,m;1,p_m)\}.
   \label{eq:p08-old-new-values}
-\end{align}
+\end{equation}
 Then
 \begin{equation}
-  W_i^1(q,m;p_m,\ell_i)-W_i^0(q,m;\ell_i)
+  W_i^1(q,m;p_m)-W_i^0(q,m)
   =
-  \left[\widetilde W_i^E(q,m;1,p_m,\ell_i)
-  -W_i^0(q,m;\ell_i)\right]_+.
+  \left[W_i^E(q,m;1,p_m)-W_i^0(q,m)\right]_+.
   \label{eq:p08-positive-part-gain}
 \end{equation}
 The MAH-relevant project set is
 \begin{equation}
-  \mathcal C_i(p_m,\ell_i)
+  \mathcal C_i(p_m)
   =
   \left\{(q,m):
-  J_E(m)\leq\ell_i,\quad
-  W_i^E(q,m;1,p_m)>W_i^0(q,m;\ell_i)\right\}.
+  W_i^E(q,m;1,p_m)>W_i^0(q,m)\right\}.
   \label{eq:p08-relevant-set}
 \end{equation}
 Only project draws in this set receive a strict direct value gain at the fixed
@@ -116,60 +99,45 @@ support price.
 \paragraph{Proof.}
 For any real numbers \(a,b\),
 \(\max\{a,b\}-a=[b-a]_+\). Apply the identity with
-\(a=W_i^0\) and \(b=\widetilde W_i^E\). The gain is strictly positive exactly where the
+\(a=W_i^0\) and \(b=W_i^E\). The gain is strictly positive exactly where the
 argument of the positive-part operator is positive, which is precisely
-\(\mathcal C_i(p_m,\ell_i)\).
+\(\mathcal C_i(p_m)\).
 
 \paragraph{Sufficient conditions and zero-effect cases.}
-A project receives a strict gain if and only if entrusted production is
-financeable and its value strictly exceeds every financeable old route at the
-support price. If \(J_E>\ell_i\) or \(W_i^E\leq W_i^0\), the project gain is
-zero. If one of these conditions holds for every draw,
-\(\mathcal C_i(p_m,\ell_i)\) is empty up to null sets.
+A project receives a strict gain if and only if entrusted value strictly
+exceeds internal value, transfer value, and abandonment value at the support
+price. If \(W_i^E\leq W_i^0\), the project gain is zero. If this inequality
+holds for all project draws, \(\mathcal C_i(p_m)\) is empty up to null sets.
 As \(p_m\rightarrow\infty\), \(W_i^E\rightarrow-\infty\), so the old value is
 preserved and the relevant set becomes empty.
 
 \paragraph{Economic interpretation.}
-MAH matters only where retained entrusted manufacturing is financeable and
-beats every option already available. Suppose locally that
-\(J_E(m)<J_I(m,k_i)\). If \(\ell_i<J_E\), neither retained route is
-financeable and the effect is zero. If
-\(J_E\leq\ell_i<J_I\), entrusted production is the only financeable retained
-route and yields a strict gain when it beats \(T/A\). If
-\(\ell_i\geq J_I\), internalization returns as an old option and the gain is
-\([W_i^E-\max\{W_i^I,W^T,0\}]_+\). The reform response can therefore be
-strongest at intermediate financing capacity and is not globally monotone in
-\(\ell_i\).
+MAH matters only where retained entrusted manufacturing beats every option
+already available. The reform does not raise the value of projects that were
+already better served internally, transferred, or delayed.
 
 \subsection{Proposition 3: Project advancement and firm heterogeneity}
 \label{prop:p08-advancement}
 
 \paragraph{Assumptions and fixed objects.}
-Fix a support price \(p_m\), financing capacity \(\ell_i\),
-policy-invariant primitives, and developer characteristics except for the
-characteristic varied in each comparison.
+Fix a support price \(p_m\), policy-invariant primitives, and developer
+characteristics except for the characteristic varied in each comparison.
 Route values do not depend on research capability \(a_i\). For the
 manufacturing-capability result, additionally impose the proposition-specific
 sufficient condition \(\nu\geq1\).
 
 \paragraph{Proof: expected value and advancement response.}
-For \(h\in\{0,1\}\), define
-\begin{equation}
-  \Omega_i^h(p_m,\ell_i)
-  =
-  \int W_i^h(q,m;p_m,\ell_i)\,dF(q,m),
-  \label{eq:p08-regime-expected-value}
-\end{equation}
-with the irrelevant \(p_m\) argument suppressed for \(h=0\).
-Proposition~2 implies
+Let
+\(\Omega_i^h(p_m)=\int W_i^h(q,m;p_m)\,dF(q,m)\) for
+\(h\in\{0,1\}\), with the irrelevant \(p_m\) argument suppressed for
+\(h=0\). Proposition~2 implies
 \begin{equation}
   \Delta\Omega_i(p_m)
   \equiv
   \Omega_i^1(p_m)-\Omega_i^0
   =
   \int
-  \left[\widetilde W_i^E(q,m;1,p_m,\ell_i)
-  -W_i^0(q,m;\ell_i)\right]_+
+  \left[W_i^E(q,m;1,p_m)-W_i^0(q,m)\right]_+
   dF(q,m)
   \geq0.
   \label{eq:p08-expected-gain}
@@ -229,16 +197,6 @@ positive-measure set; for \(\nu>1\), a strict rise in positive baseline value
 also makes the concavity channel strict. For \(0<\nu<1\), no sign is asserted
 without an additional bound.
 
-\paragraph{Financing-capacity heterogeneity.}
-Within either fixed regime, a finite increase in \(\ell_i\) weakly expands the
-financeable choice set and therefore weakly raises \(\Omega_i^h\) and
-\(x_i^{*,h}\). This does not order the reform response. Under the local
-capital-requirement ordering \(J_E<J_I\), the response can be zero below
-\(J_E\), strictly positive in the financing corridor, and smaller, unchanged,
-or zero once internalization becomes financeable. Hence no global sign is
-assigned to the finite-comparison slope of \(\Delta x_i(\ell_i)\). At a
-financing threshold, an ordinary derivative need not exist.
-
 \paragraph{Zero-effect and boundary cases.}
 If the relevant set is null or entrusted advantage is zero, then
 \(\Delta\Omega_i=\Delta x_i=0\). At \(\nu=1\),
@@ -253,11 +211,9 @@ gain. A high \(a_i\) does not create a response when the value gain is zero.
 \paragraph{Economic interpretation.}
 Research capability scales how strongly a given increase in the value of
 advancing projects changes the level of advancement. Weak internal
-manufacturing capability makes retained outsourcing more likely to add value
-and, through \(J_{I,k}<0\), makes exposure to the financing corridor more
-likely at fixed \(\ell_i\). The resulting response is strongest for
-high-\(a_i\) developers inside the MAH-relevant set; there is no unconditional
-ordering in \(\ell_i\). This
+manufacturing capability makes retained outsourcing more likely to add value.
+The resulting response is strongest for high-\(a_i\), low- or
+intermediate-\(k_i\) developers under the stated curvature condition. This
 does not imply more patent applications, basic research, scientific
 discovery, or breakthrough novelty.
 
@@ -265,20 +221,20 @@ discovery, or breakthrough novelty.
 \label{cor:p08-novelty}
 
 \paragraph{Assumptions and fixed objects.}
-Fix developer \(i\), financing capacity \(\ell_i\), and support price \(p_m\). The class
+Fix developer \(i\) and support price \(p_m\). The class
 \(g\in\{O,\mathrm{Inc}\}\) is an exogenous classifier, not a control or state.
 The same \(x_i\) applies to both classes.
 
 \paragraph{Claim and proof.}
 Define
-\(\Omega_{ig}^0=E_{F_g}[W_i^0(\ell_i)]\) and
-\(\Omega_{ig}^1=E_{F_g}[\max\{W_i^0(\ell_i),\widetilde W_i^E(\ell_i)\}]\). Then
+\(\Omega_{ig}^0=E_{F_g}[W_i^0]\) and
+\(\Omega_{ig}^1=E_{F_g}[\max\{W_i^0,W_i^E\}]\). Then
 \begin{equation}
   \Delta\Omega_{ig}
   =
   E_{F_g}
   \left[
-    \left(\widetilde W_i^E-W_i^0\right)_+
+    \left(W_i^E-W_i^0\right)_+
   \right],
   \qquad
   \Delta\Omega_i
@@ -376,16 +332,14 @@ Define the fixed-price and equilibrium-price gains by
   \Delta\Omega_i^{\mathrm{dir}}
   =
   \int
-  [\widetilde W_i^E(q,m;1,p_m^0,\ell_i)
-   -W_i^0(q,m;\ell_i)]_+
+  [W_i^E(q,m;1,p_m^0)-W_i^0(q,m)]_+
   dF,
 \]
 \[
   \Delta\Omega_i^{\mathrm{eq}}
   =
   \int
-  [\widetilde W_i^E(q,m;1,p_m^1,\ell_i)
-   -W_i^0(q,m;\ell_i)]_+
+  [W_i^E(q,m;1,p_m^1)-W_i^0(q,m)]_+
   dF.
 \]
 Since \(W_{i,p_m}^E=-b(m)<0\) and

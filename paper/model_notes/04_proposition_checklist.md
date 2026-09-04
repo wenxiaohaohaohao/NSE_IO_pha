@@ -1,36 +1,30 @@
 # 04 Proposition Checklist
 
-Phase status: PHASES 1--18 APPROVED; FINANCING REVISION AUDIT ACTIVE
+Phase status: PHASE 4--8 - APPROVED; PHASE 14 ASSUMPTION AUDIT - APPROVED
 
 Canonical assumption IDs below are controlled by
 `03_assumptions_and_scope.md`. Earlier `A-Pxx-*` IDs remain traceable aliases
 but are no longer the active taxonomy. Architecture guards are listed
 separately and are not counted as economic assumptions.
 
-## Proposition 1 - Organizational feasibility and sorting
+## Proposition 1 - Organizational sorting
 
 - Status: formal Phase 8 proof and independent audit complete.
-- Objects defined before statement: \(\ell_i,J_I,J_E,W_i^I,W_i^E,
-  \widetilde W_i^I,\widetilde W_i^E,W^T,W^A,r_i^*,\Delta_{IE},k^*\).
+- Objects defined before statement: \(W_i^I,W_i^E,W^T,W^A,W_i,r_i^*,\Delta_{IE},k^*\).
 - Assumptions used: A-DEM-01, A-DEM-03; B-MFG-01, B-MFG-02, B-MFG-04,
   B-MFG-05.
-- Architecture guards: ARCH-02, ARCH-06, ARCH-08, ARCH-10.
+- Architecture guards: ARCH-02, ARCH-06, ARCH-08.
 - Fixed objects in capability derivative: \(q,m,M,p_m\).
 - Sufficient crossing conditions: continuous \(\Delta_{IE}\), negative lower-end limit, positive upper-end limit.
 - Derived monotonicity: \(\Delta_{IE,k}=sR_c c_{I,k}-F_{I,k}>0\).
 - Existence: intermediate value theorem under endpoint crossing.
 - Uniqueness: strict positive slope.
-- Financeability layer: \(I\) is retained only if \(J_I\le\ell_i\), and
-  \(E\) only if \(J_E\le\ell_i\).
-- Conditional sorting: \(k_i<k^*\) selects \(E\) and \(k_i>k^*\) selects \(I\)
-  only when both are financeable and dominate \(T/A\).
+- Conditional sorting: \(k_i<k^*\) selects \(E\) and \(k_i>k^*\) selects \(I\) only when both dominate \(T/A\).
 - Structural finite-wedge derivative: \(\partial k^*/\partial\tau_E<0\).
 - Fixed-price derivative: \(\partial k^*/\partial p_m<0\).
 - Binary-policy boundary: \(M=0\) makes \(E\) unavailable and does not have a finite interior \(I/E\) cutoff.
 - Zero-effect cases: \(E\) below the pre-reform maximum; \(T\) or \(A\) dominates; crossing conditions fail for the project--price cell.
 - Economic interpretation: lower finite institutional burden expands the entrusted region; a higher fixed CMO price contracts it.
-- Financing interaction: \(J_{I,k}<0\), so higher \(k_i\) weakly expands the
-  internal-financeability set.
 - P0 issues: none identified in the draft.
 
 ## Proposition 3 - Project-advancement response and firm heterogeneity
@@ -40,8 +34,8 @@ separately and are not counted as economic assumptions.
   \(\lambda_i^{\mathrm{plan}},C_X,\Omega_i,x_i^*,B_i,K_i\).
 - Assumptions used: C-ADV-01, C-ADV-02 and C-ADV-03; B-MFG-02 and
   C-ADV-06 only for the manufacturing-capability sufficient result.
-- Architecture guards: ARCH-01, ARCH-05, ARCH-06, ARCH-07, ARCH-10.
-- Fixed objects in the binary comparison: \(p_m,a_i,k_i,\ell_i,F\) and all
+- Architecture guards: ARCH-01, ARCH-05, ARCH-06, ARCH-07.
+- Fixed objects in the binary comparison: \(p_m,a_i,k_i,F\) and all
   policy-invariant primitives.
 - Optimization: one common \(x_i\geq0\); no class-specific or
   research-versus-development controls.
@@ -65,9 +59,6 @@ separately and are not counted as economic assumptions.
   \(k_i\). No sign is claimed for \(0<\nu<1\) without another bound.
 - Manufacturing role: \(k_i\) affects \(\Omega_i\) through route organization,
   not project-arrival productivity or advancement cost.
-- Financing-capacity discipline: within a regime, larger \(\ell_i\) weakly
-  expands the feasible set, but the treatment effect \(\Delta x_i(\ell_i)\)
-  has no global monotone sign and may kink at \(J_E\) or \(J_I\).
 - Interpretation: \(K_i-B_i=\Omega_i\) is an appendix accounting identity, not
   a recursive state system.
 - P0 issues: none identified in the draft.
@@ -83,9 +74,8 @@ separately and are not counted as economic assumptions.
   rises with \(p_m\) and \(z_j\).
 - Study demand: contains both the advancement response through
   \(\Omega_i\) and the deterministic route-selection response.
-- Deterministic aggregation: aggregate continuity follows from zero-mass ties
-  and financing thresholds, continuous \(H(a,k,\ell)\) heterogeneity, and
-  dominated convergence, not logit smoothing.
+- Deterministic aggregation: aggregate continuity follows from zero-mass ties,
+  continuous heterogeneity and dominated convergence, not logit smoothing.
 - Demand monotonicity: both \(x_i^*(M,p_m)\) and
   \(\chi_i^E(p_m;M)\) are weakly decreasing in price.
 - Existence: demand exceeds supply at zero; demand vanishes and supply becomes
@@ -101,20 +91,16 @@ separately and are not counted as economic assumptions.
 - Scope: no entry or second market-clearing condition.
 - P0 issues: none identified in the draft.
 
-## Proposition 2 - MAH-relevant project set and financing corridor
+## Proposition 2 - MAH-relevant project set
 
 - Status: formal Phase 8 proof and independent audit complete.
-- Objects defined before statement: \(W_i^0,W_i^1,\mathcal C_i,J_I,J_E,\ell_i\).
-- Assumptions used: B-MFG-01, B-MFG-03, B-MFG-04.
-- Architecture guards: ARCH-01, ARCH-06, ARCH-10.
+- Objects defined before statement: \(W_i^0,W_i^1,\mathcal C_i\).
+- Assumptions used: B-MFG-04.
+- Architecture guards: ARCH-01, ARCH-06.
 - Fixed objects: developer, project draw and support price.
 - Identity: \(W_i^1-W_i^0=[W_i^E-W_i^0]_+\).
 - Relevant set: strict gain occurs exactly on
-  \(\mathcal C_i(p_m,\ell_i)=\{(q,m):J_E\le\ell_i,\ W_i^E>W_i^0\}\).
-- Corridor: if locally \(J_E<J_I\), the three regions are
-  \(\ell_i<J_E\), \(J_E\le\ell_i<J_I\), and \(\ell_i\ge J_I\).
-- Monotonicity boundary: the reform response can peak in the corridor and is
-  not globally monotone in \(\ell_i\).
+  \(\mathcal C_i(p_m)=\{(q,m):W_i^E>W_i^0\}\).
 - Zero-effect cases: entrusted value does not beat the old maximum; the set is
   null; or CMO price is prohibitive.
 - Interpretation: adding route \(E\) preserves the old choice-set value.
@@ -176,88 +162,25 @@ separately and are not counted as economic assumptions.
 
 ## Count and scope audit
 
-- Substantive propositions: exactly 6.
-- Corollaries: exactly 1.
+- Main-text substantive propositions: exactly 4 (organizational sorting,
+  MAH-relevant set, project advancement, and CMO equilibrium).
+- Appendix proof-ledger substantive propositions: exactly 6.
+- Appendix corollaries: exactly 1.
 - Additional substantive propositions: 0.
 - New baseline markets or controls: 0.
 - Proposition rows with canonical assumptions: 6.
 - Novelty corollary rows with canonical assumptions: 1.
 - Proposition conclusions written as assumptions: 0.
 
-## Superseded extension audit record (2026-09-03)
+## Inactive financing-extension result status (2026-09-04)
 
-These results were audited in the prior revision but are now inactive. Their
-source is preserved as
-`archive/15_research_development_patent_extension_superseded_20260903.tex`;
-neither formal document imports it, and none of the statements below is a
-current manuscript result.
-
-### Extension Proposition 1 - Slack-resource response
-
-- Historical status: proof was complete before the extension was superseded.
-- Archived file: `archive/15_research_development_patent_extension_superseded_20260903.tex`.
-- Assumptions used: `E-RD-01`--`E-RD-04`.
-- Fixed object: candidate CMO price; differentiation is with respect to the
-  continuous value argument $\Omega_i$, not binary $M$.
-- FOC/SOC: the two interior FOCs form a linear system; the determinant
-  $\Delta_i>0$ is exactly the negative-definite-Hessian condition.
-- Result: $\partial x_i^{D,u}/\partial\Omega_i>0$ and
-  $\partial x_i^{R,u}/\partial\Omega_i\geq0$.
-- Zero case: the research derivative is zero when $\gamma_i=0$.
-- Boundary: corners give one-sided KKT inequalities; a regime switch requires
-  direct finite comparison.
-
-### Extension Proposition 2 - Binding-resource reallocation
-
-- Historical status: proof was complete before the extension was superseded.
-- Archived file: `archive/15_research_development_patent_extension_superseded_20260903.tex`.
-- Assumptions used: `E-RD-01`--`E-RD-05`.
-- Fixed object: local interior binding regime with
-  $x_i^R+x_i^D=\bar X_i$ and $\varpi_i>0$.
-- Result: under $a_i>\gamma_i(x_i^D-x_i^R)$,
-  $\partial x_i^D/\partial\Omega_i>0$ and
-  $\partial x_i^R/\partial\Omega_i<0$.
-- Project-mass check: despite reallocation,
-  $\partial N_i^*/\partial\Omega_i$ equals a nonnegative squared term divided
-  by a positive denominator.
-- Zero/ambiguity cases: equality gives no local reallocation; reversing the
-  sufficient condition reverses the allocation signs; failure does not
-  authorize a patent-decline claim.
-
-### Extension Corollary 1 - Patent sign
-
-- Status: formal statement complete.
-- Assumptions used: `E-RD-01`--`E-RD-06` plus a strict net equilibrium value
-  gain.
-- Mapping: $P_i^A=h_i(x_i^R)$ with $h_i'>0$.
-- Slack result: patents weakly rise and are locally unchanged at
-  $\gamma_i=0$.
-- Binding result: patents fall under the development-biased condition.
-- Finite-policy discipline: if the resource regime changes between $M=0$ and
-  $M=1$, compute the two closed-form/KKT solutions directly.
-- Quality boundary: an unchanged granted/core-patent margin requires an
-  additional local-inelasticity composition condition; it is not a general
-  corollary.
-
-### Extension CMO closure result
-
-- Status: derivation complete; no new numbered proposition needed.
-- Assumptions used: `E-RD-07` plus the baseline CMO regularity conditions.
-- Demand replacement: $a_ix_i^*$ becomes
-  $N_i^*=(a_i+\gamma_i x_i^{R,*})x_i^{D,*}$.
-- Regime-switch check: revealed preference proves $N_i^*$ is nondecreasing in
-  $\Omega_i$ without differentiating through the kink.
-- Market result: study demand remains weakly decreasing in the candidate CMO
-  price, so the same strictly increasing supply schedule selects at most one
-  price.
-- Scope: no second market clearing, direct supply shift, or welfare closure.
-
-## Current count and scope audit
-
-- Baseline substantive propositions: 6.
-- Baseline corollaries: 1.
-- Active extension propositions: 0.
-- Active extension corollaries: 0.
-- New baseline propositions or controls: 0.
-- New active extension controls: 0; the prior two-control block is archived.
-- Unconditional patent-sign claims: 0.
+- File: `15_financing_commercialization_extension.tex`.
+- Status: preserved, mathematically nested, and explicitly inactive.
+- It introduces no numbered proposition in the main text or appendix.
+- Its local financing corridor is not a baseline result and does not change
+  baseline CMO demand, advancement, or the six-item appendix proof ledger.
+- Exact nesting holds when financing capacity exceeds both extension-only
+  liquidity thresholds.
+- Promotion requires independent empirical evidence and new user
+  authorization.
+- Unconditional finance or patent-sign claims: 0.

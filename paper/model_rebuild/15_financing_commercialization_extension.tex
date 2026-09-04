@@ -1,0 +1,121 @@
+% Inactive extension: commercialization financing capacity.
+\section{Extension: Financing the Commercialization Organization}
+\label{sec:ext-financing-commercialization}
+
+\noindent\textbf{Not part of the baseline.}
+The baseline captures the cost of weak manufacturing capability through
+\(c_I(m,k_i)\) and \(F_I(m,k_i)\). This extension asks whether imperfect
+finance additionally prevents a developer from funding an otherwise valuable
+commercialization organization. It does not change the MAH policy channel,
+introduce a credit-supply response, or alter the baseline advancement control.
+
+\subsection{Financing capacity and liquidity requirements}
+
+Augment the developer state only inside this extension to
+\begin{equation}
+  \theta_i^F=(a_i,k_i,\ell_i),
+  \qquad \ell_i>0,
+  \label{eq:ext-finance-type}
+\end{equation}
+where \(\ell_i\) is internal liquidity plus external finance available under
+limited pledgeability before commercialization revenue is realized. Internal
+and entrusted organization require peak up-front liquidity
+\begin{equation}
+  J_I(m,k_i)>0,
+  \qquad J_{I,m}>0,
+  \qquad J_{I,k}<0,
+  \label{eq:ext-internal-liquidity}
+\end{equation}
+and
+\begin{equation}
+  J_E(m)>0,
+  \qquad J_E'(m)>0.
+  \label{eq:ext-entrusted-liquidity}
+\end{equation}
+The objects \(J_I\) and \(J_E\) are liquidity thresholds, not additional
+real costs. The route values \(W_i^I\) and \(W_i^E\) already subtract all
+real present-value costs through \(F_I,F_E,p_mb(m),\mu_E\), and the operating
+cost kernels. The liquidity requirements are therefore never subtracted from
+payoffs.
+
+\subsection{Finance-adjusted route choice}
+
+Finance-adjusted retained-route values are
+\begin{equation}
+  \widetilde W_i^I(q,m;\ell_i)
+  =
+  \begin{cases}
+    W_i^I(q,m),&J_I(m,k_i)\leq\ell_i,\\
+    -\infty,&J_I(m,k_i)>\ell_i,
+  \end{cases}
+  \label{eq:ext-finance-adjusted-internal}
+\end{equation}
+and
+\begin{equation}
+  \widetilde W_i^E(q,m;M,p_m,\ell_i)
+  =
+  \begin{cases}
+    W_i^E(q,m;M,p_m),&J_E(m)\leq\ell_i,\\
+    -\infty,&J_E(m)>\ell_i.
+  \end{cases}
+  \label{eq:ext-finance-adjusted-entrusted}
+\end{equation}
+The extension's optimized value and deterministic route are
+\begin{equation}
+  \begin{aligned}
+  \widetilde W_i^F(q,m;M,p_m,\ell_i)
+  &=\max\{\widetilde W_i^I,\widetilde W_i^E,W^T,0\},\\
+  \widetilde r_i^F(q,m;M,p_m,\ell_i)
+  &\in\arg\max_{r\in\{I,E,T,A\}}
+  \{\widetilde W_i^I,\widetilde W_i^E,W^T,0\}.
+  \end{aligned}
+  \label{eq:ext-finance-route-choice}
+\end{equation}
+The superscript \(F\) prevents these extension objects from being mistaken for
+the baseline value and route.
+
+\subsection{Financing regions}
+
+For low-capability developers, impose only the local condition
+\begin{equation}
+  J_E(m)<J_I(m,k_i).
+  \label{eq:ext-local-liquidity-ordering}
+\end{equation}
+It is not a global ranking of entrusted and internal production costs. At a
+fixed developer--project pair it produces three financing regions:
+\begin{enumerate}
+  \item \(\ell_i<J_E(m)\): neither retained route can be funded;
+  \item \(J_E(m)\leq\ell_i<J_I(m,k_i)\): retained entrusted production can be
+  funded but internalization cannot;
+  \item \(\ell_i\geq J_I(m,k_i)\): both retained routes can be funded.
+\end{enumerate}
+The middle interval is the extension-only \emph{financing corridor}. A strict
+MAH gain still requires the financed entrusted value to exceed transfer and
+delay. Once internalization is restored as an old option, the reform treatment
+effect can shrink, remain positive, or become zero; it therefore has no global
+monotone sign in \(\ell_i\). These statements are absent from every baseline
+proposition and from the baseline CMO demand system.
+
+\subsection{Nesting and empirical promotion rule}
+
+If
+\begin{equation}
+  \ell_i\geq\max\{J_I(m,k_i),J_E(m)\}
+  \label{eq:ext-no-binding-finance}
+\end{equation}
+for all relevant developer--project pairs, then
+\begin{equation}
+  \widetilde W_i^I=W_i^I,
+  \qquad
+  \widetilde W_i^E=W_i^E,
+  \label{eq:ext-finance-nesting}
+\end{equation}
+and the extension collapses exactly to the organizational baseline.
+
+Empirically, financing capacity must be measured before reform exposure and
+distinguished from manufacturing capability, size, age, ownership,
+business-group affiliation, listed status, and pre-policy innovation history.
+The finance extension should be promoted into the baseline only if such
+measures independently predict holder--manufacturer separation after these
+controls and display a pattern consistent with the extension's financing
+regions. Clinical-trial or patent heterogeneity alone is insufficient.

@@ -1,6 +1,6 @@
 # 01 Symbols and Objects
 
-Phase status: `PHASES 1--18 APPROVED; POST-PHASE-18 FINANCING REVISION ACTIVE`  
+Phase status: `PHASES 1--17 - APPROVED`  
 Controlling specification: `paper/model_rebuild/spec/MAH_model_rebuild_effective_spec_v1.2.md`  
 Effective-spec SHA256: `855799897F8D519E9859EBC208DC1590017D2345464CED178E4E078B04CB5666`
 
@@ -42,16 +42,15 @@ individual firm's choice.
 
 One decision cohort is the project-planning time unit. Phase 2 defines product-output and within-period monetary units; Phase 3 technology costs use those same units.
 
-## 3. Active object registry after the financing revision
+## 3. Active object registry through Phase 17
 
 | Symbol | Exact category | Definition | Domain / units | First formal use | Direct MAH shift? |
 |---|---|---|---|---|---|
 | $\mathcal I$ | aggregate/distributional primitive | continuum of original-drug developers | index set | Phase 1 | No |
-| $H(a,k,\ell)$ | aggregate/distributional primitive | exogenous joint distribution of developer characteristics, allowing arbitrary correlation | probability distribution, unit $1$ | Financing revision | No |
-| $a_i$ | exogenous firm characteristic | research capability: viable planning-stage projects per unit of advancement input | $a_i>0$, units $\mathsf{P}/\mathsf{X}$ | Phase 1 | No; `RL-07` |
+| $H(a,k)$ | aggregate/distributional primitive | exogenous joint distribution of developer characteristics | probability distribution, unit $1$ | Phase 1 | No |
+| $a_i$ | exogenous firm characteristic | project-advancement capability: viable planning-stage projects per unit of advancement input | $a_i>0$, units $\mathsf{P}/\mathsf{X}$ | Phase 1 | No; `RL-07` |
 | $k_i$ | exogenous firm characteristic | internal manufacturing capability | $k_i>0$, units $\mathsf{K}$ | Phase 1 | No |
-| $\ell_i$ | exogenous firm characteristic | predetermined capacity to finance commercialization-stage commitments | $\ell_i>0$, units $\mathsf{C}$ | Financing revision | No; invariant to $M$ |
-| $\theta_i=(a_i,k_i,\ell_i)$ | exogenous firm characteristic | complete permanent baseline characteristic vector of developer $i$ | $(\mathsf{P}/\mathsf{X},\mathsf{K},\mathsf{C})$ | Financing revision | No |
+| $\theta_i=(a_i,k_i)$ | exogenous firm characteristic | complete permanent baseline characteristic vector of developer $i$ | $(\mathsf{P}/\mathsf{X},\mathsf{K})$ | Phase 1 | No |
 | $\mathcal J$ | aggregate/distributional primitive | set of qualified manufacturing-service suppliers | index set | Phase 1 | No |
 | $H_C(z)$ | aggregate/distributional primitive | exogenous distribution of qualified supplier efficiency | probability distribution, unit $1$ | Phase 1 | No |
 | $z_j$ | exogenous firm characteristic | qualified manufacturing-service productivity/capacity efficiency | $z_j>0$, dimensionless index | Phase 1 | No |
@@ -69,8 +68,8 @@ One decision cohort is the project-planning time unit. Phase 2 defines product-o
 | $\lambda_i^{\mathrm{plan}}$ | endogenous firm-level object | expected measure of viable projects reaching route planning | units $\mathsf{P}$ | Phase 1 | Indirect only through optimal $x_i$ |
 | $p_m,p_m^*$ | equilibrium price | conjectured and market-consistent qualified manufacturing-service price | $\mathsf{C}/\mathsf{B}$ | Phase 1 reservation; Phase 6 solution | No direct downward shift; `RL-10` |
 | $r_i$ | control | route choice made after $(q,m)$ is known | categorical route label | Phase 1 | $M$ changes feasibility of $E$ only |
-| $r_i^*(q,m;M,p_m,\ell_i)$ | endogenous route-level object | optimal deterministic route after financeability screening | subset of $\{I,E,T,A\}$ | Financing revision | Indirect through route wedge; $M$ does not change $\ell_i$ |
-| $\Omega_i(M,p_m)$ | endogenous firm-level object | expected optimized value per route-planning-stage project after financeability screening; dependence on $\ell_i$ is carried by developer index $i$ | $\mathsf{C}$ per project | Financing revision | Indirect route-value channel only |
+| $r_i^*(q,m;M,p_m)$ | endogenous route-level object | eventual optimal route; value comparison is deferred to Phase 4 | subset of $\{I,E,T,A\}$ | Phase 1 reservation; Phase 4 derivation | Indirect through route wedge |
+| $\Omega_i(M,p_m)$ | endogenous firm-level object | expected optimized value per route-planning-stage project | $\mathsf{C}$ per project | Phase 1 reservation; Phase 5 derivation | Indirect route-value channel only |
 | $s(q)$ | primitive parameter | exogenous route-independent downstream realization probability | $[0,1]$, unit $1$ | Phase 1 | No; `RL-09` |
 | $s_g(q)$ | primitive parameter | optional exogenous class-specific probability for typed observed outcomes | $[0,1]$, unit $1$ | Phase 1 boundary; Phase 9 if needed | No |
 | observed holder-producer separation; realized products | derived observed outcome | post-route empirical outcomes, distinct from advancement and planning-stage project mass | route/product records; units deferred to Phase 9 | Phase 1 timing; Phase 9 formalization | Indirect only |
@@ -84,19 +83,15 @@ One decision cohort is the project-planning time unit. Phase 2 defines product-o
 | $p^*(c)$ | endogenous route-level object | unique profit-maximizing product price conditional on marginal cost | $\mathsf{C}/\mathsf{Y}$ | Phase 2 | No; distinct from $p_m^*$ |
 | $\pi(q,c)$ | endogenous route-level object | optimized one-period operating profit before route-specific fixed organizational costs | $\mathsf{C}$ per operating period | Phase 2 | Indirect only through a later route-cost mapping |
 | $R(q,c)$ | endogenous route-level object | present value of the optimized operating-profit stream conditional on successful commercialization | $\mathsf{C}$ per commercially active product | Phase 2 | Indirect only through a later route-cost mapping |
-| $c_I(m,k_i)$ | primitive parameter | internal-route technological marginal manufacturing-cost function on the feasible internal domain | positive; $\mathsf{C}/\mathsf{Y}$ | Phase 3 | No |
-| $F_I(m,k_i)$ | primitive parameter | finite real internal production-readiness/setup cost | positive; $\mathsf{C}$ per project | Financing revision | No |
-| $J_I(m,k_i)$ | primitive parameter | up-front internal-organization financing requirement; a liquidity threshold, not an added cost | positive; units $\mathsf{C}$ | Financing revision | No |
+| $c_I(m,k_i)$ | primitive parameter | internal-route technological marginal manufacturing-cost function; weak capability may make it high but it is finite for every $k_i>0$ | positive and finite; $\mathsf{C}/\mathsf{Y}$ | Phase 3 | No |
+| $F_I(m,k_i)$ | primitive parameter | real internal production-readiness/setup cost, finite for every $k_i>0$ and potentially very high when capability is weak | finite and nonnegative; $\mathsf{C}$ per project | Phase 3 | No |
 | $c_E(m)$ | primitive parameter | technological marginal manufacturing-cost kernel under qualified external production | positive; $\mathsf{C}/\mathsf{Y}$ | Phase 3 | No |
 | $b(m)$ | primitive parameter | qualified manufacturing-service capacity required by an entrusted project | positive; $\mathsf{B}$ per project | Phase 3 | No |
 | $F_E(m)$ | primitive parameter | real entrusted-route technology-transfer, validation and production-readiness cost | nonnegative; $\mathsf{C}$ per project | Phase 3 | No |
 | $\mu_E$ | primitive parameter | residual holder-side responsibility/coordination burden under entrusted manufacturing | nonnegative; $\mathsf{C}$ per project | Phase 3 | No; not removed by MAH |
-| $J_E(m)$ | primitive parameter | up-front retained-entrusted financing requirement; a liquidity threshold, not an added cost | positive; units $\mathsf{C}$ | Financing revision | No |
 | $T(q,m)$ | primitive parameter | finite noncore transfer/out-license outside-value function | $\mathsf{C}$ per project | Phase 4 | No direct shift |
-| $W_i^I(q,m)$ | endogenous route-level object | internal-route project value | $\mathsf{C}$ per project, possibly $-\infty$ when internal production is infeasible | Phase 4 | No direct shift |
+| $W_i^I(q,m)$ | endogenous route-level object | internal-route project value | finite $\mathsf{C}$ per project; it may be negative when internalization is unattractive | Phase 4 | No direct shift |
 | $W_i^E(q,m;M,p_m)$ | endogenous route-level object | retained entrusted-route project value at a conjectured CMO capacity price | $\mathsf{C}$ per project or $-\infty$ when $E$ is institutionally unavailable | Phase 4 | Yes only through $\tau_E(M)$ |
-| $\widetilde W_i^I(q,m;\ell_i)$ | endogenous route-level object | internal value when $J_I\le\ell_i$, and $-\infty$ otherwise | $\mathsf{C}$ per project or $-\infty$ | Financing revision | No |
-| $\widetilde W_i^E(q,m;M,p_m,\ell_i)$ | endogenous route-level object | entrusted value when $J_E\le\ell_i$, and $-\infty$ otherwise | $\mathsf{C}$ per project or $-\infty$ | Financing revision | Yes only through $\tau_E(M)$ |
 | $W^T(q,m)$ | endogenous route-level object | non-retained transfer/out-license outside-option value | $\mathsf{C}$ per project | Phase 4 | No direct shift |
 | $W^A$ | endogenous route-level object | abandonment/indefinite-delay value normalized to zero | $\mathsf{C}$ per project | Phase 4 | No |
 | $W_i(q,m;M,p_m)$ | endogenous route-level object | optimized deterministic route value, the maximum over $I,E,T,A$ | $\mathsf{C}$ per project | Phase 4 | Indirect through the $E$ wedge only |
@@ -116,9 +111,9 @@ One decision cohort is the project-planning time unit. Phase 2 defines product-o
 | $D_m^{\mathrm{MAH}}(p_m;M)$ | endogenous firm-level object | market-aggregate qualified-capacity demand generated by planning-stage projects selecting route $E$ | $\mathsf{B}$ per decision cohort | Phase 6 | Indirect through route value and advancement |
 | $D_m^B(p_m)$ | aggregate/distributional primitive | exogenous background qualified-capacity demand outside the modeled study cohort | $\mathsf{B}$ per decision cohort | Phase 6 | No direct policy shift |
 | $D_m(p_m;M)$ | endogenous firm-level object | total market demand, equal to background plus study-related demand | $\mathsf{B}$ per decision cohort | Phase 6 | Indirect through the study component |
-| $W_i^0(q,m;\ell_i)$ | endogenous route-level object | finance-adjusted optimized value from the old route set $\{I,T,A\}$ | $\mathsf{C}/\mathsf{P}$ | Financing revision | No direct MAH input |
-| $W_i^1(q,m;p_m,\ell_i)$ | endogenous route-level object | finance-adjusted post-MAH value after adding route $E$ | $\mathsf{C}/\mathsf{P}$ | Financing revision | Indirect through $W_i^E$ |
-| $\mathcal C_i(p_m,\ell_i)$ | endogenous route-level object | project draws for which $E$ is financeable and strictly improves on old options | subset of project support | Financing revision | Defined by financeability and value ranking |
+| $W_i^0(q,m)$ | endogenous route-level object | optimized value from the old route set $\{I,T,A\}$ | $\mathsf{C}/\mathsf{P}$ | Phase 8 Proposition 2 | No direct MAH input |
+| $W_i^1(q,m;p_m)$ | endogenous route-level object | post-MAH optimized value after adding retained entrusted route $E$ at support price $p_m$ | $\mathsf{C}/\mathsf{P}$ | Phase 8 Proposition 2 | Indirect through $W_i^E$ |
+| $\mathcal C_i(p_m)$ | endogenous route-level object | set of project draws receiving a strict fixed-price gain from access to $E$ | subset of project support | Phase 8 Proposition 2 | Defined by the entrusted-value comparison |
 | $\Delta\Omega_i(p_m)$ | endogenous firm-level object | expected fixed-price project-value gain from adding route $E$ | $\mathsf{C}/\mathsf{P}$ | Phase 8 Proposition 3 | Indirect through $W_i^E$ |
 | $\Omega_{ig}^h(p_m)$ | endogenous firm-level object | conditional expected optimized project value for class $g$ in regime $h\in\{0,1\}$ | $\mathsf{C}/\mathsf{P}$ | Phase 8 corollary | Indirect through $W_i^E$ when $h=1$ |
 | $\Delta\Omega_{ig}(p_m)$ | endogenous firm-level object | class-conditional fixed-price project-value gain | $\mathsf{C}/\mathsf{P}$ | Phase 8 corollary | Indirect through $W_i^E$ |
@@ -134,16 +129,14 @@ One decision cohort is the project-planning time unit. Phase 2 defines product-o
 | $Y_{ig}^{\mathrm{ret}}$ | derived observed outcome | class-$g$ contribution to expected realized retained-holder products under common $x_i^*$ | $\mathsf{P}$ per decision cohort | Phase 8 Proposition 6 | Indirect through common advancement and route choice |
 | $Q_i^{\mathrm{ret},h}$ | endogenous firm-level object | regime-$h$ expected realization rate per planning-stage project on retained routes | unit $1$ | Phase 8 Proposition 6 decomposition | Indirect through route choice; $s$ is policy invariant |
 
-Every active row has one and only one exact category. The financing revision
-adds only $\ell_i,J_I,J_E,\widetilde W_i^I,\widetilde W_i^E$ and the associated
-finance-adjusted arguments; it does not activate a finance-market object.
+There are 83 active rows. Each has one and only one exact category.
 
 ## 4. Definitional identities active in Phase 1
 
 The only Phase 1 equalities are definitions or distribution identities:
 
 $$
-\theta_i=(a_i,k_i,\ell_i),
+\theta_i=(a_i,k_i),
 \qquad
 \omega=(q,m)\sim F(q,m),
 $$
@@ -205,8 +198,22 @@ fixes the interpretation and measurement boundary among those objects. Phase
 objects must be added here with one category and units immediately before
 their first formula in an authorized later Phase.
 
-Phase 11 extension notation remains inactive and locally quarantined in
-`11_extensions_not_baseline.tex`. The formerly activated
-research--development/patent module was superseded by the user's financing
-revision and moved to `paper/model_rebuild/archive/`; none of its symbols is
-an active baseline or manuscript object.
+Phase 11 extension notation is deliberately excluded from the active baseline
+registry. Every such symbol is defined locally and is inactive unless a later,
+separate instruction activates it. The 2026-09-04 recentering instruction
+keeps financing as an explicitly inactive appendix extension and leaves the
+research--development/patent allocation module archived.
+
+## 8. Inactive financing-extension object registry
+
+| Symbol | Exact category | Definition | Domain / units | Baseline status |
+|---|---|---|---|---|
+| $\ell_i$ | extension-only exogenous characteristic | financing capacity available before commercialization revenue under limited pledgeability | positive, $\mathsf C$ | Inactive |
+| $J_I(m,k_i)$ | extension-only liquidity threshold | peak liquidity required for internal commercialization organization | positive, $\mathsf C$ | Inactive; never subtracted from value |
+| $J_E(m)$ | extension-only liquidity threshold | peak liquidity required for entrusted commercialization organization | positive, $\mathsf C$ | Inactive; never subtracted from value |
+| $\theta_i^F$ | extension-only characteristic vector | $(a_i,k_i,\ell_i)$ inside the financing extension | mixed units | Inactive; baseline remains $(a_i,k_i)$ |
+| $\widetilde W_i^I,\widetilde W_i^E$ | extension-only route values | ordinary route values subject to liquidity feasibility | $\mathsf C$ or $-\infty$ | Inactive |
+| $\widetilde W_i^F,\widetilde r_i^F$ | extension-only optimized objects | finance-adjusted value and deterministic route | value / route label | Inactive |
+
+No entry in this table changes the meaning or count of baseline objects.
+Neither financing capacity nor patent production is an active baseline object.

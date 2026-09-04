@@ -1,6 +1,6 @@
-# Finance-adjusted Route Values
+# Inactive Finance-Adjusted Route Values
 
-The active route values are
+The extension-only route values are
 
 \[
 \widetilde W_i^I=
@@ -12,9 +12,10 @@ The active route values are
 \end{cases}
 \]
 
-The developer chooses the deterministic maximum of
-\(\{\widetilde W_i^I,\widetilde W_i^E,W^T,0\}\). Financing is checked after
-the project draw and before route choice; there is no borrowing decision.
+These are not active route values. Baseline choice is the deterministic
+maximum of the ordinary values \(\{W_i^I,W_i^E,W^T,0\}\). If the extension is
+activated later, financing is checked after the project draw and before route
+choice; there is no borrowing decision.
 
 Conditional on both retained routes being financeable, the previous
 single-crossing result survives:
@@ -23,5 +24,6 @@ single-crossing result survives:
 \partial_k(W_i^I-W_i^E)=s(q)R_c(q,c_I)c_{I,k}-F_{I,k}>0.
 \]
 
-Financeability is therefore a first-stage screen; the value comparison is a
-second-stage sorting problem.
+Inside the inactive extension, financeability is a first-stage screen and the
+value comparison is a second-stage sorting problem. This screen is absent
+from baseline route choice.

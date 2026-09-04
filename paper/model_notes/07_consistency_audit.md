@@ -1,17 +1,14 @@
 # 07 Phase 17 Global Consistency Audit
 
-> Post-Phase-18 update (2026-09-03): the active manuscript now includes the
-> separately audited commercialization-financing revision. The historical
-> Phase 17 hashes below remain evidence of the pre-integration candidate. The
-> current audit authority is
-> `paper/model_rebuild/audit/post_phase18_financing_revision_20260903.md`.
-
-The new audit verifies a common meaning of $a_i,k_i,\ell_i$, liquidity-only
-accounting for $J_I,J_E$, finance-adjusted route choice, the financing
-corridor, $H(a,k,\ell)$ aggregation, no-binding-finance nesting, and absence
-of the superseded research--development/patent block from formal documents.
-
 Date: 2026-09-01
+
+> **Historical-audit notice (2026-09-04).** This file records the Phase 17
+> audit at the time it was performed. The later recentering revision supersedes
+> its active-file hashes and any statement that a research/development or
+> financing module is active. The current baseline is the organizational model
+> with $\theta=(a,k)$ and finite internal costs for all $k>0$; financing is an
+> explicitly inactive appendix extension. The controlling current evidence is
+> `paper/model_rebuild/audit/post_phase18_recenter_audit_20260904.md`.
 
 ## 1. Audit target and method
 

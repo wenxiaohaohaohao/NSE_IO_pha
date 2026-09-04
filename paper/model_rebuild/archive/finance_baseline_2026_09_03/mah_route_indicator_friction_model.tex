@@ -47,21 +47,23 @@ viable drug projects and their commercialization organization. Developers
 choose one common original-drug innovation investment / project-advancement
 intensity before project characteristics and organizational routes are
 realized. MAH makes retained entrusted manufacturing legally available while
-the developer retains authorization-holder responsibility. Developers differ
-in project-advancement capability and internal manufacturing capability.
-Internal and entrusted production use distinct technologies and organizational
-costs. The new route is especially valuable when weak internal manufacturing
-capability makes vertical integration costly. Route choice remains
-deterministic, and the price of qualified manufacturing services is
-endogenous. Reform effects are confined to project--developer pairs for which
-the new route improves on the best old option; service scarcity can attenuate
-these gains. Financing frictions may amplify this organizational mechanism,
-but financing is not a baseline policy channel. The baseline does not treat
-MAH as a demand, credit-supply, scientific-productivity, downstream-success,
-or patenting shock.
+the developer retains authorization-holder responsibility. Developers also
+differ in predetermined financing capacity for commercialization commitments.
+Internal production and retained entrusted production require distinct
+up-front commitments, but those commitments are liquidity requirements rather
+than additional route costs. MAH does not expand financing supply. It reduces
+the amount of vertical-integration capital that must be financed to retain
+commercialization rights, and is therefore especially valuable when a
+developer cannot finance full internalization but can finance retained
+entrusted production. Route choice remains deterministic, and the price of
+qualified manufacturing services is endogenous. Reform effects are confined
+to project--developer pairs for which the new route is financeable and improves
+on the best old option; service scarcity can attenuate these gains. The
+baseline does not treat MAH as a demand, credit-supply,
+scientific-productivity, downstream-success, or patenting shock.
 \end{abstract}
 
-\noindent\textit{Keywords:} MAH; pharmaceutical innovation; commercialization frictions; complementary assets; entrusted production; organizational choice.\\
+\noindent\textit{Keywords:} MAH; pharmaceutical innovation; commercialization frictions; complementary assets; entrusted production; financing capacity.\\
 \noindent\textit{JEL codes:} D22; L65; O31; O38; I18.
 
 \section{Introduction}
@@ -76,12 +78,9 @@ channel: when a firm anticipates that an advancing project can later use
 qualified external manufacturing while the firm retains authorization, the
 expected value of advancing that project may increase. The reform can be
 particularly important when weak internal manufacturing capability makes
-vertical integration costly. A developer without suitable existing capacity
-can in principle build, acquire, validate, or adapt compliant production, but
-that internalization commitment can be large and front-loaded. The baseline
-captures this burden through route-specific setup and operating costs rather
-than modeling financial intermediation. A financing-friction extension is
-considered separately.
+vertical integration capital intensive. MAH does not relax the firm's
+financing constraint; it changes the organizational technology required to
+retain commercialization rights.
 
 The mechanism builds on two established ideas. First, pharmaceutical
 innovation responds to expected downstream rewards
@@ -89,9 +88,10 @@ innovation responds to expected downstream rewards
 Second, an innovator's ability to appropriate returns depends on complementary
 assets, firm boundaries, and access to specialized inputs
 \citep{Teece1986,AroraFosfuriGambardella2001,GansStern2003,GrossmanHelpman2002,BolerMoxnesUlltveitMoe2015,Ma2026}.
-MAH combines these ideas narrowly: it changes how an innovator can access
-manufacturing capability while retaining the authorization asset. It does not
-shift credit supply.
+Financing frictions can make large up-front innovative investments difficult
+to fund \citep{HallLerner2010}. MAH combines these ideas narrowly: it changes
+how an innovator can access manufacturing capability while retaining the
+authorization asset, without changing the supply of finance.
 
 Recent evidence on China's pharmaceutical reforms helps separate this route
 mechanism from two nearby channels. \citet{JiaMaYangZhang2023} study the 2015
@@ -105,14 +105,17 @@ whether a regulated holder--producer separation route changes expected
 commercialization value.
 
 Closely related evidence also shows why project advancement and upstream
-patenting must remain distinct. \citet{Gu2024} documents heterogeneous trial
-and patent responses by financial resources. Those findings motivate a
-financing-friction extension and empirical heterogeneity tests. The baseline
-here isolates a different and more primitive MAH margin: the availability and
-value of retained entrusted manufacturing relative to internal production,
-transfer, and delay. This is a maintained model boundary, not an overstatement
-of novelty; the baseline neither generates patents nor treats financing as the
-policy channel.
+patenting must remain distinct. \citet{Gu2024} finds that allowing production
+outsourcing raises clinical-trial registrations among innovators without
+production facilities, while patent applications fall among firms with fewer
+financial resources. The paper also reports heterogeneous responses across
+development stages and drug classes. Gu studies financing-induced reallocation
+between research and development. The present baseline instead allows
+financing capacity to determine whether a developer can fund vertical
+integration or the smaller organizational commitment required for retained
+entrusted production. This distinction is a maintained model boundary, not a
+claim of empirical novelty: MAH changes route feasibility and value here, but
+does not directly constrain the advancement control or generate patents.
 
 For a development-economics audience, the relevant bottleneck is a regulated
 complementary asset. MAH can relax a manufacturing bottleneck for
@@ -128,21 +131,20 @@ retained entrusted production can raise the equilibrium service price
 \(p_m^*\), so the model does not mechanically imply a positive effect for
 every project or developer.
 
-The paper identifies a commercialization-organization channel of
-pharmaceutical innovation. By separating marketing-authorization ownership
-from physical manufacturing, MAH allows developers with weak internal
-manufacturing capability to retain commercialization rights while purchasing
-qualified production services. The model characterizes capability-based
-organizational sorting, the project--developer pairs for which the new route
-creates value, and the attenuation generated by scarcity in qualified
-manufacturing capacity. Financing frictions may amplify the mechanism but are
-not required for the baseline result.
+The contribution is to organize the mechanism in a way that is internally
+consistent with feasible data. The theory separates project advancement from
+planning-stage project arrival, deterministic organizational assignment,
+observed holder--producer separation, and realized products. The empirical
+role of the model is correspondingly modest: it specifies empirically interpretable
+interfaces for project-level organization, retained outcomes, and service
+scarcity without claiming that approval-side data separately identify every
+primitive friction.
 
 The main text gives the shortest complete commercialization baseline. The
-technical appendix records primitives, payoff accounting, pricing
-derivations, deterministic sorting, project advancement, qualified-capacity
-equilibrium, comparative statics, observed outcomes, and explicitly separated
-inactive extensions, including commercialization financing.
+technical appendix records primitives, financing and payoff accounting,
+pricing derivations, deterministic sorting, project advancement,
+qualified-capacity equilibrium, comparative statics, observed outcomes, and
+explicitly separated inactive extensions.
 
 \section{Institutional Background}
 
@@ -185,15 +187,18 @@ route independent and invariant to MAH in the baseline.
 
 There is a continuum of developers. Developer \(i\) has predetermined
 project-advancement capability \(a_i>0\), internal manufacturing capability
-\(k_i>0\), with
+\(k_i>0\), and commercialization-stage financing capacity \(\ell_i>0\):
 \begin{equation}
-  \theta_i=(a_i,k_i)\sim H(a,k).
+  \theta_i=(a_i,k_i,\ell_i)\sim H(a,k,\ell).
   \label{eq:p16m-developer-type}
 \end{equation}
-The joint distribution permits arbitrary correlation. A viable project that
-reaches commercialization-relevant planning draws value \(q>0\) and
-manufacturing requirement \(m>0\) from the exogenous distribution \(F(q,m)\).
-For empirical decompositions only,
+The joint distribution permits arbitrary correlation. Financing capacity is
+predetermined and measures the largest up-front organizational commitment the
+developer can fund; it is distinct from both research capability and
+manufacturing know-how. A viable project that reaches
+commercialization-relevant planning draws value \(q>0\) and manufacturing
+requirement \(m>0\) from the exogenous distribution \(F(q,m)\). For empirical
+decompositions only,
 \[
   F(q,m)=\sum_{g\in\{O,\mathrm{Inc}\}}\rho_gF_g(q,m),
   \qquad
@@ -228,14 +233,16 @@ viable projects reaching route planning is
 \end{equation}
 
 Timing is as follows. First, \(M\) is observed and developers anticipate the
-market-consistent qualified-service price \(p_m^*\). Second, after observing
-\((a_i,k_i,M)\), they choose \(x_i\). Third, planning-stage projects draw
-\((q,m)\) and choose among \(I,E,T,A\). Fourth, downstream realization occurs
-with exogenous probability \(s(q)\). Finally, aggregate capacity demand and
-supply must validate the anticipated service price. The last step is an
-equilibrium consistency condition, not a late unanticipated shock. Upstream
-research, patent generation, and financial intermediation are outside the
-baseline decision problem.
+market-consistent qualified-service price. Second, after observing
+\((a_i,k_i,\ell_i,M)\), they choose \(x_i\). Third, planning-stage projects
+draw \((q,m)\); the developer checks route financing requirements against
+\(\ell_i\) and chooses among the financeable routes. Fourth, downstream
+realization occurs with exogenous probability \(s(q)\). Finally, aggregate
+capacity demand and supply must validate the anticipated service price. The
+last step is an equilibrium consistency condition, not a late unanticipated
+shock. There is no financing decision or finance market. Upstream research
+and patent generation may help determine predetermined \(a_i\), but they are
+outside the baseline decision problem.
 
 \subsection{Commercialization technologies}
 \label{subsec:p16m-technologies}
@@ -263,19 +270,24 @@ The appendix derives the FOC, SOC, and accounting. In particular,
 
 Internal production uses marginal cost \(c_I(m,k_i)\), with
 \(c_{I,m}>0\) and \(c_{I,k}<0\), and setup cost \(F_I(m,k_i)\), with
-\(F_{I,m}>0\) and \(F_{I,k}<0\). Both are finite for every \(k_i>0\). A
-developer with little pre-existing manufacturing capability is not assumed to
-be permanently incapable of internal production. It can in principle build,
-acquire, validate, or adapt compliant capacity, but doing so is costly.
-Accordingly, \(F_I(m,k_i)\) includes project-specific building, acquisition,
-validation, adaptation, production-readiness, quality-system, and
-organizational costs; it may be very large at low \(k_i\). Its route value is
+\(F_{I,m}>0\) and \(F_{I,k}<0\). Both are finite for \(k_i>0\). Its economic
+route value is
 \begin{equation}
   W_i^I(q,m)
   =
   s(q)R\!\left(q,c_I(m,k_i)\right)-F_I(m,k_i).
   \label{eq:p16m-internal}
 \end{equation}
+Internalization requires an up-front financing commitment \(J_I(m,k_i)>0\),
+where
+\[
+  J_{I,m}>0,
+  \qquad
+  J_{I,k}<0.
+\]
+The commitment is a liquidity requirement, not an additional real cost:
+\(F_I\) is subtracted once in \(W_i^I\), whereas \(J_I\) only determines
+whether that route can be funded.
 
 Entrusted production uses external marginal cost \(c_E(m)\), requires
 \(b(m)>0\) units of qualified capacity with \(b'(m)>0\), incurs setup cost
@@ -290,10 +302,9 @@ qualified-capacity price \(p_m\),
   \end{aligned}
   \label{eq:p16m-entrusted}
 \end{equation}
-Entrusted production avoids establishing full proprietary manufacturing
-capability but still requires technology transfer, validation, contracted
-qualified capacity, and holder-side quality oversight. Each real monetary
-cost enters once.
+Retained entrusted production requires its own positive up-front commitment
+\(J_E(m)\), with \(J_E'(m)>0\). This is also a liquidity requirement and is
+not subtracted from \(W_i^E\). Each real monetary cost therefore enters once.
 The transfer and abandonment values are
 \begin{equation}
   W^T(q,m)=T(q,m),
@@ -302,10 +313,28 @@ The transfer and abandonment values are
   \label{eq:p16m-outside}
 \end{equation}
 
-The baseline therefore compares real organizational costs and manufacturing
-capabilities without a route-financeability screen. Pre-MAH unavailability of
-\(E\) arises only from \(\tau_E(0)=+\infty\). The appendix studies imperfect
-finance as an inactive amplification extension.
+Financing-adjusted route values are
+\begin{equation}
+  \widetilde W_i^I(q,m;\ell_i)
+  =
+  \begin{cases}
+    W_i^I(q,m), & J_I(m,k_i)\leq\ell_i,\\
+    -\infty, & J_I(m,k_i)>\ell_i,
+  \end{cases}
+  \label{eq:p16m-finance-adjusted-internal}
+\end{equation}
+and
+\begin{equation}
+  \widetilde W_i^E(q,m;M,p_m,\ell_i)
+  =
+  \begin{cases}
+    W_i^E(q,m;M,p_m), & J_E(m)\leq\ell_i,\\
+    -\infty, & J_E(m)>\ell_i.
+  \end{cases}
+  \label{eq:p16m-finance-adjusted-entrusted}
+\end{equation}
+MAH changes none of \(\ell_i,J_I,J_E\). Pre-MAH unavailability of \(E\)
+continues to arise from \(\tau_E(0)=+\infty\), not from financing.
 
 \subsection{Organization and project advancement}
 \label{subsec:p16m-organization}
@@ -313,12 +342,12 @@ finance as an inactive amplification extension.
 At a fixed \(p_m\), the project chooses deterministically:
 \begin{equation}
   \begin{aligned}
-  W_i(q,m;M,p_m)
+  \widetilde W_i(q,m;M,p_m,\ell_i)
   &=
-  \max\{W_i^I,W_i^E,W^T,W^A\},\\
-  r_i^*(q,m;M,p_m)
+  \max\{\widetilde W_i^I,\widetilde W_i^E,W^T,W^A\},\\
+  r_i^*(q,m;M,p_m,\ell_i)
   &\in
-  \arg\max_{r\in\{I,E,T,A\}} W_i^r.
+  \arg\max_{r\in\{I,E,T,A\}} \widetilde W_i^r.
   \end{aligned}
   \label{eq:p16m-route-choice}
 \end{equation}
@@ -337,65 +366,81 @@ The internal-minus-entrusted gap is
   \end{aligned}
   \label{eq:p16m-gap}
 \end{equation}
-Holding \((q,m,M,p_m)\) fixed,
+Holding \((q,m,M,p_m)\) fixed on the internally feasible domain,
 \[
   \Delta_{IE,k}
   =
   s(q)R_c\!\left(q,c_I\right)c_{I,k}-F_{I,k}>0.
 \]
-\begin{proposition}[Organizational sorting]
-\label{prop:main-organizational-sorting}
-Suppose \(\Delta_{IE}\) is continuous and crosses zero between two capability
-levels. Because \(\Delta_{IE,k}>0\), there is a unique conditional cutoff
+\begin{proposition}[Organizational feasibility and sorting]
+\label{prop:main-finance-sorting}
+Route \(I\) is financially feasible if and only if
+\(J_I(m,k_i)\leq\ell_i\); route \(E\) is financially feasible if and only if
+\(J_E(m)\leq\ell_i\), in addition to its institutional availability. Since
+\(J_{I,k}<0\), stronger internal capability weakly expands the set of projects
+for which internalization can be financed. Conditional on both retained
+routes being financeable, on both beating \(T\) and \(A\), and on the endpoint
+crossing conditions, there is a unique value cutoff
 \(k^*(q,m;p_m,M)\) satisfying \(\Delta_{IE}(k^*)=0\). Developers below it
-select \(E\), and those above it select \(I\), conditional on both retained
-routes dominating \(T\) and \(A\). If transfer or abandonment dominates, the
-cutoff does not determine the realized route.
+select \(E\), and those above it select \(I\).
 \end{proposition}
 
-Developers with weaker existing manufacturing capability face higher internal
-variable and setup costs. Retained entrusted production is therefore
-relatively more valuable for them, although transfer or abandonment may still
-dominate both retained routes.
+The financeability screen precedes value ranking; comparative-advantage
+sorting remains. In the empirically relevant low-capability region, impose
+the local condition
+\[
+  J_E(m)<J_I(m,k_i).
+\]
+It says that retained outsourcing requires less up-front financing than
+building internal capacity and is not a global restriction.
 
 Define the best pre-MAH value and post-MAH value by
 \begin{equation}
   \begin{aligned}
-  W_i^0(q,m)
-  &=\max\{W_i^I(q,m),W^T(q,m),0\},\\
-  W_i^1(q,m;p_m)
-  &=\max\{W_i^0(q,m),W_i^E(q,m;1,p_m)\}.
+  W_i^0(q,m;\ell_i)
+  &=\max\{\widetilde W_i^I(q,m;\ell_i),W^T(q,m),0\},\\
+  W_i^1(q,m;p_m,\ell_i)
+  &=\max\{W_i^0(q,m;\ell_i),
+           \widetilde W_i^E(q,m;1,p_m,\ell_i)\}.
   \end{aligned}
   \label{eq:p16m-old-new-values}
 \end{equation}
-The MAH-relevant set is
+The financing-adjusted MAH-relevant set is
 \begin{equation}
-  \mathcal C_i(p_m)
+  \mathcal C_i(p_m,\ell_i)
   =\left\{(q,m):
-  W_i^E(q,m;1,p_m)>W_i^0(q,m)
+  J_E(m)\leq\ell_i,\quad
+  W_i^E(q,m;1,p_m)>W_i^0(q,m;\ell_i)
   \right\}.
   \label{eq:p16m-relevant-set}
 \end{equation}
 
-\begin{proposition}[MAH-relevant project set]
-\label{prop:main-relevant-set}
+\begin{proposition}[MAH-relevant projects and the financing corridor]
+\label{prop:main-financing-corridor}
 At a fixed \(p_m\),
 \begin{equation}
   W_i^1-W_i^0
   =
-  [W_i^E-W_i^0]_+,
+  [\widetilde W_i^E-W_i^0]_+,
   \label{eq:p16m-positive-part}
 \end{equation}
 so a strict project-value gain occurs exactly on
-\(\mathcal C_i(p_m)\). Outside this set, the newly available route does not
-improve on the best old option and the direct project-value effect is zero.
+\(\mathcal C_i(p_m,\ell_i)\). Suppose locally that
+\(J_E(m)<J_I(m,k_i)\). If \(\ell_i<J_E(m)\), neither retained route is
+financeable and MAH has no effect. If
+\(J_E(m)\leq\ell_i<J_I(m,k_i)\), only retained entrusted production is
+financeable, and the gain is strict exactly when
+\(W_i^E>\max\{W^T,0\}\). If \(\ell_i\geq J_I(m,k_i)\), both retained routes
+are financeable and the gain is
+\([W_i^E-\max\{W_i^I,W^T,0\}]_+\). The reform effect is therefore not
+globally monotone in financing capacity.
 \end{proposition}
 
 Expected optimized value per planning-stage project is
 \begin{equation}
   \Omega_i(M,p_m)
   =
-  \int W_i(q,m;M,p_m)\,dF(q,m).
+  \int \widetilde W_i(q,m;M,p_m,\ell_i)\,dF(q,m).
   \label{eq:p16m-omega}
 \end{equation}
 Developer \(i\) solves
@@ -424,18 +469,20 @@ strict only if \(E\) improves on the pre-MAH maximum on a
 positive-probability project set.
 
 \begin{proposition}[Project advancement and heterogeneity]
-\label{prop:main-advancement}
+\label{prop:main-finance-advancement}
 At a fixed \(p_m\), the reform strictly raises \(x_i^*\) if and only if
 \begin{equation}
-  \int_{\mathcal C_i(p_m)}
-  [W_i^E(q,m;1,p_m)-W_i^0(q,m)]\,dF(q,m)>0.
+  \int_{\mathcal C_i(p_m,\ell_i)}
+  [W_i^E(q,m;1,p_m)-W_i^0(q,m;\ell_i)]\,dF(q,m)>0.
   \label{eq:p16m-strict-advancement}
 \end{equation}
-Advancement capability \(a_i\) scales any positive level response. Lower
-\(k_i\) raises internal variable and setup costs, making entrusted production
-relatively more valuable, but weak capability alone does not guarantee a
-treatment effect because \(T\), \(A\), or a low entrusted value may still
-dominate.
+Research capability \(a_i\) scales any positive response. Since
+\(J_{I,k}<0\), lower \(k_i\) makes the financing corridor more likely at a
+given \(\ell_i\), but it does not by itself guarantee a treatment effect.
+Within either regime, a larger \(\ell_i\) weakly expands the feasible route
+set and hence weakly raises \(x_i^*\). The reform response
+\(\Delta x_i(\ell_i)\), however, has no global monotonic sign because greater
+financing capacity also restores internalization as a pre-MAH option.
 \end{proposition}
 
 \subsection{Qualified manufacturing-service equilibrium}
@@ -457,7 +504,7 @@ Expected entrusted capacity per planning-stage project is
 \begin{equation}
   \chi_i^E(p_m;M)
   =
-  \int b(m)\mathbf 1\{r_i^*(q,m;M,p_m)=E\}\,dF(q,m).
+  \int b(m)\mathbf 1\{r_i^*(q,m;M,p_m,\ell_i)=E\}\,dF(q,m).
   \label{eq:p16m-project-demand}
 \end{equation}
 Study-related and total demand are
@@ -465,7 +512,7 @@ Study-related and total demand are
   \begin{aligned}
   D_m^{\mathrm{MAH}}(p_m;M)
   &=
-  \int a_ix_i^*(M,p_m)\chi_i^E(p_m;M)\,dH(a,k),\\
+  \int a_ix_i^*(M,p_m)\chi_i^E(p_m;M)\,dH(a,k,\ell),\\
   D_m(p_m;M)
   &=D_m^B(p_m)+D_m^{\mathrm{MAH}}(p_m;M).
   \end{aligned}
@@ -505,8 +552,8 @@ For the equilibrium comparison, let \(p_m^h\equiv p_m^*(h)\), and define
 \end{align}
 
 \begin{proposition}[CMO equilibrium and scarcity attenuation]
-\label{prop:main-cmo}
-Under atomless project and developer heterogeneity, the existing integrability
+\label{prop:main-finance-cmo}
+Under atomless financing and route heterogeneity, the existing integrability
 conditions, weakly decreasing demand, and strictly increasing supply, the
 scalar CMO market has a unique clearing price. Moreover,
 \begin{equation}
@@ -520,7 +567,8 @@ scalar CMO market has a unique clearing price. Moreover,
   \label{eq:p16m-scarcity-attenuation}
 \end{equation}
 The price inequality is strict when post-MAH study demand is positive at the
-old price. MAH changes neither CMO supply nor the background demand schedule.
+old price. Financing capacity shifts neither CMO supply nor the background
+demand schedule.
 \end{proposition}
 
 The baseline partial equilibrium contains exactly
@@ -536,7 +584,7 @@ The baseline partial equilibrium contains exactly
 No entry, labor, capital, product-market aggregate, or welfare closure is
 added.
 
-\subsection{Observed outcomes and model boundary}
+\subsection{Observed outcomes and nesting}
 \label{subsec:p16m-predictions}
 
 \paragraph{Planning, organization, and observed outcomes.}
@@ -567,22 +615,27 @@ mixture \(\rho_gF_g\). The baseline permits either class to have a zero or
 larger response and imposes no original-versus-incremental ranking. Patent
 applications are not a baseline endogenous outcome.
 
-\paragraph{Financing extension boundary.}
-The baseline does not model financial intermediation or impose a binding
-liquidity screen. Financing frictions may amplify the value of replacing a
-large internalization commitment with a contract-based route; the technical
-appendix analyzes that amplification separately and shows how the extension
-nests this baseline when liquidity never binds.
+\paragraph{No-binding-finance limit.}
+If
+\[
+  \ell_i\geq\max\{J_I(m,k_i),J_E(m)\}
+\]
+for every relevant developer--project pair, financing never binds,
+\(\widetilde W_i^I=W_i^I\) and \(\widetilde W_i^E=W_i^E\). The model then
+collapses to the previous no-financing-friction commercialization baseline.
 
 \section{Empirical Predictions and Mapping Boundaries}
 
 The deterministic model yields three conditional predictions. First, among
 projects for which internal and entrusted production dominate transfer and
 abandonment, developers with weaker internal manufacturing capability are
-more likely to select retained entrusted production. Second, MAH raises
-project advancement only when the entrusted route exceeds the best pre-reform
-option; the response is zero when internalization, transfer, or delay remains
-weakly better. Third, reform-induced demand for qualified manufacturing
+more likely to select retained entrusted production. This tendency is
+strongest when pre-policy financing capacity lies between the entrusted and
+internal up-front requirements. Second, MAH raises project advancement only
+when the entrusted route is financeable and exceeds the best pre-reform
+option; the response can be zero when financing is extremely scarce, when
+internalization is already attractive and financeable, or when an outside
+option dominates. Third, reform-induced demand for qualified manufacturing
 services can raise \(p_m^*\), attenuating fixed-price gains in expected
 project value and advancement. These predictions concern commercialization
 organization and project advancement, not patent generation or scientific
@@ -610,11 +663,13 @@ Model object & Candidate interface & Claim boundary \\
 \midrule
 Predetermined capability \(a_i\) & Pre-policy development history or other validated capability measure & Does not separately identify \(a_i\), and no policy shift in \(a_i\) is allowed. \\
 Advancement \(x_i\) and \(a_ix_i\) & Consistently measured development-stage activity and planning-stage project events & \(x_i\) is not pure clinical effort, patent applications, or an approval count. \\
-Internal manufacturing capability \(k_i\) & Pre-policy manufacturing assets, production licences, manufacturing history, validated technical scope, or other capability measures & This is the primary baseline heterogeneity; licence roles alone do not identify project-specific capability or realized route choice. \\
+Predetermined financing capacity \(\ell_i\) & Validated pre-policy registered or paid-in capital, liquid assets, leverage or debt capacity, listed status, VC/PE or parent backing, or external-financing history & A proxy must predate reform exposure; it does not identify a finance market or imply that MAH changes financing supply. \\
 Route \(r_i^*=E\) & Product-level holder differs from manufacturer, with time-consistent identifiers & The observed split is downstream evidence on retained organizational assignment, not the policy treatment itself. \\
 Retained outcome \(Y_i^{\mathrm{ret}}\) & Approval or launch with developer/holder identity & Combines advancement, project mix, deterministic route assignment, and \(s(q)\); it does not identify these primitives separately. \\
 CMO scarcity \(p_m^*\) & Service price, or consistently measured capacity, utilization, density, waiting-time, or participation proxy & A nonprice proxy does not identify the price or the supply and demand schedules separately. \\
 Novelty class \(g\) & Versioned regulatory classification \(O\) or \(\mathrm{Inc}\) & The classifier creates no \(x_{ig}\) and imposes no response ranking. \\
+Internal financing requirement \(J_I(m,k_i)\) & Validated up-front capital needed to build, acquire, validate, or upgrade compliant internal production & It is a liquidity threshold, not an extra route cost; no data source is asserted available before audit. \\
+Entrusted financing requirement \(J_E(m)\) & Validated up-front transfer, validation, contracting, and holder-side preparation commitment & It is positive in the baseline and distinct from \(F_E,p_mb(m),\mu_E\); no data source is asserted available before audit. \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -653,44 +708,30 @@ These entries are interfaces for future validated data. No data set is
 asserted here to be available, complete, or identifying. Before use, a source
 must pass provenance, coverage, key-uniqueness, unit, timing, and
 construct-validity checks. Entry, route-specific realization, and smooth
-route choice remain undeveloped extensions.
-
-\subsection{Extension-Based Heterogeneity: Financing Capacity}
-
-Financing is a secondary, extension-based heterogeneity test rather than a
-baseline identifying restriction. Candidate measures must predate reform
-exposure and may include registered or paid-in capital, cash and liquid
-assets, leverage or debt capacity, listed status, VC/PE backing,
-parent-company backing, or prior external financing. The empirical sequence
-is to establish first whether weak internal manufacturing capability predicts
-post-MAH retained entrusted production, then whether that route predicts
-project advancement or retained realization, and only afterward whether
-pre-policy financing remains informative after controlling for capability,
-size, age, ownership, group affiliation, listed status, and innovation
-history. A triple interaction among MAH exposure, weak manufacturing
-capability, and financing capacity is therefore conditional and secondary,
-not the model's primary baseline prediction. \citet{HallLerner2010} motivates
-the plausibility of this extension; MAH is not modeled as a credit-supply
-shock.
+route choice remain undeveloped extensions. The primary financing prediction
+is the triple interaction between MAH exposure, weak internal manufacturing
+capability, and limited or intermediate pre-policy financing capacity, with
+retained holder--manufacturer separation as the first outcome.
 
 \section{Conclusion}
 
 MAH changes expected project value by making retained entrusted manufacturing
 available while preserving authorization-holder responsibility. The route is
 most relevant when a developer can advance valuable projects but lacks
-project-compatible internal manufacturing capability. Weak capability raises
-the real variable and setup costs of internalization; the new retained route
-can replace that large, lumpy requirement with contracted qualified
-production. Its equilibrium value also depends on qualified-service scarcity:
-reform-induced entrusted demand can raise \(p_m^*\) and attenuate the
-fixed-price gain. Project advancement rises only for the MAH-relevant set and
-need not rise for every developer or novelty class. Observed holder--producer
-separation and realized products occur after advancement and organizational
-assignment. Financing frictions can strengthen the mechanism when large
-internalization commitments are difficult to fund, but the baseline does not
-require a binding financing constraint. Patent applications and upstream
-scientific research remain outside the baseline, and the model makes no
-welfare claim.
+project-compatible internal manufacturing capability. Predetermined financing
+capacity adds a feasibility margin: very low-capacity developers may be unable
+to fund either retained route, intermediate-capacity developers may finance
+entrusted production but not vertical integration, and high-capacity
+developers recover internalization as an old option. MAH therefore changes
+the organizational technology of commercialization; it does not relax the
+financing constraint itself. Its equilibrium value also depends on
+qualified-service scarcity: reform-induced entrusted demand can raise
+\(p_m^*\) and attenuate the fixed-price gain. Project advancement rises only
+for the financing-adjusted MAH-relevant set and need not rise for every
+developer or novelty class. Observed holder--producer separation and realized
+products occur after advancement and organizational assignment. Patent
+applications and upstream scientific research remain outside the baseline,
+and no patent response is imposed. The model makes no welfare claim.
 
 \clearpage
 \bibliographystyle{aer}

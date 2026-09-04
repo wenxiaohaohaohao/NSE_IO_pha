@@ -94,7 +94,7 @@ capability cutoff. Hold \((q,m)\), all technologies and outside options fixed.
 For capability derivatives also hold finite \((\tau_E,p_m)\) fixed. For each
 implicit cutoff derivative, vary only the continuous argument displayed.
 
-Conditional on both retained routes being financeable,
+On the internally feasible domain,
 \begin{equation}
   \Delta_{IE,k}
   =
@@ -118,18 +118,12 @@ Both are continuous-argument derivatives inside the finite-wedge domain.
 They are not derivatives with respect to \(M\), and the second is not an
 equilibrium-price effect.
 
-Separately, \(J_{I,k}<0\) means that stronger internal capability weakly
-expands the set \(\{(m,\ell_i):J_I(m,k_i)\leq\ell_i\}\). This is a
-financing-feasibility comparison, not part of the value-gap derivative.
-
 \paragraph{Binary policy comparison.}
-Let \(W_i^0(\ell_i)=\max\{\widetilde W_i^I(\ell_i),W^T,0\}\). At any fixed finite \(p_m\),
+Let \(W_i^0=\max\{W_i^I,W^T,0\}\). At any fixed finite \(p_m\),
 \begin{equation}
-  \widetilde W_i(q,m;1,p_m,\ell_i)
-  -\widetilde W_i(q,m;0,p_m,\ell_i)
+  W_i(q,m;1,p_m)-W_i(q,m;0,p_m)
   =
-  [\widetilde W_i^E(q,m;1,p_m,\ell_i)
-  -W_i^0(q,m;\ell_i)]_+\geq0.
+  [W_i^E(q,m;1,p_m)-W_i^0(q,m)]_+\geq0.
   \label{eq:p15-fixed-project-gain}
 \end{equation}
 This finite comparison adds an option without changing the old route values.
@@ -140,7 +134,7 @@ The cutoff signs require internal feasibility, the maintained technology signs,
 finite \((\tau_E,p_m)\), strict \(\Delta_{IE,k}>0\), and endpoint crossing.
 If crossing fails, no interior cutoff is asserted. If \(T\) or \(A\) dominates,
 the \(I/E\) cutoff does not determine the realized route. If
-\(J_E>\ell_i\) or \(W_i^E\leq W_i^0\), the finite policy gain is zero.
+\(W_i^E\leq W_i^0\), the finite policy gain is zero.
 
 \paragraph{Economic interpretation and empirical prediction.}
 This is a commercialization-route margin. Better internal manufacturing
@@ -198,8 +192,7 @@ For binary \(M\), define at a common support price
 \[
   \Delta\Omega_i(p_m)
   =
-  \int[\widetilde W_i^E(q,m;1,p_m,\ell_i)
-  -W_i^0(q,m;\ell_i)]_+\,dF.
+  \int[W_i^E(q,m;1,p_m)-W_i^0(q,m)]_+\,dF.
 \]
 The correct policy calculation is the finite difference
 \begin{equation}
@@ -264,7 +257,7 @@ At differentiability points of the aggregated deterministic-choice functions,
     \frac{\partial x_i^*}{\partial p_m}\chi_i^E
     +
     x_i^*\frac{\partial\chi_i^E}{\partial p_m}
-  \right]dH(a,k,\ell)
+  \right]dH(a,k)
   \leq0.
   \label{eq:p15-study-demand-slope}
 \end{equation}
@@ -329,14 +322,12 @@ Define the fixed-price direct gain and the equilibrium gain as
 \[
   \Delta\Omega_i^{\mathrm{dir}}
   =
-  \int[\widetilde W_i^E(q,m;1,p_m^0,\ell_i)
-  -W_i^0(q,m;\ell_i)]_+\,dF,
+  \int[W_i^E(q,m;1,p_m^0)-W_i^0(q,m)]_+\,dF,
 \]
 \[
   \Delta\Omega_i^{\mathrm{eq}}
   =
-  \int[\widetilde W_i^E(q,m;1,p_m^1,\ell_i)
-  -W_i^0(q,m;\ell_i)]_+\,dF.
+  \int[W_i^E(q,m;1,p_m^1)-W_i^0(q,m)]_+\,dF.
 \]
 Because \(W_{i,p_m}^E=-b(m)<0\), the price order yields
 \begin{equation}
@@ -433,37 +424,11 @@ favors \(I\) relative to \(E\). Under the maintained upper-end crossing
 condition, \(\Delta_{IE}>0\) for sufficiently large \(k_i\). This is a relative
 route-value statement; \(T\) or \(A\) may still dominate both.
 
-\paragraph{Low internal capability and financing.}
-Low \(k_i\) raises internal operating cost, setup cost, and the up-front
-commitment \(J_I(m,k_i)\), but it does not make internalization technologically
-impossible. If \(J_I(m,k_i)>\ell_i\), route \(I\) is financially infeasible;
-if \(\ell_i\) is sufficiently high, the same low-\(k_i\) developer can still
-internalize. The old hard-infeasibility approximation is recovered only as the
-limit \(J_I(m,k_i)\to+\infty\).
-
-\paragraph{Financing-capacity regions.}
-Under the local ordering \(J_E(m)<J_I(m,k_i)\),
-\(\ell_i<J_E\) makes both retained routes infeasible,
-\(J_E\leq\ell_i<J_I\) is the financing corridor in which only \(E\) is
-financeable, and \(\ell_i\geq J_I\) restores \(I\) as an old option. Hence the
-binary MAH effect can be zero--positive--smaller as \(\ell_i\) crosses the two
-thresholds; it is not globally monotone in financing capacity. Within a fixed
-regime, however, optimized value is weakly increasing in \(\ell_i\) because
-the feasible route set only expands.
-
-\paragraph{Vanishing and abundant financing.}
-As \(\ell_i\to0\), both retained routes may be infeasible and MAH can have
-zero effect. If
-\(\ell_i\geq\max\{J_I(m,k_i),J_E(m)\}\) for all relevant pairs, financing
-never binds and \(\widetilde W_i^I=W_i^I\),
-\(\widetilde W_i^E=W_i^E\); the previous no-financing-friction model is
-nested.
-
-\paragraph{Entrusted financing requirement.}
-The limit \(J_E\to0\) is an extreme low-capital outsourcing boundary, not the
-baseline. If \(J_E\geq J_I\), route \(E\) has no financing-relief advantage
-over internalization for that pair, although it may still add value through
-its organizational technology and cost structure.
+\paragraph{Weak internal capability.}
+For every \(k_i>0\), internalization is feasible in principle. At low
+capability, high \(c_I(m,k_i)\) and \(F_I(m,k_i)\) can make \(W_i^I\) very
+low. The optional limit \(F_I(m,k)\to+\infty\) as \(k\downarrow0\) is a
+continuous boundary, not a hard cutoff.
 
 \paragraph{Pre-MAH regime.}
 When \(M=0\), \(\tau_E(0)=+\infty\), so \(W_i^E=-\infty\),
@@ -478,17 +443,16 @@ Because \(b(m)>0\),
 Thus \(E\) ceases to be optimal and
 \begin{equation}
   \lim_{p_m\to\infty}
-  \widetilde W_i(q,m;1,p_m,\ell_i)
+  W_i(q,m;1,p_m)
   =
-  W_i^0(q,m;\ell_i).
+  W_i^0(q,m).
   \label{eq:p15-infinite-price-boundary}
 \end{equation}
 The newly added option disappears economically but cannot reduce the old
 route-set value.
 
 \paragraph{Zero entrusted-route advantage.}
-If \(J_E(m)>\ell_i\) or
-\(W_i^E(q,m;1,p_m)\leq W_i^0(q,m;\ell_i)\) for every draw, then
+If \(W_i^E(q,m;1,p_m)\leq W_i^0(q,m)\) for every draw, then
 \begin{equation}
   \Delta\Omega_i(p_m)=0,
   \qquad

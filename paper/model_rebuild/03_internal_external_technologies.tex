@@ -24,7 +24,7 @@ internal manufacturing capability \(k_i>0\), let
 \end{equation}
 The function \(c_I\) is technological marginal manufacturing cost, measured
 in \(\mathsf C/\mathsf Y\). A more demanding project raises this cost, while
-greater internal capability lowers it on the feasible domain.
+greater internal capability lowers it on the baseline domain.
 
 Internal production also requires a finite project-level
 production-readiness/setup cost \(F_I(m,k_i)\), measured in \(\mathsf C\):
@@ -38,21 +38,12 @@ production-readiness/setup cost \(F_I(m,k_i)\), measured in \(\mathsf C\):
 \end{equation}
 Low internal capability therefore makes internalization expensive but does
 not make it technologically impossible by convention.
-
-Let
-\begin{equation}
-  J_I(m,k_i)>0,
-  \qquad
-  J_{I,m}(m,k_i)>0,
-  \qquad
-  J_{I,k}(m,k_i)<0
-  \label{eq:p03-internal-financing}
-\end{equation}
-be the up-front financing commitment required to organize internal
-manufacturing. Route \(I\) is financially feasible exactly when
-\(J_I(m,k_i)\leq\ell_i\). The object \(J_I\) is a liquidity requirement,
-not an additional real cost. One possible accounting interpretation is
-\(0<J_I\leq F_I\), but no result requires that inequality.
+The setup term is the project-level present value of building, acquiring,
+upgrading, validating, or adapting internal production capability, including
+internal quality-system preparation and project-specific fixed
+organizational costs. It may become very large as \(k_i\) approaches zero.
+The optional limiting condition
+\(\lim_{k\downarrow0}F_I(m,k)=+\infty\) is not a discrete feasibility cutoff.
 
 \subsection{Qualified external production}
 \label{subsec:p03-external}
@@ -88,28 +79,17 @@ residual holder-side responsibility and coordination burden
   \mu_E\geq0.
   \label{eq:p03-holder-burden}
 \end{equation}
-The burden \(\mu_E\) is not eliminated by MAH.
-
-Retained entrusted production also requires the up-front financing
-commitment
-\begin{equation}
-  J_E(m)>0,
-  \qquad
-  J_E'(m)>0.
-  \label{eq:p03-external-financing}
-\end{equation}
-Route \(E\) is financially feasible exactly when \(J_E(m)\leq\ell_i\), in
-addition to being institutionally available. The commitment covers the
-liquidity needed for transfer, validation, initial contracting, and
-holder-side preparation. It is not subtracted from route value.
+The burden \(\mu_E\) is not eliminated by MAH. Entrusted production avoids
+full proprietary manufacturing capability but still requires technology
+transfer, validation, contracted qualified capacity, and holder-side quality
+oversight.
 
 The accounting roles are distinct. The technological marginal cost \(c_E(m)\)
 is the input to the operating-value kernel derived above. The separate
 monetary capacity payment \(p_m b(m)\), the readiness cost \(F_E(m)\), the
 holder burden \(\mu_E\), and the institutional barrier \(\tau_E(M)\) are not
 embedded in \(c_E(m)\). Each can therefore enter a later route value at most
-once. Likewise, \(J_I\) and \(J_E\) are feasibility requirements and are not
-counted again as payoff costs.
+once.
 
 \subsection{Organizational and institutional distinction}
 \label{subsec:p03-organization}
@@ -133,8 +113,8 @@ The only direct policy object is
   \tau_E(1)=\bar\tau_E<+\infty.
   \label{eq:p03-policy-invariance}
 \end{equation}
-The regime does not change \(c_I\), \(F_I\), \(J_I\), \(c_E\),
-\(b\), \(F_E\), \(J_E\), \(\mu_E\), \(a_i\), \(k_i\), \(\ell_i\), \(q\), \(m\), \(s(q)\), or
+The regime does not change \(c_I\), \(F_I\), \(c_E\),
+\(b\), \(F_E\), \(\mu_E\), \(a_i\), \(k_i\), \(q\), \(m\), \(s(q)\), or
 \(s_g(q)\). In particular, this technology block does not posit a fall in
 \(p_m^*\) or an outward shift of CMO supply. Price and capacity are equilibrium
 objects determined in the qualified manufacturing-service market below.
@@ -142,12 +122,9 @@ objects determined in the qualified manufacturing-service market below.
 \subsection{Boundary checks}
 \label{subsec:p03-boundaries}
 
-Increasing \(k_i\) lowers internal marginal cost, setup cost, and the
-financing commitment \(J_I\), while increasing \(m\) raises all three.
-A sufficiently well-financed low-\(k_i\) developer can still internalize. In
-the limiting approximation \(J_I(m,k_i)\to+\infty\) for very low \(k_i\), the
-old hard-infeasibility convention is recovered. The entrusted technology does
-not use \(k_i\), but a larger \(m\) raises both its qualified-capacity
-requirement \(b(m)\) and financing commitment \(J_E(m)\). None of these
-statements is a route-choice result: route values, financing-adjusted values,
-outside options, and deterministic sorting are defined in the next section.
+Increasing \(k_i\) lowers internal marginal and setup costs, while increasing
+\(m\) raises both. A low-\(k_i\) developer can still internalize by paying the
+high real cost. The entrusted technology does not use \(k_i\), while a larger
+\(m\) raises its qualified-capacity requirement \(b(m)\). None of these
+statements is a route-choice result: route values, outside options, and
+deterministic sorting are defined in the next section.

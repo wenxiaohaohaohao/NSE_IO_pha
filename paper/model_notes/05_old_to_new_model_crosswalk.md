@@ -58,7 +58,7 @@ These zones are locators, not substitutes for the row-level occurrence index.
 | CW-02 | \(\bar R_i^E\) | DELETE route-specific return kernel; use \(R(q,c_E(m))\) inside explicit external route value | 03 external technology; 04 eq. p04-entrusted-value |
 | CW-03 | arbitrary retained-stock continuation \(v\) | REMOVE from baseline; retain only the nonrecursive \(K_i-B_i=\Omega_i\) value-gap interpretation | 05 eqs. p05-value-gap and p05-value-gap-foc |
 | CW-04 | \(C^I(k_i)\) | REPLACE by marginal cost \(c_I(m,k_i)\) and setup cost \(F_I(m,k_i)\) | 03 eqs. p03-internal-cost and p03-internal-setup |
-| CW-05 | \(h_i^I\) | DELETE; encode infeasibility by \(F_I=+\infty\) below \(\underline k(m)\) | 03 eq. p03-internal-setup |
+| CW-05 | \(h_i^I\) | DELETE; use high but finite \(c_I(m,k_i)\) and \(F_I(m,k_i)\) at weak positive capability | 03 eqs. p03-internal-cost and p03-internal-setup |
 | CW-06 | \(q_i^E\) | DELETE baseline eligibility dummy; use project requirement \(m\), explicit external technology, and equilibrium capacity availability | 03 and 06 |
 | CW-07 | \(\mu_i^E\) | RETAIN concept, simplify to common holder burden \(\mu_E\); never set it to zero under MAH | 03 eq. p03-holder-burden |
 | CW-08 | binary \(M\) | RETAIN as the institutional regime; never differentiate it | 01 eq. p01-institutional-wedge |
@@ -160,8 +160,9 @@ These zones are locators, not substitutes for the row-level occurrence index.
   1322--1326.
 - Proposition/calibration consequence: the old feasible set and any
   before/after route-share construction depend on this dummy.
-- New treatment: \(F_I(m,k_i)=+\infty\) if
-  \(k_i<\underline k(m)\); no separate feasibility object.
+- New treatment: for every \(k_i>0\), internal costs are finite and decrease
+  with capability. Weak capability can make internalization lose the value
+  comparison, but it does not create a hard feasibility cutoff or a dummy.
 - Phase 18 action: delete the dummy from types, route sets, tables, and
   calibration protocols.
 

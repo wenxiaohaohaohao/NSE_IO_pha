@@ -53,28 +53,26 @@ Legal transition:
 | 17 Consistency audit | APPROVED | `07_consistency_audit.md` | `audit/phase17_gate_report.md` | Yes — `EXEC-GOV-001`, zero P0; Phase 18 requires separate explicit approval |
 | 18 Manuscript integration | APPROVED | manuscript and final build | `audit/phase18_gate_report.md` | Yes — explicit Phase 18 approval; zero P0/P1 |
 
-## Post-Phase-18 commercialization-financing revision
+## Post-Phase-18 recentering revision
 
-- User authorization: implement the supplied financing-friction notes in full
-  on 2026-09-03.
-- Active type: $\theta_i=(a_i,k_i,\ell_i)\sim H(a,k,\ell)$.
-- New baseline primitives: predetermined commercialization financing capacity
-  $\ell_i$ and liquidity requirements $J_I(m,k_i)$ and $J_E(m)$.
-- Mechanism: MAH changes the organizational technology needed to retain
-  commercialization rights; it does not increase financing supply or change
-  $\ell_i,J_I,J_E$.
-- Closure: one common $x_i$, deterministic route choice, and the same scalar
-  CMO market. There is no financing choice or finance-market clearing.
-- Main new result: the financing corridor
-  $J_E(m)\leq\ell_i<J_I(m,k_i)$; the MAH treatment effect need not be globally
-  monotone in $\ell_i$.
-- Nesting: when financing never binds, the prior commercialization baseline is
-  recovered exactly.
-- Patent boundary: patent applications are not an active endogenous outcome.
-  The former research--development/patent module is preserved under
-  `paper/model_rebuild/archive/` but is no longer imported.
-- Historical Phase 1--18 gates and frozen specification evidence remain
-  unchanged; this is a separately audited post-Phase-18 revision.
+- Latest controlling instruction: `MAH_recenter_financing_extension_codex_notes.md`,
+  supplied on 2026-09-04.
+- Active baseline: commercialization-organization model with developer type
+  $\theta_i=(a_i,k_i)$, one common advancement control $x_i$, deterministic
+  $I/E/T/A$ route choice, and one scalar CMO market.
+- Internal production remains available for every $k_i>0$ but can be very
+  costly when capability is weak. There is no hard low-$k$ feasibility cutoff.
+- Financing capacity and liquidity thresholds are preserved only in the
+  explicitly inactive module
+  `paper/model_rebuild/15_financing_commercialization_extension.tex`.
+- The former research--development/patent allocation module remains archived
+  and is not imported by either formal document.
+- The main text contains exactly four formal propositions. The more extensive
+  six-proposition proof ledger remains appendix material and historical audit
+  evidence; it does not expand the main-text proposition count.
+- Historical Phase 1--18 approvals remain valid. This post-Phase-18 revision
+  changes the current model presentation and therefore has its own change log,
+  notation audit, compile logs, PDF inspection, commit, and remote record.
 
 ## Scope protection
 
@@ -83,6 +81,6 @@ Legal transition:
   the bounded manuscript changes specified for Phase 18.
 - The original checkout's modified collaborator ZIP is outside this worktree and must never enter this branch.
 - Phase 1 began after the approved specification commit was pushed. Phase 2 and subsequent phases are authorized under `EXEC-GOV-001`, subject to their full internal gates and mandatory-pause conditions.
-- The 2026-09-03 financing revision supersedes the same-day patent extension
-  in the active manuscript while preserving its source in the archive. It
-  does not rewrite the frozen Phase 1--18 gate artifacts.
+- The 2026-09-04 recentering instruction supersedes the 2026-09-03 treatment
+  of financing as baseline. Financing is now extension-only and inactive; it
+  does not alter the approved organizational baseline equations.

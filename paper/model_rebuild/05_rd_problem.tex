@@ -51,18 +51,17 @@ For developer \(i\), institutional regime \(M\), and fixed conjectured price
   \Omega_i(M,p_m)
   &=
   \mathbb E_F\!\left[
-    \widetilde W_i(q,m;M,p_m,\ell_i)
+    W_i(q,m;M,p_m)
   \right]\\
   &=
-  \int \widetilde W_i(q,m;M,p_m,\ell_i)\,dF(q,m).
+  \int W_i(q,m;M,p_m)\,dF(q,m).
   \end{aligned}
   \label{eq:p05-expected-value}
 \end{equation}
 The subscript \(i\) includes the dependence of route value on developer
-characteristics, especially manufacturing capability \(k_i\) and financing
-capacity \(\ell_i\). Because the
+manufacturing capability \(k_i\). Because the
 route-value maximum contains abandonment with value zero,
-\(\widetilde W_i(q,m;M,p_m,\ell_i)\geq0\). Under the stated integrability condition,
+\(W_i(q,m;M,p_m)\geq0\). Under the stated integrability condition,
 \[
   0\leq\Omega_i(M,p_m)<+\infty.
 \]
@@ -83,7 +82,7 @@ The developer solves
   \label{eq:p05-advancement-objective}
 \end{equation}
 The decision precedes the \((q,m)\) draw and downstream route choice.
-Conditional on \(M,p_m,a_i,k_i,\ell_i\), the expected value
+Conditional on \(M,p_m,a_i,k_i\), the expected value
 \(\Omega_i(M,p_m)\) is therefore fixed with respect to the individual
 choice \(x_i\).
 
@@ -135,8 +134,8 @@ solution has units \(\mathsf X\).
 
 At a fixed \(p_m\), deterministic route choice implies the pointwise weak ordering
 \[
-  \widetilde W_i(q,m;1,p_m,\ell_i)
-  \geq \widetilde W_i(q,m;0,p_m,\ell_i).
+  W_i(q,m;1,p_m)
+  \geq W_i(q,m;0,p_m).
 \]
 Taking expectations gives the finite policy comparison
 \begin{equation}
@@ -144,8 +143,8 @@ Taking expectations gives the finite policy comparison
   =
   \int
   \left[
-    \widetilde W_i(q,m;1,p_m,\ell_i)
-    -\widetilde W_i(q,m;0,p_m,\ell_i)
+    W_i(q,m;1,p_m)
+    -W_i(q,m;0,p_m)
   \right]dF(q,m)
   \geq0.
   \label{eq:p05-binary-channel}
@@ -166,8 +165,8 @@ Thus, at fixed \(p_m\),
   x_i^*(1,p_m)>x_i^*(0,p_m).
 \]
 The strict inequality in expected value requires a positive-probability set
-of projects in \(\mathcal C_i(p_m,\ell_i)\), where entrusted production is
-financeable and strictly improves the pre-reform maximum. Otherwise both
+of projects in \(\mathcal C_i(p_m)\), where entrusted production strictly
+improves the pre-reform maximum. Otherwise both
 expected value and advancement can have a zero reform effect.
 
 This is a binary finite comparison, not a derivative with respect to \(M\).
@@ -176,17 +175,8 @@ through \(p_m^*\). The regime changes neither \(a_i\), \(\kappa\), \(\nu\),
 the cost function, nor the project distribution. MAH affects
 \(x_i^*\) only through \(\Omega_i\). Manufacturing capability \(k_i\) affects
 \(\Omega_i\) through route values and sorting, not through
-\(a_ix_i\) or \(C_X(x_i)\). Financing capacity also affects advancement only
-through the set of financeable commercialization routes. It does not enter the
-advancement FOC directly.
-
-Within a fixed regime, higher \(\ell_i\) weakly expands the feasible route set,
-so \(\Omega_i\) and \(x_i^*\) are weakly increasing in the finite-comparison
-sense. The binary reform response
-\(\Delta x_i(\ell_i)=x_i^*(1,p_m,\ell_i)-x_i^*(0,p_m,\ell_i)\) has no global
-monotonic sign in \(\ell_i\): financing first makes \(E\) feasible and may
-later restore \(I\) as an old option. Derivatives at the financing thresholds
-need not exist.
+\(a_ix_i\) or \(C_X(x_i)\). No financing object enters the baseline
+advancement FOC.
 
 \subsection{Downstream project-value gap}
 \label{subsec:p05-value-gap}
@@ -215,11 +205,10 @@ productivity.
 \subsection{Scope boundary}
 \label{subsec:p05-scope}
 
-The baseline contains one common \(x_i\), one cost function \(C_X\), one
-expected optimized project value \(\Omega_i\), and predetermined
-commercialization financing capacity \(\ell_i\). It contains no separate
+The baseline contains one common \(x_i\), one cost function \(C_X\), and one
+expected optimized project value \(\Omega_i\). It contains no separate
 research and development controls, no financing constraint on \(x_i\), no
 borrowing choice, no finance market, no patent outcome, no
 novelty-class-specific control, and no CMO market-clearing condition in this
-block. Project advancement is ex ante; financing feasibility, route choice,
-and observed holder--producer separation are downstream.
+block. Project advancement is ex ante; route choice and observed
+holder--producer separation are downstream.

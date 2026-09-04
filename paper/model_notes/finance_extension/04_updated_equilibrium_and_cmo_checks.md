@@ -1,18 +1,16 @@
-# Updated Equilibrium and CMO Checks
+# Baseline CMO Closure and Inactive-Extension Boundary
 
-Expected optimized value and project advancement are
+The active baseline remains
 
 \[
-\Omega_i(M,p_m)=\int\widetilde W_i(q,m;M,p_m,\ell_i)dF(q,m),\qquad
+\Omega_i(M,p_m)=\int W_i(q,m;M,p_m)dF(q,m),\qquad
 x_i^*=\left[\frac{\beta a_i\Omega_i}{\kappa}\right]^{1/\nu}.
 \]
 
-Financing enters the advancement problem only through \(\Omega_i\). Study
-CMO demand integrates over \(H(a,k,\ell)\). Because \(J_E\) is independent of
-\(p_m\), increasing the CMO price weakly lowers entrusted value, route-E
-selection, expected value, advancement, and study demand. With the maintained
-zero-mass threshold/tie and dominated-convergence conditions, demand remains
-continuous and weakly decreasing while supply is strictly increasing.
+Study CMO demand integrates over \(H(a,k)\). No financeability indicator enters
+baseline \(\Omega_i\), advancement, route selection, or CMO demand.
 
-The scalar CMO fixed point, \(p_m^*(1)\ge p_m^*(0)\), and scarcity attenuation
-therefore survive. Financing changes neither CMO supply nor background demand.
+If the financing extension were activated later, every finance-adjusted
+demand and equilibrium result would require a fresh derivation and audit. The
+inactive extension does not alter the current scalar fixed point, supply,
+background demand, price comparison, or scarcity-attenuation result.

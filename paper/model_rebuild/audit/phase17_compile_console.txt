@@ -75,7 +75,7 @@ public/amsfonts/cm/cmr17.pfb><D:/application/miktex/fonts/type1/public/amsfonts
 /cm/cmr8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
-l_rebuild\audit\build_phase17\13_main_text_model_candidate.pdf (4 pages, 179123
+l_rebuild\audit\build_phase17\13_main_text_model_candidate.pdf (4 pages, 181922
  bytes).
 Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
 model_rebuild\audit\build_phase17\13_main_text_model_candidate.log.
@@ -154,7 +154,7 @@ application/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/application/mikt
 ex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1
 /public/amsfonts/cm/cmsy8.pfb>
 Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
-l_rebuild\audit\build_phase17\13_main_text_model_candidate.pdf (4 pages, 181392
+l_rebuild\audit\build_phase17\13_main_text_model_candidate.pdf (4 pages, 184191
  bytes).
 Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
 model_rebuild\audit\build_phase17\13_main_text_model_candidate.log.
@@ -216,34 +216,38 @@ No file 14_appendix_model_candidate.aux.
 (D:\application\miktex\tex/latex/amsfonts\umsb.fd)
 No file 14_appendix_model_candidate.toc.
 (01_primitives_and_timing.tex [1{C:/Users/dongw/AppData/Local/MiKTeX/fonts/map/
-pdftex/pdftex.map}] [2]
+pdftex/pdftex.map}]
+Overfull \hbox (6.32428pt too wide) in paragraph at lines 113--115
+[]\OT1/cmr/m/n/10.95 Project-advancement ca-pa-bil-ity con-verts the con-trol i
+nto the ex-pected mea-sure of vi-able planning-
+[2]
 
 LaTeX Warning: Reference `eq:p01-institutional-wedge' on page 3 undefined on in
-put line 145.
+put line 146.
 
 
 LaTeX Warning: Reference `eq:p01-planned-intensity' on page 3 undefined on inpu
-t line 151.
+t line 152.
 
 
 LaTeX Warning: Reference `eq:p01-project-draw' on page 3 undefined on input lin
-e 155.
+e 156.
 
 
 LaTeX Warning: Reference `eq:p01-route-domain' on page 3 undefined on input lin
-e 161.
+e 162.
 
 
 LaTeX Warning: Reference `eq:p01-downstream-probability' on page 3 undefined on
- input line 167.
+ input line 168.
 
 
 LaTeX Warning: Reference `eq:p01-anticipated-channel' on page 3 undefined on in
-put line 215.
+put line 216.
 
 
 LaTeX Warning: Reference `eq:p01-realization-channel' on page 3 undefined on in
-put line 216.
+put line 217.
 
 ) (02_demand_profit_derivation.tex [3]
 
@@ -254,47 +258,42 @@ LaTeX Warning: Reference `eq:p02-price-foc' on page 4 undefined on input line 5
 LaTeX Warning: Reference `eq:p02-optimal-price' on page 4 undefined on input li
 ne 73.
 
-[4] [5]) (03_internal_external_technologies.tex [6]
-
-LaTeX Warning: Reference `tab:p03-local-crosswalk' on page 7 undefined on input
- line 121.
-
-) (04_route_values_and_sorting.tex [7] [8]
+[4] [5]) (03_internal_external_technologies.tex [6])
+(04_route_values_and_sorting.tex [7] [8]
 
 LaTeX Warning: Reference `eq:p04-gap-slope' on page 9 undefined on input line 1
-46.
-
-[9]
-
-LaTeX Warning: Reference `eq:p04-cutoff-sorting' on page 10 undefined on input
-line 193.
+45.
 
 
-LaTeX Warning: Reference `eq:p04-cutoff-derivatives' on page 10 undefined on in
-put line 193.
+LaTeX Warning: Reference `eq:p04-cutoff-sorting' on page 9 undefined on input l
+ine 207.
 
-) (05_rd_problem.tex [10] [11]) (06_cmo_supply_demand_equilibrium.tex [12]
-[13] [14]) (07_equilibrium_definition.tex [15]
+
+LaTeX Warning: Reference `eq:p04-cutoff-derivatives' on page 9 undefined on inp
+ut line 207.
+
+[9]) (05_rd_problem.tex [10] [11]) (06_cmo_supply_demand_equilibrium.tex
+[12] [13] [14]) (07_equilibrium_definition.tex [15]
 
 LaTeX Warning: Reference `eq:p07-route-optimality' on page 16 undefined on inpu
-t line 85.
+t line 86.
 
 
 LaTeX Warning: Reference `eq:p07-market-clearing' on page 16 undefined on input
- line 85.
+ line 86.
 
 ) (08_required_propositions.tex
 
 LaTeX Warning: Reference `eq:p08-sorting-slope' on page 16 undefined on input l
-ine 36.
+ine 37.
 
 [16] [17] [18] [19] [20]) (08_comparative_statics.tex [21] [22] [23] [24]
 
 LaTeX Warning: Reference `eq:p15-equilibrium-ift' on page 25 undefined on input
  line 291.
 
-[25] [26] [27]) (09_observed_outcomes.tex [28]) [29]
-(11_extensions_not_baseline.tex [30] [31]) [32]
+[25] [26]) (09_observed_outcomes.tex [27] [28]) (11_extensions_not_baseline.tex
+[29] [30]) (15_financing_commercialization_extension.tex [31]) [32]
 (D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
 uild_phase17\14_appendix_model_candidate.aux)
 
@@ -309,32 +308,28 @@ ged.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
- ) <C:\Users\dongw\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1095.pk><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/ap
-plication/miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/application/mikt
-ex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/application/miktex/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><D:/application/miktex/fonts/type1/public/amsfon
-ts/cm/cmmi6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/applicatio
-n/miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><D:/application/miktex/fonts/type1/public/am
-sfonts/cm/cmr17.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr6.
-pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/applicat
-ion/miktex/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/application/miktex/fonts
-/type1/public/amsfonts/cm/cmss10.pfb><D:/application/miktex/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cm
-sy6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/app
-lication/miktex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/application/miktex
-/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:/application/miktex/fonts/type1/p
-ublic/amsfonts/cm/cmti9.pfb><D:/application/miktex/fonts/type1/public/amsfonts/
-cm/cmtt10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmtt9.pfb><
-pdflatex: major issue: So far, you have not checked for MiKTeX updates.
-D:/application/miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+ )
+(see the transcript file for additional information) <C:\Users\dongw\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><D:/application/mikte
+x/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/application/miktex/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb><D:/application/miktex/fonts/type1/public/amsfont
+s/cm/cmex10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/applicati
+on/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/application/miktex/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/applic
+ation/miktex/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/application/miktex/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1/pub
+lic/amsfonts/cm/cmsy6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:
+/application/miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
-l_rebuild\audit\build_phase17\14_appendix_model_candidate.pdf (32 pages, 456188
+l_rebuild\audit\build_phase17\14_appendix_model_candidate.pdf (32 pages, 380906
  bytes).
 Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
 model_rebuild\audit\build_phase17\14_appendix_model_candidate.log.
+pdflatex: major issue: So far, you have not checked for MiKTeX updates.
 ===== 14_appendix_model_candidate.tex pass 2 =====
 This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
  restricted \write18 enabled.
@@ -399,41 +394,40 @@ uild_phase17\14_appendix_model_candidate.out)
 (D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
 uild_phase17\14_appendix_model_candidate.toc [1{C:/Users/dongw/AppData/Local/Mi
 KTeX/fonts/map/pdftex/pdftex.map}] [2]) (01_primitives_and_timing.tex [3]
+Overfull \hbox (6.32428pt too wide) in paragraph at lines 113--115
+[]\OT1/cmr/m/n/10.95 Project-advancement ca-pa-bil-ity con-verts the con-trol i
+nto the ex-pected mea-sure of vi-able planning-
 [4]) (02_demand_profit_derivation.tex [5] [6])
 (03_internal_external_technologies.tex [7] [8])
 (04_route_values_and_sorting.tex [9] [10]) (05_rd_problem.tex [11] [12]
 [13]) (06_cmo_supply_demand_equilibrium.tex [14] [15])
 (07_equilibrium_definition.tex [16]) (08_required_propositions.tex [17]
 [18] [19] [20] [21] [22]) (08_comparative_statics.tex [23] [24] [25] [26]
-[27] [28]) (09_observed_outcomes.tex [29] [30]) [31]
-(11_extensions_not_baseline.tex [32]) [33]
+[27] [28]) (09_observed_outcomes.tex [29] [30]) (11_extensions_not_baseline.tex
+[31] [32]) (15_financing_commercialization_extension.tex [33]) [34]
 (D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
 uild_phase17\14_appendix_model_candidate.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
- ) <C:\Users\dongw\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1095.pk><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/ap
-plication/miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/application/mikt
-ex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/application/miktex/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><D:/application/miktex/fonts/type1/public/amsfon
-ts/cm/cmmi6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/applicatio
-n/miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><D:/application/miktex/fonts/type1/public/am
-sfonts/cm/cmr17.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr6.
-pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/applicat
-ion/miktex/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/application/miktex/fonts
-/type1/public/amsfonts/cm/cmss10.pfb><D:/application/miktex/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cm
-sy6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/app
-lication/miktex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/application/miktex
-/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:/application/miktex/fonts/type1/p
-ublic/amsfonts/cm/cmti9.pfb><D:/application/miktex/fonts/type1/public/amsfonts/
-cm/cmtt10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmtt9.pfb><
-D:/application/miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+ )
+(see the transcript file for additional information) <C:\Users\dongw\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><D:/application/mikte
+x/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/application/miktex/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb><D:/application/miktex/fonts/type1/public/amsfont
+s/cm/cmex10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/applicati
+on/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/application/miktex/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/applic
+ation/miktex/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/application/miktex/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1/pub
+lic/amsfonts/cm/cmsy6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:
+/application/miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
-l_rebuild\audit\build_phase17\14_appendix_model_candidate.pdf (33 pages, 507922
+l_rebuild\audit\build_phase17\14_appendix_model_candidate.pdf (34 pages, 436687
  bytes).
 Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
 model_rebuild\audit\build_phase17\14_appendix_model_candidate.log.
@@ -502,38 +496,36 @@ uild_phase17\14_appendix_model_candidate.out)
 (D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
 uild_phase17\14_appendix_model_candidate.toc [1{C:/Users/dongw/AppData/Local/Mi
 KTeX/fonts/map/pdftex/pdftex.map}] [2]) (01_primitives_and_timing.tex [3]
+Overfull \hbox (6.32428pt too wide) in paragraph at lines 113--115
+[]\OT1/cmr/m/n/10.95 Project-advancement ca-pa-bil-ity con-verts the con-trol i
+nto the ex-pected mea-sure of vi-able planning-
 [4]) (02_demand_profit_derivation.tex [5] [6])
 (03_internal_external_technologies.tex [7] [8])
 (04_route_values_and_sorting.tex [9] [10]) (05_rd_problem.tex [11] [12]
 [13]) (06_cmo_supply_demand_equilibrium.tex [14] [15])
 (07_equilibrium_definition.tex [16]) (08_required_propositions.tex [17]
 [18] [19] [20] [21] [22]) (08_comparative_statics.tex [23] [24] [25] [26]
-[27] [28]) (09_observed_outcomes.tex [29] [30]) [31]
-(11_extensions_not_baseline.tex [32]) [33]
+[27] [28]) (09_observed_outcomes.tex [29] [30]) (11_extensions_not_baseline.tex
+[31] [32]) (15_financing_commercialization_extension.tex [33]) [34]
 (D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
-uild_phase17\14_appendix_model_candidate.aux) ) <C:\Users\dongw\AppData\Local\M
-iKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><D:/application/miktex/fon
-ts/type1/public/amsfonts/cm/cmbx10.pfb><D:/application/miktex/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/
-cmex10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:
-/application/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/application/mi
-ktex/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/application/miktex/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb><D:/application/miktex/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb
-><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/applicatio
-n/miktex/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/application/miktex/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb><D:/application/miktex/fonts/type1/public/amsf
-onts/cm/cmr9.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmss10.p
-fb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/applica
-tion/miktex/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/application/miktex/fon
-ts/type1/public/amsfonts/cm/cmsy7.pfb><D:/application/miktex/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmti9.pfb><D:/ap
-plication/miktex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/application/mikt
-ex/fonts/type1/public/amsfonts/cm/cmtt9.pfb><D:/application/miktex/fonts/type1/
-public/amsfonts/symbols/msbm10.pfb>
+uild_phase17\14_appendix_model_candidate.aux) )
+(see the transcript file for additional information) <C:\Users\dongw\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><D:/application/mikte
+x/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/application/miktex/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb><D:/application/miktex/fonts/type1/public/amsfont
+s/cm/cmex10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/applicati
+on/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/application/miktex/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/applic
+ation/miktex/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/application/miktex/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1/pub
+lic/amsfonts/cm/cmsy6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:
+/application/miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
-l_rebuild\audit\build_phase17\14_appendix_model_candidate.pdf (33 pages, 507920
+l_rebuild\audit\build_phase17\14_appendix_model_candidate.pdf (34 pages, 436689
  bytes).
 Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
 model_rebuild\audit\build_phase17\14_appendix_model_candidate.log.
@@ -595,36 +587,40 @@ No file 12_full_derivation_draft.aux.
 (D:\application\miktex\tex/latex/amsfonts\umsb.fd)
 No file 12_full_derivation_draft.toc.
 (01_primitives_and_timing.tex [1{C:/Users/dongw/AppData/Local/MiKTeX/fonts/map/
-pdftex/pdftex.map}] [2]
+pdftex/pdftex.map}]
+Overfull \hbox (6.32428pt too wide) in paragraph at lines 113--115
+[]\OT1/cmr/m/n/10.95 Project-advancement ca-pa-bil-ity con-verts the con-trol i
+nto the ex-pected mea-sure of vi-able planning-
+[2]
 
 LaTeX Warning: Reference `eq:p01-institutional-wedge' on page 3 undefined on in
-put line 145.
+put line 146.
 
 
 LaTeX Warning: Reference `eq:p01-planned-intensity' on page 3 undefined on inpu
-t line 151.
+t line 152.
 
 
 LaTeX Warning: Reference `eq:p01-project-draw' on page 3 undefined on input lin
-e 155.
+e 156.
 
 
 LaTeX Warning: Reference `eq:p01-route-domain' on page 3 undefined on input lin
-e 161.
+e 162.
 
 
 LaTeX Warning: Reference `eq:p01-downstream-probability' on page 3 undefined on
- input line 167.
+ input line 168.
 
 
 LaTeX Warning: Reference `eq:p01-anticipated-channel' on page 3 undefined on in
-put line 215.
+put line 216.
 
 
 LaTeX Warning: Reference `eq:p01-realization-channel' on page 3 undefined on in
-put line 216.
+put line 217.
 
-) (02_demand_profit_derivation.tex [3]
+[3]) (02_demand_profit_derivation.tex
 
 LaTeX Warning: Reference `eq:p02-price-foc' on page 4 undefined on input line 5
 4.
@@ -633,47 +629,43 @@ LaTeX Warning: Reference `eq:p02-price-foc' on page 4 undefined on input line 5
 LaTeX Warning: Reference `eq:p02-optimal-price' on page 4 undefined on input li
 ne 73.
 
-[4] [5]) (03_internal_external_technologies.tex [6]
-
-LaTeX Warning: Reference `tab:p03-local-crosswalk' on page 7 undefined on input
- line 121.
-
-) (04_route_values_and_sorting.tex [7] [8]
+[4] [5]) (03_internal_external_technologies.tex [6])
+(04_route_values_and_sorting.tex [7] [8]
 
 LaTeX Warning: Reference `eq:p04-gap-slope' on page 9 undefined on input line 1
-46.
-
-[9]
-
-LaTeX Warning: Reference `eq:p04-cutoff-sorting' on page 10 undefined on input
-line 193.
+45.
 
 
-LaTeX Warning: Reference `eq:p04-cutoff-derivatives' on page 10 undefined on in
-put line 193.
+LaTeX Warning: Reference `eq:p04-cutoff-sorting' on page 9 undefined on input l
+ine 207.
 
-) (05_rd_problem.tex [10] [11]) (06_cmo_supply_demand_equilibrium.tex [12]
-[13] [14]) (07_equilibrium_definition.tex [15]
+
+LaTeX Warning: Reference `eq:p04-cutoff-derivatives' on page 9 undefined on inp
+ut line 207.
+
+[9]) (05_rd_problem.tex [10] [11]) (06_cmo_supply_demand_equilibrium.tex
+[12] [13] [14]) (07_equilibrium_definition.tex [15]
 
 LaTeX Warning: Reference `eq:p07-route-optimality' on page 16 undefined on inpu
-t line 85.
+t line 86.
 
 
 LaTeX Warning: Reference `eq:p07-market-clearing' on page 16 undefined on input
- line 85.
+ line 86.
 
 ) (08_required_propositions.tex
 
 LaTeX Warning: Reference `eq:p08-sorting-slope' on page 16 undefined on input l
-ine 36.
+ine 37.
 
 [16] [17] [18] [19] [20]) (08_comparative_statics.tex [21] [22] [23] [24]
 
 LaTeX Warning: Reference `eq:p15-equilibrium-ift' on page 25 undefined on input
  line 291.
 
-[25] [26] [27]) (09_observed_outcomes.tex [28]) (10_empirical_mapping.tex
-[29] [30] [31]) (11_extensions_not_baseline.tex [32] [33]) [34]
+[25] [26]) (09_observed_outcomes.tex [27] [28]) (10_empirical_mapping.tex
+[29] [30] [31]) (11_extensions_not_baseline.tex [32] [33])
+(15_financing_commercialization_extension.tex [34]) [35]
 (D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
 uild_phase17\12_full_derivation_draft.aux)
 
@@ -688,25 +680,24 @@ Package rerunfilecheck Warning: File `12_full_derivation_draft.out' has changed
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
- ) <C:\Users\dongw\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1095.pk><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/ap
-plication/miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/application/mikt
-ex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/application/miktex/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><D:/application/miktex/fonts/type1/public/amsfon
-ts/cm/cmmi6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/applicatio
-n/miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><D:/application/miktex/fonts/type1/public/am
-sfonts/cm/cmr17.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr8.
-pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/applic
-ation/miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/application/miktex/f
-onts/type1/public/amsfonts/cm/cmsy6.pfb><D:/application/miktex/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/
-cmsy8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:/
-application/miktex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/application/mi
-ktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+ )
+(see the transcript file for additional information) <C:\Users\dongw\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><D:/application/mikte
+x/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/application/miktex/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb><D:/application/miktex/fonts/type1/public/amsfont
+s/cm/cmex10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/applicati
+on/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/application/miktex/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/applic
+ation/miktex/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/application/miktex/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1/pub
+lic/amsfonts/cm/cmsy6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:
+/application/miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
-l_rebuild\audit\build_phase17\12_full_derivation_draft.pdf (34 pages, 417340 by
+l_rebuild\audit\build_phase17\12_full_derivation_draft.pdf (35 pages, 397178 by
 tes).
 Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
 model_rebuild\audit\build_phase17\12_full_derivation_draft.log.
@@ -775,38 +766,41 @@ uild_phase17\12_full_derivation_draft.out)
 (D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
 uild_phase17\12_full_derivation_draft.toc [1{C:/Users/dongw/AppData/Local/MiKTe
 X/fonts/map/pdftex/pdftex.map}] [2]) (01_primitives_and_timing.tex [3] [4]
+Overfull \hbox (6.32428pt too wide) in paragraph at lines 113--115
+[]\OT1/cmr/m/n/10.95 Project-advancement ca-pa-bil-ity con-verts the con-trol i
+nto the ex-pected mea-sure of vi-able planning-
 [5]) (02_demand_profit_derivation.tex [6] [7])
 (03_internal_external_technologies.tex [8]) (04_route_values_and_sorting.tex
 [9] [10] [11]) (05_rd_problem.tex [12] [13])
 (06_cmo_supply_demand_equilibrium.tex [14] [15] [16])
 (07_equilibrium_definition.tex [17]) (08_required_propositions.tex [18]
 [19] [20] [21] [22] [23]) (08_comparative_statics.tex [24] [25] [26] [27]
-[28] [29]) (09_observed_outcomes.tex [30] [31]) (10_empirical_mapping.tex
-[32] [33]) (11_extensions_not_baseline.tex [34] [35]) [36]
+[28] [29]) (09_observed_outcomes.tex [30]) (10_empirical_mapping.tex [31]
+[32] [33]) (11_extensions_not_baseline.tex [34] [35])
+(15_financing_commercialization_extension.tex [36] [37]) [38]
 (D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
 uild_phase17\12_full_derivation_draft.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
- ) <C:\Users\dongw\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1095.pk><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/ap
-plication/miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/application/mikt
-ex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/application/miktex/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><D:/application/miktex/fonts/type1/public/amsfon
-ts/cm/cmmi6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/applicatio
-n/miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><D:/application/miktex/fonts/type1/public/am
-sfonts/cm/cmr17.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr8.
-pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/applic
-ation/miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/application/miktex/f
-onts/type1/public/amsfonts/cm/cmsy6.pfb><D:/application/miktex/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/
-cmsy8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:/
-application/miktex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/application/mi
-ktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+ )
+(see the transcript file for additional information) <C:\Users\dongw\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><D:/application/mikte
+x/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/application/miktex/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb><D:/application/miktex/fonts/type1/public/amsfont
+s/cm/cmex10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/applicati
+on/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/application/miktex/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/applic
+ation/miktex/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/application/miktex/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1/pub
+lic/amsfonts/cm/cmsy6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:
+/application/miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
-l_rebuild\audit\build_phase17\12_full_derivation_draft.pdf (36 pages, 481500 by
+l_rebuild\audit\build_phase17\12_full_derivation_draft.pdf (38 pages, 466106 by
 tes).
 Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
 model_rebuild\audit\build_phase17\12_full_derivation_draft.log.
@@ -875,35 +869,37 @@ uild_phase17\12_full_derivation_draft.out)
 (D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
 uild_phase17\12_full_derivation_draft.toc [1{C:/Users/dongw/AppData/Local/MiKTe
 X/fonts/map/pdftex/pdftex.map}] [2]) (01_primitives_and_timing.tex [3] [4]
+Overfull \hbox (6.32428pt too wide) in paragraph at lines 113--115
+[]\OT1/cmr/m/n/10.95 Project-advancement ca-pa-bil-ity con-verts the con-trol i
+nto the ex-pected mea-sure of vi-able planning-
 [5]) (02_demand_profit_derivation.tex [6] [7])
 (03_internal_external_technologies.tex [8]) (04_route_values_and_sorting.tex
 [9] [10] [11]) (05_rd_problem.tex [12] [13])
 (06_cmo_supply_demand_equilibrium.tex [14] [15] [16])
 (07_equilibrium_definition.tex [17]) (08_required_propositions.tex [18]
 [19] [20] [21] [22] [23]) (08_comparative_statics.tex [24] [25] [26] [27]
-[28] [29]) (09_observed_outcomes.tex [30] [31]) (10_empirical_mapping.tex
-[32] [33]) (11_extensions_not_baseline.tex [34] [35]) [36]
+[28] [29]) (09_observed_outcomes.tex [30]) (10_empirical_mapping.tex [31]
+[32] [33]) (11_extensions_not_baseline.tex [34] [35])
+(15_financing_commercialization_extension.tex [36] [37]) [38]
 (D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\model_rebuild\audit\b
-uild_phase17\12_full_derivation_draft.aux) ) <C:\Users\dongw\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><D:/application/miktex/fonts/
-type1/public/amsfonts/cm/cmbx10.pfb><D:/application/miktex/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cme
-x10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/ap
-plication/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/application/mikte
-x/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/application/miktex/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/
-cm/cmr10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><D
-:/application/miktex/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/application/m
-iktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/application/miktex/fonts/type
-1/public/amsfonts/cm/cmss10.pfb><D:/application/miktex/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy6.p
-fb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/applicat
-ion/miktex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/application/miktex/font
-s/type1/public/amsfonts/cm/cmti10.pfb><D:/application/miktex/fonts/type1/public
-/amsfonts/cm/cmtt10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb>
+uild_phase17\12_full_derivation_draft.aux) )
+(see the transcript file for additional information) <C:\Users\dongw\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><D:/application/mikte
+x/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/application/miktex/fonts/type1/
+public/amsfonts/cm/cmbx12.pfb><D:/application/miktex/fonts/type1/public/amsfont
+s/cm/cmex10.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/applicati
+on/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/application/miktex/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><D:/application/miktex/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/applic
+ation/miktex/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/application/miktex/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><D:/application/miktex/fonts/type1/pub
+lic/amsfonts/cm/cmsy6.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><D:/application/miktex/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:
+/application/miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\mode
-l_rebuild\audit\build_phase17\12_full_derivation_draft.pdf (36 pages, 481496 by
+l_rebuild\audit\build_phase17\12_full_derivation_draft.pdf (38 pages, 466096 by
 tes).
 Transcript written on D:\working_paper\DANNI_worktrees\mah-model-rebuild\paper\
 model_rebuild\audit\build_phase17\12_full_derivation_draft.log.

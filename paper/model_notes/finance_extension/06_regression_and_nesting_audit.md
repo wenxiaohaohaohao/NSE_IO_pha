@@ -1,4 +1,4 @@
-# Regression and Nesting Audit
+# Inactive Extension Regression and Nesting Audit
 
 Required limiting cases:
 
@@ -8,8 +8,8 @@ Required limiting cases:
 - \(J_E\to0\): extreme low-capital outsourcing boundary, not the baseline;
 - \(J_E\ge J_I\): no financing-relief advantage from entrusted production,
   although an organizational-value advantage can remain;
-- \(J_I\to\infty\) for low \(k_i\): limiting approximation to the retired
-  hard internal-infeasibility convention.
+- high \(J_I\) for low \(k_i\): an extension liquidity constraint, not a
+  baseline hard technology cutoff.
 
 Audit identities:
 
@@ -19,5 +19,5 @@ Audit identities:
 
 whenever \(\ell_i\ge\max\{J_I,J_E\}\) for all relevant pairs. In this limit,
 all route, advancement, CMO, and outcome equations reduce to the preceding
-commercialization baseline. No active source imports the superseded
+organizational baseline. No active source imports the superseded
 research--development/patent extension.
