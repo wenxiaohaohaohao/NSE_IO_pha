@@ -243,3 +243,6 @@ P1: P02 R_c + P03 technology + P04 crossing -> sorting. P2: P04 maxima -> positi
 - eq:p08-entrusted-outcome; parents and applicable assumptions follow the proposition chain above.
 - eq:p08-type-outcome; parents and applicable assumptions follow the proposition chain above.
 - eq:p08-outcome-decomposition; parents and applicable assumptions follow the proposition chain above.
+
+## Phase 9
+P09 hierarchy/anticipation/realized chain derive from Phase 1 timing, typed mixture from Phase 8, and identification boundary is a scope statement, not an extra equation solving primitives.

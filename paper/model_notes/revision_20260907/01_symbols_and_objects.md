@@ -195,3 +195,6 @@ Demand, product price, profit and operating present value are active through Pha
 No new economic object. The shorthand W_i^r denotes the Phase 4 route-indexed value (with W_i^T=W^T and W_i^A=W^A); it is an alias, not an extra payoff. Suppressed arguments are restored in the equilibrium definition.
 
 Phase 8 aliases: Omega_i^h=Omega_i(h,p), x_i^h=x_i*(h,p_m^h), r_i^{*,h}=r_i*(.;h,p_m^h). The index h is a regime label. [t]_+=max(t,0) and the auxiliary power h(t) are mathematical notation, not new economic objects. In the baseline typed outcome identity s_g(q)=s(q); optional distinct functions are not activated. This preserves the same realization kernel in route valuation and outcomes and ensures sum_g Y_ig=Y_i.
+
+## Phase 9
+No new object; reuse Phase 8 outcome definitions and s_g=s.
