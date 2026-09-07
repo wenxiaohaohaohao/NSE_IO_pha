@@ -20,7 +20,7 @@
 | 12 | APPROVED under historical specification | APPROVED | Yes — REV-EXEC-001 after zero-P0 gate |
 | 13 | APPROVED under historical specification | APPROVED | Yes — REV-EXEC-001 after zero-P0 gate |
 | 14 | APPROVED under historical specification | APPROVED | Yes — REV-EXEC-001 after zero-P0 gate |
-| 15 | APPROVED under historical specification | NOT STARTED | No |
+| 15 | APPROVED under historical specification | APPROVED | Yes — REV-EXEC-001 after zero-P0 gate |
 | 16 | APPROVED under historical specification | NOT STARTED | No |
 | 17 | APPROVED under historical specification | NOT STARTED | No |
 | 18 | APPROVED under historical specification | NOT STARTED | No |

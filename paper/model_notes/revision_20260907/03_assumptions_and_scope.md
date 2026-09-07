@@ -258,6 +258,14 @@ price is selected only by qualified-capacity market clearing. Supply
 technology, supplier heterogeneity and background demand are not shifted by
 policy. No entry, labor, capital, product-market or welfare market is closed.
 
+
+### D-CMO-05 — Additional regularity for local continuous comparative statics only
+
+At the examined positive equilibrium, require continuously differentiable aggregate demand and supply with finite derivatives. For the displayed differentiated aggregate integrals, assume the corresponding local difference quotients admit integrable envelopes, permitting interchange of derivative and integration. These are additional sufficient conditions for Phase 15 local derivative formulas, not necessary for the preceding finite policy comparisons or existence proof. Supplier differentiation then gives S_p=integral 1/Psi_ss>0; D_p<=0 follows from the previously derived monotonicity, so S_p-D_p>0. A merely strictly monotone aggregate would not itself imply a strictly nonzero derivative.
+
+All Phase 15 results otherwise use the four canonical blocks and guards; no binary M derivative or unconditional cross-market elasticity ranking is admissible.
+
+
 ## 2. Architecture guards (not assumptions)
 
 | ID | Binding restriction |

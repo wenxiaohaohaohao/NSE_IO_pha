@@ -1,0 +1,68 @@
+{
+  "interpretation": "mathematical derivative sanity check, not empirical calibration",
+  "cases": [
+    {
+      "supply_slope": 0.3,
+      "demand_shifter": 0,
+      "p": 1.3929694486000912,
+      "IFT": 0.8804509063256238,
+      "numeric": 0.8804509063264908
+    },
+    {
+      "supply_slope": 0.3,
+      "demand_shifter": 0.5,
+      "p": 1.79128784747792,
+      "IFT": 0.727392967453308,
+      "numeric": 0.7273929674589396
+    },
+    {
+      "supply_slope": 0.3,
+      "demand_shifter": 2,
+      "p": 2.7015621187164243,
+      "IFT": 0.5205792062953536,
+      "numeric": 0.5205792062978887
+    },
+    {
+      "supply_slope": 1,
+      "demand_shifter": 0,
+      "p": 0.6180339887498949,
+      "IFT": 0.4472135954999579,
+      "numeric": 0.447213595500262
+    },
+    {
+      "supply_slope": 1,
+      "demand_shifter": 0.5,
+      "p": 0.8228756555322954,
+      "IFT": 0.3779644730092272,
+      "numeric": 0.3779644730195208
+    },
+    {
+      "supply_slope": 1,
+      "demand_shifter": 2,
+      "p": 1.3027756377319946,
+      "IFT": 0.2773500981126146,
+      "numeric": 0.27735009811014066
+    },
+    {
+      "supply_slope": 3,
+      "demand_shifter": 0,
+      "p": 0.26376261582597327,
+      "IFT": 0.2182178902359924,
+      "numeric": 0.2182178902299103
+    },
+    {
+      "supply_slope": 3,
+      "demand_shifter": 0.5,
+      "p": 0.3660254037844386,
+      "IFT": 0.19245008972987526,
+      "numeric": 0.19245008973101105
+    },
+    {
+      "supply_slope": 3,
+      "demand_shifter": 2,
+      "p": 0.6180339887498949,
+      "IFT": 0.14907119849998599,
+      "numeric": 0.14907119849638661
+    }
+  ]
+}

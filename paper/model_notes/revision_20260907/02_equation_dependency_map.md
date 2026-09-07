@@ -505,3 +505,27 @@ No-tie plus explicit integrable envelopes, not mere continuous heterogeneity, ju
 
 ## Phase 14 assumptions reconciled
 All theorem edges now use the four canonical blocks and separate architecture guards. The realization level s enters W then Omega,x; only a direct policy shift of s is forbidden. No edge or economic mechanism is removed by assumption consolidation.
+
+## Phase 15 comparative-static ledger
+
+P02 optimal pricing/PV -> conditional return derivatives; P04 gap/crossing -> cutoff derivatives; P05 optimizer -> advancement partials; P06 envelope -> price response; P06 supplier/aggregate equations plus D-CMO-05 -> continuous non-policy equilibrium IFT; P08 finite price ordering -> value/advancement bounds; P08/P09 outcome identities -> planning/retained finite differences. Mandatory limits evaluate these same equations.
+- eq:p15-price-profit-derivatives; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-return-derivatives; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-gap-capability; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-cutoff-derivatives; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-fixed-project-gain; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-advancement-partials; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-advancement-price; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-fixed-advancement-gain; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-supplier-partials; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-study-demand-slope; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-equilibrium-ift; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-equilibrium-price-order; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-value-attenuation; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-advancement-attenuation; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-planning-change; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-retained-outcome-change; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-infinite-price-boundary; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-zero-advantage-boundary; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-quadratic-boundary; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
+- eq:p15-novelty-boundary; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.

@@ -214,3 +214,6 @@ No new economic object; Z is the Phase 8 excess-demand proof device. The candida
 
 ## Phase 14
 No new economic object; four canonical assumption blocks replace phase appendices, retaining all old IDs as aliases.
+
+## Phase 15 derivative notation
+No new baseline economic object. dD_m and dS_m denote direct changes of the already-defined demand and supply functions at fixed price (capacity units), distinct from their total changes along equilibrium. dp_m* is the resulting price change. Z without regime subscript is the fixed-regime excess-demand function from Phase 8. Delta Lambda is the finite difference of the existing planned-arrival object. Partial derivatives and elasticities do not create additional controls.

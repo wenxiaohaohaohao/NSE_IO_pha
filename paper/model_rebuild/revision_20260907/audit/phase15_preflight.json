@@ -1,0 +1,17 @@
+{
+  "head": "0612429e30be122ea9bc1d87c51334368ecb953f",
+  "tracking_remote": "0612429e30be122ea9bc1d87c51334368ecb953f",
+  "prior": "APPROVED and pushed",
+  "hashes": "PASS",
+  "authority": "REV-EXEC-001",
+  "ledgers": {
+    "03_assumptions_and_scope.md": "d7bae7fa7aa3c0da6584a8ff03956df6f578b39caa515b246bd8feca70c4f803",
+    "01_symbols_and_objects.md": "f516974eac85fabd3a3311262b72a4bb5394ed4499fb8996f679701567f2b2cd",
+    "06_open_issues_log.md": "b39d090f4902a1cde5490b894bfdcac0d0cfb36ac193ee2c2d87a23013b8587d",
+    "05_old_to_new_model_crosswalk.md": "219074d2f8d9c00ba5567900ef0389e7529edf69f473bea11334179cf37b547a",
+    "04_proposition_checklist.md": "10ef140fa0f4f473b97993c02850602d8388f2295ba66e07f28befebc70e5e31",
+    "00_model_closure_status.md": "32b49f88a25b1a67667d9c610684d07888b4444aa59c658766a0b8ea0f98fddc",
+    "02_equation_dependency_map.md": "e56806b04f9a753a33e7ee7f2768516517a8b247c902566ef12c8ad80c834ec3",
+    "phase03_technology_crosswalk.md": "f870b01ca166ab2306ea1f90910851ac9134ee025c882d036be690f3f6d66e34"
+  }
+}
