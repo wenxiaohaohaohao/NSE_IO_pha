@@ -208,3 +208,6 @@ U_ir: random extension route utility, currency/project. W_ir: alias of determini
 
 ## Phase 12
 No active economic object added; legacy symbols occur only in the crosswalk.
+
+## Phase 13
+No new economic object; Z is the Phase 8 excess-demand proof device. The candidate price is an input, not an unresolved additional state.

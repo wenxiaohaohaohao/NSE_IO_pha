@@ -1,0 +1,60 @@
+{
+  "conditional_graph": {
+    "demand": [],
+    "price": [
+      "demand"
+    ],
+    "profit": [
+      "price",
+      "demand"
+    ],
+    "R": [
+      "profit"
+    ],
+    "WI": [
+      "R"
+    ],
+    "WE": [
+      "R"
+    ],
+    "outside": [],
+    "route": [
+      "WI",
+      "WE",
+      "outside"
+    ],
+    "W": [
+      "WI",
+      "WE",
+      "outside"
+    ],
+    "Omega": [
+      "W"
+    ],
+    "x": [
+      "Omega"
+    ],
+    "chi": [
+      "route"
+    ],
+    "study_demand": [
+      "x",
+      "chi"
+    ],
+    "D": [
+      "study_demand"
+    ],
+    "supplier": [],
+    "S": [
+      "supplier"
+    ],
+    "Z": [
+      "D",
+      "S"
+    ]
+  },
+  "acyclic": true,
+  "fixed_point": "p -> WE -> route/W/Omega/x/chi -> D; p -> supplier -> S; Z(p)=0 -> p*",
+  "catalog_rows": 89,
+  "all_catalog_rows_have_semantic_parents": true
+}

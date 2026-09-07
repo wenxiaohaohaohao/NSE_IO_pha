@@ -1,0 +1,27 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{MAH: note + amendment v1.1}
+\fancyhead[R]{Phase 13 revision audit}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{2em}
+\begin{document}
+\section*{Phase 13: Equation Dependency Audit}
+The equation catalog matches every active labeled baseline equation to its
+source file, line and semantic dependency row. Conditional on a candidate
+capacity price, the evaluation graph is acyclic. The one intentional feedback
+is resolved by the scalar market-clearing condition:
+\[
+p_m\longrightarrow (W_E,r_i^*,\Omega_i,x_i^*,D_m),\qquad
+p_m\longrightarrow S_m,\qquad D_m(p_m)-S_m(p_m)=0.
+\]
+The endogenous root feeds back to all price-conditioned choices. Neither
+extension-only equations nor unapproved later modules enter this graph.
+\end{document}

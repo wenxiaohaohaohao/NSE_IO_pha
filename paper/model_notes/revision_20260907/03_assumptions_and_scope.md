@@ -257,3 +257,6 @@ The iid Type-I EV assumption with scale sigma is used solely to derive the inact
 
 ## Phase 12
 No new assumption; historical text has evidence status only and cannot override current note+v1.1.
+
+## Phase 13
+No new economic assumption; domain and integrability qualifications are attached to graph edges and refer to current approved blocks.
