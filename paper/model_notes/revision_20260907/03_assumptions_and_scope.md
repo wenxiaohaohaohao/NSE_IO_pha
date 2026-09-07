@@ -234,3 +234,6 @@ A-P06-AGG-01: E_F b<infinity; the Phase 5 W envelope applies. At each candidate 
 A-P06-BACKGROUND-01: D_B is finite continuous nonnegative nonincreasing, D_B(0)>0, and tends to zero at infinity. It belongs to the background cohort and is invariant to M.
 A-P06-CLOSURE-01: price taking, one CMO capacity market, invariant supply technology and distributions.
 Used: supplier FOC/IFT and aggregate supply use SUPPLY01; envelopes and aggregate continuity use AGG01 and Phase 4 no-tie; existence boundaries use BACKGROUND01; uniqueness follows from derived slopes.
+
+## Phase 7 assumptions
+No new assumption: route optimality uses Phase 4, advancement uses Phase 5, supplier optimality and scalar market existence/uniqueness use Phase 6. All four conditions are evaluated at the same regime and consistent price.

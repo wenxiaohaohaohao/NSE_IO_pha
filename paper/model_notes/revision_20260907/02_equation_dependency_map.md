@@ -218,3 +218,6 @@ Candidate p -> P04 routes and W -> P05 Omega and x -> chi and study demand; Psi,
 - eq:p06-total-demand; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
 - eq:p06-market-clearing; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
 - eq:p06-existence-boundaries; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
+
+## Phase 7 equilibrium ledger
+The collection eq:p07-equilibrium-collection contains only p*,x*,r*,s*. Route optimality eq:p07-route-optimality cites the Phase 4 indexed payoffs; advancement eq:p07-advancement-optimality is the Phase 5 optimizer at p*; capacity eq:p07-capacity-optimality is the Phase 6 optimizer; eq:p07-market-clearing uses the Phase 6 unique root. No additional unknown or market.

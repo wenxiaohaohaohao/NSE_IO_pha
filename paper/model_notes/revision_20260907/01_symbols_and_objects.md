@@ -170,3 +170,6 @@ Patent history may later proxy predetermined $a_i$; it is not equal to $x_i$ or 
 ## 7. Reserved names requiring future updates
 
 Demand, product price, profit and operating present value are active through Phase 2. Manufacturing-cost functions are active through Phase 3; route payoffs, C_X, CMO capacity and its aggregates remain reserved for their phases. The symbol t=0,1,... indexes operating periods and is a syntactic index, not a state. The scalar demand shifter A is distinct by context from the categorical abandonment-route label A. No new decision variable is introduced by either notation.
+
+## Phase 7 registry check
+No new economic object. The shorthand W_i^r denotes the Phase 4 route-indexed value (with W_i^T=W^T and W_i^A=W^A); it is an alias, not an extra payoff. Suppressed arguments are restored in the equilibrium definition.
