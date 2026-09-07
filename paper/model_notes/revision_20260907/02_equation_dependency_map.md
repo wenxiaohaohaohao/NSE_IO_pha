@@ -221,3 +221,25 @@ Candidate p -> P04 routes and W -> P05 Omega and x -> chi and study demand; Psi,
 
 ## Phase 7 equilibrium ledger
 The collection eq:p07-equilibrium-collection contains only p*,x*,r*,s*. Route optimality eq:p07-route-optimality cites the Phase 4 indexed payoffs; advancement eq:p07-advancement-optimality is the Phase 5 optimizer at p*; capacity eq:p07-capacity-optimality is the Phase 6 optimizer; eq:p07-market-clearing uses the Phase 6 unique root. No additional unknown or market.
+
+## Phase 8 theorem dependencies
+
+P1: P02 R_c + P03 technology + P04 crossing -> sorting. P2: P04 maxima -> positive-part gain -> relevant set. P3: P2 + P05 -> finite DeltaOmega,Delta x; additional nu>=1 -> k sign. Corollary: P01 mixture + P2. P4: P06 best responses/aggregation -> excess demand root. P5: P4 + invariant old options -> price order -> value bounds -> advancement bounds. P6: common x + route indicators + invariant s -> outcomes and exact decomposition.
+- eq:p08-sorting-slope; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-old-new-values; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-positive-part-gain; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-relevant-set; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-expected-gain; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-advancement-change; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-capability-response; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-manufacturing-response; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-class-gain; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-excess-demand; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-price-order; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-scarcity-value-bounds; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-scarcity-advancement-bounds; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-planning-arrival; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-retained-outcome; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-entrusted-outcome; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-type-outcome; parents and applicable assumptions follow the proposition chain above.
+- eq:p08-outcome-decomposition; parents and applicable assumptions follow the proposition chain above.

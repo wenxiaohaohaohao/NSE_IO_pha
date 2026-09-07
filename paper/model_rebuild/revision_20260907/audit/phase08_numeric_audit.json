@@ -1,0 +1,460 @@
+{
+  "parameter_cases": [
+    {
+      "nu": 1,
+      "u": 0,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 0,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 0,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 0,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 0.1,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 0.1,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 0.1,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 0.1,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 1,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 1,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 1,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 1,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 10,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 10,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 10,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1,
+      "u": 10,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 0,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 0,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 0,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 0,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 0.1,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 0.1,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 0.1,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 0.1,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 1,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 1,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 1,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 1,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 10,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 10,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 10,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 1.5,
+      "u": 10,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 0,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 0,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 0,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 0,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 0.1,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 0.1,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 0.1,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 0.1,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 1,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 1,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 1,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 1,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 10,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 10,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 10,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 2,
+      "u": 10,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 0,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 0,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 0,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 0,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 0.1,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 0.1,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 0.1,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 0.1,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 1,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 1,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 1,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 1,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 10,
+      "d": 0,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 10,
+      "d": 0.1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 10,
+      "d": 1,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    },
+    {
+      "nu": 4,
+      "u": 10,
+      "d": 10,
+      "decreasing_k_sufficient": true,
+      "attenuation": true
+    }
+  ],
+  "nu_lt_one_no_general_sign_counterexample": {
+    "u0": 1,
+    "u1": 3,
+    "d0": 1,
+    "d1": 0.9,
+    "nu": 0.5
+  },
+  "outcome_decomposition_cases": 4
+}

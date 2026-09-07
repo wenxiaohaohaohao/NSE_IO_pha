@@ -237,3 +237,11 @@ Used: supplier FOC/IFT and aggregate supply use SUPPLY01; envelopes and aggregat
 
 ## Phase 7 assumptions
 No new assumption: route optimality uses Phase 4, advancement uses Phase 5, supplier optimality and scalar market existence/uniqueness use Phase 6. All four conditions are evaluated at the same regime and consistent price.
+
+## Phase 8 proposition-specific conditions
+
+A-P08-HET-01: nu>=1 is sufficient only for the weakly decreasing manufacturing-capability response in Proposition 3; all other advancement monotonicity and scarcity bounds allow nu>0. Strict concavity attenuation from a larger baseline value additionally needs positive reform surplus and nu>1.
+A-P08-OBS-01: typed baseline outcomes use s_g(q)=s(q) and the Phase 1 mixture; no separate realization function is activated. Conditional class differences can arise through F_g. A zero direct gain in one class does not alone imply a zero outcome response with common x.
+Proposition assumptions: P1=P02 return signs,P03 technology,P04 crossing; P2=P04 max/invariant old options; P3=P05 optimization/integrability and additionally P03+HET01 for k sorting; corollary=P01 mixture; P4=P06 supplier/background/envelope and P04 no-tie; P5=P4 plus invariant supply/background and P04 nonnegative new option; P6=P01 timing/mixture, P04 route choice,P05 integrability,OBS01. No desired conclusion is introduced as an assumption.
+
+For the global k comparison in Proposition 3 including k=kbar(m), feasible costs are right-continuous at that endpoint. This closes the boundary value/limit link; strict derivatives remain interior only. Comparisons confined to the open feasible domain do not need this additional endpoint condition.

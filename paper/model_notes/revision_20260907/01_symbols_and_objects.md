@@ -110,7 +110,27 @@ One decision cohort is the project-planning time unit. Phase 2 measures demand a
 | $D_m^B(p_m)$ | aggregate/distributional primitive | exogenous background qualified-capacity demand outside the modeled study cohort | $\mathsf{B}$ per decision cohort | Phase 6 | No direct policy shift |
 | $D_m(p_m;M)$ | endogenous firm-level object | total market demand, equal to background plus study-related demand | $\mathsf{B}$ per decision cohort | Phase 6 | Indirect through the study component |
 
-There are 66 active rows.
+| $W_i^0(q,m)$ | endogenous route-level object | optimized value from the old route set $\{I,T,A\}$ | $\mathsf{C}/\mathsf{P}$ | Phase 8 Proposition 2 | No direct MAH input |
+| $W_i^1(q,m;p_m)$ | endogenous route-level object | post-MAH optimized value after adding retained entrusted route $E$ at support price $p_m$ | $\mathsf{C}/\mathsf{P}$ | Phase 8 Proposition 2 | Indirect through $W_i^E$ |
+| $\mathcal C_i(p_m)$ | endogenous route-level object | set of project draws receiving a strict fixed-price gain from access to $E$ | subset of project support | Phase 8 Proposition 2 | Defined by the entrusted-value comparison |
+| $\Delta\Omega_i(p_m)$ | endogenous firm-level object | expected fixed-price project-value gain from adding route $E$ | $\mathsf{C}/\mathsf{P}$ | Phase 8 Proposition 3 | Indirect through $W_i^E$ |
+| $\Omega_{ig}^h(p_m)$ | endogenous firm-level object | conditional expected optimized project value for class $g$ in regime $h\in\{0,1\}$ | $\mathsf{C}/\mathsf{P}$ | Phase 8 corollary | Indirect through $W_i^E$ when $h=1$ |
+| $\Delta\Omega_{ig}(p_m)$ | endogenous firm-level object | class-conditional fixed-price project-value gain | $\mathsf{C}/\mathsf{P}$ | Phase 8 corollary | Indirect through $W_i^E$ |
+| $p_m^0$ | equilibrium price | pre-MAH/background-market equilibrium CMO price, equal to $p_m^*(0)$ | $\mathsf{C}/\mathsf{B}$ | Phase 8 Proposition 5 | Equilibrium outcome; no direct shift |
+| $p_m^1$ | equilibrium price | post-MAH equilibrium CMO price, equal to $p_m^*(1)$ | $\mathsf{C}/\mathsf{B}$ | Phase 8 Proposition 5 | Equilibrium outcome; no direct shift |
+| $\Delta\Omega_i^{\mathrm{dir}}$ | endogenous firm-level object | fixed-price reform value gain evaluated at $p_m^0$ | $\mathsf{C}/\mathsf{P}$ | Phase 8 Proposition 5 | Indirect through route $E$ |
+| $\Delta\Omega_i^{\mathrm{eq}}$ | endogenous firm-level object | equilibrium-price reform value gain evaluated at $p_m^1$ | $\mathsf{C}/\mathsf{P}$ | Phase 8 Proposition 5 | Includes the endogenous scarcity-price response |
+| $\Delta x_i^{\mathrm{dir}}$ | endogenous firm-level object | advancement response implied by the fixed-price value gain | $\mathsf{X}$ | Phase 8 Proposition 5 | Only through $\Delta\Omega_i^{\mathrm{dir}}$ |
+| $\Delta x_i^{\mathrm{eq}}$ | endogenous firm-level object | advancement response implied by the equilibrium-price value gain | $\mathsf{X}$ | Phase 8 Proposition 5 | Only through $\Delta\Omega_i^{\mathrm{eq}}$ |
+| $\Lambda_i^{\mathrm{plan}}$ | endogenous firm-level object | equilibrium arrival intensity of viable projects at the commercialization-relevant planning stage, $a_ix_i^*$ | $\mathsf{P}$ per decision cohort | Phase 8 Proposition 6 | Indirect only through $x_i^*$ |
+| $Y_i^{\mathrm{ret}}$ | derived observed outcome | expected realized retained-holder products using route $I$ or $E$ | $\mathsf{P}$ per decision cohort | Phase 8 Proposition 6 | Indirect through advancement and route choice |
+| $Y_i^E$ | derived observed outcome | expected realized products with retained holder--producer separation | $\mathsf{P}$ per decision cohort | Phase 8 Proposition 6 | Indirect through advancement and route $E$ |
+| $Y_{ig}^{\mathrm{ret}}$ | derived observed outcome | class-$g$ contribution to expected realized retained-holder products under common $x_i^*$ | $\mathsf{P}$ per decision cohort | Phase 8 Proposition 6 | Indirect through common advancement and route choice |
+| $Q_i^{\mathrm{ret},h}$ | endogenous firm-level object | regime-$h$ expected realization rate per planning-stage project on retained routes | unit $1$ | Phase 8 Proposition 6 decomposition | Indirect through route choice; $s$ is policy invariant |
+| $Z_M(p_m)$ | endogenous firm-level object | aggregate excess capacity demand D_m-S_m | capacity per cohort | Phase 8 Proposition 4 | Indirect through study demand |
+| $\Delta x_i(p_m)$ | endogenous firm-level object | fixed-price common advancement difference between regimes | advancement input | Phase 8 Proposition 3 | Through expected value |
+
+There are 85 active rows.
 
 Registry convention: market aggregates formed from firm choices retain the required endogenous firm-level object category; the definition explicitly identifies their aggregate status. This creates no additional category. Supplier s_j is distinct from realization probability s(q); the indicator 1{...} is mathematical notation. Each has one and only one exact category.
 
@@ -173,3 +193,5 @@ Demand, product price, profit and operating present value are active through Pha
 
 ## Phase 7 registry check
 No new economic object. The shorthand W_i^r denotes the Phase 4 route-indexed value (with W_i^T=W^T and W_i^A=W^A); it is an alias, not an extra payoff. Suppressed arguments are restored in the equilibrium definition.
+
+Phase 8 aliases: Omega_i^h=Omega_i(h,p), x_i^h=x_i*(h,p_m^h), r_i^{*,h}=r_i*(.;h,p_m^h). The index h is a regime label. [t]_+=max(t,0) and the auxiliary power h(t) are mathematical notation, not new economic objects. In the baseline typed outcome identity s_g(q)=s(q); optional distinct functions are not activated. This preserves the same realization kernel in route valuation and outcomes and ensures sum_g Y_ig=Y_i.
