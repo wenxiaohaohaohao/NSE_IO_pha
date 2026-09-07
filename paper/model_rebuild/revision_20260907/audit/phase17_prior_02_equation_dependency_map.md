@@ -499,7 +499,7 @@ Before any later Phase writes a formula, it must:
 
 ## Current revision qualifications
 
-Equation rows are reconciled against the current source catalog; the approved current Phase 15 ledger is included below. Timing arrows that have no current equation label remain prose graph nodes rather than fictitious labeled equations.
+Equation rows are reconciled against the current source catalog; historical Phase 15 rows are excluded until that phase. Timing arrows that have no current equation label remain prose graph nodes rather than fictitious labeled equations.
 
 No-tie plus explicit integrable envelopes, not mere continuous heterogeneity, justify aggregation. Finite-wedge and feasible-interior domains apply to gap derivatives; exact endpoint comparisons in Proposition 3 add right continuity. s_g=s in typed baseline outcomes. Supplier cross derivative is strictly negative only for positive capacity. Positive reform surplus is required for the strict concavity-based k result. The input conditional p is a graph parameter; solving D(p)-S(p)=0 yields p*, whose feedback is the one intentional fixed point. The remaining conditional evaluation graph is acyclic.
 
@@ -529,7 +529,3 @@ P02 optimal pricing/PV -> conditional return derivatives; P04 gap/crossing -> cu
 - eq:p15-zero-advantage-boundary; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
 - eq:p15-quadratic-boundary; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
 - eq:p15-novelty-boundary; conditional, finite or limiting status and held-fixed objects are stated in its subsection; parents follow the preceding chain.
-
-
-## Phase 17 complete source catalog
-All current baseline and extension equation locations, including Phase 15 and the candidate namespace, are recorded separately in audit/phase17_equation_catalog.csv. No extension equation is referenced by any baseline module. Source modules are included directly by full draft and appendix; candidate p16m labels constitute a distinct main-text namespace.

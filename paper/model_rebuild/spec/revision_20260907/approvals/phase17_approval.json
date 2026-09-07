@@ -1,0 +1,24 @@
+{
+  "phase": 17,
+  "status": "APPROVED",
+  "authority": "REV-EXEC-001",
+  "gate": "paper/model_rebuild/revision_20260907/audit/phase17_gate_report.md",
+  "gate_sha256": "dec3a6280b1cdbee4dca6aee917f10af8cb9b311ee75f738625472ff7dcbd640",
+  "deliverables": {
+    "paper/model_rebuild/revision_20260907/03_internal_external_technologies.tex": "f9aac7d5fef1d1153785ef3f65476c93944c001160e638410b11fa6479175d79",
+    "paper/model_rebuild/revision_20260907/01_primitives_and_timing.tex": "85442eb246e060178e8c74ade9b11015b1bc37f7ed8873b6e1c7ddd8e20de3b9",
+    "paper/model_rebuild/revision_20260907/14_appendix_model_candidate.tex": "aeea78f1f39864527b6a15a1cdbac386908ca5f6d0f2cc781e30470dc44f2c34",
+    "paper/model_rebuild/revision_20260907/13_main_text_model_candidate.tex": "f03eafeab5508ea848e044249d210f82c6f95c85ed7493a8d4e1878f2b59c616",
+    "paper/model_rebuild/revision_20260907/12_full_derivation_draft.tex": "6bf4ea8c02f63342d726c2d9efbb46f7b542f192b5cf420ca76bc054db4b8d8f",
+    "paper/model_rebuild/revision_20260907/08_comparative_statics.tex": "98ddecfc49c6820bfab5e7d240eaffaf261f0b645992aea48e30191b551268ea",
+    "paper/model_rebuild/revision_20260907/11_extensions_not_baseline.tex": "b2ad28e24fe5b3e0fa9033365fd2f01291c5505e2a00dc7b518b13f069563d30",
+    "paper/model_rebuild/revision_20260907/05_rd_problem.tex": "77f63f9627a4f4b9117ac23a1e9d2bd5bbcebd87f374ac90a22232b042f120b8",
+    "paper/model_rebuild/revision_20260907/06_cmo_supply_demand_equilibrium.tex": "22097b5d8a6ad23eb91f1df958d1ec2b7e093ddd3b66a34196da0d60541a8e94",
+    "paper/model_rebuild/revision_20260907/04_route_values_and_sorting.tex": "8ecadb0ed951d2a71b9255df9eb93b4a82047cc7d7981daec7877ca1964692bd",
+    "paper/model_rebuild/revision_20260907/09_observed_outcomes.tex": "40c56959ee3c8e8e20e7fa71fa4cad0509b13b7af8ba0fe5a7ab6a4e28b819fa",
+    "paper/model_rebuild/revision_20260907/02_demand_profit_derivation.tex": "45ea2265cf0af31a37ebaa198367a21481821fd537f5902dc6da6475b6e0e909",
+    "paper/model_rebuild/revision_20260907/07_equilibrium_definition.tex": "b64e5d3751a1c408826972a6624d3c53b873ff0ccd4e100be537de389ba3dfde",
+    "paper/model_rebuild/revision_20260907/08_required_propositions.tex": "0c4dea1340d063f4571b0511c4407f65836e11c1c3d2ec1d4ecb4c09648cd789",
+    "paper/model_rebuild/revision_20260907/10_empirical_mapping.tex": "e990cb2f9fed31b4d8a0370b6ae3a99c7f151d6db32161de424044ce87c6e51a"
+  }
+}

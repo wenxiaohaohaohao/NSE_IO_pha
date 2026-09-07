@@ -1,7 +1,7 @@
 <!-- Inherited from Phase 1 commit 7c7dad4; current revision only, historical files unchanged. -->
 # 01 Symbols and Objects
 
-Phase status: `PHASES 1–16 APPROVED; PHASE 17 CONSISTENCY AUDIT`  
+Phase status: `PHASE 1 REVISION - APPROVED; PHASE 2 REVISION - APPROVED`  
 Controlling specification: `paper/model_rebuild/spec/revision_20260907/MAH_model_rebuild_effective_spec_note_v1.1.md`  
 Effective-spec SHA256: `4bf28d2d0199496b831610b133753111bf1e11f049db1aa07223ad479d8871d5`
 
@@ -35,7 +35,7 @@ Subscripts $i,j$ and route labels $I,E,T,A$ are syntactic labels rather than sep
 
 One decision cohort is the project-planning time unit. Phase 2 measures demand and profit over one operating period of normalized length one; a period profit is a monetary amount, not an instantaneous rate summed without a time interval. The demand scale A has units C^epsilon Y^(1-epsilon) for that period.
 
-## 3. Active baseline object registry through Phase 16
+## 3. Active object registry through Phase 2
 
 | Symbol | Exact category | Definition | Domain / units | First formal use | Direct MAH shift? |
 |---|---|---|---|---|---|
@@ -187,9 +187,9 @@ The following are not baseline endogenous objects:
 
 Patent history may later proxy predetermined $a_i$; it is not equal to $x_i$ or $\lambda_i^{\mathrm{plan}}$.
 
-## 7. Activation history and notation conventions
+## 7. Reserved names requiring future updates
 
-All baseline objects in the registry have now been activated in their recorded phases. Demand/pricing began in Phase 2, manufacturing technology in Phase 3, route values in Phase 4, advancement in Phase 5 and CMO capacity/aggregates in Phase 6. The extension registry below remains inactive. The symbol t=0,1,... indexes operating periods and is a syntactic index, not a state. The scalar demand shifter A is distinct by context from the categorical abandonment-route label A. No new decision variable is introduced by either notation.
+Demand, product price, profit and operating present value are active through Phase 2. Manufacturing-cost functions are active through Phase 3; route payoffs, C_X, CMO capacity and its aggregates remain reserved for their phases. The symbol t=0,1,... indexes operating periods and is a syntactic index, not a state. The scalar demand shifter A is distinct by context from the categorical abandonment-route label A. No new decision variable is introduced by either notation.
 
 ## Phase 7 registry check
 No new economic object. The shorthand W_i^r denotes the Phase 4 route-indexed value (with W_i^T=W^T and W_i^A=W^A); it is an alias, not an extra payoff. Suppressed arguments are restored in the equilibrium definition.
