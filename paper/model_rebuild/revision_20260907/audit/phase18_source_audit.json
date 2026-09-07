@@ -1,0 +1,18 @@
+{
+  "mah_route_indicator_friction_model.tex": {
+    "labels_unique": true,
+    "refs_resolved": true,
+    "label_count": 26,
+    "no_expanded_control": true,
+    "no_eta_Gamma": true,
+    "citation_keys_present": true
+  },
+  "mah_route_indicator_friction_model_appendix.tex": {
+    "labels_unique": true,
+    "refs_resolved": true,
+    "label_count": 190,
+    "no_expanded_control": true,
+    "no_eta_Gamma": true,
+    "citation_keys_present": true
+  }
+}

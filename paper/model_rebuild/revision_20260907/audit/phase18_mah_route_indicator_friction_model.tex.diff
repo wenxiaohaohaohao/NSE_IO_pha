@@ -1,0 +1,185 @@
+--- September1/mah_route_indicator_friction_model.tex
++++ note_v1.1/mah_route_indicator_friction_model.tex
+@@ -44,20 +44,22 @@
+ This paper develops a partial-equilibrium mechanism model of how China's
+ Marketing Authorization Holder (MAH) system changes the value of advancing
+ viable drug projects and their commercialization organization. Developers
+-choose one common original-drug innovation investment / project-advancement
++choose one common project-development / advancement
+ intensity before project characteristics and organizational routes are
+ realized. MAH makes retained entrusted manufacturing legally available
+ through one institutional wedge, while route choice remains deterministic and
+ the developer retains authorization-holder responsibility. Internal and
+ entrusted production are derived from distinct technologies, and the price of
+-qualified manufacturing services is endogenous. Reform effects are confined
+-to project--developer pairs for which the new route improves on the best old
+-option and can be attenuated by service scarcity. The baseline does not treat
++qualified manufacturing services is endogenous. Direct route-value gains occur
++for project--developer pairs where the new route improves on the best old
++option. These gains raise common advancement and can be attenuated by service
++scarcity; common advancement may also raise outcomes in a class with no
++direct route-value gain. The baseline does not treat
+ MAH as a demand, scientific-productivity, downstream-success, or patenting
+ shock, and it imposes no original-versus-incremental response ranking.
+ \end{abstract}
+ 
+-\noindent\textit{Keywords:} MAH; original-drug innovation; commercialization frictions; entrusted production; route choice.\\
++\noindent\textit{Keywords:} MAH; project development; commercialization frictions; entrusted production; route choice.\\
+ \noindent\textit{JEL codes:} D22; L65; O31; O38; I18.
+ 
+ \section{Introduction}
+@@ -199,9 +201,9 @@
+ qualified external producer manufactures. Thus \(E\) is not transfer.
+ 
+ Before project characteristics and routes are realized, developer \(i\)
+-chooses one common \(x_i\geq0\), interpreted as original-drug innovation
+-investment / project-advancement intensity. It is broader than pure clinical
+-development, but excludes basic research, compound discovery,
++chooses one common \(x_i\geq0\), interpreted as project-development / advancement intensity. It advances viable
++drug projects toward commercialization-relevant route planning and excludes
++basic research, compound discovery,
+ patent-generating effort, and patent applications. The expected measure of
+ viable projects reaching route planning is
+ \begin{equation}
+@@ -247,13 +249,15 @@
+ \(c_{I,m}>0\) and \(c_{I,k}<0\), and setup cost \(F_I(m,k_i)\), with
+ \(F_{I,m}>0\) and \(F_{I,k}<0\) on the feasible domain. Internal production
+ is unavailable when \(k_i<\underline{k}(m)\), represented by
+-\(F_I(m,k_i)=+\infty\). Its route value is
++\(F_I(m,k_i)=+\infty\). On the feasible domain its route value is
+ \begin{equation}
+   W_i^I(q,m)
+   =
+   s(q)R\!\left(q,c_I(m,k_i)\right)-F_I(m,k_i).
+   \label{eq:p16m-internal}
+ \end{equation}
++Below the feasibility threshold define \(W_i^I=-\infty\) directly;
++\(c_I\) need not be defined there. Cost derivatives apply only to the feasible interior.
+ 
+ Entrusted production uses external marginal cost \(c_E(m)\), requires
+ \(b(m)>0\) units of qualified capacity with \(b'(m)>0\), incurs setup cost
+@@ -268,7 +272,9 @@
+   \end{aligned}
+   \label{eq:p16m-entrusted}
+ \end{equation}
+-Each monetary cost enters once. The transfer and abandonment values are
++Both marginal costs are strictly positive on their domains; setup costs are
++nonnegative when finite. The capacity payment \(p_mb(m)\) is excluded from
++\(c_E\) and \(R\). Each monetary cost enters once. The transfer and abandonment values are
+ \begin{equation}
+   W^T(q,m)=T(q,m),
+   \qquad
+@@ -291,8 +297,10 @@
+   \end{aligned}
+   \label{eq:p16m-route-choice}
+ \end{equation}
+-Continuous heterogeneity makes ties a zero-measure event; no logit or
+-inclusive value is used.
++Here \(W_i^T=W^T\) and \(W_i^A=W^A\). We assume measurable
++values and zero probability of maximizing ties at each candidate price and
++regime for almost every developer; continuity of heterogeneity alone is not
++sufficient. A measurable tie rule completes the definition on null sets.
+ 
+ The internal-minus-entrusted gap is
+ \begin{equation}
+@@ -306,13 +314,14 @@
+   \end{aligned}
+   \label{eq:p16m-gap}
+ \end{equation}
+-Holding \((q,m,M,p_m)\) fixed on the internally feasible domain,
++Holding \((q,m,M,p_m)\) fixed with finite \(\tau_E\), on the internally feasible interior,
+ \[
+   \Delta_{IE,k}
+   =
+   s(q)R_c\!\left(q,c_I\right)c_{I,k}-F_{I,k}>0.
+ \]
+-When the endpoint crossing conditions hold, a unique conditional cutoff
++When the continuous gap has a negative lower-end limit and a positive
++upper-end limit, a unique conditional cutoff
+ \(k^*(q,m;p_m,M)\) satisfies \(\Delta_{IE}(k^*)=0\). Conditional on \(I\)
+ and \(E\) dominating \(T\) and \(A\), developers below the cutoff select
+ \(E\), while those above it select \(I\). Transfer and abandonment remain
+@@ -359,7 +368,9 @@
+   \max_{s_j\geq0}\{p_ms_j-\Psi(s_j;z_j)\}.
+   \label{eq:p16m-supplier}
+ \end{equation}
+-With \(\Psi_{ss}>0\), positive-price capacity is uniquely determined by
++Assume \(\Psi(0;z)=\Psi_s(0;z)=0\),
++\(\Psi_{ss}>0\), and marginal cost diverges with capacity. At a positive
++price, capacity is uniquely determined by
+ \(p_m=\Psi_s(s_j^*;z_j)\), and aggregate supply is
+ \[
+   S_m(p_m)=\int s_j^*(p_m,z)\,dH_C(z).
+@@ -385,8 +396,12 @@
+ \end{equation}
+ The demand expression includes both feedbacks: price changes expected value
+ and hence advancement, and it changes deterministic route selection.
+-Continuous heterogeneity makes aggregate demand continuous even though
+-individual indicators can jump.
++The no-maximizing-ties condition, continuity of finite route values in price,
++and the integrable value/capacity envelopes stated in the appendix make
++aggregate demand continuous even though individual indicators can jump.
++Supplier responses are integrable on compact price intervals. Background
++demand is finite, continuous, weakly decreasing, positive at zero, and tends
++to zero at infinity.
+ 
+ The qualified-capacity market clears at the unique price
+ \begin{equation}
+@@ -425,8 +440,11 @@
+ \paragraph{MAH-relevant projects and advancement.}
+ The reform has a zero effect whenever the newly feasible \(E\) value does not
+ exceed the best old route. Otherwise it raises expected project value and,
+-at fixed service price, raises common project advancement. The response is
+-larger where the entrusted value gain is larger; MAH does not change
++at fixed service price, raises common project advancement. Holding the initial surplus fixed, the response increases with the value gain.
++Across developers, higher \(a_i\) scales a given surplus response upward;
++a larger response at lower \(k_i\) additionally uses \(\nu\geq1\) and the
++feasibility-boundary continuity conditions in the appendix. No general
++capability ranking is imposed for \(0<\nu<1\). MAH does not change
+ \(a_i\), project quality, or the advancement-cost function.
+ 
+ \paragraph{CMO equilibrium and scarcity.}
+@@ -459,7 +477,10 @@
+ 
+ \paragraph{Novelty composition.}
+ For \(g\in\{O,\mathrm{Inc}\}\), outcomes use the same \(x_i^*\) and the
+-mixture \(\rho_gF_g\). The baseline permits either class to have a zero or
++mixture \(\rho_gF_g\), with the same realization kernel \(s(q)\).
++A zero class-specific value gain alone does not imply a zero outcome effect:
++the common advancement response also scales that class's existing retained
++outcomes. The baseline permits either class to have a zero or
+ larger response and imposes no original-versus-incremental ranking. Patent
+ applications are not a baseline endogenous outcome.
+ 
+@@ -470,7 +491,7 @@
+ abandonment, developers with weaker internal manufacturing capability are
+ more likely to select retained entrusted production. Second, MAH raises
+ project advancement only when the new entrusted value exceeds the best
+-pre-reform option; the response can be zero for many project--developer pairs.
++pre-reform option; the response can be zero for many developers.
+ Third, reform-induced demand for qualified manufacturing services can raise
+ \(p_m^*\), attenuating fixed-price gains in expected project value and
+ advancement. These predictions concern commercialization organization and
+@@ -495,7 +516,7 @@
+ Model object & Candidate interface & Claim boundary \\
+ \midrule
+ Predetermined capability \(a_i\) & Pre-policy development history or other validated capability measure & Does not separately identify \(a_i\), and no policy shift in \(a_i\) is allowed. \\
+-Advancement \(x_i\) and \(a_ix_i\) & Consistently measured development-stage activity and planning-stage project events & \(x_i\) is not pure clinical effort, patent applications, or an approval count. \\
++Advancement \(x_i\) and \(a_ix_i\) & Consistently measured development-stage activity and planning-stage project events & \(x_i\) advances viable projects toward route planning; it excludes patent-generating research and is not an approval count. \\
+ Route \(r_i^*=E\) & Product-level holder differs from manufacturer, with time-consistent identifiers & The observed split is downstream evidence on retained organizational assignment, not the policy treatment itself. \\
+ Retained outcome \(Y_i^{\mathrm{ret}}\) & Approval or launch with developer/holder identity & Combines advancement, project mix, deterministic route assignment, and \(s(q)\); it does not identify these primitives separately. \\
+ CMO scarcity \(p_m^*\) & Service price, or consistently measured capacity, utilization, density, waiting-time, or participation proxy & A nonprice proxy does not identify the price or the supply and demand schedules separately. \\
+@@ -548,9 +569,10 @@
+ most relevant when a developer can advance valuable projects but lacks
+ project-compatible internal manufacturing capability. Its equilibrium value
+ also depends on qualified-service scarcity: reform-induced entrusted demand
+-can raise \(p_m^*\) and attenuate the fixed-price gain. Project advancement
+-therefore rises only for the MAH-relevant set and need not rise for every
+-developer or novelty class. Observed holder--producer separation and realized
++can raise \(p_m^*\) and attenuate the fixed-price gain. Common project advancement
++rises only for developers with a positive expected route-value gain. A class
++may benefit through common advancement even without its own route-value
++gain, but no strict effect or ranking is required for every novelty class. Observed holder--producer separation and realized
+ products occur after advancement and organizational assignment. Patent
+ applications and upstream scientific research are outside the baseline, and
+ the model makes no welfare claim. This deliberately narrow partial-equilibrium

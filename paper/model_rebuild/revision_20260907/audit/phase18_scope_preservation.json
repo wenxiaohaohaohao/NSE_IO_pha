@@ -1,0 +1,14 @@
+{
+  "backup_before_mutation": true,
+  "september01_introduction_unchanged": true,
+  "september01_institutional_background_unchanged": true,
+  "bibliography_unchanged": true,
+  "authorized_manuscript_changes": [
+    "paper/manuscript/mah_route_indicator_friction_model.tex",
+    "paper/manuscript/mah_route_indicator_friction_model_appendix.tex"
+  ],
+  "new_build_support": [
+    "paper/manuscript/aer.bst"
+  ],
+  "selected_base": "September 1 user PDF source package"
+}

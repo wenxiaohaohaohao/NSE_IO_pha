@@ -1,7 +1,7 @@
 <!-- Inherited from Phase 1 commit 7c7dad4; current revision only, historical files unchanged. -->
 # 01 Symbols and Objects
 
-Phase status: `PHASES 1–16 APPROVED; PHASE 17 CONSISTENCY AUDIT`  
+Phase status: `PHASES 1–18 APPROVED; FINAL CONSISTENCY AUDIT PASS`  
 Controlling specification: `paper/model_rebuild/spec/revision_20260907/MAH_model_rebuild_effective_spec_note_v1.1.md`  
 Effective-spec SHA256: `4bf28d2d0199496b831610b133753111bf1e11f049db1aa07223ad479d8871d5`
 

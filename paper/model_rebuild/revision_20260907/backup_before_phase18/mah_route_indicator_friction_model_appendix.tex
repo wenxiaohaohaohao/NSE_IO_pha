@@ -1,0 +1,130 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{enumitem}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage{setspace}
+\usepackage[round,authoryear]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\setstretch{1.10}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0.12em}
+\setlist[itemize]{leftmargin=2em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=2em,itemsep=0.25em,topsep=0.35em}
+\emergencystretch=3em
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+\newtheorem{extensionproposition}{Extension Proposition}
+\newtheorem{extensioncorollary}{Extension Corollary}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\argmaxop}{\operatorname*{arg\,max}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\pos}[1]{\left[#1\right]_+}
+\newcommand{\ind}{\mathbb{I}}
+\newcommand{\R}{\mathcal{R}}
+
+\title{Technical Appendix: Regulatory Separation and Pharmaceutical Innovation: Evidence from China's MAH Reform}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+
+\newpage
+\tableofcontents
+\newpage
+\small
+
+\section{Appendix Roadmap and Scope}
+\label{sec:appendix-roadmap}
+
+This appendix is the formal derivation layer for the MAH model. It
+defines every primitive before use, derives product pricing and route values
+from explicit technologies, proves deterministic organizational sorting,
+solves the common project-advancement problem, closes the single qualified
+manufacturing-service market, and records all six required propositions plus
+the novelty corollary. It then separates project advancement, organizational
+assignment, observed holder--producer separation, and realized products.
+Weak internal manufacturing capability operates through high variable and
+setup costs, not a hard feasibility cutoff.
+
+The baseline has one binary policy channel, \(M\to\tau_E(M)\), one common
+control \(x_i\), deterministic choice among \(I,E,T,A\), route-independent
+downstream success, and one scalar qualified-capacity equilibrium. It contains
+no entry, product-market, labor, capital, portfolio, dynamic-firm, or welfare
+closure. The final sections document extensions behind an explicit strict
+separation from the baseline. Commercialization financing,
+research--development allocation, patent production, borrowing, and a finance
+market remain inactive.
+
+\input{../model_rebuild/01_primitives_and_timing.tex}
+\input{../model_rebuild/02_demand_profit_derivation.tex}
+\input{../model_rebuild/03_internal_external_technologies.tex}
+\input{../model_rebuild/04_route_values_and_sorting.tex}
+\input{../model_rebuild/05_rd_problem.tex}
+\input{../model_rebuild/06_cmo_supply_demand_equilibrium.tex}
+\input{../model_rebuild/07_equilibrium_definition.tex}
+\input{../model_rebuild/08_required_propositions.tex}
+\input{../model_rebuild/08_comparative_statics.tex}
+\input{../model_rebuild/09_observed_outcomes.tex}
+
+\section{Research, Patent, and Financing Boundaries of the Baseline}
+\label{sec:appendix-research-development-boundary}
+
+MAH directly changes downstream commercialization options through the
+institutional wedge \(\tau_E(M)\), whose infinite/finite value encodes the
+effective availability of retained entrusted manufacturing. The baseline
+captures the internalization burden through route-specific setup and
+operating costs and does not model financial intermediation. The common
+control \(x_i\) remains original-drug innovation investment /
+project-advancement intensity. It is broader than pure clinical effort, but
+excludes upstream patent-generating research, basic-compound discovery, and
+patent applications. Accordingly, the baseline
+permits
+\[
+  M
+  \longrightarrow
+  \text{anticipated availability and value of }E
+  \longrightarrow
+  \Omega_i
+  \longrightarrow
+  x_i^*,
+\]
+but it does not imply that MAH raises patent applications.
+
+\citet{Gu2024} documents heterogeneous trial and patent responses by financial
+resources. Those findings motivate the financing-friction extension below
+and secondary empirical heterogeneity tests. The baseline here isolates a
+different and more primitive MAH margin: the availability and value of
+retained entrusted manufacturing relative to internal production, transfer,
+and delay. The distinction rests on the model's organizational margin, not on
+a claim that financing frictions or patent responses are absent in the data.
+The common \(x_i\), exogenous shares \(\rho_g\), and conditional distributions
+\(F_g\) permit either novelty class to respond more, less, or not at all.
+
+\input{../model_rebuild/11_extensions_not_baseline.tex}
+\input{../model_rebuild/15_financing_commercialization_extension.tex}
+
+\clearpage
+\bibliographystyle{aer}
+\bibliography{mah_route_indicator_friction_refs}
+
+\end{document}

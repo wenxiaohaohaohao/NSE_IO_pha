@@ -1,0 +1,22 @@
+{
+  "before_head": "84e522d2983c51010cf3b819c0394f931bd08de3",
+  "authority": "REV-EXEC-001 after approved/pushed Phase 17",
+  "files": {
+    "paper/manuscript/mah_route_indicator_friction_model_appendix.tex": {
+      "sha256": "8c13034b7feca5d552d362adc4d6dfd1d4914bf20402051db72d5861e58a42fc",
+      "backup": "paper/model_rebuild/revision_20260907/backup_before_phase18/mah_route_indicator_friction_model_appendix.tex"
+    },
+    "paper/manuscript/mah_route_indicator_friction_refs.bib": {
+      "sha256": "a7a51c0708fefcfb7c4d1afcbf12db21fac3d17493efddc37db0abdf7880934e",
+      "backup": "paper/model_rebuild/revision_20260907/backup_before_phase18/mah_route_indicator_friction_refs.bib"
+    },
+    "paper/manuscript/mah_route_indicator_friction_model_technical_memo.tex": {
+      "sha256": "099c5075c235125171536e7baca3d0350f55aa289d09cd8c006b950951b7dff9",
+      "backup": "paper/model_rebuild/revision_20260907/backup_before_phase18/mah_route_indicator_friction_model_technical_memo.tex"
+    },
+    "paper/manuscript/mah_route_indicator_friction_model.tex": {
+      "sha256": "ded6dec433ead82fa59c8ede4c0f55f4696994ec1250b74bfb89ae948efc552f",
+      "backup": "paper/model_rebuild/revision_20260907/backup_before_phase18/mah_route_indicator_friction_model.tex"
+    }
+  }
+}
