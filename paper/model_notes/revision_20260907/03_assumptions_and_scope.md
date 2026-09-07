@@ -248,3 +248,6 @@ For the global k comparison in Proposition 3 including k=kbar(m), feasible costs
 
 ## Phase 9
 No new assumption. Timing, common control and measurement boundaries inherit Phases 1/8; candidate proxy status is not verified.
+
+## Phase 10
+No new economic assumption. All proxies are provisional, require identity/unit/timing validation, and do not separately identify primitives.

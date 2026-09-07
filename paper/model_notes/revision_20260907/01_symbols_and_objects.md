@@ -198,3 +198,6 @@ Phase 8 aliases: Omega_i^h=Omega_i(h,p), x_i^h=x_i*(h,p_m^h), r_i^{*,h}=r_i*(.;h
 
 ## Phase 9
 No new object; reuse Phase 8 outcome definitions and s_g=s.
+
+## Phase 10
+No new economic symbol; twelve interfaces reuse classified primitives and outcomes.

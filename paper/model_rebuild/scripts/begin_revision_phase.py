@@ -1,0 +1,7 @@
+from pathlib import Path
+import subprocess,json,hashlib,sys
+phase=int(sys.argv[1]);v=Path('paper/model_rebuild/revision_20260907');n=Path('paper/model_notes/revision_20260907');s=Path('paper/model_rebuild/spec/revision_20260907');a=v/'audit';sha=lambda f:hashlib.sha256(Path(f).read_bytes()).hexdigest();p=json.loads((s/'provenance.json').read_text())
+assert not subprocess.check_output(['git','status','--porcelain']).strip();assert subprocess.check_output(['git','branch','--show-current'],text=True).strip()=='codex/mah-model-rebuild';assert all(sha(f)==h for f,h in p['protected_files'].items());assert sha(s/'MAH_model_rebuild_effective_spec_note_v1.1.md')==p['effective_spec_sha256'];assert json.loads((s/f'approvals/phase{phase-1:02d}_approval.json').read_text())['status']=='APPROVED'
+head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip();remote=subprocess.check_output(['git','rev-parse','origin/codex/mah-model-rebuild'],text=True).strip();assert head==remote
+(a/f'phase{phase:02d}_preflight.json').write_text(json.dumps({'head':head,'tracking_remote':remote,'prior':'APPROVED and pushed','hashes':'PASS','authority':'REV-EXEC-001','ledgers':{f.name:sha(f) for f in n.glob('*.md')}},indent=2))
+f=n/'00_model_closure_status.md';f.write_text(f.read_text().replace(f'| {phase} | APPROVED under historical specification | NOT STARTED | No |',f'| {phase} | APPROVED under historical specification | IN PROGRESS | No |'))

@@ -246,3 +246,6 @@ P1: P02 R_c + P03 technology + P04 crossing -> sorting. P2: P04 maxima -> positi
 
 ## Phase 9
 P09 hierarchy/anticipation/realized chain derive from Phase 1 timing, typed mixture from Phase 8, and identification boundary is a scope statement, not an extra equation solving primitives.
+
+## Phase 10
+Two P10 timing displays restate Phase 1/P09. The twelve mappings are measurement interfaces, not structural or market-clearing equations.

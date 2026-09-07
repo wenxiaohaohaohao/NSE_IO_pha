@@ -1,0 +1,9 @@
+{
+  "Meaning": true,
+  "Candidate measure": true,
+  "Unit": true,
+  "Grain": true,
+  "Required keys": true,
+  "Availability": true,
+  "Identification limit": true
+}
