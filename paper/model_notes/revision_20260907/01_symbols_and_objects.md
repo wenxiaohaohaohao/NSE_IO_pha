@@ -205,3 +205,6 @@ No new economic symbol; twelve interfaces reuse classified primitives and outcom
 ## Phase 11 inactive extension registry (not baseline)
 
 U_ir: random extension route utility, currency/project. W_ir: alias of deterministic route value, same units. epsilon_ir: iid Type-I EV shock, same units. sigma>0: scale in currency/project. G_sigma,f_sigma: shock CDF/density, respectively dimensionless and inverse currency/project. P_ir^logit: extension route probability, dimensionless. chi^I,chi^E: optional implementation probabilities, dimensionless, distinct from baseline capacity chi_i^E. x_i^R,x_i^D: unimplemented separate controls, input units require a new specification; no baseline addition. Integration variables e,t and route index ell are mathematical dummies.
+
+## Phase 12
+No active economic object added; legacy symbols occur only in the crosswalk.

@@ -252,3 +252,6 @@ Two P10 timing displays restate Phase 1/P09. The twelve mappings are measurement
 
 ## Phase 11 isolated dependency
 Extension-only W_ir and iid shocks -> probability integral -> logit. There is no edge from this formula or any other optional block to baseline W,Omega,x,chi,D,S or p*. Baseline route-specific realization and common advancement remain unchanged.
+
+## Phase 12
+CW01--24 link deleted legacy formulas/propositions/calibration claims to current phase replacements. Exact legacy row evidence is checked against cd5b6e4; September 1 current repair inventory is separate.

@@ -254,3 +254,6 @@ No new economic assumption. All proxies are provisional, require identity/unit/t
 
 ## Phase 11 extension isolation
 The iid Type-I EV assumption with scale sigma is used solely to derive the inactive smooth-choice extension. None of the baseline assumptions cites it. All other optional blocks remain unimplemented; their activation requires a new approved specification.
+
+## Phase 12
+No new assumption; historical text has evidence status only and cannot override current note+v1.1.

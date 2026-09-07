@@ -1,0 +1,71 @@
+issue_family,source_file,line,nearest_preceding_label,text
+X-V12,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model_appendix.tex,89,sec:appendix-research-development-boundary,control \(x_i\) is original-drug innovation investment /
+X-V12,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model_appendix.tex,90,sec:appendix-research-development-boundary,"project-advancement intensity. It is broader than pure clinical effort, but"
+TIES,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model_appendix.tex,106,sec:appendix-research-development-boundary,"among innovators without production facilities (Table II, p.~45), while"
+TYPED,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model_appendix.tex,123,sec:appendix-research-development-boundary,"with either class responding more, less, or not at all."
+X-V12,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex,47,,choose one common original-drug innovation investment / project-advancement
+TIES,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex,98,,"production facilities, while patent applications fall among firms with fewer"
+TYPED,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex,184,subsec:p16m-environment,The class label \(g\) creates no class-specific control.
+X-V12,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex,203,eq:p16m-policy,investment / project-advancement intensity. It is broader than pure clinical
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex,248,eq:p16m-return,"\(F_{I,m}>0\) and \(F_{I,k}<0\) on the feasible domain. Internal production"
+TIES,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex,294,eq:p16m-route-choice,Continuous heterogeneity makes ties a zero-measure event; no logit or
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex,309,eq:p16m-gap,"Holding \((q,m,M,p_m)\) fixed on the internally feasible domain,"
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex,315,eq:p16m-gap,"When the endpoint crossing conditions hold, a unique conditional cutoff"
+TYPED,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex,462,eq:p16m-retained-outcome,mixture \(\rho_gF_g\). The baseline permits either class to have a zero or
+TYPED,paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex,534,eq:empirical-realized-chain,\(x_i\) and the mixture \(\rho_gF_g\); either class may have a zero or larger
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/03_internal_external_technologies.tex,27,eq:p03-internal-cost,greater internal capability lowers it on the feasible domain.
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/03_internal_external_technologies.tex,114,eq:p03-policy-invariance,"\(s_g(q)\). In particular, this technology block does not posit a fall in"
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/03_internal_external_technologies.tex,123,subsec:p03-boundaries,\(k_i\) within the feasible domain lowers both internal marginal and setup
+X-V12,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/01_primitives_and_timing.tex,106,subsec:p01-advancement-realization,\emph{original-drug innovation investment / project-advancement intensity}.
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/01_primitives_and_timing.tex,136,eq:p01-downstream-probability,"class-specific probability \(s_g(q)\), it is likewise exogenous and"
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/01_primitives_and_timing.tex,150,subsec:p01-timing,"  \(p_m^*\) and future route opportunities, and chooses \(x_i\).  Equation"
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/01_primitives_and_timing.tex,220,eq:p01-realization-channel,"\(q\), \(m\), \(F\), \(\rho_g\), \(F_g\), \(s(q)\), or \(s_g(q)\).  It does"
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,97,subsec:p15-route-choice,"On the internally feasible domain,"
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,106,eq:p15-gap-capability,"cell-specific crossing condition, the implicit-function theorem gives"
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,134,eq:p15-fixed-project-gain,"finite \((\tau_E,p_m)\), strict \(\Delta_{IE,k}>0\), and endpoint crossing."
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,135,eq:p15-fixed-project-gain,"If crossing fails, no interior cutoff is asserted. If \(T\) or \(A\) dominates,"
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,177,eq:p15-advancement-partials,"The corresponding elasticities are \(1/\nu,1/\nu,-1/\nu\)."
+PRICE,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,244,subsec:p15-cmo-continuous,  -\frac{\Psi_{sz}}{\Psi_{ss}}>0.
+PRICE,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,287,eq:p15-equilibrium-ift,The supplier signs use \(\Psi_{ss}>0\) and \(\Psi_{sz}<0\). The aggregate
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,367,subsec:p15-outcomes,"\(a_i\), project distributions, realization probabilities, technologies and"
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,400,eq:p15-retained-outcome-change,"\(\rho_gF_g\) and the common \(x_i\), not a class-specific control."
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,422,subsec:p15-boundaries,"On the feasible domain, \(\Delta_{IE,k}>0\), so increasing capability weakly"
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,423,subsec:p15-boundaries,favors \(I\) relative to \(E\). Under the maintained upper-end crossing
+PRICE,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,463,eq:p15-zero-advantage-boundary,\paragraph{Perfectly elastic CMO supply.}
+PRICE,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex,475,eq:p15-zero-advantage-boundary,that baseline supply is perfectly elastic.
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/11_extensions_not_baseline.tex,37,subsec:p11-route-realization,"probabilities, an extension may introduce \(\chi^I(q,m)\) and"
+X-V12,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/05_rd_problem.tex,14,subsec:p05-technology,is original-drug innovation investment / project-advancement intensity. It is
+X-V12,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/05_rd_problem.tex,15,subsec:p05-technology,"broader than pure clinical-development effort, but it is not patent"
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/05_rd_problem.tex,17,subsec:p05-technology,discovery. There is no class-specific control \(x_{ig}\).
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/05_rd_problem.tex,208,subsec:p05-scope,"patent outcome, no novelty-class-specific control, and no CMO market-clearing"
+PRICE,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/06_cmo_supply_demand_equilibrium.tex,33,eq:p06-supplier-problem,"  \Psi_{sz}<0,"
+PRICE,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/06_cmo_supply_demand_equilibrium.tex,52,eq:p06-supplier-capacity,  -\frac{\Psi_{sz}}{\Psi_{ss}}>0.
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/06_cmo_supply_demand_equilibrium.tex,94,eq:p06-entrusted-capacity,"Away from the measure-zero set of route ties, the envelope derivative of the"
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/04_route_values_and_sorting.tex,79,eq:p04-route-choice,Continuous project and developer heterogeneity makes exact ties a
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/04_route_values_and_sorting.tex,80,eq:p04-route-choice,"measure-zero event, so the choice is single valued almost surely. This is a"
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/04_route_values_and_sorting.tex,119,eq:p04-value-gap,"On the internally feasible domain, only the internal technology terms vary"
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/04_route_values_and_sorting.tex,139,subsec:p04-cutoff,satisfies the endpoint crossing conditions
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/04_route_values_and_sorting.tex,189,subsec:p04-sorting-proposition,"the entrusted barrier is finite, the endpoint crossing conditions hold, and"
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/04_route_values_and_sorting.tex,190,subsec:p04-sorting-proposition,ties have measure zero. Then the internal-minus-entrusted value gap is strictly
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/04_route_values_and_sorting.tex,206,subsec:p04-zero-effect,"cutoff-crossing region. No smooth random-utility term, inclusive-value object,"
+X-V12,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/09_observed_outcomes.tex,24,eq:p09-outcome-hierarchy,Here \(x_i\) is original-drug innovation investment or
+X-V12,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/09_observed_outcomes.tex,25,eq:p09-outcome-hierarchy,project-advancement intensity. It is broader than pure clinical-development
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/09_observed_outcomes.tex,65,subsec:p09-types,"For \(g\in\{O,\mathrm{Inc}\}\), the class-specific retained outcome retains"
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/09_observed_outcomes.tex,72,subsec:p09-types,  s_g(q)
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/09_observed_outcomes.tex,82,eq:p09-type-mixture,does not create a control \(x_{ig}\). The baseline permits either class to
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/09_observed_outcomes.tex,120,subsec:p09-scope,realization probabilities remain policy invariant. No empirical data set or
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/07_equilibrium_definition.tex,55,eq:p07-advancement-optimality,including the zero-value corner \(x_i^*=0\). There is no class-specific
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,16,prop:p08-sorting,"manufacturing capability \(k_i\) fixed. On the internally feasible domain,"
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,17,prop:p08-sorting,use the technology signs and endpoint-crossing conditions stated above.
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,39,eq:p08-sorting-slope,therefore strictly positive. Continuity and endpoint crossing give existence
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,46,eq:p08-sorting-slope,"The endpoint-crossing conditions are sufficient, not primitive conclusions."
+PRICE,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,111,eq:p08-relevant-set,preserved and the relevant set becomes empty.
+CUTOFF,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,196,eq:p08-manufacturing-response,"also makes the concavity channel strict. For \(0<\nu<1\), no sign is asserted"
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,259,eq:p08-class-gain,"commercial values, success probabilities, costs, or outside options. Only"
+PRICE,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,375,eq:p08-scarcity-advancement-bounds,"perfectly elastic at a common \(\bar p_m\), then"
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,394,prop:p08-outcomes,probabilities \(s(q)\) and \(s_g(q)\) are exogenous and policy invariant.
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,394,prop:p08-outcomes,probabilities \(s(q)\) and \(s_g(q)\) are exogenous and policy invariant.
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,444,eq:p08-entrusted-outcome,  s_g(q)
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,482,eq:p08-outcome-decomposition,unchanged. A class-specific outcome can have zero change while the other
+TIES,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,493,eq:p08-outcome-decomposition,lets MAH directly change downstream realization probabilities.
+TYPED,paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex,500,subsec:p08-scope,"logit route share, no class-specific advancement control, and no direct policy"
