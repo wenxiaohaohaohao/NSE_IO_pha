@@ -8,7 +8,7 @@
 |---|---|---|---|
 | 1 | APPROVED under historical specification | APPROVED | Yes — explicit current user approval |
 | 2 | APPROVED under historical specification | APPROVED | Yes — explicit current user approval |
-| 3 | APPROVED under historical specification | NOT STARTED | No |
+| 3 | APPROVED under historical specification | APPROVED | Yes — REV-EXEC-001 after zero-P0 gate |
 | 4 | APPROVED under historical specification | NOT STARTED | No |
 | 5 | APPROVED under historical specification | NOT STARTED | No |
 | 6 | APPROVED under historical specification | NOT STARTED | No |

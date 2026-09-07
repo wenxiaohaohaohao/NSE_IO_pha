@@ -78,7 +78,15 @@ One decision cohort is the project-planning time unit. Phase 2 measures demand a
 | $\pi(q,c)$ | endogenous route-level object | optimized one-period operating profit before route-specific fixed organizational costs | $\mathsf{C}$ per operating period | Phase 2 | Indirect only through a later route-cost mapping |
 | $R(q,c)$ | endogenous route-level object | present value of the optimized operating-profit stream conditional on successful commercialization | $\mathsf{C}$ per commercially active product | Phase 2 | Indirect only through a later route-cost mapping |
 
-There are 38 active rows. Each has one and only one exact category.
+| $c_I(m,k_i)$ | primitive parameter | internal-route technological marginal manufacturing-cost function on the feasible internal domain | positive; $\mathsf{C}/\mathsf{Y}$ | Phase 3 | No |
+| $F_I(m,k_i)$ | primitive parameter | internal production-readiness/setup-cost function, extended to $+\infty$ when internal production is infeasible | $\mathsf{C}$ per project or $+\infty$ | Phase 3 | No |
+| $\underline{k}(m)$ | primitive parameter | minimum internal manufacturing capability required for an internally produced project of requirement $m$ | positive; units $\mathsf{K}$ | Phase 3 | No |
+| $c_E(m)$ | primitive parameter | technological marginal manufacturing-cost kernel under qualified external production | positive; $\mathsf{C}/\mathsf{Y}$ | Phase 3 | No |
+| $b(m)$ | primitive parameter | qualified manufacturing-service capacity required by an entrusted project | positive; $\mathsf{B}$ per project | Phase 3 | No |
+| $F_E(m)$ | primitive parameter | real entrusted-route technology-transfer, validation and production-readiness cost | nonnegative; $\mathsf{C}$ per project | Phase 3 | No |
+| $\mu_E$ | primitive parameter | residual holder-side responsibility/coordination burden under entrusted manufacturing | nonnegative; $\mathsf{C}$ per project | Phase 3 | No; not removed by MAH |
+
+There are 45 active rows. Each has one and only one exact category.
 
 ## 4. Definitional identities active in Phase 1
 
@@ -135,4 +143,4 @@ Patent history may later proxy predetermined $a_i$; it is not equal to $x_i$ or 
 
 ## 7. Reserved names requiring future updates
 
-Demand, product price, profit and operating present value are active through Phase 2. Manufacturing-cost functions, route payoffs, C_X, CMO capacity and its aggregates remain reserved for their phases. The symbol t=0,1,... indexes operating periods and is a syntactic index, not a state. The scalar demand shifter A is distinct by context from the categorical abandonment-route label A. No new decision variable is introduced by either notation.
+Demand, product price, profit and operating present value are active through Phase 2. Manufacturing-cost functions are active through Phase 3; route payoffs, C_X, CMO capacity and its aggregates remain reserved for their phases. The symbol t=0,1,... indexes operating periods and is a syntactic index, not a state. The scalar demand shifter A is distinct by context from the categorical abandonment-route label A. No new decision variable is introduced by either notation.

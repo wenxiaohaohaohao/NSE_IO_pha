@@ -202,3 +202,13 @@ Used by: Phase 2 economic-interpretation audit and `RL-08`.
 The derivative signs are derived results, not assumptions. No route ranking, policy effect, welfare result, or equilibrium-price claim is imposed here.
 
 Scope clarification: accounting, timing and policy invariance are architecture restrictions, not desired signs imposed as assumptions. The four canonical assumption blocks will be reconciled with the existing Phase 14 ledger at its revalidation gate.
+
+## Phase 3 technology assumptions (A-P03-TECH-01--03)
+
+01: Internal c_I is positive on the feasible domain; F_I is finite and nonnegative for k >= kbar(m), and infinite below. Smoothness and strict signs c_I,m>0, c_I,k<0, F_I,m>0, F_I,k<0 apply on the interior of the feasible domain, not across the feasibility boundary. These are technological restrictions, not a route ranking.
+
+02: c_E(m)>0 is independent of k; b(m)>0, b'(m)>0; F_E(m)>=0 and mu_E>=0. Costs use respectively currency/output, capacity/project, and currency/project. The capacity payment p_m b, F_E, mu_E and tau_E are outside c_E and counted once.
+
+03: All technology functions and holder responsibility are invariant to M. E retains holder rights; T does not use this retained organization. Only tau_E changes. No assumption on a fall in equilibrium capacity price.
+
+Used by: all seven Phase 3 equations and the technology crosswalk; route rankings remain Phase 4 obligations.

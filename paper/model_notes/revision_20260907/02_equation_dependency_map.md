@@ -160,3 +160,15 @@ The pricing control is product price $p$, not the CMO capacity price $p_m$. The 
 ## Phase 2 scope and feedback
 
 A,q,epsilon and conditional c determine demand and optimal product price, then pi and R. Beta and phi enter only the geometric operating PV. The product price p is not the CMO price p_m. R excludes route fixed costs, the institutional wedge and separately purchased capacity; those are deferred to Phases 3/4. This closes only the commercial-return branch; the outer CMO fixed point remains assigned to Phase 6. No binary-M derivative is taken.
+
+## Phase 3 technology ledger
+
+- eq:p03-internal-cost: (m,k) -> c_I; primitive; enters R from P02.
+- eq:p03-internal-setup: (m,k,kbar) -> F_I; primitive with extended-value infeasibility; derivative signs only on interior.
+- eq:p03-external-cost: m -> c_E; primitive; independent of k.
+- eq:p03-capacity-requirement: m -> b; capacity units, later payment p_m b.
+- eq:p03-external-fixed-cost: m -> F_E; currency/project.
+- eq:p03-holder-burden: mu_E; currency/project, retained responsibility.
+- eq:p03-policy-invariance: M -> tau_E; sole policy arrow.
+
+Parents: Phase 1 project/developer definitions, Phase 2 cost/PV units, A-P03-TECH-01--03. None is an optimization-derived payoff or equilibrium equation.
