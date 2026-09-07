@@ -86,7 +86,16 @@ One decision cohort is the project-planning time unit. Phase 2 measures demand a
 | $F_E(m)$ | primitive parameter | real entrusted-route technology-transfer, validation and production-readiness cost | nonnegative; $\mathsf{C}$ per project | Phase 3 | No |
 | $\mu_E$ | primitive parameter | residual holder-side responsibility/coordination burden under entrusted manufacturing | nonnegative; $\mathsf{C}$ per project | Phase 3 | No; not removed by MAH |
 
-There are 45 active rows. Each has one and only one exact category.
+| $T(q,m)$ | primitive parameter | finite noncore transfer/out-license outside-value function | $\mathsf{C}$ per project | Phase 4 | No direct shift |
+| $W_i^I(q,m)$ | endogenous route-level object | internal-route project value | $\mathsf{C}$ per project, possibly $-\infty$ when internal production is infeasible | Phase 4 | No direct shift |
+| $W_i^E(q,m;M,p_m)$ | endogenous route-level object | retained entrusted-route project value at a conjectured CMO capacity price | $\mathsf{C}$ per project or $-\infty$ when $E$ is institutionally unavailable | Phase 4 | Yes only through $\tau_E(M)$ |
+| $W^T(q,m)$ | endogenous route-level object | non-retained transfer/out-license outside-option value | $\mathsf{C}$ per project | Phase 4 | No direct shift |
+| $W^A$ | endogenous route-level object | abandonment/indefinite-delay value normalized to zero | $\mathsf{C}$ per project | Phase 4 | No |
+| $W_i(q,m;M,p_m)$ | endogenous route-level object | optimized deterministic route value, the maximum over $I,E,T,A$ | $\mathsf{C}$ per project | Phase 4 | Indirect through the $E$ wedge only |
+| $\Delta_{IE}(k_i;q,m,M,p_m)$ | endogenous route-level object | internal-minus-entrusted value gap holding $q,m,M,p_m$ fixed | $\mathsf{C}$ per project | Phase 4 | Indirect through $W_i^E$ |
+| $k^*(q,m;p_m,M)$ | endogenous route-level object | unique conditional $I/E$ capability cutoff when finite-wedge crossing conditions hold | $\mathsf{K}$ | Phase 4 | Indirect through $\tau_E(M)$; no finite cutoff at $\tau_E=+\infty$ |
+
+There are 53 active rows. Each has one and only one exact category.
 
 ## 4. Definitional identities active in Phase 1
 

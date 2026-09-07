@@ -212,3 +212,10 @@ Scope clarification: accounting, timing and policy invariance are architecture r
 03: All technology functions and holder responsibility are invariant to M. E retains holder rights; T does not use this retained organization. Only tau_E changes. No assumption on a fall in equilibrium capacity price.
 
 Used by: all seven Phase 3 equations and the technology crosswalk; route rankings remain Phase 4 obligations.
+
+## Phase 4 route assumptions
+
+A-P04-ROUTE-01: T(q,m) is finite continuous and policy invariant. The maximum includes abandonment zero. No endogenous transfer market.
+A-P04-ROUTE-02: In addition to continuous heterogeneity, the set of maximizing ties has zero probability at each fixed candidate price/regime, for almost every developer. This is the note's no-tie regularity restriction, not a theorem from continuity alone. A fixed measurable tie rule may select on the null set.
+A-P04-CUTOFF-01: Conditional cutoff analysis requires finite tau, an internally feasible interior, continuous gap, and negative/positive endpoint gap limits. It does not assert these sufficient crossing conditions for every project.
+Used: P04 values use A-P01-PROJ-04, A-P02-PV/ACCOUNT, A-P03-TECH; deterministic choice uses ROUTE01--02; cutoff uses CUTOFF01 and derived R_c<0.

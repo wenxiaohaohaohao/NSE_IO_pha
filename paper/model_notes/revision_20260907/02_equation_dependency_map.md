@@ -172,3 +172,19 @@ A,q,epsilon and conditional c determine demand and optimal product price, then p
 - eq:p03-policy-invariance: M -> tau_E; sole policy arrow.
 
 Parents: Phase 1 project/developer definitions, Phase 2 cost/PV units, A-P03-TECH-01--03. None is an optimization-derived payoff or equilibrium equation.
+
+## Phase 4 dependencies
+
+Route values: s,R from P01/P02, costs from P03, T and zero -> W_I,W_E,W_T,W_A -> maximum W and deterministic r. Binary value gain compares maxima holding p fixed. Finite gap -> positive k derivative -> crossing-based unique root -> implicit derivatives. Market fixed point remains deferred.
+
+- eq:p04-internal-value: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
+- eq:p04-entrusted-value: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
+- eq:p04-outside-values: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
+- eq:p04-optimized-value: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
+- eq:p04-route-choice: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
+- eq:p04-binary-value-effect: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
+- eq:p04-value-gap: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
+- eq:p04-gap-slope: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
+- eq:p04-cutoff: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
+- eq:p04-cutoff-sorting: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
+- eq:p04-cutoff-derivatives: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
