@@ -203,3 +203,18 @@ P04 maximum W + F -> Omega; a,x -> planned arrival; kappa,nu,x -> cost; beta,a,O
 - eq:p05-binary-channel (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
 - eq:p05-value-gap (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
 - eq:p05-value-gap-foc (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
+
+## Phase 6 fixed point and dependency ledger
+
+Candidate p -> P04 routes and W -> P05 Omega and x -> chi and study demand; Psi,z,p -> supplier best response -> S; D_B plus study demand -> D; solve D-S=0 -> p*. Every inner object is evaluated conditional on candidate p. One scalar fixed point, no unresolved additional unknown. The price feedback includes both route selection and project intensity.
+- eq:p06-supplier-problem; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
+- eq:p06-supplier-capacity; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
+- eq:p06-capacity-derivatives; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
+- eq:p06-aggregate-supply; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
+- eq:p06-entrusted-capacity; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
+- eq:p06-omega-price-envelope; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
+- eq:p06-advancement-price-response; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
+- eq:p06-study-demand; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
+- eq:p06-total-demand; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
+- eq:p06-market-clearing; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.
+- eq:p06-existence-boundaries; parents follow the supplier/route/advancement/aggregate chain above; A-P06 conditions apply.

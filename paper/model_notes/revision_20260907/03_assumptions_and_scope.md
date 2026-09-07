@@ -226,3 +226,11 @@ A-P05-ADV-01: kappa>0, nu>0, common nonnegative x; linear arrival a_i x and conv
 A-P05-ADV-02: W is measurable with finite integral for each developer/candidate price. A sufficient primitive envelope is integrability of s(q)[R(q,c_I)1_feasible+R(q,c_E)]+max(T,0); nonnegative route fixed costs then bound W. Infeasible internal R is omitted, not evaluated.
 A-P05-ADV-03: continuum price taking; an individual x does not change conjectured p or F. Omega is fixed in individual optimization. This is not permission to hold aggregate equilibrium price fixed in policy comparisons.
 Used: FOC/SOC and uniqueness use ADV01--03, timing uses Phase 1, monotonic binary comparison uses Phase 4. Value-gap B,K are accounting auxiliaries confined to appendix interpretation at Phase 16.
+
+## Phase 6 capacity-market assumptions
+
+A-P06-SUPPLY-01: Psi is twice continuously differentiable, Psi(0,z)=Psi_s(0,z)=0, Psi_ss>0, Psi_s tends to infinity as capacity tends to infinity; Psi_s>0 and Psi_sz<0 on positive capacity. At zero, Psi_sz(0,z)=0 follows from Psi_s(0,z)=0. H_C has unit positive mass and is invariant. On each bounded price interval, s*(p,z) has an H_C-integrable envelope (equivalently integrability of its upper endpoint suffices by monotonicity).
+A-P06-AGG-01: E_F b<infinity; the Phase 5 W envelope applies. At each candidate price, maximizing ties have zero F probability for almost every developer as in Phase 4. E_H[a x*(1,0) E_F b]<infinity is a sufficient global demand envelope; monotonicity permits its reuse for all nonnegative prices/regimes. These are finite-moment/regularity restrictions, not an assumed demand slope.
+A-P06-BACKGROUND-01: D_B is finite continuous nonnegative nonincreasing, D_B(0)>0, and tends to zero at infinity. It belongs to the background cohort and is invariant to M.
+A-P06-CLOSURE-01: price taking, one CMO capacity market, invariant supply technology and distributions.
+Used: supplier FOC/IFT and aggregate supply use SUPPLY01; envelopes and aggregate continuity use AGG01 and Phase 4 no-tie; existence boundaries use BACKGROUND01; uniqueness follows from derived slopes.
