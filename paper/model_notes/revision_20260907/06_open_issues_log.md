@@ -33,3 +33,20 @@ Status: P1, non-blocking for Phase 1; blocks empirical claims at the relevant la
 ## Phase 2 当前审计结果
 
 当前 Phase 2 未发现 P0 或本阶段 P1。数值试算中的有限差分截断误差已用 Richardson 外推消除并通过原阈值，详见独立推导审计；没有改动模型公式或放宽检验门槛。历史实证证据复核 REV-P1-001 仍为后续关口事项，不阻断当前商业利润推导。
+
+
+## REV-P0-016-01 — Phase 16 来源核验 gate 未通过
+Phase: 16 entry / 18 integration
+Object: Shi Gu formal-PDF version and seven empirical boundary claims.
+Issue: historical evidence survives but formal PDF is excluded from Git; current official retrieval returned HTTP 403.
+Economic effect: detailed empirical claims cannot be presented as freshly verified.
+Mathematical effect: none; Phase 1–15 derivations remain valid.
+Candidate resolutions: obtain PDF and verify; or explicit user amendment allowing transparently inherited evidence.
+Preferred resolution: obtain formal PDF.
+Locked architecture changed? NO.
+Approval required before changing evidence gate? YES.
+Status: OPEN; P0 gate failure under the user's state-machine definition. Stop before Phase 16 formal output. Supersedes REV-P1-001's earlier non-blocking status.
+Evidence: paper/model_rebuild/revision_20260907/audit/phase16_gate_report.md
+
+
+Resolution 2026-09-07: REV-P1-001 and REV-P0-016-01 CLOSED. User supplied the exact formal PDF. All seven claims reverified, with significance qualifications, in 08_shigu_empirical_boundary_check.md. No active P0.

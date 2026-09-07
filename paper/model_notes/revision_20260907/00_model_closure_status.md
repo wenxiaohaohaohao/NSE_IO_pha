@@ -2,7 +2,7 @@
 
 有效依据：旧 note + amendment v1.1 + 当前用户严格逐阶段规则。
 
-历史 Phases 1--18 在仓库中记为 APPROVED；该历史不改写。本表仅记录本轮修订/复核，并不表示重新从零推导。当前阶段：既有 Phase 2 需求、定价与利润推导复核。
+历史 Phases 1--18 在仓库中记为 APPROVED；该历史不改写。本表仅记录本轮修订/复核，并不表示重新从零推导。当前阶段：Phase 16 正文与附录候选稿；Shi Gu 原文证据关口已通过。Phase 1–15 已完成并推送。
 
 | Phase | Historical record | Current revision status | Approved to continue? |
 |---|---|---|---|
@@ -21,9 +21,11 @@
 | 13 | APPROVED under historical specification | APPROVED | Yes — REV-EXEC-001 after zero-P0 gate |
 | 14 | APPROVED under historical specification | APPROVED | Yes — REV-EXEC-001 after zero-P0 gate |
 | 15 | APPROVED under historical specification | APPROVED | Yes — REV-EXEC-001 after zero-P0 gate |
-| 16 | APPROVED under historical specification | NOT STARTED | No |
+| 16 | APPROVED under historical specification | APPROVED | Yes — REV-EXEC-001 after zero-P0 gate |
 | 17 | APPROVED under historical specification | NOT STARTED | No |
 | 18 | APPROVED under historical specification | NOT STARTED | No |
+
+以下为早期时序记录，后续授权已由 REV-EXEC-001 更新：
 
 已授权：按 note+v1.1 修订；本轮 Phase 1 已获用户明确批准，记录于 spec/revision_20260907/approvals/phase01_approval.json。Phase 2 及后续 Gate 尚未批准，不得跳过审批或执行 Phase 18 manuscript integration。
 

@@ -1,0 +1,18 @@
+{
+  "source_path": "/Users/fangyi/Documents/MAH/WeChat/0817/ssrn-4770849.pdf",
+  "size": 2705436,
+  "sha256": "a13d5d1d3de3a0e4e0d15d5dbf428f2f395c9b95e960c7b3c97652cbc8d9eaeb",
+  "version": "2024-08-22",
+  "verification_date": "2026-09-07",
+  "historical_hash_match": true,
+  "verified_pages": [
+    45,
+    46,
+    47,
+    48,
+    50,
+    51,
+    52
+  ],
+  "status": "PASS"
+}
