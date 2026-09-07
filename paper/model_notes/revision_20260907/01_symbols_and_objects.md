@@ -66,7 +66,7 @@ One decision cohort is the project-planning time unit. Phase 2 measures demand a
 | $s(q)$ | primitive parameter | exogenous route-independent downstream realization probability | $[0,1]$, unit $1$ | Phase 1 | No; `RL-09` |
 | $s_g(q)$ | primitive parameter | optional exogenous class-specific probability for typed observed outcomes | $[0,1]$, unit $1$ | Phase 1 boundary; Phase 9 if needed | No |
 | observed holder-producer separation; realized products | derived observed outcome | post-route empirical outcomes, distinct from advancement and planning-stage project mass | route/product records; units deferred to Phase 9 | Phase 1 timing; Phase 9 formalization | Indirect only |
-| $x_i^*$ | endogenous firm-level object | reserved optimal common advancement input; solution deferred to Phase 5 | units $\mathsf{X}$ | Phase 1 reservation | Only through expected project value |
+| $x_i^*$ | endogenous firm-level object | unique optimal common advancement input solved in Phase 5 | units $\mathsf{X}$ | Phase 1 reservation | Only through expected project value |
 | $A$ | primitive parameter | residual product-market size/scale shifter | $A>0$, units $\mathsf{Y}^{1-\varepsilon}\mathsf{C}^{\varepsilon}$ per operating period | Phase 2 | No; `RL-08` |
 | $\varepsilon$ | primitive parameter | absolute constant elasticity of residual product demand | $\varepsilon>1$, unit $1$ | Phase 2 | No; `RL-08` |
 | $\beta$ | primitive parameter | one-period discount factor | $\beta\in(0,1)$, unit $1$ | Phase 2 | No |
@@ -95,7 +95,13 @@ One decision cohort is the project-planning time unit. Phase 2 measures demand a
 | $\Delta_{IE}(k_i;q,m,M,p_m)$ | endogenous route-level object | internal-minus-entrusted value gap holding $q,m,M,p_m$ fixed | $\mathsf{C}$ per project | Phase 4 | Indirect through $W_i^E$ |
 | $k^*(q,m;p_m,M)$ | endogenous route-level object | unique conditional $I/E$ capability cutoff when finite-wedge crossing conditions hold | $\mathsf{K}$ | Phase 4 | Indirect through $\tau_E(M)$; no finite cutoff at $\tau_E=+\infty$ |
 
-There are 53 active rows. Each has one and only one exact category.
+| $\kappa$ | primitive parameter | scale of project-advancement cost | $\kappa>0$, units $\mathsf{C}/\mathsf{X}^{1+\nu}$ | Phase 5 | No |
+| $\nu$ | primitive parameter | curvature of project-advancement cost | $\nu>0$, unit $1$; $\nu=1$ is quadratic | Phase 5 | No |
+| $C_X(x_i)$ | primitive parameter | project-advancement cost function | $\mathsf{C}$ per developer and decision cohort | Phase 5 | No |
+| $B_i$ | endogenous firm-level object | arbitrary downstream continuation benchmark used only for an accounting decomposition | currency per project | Phase 5, appendix-only interpretation | No direct shift |
+| $K_i$ | endogenous firm-level object | benchmark plus expected value of one additional project, B_i+Omega_i | currency per project | Phase 5, appendix-only interpretation | Indirect through Omega_i |
+
+There are 58 active rows. Each has one and only one exact category.
 
 ## 4. Definitional identities active in Phase 1
 

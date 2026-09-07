@@ -188,3 +188,18 @@ Route values: s,R from P01/P02, costs from P03, T and zero -> W_I,W_E,W_T,W_A ->
 - eq:p04-cutoff: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
 - eq:p04-cutoff-sorting: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
 - eq:p04-cutoff-derivatives: parents follow the route-value/gap/cutoff chain above; finite-gap derivatives require A-P04-CUTOFF-01.
+
+## Phase 5 dependency ledger
+
+P04 maximum W + F -> Omega; a,x -> planned arrival; kappa,nu,x -> cost; beta,a,Omega,cost -> objective -> KKT/FOC/SOC -> unique x*. P04 binary maximum comparison -> DeltaOmega -> finite advancement response. B is an accounting benchmark; K=B+Omega; no recursive state.
+- eq:p05-planned-intensity (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
+- eq:p05-advancement-cost (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
+- eq:p05-expected-value (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
+- eq:p05-advancement-objective (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
+- eq:p05-kkt (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
+- eq:p05-foc (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
+- eq:p05-soc (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
+- eq:p05-optimal-advancement (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
+- eq:p05-binary-channel (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
+- eq:p05-value-gap (parents in the preceding chain; A-P05-ADV-01--03 as applicable).
+- eq:p05-value-gap-foc (parents in the preceding chain; A-P05-ADV-01--03 as applicable).

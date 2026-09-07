@@ -219,3 +219,10 @@ A-P04-ROUTE-01: T(q,m) is finite continuous and policy invariant. The maximum in
 A-P04-ROUTE-02: In addition to continuous heterogeneity, the set of maximizing ties has zero probability at each fixed candidate price/regime, for almost every developer. This is the note's no-tie regularity restriction, not a theorem from continuity alone. A fixed measurable tie rule may select on the null set.
 A-P04-CUTOFF-01: Conditional cutoff analysis requires finite tau, an internally feasible interior, continuous gap, and negative/positive endpoint gap limits. It does not assert these sufficient crossing conditions for every project.
 Used: P04 values use A-P01-PROJ-04, A-P02-PV/ACCOUNT, A-P03-TECH; deterministic choice uses ROUTE01--02; cutoff uses CUTOFF01 and derived R_c<0.
+
+## Phase 5 advancement assumptions
+
+A-P05-ADV-01: kappa>0, nu>0, common nonnegative x; linear arrival a_i x and convex cost kappa x^(1+nu)/(1+nu). No policy change in a,kappa,nu,F.
+A-P05-ADV-02: W is measurable with finite integral for each developer/candidate price. A sufficient primitive envelope is integrability of s(q)[R(q,c_I)1_feasible+R(q,c_E)]+max(T,0); nonnegative route fixed costs then bound W. Infeasible internal R is omitted, not evaluated.
+A-P05-ADV-03: continuum price taking; an individual x does not change conjectured p or F. Omega is fixed in individual optimization. This is not permission to hold aggregate equilibrium price fixed in policy comparisons.
+Used: FOC/SOC and uniqueness use ADV01--03, timing uses Phase 1, monotonic binary comparison uses Phase 4. Value-gap B,K are accounting auxiliaries confined to appendix interpretation at Phase 16.
