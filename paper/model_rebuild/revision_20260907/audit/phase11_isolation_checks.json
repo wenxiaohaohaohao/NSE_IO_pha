@@ -1,0 +1,12 @@
+{
+  "03_internal_external_technologies.tex": true,
+  "01_primitives_and_timing.tex": true,
+  "05_rd_problem.tex": true,
+  "06_cmo_supply_demand_equilibrium.tex": true,
+  "04_route_values_and_sorting.tex": true,
+  "09_observed_outcomes.tex": true,
+  "02_demand_profit_derivation.tex": true,
+  "07_equilibrium_definition.tex": true,
+  "08_required_propositions.tex": true,
+  "10_empirical_mapping.tex": true
+}

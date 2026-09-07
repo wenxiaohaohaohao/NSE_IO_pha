@@ -249,3 +249,6 @@ P09 hierarchy/anticipation/realized chain derive from Phase 1 timing, typed mixt
 
 ## Phase 10
 Two P10 timing displays restate Phase 1/P09. The twelve mappings are measurement interfaces, not structural or market-clearing equations.
+
+## Phase 11 isolated dependency
+Extension-only W_ir and iid shocks -> probability integral -> logit. There is no edge from this formula or any other optional block to baseline W,Omega,x,chi,D,S or p*. Baseline route-specific realization and common advancement remain unchanged.

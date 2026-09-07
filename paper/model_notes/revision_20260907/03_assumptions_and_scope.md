@@ -251,3 +251,6 @@ No new assumption. Timing, common control and measurement boundaries inherit Pha
 
 ## Phase 10
 No new economic assumption. All proxies are provisional, require identity/unit/timing validation, and do not separately identify primitives.
+
+## Phase 11 extension isolation
+The iid Type-I EV assumption with scale sigma is used solely to derive the inactive smooth-choice extension. None of the baseline assumptions cites it. All other optional blocks remain unimplemented; their activation requires a new approved specification.
