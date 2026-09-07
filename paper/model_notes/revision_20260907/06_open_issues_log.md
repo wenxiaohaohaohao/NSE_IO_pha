@@ -29,3 +29,7 @@ Resolution: recheck the preserved paper version and its page/table references be
 Locked architecture change? NO.
 Approval required? No for evidence verification; yes if an architecture conflict is found.
 Status: P1, non-blocking for Phase 1; blocks empirical claims at the relevant later gate if unresolved.
+
+## Phase 2 当前审计结果
+
+当前 Phase 2 未发现 P0 或本阶段 P1。数值试算中的有限差分截断误差已用 Richardson 外推消除并通过原阈值，详见独立推导审计；没有改动模型公式或放宽检验门槛。历史实证证据复核 REV-P1-001 仍为后续关口事项，不阻断当前商业利润推导。

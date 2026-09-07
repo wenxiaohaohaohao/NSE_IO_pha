@@ -1,0 +1,10 @@
+{
+  "decision_id": "REV-EXEC-001",
+  "source": "Current conversation explicit user message",
+  "user_message": "批准，可以直接执行后面的phase",
+  "recorded_at": "2026-09-07T19:11:52.793708+08:00",
+  "applies_to": "Phases 3--18 of current note+v1.1 revision, including scoped manuscript integration and final PDF after prerequisite gates",
+  "authorization": "Continue sequentially without routine phase approval prompts. Each zero-P0 phase gate is approved under this current standing authorization, then committed and pushed separately. Preserve full audits.",
+  "mandatory_pause": "Unresolved P0, locked-architecture change, ambiguity requiring a new user decision, or scope expansion.",
+  "exclusions": "Does not activate v1.2 or September 3/4 model extensions; does not authorize unrelated manuscript changes or force-pushing history."
+}

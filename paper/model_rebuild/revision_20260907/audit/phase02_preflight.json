@@ -1,0 +1,10 @@
+{
+  "phase": 2,
+  "recorded_at": "2026-09-07T19:00:00.575164+08:00",
+  "previous_phase_approval": "spec/revision_20260907/approvals/phase01_approval.json",
+  "entry_commit": "90179f20cd337a6f41975af295c1451e8e293d31",
+  "remote_tracking_after_successful_push": "90179f20cd337a6f41975af295c1451e8e293d31",
+  "working_tree_before_phase02": "",
+  "spec_hash": "4bf28d2d0199496b831610b133753111bf1e11f049db1aa07223ad479d8871d5",
+  "scope": "Reuse September 1 Phase 2; no Phase 3 outputs; manuscript read-only"
+}

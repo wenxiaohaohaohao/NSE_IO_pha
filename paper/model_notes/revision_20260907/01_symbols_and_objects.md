@@ -1,7 +1,7 @@
 <!-- Inherited from Phase 1 commit 7c7dad4; current revision only, historical files unchanged. -->
 # 01 Symbols and Objects
 
-Phase status: `PHASE 1 REVISION - APPROVED`  
+Phase status: `PHASE 1 REVISION - APPROVED; PHASE 2 REVISION - APPROVED`  
 Controlling specification: `paper/model_rebuild/spec/revision_20260907/MAH_model_rebuild_effective_spec_note_v1.1.md`  
 Effective-spec SHA256: `4bf28d2d0199496b831610b133753111bf1e11f049db1aa07223ad479d8871d5`
 
@@ -26,15 +26,16 @@ Subscripts $i,j$ and route labels $I,E,T,A$ are syntactic labels rather than sep
 | Unit | Meaning |
 |---|---|
 | $\mathsf{C}$ | currency/value units |
+| $\mathsf{Y}$ | physical product-output units |
 | $\mathsf{X}$ | project-advancement input units |
 | $\mathsf{P}$ | expected measure of viable planning-stage projects in one cohort |
 | $\mathsf{K}$ | manufacturing capability/requirement units |
 | $\mathsf{B}$ | qualified manufacturing-service capacity units |
 | $1$ | dimensionless index, label, probability, or distribution mass |
 
-One decision cohort is the Phase 1 time unit. Phase 2 must define product-output and within-period monetary units before demand and operating-profit formulas are introduced.
+One decision cohort is the project-planning time unit. Phase 2 measures demand and profit over one operating period of normalized length one; a period profit is a monetary amount, not an instantaneous rate summed without a time interval. The demand scale A has units C^epsilon Y^(1-epsilon) for that period.
 
-## 3. Active Phase 1 object registry
+## 3. Active object registry through Phase 2
 
 | Symbol | Exact category | Definition | Domain / units | First formal use | Direct MAH shift? |
 |---|---|---|---|---|---|
@@ -66,8 +67,18 @@ One decision cohort is the Phase 1 time unit. Phase 2 must define product-output
 | $s_g(q)$ | primitive parameter | optional exogenous class-specific probability for typed observed outcomes | $[0,1]$, unit $1$ | Phase 1 boundary; Phase 9 if needed | No |
 | observed holder-producer separation; realized products | derived observed outcome | post-route empirical outcomes, distinct from advancement and planning-stage project mass | route/product records; units deferred to Phase 9 | Phase 1 timing; Phase 9 formalization | Indirect only |
 | $x_i^*$ | endogenous firm-level object | reserved optimal common advancement input; solution deferred to Phase 5 | units $\mathsf{X}$ | Phase 1 reservation | Only through expected project value |
+| $A$ | primitive parameter | residual product-market size/scale shifter | $A>0$, units $\mathsf{Y}^{1-\varepsilon}\mathsf{C}^{\varepsilon}$ per operating period | Phase 2 | No; `RL-08` |
+| $\varepsilon$ | primitive parameter | absolute constant elasticity of residual product demand | $\varepsilon>1$, unit $1$ | Phase 2 | No; `RL-08` |
+| $\beta$ | primitive parameter | one-period discount factor | $\beta\in(0,1)$, unit $1$ | Phase 2 | No |
+| $\varphi$ | primitive parameter | conditional probability that an already commercialized product remains active for the next operating period | $\varphi\in[0,1)$, unit $1$ | Phase 2 | No; distinct from $s(q)$ |
+| $p$ | control | product price in the conditional static pricing problem | $p\geq c$, units $\mathsf{C}/\mathsf{Y}$ | Phase 2 | No; distinct from $p_m$ |
+| $c$ | endogenous route-level object | positive marginal manufacturing-cost input produced by a route technology; Phase 2 holds it fixed and Phase 3 supplies the route mapping | $c>0$, units $\mathsf{C}/\mathsf{Y}$ | Phase 2 conditional argument; Phase 3 route mapping | No direct shift |
+| $y(p;q)$ | endogenous route-level object | residual product demand conditional on product price and project value | $\mathsf{Y}$ per operating period | Phase 2 | No direct shift |
+| $p^*(c)$ | endogenous route-level object | unique profit-maximizing product price conditional on marginal cost | $\mathsf{C}/\mathsf{Y}$ | Phase 2 | No; distinct from $p_m^*$ |
+| $\pi(q,c)$ | endogenous route-level object | optimized one-period operating profit before route-specific fixed organizational costs | $\mathsf{C}$ per operating period | Phase 2 | Indirect only through a later route-cost mapping |
+| $R(q,c)$ | endogenous route-level object | present value of the optimized operating-profit stream conditional on successful commercialization | $\mathsf{C}$ per commercially active product | Phase 2 | Indirect only through a later route-cost mapping |
 
-There are 28 active rows. Each has one and only one exact category.
+There are 38 active rows. Each has one and only one exact category.
 
 ## 4. Definitional identities active in Phase 1
 
@@ -124,4 +135,4 @@ Patent history may later proxy predetermined $a_i$; it is not equal to $x_i$ or 
 
 ## 7. Reserved names requiring future updates
 
-The specification names future objects including demand $y(p;q)$, product price $p$, profit $\pi$, present value $R$, manufacturing-cost functions, route values $W^r$, project-advancement cost $C_X$, CMO capacity $s_j$, aggregate CMO supply/demand, and the organizational cutoff. They are not active Phase 1 objects. Each must be added here with one category and units immediately before its first formula in an approved later Phase.
+Demand, product price, profit and operating present value are active through Phase 2. Manufacturing-cost functions, route payoffs, C_X, CMO capacity and its aggregates remain reserved for their phases. The symbol t=0,1,... indexes operating periods and is a syntactic index, not a state. The scalar demand shifter A is distinct by context from the categorical abandonment-route label A. No new decision variable is introduced by either notation.

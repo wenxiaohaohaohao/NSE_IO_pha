@@ -1,0 +1,1289 @@
+{
+  "scope": "conditional pricing and operating PV only; analytic proof still required",
+  "parameter_cases": 60,
+  "checks": [
+    {
+      "name": "1: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "1: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "1: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "1: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "2: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "2: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "2: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "2: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "3: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "3: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "3: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "3: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "4: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "4: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "4: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "4: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "5: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "5: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "5: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "5: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "6: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "6: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "6: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "6: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "7: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "7: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "7: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "7: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "8: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "8: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "8: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "8: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "9: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "9: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "9: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "9: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "10: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "10: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "10: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "10: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "11: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "11: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "11: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "11: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "12: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "12: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "12: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "12: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "13: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "13: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "13: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "13: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "14: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "14: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "14: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "14: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "15: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "15: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "15: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "15: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "16: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "16: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "16: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "16: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "17: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "17: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "17: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "17: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "18: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "18: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "18: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "18: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "19: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "19: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "19: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "19: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "20: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "20: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "20: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "20: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "21: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "21: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "21: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "21: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "22: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "22: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "22: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "22: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "23: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "23: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "23: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "23: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "24: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "24: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "24: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "24: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "25: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "25: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "25: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "25: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "26: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "26: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "26: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "26: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "27: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "27: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "27: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "27: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "28: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "28: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "28: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "28: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "29: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "29: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "29: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "29: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "30: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "30: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "30: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "30: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "31: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "31: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "31: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "31: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "32: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "32: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "32: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "32: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "33: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "33: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "33: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "33: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "34: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "34: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "34: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "34: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "35: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "35: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "35: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "35: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "36: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "36: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "36: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "36: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "37: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "37: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "37: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "37: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "38: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "38: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "38: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "38: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "39: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "39: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "39: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "39: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "40: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "40: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "40: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "40: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "41: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "41: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "41: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "41: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "42: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "42: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "42: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "42: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "43: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "43: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "43: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "43: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "44: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "44: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "44: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "44: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "45: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "45: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "45: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "45: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "46: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "46: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "46: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "46: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "47: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "47: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "47: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "47: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "48: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "48: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "48: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "48: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "49: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "49: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "49: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "49: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "50: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "50: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "50: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "50: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "51: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "51: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "51: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "51: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "52: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "52: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "52: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "52: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "53: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "53: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "53: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "53: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "54: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "54: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "54: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "54: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "55: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "55: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "55: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "55: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "56: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "56: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "56: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "56: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "57: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "57: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "57: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "57: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "58: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "58: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "58: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "58: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "59: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "59: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "59: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "59: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "60: profit substitution",
+      "result": "PASS",
+      "evidence": "objective evaluated at normalized stationary point"
+    },
+    {
+      "name": "60: derivative sign crossing",
+      "result": "PASS",
+      "evidence": "profit derivative divided by positive scale*q*p^-e"
+    },
+    {
+      "name": "60: feasible global candidate",
+      "result": "PASS",
+      "evidence": "boundary and broad price grid; analytic global proof separately recorded"
+    },
+    {
+      "name": "60: unit invariance",
+      "result": "PASS",
+      "evidence": "currency conversion scales profit; physical unit conversion leaves money unchanged"
+    },
+    {
+      "name": "PV beta=0.2,phi=0.0",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "PV beta=0.2,phi=0.2",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "PV beta=0.2,phi=0.8",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "PV beta=0.2,phi=0.999",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "PV beta=0.9,phi=0.0",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "PV beta=0.9,phi=0.2",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "PV beta=0.9,phi=0.8",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "PV beta=0.9,phi=0.999",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "PV beta=0.99,phi=0.0",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "PV beta=0.99,phi=0.2",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "PV beta=0.99,phi=0.8",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "PV beta=0.99,phi=0.999",
+      "result": "PASS",
+      "evidence": "finite geometric cash-flow sum plus exact residual tail"
+    },
+    {
+      "name": "FOC finite-difference residual",
+      "result": "FAIL",
+      "evidence": {
+        "max_scaled_residual": 3.3000020710246916e-06
+      }
+    },
+    {
+      "name": "SOC independent normalized derivative",
+      "result": "PASS",
+      "evidence": {
+        "max_relative_error": 6.86453165199552e-07
+      }
+    },
+    {
+      "name": "Profit partial derivatives",
+      "result": "PASS",
+      "evidence": {
+        "max_relative_error": 1.8348467190065776e-09
+      }
+    }
+  ],
+  "pass_count": 254,
+  "fail_count": 1
+}

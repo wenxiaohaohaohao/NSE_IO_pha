@@ -1,8 +1,8 @@
 <!-- Inherited from Phase 1 commit 7c7dad4; current revision only, historical files unchanged. -->
 # 02 Equation Dependency Map
 
-Phase status: `PHASE 1 REVISION - APPROVED; INITIAL MAP`  
-This map records definitions and timing dependencies only. Items marked `DEFERRED` are obligations for later approved phases, not Phase 1 results.
+Phase status: `PHASE 1 REVISION - APPROVED; PHASE 2 REVISION - APPROVED`  
+This map retains Phase 1 definitions/timing and adds the current Phase 2 commercial-value kernel. Items marked `DEFERRED` are obligations for later approved phases, not Phase 1 results.
 
 ## 1. Phase 1 definition ledger
 
@@ -137,3 +137,26 @@ Before any later Phase writes a formula, it must:
 
 ## Revision boundary
 Novelty classes decompose the project distribution and impose no ranking. Upstream patent-generating research is outside the common advancement control. The existing full dependency ledger at commit 8a99cc3 remains reference evidence for later phase revalidation.
+
+## 2. Phase 2 demand/profit ledger
+
+Every Phase 2 equation conditions on project value $q>0$ and a positive route-implied marginal cost $c>0$. Phase 2 does not yet define $c_I$ or $c_E$.
+
+| ID / LaTeX label | Object defined or result derived | Inputs already defined | Mathematical status | Proof / boundary obligation |
+|---|---|---|---|---|
+| `P02-E01` / `eq:p02-demand` | $y(p;q)=Aq p^{-\varepsilon}$ | $A,q,p,\varepsilon$ | primitive residual-demand schedule | verify units and $\varepsilon>1$ pricing boundary |
+| `P02-E02` / `eq:p02-pricing-problem` | $\max_{p\geq c}(p-c)y(p;q)$ | P02-E01 and conditional marginal cost $c$ | optimization problem | product price is not CMO price |
+| `P02-E03` / `eq:p02-price-foc` | derivative of $(p-c)y(p;q)$ | P02-E01--P02-E02 | optimization-derived FOC expression | check held-fixed objects and unique sign crossing |
+| `P02-E04` / `eq:p02-optimal-price` | $p^*(c)=\varepsilon c/(\varepsilon-1)$ | P02-E03 | optimization-derived candidate | verify feasibility and global maximum |
+| `P02-E05` / `eq:p02-price-soc` | objective curvature at $p^*(c)$ is negative | P02-E01--P02-E04 | optimization-derived SOC | $\varepsilon>1$, $A,q,c>0$ |
+| `P02-E06` / `eq:p02-operating-profit` | $\pi(q,c)=Aq(\varepsilon-1)^{\varepsilon-1}\varepsilon^{-\varepsilon}c^{1-\varepsilon}$ | P02-E01, P02-E04 | optimization-derived one-period profit | verify no repeated cost and dimensions |
+| `P02-E07` / `eq:p02-profit-derivatives` | $\pi_q=\pi/q>0$, $\pi_c=(1-\varepsilon)\pi/c<0$ | P02-E06 | algebraic derivatives | hold $A,\varepsilon$ and the other argument fixed |
+| `P02-E08` / `eq:p02-present-value` | $R(q,c)=\pi(q,c)/(1-\beta\varphi)$ | P02-E06, $\beta,\varphi$ | derived convergent geometric present value | verify $\beta\varphi<1$ and conditional-success interpretation |
+| `P02-E09` / `eq:p02-return-derivatives` | $R_q=R/q>0$, $R_c=(1-\varepsilon)R/c<0$ | P02-E07--P02-E08 | algebraic derivatives | keep $\beta,\varphi$ fixed |
+
+The pricing control is product price $p$, not the CMO capacity price $p_m$. The derivative with respect to $c$ is a continuous conditional-cost derivative, not a derivative with respect to binary policy $M$.
+
+
+## Phase 2 scope and feedback
+
+A,q,epsilon and conditional c determine demand and optimal product price, then pi and R. Beta and phi enter only the geometric operating PV. The product price p is not the CMO price p_m. R excludes route fixed costs, the institutional wedge and separately purchased capacity; those are deferred to Phases 3/4. This closes only the commercial-return branch; the outer CMO fixed point remains assigned to Phase 6. No binary-M derivative is taken.
