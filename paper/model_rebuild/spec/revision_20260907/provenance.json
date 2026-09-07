@@ -1,0 +1,79 @@
+{
+  "source_commit": "8a99cc3bcebd51b5db025550a201e0eec273a8f0",
+  "current_head": "106e4fe8d0b70b15b351e11b5c15c3be10ff6ac7",
+  "branch": "codex/mah-model-rebuild",
+  "locked_ancestor": "cd5b6e49608749e0bf32f3d9aa235a84f378347b",
+  "sources": [
+    {
+      "source": "/Users/fangyi/Documents/MAH/WeChat/0817/MAH_model_rebuild_execution_note_for_Codex.md",
+      "frozen": "paper/model_rebuild/spec/revision_20260907/source/MAH_model_rebuild_execution_note_for_Codex.md",
+      "bytes": 38122,
+      "mtime": "2026-08-18T11:00:45.014007+08:00",
+      "sha256": "f6c11377d71e4e25d40ffb8ac9fe2ea7aa051ad7e123ba7e3a32dba895342b24",
+      "matches_original": true
+    },
+    {
+      "source": "/Users/fangyi/Documents/MAH/WeChat/0817/MAH_model_rebuild_amendment_v1.1_for_Codex.md",
+      "frozen": "paper/model_rebuild/spec/revision_20260907/source/MAH_model_rebuild_amendment_v1.1_for_Codex.md",
+      "bytes": 22008,
+      "mtime": "2026-08-18T11:00:39.314112+08:00",
+      "sha256": "d76856241e460d31087ab60690e85d5681806e53bd42991f725458727ccd1ea9",
+      "matches_original": true
+    },
+    {
+      "source": "/Users/fangyi/Documents/MAH/WeChat/0901/MAH_model_update_20260901/formal/mah_route_indicator_friction_model.pdf",
+      "repository_copy": "paper/collaboration/MAH_model_update_20260901/formal/mah_route_indicator_friction_model.pdf",
+      "bytes": 370891,
+      "sha256": "0eaa062d84142713c53077bfa8f15bba22dd1390530a0a2d0ab25741d402a1e9",
+      "matches_package": true
+    },
+    {
+      "source": "/Users/fangyi/Documents/MAH/WeChat/0901/MAH_model_update_20260901/formal/mah_route_indicator_friction_model_appendix.pdf",
+      "repository_copy": "paper/collaboration/MAH_model_update_20260901/formal/mah_route_indicator_friction_model_appendix.pdf",
+      "bytes": 471135,
+      "sha256": "45cd8f1a05a7bf8636fc4b5011146781ad89ea2bd1e7fcdbd44489d66e212c47",
+      "matches_package": true
+    }
+  ],
+  "effective_spec_sha256": "4bf28d2d0199496b831610b133753111bf1e11f049db1aa07223ad479d8871d5",
+  "protected_files": {
+    "paper/collaboration/MAH_model_update_20260901/.gitattributes": "fa1b9147bb2236a499d188ad2dfe863d426476f49934c8e425a76730b856b2c4",
+    "paper/collaboration/MAH_model_update_20260901/FILE_MANIFEST_SHA256.txt": "793644cadebf4895d84fbfdefa557782b55fd4afba737cdfc3e88ab7f55f637a",
+    "paper/collaboration/MAH_model_update_20260901/README_CN.md": "17e894578c91d2c28ad01fba41d5c44a209d4241fef623f22bac53bda5365433",
+    "paper/collaboration/MAH_model_update_20260901/VERSION.txt": "6849742044b32a5ce0456807877fe4ac7aef9f04787143618a1134d1d24d9177",
+    "paper/collaboration/MAH_model_update_20260901/formal/mah_route_indicator_friction_model.pdf": "0eaa062d84142713c53077bfa8f15bba22dd1390530a0a2d0ab25741d402a1e9",
+    "paper/collaboration/MAH_model_update_20260901/formal/mah_route_indicator_friction_model_appendix.pdf": "45cd8f1a05a7bf8636fc4b5011146781ad89ea2bd1e7fcdbd44489d66e212c47",
+    "paper/collaboration/MAH_model_update_20260901/generate_manifest.ps1": "d999c4a57849b07746ef9b6531f10e2d7f71abea227fbc1eb9cf42fef15f9e0c",
+    "paper/collaboration/MAH_model_update_20260901/source/build.ps1": "c5fdc71146ae1bdd073a9caf018263dd1fdea432f9d0c3d95b12a36227adebff",
+    "paper/collaboration/MAH_model_update_20260901/source/build_appendix.ps1": "de8fd40c4114e7a3c6b88347b0ef76202a1be785d349f379aadafd5837be9e55",
+    "paper/collaboration/MAH_model_update_20260901/source/build_tex.ps1": "6985a56ab31d25a111fcd9d8ecda376d5e8183820cf815a00b9ed00493ded251",
+    "paper/collaboration/MAH_model_update_20260901/source/manuscript/aer.bst": "0cc4608704b61dc49d10da14085d0b54d64abc8c324370eb68fc8924f92e6eef",
+    "paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.bbl": "b54ff8f497f5ce3120f57ec0b6938581abca252a6c4cff2ea58ebff2f0bd6e54",
+    "paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex": "726abad3771491e4d1057ef589e83a507277cbde6844ef45894e9c2747791240",
+    "paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model_appendix.bbl": "402b428cee4e9dedc9261801ba786f80e6415f75260e666353f46c220b27d956",
+    "paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model_appendix.tex": "6eab0e5b6243b1b1d52900744185c94ddd76049f11ddc98fffff85c298bd54b3",
+    "paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_refs.bib": "2246f1d2c58026c7b9b61565d6a5266af8931f18b7e2445f58b9e21de4d510c7",
+    "paper/collaboration/MAH_model_update_20260901/source/model_rebuild/01_primitives_and_timing.tex": "5bef5f48a5626d7ab66253f31ce4abcfbe49dd9d4c67b36c95371101a3d52ae1",
+    "paper/collaboration/MAH_model_update_20260901/source/model_rebuild/02_demand_profit_derivation.tex": "86fe96c4bb8852c1912c6e21b09337503297908e0bc7525a18b20b6ac006ebc9",
+    "paper/collaboration/MAH_model_update_20260901/source/model_rebuild/03_internal_external_technologies.tex": "2b84ce06e9ec67886afb4302f9b76249dd1985467da3f7eeacb9146818f3cdd8",
+    "paper/collaboration/MAH_model_update_20260901/source/model_rebuild/04_route_values_and_sorting.tex": "941b2d936353cbefc81f97895761bcb0f878eed9530de6a371e2800ddf3f26f4",
+    "paper/collaboration/MAH_model_update_20260901/source/model_rebuild/05_rd_problem.tex": "97a7ca6ef586c1e181b9c67f81bceb86aeadc6c509c09168d214c257ded45b58",
+    "paper/collaboration/MAH_model_update_20260901/source/model_rebuild/06_cmo_supply_demand_equilibrium.tex": "cf0f5996ab8be78cd9c27bd191cc92497f5838671e4c3c7fd3d66c83cd49a736",
+    "paper/collaboration/MAH_model_update_20260901/source/model_rebuild/07_equilibrium_definition.tex": "2b18adc4378a8ca78f8493f9c53fdf57020db804cd64c6700fa401f3649b5283",
+    "paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex": "cb281346b788e2a1609d3a1aa18242fb55dbb0ed94fd3444eb3d94f3c0896bac",
+    "paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex": "e6bcbb82792939ba33f20a3d163cdba9ab4bc4f37ac49f88b84fa4bf52ccc3f8",
+    "paper/collaboration/MAH_model_update_20260901/source/model_rebuild/09_observed_outcomes.tex": "4e20e3b1a27c97156d0d2ece535af35a85e5195b54f88d2c7d4d49a13f45eefb",
+    "paper/collaboration/MAH_model_update_20260901/source/model_rebuild/11_extensions_not_baseline.tex": "a974fd84a8fdfd09234d96809375587e891236355d93d16c531bc077848b0f4b",
+    "paper/collaboration/MAH_model_update_20260901/validation/BUILD_VALIDATION.md": "9c988f41066ec8c3ade44a79290dbab39ca35533842482c77f04ae76868f96d4",
+    "paper/manuscript/mah_route_indicator_friction_model.tex": "ded6dec433ead82fa59c8ede4c0f55f4696994ec1250b74bfb89ae948efc552f",
+    "paper/manuscript/mah_route_indicator_friction_model_appendix.tex": "8c13034b7feca5d552d362adc4d6dfd1d4914bf20402051db72d5861e58a42fc",
+    "paper/manuscript/mah_route_indicator_friction_model_technical_memo.tex": "099c5075c235125171536e7baca3d0350f55aa289d09cd8c006b950951b7dff9",
+    "paper/manuscript/mah_route_indicator_friction_refs.bib": "a7a51c0708fefcfb7c4d1afcbf12db21fac3d17493efddc37db0abdf7880934e",
+    "paper/model_rebuild/spec/source/MAH_financing_friction_codex_notes.md": "c139ae0b795a26851573438891f3ca30aabf46832b3cf97b22ff19138c4b61f9",
+    "paper/model_rebuild/spec/source/MAH_model_rebuild_amendment_v1.1_for_Codex.md": "d76856241e460d31087ab60690e85d5681806e53bd42991f725458727ccd1ea9",
+    "paper/model_rebuild/spec/source/MAH_model_rebuild_correction_v1.2.png": "1c0035ab49a5ff5c207cb71c1e3f04cfac4e333beddab73841d2a72f603723e5",
+    "paper/model_rebuild/spec/source/MAH_model_rebuild_correction_v1.2_transcription.md": "06af48b2d853ea82f7176505d2aca4d0cbfe06e5db52c18026308196fe85e48e",
+    "paper/model_rebuild/spec/source/MAH_model_rebuild_execution_note_for_Codex.md": "f6c11377d71e4e25d40ffb8ac9fe2ea7aa051ad7e123ba7e3a32dba895342b24",
+    "paper/model_rebuild/spec/source/MAH_recenter_financing_extension_codex_notes.md": "78fe720e4beee624fff3ddf0e1d51cd7fe773178bbe4740e7951b39dddd0e45e"
+  }
+}

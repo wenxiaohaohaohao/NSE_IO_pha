@@ -1,0 +1,14 @@
+{
+  "phase": 1,
+  "status": "APPROVED",
+  "source": "Current conversation: explicit user message",
+  "user_message": "批准本轮 Phase 1 修订",
+  "recorded_at": "2026-09-07T18:57:16.432667+08:00",
+  "scope": "Current note+v1.1 Phase 1 revision; commit/push this phase and continue existing Phase 2 revalidation. No approval of Phase 2 gate or later manuscript integration.",
+  "approved_artifact_hashes": {
+    "paper/model_rebuild/spec/revision_20260907/MAH_model_rebuild_effective_spec_note_v1.1.md": "4bf28d2d0199496b831610b133753111bf1e11f049db1aa07223ad479d8871d5",
+    "paper/model_rebuild/spec/revision_20260907/instruction_traceability_matrix.csv": "c1357169ef3deb906d5ce5308416436a02378c11442f644d62389de5f20c1208",
+    "paper/model_rebuild/revision_20260907/01_primitives_and_timing.tex": "85442eb246e060178e8c74ade9b11015b1bc37f7ed8873b6e1c7ddd8e20de3b9",
+    "output/pdf/mah_note_v11_phase01_review.pdf": "9ba5f7f6b6b2545ea159e6311db031197e6997c7e1a43419c6c5530c52699eb8"
+  }
+}

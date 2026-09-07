@@ -1,0 +1,473 @@
+{
+  "scope": "note+v1.1 specification and current Phase 1 ONLY",
+  "checks": [
+    {
+      "check": "SOURCE MAH_model_rebuild_execution_note_for_Codex.md",
+      "result": "PASS",
+      "evidence": "f6c11377d71e4e25d40ffb8ac9fe2ea7aa051ad7e123ba7e3a32dba895342b24"
+    },
+    {
+      "check": "FROZEN MAH_model_rebuild_execution_note_for_Codex.md",
+      "result": "PASS",
+      "evidence": "paper/model_rebuild/spec/revision_20260907/source/MAH_model_rebuild_execution_note_for_Codex.md"
+    },
+    {
+      "check": "SOURCE MAH_model_rebuild_amendment_v1.1_for_Codex.md",
+      "result": "PASS",
+      "evidence": "d76856241e460d31087ab60690e85d5681806e53bd42991f725458727ccd1ea9"
+    },
+    {
+      "check": "FROZEN MAH_model_rebuild_amendment_v1.1_for_Codex.md",
+      "result": "PASS",
+      "evidence": "paper/model_rebuild/spec/revision_20260907/source/MAH_model_rebuild_amendment_v1.1_for_Codex.md"
+    },
+    {
+      "check": "SOURCE mah_route_indicator_friction_model.pdf",
+      "result": "PASS",
+      "evidence": "0eaa062d84142713c53077bfa8f15bba22dd1390530a0a2d0ab25741d402a1e9"
+    },
+    {
+      "check": "SOURCE mah_route_indicator_friction_model_appendix.pdf",
+      "result": "PASS",
+      "evidence": "45cd8f1a05a7bf8636fc4b5011146781ad89ea2bd1e7fcdbd44489d66e212c47"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/.gitattributes",
+      "result": "PASS",
+      "evidence": "fa1b9147bb2236a499d188ad2dfe863d426476f49934c8e425a76730b856b2c4"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/FILE_MANIFEST_SHA256.txt",
+      "result": "PASS",
+      "evidence": "793644cadebf4895d84fbfdefa557782b55fd4afba737cdfc3e88ab7f55f637a"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/README_CN.md",
+      "result": "PASS",
+      "evidence": "17e894578c91d2c28ad01fba41d5c44a209d4241fef623f22bac53bda5365433"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/VERSION.txt",
+      "result": "PASS",
+      "evidence": "6849742044b32a5ce0456807877fe4ac7aef9f04787143618a1134d1d24d9177"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/formal/mah_route_indicator_friction_model.pdf",
+      "result": "PASS",
+      "evidence": "0eaa062d84142713c53077bfa8f15bba22dd1390530a0a2d0ab25741d402a1e9"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/formal/mah_route_indicator_friction_model_appendix.pdf",
+      "result": "PASS",
+      "evidence": "45cd8f1a05a7bf8636fc4b5011146781ad89ea2bd1e7fcdbd44489d66e212c47"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/generate_manifest.ps1",
+      "result": "PASS",
+      "evidence": "d999c4a57849b07746ef9b6531f10e2d7f71abea227fbc1eb9cf42fef15f9e0c"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/build.ps1",
+      "result": "PASS",
+      "evidence": "c5fdc71146ae1bdd073a9caf018263dd1fdea432f9d0c3d95b12a36227adebff"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/build_appendix.ps1",
+      "result": "PASS",
+      "evidence": "de8fd40c4114e7a3c6b88347b0ef76202a1be785d349f379aadafd5837be9e55"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/build_tex.ps1",
+      "result": "PASS",
+      "evidence": "6985a56ab31d25a111fcd9d8ecda376d5e8183820cf815a00b9ed00493ded251"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/manuscript/aer.bst",
+      "result": "PASS",
+      "evidence": "0cc4608704b61dc49d10da14085d0b54d64abc8c324370eb68fc8924f92e6eef"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.bbl",
+      "result": "PASS",
+      "evidence": "b54ff8f497f5ce3120f57ec0b6938581abca252a6c4cff2ea58ebff2f0bd6e54"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model.tex",
+      "result": "PASS",
+      "evidence": "726abad3771491e4d1057ef589e83a507277cbde6844ef45894e9c2747791240"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model_appendix.bbl",
+      "result": "PASS",
+      "evidence": "402b428cee4e9dedc9261801ba786f80e6415f75260e666353f46c220b27d956"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_model_appendix.tex",
+      "result": "PASS",
+      "evidence": "6eab0e5b6243b1b1d52900744185c94ddd76049f11ddc98fffff85c298bd54b3"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/manuscript/mah_route_indicator_friction_refs.bib",
+      "result": "PASS",
+      "evidence": "2246f1d2c58026c7b9b61565d6a5266af8931f18b7e2445f58b9e21de4d510c7"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/model_rebuild/01_primitives_and_timing.tex",
+      "result": "PASS",
+      "evidence": "5bef5f48a5626d7ab66253f31ce4abcfbe49dd9d4c67b36c95371101a3d52ae1"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/model_rebuild/02_demand_profit_derivation.tex",
+      "result": "PASS",
+      "evidence": "86fe96c4bb8852c1912c6e21b09337503297908e0bc7525a18b20b6ac006ebc9"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/model_rebuild/03_internal_external_technologies.tex",
+      "result": "PASS",
+      "evidence": "2b84ce06e9ec67886afb4302f9b76249dd1985467da3f7eeacb9146818f3cdd8"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/model_rebuild/04_route_values_and_sorting.tex",
+      "result": "PASS",
+      "evidence": "941b2d936353cbefc81f97895761bcb0f878eed9530de6a371e2800ddf3f26f4"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/model_rebuild/05_rd_problem.tex",
+      "result": "PASS",
+      "evidence": "97a7ca6ef586c1e181b9c67f81bceb86aeadc6c509c09168d214c257ded45b58"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/model_rebuild/06_cmo_supply_demand_equilibrium.tex",
+      "result": "PASS",
+      "evidence": "cf0f5996ab8be78cd9c27bd191cc92497f5838671e4c3c7fd3d66c83cd49a736"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/model_rebuild/07_equilibrium_definition.tex",
+      "result": "PASS",
+      "evidence": "2b18adc4378a8ca78f8493f9c53fdf57020db804cd64c6700fa401f3649b5283"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_comparative_statics.tex",
+      "result": "PASS",
+      "evidence": "cb281346b788e2a1609d3a1aa18242fb55dbb0ed94fd3444eb3d94f3c0896bac"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/model_rebuild/08_required_propositions.tex",
+      "result": "PASS",
+      "evidence": "e6bcbb82792939ba33f20a3d163cdba9ab4bc4f37ac49f88b84fa4bf52ccc3f8"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/model_rebuild/09_observed_outcomes.tex",
+      "result": "PASS",
+      "evidence": "4e20e3b1a27c97156d0d2ece535af35a85e5195b54f88d2c7d4d49a13f45eefb"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/source/model_rebuild/11_extensions_not_baseline.tex",
+      "result": "PASS",
+      "evidence": "a974fd84a8fdfd09234d96809375587e891236355d93d16c531bc077848b0f4b"
+    },
+    {
+      "check": "PROTECTED paper/collaboration/MAH_model_update_20260901/validation/BUILD_VALIDATION.md",
+      "result": "PASS",
+      "evidence": "9c988f41066ec8c3ade44a79290dbab39ca35533842482c77f04ae76868f96d4"
+    },
+    {
+      "check": "PROTECTED paper/manuscript/mah_route_indicator_friction_model.tex",
+      "result": "PASS",
+      "evidence": "ded6dec433ead82fa59c8ede4c0f55f4696994ec1250b74bfb89ae948efc552f"
+    },
+    {
+      "check": "PROTECTED paper/manuscript/mah_route_indicator_friction_model_appendix.tex",
+      "result": "PASS",
+      "evidence": "8c13034b7feca5d552d362adc4d6dfd1d4914bf20402051db72d5861e58a42fc"
+    },
+    {
+      "check": "PROTECTED paper/manuscript/mah_route_indicator_friction_model_technical_memo.tex",
+      "result": "PASS",
+      "evidence": "099c5075c235125171536e7baca3d0350f55aa289d09cd8c006b950951b7dff9"
+    },
+    {
+      "check": "PROTECTED paper/manuscript/mah_route_indicator_friction_refs.bib",
+      "result": "PASS",
+      "evidence": "a7a51c0708fefcfb7c4d1afcbf12db21fac3d17493efddc37db0abdf7880934e"
+    },
+    {
+      "check": "PROTECTED paper/model_rebuild/spec/source/MAH_financing_friction_codex_notes.md",
+      "result": "PASS",
+      "evidence": "c139ae0b795a26851573438891f3ca30aabf46832b3cf97b22ff19138c4b61f9"
+    },
+    {
+      "check": "PROTECTED paper/model_rebuild/spec/source/MAH_model_rebuild_amendment_v1.1_for_Codex.md",
+      "result": "PASS",
+      "evidence": "d76856241e460d31087ab60690e85d5681806e53bd42991f725458727ccd1ea9"
+    },
+    {
+      "check": "PROTECTED paper/model_rebuild/spec/source/MAH_model_rebuild_correction_v1.2.png",
+      "result": "PASS",
+      "evidence": "1c0035ab49a5ff5c207cb71c1e3f04cfac4e333beddab73841d2a72f603723e5"
+    },
+    {
+      "check": "PROTECTED paper/model_rebuild/spec/source/MAH_model_rebuild_correction_v1.2_transcription.md",
+      "result": "PASS",
+      "evidence": "06af48b2d853ea82f7176505d2aca4d0cbfe06e5db52c18026308196fe85e48e"
+    },
+    {
+      "check": "PROTECTED paper/model_rebuild/spec/source/MAH_model_rebuild_execution_note_for_Codex.md",
+      "result": "PASS",
+      "evidence": "f6c11377d71e4e25d40ffb8ac9fe2ea7aa051ad7e123ba7e3a32dba895342b24"
+    },
+    {
+      "check": "PROTECTED paper/model_rebuild/spec/source/MAH_recenter_financing_extension_codex_notes.md",
+      "result": "PASS",
+      "evidence": "78fe720e4beee624fff3ddf0e1d51cd7fe773178bbe4740e7951b39dddd0e45e"
+    },
+    {
+      "check": "BRANCH",
+      "result": "PASS",
+      "evidence": "codex/mah-model-rebuild"
+    },
+    {
+      "check": "LOCKED BASE",
+      "result": "PASS",
+      "evidence": "cd5b6e4 remains ancestor; no reset"
+    },
+    {
+      "check": "EFFECTIVE HASH",
+      "result": "PASS",
+      "evidence": "4bf28d2d0199496b831610b133753111bf1e11f049db1aa07223ad479d8871d5"
+    },
+    {
+      "check": "28 RED LINES",
+      "result": "PASS",
+      "evidence": "effective \u00a72"
+    },
+    {
+      "check": "18 FORMAL PHASES",
+      "result": "PASS",
+      "evidence": "formal headings, not historical example row numbers"
+    },
+    {
+      "check": "AMENDMENT A",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT B",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT C",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT D",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT E",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT F",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT G",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT H",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT I",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT J",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT K",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT L",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT M",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT N",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT O",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT P",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT Q",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT R",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT S",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT T",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT U",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT V",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "AMENDMENT W",
+      "result": "PASS",
+      "evidence": "construction record; substantive application also manually reviewed"
+    },
+    {
+      "check": "NO V1.2 CONTROL INTERPRETATION",
+      "result": "PASS",
+      "evidence": "active effective specification"
+    },
+    {
+      "check": "PREFERRED COST",
+      "result": "PASS",
+      "evidence": "Phase 5 cost and value-gap FOC"
+    },
+    {
+      "check": "INTERNAL INFEASIBILITY RETAINED",
+      "result": "PASS",
+      "evidence": "specification Phase 3 and mandatory QA; mathematical check deferred to Phase 3"
+    },
+    {
+      "check": "SPEC DISPLAY DELIMITERS",
+      "result": "PASS",
+      "evidence": "no nested/unclosed display caused by amendment insertions"
+    },
+    {
+      "check": "TRACEABILITY UNIQUE",
+      "result": "PASS",
+      "evidence": "174 rows"
+    },
+    {
+      "check": "TRACEABILITY RL-",
+      "result": "PASS",
+      "evidence": "28"
+    },
+    {
+      "check": "TRACEABILITY SUCCESS-",
+      "result": "PASS",
+      "evidence": "13"
+    },
+    {
+      "check": "TRACEABILITY PHASES",
+      "result": "PASS",
+      "evidence": "deliverables and gates for 18 phases"
+    },
+    {
+      "check": "NO SELF APPROVAL",
+      "result": "PASS",
+      "evidence": "Phase 1 Yes requires current explicit approval record; later phases remain unapproved"
+    },
+    {
+      "check": "UNIQUE LABELS",
+      "result": "PASS",
+      "evidence": "17"
+    },
+    {
+      "check": "RESOLVED REFERENCES",
+      "result": "PASS",
+      "evidence": "[]"
+    },
+    {
+      "check": "PHASE SCOPE",
+      "result": "PASS",
+      "evidence": "no later-phase formal output created"
+    },
+    {
+      "check": "BASELINE TOKENS",
+      "result": "PASS",
+      "evidence": "formal Phase 1 module; exclusions in notes are not treated as active mechanisms"
+    },
+    {
+      "check": "CONTROL BOUNDARY",
+      "result": "PASS",
+      "evidence": "canonical definition and upstream exclusion"
+    },
+    {
+      "check": "NO V1.2 IN MODULE",
+      "result": "PASS",
+      "evidence": "Phase 1 formal output"
+    },
+    {
+      "check": "CLASS LABELS DEFINED",
+      "result": "PASS",
+      "evidence": "O and Inc classified; no extra control"
+    },
+    {
+      "check": "PRICE BEFORE ROUTE ARGUMENT",
+      "result": "PASS",
+      "evidence": "defined before use"
+    },
+    {
+      "check": "REGIME BEFORE VALUE ARGUMENT",
+      "result": "PASS",
+      "evidence": "defined before use"
+    },
+    {
+      "check": "OBJECT TAXONOMY",
+      "result": "PASS",
+      "evidence": "28 rows; exactly one allowed category each"
+    },
+    {
+      "check": "TIMING",
+      "result": "PASS",
+      "evidence": "stage 5 is consistency, not an unanticipated later shock"
+    },
+    {
+      "check": "NO NOVELTY SIGN CLAIM",
+      "result": "PASS",
+      "evidence": "economic scope statement"
+    }
+  ],
+  "pass_count": 93,
+  "fail_count": 0,
+  "limitations": "Semantic claims require manual audit. Actual LaTeX/visual audit recorded separately. No claim that Phase 2--18 has passed this revision."
+}
