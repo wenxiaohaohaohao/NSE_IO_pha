@@ -1,0 +1,8 @@
+{
+  "four_blocks": true,
+  "no_v12": true,
+  "no_false_s_feedback": true,
+  "kernel_consistency": true,
+  "strict_positive_capacity": true,
+  "no_tie_explicit": true
+}

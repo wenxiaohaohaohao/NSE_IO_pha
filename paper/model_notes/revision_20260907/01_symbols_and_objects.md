@@ -211,3 +211,6 @@ No active economic object added; legacy symbols occur only in the crosswalk.
 
 ## Phase 13
 No new economic object; Z is the Phase 8 excess-demand proof device. The candidate price is an input, not an unresolved additional state.
+
+## Phase 14
+No new economic object; four canonical assumption blocks replace phase appendices, retaining all old IDs as aliases.

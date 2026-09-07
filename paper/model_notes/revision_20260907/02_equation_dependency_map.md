@@ -502,3 +502,6 @@ Before any later Phase writes a formula, it must:
 Equation rows are reconciled against the current source catalog; historical Phase 15 rows are excluded until that phase. Timing arrows that have no current equation label remain prose graph nodes rather than fictitious labeled equations.
 
 No-tie plus explicit integrable envelopes, not mere continuous heterogeneity, justify aggregation. Finite-wedge and feasible-interior domains apply to gap derivatives; exact endpoint comparisons in Proposition 3 add right continuity. s_g=s in typed baseline outcomes. Supplier cross derivative is strictly negative only for positive capacity. Positive reform surplus is required for the strict concavity-based k result. The input conditional p is a graph parameter; solving D(p)-S(p)=0 yields p*, whose feedback is the one intentional fixed point. The remaining conditional evaluation graph is acyclic.
+
+## Phase 14 assumptions reconciled
+All theorem edges now use the four canonical blocks and separate architecture guards. The realization level s enters W then Omega,x; only a direct policy shift of s is forbidden. No edge or economic mechanism is removed by assumption consolidation.
